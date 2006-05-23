@@ -1,0 +1,17 @@
+#!/bin/bash
+DIR=`dirname "$0"`
+DB_NAME="$1"
+if [ "$DB_NAME" = "" ]
+then
+	echo "usage: $0 {aoweb|aoindustries|aoserv_backup}" 2>&1
+	exit 1
+fi
+${DIR}/generate_sql-drop "$1"
+${DIR}/generate_sql-create "$1"
+${DIR}/generate_sql-data "$1"
+${DIR}/generate_sql-test "$1"
+${DIR}/generate_sql-view "$1"
+${DIR}/generate_sql-index "$1"
+${DIR}/generate_sql-vacuum "$1"
+${DIR}/generate_sql-reference "$1"
+

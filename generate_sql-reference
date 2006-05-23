@@ -1,0 +1,14 @@
+#!/bin/bash
+DIR=`dirname "$0"`
+DB_NAME="$1"
+if [ "$DB_NAME" = "" ]
+then
+	echo "usage: $0 {aoweb|aoindustries|aoserv_backup}" 2>&1
+	exit 1
+fi
+
+for FILE in ${DIR}/${DB_NAME}/*-reference.sql
+do
+	echo "\\echo ${FILE}"
+	cat "${FILE}"
+done

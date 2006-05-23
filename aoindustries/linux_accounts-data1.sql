@@ -1,0 +1,47 @@
+COPY linux_accounts (username, name, office_location, office_phone, home_phone, "type", shell, created, disable_log) FROM stdin;
+xvfb	Xvfb Process	\N	\N	\N	application	/bin/bash	2001-09-04 12:01:43-05	\N
+bin	bin	\N	\N	\N	system	/sbin/nologin	2001-09-03 13:49:10-05	\N
+daemon	daemon	\N	\N	\N	system	/sbin/nologin	2001-09-03 13:49:23-05	\N
+adm	adm	\N	\N	\N	system	/sbin/nologin	2001-09-03 13:49:41-05	\N
+lp	lp	\N	\N	\N	system	/sbin/nologin	2001-09-03 13:50:02-05	\N
+operator	operator	\N	\N	\N	system	/sbin/nologin	2001-09-03 13:51:56-05	\N
+games	games	\N	\N	\N	application	/sbin/nologin	2001-09-03 13:52:08-05	\N
+ftp	FTP User	\N	\N	\N	application	/sbin/nologin	2001-09-03 13:52:34-05	\N
+nobody	Nobody	\N	\N	\N	system	/sbin/nologin	2001-09-03 13:52:48-05	\N
+alias	qmail aliases	\N	\N	\N	application	/bin/false	2002-10-03 23:49:33-05	\N
+qmaild	qmaild	\N	\N	\N	application	/bin/false	2002-10-03 23:49:39-05	\N
+qmaill	qmaill	\N	\N	\N	application	/bin/false	2002-10-03 23:49:43-05	\N
+qmailp	qmailp	\N	\N	\N	application	/bin/false	2002-10-03 23:49:48-05	\N
+qmailq	qmailq	\N	\N	\N	application	/bin/false	2002-10-03 23:49:53-05	\N
+qmailr	qmailr	\N	\N	\N	application	/bin/false	2002-10-03 23:49:59-05	\N
+qmails	qmails	\N	\N	\N	application	/bin/false	2002-10-03 23:50:04-05	\N
+mail	mail	\N	\N	\N	system	/sbin/nologin	2001-09-03 13:51:18-05	\N
+vcsa	virtual console memory owner	\N	\N	\N	system	/sbin/nologin	2002-12-10 01:49:26.483663-06	\N
+emailmon	Email Monitoring Account	\N	\N	\N	application	/bin/false	2004-06-27 17:29:02.960684-05	\N
+ftpmon	FTP Monitoring Account	\N	\N	\N	application	/usr/bin/ftponly	2004-06-27 17:30:26.011751-05	\N
+news	news	\N	\N	\N	application	/sbin/nologin	2004-12-16 21:55:24.729454-06	\N
+uucp	uucp	\N	\N	\N	application	/sbin/nologin	2004-12-16 22:02:04.466034-06	\N
+sshd	system user for openssh	\N	\N	\N	application	/bin/true	2004-12-16 22:05:22.249823-06	\N
+smmsp	system user for sendmail	\N	\N	\N	application	/dev/null	2004-12-16 22:06:40.369597-06	\N
+boinc	boinc	\N	\N	\N	application	/bin/bash	2005-05-23 01:13:11.551902-05	\N
+root	root	\N	\N	\N	system	/bin/bash	2001-09-03 13:48:37-05	\N
+root2	root	\N	\N	\N	system	/bin/bash	2001-09-03 13:48:49-05	\N
+sync	sync	\N	\N	\N	system	/bin/sync	2001-09-03 13:50:22-05	\N
+shutdown	shutdown	\N	\N	\N	system	/sbin/shutdown	2001-09-03 13:50:40-05	\N
+halt	halt	\N	\N	\N	system	/sbin/halt	2001-09-03 13:50:55-05	\N
+rpc	Portmapper RPC user	\N	\N	\N	system	/bin/false	2001-09-03 13:53:37-05	\N
+aoadmin	AO Industries Admin	\N	\N	\N	user	/bin/bash	2001-09-03 13:55:58-05	\N
+nscd	NSCD Daemon	\N	\N	\N	system	/bin/false	2001-09-03 13:57:34-05	\N
+ident	pident user	\N	\N	\N	system	/bin/false	2001-09-03 13:58:30-05	\N
+pvm	pvm	\N	\N	\N	system	/bin/bash	2001-09-03 13:58:44-05	\N
+rpm	rpm				system	/bin/bash	2002-01-21 03:44:25-06	\N
+ntp	ntp				system	/sbin/nologin	2002-01-21 04:36:38-06	\N
+mysql	MySQL Server	\N	\N	\N	application	/bin/bash	2001-09-03 13:55:40-05	\N
+named	Named	\N	\N	\N	application	/bin/false	2001-09-03 13:57:03-05	\N
+postgres	PostgreSQL Server	\N	\N	\N	application	/bin/bash	2001-09-03 13:58:11-05	\N
+xfs	X Font Server	\N	\N	\N	application	/bin/false	2001-09-03 13:55:22-05	\N
+mailnull	mailnull	\N	\N	\N	application	/dev/null	2001-09-03 13:53:14-05	\N
+interbase	InterBase Server	\N	\N	\N	application	/bin/bash	2001-09-04 00:58:35-05	\N
+httpd	httpd	\N	\N	\N	application	/bin/bash	2001-09-04 11:56:54-05	\N
+awstats	AWStats Background Log Processing	\N	\N	\N	application	/bin/false	2005-12-03 08:30:20.130052-06	\N
+\.

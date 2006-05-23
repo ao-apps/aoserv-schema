@@ -1,0 +1,14 @@
+#!/bin/bash
+DIR=`dirname "$0"`
+echo "delete from aosh_commands;"
+echo "delete from schema_foreign_keys;"
+echo "delete from schema_columns;"
+echo "delete from schema_tables;"
+echo "delete from schema_types;"
+echo "delete from aoserv_protocols;"
+cat ${DIR}/aoindustries/aoserv_protocols-data1.sql
+cat ${DIR}/aoindustries/schema_types-data1.sql
+cat ${DIR}/aoindustries/schema_tables-data1.sql
+cat ${DIR}/aoindustries/schema_columns-data1.sql
+cat ${DIR}/aoindustries/aosh_commands-data1.sql
+cat ${DIR}/aoindustries/schema_foreign_keys-data2.sql

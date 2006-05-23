@@ -1,0 +1,32 @@
+COPY net_binds (pkey, package, ao_server, ip_address, port, net_protocol, app_protocol, open_firewall, monitoring_enabled) FROM stdin;
+1	AOINDUSTRIES	2	1	3306	tcp	MySQL	t	t
+2	AOINDUSTRIES	2	1	3307	tcp	MySQL	t	t
+14	AOINDUSTRIES	2	1	5432	tcp	PostgreSQL	f	t
+15	AOINDUSTRIES	2	1	5433	tcp	PostgreSQL	f	t
+16	AOINDUSTRIES	2	5	20	tcp	FTP-DATA	t	f
+17	AOINDUSTRIES	2	5	21	tcp	FTP	t	t
+18	AOINDUSTRIES	2	5	22	tcp	SSH	t	t
+19	AOINDUSTRIES	2	5	23	tcp	Telnet	t	t
+20	AOINDUSTRIES	2	5	25	tcp	SMTP	t	t
+21	AOINDUSTRIES	2	5	587	tcp	submission	t	t
+22	AOINDUSTRIES	2	5	80	tcp	HTTP	t	t
+23	AOINDUSTRIES	2	5	110	tcp	POP3	t	t
+24	AOINDUSTRIES	2	5	143	tcp	IMAP2	t	t
+25	AOINDUSTRIES	2	5	443	tcp	HTTPS	t	t
+26	AOINDUSTRIES	2	1	1020	tcp	aoserv-daemon	f	t
+27	AOINDUSTRIES	2	5	993	tcp	SIMAP	t	t
+28	AOINDUSTRIES	2	5	995	tcp	SPOP3	t	t
+29	AOINDUSTRIES	3	7	20	tcp	FTP-DATA	t	f
+30	AOINDUSTRIES	3	7	21	tcp	FTP	t	t
+31	AOINDUSTRIES	3	7	22	tcp	SSH	t	t
+32	AOINDUSTRIES	3	7	23	tcp	Telnet	t	t
+33	AOINDUSTRIES	3	7	25	tcp	SMTP	t	t
+34	AOINDUSTRIES	3	7	587	tcp	submission	t	t
+35	AOINDUSTRIES	3	7	80	tcp	HTTP	t	t
+36	AOINDUSTRIES	3	7	110	tcp	POP3	t	t
+37	AOINDUSTRIES	3	6	113	tcp	auth	f	t
+38	AOINDUSTRIES	3	7	143	tcp	IMAP2	t	t
+39	AOINDUSTRIES	3	7	443	tcp	HTTPS	t	t
+40	AOINDUSTRIES	3	1	1021	tcp	aoserv-daemon	f	t
+\.
+SELECT setval ('"net_binds_pkey_seq"', 40, true);

@@ -1,0 +1,18 @@
+create sequence email_domains_pkey_seq cycle;
+grant all on email_domains_pkey_seq to aoadmin;
+grant select, update on email_domains_pkey_seq to aoserv_app;
+
+create table email_domains (
+  pkey integer
+    default nextval('email_domains_pkey_seq')
+    constraint email_domains_pkey primary key,
+  domain text
+    not null,
+  ao_server integer
+    not null,
+  package text
+    not null,
+  unique(ao_server, domain)
+);
+grant all on email_domains to aoadmin;
+grant select, insert, update, delete on email_domains to aoserv_app;

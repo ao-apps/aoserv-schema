@@ -1,0 +1,36 @@
+COPY usernames (username, package, disable_log) FROM stdin;
+orion	AOINDUSTRIES	\N
+test	AOINDUSTRIES	\N
+edrugstore	AOINDUSTRIES	\N
+edrugstore_app	AOINDUSTRIES	\N
+test5	AOINDUSTRIES	\N
+aoserv_app	AOINDUSTRIES	\N
+test6	AOINDUSTRIES	\N
+test7	AOINDUSTRIES	\N
+test8	AOINDUSTRIES	\N
+test10	AOINDUSTRIES	\N
+test11	AOINDUSTRIES	\N
+aoweb_app	AOINDUSTRIES	\N
+test12	AOINDUSTRIES	\N
+test13	AOINDUSTRIES	\N
+test14	AOINDUSTRIES	\N
+test15	AOINDUSTRIES	\N
+suspendo_svr	AOINDUSTRIES	\N
+privatecart_app	AOINDUSTRIES	\N
+dan	AOINDUSTRIES	\N
+mandrake92_svr	AOINDUSTRIES	\N
+testimap	AOINDUSTRIES	\N
+epharmaprod_app	AOINDUSTRIES	\N
+affiliates_app	AOINDUSTRIES	\N
+testuser	TEST	\N
+ptms_app	AOINDUSTRIES	\N
+danshome	AOINDUSTRIES	\N
+danshome_app	AOINDUSTRIES	\N
+nathan	MMP	\N
+mmhsql	MMP	\N
+mmysql	MMY	\N
+bchen	MMP	\N
+calendar_mmh	MMP	\N
+redhat72_svr	AOINDUSTRIES	\N
+newmediaworks	NMW	\N
+\.

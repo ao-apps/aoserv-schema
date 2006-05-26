@@ -549,7 +549,7 @@ insert into schema_tables values(
     null,
     '1.0a100',
     null,
-    'from_server.server.hostname,to_server.server.hostname'
+    'from_server.server.hostname,max_bit_rate desc,to_server.server.hostname'
 );
 insert into schema_tables values(
     'failover_file_schedule',

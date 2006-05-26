@@ -53,4 +53,5 @@ netbios-ssn	139	NetBIOS SSN	f	udp
 rndc	953	rndc control sockets (BIND 9)	f	tcp
 talk	517	talk	f	udp
 ntalk	518	ntalk	f	udp
+milter	12000	Sendmail Milter	f	tcp
 \.

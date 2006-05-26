@@ -289,4 +289,9 @@ insert into aoserv_protocols values(
   '2006-05-22',
   'added ao_servers.jilter_bind'
 );
+insert into aoserv_protocols values(
+  '1.8',
+  '2006-05-23',
+  'added ao_servers.restrict_outbound_email'
+);
 commit;

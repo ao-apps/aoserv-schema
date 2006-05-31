@@ -294,4 +294,10 @@ insert into aoserv_protocols values(
   '2006-05-23',
   'added ao_servers.restrict_outbound_email'
 );
+insert into aoserv_protocols values(
+  '1.9',
+  '2006-05-29',
+  'added failover_file_replications.use_compression
+added aoserv_protocols.last_used'
+);
 commit;

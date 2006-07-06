@@ -9,4 +9,4 @@ create table aoserv_protocols (
   last_used date
 );
 grant all on aoserv_protocols to aoadmin;
-grant select on aoserv_protocols to aoserv_app;
+grant select, update on aoserv_protocols to aoserv_app;

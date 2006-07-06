@@ -300,4 +300,14 @@ insert into aoserv_protocols values(
   'added failover_file_replications.use_compression
 added aoserv_protocols.last_used'
 );
+insert into aoserv_protocols values(
+  '1.10',
+  '2006-06-06',
+  'made tickets.admin_priority nullable and null by default'
+);
+insert into aoserv_protocols values(
+  '1.11',
+  '2006-07-03',
+  'added ao_servers.daemon_connect_address'
+);
 commit;

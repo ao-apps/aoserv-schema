@@ -68,6 +68,8 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_server
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'daemon_connect_bind', 29, 'fkey', true, false, false, 'the bind to connect to', '1.0a119', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'time_zone', 30, 'string', true, false, false, 'the time zone setting for the server', '1.2', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'jilter_bind', 31, 'fkey', true, false, false, 'the bind that sendmail uses to connect to jilter', '1.7', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'restrict_outbound_email', 32, 'boolean', false, false, false, 'controls if outbound email may only come from address hosted on this machine', '1.8', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'daemon_connect_address', 33, 'string', true, false, false, 'provides a specific address to use for connecting to AOServDaemon', '1.11', null;
 commit;
 begin;
 \echo aoserv_protocols
@@ -2230,12 +2232,13 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'tickets',
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'tickets', 'close_date', 9, 'time', true, false, false, '', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'tickets', 'closed_by', 10, 'username', true, false, false, '', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'tickets', 'client_priority', 11, 'string', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'tickets', 'admin_priority', 12, 'string', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'tickets', 'technology', 13, 'string', true, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'tickets', 'status', 14, 'string', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'tickets', 'assigned_to', 15, 'string', true, false, false, '', '1.0a125', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'tickets', 'contact_emails', 16, 'string', false, false, false, '', '1.0a125', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'tickets', 'contact_phone_numbers', 17, 'string', false, false, false, '', '1.0a125', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'tickets', 'admin_priority', 12, 'string', false, false, false, '', '1.0a100', '1.9';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'tickets', 'admin_priority', 13, 'string', true, false, false, '', '1.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'tickets', 'technology', 14, 'string', true, false, false, '', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'tickets', 'status', 15, 'string', false, false, false, '', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'tickets', 'assigned_to', 16, 'string', true, false, false, '', '1.0a125', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'tickets', 'contact_emails', 17, 'string', false, false, false, '', '1.0a125', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'tickets', 'contact_phone_numbers', 18, 'string', false, false, false, '', '1.0a125', null;
 commit;
 begin;
 \echo time_zones

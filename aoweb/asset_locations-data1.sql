@@ -1,5 +1,6 @@
 COPY "asset_locations" FROM stdin;
-ao	2200 Dogwood Ct N		Mobile	AL	36693	Dan Armstrong	(251) 661-6195
+ao	2200 Dogwood Ct N		Mobile	AL	36693	Dan Armstrong	(251) 666-1664
+office	816 Azalea Rd		Mobile	AL	36693	Dan Armstrong	(251) 661-6195
 jaye	1309 Carre Dr. W		Mobile	AL	36618	Jaye Mosely	(251) 342-2952
 he	760 Mission Ct		Fremont	CA	94539	Hurricane Electric Re: ce1549	(510) 580-4100
 xeroscape	1627 Main Suite 300		Kansas City	MO	64108	David Lowe	(816) 471-7688

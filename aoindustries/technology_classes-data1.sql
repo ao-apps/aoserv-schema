@@ -6,6 +6,7 @@ Linux	Core Linux utilities and packages
 MySQL	The MySQL RDBMS and related tools
 PERL	The PERL programming language and related software
 PostgreSQL	The PostgreSQL RDBMS and related tools
+Python	The Python language and related tools
 X11	The X11 windowing system and related packages
 XML	XML parsing, processing, and conversion
 InterBase	InterBase database and tools

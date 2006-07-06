@@ -7,7 +7,7 @@ from
     technology_versions
 where
     name='postgresql'
-    and version='7.1.3'
+    and version like '7.1.%'
 ;
 insert into
     postgres_versions
@@ -18,7 +18,7 @@ from
     technology_versions
 where
     name='postgresql'
-    and version='7.2.7'
+    and version like '7.2.%'
 ;
 insert into
     postgres_versions
@@ -29,7 +29,7 @@ from
     technology_versions
 where
     name='postgresql'
-    and version='7.3.13'
+    and version like '7.3.%'
 ;
 insert into
     postgres_versions
@@ -40,7 +40,7 @@ from
     technology_versions
 where
     name='postgresql'
-    and version='8.0.6'
+    and version like '8.0.%'
 ;
 insert into
     postgres_versions
@@ -51,5 +51,5 @@ from
     technology_versions
 where
     name='postgresql'
-    and version='8.1.2'
+    and version like '8.1.%'
 ;

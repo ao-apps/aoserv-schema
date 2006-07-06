@@ -13,4 +13,5 @@ insert into architectures values('mips64', 64);
 insert into architectures values('ppc', 64);
 insert into architectures values('sparc', 32);
 insert into architectures values('sparc64', 64);
+insert into architectures values('x86_64', 64);
 commit;

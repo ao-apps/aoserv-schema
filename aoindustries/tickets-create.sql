@@ -14,7 +14,7 @@ create table tickets (
   close_date        timestamp,
   closed_by         text,
   client_priority   text        not null,
-  admin_priority    text        not null,
+  admin_priority    text,
   
   technology        text,
   status            text        not null,

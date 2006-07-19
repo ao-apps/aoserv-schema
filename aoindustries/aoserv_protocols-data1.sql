@@ -310,4 +310,9 @@ insert into aoserv_protocols values(
   '2006-07-03',
   'added ao_servers.daemon_connect_address'
 );
+insert into aoserv_protocols values(
+  '1.12',
+  '2006-07-19',
+  'added ao_servers.failover_batch_size'
+);
 commit;

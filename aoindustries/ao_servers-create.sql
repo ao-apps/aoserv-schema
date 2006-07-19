@@ -62,7 +62,8 @@ create table ao_servers (
   time_zone text not null,
   jilter_bind integer,
   restrict_outbound_email bool not null,
-  daemon_connect_address text
+  daemon_connect_address text,
+  failover_batch_size integer not null
 );
 grant all on ao_servers to aoadmin;
 grant select, update on ao_servers to aoserv_app;

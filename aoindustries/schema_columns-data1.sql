@@ -70,6 +70,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_server
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'jilter_bind', 31, 'fkey', true, false, false, 'the bind that sendmail uses to connect to jilter', '1.7', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'restrict_outbound_email', 32, 'boolean', false, false, false, 'controls if outbound email may only come from address hosted on this machine', '1.8', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'daemon_connect_address', 33, 'string', true, false, false, 'provides a specific address to use for connecting to AOServDaemon', '1.11', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'failover_batch_size', 34, 'int', false, false, false, 'the batch size used for failover replications coming from this server', '1.12', null;
 commit;
 begin;
 \echo aoserv_protocols

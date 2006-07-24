@@ -12,3 +12,10 @@ alter table failover_file_replications
   on delete restrict
   on update cascade
 ;
+alter table failover_file_replications
+  add constraint retention_fkey
+  foreign key (retention)
+  references backup_retentions (days)
+  on delete restrict
+  on update cascade
+;

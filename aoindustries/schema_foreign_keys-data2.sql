@@ -219,6 +219,7 @@ begin;
 \echo failover_file_replications
 select add_schema_foreign_key('failover_file_replications', 'from_server', 'ao_servers', 'server', false, '1.0a100', null);
 select add_schema_foreign_key('failover_file_replications', 'to_server', 'ao_servers', 'server', false, '1.0a100', null);
+select add_schema_foreign_key('failover_file_replications', 'retention', 'backup_retentions', 'days', false, '1.13', null);
 commit;
 begin;
 \echo failover_file_schedule

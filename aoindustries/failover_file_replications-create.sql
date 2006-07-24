@@ -13,6 +13,7 @@ create table failover_file_replications (
   max_bit_rate integer,
   last_start_time timestamp,
   use_compression bool not null,
+  retention smallint not null,
   unique(from_server, to_server)
 );
 grant all on failover_file_replications to aoadmin;

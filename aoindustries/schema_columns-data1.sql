@@ -552,6 +552,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'max_bit_rate', 3, 'int', true, false, false, 'the maximum bit rate for files being replicated', '1.0a105', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'last_start_time', 4, 'time', true, false, false, 'the last time the replication was started or null if never ran', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'use_compression', 5, 'boolean', false, false, false, 'when compression is enabled, chunk mode is used on mirroring, resulting in more CPU and disk, but less bandwidth', '1.9', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'retention', 6, 'short', false, false, false, 'the number of days backups will be kept', '1.13', null;
 commit;
 begin;
 \echo failover_file_schedule

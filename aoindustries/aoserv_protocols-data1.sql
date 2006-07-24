@@ -315,4 +315,9 @@ insert into aoserv_protocols values(
   '2006-07-19',
   'added ao_servers.failover_batch_size'
 );
+insert into aoserv_protocols values(
+  '1.13',
+  '2006-07-20',
+  'added ao_servers.retention'
+);
 commit;

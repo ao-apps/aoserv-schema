@@ -713,6 +713,17 @@ insert into schema_tables values(
     'name,ao_server.server.hostname'
 );
 insert into schema_tables values(
+    'httpd_site_authenticated_locations',
+    (select count(*) from schema_tables),
+    'Httpd Site Authenticated Locations',
+    false,
+    'The <code>httpd_site_authenticated_locations</code> configured Apache basic authentication using Location directives.',
+    null,
+    '1.18',
+    null,
+    'httpd_site.site_name,httpd_site.ao_server.server.hostname,path'
+);
+insert into schema_tables values(
     'httpd_site_binds',
     (select count(*) from schema_tables),
     'Httpd Site Binds',

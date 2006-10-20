@@ -553,6 +553,10 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'last_start_time', 4, 'time', true, false, false, 'the last time the replication was started or null if never ran', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'use_compression', 5, 'boolean', false, false, false, 'when compression is enabled, chunk mode is used on mirroring, resulting in more CPU and disk, but less bandwidth', '1.9', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'retention', 6, 'short', false, false, false, 'the number of days backups will be kept', '1.13', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'connect_address', 7, 'string', true, false, false, 'an address that overrides regular AOServ connections for failovers', '1.14', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'enabled', 8, 'boolean', false, false, false, 'the enabled flag for failovers', '1.15', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'to_path', 9, 'string', false, false, false, 'the destination path for the replication', '1.17', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'chunk_always', 10, 'boolean', false, false, false, 'when true chunking will always be performed (mtime+length will not be considered a sufficient match)', '1.17', null;
 commit;
 begin;
 \echo failover_file_schedule
@@ -702,6 +706,17 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sha
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'tomcat4_shutdown_port', 16, 'fkey', true, true, false, 'the port that will shut down this JVM', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'tomcat4_shutdown_key', 17, 'string', true, false, false, 'the key used to shut down the JVM', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'is_manual', 18, 'boolean', false, false, false, 'the configuration files are manually maintained', '1.0a100', null;
+commit;
+begin;
+\echo httpd_site_authenticated_locations
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_authenticated_locations', 'pkey', 0, 'pkey', false, true, false, 'a generated primary key', '1.18', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_authenticated_locations', 'httpd_site', 1, 'fkey', false, false, false, 'the site that is being referenced', '1.18', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_authenticated_locations', 'path', 2, 'string', false, false, false, 'the path to protect, unique per httpd_site', '1.18', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_authenticated_locations', 'is_regular_expression', 3, 'boolean', false, false, false, 'regular expressions may be used, resulting in LocationMatch directives instead of Location', '1.18', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_authenticated_locations', 'auth_name', 4, 'string', false, false, false, 'the prompt given to the user during authentication', '1.18', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_authenticated_locations', 'auth_group_file', 5, 'path', false, false, false, 'the full path to the file containing the group list', '1.18', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_authenticated_locations', 'auth_user_file', 6, 'path', false, false, false, 'the full path to the file containing the user list', '1.18', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_authenticated_locations', 'require', 7, 'string', false, false, false, 'the require directive parameter(s) for Apache', '1.18', null;
 commit;
 begin;
 \echo httpd_site_binds
@@ -1615,6 +1630,8 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'servers',
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'servers', 'last_backup_time', 8, 'time', true, false, false, 'the time the last backup was started', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'servers', 'operating_system_version', 9, 'fkey', false, false, false, 'the version of operating system running on the server', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'servers', 'asset_label', 10, 'string', true, false, false, 'the value contained on any asset label', '1.0a108', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'servers', 'minimum_power', 11, 'float', true, false, false, 'the minimum power consumption in amps', '1.16', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'servers', 'maximum_power', 12, 'float', true, false, false, 'the maximum power consumption in amps', '1.16', null;
 commit;
 begin;
 \echo service_levels

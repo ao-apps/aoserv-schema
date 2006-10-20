@@ -308,6 +308,10 @@ select add_schema_foreign_key('httpd_shared_tomcats', 'tomcat4_worker', 'httpd_w
 select add_schema_foreign_key('httpd_shared_tomcats', 'tomcat4_shutdown_port', 'net_binds', 'pkey', false, '1.0a100', null);
 commit;
 begin;
+\echo httpd_site_authenticated_locations
+select add_schema_foreign_key('httpd_site_authenticated_locations', 'httpd_site', 'httpd_sites', 'pkey', false, '1.18', null);
+commit;
+begin;
 \echo httpd_site_binds
 select add_schema_foreign_key('httpd_site_binds', 'httpd_site', 'httpd_sites', 'pkey', false, '1.0a100', null);
 select add_schema_foreign_key('httpd_site_binds', 'httpd_bind', 'httpd_binds', 'net_bind', true, '1.0a100', null);

@@ -9,7 +9,8 @@ create table bank_transactions (
     default nextval('bank_transactions_transid_seq')
     constraint bank_transactions_pkey primary key,
   bank_account text
-    not null,
+    not null
+    default 'southtrust',
   merchant_account text,
   administrator text
     not null

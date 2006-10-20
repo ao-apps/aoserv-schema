@@ -1,55 +1,13 @@
-insert into
-    postgres_versions
-select
-    pkey,
-    '7.1'
-from
-    technology_versions
-where
-    name='postgresql'
-    and version like '7.1.%'
-;
-insert into
-    postgres_versions
-select
-    pkey,
-    '7.2'
-from
-    technology_versions
-where
-    name='postgresql'
-    and version like '7.2.%'
-;
-insert into
-    postgres_versions
-select
-    pkey,
-    '7.3'
-from
-    technology_versions
-where
-    name='postgresql'
-    and version like '7.3.%'
-;
-insert into
-    postgres_versions
-select
-    pkey,
-    '8.0'
-from
-    technology_versions
-where
-    name='postgresql'
-    and version like '8.0.%'
-;
-insert into
-    postgres_versions
-select
-    pkey,
-    '8.1'
-from
-    technology_versions
-where
-    name='postgresql'
-    and version like '8.1.%'
-;
+begin;
+insert into postgres_versions values(2345, '7.1');
+insert into postgres_versions values(2346, '7.2');
+insert into postgres_versions values(2476, '7.3');
+insert into postgres_versions values(2542, '8.0');
+insert into postgres_versions values(2585, '8.1');
+insert into postgres_versions values(14, '7.1');
+insert into postgres_versions values(15, '7.2');
+insert into postgres_versions values(16, '7.3');
+insert into postgres_versions values(17, '8.0');
+insert into postgres_versions values(18, '8.1');
+insert into postgres_versions values(2586, '8.1');
+commit;

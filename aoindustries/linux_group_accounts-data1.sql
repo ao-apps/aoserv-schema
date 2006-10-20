@@ -58,3 +58,4 @@ COPY linux_group_accounts (pkey, group_name, username, is_primary) FROM stdin;
 56	nogroup	nobody	t
 7188	awstats	awstats	t
 \.
+SELECT setval ('"linux_group_accounts_pkey_seq"', 7188, true);

@@ -320,4 +320,31 @@ insert into aoserv_protocols values(
   '2006-07-20',
   'added ao_servers.retention'
 );
+insert into aoserv_protocols values(
+  '1.14',
+  '2006-07-26',
+  'added failover_file_replications.connect_address'
+);
+insert into aoserv_protocols values(
+  '1.15',
+  '2006-09-20',
+  'added failover_file_replications.enabled'
+);
+insert into aoserv_protocols values(
+  '1.16',
+  '2006-09-27',
+  'added servers.minimum_power
+added servers.maximum_power'
+);
+insert into aoserv_protocols values(
+  '1.17',
+  '2006-10-09',
+  'added failover_file_replications.to_path
+added failover_file_replications.chunk_always'
+);
+insert into aoserv_protocols values(
+  '1.18',
+  '2006-10-11',
+  'added httpd_site_authenticated_locations table'
+);
 commit;

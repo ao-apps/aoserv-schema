@@ -1,48 +1,9 @@
-insert into
-    httpd_tomcat_versions
-select
-    pkey,
-    '/usr/apache/jakarta/tomcat/3.1',
-    false
-from
-    technology_versions
-where
-    name='jakarta-tomcat'
-    and version='3.1.'
-;
-insert into
-    httpd_tomcat_versions
-select
-    pkey,
-    '/usr/apache/jakarta/tomcat/3.2',
-    false
-from
-    technology_versions
-where
-    name='jakarta-tomcat'
-    and version='3.2.4'
-;
-insert into
-    httpd_tomcat_versions
-select
-    pkey,
-    '/usr/apache/jakarta/tomcat/4.1',
-    true
-from
-    technology_versions
-where
-    name='jakarta-tomcat'
-    and version='4.1.31'
-;
-insert into
-    httpd_tomcat_versions
-select
-    pkey,
-    '/usr/apache/jakarta/tomcat/5.5',
-    true
-from
-    technology_versions
-where
-    name='jakarta-tomcat'
-    and version like '5.5.%'
-;
+insert into httpd_tomcat_versions values(1941, '/usr/apache/jakarta/tomcat/3.1', false);
+insert into httpd_tomcat_versions values(1944, '/usr/apache/jakarta/tomcat/3.2', false);
+insert into httpd_tomcat_versions values(2525, '/usr/apache/jakarta/tomcat/4.1', true);
+insert into httpd_tomcat_versions values(2583, '/usr/apache/jakarta/tomcat/5.5', true);
+insert into httpd_tomcat_versions values(3232, '/usr/apache/jakarta/tomcat/3.1', false);
+insert into httpd_tomcat_versions values(3233, '/usr/apache/jakarta/tomcat/3.2', false);
+insert into httpd_tomcat_versions values(3234, '/usr/apache/jakarta/tomcat/4.1', true);
+insert into httpd_tomcat_versions values(3235, '/usr/apache/jakarta/tomcat/5.5', true);
+insert into httpd_tomcat_versions values(3228, '/opt/apache-tomcat-5.5', true);

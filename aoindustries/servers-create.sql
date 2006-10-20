@@ -24,7 +24,9 @@ create table servers (
   last_backup_time timestamp,
   operating_system_version integer
     not null,
-  asset_label text
+  asset_label text,
+  minimum_power float4,
+  maximum_power float4
 );
 grant all on servers to aoadmin;
 grant select, insert, update on servers to aoserv_app;

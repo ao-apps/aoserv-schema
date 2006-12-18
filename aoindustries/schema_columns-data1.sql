@@ -730,6 +730,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sit
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'disable_log', 7, 'fkey', true, false, false, 'indicates that this bind is disabled', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'predisable_config', 8, 'string', true, false, false, 'the config file before the site was disabled', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'is_manual', 9, 'boolean', false, false, false, 'the config file is manually maintained', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'redirect_to_primary_hostname', 10, 'boolean', false, false, false, 'tells that system to redirect any request that is not to either the IP address or the primary hostname to the primary hostname, while leaving the request path intact', '1.19', null;
 commit;
 begin;
 \echo httpd_site_urls

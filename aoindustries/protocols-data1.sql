@@ -55,3 +55,4 @@ talk	517	talk	f	udp
 ntalk	518	ntalk	f	udp
 milter	12000	Sendmail Milter	f	tcp
 \.
+insert into protocols values('SMTPS', '465', 'SMTP over SSL', true, 'tcp');

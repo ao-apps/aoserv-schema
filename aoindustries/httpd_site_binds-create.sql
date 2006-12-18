@@ -20,6 +20,9 @@ create table httpd_site_binds (
   predisable_config text,
   is_manual bool
     not null,
+  redirect_to_primary_hostname bool
+    not null
+    default false,
   unique(httpd_site, httpd_bind)
 );
 grant all on httpd_site_binds to aoadmin;

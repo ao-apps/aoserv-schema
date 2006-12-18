@@ -1088,6 +1088,14 @@ insert into aosh_commands values(
   null
 );
 insert into aosh_commands values(
+  'set_httpd_site_bind_redirect_to_primary_hostname',
+  'httpd_site_binds',
+  'sets the redirect_to_primary_hostname flag for one network port of a web site',
+  '<i>pkey</i> <i>redirect_to_primary_hostname</i>',
+  '1.19',
+  null
+);
+insert into aosh_commands values(
   'add_httpd_site_url',
   'httpd_site_urls',
   'adds a hostname to a web site',

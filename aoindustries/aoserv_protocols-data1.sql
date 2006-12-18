@@ -347,4 +347,9 @@ insert into aoserv_protocols values(
   '2006-10-11',
   'added httpd_site_authenticated_locations table'
 );
+insert into aoserv_protocols values(
+  '1.19',
+  '2006-11-27',
+  'added httpd_site_binds.redirect_to_primary_hostname'
+);
 commit;

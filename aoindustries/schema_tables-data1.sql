@@ -2098,4 +2098,15 @@ person or system.',
     null,
     'username'
 );
+insert into schema_tables values(
+    'whois_history',
+    (select count(*) from schema_tables),
+    'Whois History',
+    false,
+    'The output from whois lookups are logged weekly to keep track of when customers begin and end using the systems.',
+    null,
+    '1.20',
+    null,
+    'accounting,zone,time'
+);
 commit;

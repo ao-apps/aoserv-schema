@@ -352,4 +352,9 @@ insert into aoserv_protocols values(
   '2006-11-27',
   'added httpd_site_binds.redirect_to_primary_hostname'
 );
+insert into aoserv_protocols values(
+  '1.20',
+  '2007-02-04',
+  'added whois_history table'
+);
 commit;

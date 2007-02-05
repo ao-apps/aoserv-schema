@@ -16,7 +16,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'actions',
 commit;
 begin;
 \echo ao_server_daemon_hosts
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_server_daemon_hosts', 'pkey', 0, 'int', false, true, false, 'a generated unique primary key', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_server_daemon_hosts', 'pkey', 0, 'pkey', false, true, false, 'a generated unique primary key', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_server_daemon_hosts', 'ao_server', 1, 'fkey', false, false, false, 'the pkey of the ao_server', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_server_daemon_hosts', 'host', 2, 'ip_address', false, false, false, 'the hostname or IP address that is allowed to connect', '1.0a100', null;
 commit;
@@ -463,7 +463,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_bla
 commit;
 begin;
 \echo email_domains
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_domains', 'pkey', 0, 'int', false, true, false, 'a generated unique key', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_domains', 'pkey', 0, 'pkey', false, true, false, 'a generated unique key', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_domains', 'domain', 1, 'hostname', false, false, false, 'the domain that is hosted in the email', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_domains', 'ao_server', 2, 'fkey', false, false, false, 'the pkey of the server that is hosting the email', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_domains', 'package', 3, 'package', false, false, false, 'the owner of the domain', '1.0a100', null;
@@ -2332,4 +2332,12 @@ begin;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'usernames', 'username', 0, 'username', false, true, false, 'the unique username', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'usernames', 'package', 1, 'package', false, false, false, 'the package name that this user is part of', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'usernames', 'disable_log', 2, 'fkey', true, false, false, 'indicates that the username is disabled', '1.0a100', null;
+commit;
+begin;
+\echo whois_history
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'whois_history', 'pkey', 0, 'pkey', false, true, false, 'a unique, generated identifier', '1.20', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'whois_history', 'time', 1, 'time', false, false, false, 'the time the whois query was performed', '1.20', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'whois_history', 'accounting', 2, 'accounting', false, false, false, 'the identifier for the business (see businesses)', '1.20', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'whois_history', 'zone', 3, 'zone', false, false, false, 'the top level domain (zone) that was queried', '1.20', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'whois_history', 'whois_output', 4, 'string', false, false, false, 'the output from the whois lookup', '1.20', null;
 commit;

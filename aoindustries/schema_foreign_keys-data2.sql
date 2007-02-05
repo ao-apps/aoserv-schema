@@ -852,6 +852,10 @@ begin;
 select add_schema_foreign_key('usernames', 'package', 'packages', 'name', true, '1.0a100', null);
 select add_schema_foreign_key('usernames', 'disable_log', 'disable_log', 'pkey', false, '1.0a100', null);
 commit;
+begin;
+\echo whois_history
+select add_schema_foreign_key('whois_history', 'accounting', 'businesses', 'accounting', true, '1.20', null);
+commit;
 
 drop function add_schema_foreign_key (text,text,text,text,bool,text,text);
 drop function get_schema_column (text,text,text,text);

@@ -163,7 +163,7 @@ values(
     'aoweb',
     1,
     17,
-    (select pkey from postgres_encodings where encoding='SQL_ASCII' and postgres_version=(select version from postgres_versions where minor_version='8.1')),
+    (select pkey from postgres_encodings where encoding='UTF8' and postgres_version=(select version from postgres_versions where minor_version='8.1')),
     false,
     true,
     2,

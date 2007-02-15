@@ -357,4 +357,10 @@ insert into aoserv_protocols values(
   '2007-02-04',
   'added whois_history table'
 );
+insert into aoserv_protocols values(
+  '1.21',
+  '2007-02-12',
+  'added business_administrator_permissions table
+added aoserv_permissions table'
+);
 commit;

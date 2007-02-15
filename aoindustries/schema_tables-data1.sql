@@ -45,6 +45,17 @@ running the AOServ distribution.',
     'server.hostname'
 );
 insert into schema_tables values(
+    'aoserv_permissions',
+    (select count(*) from schema_tables),
+    'AOServ Permissions',
+    true,
+    '<code>aoserv_permissions</code> lists all of the possible permissions in the AOServ system.',
+    null,
+    '1.21',
+    null,
+    'sort_order'
+);
+insert into schema_tables values(
     'aoserv_protocols',
     (select count(*) from schema_tables),
     'AOServ Protocols',
@@ -202,6 +213,17 @@ people who are allowed to access the aoserv and aoweb utilities.',
     '1.0a100',
     null,
     'username'
+);
+insert into schema_tables values(
+    'business_administrator_permissions',
+    (select count(*) from schema_tables),
+    'Business Administrator Permissions',
+    false,
+    'Grants administrative permissions.',
+    null,
+    '1.21',
+    null,
+    'username,permission.sort_order'
 );
 insert into schema_tables values(
     'business_profiles',

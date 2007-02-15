@@ -109,6 +109,11 @@ select add_schema_foreign_key('business_administrators', 'country', 'country_cod
 select add_schema_foreign_key('business_administrators', 'disable_log', 'disable_log', 'pkey', false, '1.0a100', null);
 commit;
 begin;
+\echo business_administrator_permissions
+select add_schema_foreign_key('business_administrator_permissions', 'username', 'business_administrators', 'username', true, '1.21', null);
+select add_schema_foreign_key('business_administrator_permissions', 'permission', 'aoserv_permissions', 'name', true, '1.21', null);
+commit;
+begin;
 \echo business_profiles
 select add_schema_foreign_key('business_profiles', 'accounting', 'businesses', 'accounting', true, '1.0a100', null);
 select add_schema_foreign_key('business_profiles', 'country', 'country_codes', 'code', false, '1.0a100', null);

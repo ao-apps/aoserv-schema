@@ -73,6 +73,11 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_server
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'failover_batch_size', 34, 'int', false, false, false, 'the batch size used for failover replications coming from this server', '1.12', null;
 commit;
 begin;
+\echo aoserv_permissions
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'aoserv_permissions', 'name', 0, 'string', false, true, true, 'the unique name of the permission', '1.21', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'aoserv_permissions', 'sort_order', 1, 'short', false, true, true, 'the sort order for the permission', '1.21', null;
+commit;
+begin;
 \echo aoserv_protocols
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'aoserv_protocols', 'version', 0, 'string', false, true, true, 'the unique version number', '1.0a101', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'aoserv_protocols', 'created', 1, 'date', false, false, true, 'the time the version was added', '1.0a101', null;
@@ -197,6 +202,12 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'zip', 18, 'zip', true, false, false, 'the zip code (if different than business)', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'disable_log', 19, 'fkey', true, false, false, 'indicates that this account is disabled', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'can_switch_users', 20, 'boolean', false, false, false, 'allows this person to switch users to any subaccounts', '1.0a118', null;
+commit;
+begin;
+\echo business_administrator_permissions
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrator_permissions', 'pkey', 0, 'pkey', false, true, false, 'a generated primary key', '1.21', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrator_permissions', 'username', 1, 'username', false, false, false, 'the username of the administrator with this permission', '1.21', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrator_permissions', 'permission', 2, 'string', false, false, false, 'the name of the permission that has been granted', '1.21', null;
 commit;
 begin;
 \echo business_profiles

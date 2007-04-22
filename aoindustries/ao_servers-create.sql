@@ -4,22 +4,22 @@ create table ao_servers (
   num_cpu integer
     not null
     constraint num_cpu_chk
-      check (num_cpu>=1),
+      check (num_cpu>=0),
   cpu_speed integer
     not null
     constraint cpu_speed_chk
-      check (cpu_speed>=1),
+      check (cpu_speed>=0),
   ram integer
     not null
     constraint ram_chk
-      check (ram>=1),
+      check (ram>=0),
   rack integer
     constraint rack_chk
       check (rack is null or rack>=1),
   disk integer
     not null
     constraint disk_chk
-      check (disk>=1),
+      check (disk>=0),
   wildcard_https text,
   is_interbase bool
     not null,

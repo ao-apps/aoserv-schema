@@ -363,4 +363,9 @@ insert into aoserv_protocols values(
   'added business_administrator_permissions table
 added aoserv_permissions table'
 );
+insert into aoserv_protocols values(
+  '1.22',
+  '2007-03-20',
+  'added failover_file_replications.connect_from'
+);
 commit;

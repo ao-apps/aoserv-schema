@@ -15,6 +15,7 @@ create table failover_file_replications (
   use_compression bool not null,
   retention smallint not null,
   connect_address text,
+  connect_from text,
   enabled bool not null,
   to_path text not null,
   chunk_always bool not null,

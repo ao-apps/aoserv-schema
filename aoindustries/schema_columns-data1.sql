@@ -565,9 +565,10 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'use_compression', 5, 'boolean', false, false, false, 'when compression is enabled, chunk mode is used on mirroring, resulting in more CPU and disk, but less bandwidth', '1.9', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'retention', 6, 'short', false, false, false, 'the number of days backups will be kept', '1.13', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'connect_address', 7, 'string', true, false, false, 'an address that overrides regular AOServ connections for failovers', '1.14', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'enabled', 8, 'boolean', false, false, false, 'the enabled flag for failovers', '1.15', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'to_path', 9, 'string', false, false, false, 'the destination path for the replication', '1.17', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'chunk_always', 10, 'boolean', false, false, false, 'when true chunking will always be performed (mtime+length will not be considered a sufficient match)', '1.17', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'connect_from', 8, 'string', true, false, false, 'an address that overrides regular AOServ connection source addresses for failovers', '1.22', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'enabled', 9, 'boolean', false, false, false, 'the enabled flag for failovers', '1.15', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'to_path', 10, 'string', false, false, false, 'the destination path for the replication', '1.17', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'chunk_always', 11, 'boolean', false, false, false, 'when true chunking will always be performed (mtime+length will not be considered a sufficient match)', '1.17', null;
 commit;
 begin;
 \echo failover_file_schedule

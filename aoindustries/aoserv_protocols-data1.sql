@@ -368,4 +368,30 @@ insert into aoserv_protocols values(
   '2007-03-20',
   'added failover_file_replications.connect_from'
 );
+insert into aoserv_protocols values(
+  '1.23',
+  '2007-05-01',
+  'added encryption_keys table
+added signup_request_options table
+added signup_requests table'
+);
+insert into aoserv_protocols values(
+  '1.24',
+  '2007-05-13',
+  'added packages.email_in_burst
+added packages.email_in_rate
+added packages.email_out_burst
+added packages.email_out_rate
+added packages.email_relay_burst
+added packages.email_relay_rate'
+);
+insert into aoserv_protocols values(
+  '1.25',
+  '2007-05-15',
+  'changed encryption_keys.recipient to encryption_keys.id
+changed encryption_keys.use_signup_requests to encryption_keys.signup_signer
+added encryption_keys.signup_recipient
+changed encryption_keys.use_credit_cards to encryption_keys.credit_card_signer
+added encryption_keys.credit_card_recipient'
+);
 commit;

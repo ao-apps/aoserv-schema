@@ -217,6 +217,10 @@ select add_schema_foreign_key('email_smtp_relays', 'type', 'email_smtp_relay_typ
 select add_schema_foreign_key('email_smtp_relays', 'disable_log', 'disable_log', 'pkey', false, '1.0a100', null);
 commit;
 begin;
+\echo encryption_keys
+select add_schema_foreign_key('encryption_keys', 'accounting', 'businesses', 'accounting', false, '1.23', null);
+commit;
+begin;
 \echo failover_file_log
 select add_schema_foreign_key('failover_file_log', 'replication', 'failover_file_replications', 'pkey', false, '1.0a100', null);
 commit;
@@ -731,6 +735,19 @@ commit;
 begin;
 \echo service_levels
 select add_schema_foreign_key('service_levels', 'name', 'rates', 'name', true, '1.0a100', '1.0a122');
+commit;
+begin;
+\echo signup_request_options
+select add_schema_foreign_key('signup_request_options', 'request', 'signup_requests', 'pkey', true, '1.23', null);
+commit;
+begin;
+\echo signup_requests
+select add_schema_foreign_key('signup_requests', 'accounting', 'businesses', 'accounting', true, '1.23', null);
+select add_schema_foreign_key('signup_requests', 'package_definition', 'package_definitions', 'pkey', true, '1.23', null);
+select add_schema_foreign_key('signup_requests', 'business_country', 'country_codes', 'code', true, '1.23', null);
+select add_schema_foreign_key('signup_requests', 'ba_country', 'country_codes', 'code', true, '1.23', null);
+select add_schema_foreign_key('signup_requests', 'encryption_key', 'encryption_keys', 'pkey', true, '1.23', null);
+select add_schema_foreign_key('signup_requests', 'completed_by', 'business_administrators', 'username', true, '1.23', null);
 commit;
 begin;
 \echo spam_email_messages

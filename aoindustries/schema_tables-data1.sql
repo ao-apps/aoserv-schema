@@ -541,6 +541,17 @@ insert into schema_tables values(
     'sort_order'
 );
 insert into schema_tables values(
+    'encryption_keys',
+    (select count(*) from schema_tables),
+    'Encryption Keys',
+    false,
+    'The encryption_keys table stores the list of GPG key ids on a per-business basis.',
+    null,
+    '1.23',
+    null,
+    'accounting,recipient'
+);
+insert into schema_tables values(
     'expense_categories',
     (select count(*) from schema_tables),
     'Expense Categories',
@@ -1727,7 +1738,16 @@ insert into schema_tables values(
     null,
     'hostname'
 );
-insert into schema_tables values('service_levels', (select count(*) from schema_tables), 'Service Levels', true, '', null, '1.0a100', '1.0a122');
+insert into schema_tables values(
+    'service_levels',
+    (select count(*) from schema_tables),
+    'Service Levels',
+    true,
+    '',
+    null,
+    '1.0a100',
+    '1.0a122'
+);
 insert into schema_tables values(
     'shells',
     (select count(*) from schema_tables),
@@ -1738,6 +1758,28 @@ insert into schema_tables values(
     '1.0a100',
     null,
     'path'
+);
+insert into schema_tables values(
+    'signup_request_options',
+    (select count(*) from schema_tables),
+    'Sign-Up Request Options',
+    false,
+    'The options for each specific sign-up type.',
+    null,
+    '1.23',
+    null,
+    'request.accounting,request.time,name'
+);
+insert into schema_tables values(
+    'signup_requests',
+    (select count(*) from schema_tables),
+    'Sign-Up Requests',
+    false,
+    'One sign-up request for any time of service.',
+    null,
+    '1.23',
+    null,
+    'accounting,time'
 );
 insert into schema_tables values(
     'spam_email_messages',

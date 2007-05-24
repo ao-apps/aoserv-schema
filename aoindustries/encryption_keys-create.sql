@@ -10,9 +10,13 @@ create table encryption_keys (
     not null,
   id text
     not null,
-  use_signup_requests bool
+  signup_signer bool
     not null,
-  use_credit_cards bool
+  signup_recipient bool
+    not null,
+  credit_card_signer bool
+    not null,
+  credit_card_recipient bool
     not null
 );
 grant all on encryption_keys to aoadmin;

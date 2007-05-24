@@ -549,7 +549,7 @@ insert into schema_tables values(
     null,
     '1.23',
     null,
-    'accounting,recipient'
+    'accounting,id'
 );
 insert into schema_tables values(
     'expense_categories',

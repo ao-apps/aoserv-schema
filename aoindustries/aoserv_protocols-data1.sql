@@ -394,4 +394,9 @@ added encryption_keys.signup_recipient
 changed encryption_keys.use_credit_cards to encryption_keys.credit_card_signer
 added encryption_keys.credit_card_recipient'
 );
+insert into aoserv_protocols values(
+  '1.26',
+  '2007-05-24',
+  'added server_farms.use_restricted_smtp_port'
+);
 commit;

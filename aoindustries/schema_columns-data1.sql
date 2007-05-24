@@ -545,8 +545,12 @@ begin;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'encryption_keys', 'pkey', 0, 'pkey', false, true, false, 'a generated unique id', '1.23', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'encryption_keys', 'accounting', 1, 'accounting', false, false, false, 'the accounting code of the business that owns this key', '1.23', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'encryption_keys', 'id', 2, 'string', false, false, false, 'the id of the recipient who may decrypt the message', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'encryption_keys', 'use_signup_requests', 3, 'boolean', false, false, false, 'if true, this key may be used for encrypting signup request data (including credit card details)', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'encryption_keys', 'use_credit_cards', 4, 'boolean', false, false, false, 'if true, this key may be used for encrypting credit cards in the credit_cards table', '1.23', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'encryption_keys', 'use_signup_requests', 3, 'boolean', false, false, false, 'if true, this key may be used for encrypting signup request data (including credit card details)', '1.23', '1.24';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'encryption_keys', 'signup_signer', 4, 'boolean', false, false, false, 'if true, this key may be used for signing signup request data (including credit card details)', '1.25', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'encryption_keys', 'signup_recipient', 5, 'boolean', false, false, false, 'if true, this key may be used for encrypting signup request data (including credit card details)', '1.25', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'encryption_keys', 'use_credit_cards', 6, 'boolean', false, false, false, 'if true, this key may be used for encrypting credit cards in the credit_cards table', '1.23', '1.24';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'encryption_keys', 'credit_card_signer', 7, 'boolean', false, false, false, 'if true, this key may be used for signing credit cards in the credit_cards table', '1.25', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'encryption_keys', 'credit_card_recipient', 8, 'boolean', false, false, false, 'if true, this key may be used for encrypting credit cards in the credit_cards table', '1.25', null;
 commit;
 begin;
 \echo expense_categories
@@ -1635,6 +1639,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'server_fa
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'server_farms', 'allow_same_server_backup', 3, 'boolean', false, false, false, 'allows backup files to be stored on the same server as the source files', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'server_farms', 'backup_farm', 4, 'string', false, false, false, 'the farm that handles backup for this farm', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'server_farms', 'owner', 5, 'fkey', false, false, false, 'the package that owns of the farm', '1.0a102', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'server_farms', 'use_restricted_smtp_port', 6, 'boolean', false, false, false, 'outgoing servers should use restricted source ports (affects firewall rules)', '1.26', null;
 commit;
 begin;
 \echo server_reports

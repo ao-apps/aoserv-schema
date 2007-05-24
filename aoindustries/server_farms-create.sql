@@ -10,6 +10,8 @@ create table server_farms (
   backup_farm text
     not null,
   owner integer
+    not null,
+  use_restricted_smtp_port bool
     not null
 );
 grant all on server_farms to aoadmin;

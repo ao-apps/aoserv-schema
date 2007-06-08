@@ -1487,6 +1487,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_databases', 'allow_conn', 6, 'boolean', false, false, false, 'if true, this database is accepting connections', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_databases', 'backup_level', 7, 'short', false, false, false, 'the number of backup copies to keep', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_databases', 'backup_retention', 8, 'short', false, false, false, 'the number of days backups will be kept', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_databases', 'enable_postgis', 9, 'boolean', false, false, true, 'indicates PostGIS is enabled on this database', '1.27', null;
 commit;
 begin;
 \echo postgres_encodings
@@ -1531,9 +1532,10 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_
 commit;
 begin;
 \echo postgres_versions
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_versions', 'version', 0, 'fkey', false, true, true, 'a reference to the tomcat details in the <code>technology_versions</code> table', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_versions', 'version', 0, 'fkey', false, true, true, 'a reference to the PostgreSQL details in the <code>technology_versions</code> table', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_versions', 'default_port', 1, 'int', false, true, true, '', '1.0a100', '1.0a109';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_versions', 'minor_version', 2, 'string', false, false, true, 'the minor version for this version (used for installation at /usr/postgresql/<minor_version>', '1.0a121', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_versions', 'postgis_version', 3, 'fkey', true, false, true, 'a reference to the PostGIS defails in the <code>technology_versions</code> table', '1.27', null;
 commit;
 begin;
 \echo private_ftp_servers

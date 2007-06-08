@@ -399,4 +399,10 @@ insert into aoserv_protocols values(
   '2007-05-24',
   'added server_farms.use_restricted_smtp_port'
 );
+insert into aoserv_protocols values(
+  '1.27',
+  '2007-06-08',
+  'added postgres_versions.postgis_version
+added postgres_databases.enable_postgis'
+);
 commit;

@@ -2653,6 +2653,14 @@ insert into aosh_commands values(
   'adds a new PostgreSQL database',
   '<i>database_name</i> <i>postgres_server</i> <i>ao_server</i> <i>datdba</i> <i>encoding</i>',
   '1.0a100',
+  '1.26'
+);
+insert into aosh_commands values(
+  'add_postgres_database',
+  'postgres_databases',
+  'adds a new PostgreSQL database',
+  '<i>database_name</i> <i>postgres_server</i> <i>ao_server</i> <i>datdba</i> <i>encoding</i> <i>enable_postgis</i>',
+  '1.27',
   null
 );
 insert into aosh_commands values(

@@ -22,6 +22,8 @@ create table postgres_databases (
     not null,
   backup_retention smallint
     not null,
+  enable_postgis bool
+    not null,
   unique (name, postgres_server)
 );
 grant all on postgres_databases to aoadmin;

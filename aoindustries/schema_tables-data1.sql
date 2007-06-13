@@ -596,6 +596,17 @@ insert into schema_tables values(
     'replication.from_server.server.hostname,replication.to_server.server.hostname,hour'
 );
 insert into schema_tables values(
+    'failover_mysql_replications',
+    (select count(*) from schema_tables),
+    'Failover MySQL Replications',
+    false,
+    'The failover_mysql_replications indicates a failover replication is using MySQL replication for /var/lib/mysql/... instead of file-based replication.',
+    null,
+    '1.28',
+    null,
+    'mysql_server.name,mysql_server.ao_server.server.hostname,replication.to_server.server.hostname'
+);
+insert into schema_tables values(
     'file_backups',
     (select count(*) from schema_tables),
     'File Backups',

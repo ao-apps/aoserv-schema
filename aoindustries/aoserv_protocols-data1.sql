@@ -405,4 +405,10 @@ insert into aoserv_protocols values(
   'added postgres_versions.postgis_version
 added postgres_databases.enable_postgis'
 );
+insert into aoserv_protocols values(
+  '1.28',
+  '2007-06-12',
+  'added failover_mysql_replications table
+added mysql_servers.package'
+);
 commit;

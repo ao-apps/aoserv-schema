@@ -17,6 +17,8 @@ create table mysql_servers (
   net_bind integer
     not null
     unique,
+  package text
+    not null,
   unique (ao_server, name)
 );
 grant all on mysql_servers to aoadmin;

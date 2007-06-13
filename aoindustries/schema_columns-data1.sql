@@ -590,6 +590,12 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_schedule', 'enabled', 3, 'boolean', false, false, false, '', '1.0a100', null;
 commit;
 begin;
+\echo failover_mysql_replications
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_mysql_replications', 'pkey', 0, 'pkey', false, true, false, 'a generated, unique id', '1.28', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_mysql_replications', 'replication', 1, 'fkey', false, false, false, 'the replication that was performed', '1.28', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_mysql_replications', 'mysql_server', 2, 'fkey', false, false, false, 'the MySQL Server that is being replicated', '1.28', null;
+commit;
+begin;
 \echo file_backups
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'file_backups', 'pkey', 0, 'pkey', false, true, false, 'a generated primary key', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'file_backups', 'server', 1, 'fkey', false, false, false, 'the server that the file resides on', '1.0a100', null;
@@ -1253,6 +1259,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_ser
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'version', 3, 'fkey', false, false, false, 'the pkey of the MySQL version', '1.4', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'max_connections', 4, 'int', false, false, false, 'the maximum number of connections for the db', '1.4', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'net_bind', 5, 'fkey', false, true, false, 'the port the servers binds to', '1.4', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'package', 6, 'string', false, false, false, 'the package who owns the instance', '1.28', null;
 commit;
 begin;
 \echo mysql_users

@@ -235,6 +235,11 @@ begin;
 select add_schema_foreign_key('failover_file_schedule', 'replication', 'failover_file_replications', 'pkey', false, '1.0a100', null);
 commit;
 begin;
+\echo failover_mysql_replications
+select add_schema_foreign_key('failover_mysql_replications', 'replication', 'failover_file_replications', 'pkey', false, '1.28', null);
+select add_schema_foreign_key('failover_mysql_replications', 'mysql_server', 'mysql_servers', 'pkey', false, '1.28', null);
+commit;
+begin;
 \echo file_backups
 select add_schema_foreign_key('file_backups', 'server', 'servers', 'pkey', false, '1.0a100', null);
 select add_schema_foreign_key('file_backups', 'device', 'file_backup_devices', 'pkey', false, '1.0a100', '1.0a106');
@@ -567,6 +572,7 @@ begin;
 select add_schema_foreign_key('mysql_servers', 'ao_server', 'ao_servers', 'server', true, '1.4', null);
 select add_schema_foreign_key('mysql_servers', 'version', 'technology_versions', 'pkey', true, '1.4', null);
 select add_schema_foreign_key('mysql_servers', 'net_bind', 'net_binds', 'pkey', false, '1.4', null);
+select add_schema_foreign_key('mysql_servers', 'package', 'packages', 'name', true, '1.28', null);
 commit;
 begin;
 \echo mysql_users

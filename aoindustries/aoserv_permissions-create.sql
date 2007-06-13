@@ -4,26 +4,3 @@ create table aoserv_permissions (
 );
 grant all on aoserv_permissions to aoadmin;
 grant select on aoserv_permissions to aoserv_app;
-
-begin;
-insert into aoserv_permissions values(
-    'set_business_administrator_password',
-    (select count(*) from aoserv_permissions)
-);
-insert into aoserv_permissions values(
-    'set_interbase_server_user_password',
-    (select count(*) from aoserv_permissions)
-);
-insert into aoserv_permissions values(
-    'set_linux_server_account_password',
-    (select count(*) from aoserv_permissions)
-);
-insert into aoserv_permissions values(
-    'set_mysql_server_user_password',
-    (select count(*) from aoserv_permissions)
-);
-insert into aoserv_permissions values(
-    'set_postgres_server_user_password',
-    (select count(*) from aoserv_permissions)
-);
-commit;

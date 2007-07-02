@@ -129,8 +129,14 @@ select add_schema_foreign_key('business_servers', 'accounting', 'businesses', 'a
 select add_schema_foreign_key('business_servers', 'server', 'servers', 'pkey', true, '1.0a100', null);
 commit;
 begin;
+\echo credit_card_processors
+select add_schema_foreign_key('credit_card_processors', 'accounting', 'businesses', 'accounting', true, '1.29', null);
+commit;
+begin;
 \echo credit_cards
 select add_schema_foreign_key('credit_cards', 'accounting', 'businesses', 'accounting', true, '1.0a100', null);
+select add_schema_foreign_key('credit_cards', 'provider_id', 'credit_card_processors', 'provider_id', true, '1.29', null);
+select add_schema_foreign_key('credit_cards', 'country_code', 'country_codes', 'code', false, '1.29', null);
 select add_schema_foreign_key('credit_cards', 'created_by', 'business_administrators', 'username', false, '1.0a100', null);
 commit;
 begin;

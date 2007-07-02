@@ -286,6 +286,28 @@ insert into schema_tables values(
     'name'
 );
 insert into schema_tables values(
+    'credit_card_processors',
+    (select count(*) from schema_tables),
+    'Credit Card Processors',
+    false,
+    'The credit_card_processors table stores all of the different credit card processing merchant accounts.',
+    null,
+    '1.29',
+    null,
+    'accounting,provider_id'
+);
+insert into schema_tables values(
+    'credit_card_transactions',
+    (select count(*) from schema_tables),
+    'Credit Card Transactions',
+    false,
+    'The credit_card_transactions table stores the complete history of credit card processor transactions.',
+    null,
+    '1.29',
+    null,
+    'accounting,authorize_time,pkey'
+);
+insert into schema_tables values(
     'credit_cards',
     (select count(*) from schema_tables),
     'Credit Cards',
@@ -294,7 +316,7 @@ insert into schema_tables values(
     null,
     '1.0a100',
     null,
-    'accounting,priority'
+    'accounting,created'
 );
 insert into schema_tables values(
     'cvs_repositories',

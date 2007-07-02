@@ -17,7 +17,6 @@ create table dns_records (
     not null,
   dhcp_address integer,
   ttl integer,
-  unique(zone, domain, mx_priority),
   unique(zone, domain, type, destination)
 ) without oids;
 grant all on dns_records to aoadmin;

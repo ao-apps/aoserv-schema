@@ -509,7 +509,7 @@ insert into aosh_commands values(
   'adds a credit card to a business',
   '<i>business</i> <i>enc_card_number</i> <i>card_info</i> <i>enc_expiration_month</i> <i>enc_expiration_year</i> <i>enc_cardholder_name</i> <i>enc_street_address</i> <i>enc_city</i> {""|<i>enc_state</i>} {""|<i>enc_zip</i>} <i>use_monthly</i> {""|<i>description</i>}',
   '1.0a100',
-  null
+  '1.28'
 );
 insert into aosh_commands values(
   'decline_credit_card',

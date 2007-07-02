@@ -411,4 +411,11 @@ insert into aoserv_protocols values(
   'added failover_mysql_replications table
 added mysql_servers.package'
 );
+insert into aoserv_protocols values(
+  '1.29',
+  '2007-06-21',
+  'updated credit_cards table to support new ao-credit-cards package
+added credit_card_providers table to support new ao-credit-cards package
+added credit_card_transactions table to support new ao-credit-cards package'
+);
 commit;

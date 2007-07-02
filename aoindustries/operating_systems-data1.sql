@@ -1,4 +1,5 @@
 begin;
+insert into operating_systems values('centos', 'CentOS Linux', true);
 insert into operating_systems values('debian', 'Debian Linux', true);
 insert into operating_systems values('fedora', 'Fedora Linux', true);
 insert into operating_systems values('gentoo', 'Gentoo Linux', true);

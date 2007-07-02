@@ -8,38 +8,31 @@ create table credit_cards (
     constraint credit_cards_pkey primary key,
   accounting text
     not null,
-  card_number text
-    not null,
   card_info text
     not null,
-  expiration_month text
-    not null,
-  expiration_year text
-    not null,
-  cardholder_name text
-    not null,
-  street_address text
-    not null,
-  city text
-    not null,
+  provider_id text not null,
+  provider_unique_id text not null,
+  first_name text not null,
+  last_name text not null,
+  company_name text,
+  email text,
+  phone text,
+  fax text,
+  customer_tax_id text,
+  street_address1 text not null,
+  street_address2 text,
+  city text not null,
   state text,
-  zip text,
-  created timestamp
-    not null,
-  created_by text
-    not null,
-  use_monthly bool
-    not null,
-  active bool
-    not null
-    default 'true',
+  postal_code text,
+  country_code text not null,
+  created timestamp not null,
+  created_by text not null,
+  use_monthly bool not null,
+  active bool not null default 'true',
   deactivated_on timestamp,
   deactivate_reason text,
-  priority integer
-    not null
-    default 1,
   description text,
-  unique(accounting, priority)
+  unique(provider_id, provider_unique_id)
 );
 grant all on credit_cards to aoadmin;
 grant select, insert, update, delete on credit_cards to aoserv_app;

@@ -20,7 +20,7 @@ insert into aoserv_permissions values(
     (select count(*) from aoserv_permissions)
 );
 insert into aoserv_permissions values(
-    'edit_card_card',
+    'edit_credit_card',
     (select count(*) from aoserv_permissions)
 );
 insert into aoserv_permissions values(

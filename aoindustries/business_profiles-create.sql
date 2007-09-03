@@ -42,7 +42,8 @@ create table business_profiles (
   technical_contact text
     not null,
   technical_email text
-    not null
+    not null,
+  unique(accounting, priority)
 );
 grant all on business_profiles to aoadmin;
 grant select, insert, update on business_profiles to aoserv_app;

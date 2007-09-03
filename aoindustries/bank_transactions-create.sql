@@ -11,7 +11,7 @@ create table bank_transactions (
   bank_account text
     not null
     default 'southtrust',
-  merchant_account text,
+  processor text,
   administrator text
     not null
     default 'orion',

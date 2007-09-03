@@ -93,7 +93,8 @@ commit;
 begin;
 \echo bank_transactions
 select add_schema_foreign_key('bank_transactions', 'bank_account', 'bank_accounts', 'name', false, '1.0a100', null);
-select add_schema_foreign_key('bank_transactions', 'merchant_account', 'merchant_accounts', 'name', false, '1.0a100', null);
+select add_schema_foreign_key('bank_transactions', 'merchant_account', 'merchant_accounts', 'name', false, '1.0a100', '1.28');
+select add_schema_foreign_key('bank_transactions', 'processor', 'credit_card_processors', 'provider_id', false, '1.29', null);
 select add_schema_foreign_key('bank_transactions', 'administrator', 'master_users', 'username', false, '1.0a100', null);
 select add_schema_foreign_key('bank_transactions', 'type', 'bank_transaction_types', 'type', false, '1.0a100', null);
 select add_schema_foreign_key('bank_transactions', 'expense_code', 'expense_categories', 'expense_code', false, '1.0a100', null);
@@ -135,7 +136,7 @@ commit;
 begin;
 \echo credit_cards
 select add_schema_foreign_key('credit_cards', 'accounting', 'businesses', 'accounting', true, '1.0a100', null);
-select add_schema_foreign_key('credit_cards', 'provider_id', 'credit_card_processors', 'provider_id', true, '1.29', null);
+select add_schema_foreign_key('credit_cards', 'processor_id', 'credit_card_processors', 'provider_id', true, '1.29', null);
 select add_schema_foreign_key('credit_cards', 'country_code', 'country_codes', 'code', false, '1.29', null);
 select add_schema_foreign_key('credit_cards', 'created_by', 'business_administrators', 'username', false, '1.0a100', null);
 commit;
@@ -400,7 +401,7 @@ select add_schema_foreign_key('httpd_workers', 'tomcat_site', 'httpd_tomcat_site
 commit;
 begin;
 \echo incoming_payments
-select add_schema_foreign_key('incoming_payments', 'transid', 'transactions', 'transid', true, '1.0a100', null);
+select add_schema_foreign_key('incoming_payments', 'transid', 'transactions', 'transid', true, '1.0a100', '1.28');
 commit;
 begin;
 \echo interbase_backups
@@ -530,7 +531,7 @@ select add_schema_foreign_key('master_users', 'username', 'business_administrato
 commit;
 begin;
 \echo merchant_accounts
-select add_schema_foreign_key('merchant_accounts', 'bank_account', 'bank_accounts', 'name', false, '1.0a100', null);
+select add_schema_foreign_key('merchant_accounts', 'bank_account', 'bank_accounts', 'name', false, '1.0a100', '1.28');
 commit;
 begin;
 \echo monthly_charges
@@ -880,7 +881,9 @@ select add_schema_foreign_key('transactions', 'username', 'business_administrato
 select add_schema_foreign_key('transactions', 'type', 'rates', 'name', false, '1.0a100', '1.0a122');
 select add_schema_foreign_key('transactions', 'type', 'transaction_types', 'name', false, '1.0a123', null);
 select add_schema_foreign_key('transactions', 'payment_type', 'payment_types', 'name', false, '1.0a100', null);
-select add_schema_foreign_key('transactions', 'merchant_account', 'merchant_accounts', 'name', false, '1.0a100', null);
+select add_schema_foreign_key('transactions', 'merchant_account', 'merchant_accounts', 'name', false, '1.0a100', '1.28');
+select add_schema_foreign_key('transactions', 'processor', 'credit_card_processors', 'provider_id', false, '1.29', null);
+select add_schema_foreign_key('transactions', 'credit_card_transaction', 'credit_card_transactions', 'pkey', false, '1.29', null);
 commit;
 begin;
 \echo usernames

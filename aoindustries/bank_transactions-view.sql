@@ -220,12 +220,12 @@ where
     (
       type='merchant_deposit'
       or type='merchant_fee'
-    ) and merchant_account is null
+    ) and processor is null
   ) or (
     type!='merchant_deposit'
     and type!='merchant_fee'
     and expense_code!='charge_back'
-    and merchant_account is not null
+    and processor is not null
   ) or (
     expense_code='charge_back'
     and type!='refund'

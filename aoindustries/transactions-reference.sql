@@ -34,9 +34,16 @@ alter table transactions
   on update cascade
 ;
 alter table transactions
-  add constraint merchant_account_fkey
-  foreign key (merchant_account)
-  references merchant_accounts (name)
+  add constraint processor_fkey
+  foreign key (processor)
+  references credit_card_processors (provider_id)
+  on delete restrict
+  on update cascade
+;
+alter table transactions
+  add constraint credit_card_transaction_fkey
+  foreign key (credit_card_transaction)
+  references credit_card_transactions (pkey)
   on delete restrict
   on update cascade
 ;

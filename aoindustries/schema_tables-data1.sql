@@ -305,7 +305,7 @@ insert into schema_tables values(
     null,
     '1.29',
     null,
-    'accounting,authorize_time,pkey'
+    'accounting,authorization_time,pkey'
 );
 insert into schema_tables values(
     'credit_cards',
@@ -936,7 +936,7 @@ associated with transactions.  These numbers are only kept until
 the accounting department transfers the data to their records.',
     null,
     '1.0a100',
-    null,
+    '1.28',
     'transid.time::date,transid'
 );
 insert into schema_tables values(
@@ -1236,7 +1236,7 @@ insert into schema_tables values(
     'The merchant_accounts contains all the information about the merchant account providers we do business with.',
     null,
     '1.0a100',
-    null,
+    '1.28',
     'name'
 );
 insert into schema_tables values(

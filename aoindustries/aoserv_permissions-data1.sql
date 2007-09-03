@@ -14,6 +14,14 @@ insert into aoserv_permissions values(
     'add_credit_card_transaction',
     (select count(*) from aoserv_permissions)
 );
+insert into aoserv_permissions values(
+    'credit_card_transaction_sale_completed',
+    (select count(*) from aoserv_permissions)
+);
+insert into aoserv_permissions values(
+    'get_credit_card_transactions',
+    (select count(*) from aoserv_permissions)
+);
 -- credit_cards
 insert into aoserv_permissions values(
     'get_credit_cards',

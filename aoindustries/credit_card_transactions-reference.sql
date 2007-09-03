@@ -1,14 +1,14 @@
 alter table credit_card_transactions
-  add constraint accounting_fkey
-  foreign key (accounting)
-  references businesses (accounting)
+  add constraint processor_id_fkey
+  foreign key (processor_id)
+  references credit_card_processors (provider_id)
   on delete restrict
   on update cascade
 ;
 alter table credit_card_transactions
-  add constraint processor_id_fkey
-  foreign key (processor_id)
-  references credit_card_processors (provider_id)
+  add constraint accounting_fkey
+  foreign key (accounting)
+  references businesses (accounting)
   on delete restrict
   on update cascade
 ;

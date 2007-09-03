@@ -28,8 +28,8 @@ create table transactions (
     not null,
   payment_type text,
   payment_info text,
-  merchant_account text,
-  apr_num text,
+  processor text,
+  credit_card_transaction integer,
   payment_confirmed char(1)
     default 'W'
     not null

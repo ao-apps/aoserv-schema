@@ -1349,7 +1349,7 @@ insert into aosh_commands values(
   'attaches payment data to a transaction',
   '<i>transaction_id</i> <i>enc_cardholder_name</i> <i>enc_card_number</i> <i>enc_expiration_month</i> <i>enc_expiration_year</i>',
   '1.0a100',
-  null
+  '1.28'
 );
 insert into aosh_commands values(
   'remove_incoming_payment',
@@ -1357,7 +1357,7 @@ insert into aosh_commands values(
   'removes payment data from a transaction',
   '<i>transaction_id</i>',
   '1.0a100',
-  null
+  '1.28'
 );
 insert into aosh_commands values(
   'get_interbase_backup',
@@ -3077,6 +3077,14 @@ insert into aosh_commands values(
   'adds a new transaction to a business account',
   '<i>business</i> <i>source_business</i> <i>business_administrator</i> <i>type</i> <i>description</i> <i>quantity</i> <i>rate</i> {""|<i>payment_type</i>} {""|<i>payment_info</i>} {<b>Y</b>|<b>N</b>|<b>W</b>}',
   '1.0a100',
+  '1.28'
+);
+insert into aosh_commands values(
+  'add_transaction',
+  'transactions',
+  'adds a new transaction to a business account',
+  '<i>business</i> <i>source_business</i> <i>business_administrator</i> <i>type</i> <i>description</i> <i>quantity</i> <i>rate</i> {""|<i>payment_type</i>} {""|<i>payment_info</i>} {""|<i>processor</i>} {<b>Y</b>|<b>N</b>|<b>W</b>}',
+  '1.29',
   null
 );
 insert into aosh_commands values(
@@ -3085,7 +3093,7 @@ insert into aosh_commands values(
   'flags a transaction as approved',
   '<i>transaction_id</i> <i>payment_type</i> <i>payment_info</i> <i>merchant_account</i> <i>apr_num</i>',
   '1.0a100',
-  null
+  '1.28'
 );
 insert into aosh_commands values(
   'decline_transaction',
@@ -3093,7 +3101,7 @@ insert into aosh_commands values(
   'flags a transaction as declined',
   '<i>transaction_id</i> <i>payment_type</i> <i>payment_info</i> <i>merchant_account</i>',
   '1.0a100',
-  null
+  '1.28'
 );
 insert into aosh_commands values(
   'add_username',

@@ -1,7 +1,6 @@
 COPY net_binds (pkey, package, ao_server, ip_address, port, net_protocol, app_protocol, open_firewall, monitoring_enabled) FROM stdin;
 1	AOINDUSTRIES	2	1	3306	tcp	MySQL	t	t
 2	AOINDUSTRIES	2	1	3307	tcp	MySQL	t	t
-14	AOINDUSTRIES	2	1	5432	tcp	PostgreSQL	f	t
 15	AOINDUSTRIES	2	1	5433	tcp	PostgreSQL	f	t
 16	AOINDUSTRIES	2	5	20	tcp	FTP-DATA	t	f
 17	AOINDUSTRIES	2	5	21	tcp	FTP	t	t
@@ -28,5 +27,11 @@ COPY net_binds (pkey, package, ao_server, ip_address, port, net_protocol, app_pr
 38	AOINDUSTRIES	3	7	143	tcp	IMAP2	t	t
 39	AOINDUSTRIES	3	7	443	tcp	HTTPS	t	t
 40	AOINDUSTRIES	3	1	1021	tcp	aoserv-daemon	f	t
+43	AOINDUSTRIES	2	5	10000	tcp	user	f	f
+44	AOINDUSTRIES	2	5	10001	tcp	user	f	f
+45	AOINDUSTRIES	2	5	10002	tcp	user	f	f
+46	AOINDUSTRIES	2	5	10003	tcp	user	f	f
+47	AOINDUSTRIES	2	5	10004	tcp	user	f	f
+48	AOINDUSTRIES	2	5	10005	tcp	user	f	f
 \.
 SELECT setval ('"net_binds_pkey_seq"', 40, true);

@@ -34,4 +34,8 @@ calendar_mmh	MMP	\N
 redhat72_svr	AOINDUSTRIES	\N
 newmediaworks	NMW	\N
 brian	AOINDUSTRIES	\N
+adminprod	AOINDUSTRIES	\N
+admin_app	AOINDUSTRIES	\N
+rss_app	AOINDUSTRIES	\N
+session_admin	AOINDUSTRIES	\N
 \.

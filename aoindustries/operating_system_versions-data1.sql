@@ -1,15 +1,17 @@
 begin;
+-- centos
+insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(64, 'centos', '5.dom0', '5', 'i686', 'CentOS 5 (i686) (Xen Domain-0)', true, (select count(*)+1 from operating_system_versions));
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(63, 'centos', '5.dom0', '5', 'x86_64', 'CentOS 5 (x86_64) (Xen Domain-0)', true, (select count(*)+1 from operating_system_versions));
-
+-- debian
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(1, 'debian', '3.0r1', 'Woody', 'i386', 'Debian 3.0r1 (i386)', false, (select count(*)+1 from operating_system_versions));
-
+-- fedora
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(50, 'fedora', '1', 'Yarrow', 'i386', 'Fedora Core 1 (i386)', false, (select count(*)+1 from operating_system_versions));
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(51, 'fedora', '2', 'Tettnang', 'i386', 'Fedora Core 2 (i386)', false, (select count(*)+1 from operating_system_versions));
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(48, 'fedora', '3', 'Heidelberg', 'i386', 'Fedora Core 3 (i386)', false, (select count(*)+1 from operating_system_versions));
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(52, 'fedora', '4', 'Stentz', 'i386', 'Fedora Core 4 (i386)', false, (select count(*)+1 from operating_system_versions));
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(53, 'fedora', '5', 'Bordeaux', 'i386', 'Fedora Core 5 (i386)', false, (select count(*)+1 from operating_system_versions));
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(49, 'fedora', '6', 'Zod', 'i386', 'Fedora Core 6 (i386)', false, (select count(*)+1 from operating_system_versions));
-
+-- gentoo
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(2, 'gentoo', '1.4', '1.4', 'alpha', 'Gentoo 1.4 (alpha)', false, (select count(*)+1 from operating_system_versions));
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(3, 'gentoo', '1.4', '1.4', 'amd64', 'Gentoo 1.4 (amd64)', false, (select count(*)+1 from operating_system_versions));
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(4, 'gentoo', '1.4', '1.4', 'hppa', 'Gentoo 1.4 (hppa)', false, (select count(*)+1 from operating_system_versions));
@@ -18,7 +20,7 @@ insert into operating_system_versions (pkey, operating_system, version_number, v
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(7, 'gentoo', '1.4', '1.4', 'sparc', 'Gentoo 1.4 (sparc)', false, (select count(*)+1 from operating_system_versions));
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(8, 'gentoo', '1.4', '1.4', 'sparc64', 'Gentoo 1.4 (sparc64)', false, (select count(*)+1 from operating_system_versions));
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(46, 'gentoo', '2006.0', '2006.0', 'i686', 'Gentoo 2006.0 (i686)', false, (select count(*)+1 from operating_system_versions));
-
+-- mandrake/mandriva
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(9, 'mandrake', '8.0', '8.0', 'i586', 'Mandrake 8.0 (i586)', false, (select count(*)+1 from operating_system_versions));
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(10, 'mandrake', '9.0', '9.0', 'i586', 'Mandrake 9.0 (i586)', false, (select count(*)+1 from operating_system_versions));
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(11, 'mandrake', '9.1', '9.1', 'i586', 'Mandrake 9.1 (i586)', false, (select count(*)+1 from operating_system_versions));
@@ -30,7 +32,7 @@ insert into operating_system_versions (pkey, operating_system, version_number, v
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(45, 'mandriva', '2006.0', '2006.0', 'i586', 'Mandriva 2006.0 (i586)', true, (select count(*)+1 from operating_system_versions));
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(54, 'mandriva', '2007.0', '2007.0', 'i586', 'Mandriva 2007.0 (i586)', false, (select count(*)+1 from operating_system_versions));
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(62, 'mandriva', '2007.1', '2007.1', 'i586', 'Mandriva 2007 Spring (i586)', true, (select count(*)+1 from operating_system_versions));
-
+-- redhat
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(61, 'redhat', '0.8', 'Preview', 'i386', 'RedHat 0.8 (i386)', false, (select count(*)+1 from operating_system_versions));
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(60, 'redhat', '0.9', 'Halloween', 'i386', 'RedHat 0.9 (i386)', false, (select count(*)+1 from operating_system_versions));
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(59, 'redhat', '1.0', 'Mother\'s Day', 'i386', 'RedHat 1.0 (i386)', false, (select count(*)+1 from operating_system_versions));
@@ -57,7 +59,9 @@ insert into operating_system_versions (pkey, operating_system, version_number, v
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(31, 'redhat', 'ES 2.1', 'ES 2.1', 'i686', 'RedHat ES 2.1 (i686)', false, (select count(*)+1 from operating_system_versions));
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(32, 'redhat', 'ES 3.0', 'ES 3.0', 'i686', 'RedHat ES 3.0 (i686)', false, (select count(*)+1 from operating_system_versions));
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(47, 'redhat', 'ES 4', 'ES 4', 'x86_64', 'RedHat ES 4 (x86_64)', true, (select count(*)+1 from operating_system_versions));
-
+insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(65, 'redhat', 'ES 5', 'ES 5', 'i686', 'RedHat ES 5 (i686)', false, (select count(*)+1 from operating_system_versions));
+insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(66, 'redhat', 'ES 5', 'ES 5', 'x86_64', 'RedHat ES 5 (x86_64)', false, (select count(*)+1 from operating_system_versions));
+-- windows
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(33, 'windows', '3.0', '3.0', 'i286', 'Windows 3.0 (i286)', false, (select count(*)+1 from operating_system_versions));
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(34, 'windows', '3.1', '3.1', 'i286', 'Windows 3.1 (i286)', false, (select count(*)+1 from operating_system_versions));
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(35, 'windows', '3.11', '3.11', 'i386', 'Windows 3.11 for Workgroups (i386)', false, (select count(*)+1 from operating_system_versions));

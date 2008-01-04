@@ -7,6 +7,7 @@ insert into architectures values('i386', 32);
 insert into architectures values('i486', 32);
 insert into architectures values('i586', 32);
 insert into architectures values('i686', 32);
+insert into architectures values('i686,x86_64', 32);
 insert into architectures values('m68k', 32);
 insert into architectures values('mips32', 32);
 insert into architectures values('mips64', 64);

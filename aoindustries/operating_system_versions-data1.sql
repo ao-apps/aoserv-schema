@@ -2,6 +2,7 @@ begin;
 -- centos
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(64, 'centos', '5.dom0', '5', 'i686', 'CentOS 5 (i686) (Xen Domain-0)', true, (select count(*)+1 from operating_system_versions));
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(63, 'centos', '5.dom0', '5', 'x86_64', 'CentOS 5 (x86_64) (Xen Domain-0)', true, (select count(*)+1 from operating_system_versions));
+insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(67, 'centos', '5', '5', 'i686,x86_64', 'CentOS 5 (i686 and x86_64) (Xen Guest and Standalone)', true, (select count(*)+1 from operating_system_versions));
 -- debian
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(1, 'debian', '3.0r1', 'Woody', 'i386', 'Debian 3.0r1 (i386)', false, (select count(*)+1 from operating_system_versions));
 -- fedora

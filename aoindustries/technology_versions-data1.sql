@@ -1408,6 +1408,7 @@ COPY "technology_versions" FROM stdin;
 17	postgresql	8.0.8	2006-06-22 10:19:00-05	orion	45
 18	postgresql	8.1.4	2006-06-22 10:20:00-05	orion	45
 2586	postgresql	8.1.4	2006-09-12 15:57:00-05	orion	47
+3296	postgresql	8.1.9	2006-09-12 15:57:00-05	orion	67
 \.
 
 SELECT setval ('"technology_versions_pkey_seq"', 3243, true);

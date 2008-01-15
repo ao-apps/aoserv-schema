@@ -10,4 +10,5 @@ insert into postgres_versions values(16, '7.3');
 insert into postgres_versions values(17, '8.0');
 insert into postgres_versions values(18, '8.1');
 insert into postgres_versions values(2586, '8.1');
+insert into postgres_versions values(3296, '8.1');
 commit;

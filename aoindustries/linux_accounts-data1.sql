@@ -23,9 +23,7 @@ news	news	\N	\N	\N	application	/sbin/nologin	2004-12-16 21:55:24.729454-06	\N
 uucp	uucp	\N	\N	\N	application	/sbin/nologin	2004-12-16 22:02:04.466034-06	\N
 sshd	system user for openssh	\N	\N	\N	application	/bin/true	2004-12-16 22:05:22.249823-06	\N
 smmsp	system user for sendmail	\N	\N	\N	application	/dev/null	2004-12-16 22:06:40.369597-06	\N
-boinc	boinc	\N	\N	\N	application	/bin/bash	2005-05-23 01:13:11.551902-05	\N
 root	root	\N	\N	\N	system	/bin/bash	2001-09-03 13:48:37-05	\N
-root2	root	\N	\N	\N	system	/bin/bash	2001-09-03 13:48:49-05	\N
 sync	sync	\N	\N	\N	system	/bin/sync	2001-09-03 13:50:22-05	\N
 shutdown	shutdown	\N	\N	\N	system	/sbin/shutdown	2001-09-03 13:50:40-05	\N
 halt	halt	\N	\N	\N	system	/sbin/halt	2001-09-03 13:50:55-05	\N

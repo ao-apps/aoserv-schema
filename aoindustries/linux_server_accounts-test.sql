@@ -10,37 +10,8 @@ COPY linux_server_accounts (pkey, username, ao_server, uid, home, autoresponder_
 79	xvfb	2	74	/etc/X11	\N	\N	\N	f	\N	\N	2004-12-16 22:05:56.660311-06	t	\N	31	pop3	3
 80	mailnull	2	75	/var/spool/mqueue	\N	\N	\N	f	\N	\N	2004-12-16 22:05:59.021821-06	t	\N	31	pop3	3
 86	ftpmon	2	505	/home/f/ftpmon	\N	\N	\N	f	\N	\N	2004-12-16 22:11:52.521033-06	t	\N	31	pop3	3
-100	root	3	0	/root	\N	\N	\N	f	\N	\N	2005-05-23 00:01:55.344101-05	t	\N	\N	none	3
-101	root2	3	0	/root	\N	\N	\N	f	\N	\N	2005-05-23 00:01:56.156693-05	t	\N	\N	none	3
-102	bin	3	1	/bin	\N	\N	\N	f	\N	\N	2005-05-23 00:01:56.54363-05	t	\N	\N	none	3
-103	daemon	3	2	/sbin	\N	\N	\N	f	\N	\N	2005-05-23 00:01:56.550976-05	t	\N	\N	none	3
-104	adm	3	3	/var/adm	\N	\N	\N	f	\N	\N	2005-05-23 00:01:56.560867-05	t	\N	\N	none	3
-105	lp	3	4	/var/spool/lpd	\N	\N	\N	f	\N	\N	2005-05-23 00:01:56.56786-05	t	\N	\N	none	3
-106	sync	3	5	/sbin	\N	\N	\N	f	\N	\N	2005-05-23 00:01:56.575278-05	t	\N	\N	none	3
-107	shutdown	3	6	/sbin	\N	\N	\N	f	\N	\N	2005-05-23 00:01:56.582526-05	t	\N	\N	none	3
-89	testimap	2	506	/home/t/testimap	test	/home/t/testimap/.autorespond.txt	t	\N	\N	2004-12-17 01:21:50.068554-06	t	31	31	pop3	3
-108	halt	3	7	/sbin	\N	\N	\N	f	\N	\N	2005-05-23 00:01:56.75174-05	t	\N	\N	none	3
-109	mail	3	8	/var/spool/mail	\N	\N	\N	f	\N	\N	2005-05-23 00:01:56.759327-05	t	\N	\N	none	3
-121	news	3	9	/var/spool/news	\N	\N	\N	f	\N	\N	2005-05-23 00:02:15.606394-05	t	\N	\N	none	3
-122	uucp	3	10	/var/spool/uucp	\N	\N	\N	f	\N	\N	2005-05-23 00:02:15.614591-05	t	\N	\N	none	3
-123	operator	3	11	/var	\N	\N	\N	f	\N	\N	2005-05-23 00:02:15.621339-05	t	\N	\N	none	3
-124	games	3	12	/usr/games	\N	\N	\N	f	\N	\N	2005-05-23 00:02:15.628256-05	t	\N	\N	none	3
-125	rpm	3	13	/var/lib/rpm	\N	\N	\N	f	\N	\N	2005-05-23 00:02:15.635028-05	t	\N	\N	none	3
-126	ftp	3	14	/var/ftp	\N	\N	\N	f	\N	\N	2005-05-23 00:02:19.623009-05	t	\N	\N	none	3
-127	named	3	25	/var/named	\N	\N	\N	f	\N	\N	2005-05-23 00:02:19.631557-05	t	\N	\N	none	3
-128	postgres	3	26	/var/lib/pgsql	\N	\N	\N	f	\N	\N	2005-05-23 00:02:19.638168-05	t	\N	\N	none	3
-129	interbase	3	27	/opt/interbase	\N	\N	\N	f	\N	\N	2005-05-23 00:02:19.644818-05	t	\N	\N	none	3
-130	mysql	3	31	/var/lib/mysql	\N	\N	\N	f	\N	\N	2005-05-23 00:02:19.651375-05	t	\N	\N	none	3
-131	alias	3	48	/var/qmail/alias	\N	\N	\N	f	\N	\N	2005-05-23 00:02:22.428135-05	t	\N	\N	none	3
-132	qmaild	3	49	/var/qmail	\N	\N	\N	f	\N	\N	2005-05-23 00:02:22.436567-05	t	\N	\N	none	3
-133	qmaill	3	50	/var/qmail	\N	\N	\N	f	\N	\N	2005-05-23 00:02:22.443152-05	t	\N	\N	none	3
-134	qmailp	3	51	/var/qmail	\N	\N	\N	f	\N	\N	2005-05-23 00:02:22.449638-05	t	\N	\N	none	3
-135	qmailr	3	53	/var/qmail	\N	\N	\N	f	\N	\N	2005-05-23 00:02:22.456232-05	t	\N	\N	none	3
-136	qmails	3	54	/var/qmail	\N	\N	\N	f	\N	\N	2005-05-23 00:02:25.375297-05	t	\N	\N	none	3
+89	testimap	2	506	/home/t/testimap	1	test	/home/t/testimap/.autorespond.txt	t	\N	\N	2004-12-17 01:21:50.068554-06	t	31	31	pop3	3
 43	root	2	0	/root	\N	\N	\N	f	\N	\N	2004-12-16 20:27:26.471884-06	t	\N	31	pop3	3
-137	qmailq	3	55	/var/qmail	\N	\N	\N	f	\N	\N	2005-05-23 00:02:25.383643-05	t	\N	\N	none	3
-44	root2	2	0	/root	\N	\N	\N	f	\N	\N	2004-12-16 20:27:29.092481-06	t	\N	31	pop3	3
-138	httpd	3	60	/etc/httpd	\N	\N	\N	f	\N	\N	2005-05-23 00:02:25.390165-05	t	\N	\N	none	3
 45	bin	2	1	/bin	\N	\N	\N	f	\N	\N	2004-12-16 20:27:32.362974-06	t	\N	31	pop3	3
 46	daemon	2	2	/sbin	\N	\N	\N	f	\N	\N	2004-12-16 20:31:48.185364-06	t	\N	31	pop3	3
 47	adm	2	3	/var/adm	\N	\N	\N	f	\N	\N	2004-12-16 20:31:51.436107-06	t	\N	31	pop3	3
@@ -66,16 +37,5 @@ COPY linux_server_accounts (pkey, username, ao_server, uid, home, autoresponder_
 67	qmaill	2	50	/var/qmail	\N	\N	\N	f	\N	\N	2004-12-16 22:03:55.134171-06	t	\N	31	pop3	3
 68	qmailp	2	51	/var/qmail	\N	\N	\N	f	\N	\N	2004-12-16 22:03:57.705948-06	t	\N	31	pop3	3
 70	qmailr	2	53	/var/qmail	\N	\N	\N	f	\N	\N	2004-12-16 22:04:00.474492-06	t	\N	31	pop3	3
-139	vcsa	3	69	/dev	\N	\N	\N	f	\N	\N	2005-05-23 00:02:25.396471-05	t	\N	\N	none	3
-140	rpc	3	70	/	\N	\N	\N	f	\N	\N	2005-05-23 00:02:25.402789-05	t	\N	\N	none	3
-141	sshd	3	71	/var/empty	\N	\N	\N	f	\N	\N	2005-05-23 00:02:28.400928-05	t	\N	\N	none	3
-142	xfs	3	73	/etc/X11/fs	\N	\N	\N	f	\N	\N	2005-05-23 00:02:28.409097-05	t	\N	\N	none	3
-143	xvfb	3	74	/etc/X11	\N	\N	\N	f	\N	\N	2005-05-23 00:02:28.416319-05	t	\N	\N	none	3
-144	mailnull	3	75	/var/spool/mqueue	\N	\N	\N	f	\N	\N	2005-05-23 00:02:28.423088-05	t	\N	\N	none	3
-145	smmsp	3	76	/var/spool/mqueue	\N	\N	\N	f	\N	\N	2005-05-23 00:02:28.429702-05	t	\N	\N	none	3
-146	nobody	3	65534	/	\N	\N	\N	f	\N	\N	2005-05-23 00:02:28.435602-05	t	\N	\N	none	3
-147	aoadmin	3	507	/home/a/aoadmin	\N	\N	\N	f	\N	\N	2005-05-23 00:03:39.918249-05	t	\N	\N	none	3
-148	emailmon	3	508	/home/e/emailmon	\N	\N	\N	f	\N	\N	2005-05-23 00:03:55.523865-05	t	\N	\N	none	3
-149	ftpmon	3	509	/home/f/ftpmon	\N	\N	\N	f	\N	\N	2005-05-23 00:04:09.449016-05	t	\N	\N	none	3
-150	boinc	3	510	/var/lib/boinc	\N	\N	\N	f	\N	\N	2005-05-23 01:13:49.346703-05	t	31	31	pop3	3
 \.
+SELECT setval ('"linux_server_accounts_pkey_seq"', 90, true);

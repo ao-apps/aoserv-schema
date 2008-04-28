@@ -3,7 +3,7 @@ create view
 as
   (
     select
-      se.hostname,
+      ao.hostname,
       (select count(*) from business_servers bs, businesses bu where se.pkey=bs.server and bs.is_default and bs.accounting=bu.accounting and bu.canceled is null and bu.parent='AOINDUSTRIES') as business_count
 --      ao.num_cpu,
 --      ao.cpu_speed,
@@ -12,12 +12,12 @@ as
 --      ao.rack,
 --      ao.disk
     from
-      servers se
---      ao_servers ao
---    where
---      se.pkey=ao.server
+      servers se,
+      ao_servers ao
+    where
+      se.pkey=ao.server
     order by
-      reverse_hostname(se.hostname)
+      reverse_hostname(ao.hostname)
   )
   union all select
     'Total:',

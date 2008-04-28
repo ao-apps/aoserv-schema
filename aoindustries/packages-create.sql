@@ -28,11 +28,3 @@ create table packages (
 );
 grant all on packages to aoadmin;
 grant select, insert, update, delete on packages to aoserv_app;
-
--- Upgrade procedure:
-alter table packages add column email_in_burst integer;
-alter table packages add column email_in_rate float4;
-alter table packages add column email_out_burst integer;
-alter table packages add column email_out_rate float4;
-alter table packages add column email_relay_burst integer;
-alter table packages add column email_relay_rate float4;

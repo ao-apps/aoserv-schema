@@ -526,8 +526,8 @@ insert into schema_tables values(
     'file_backup_devices',
     (select count(*) from schema_tables),
     'File Backup Devices',
+    true,
     'The <code>file_backup_devices</code> table stores the details of each device used by the backup system.',
-    null,
     '1.0a100',
     '1.30'
 );
@@ -1278,7 +1278,6 @@ insert into schema_tables values(
     'The payment_types table stores all the acceptable payment forms',
     '1.0a100',
     null
-    'name'
 );
 insert into schema_tables values(
     'phone_numbers',

@@ -12,10 +12,11 @@ insert into mysql_servers values(
             and version like '4.1.%'
             and version not like '4.1.%-max'
             and version not like '4.1.%-source'
-            and operating_system_version=(select pkey from operating_system_versions where operating_system='mandrake' and version_number='10.1')
+            and operating_system_version=(select pkey from operating_system_versions where operating_system='mandriva' and version_number='2006.0')
     ),
     1000,
-    1
+    1,
+    'AOINDUSTRIES'
 );
 insert into mysql_servers values(
     2,
@@ -31,8 +32,9 @@ insert into mysql_servers values(
             and version like '5.0.%'
             and version not like '5.0.%-max'
             and version not like '5.0.%-source'
-            and operating_system_version=(select pkey from operating_system_versions where operating_system='mandrake' and version_number='10.1')
+            and operating_system_version=(select pkey from operating_system_versions where operating_system='mandriva' and version_number='2006.0')
     ),
     1000,
-    2
+    2,
+    'AOINDUSTRIES'
 );

@@ -63,6 +63,5 @@ portmon	AOINDUSTRIES	application
 replicator	AOINDUSTRIES	application
 proftpd_jailed	AOINDUSTRIES	system
 tcpdump	AOINDUSTRIES	system
-boinc	AOINDUSTRIES	application
 awstats	AOINDUSTRIES	application
 \.

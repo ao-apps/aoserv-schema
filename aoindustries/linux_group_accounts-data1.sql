@@ -1,6 +1,5 @@
 COPY linux_group_accounts (pkey, group_name, username, is_primary) FROM stdin;
 1	root	root	t
-2	root	root2	t
 3	bin	bin	t
 4	daemon	daemon	t
 5	adm	adm	t
@@ -10,7 +9,6 @@ COPY linux_group_accounts (pkey, group_name, username, is_primary) FROM stdin;
 9	root	halt	t
 10	mail	mail	t
 26	news	news	t
-58	boinc	boinc	t
 14	users	games	t
 13	root	operator	t
 16	ftp	ftp	t

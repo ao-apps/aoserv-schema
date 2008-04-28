@@ -1,7 +1,6 @@
 COPY usernames (username, package, disable_log) FROM stdin;
 aoadmin	AOINDUSTRIES	\N
 root	AOINDUSTRIES	\N
-root2	AOINDUSTRIES	\N
 bin	AOINDUSTRIES	\N
 daemon	AOINDUSTRIES	\N
 adm	AOINDUSTRIES	\N
@@ -41,7 +40,6 @@ qmailr	AOINDUSTRIES	\N
 qmails	AOINDUSTRIES	\N
 smmsp	AOINDUSTRIES	\N
 vcsa	AOINDUSTRIES	\N
-boinc	AOINDUSTRIES	\N
 emailmon	AOINDUSTRIES	\N
 ftpmon	AOINDUSTRIES	\N
 awstats	AOINDUSTRIES	\N

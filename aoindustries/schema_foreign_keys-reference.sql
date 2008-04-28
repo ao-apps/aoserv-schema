@@ -13,13 +13,6 @@ alter table schema_foreign_keys
   on update cascade
 ;
 alter table schema_foreign_keys
-  add constraint tied_bridge_fkey
-  foreign key (tied_bridge)
-  references schema_foreign_keys (pkey)
-  on delete restrict
-  on update cascade
-;
-alter table schema_foreign_keys
   add constraint since_version_fkey
   foreign key (since_version)
   references aoserv_protocols (version)

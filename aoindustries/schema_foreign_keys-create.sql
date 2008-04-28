@@ -10,9 +10,6 @@ create table schema_foreign_keys (
     not null,
   foreign_column integer
     not null,
-  is_bridge bool
-    not null,
-  tied_bridge integer,
   since_version text
     not null,
   last_version text,

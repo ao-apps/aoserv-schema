@@ -47,7 +47,6 @@ create table credit_cards (
         and encrypted_expiration is not null and encryption_expiration_from is not null and encryption_expiration_recipient is not null
     )
   )
-  unique(processor_id, provider_unique_id)
 );
 grant all on credit_cards to aoadmin;
 grant select, insert, update, delete on credit_cards to aoserv_app;

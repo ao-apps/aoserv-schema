@@ -6,7 +6,24 @@ values(
     'template0',
     1,
     16,
-    (select pkey from postgres_encodings where encoding='LATIN1' and postgres_version=(select version from postgres_versions where minor_version='8.1')),
+    (
+        select
+            pkey
+        from
+            postgres_encodings
+        where
+            encoding='LATIN1'
+            and postgres_version=(
+                select
+                    pkey
+                from
+                    technology_versions
+                where
+                    name='postgresql'
+                    and version like '8.1.%'
+                    and operating_system_version=(select pkey from operating_system_versions where operating_system='mandriva' and version_number='2006.0')
+            )
+    ),
     true,
     false,
     false
@@ -18,7 +35,24 @@ values(
     'template1',
     1,
     16,
-    (select pkey from postgres_encodings where encoding='LATIN1' and postgres_version=(select version from postgres_versions where minor_version='8.1')),
+    (
+        select
+            pkey
+        from
+            postgres_encodings
+        where
+            encoding='LATIN1'
+            and postgres_version=(
+                select
+                    pkey
+                from
+                    technology_versions
+                where
+                    name='postgresql'
+                    and version like '8.1.%'
+                    and operating_system_version=(select pkey from operating_system_versions where operating_system='mandriva' and version_number='2006.0')
+            )
+    ),
     true,
     true,
     false
@@ -30,19 +64,24 @@ values(
     'aoindustries',
     1,
     17,
-    (select pkey from postgres_encodings where encoding='SQL_ASCII' and postgres_version=(select version from postgres_versions where minor_version='8.1')),
-    false,
-    true,
-    false
-);
-insert into
-    postgres_databases
-values(
-    12,
-    'aoserv_backup',
-    1,
-    17,
-    (select pkey from postgres_encodings where encoding='SQL_ASCII' and postgres_version=(select version from postgres_versions where minor_version='8.1')),
+    (
+        select
+            pkey
+        from
+            postgres_encodings
+        where
+            encoding='SQL_ASCII'
+            and postgres_version=(
+                select
+                    pkey
+                from
+                    technology_versions
+                where
+                    name='postgresql'
+                    and version like '8.1.%'
+                    and operating_system_version=(select pkey from operating_system_versions where operating_system='mandriva' and version_number='2006.0')
+            )
+    ),
     false,
     true,
     false
@@ -54,7 +93,24 @@ values(
     'aoweb',
     1,
     17,
-    (select pkey from postgres_encodings where encoding='UTF8' and postgres_version=(select version from postgres_versions where minor_version='8.1')),
+    (
+        select
+            pkey
+        from
+            postgres_encodings
+        where
+            encoding='UTF8'
+            and postgres_version=(
+                select
+                    pkey
+                from
+                    technology_versions
+                where
+                    name='postgresql'
+                    and version like '8.1.%'
+                    and operating_system_version=(select pkey from operating_system_versions where operating_system='mandriva' and version_number='2006.0')
+            )
+    ),
     false,
     true,
     false
@@ -66,7 +122,24 @@ values(
     'aoserv',
     1,
     16,
-    (select pkey from postgres_encodings where encoding='SQL_ASCII' and postgres_version=(select version from postgres_versions where minor_version='8.1')),
+    (
+        select
+            pkey
+        from
+            postgres_encodings
+        where
+            encoding='SQL_ASCII'
+            and postgres_version=(
+                select
+                    pkey
+                from
+                    technology_versions
+                where
+                    name='postgresql'
+                    and version like '8.1.%'
+                    and operating_system_version=(select pkey from operating_system_versions where operating_system='mandriva' and version_number='2006.0')
+            )
+    ),
     false,
     true,
     false
@@ -78,7 +151,24 @@ values(
     'edrugstore',
     1,
     27,
-    (select pkey from postgres_encodings where encoding='UTF8' and postgres_version=(select version from postgres_versions where minor_version='8.1')),
+    (
+        select
+            pkey
+        from
+            postgres_encodings
+        where
+            encoding='UTF8'
+            and postgres_version=(
+                select
+                    pkey
+                from
+                    technology_versions
+                where
+                    name='postgresql'
+                    and version like '8.1.%'
+                    and operating_system_version=(select pkey from operating_system_versions where operating_system='mandriva' and version_number='2006.0')
+            )
+    ),
     false,
     true,
     false
@@ -90,7 +180,24 @@ values(
     'edrugstore_sessions',
     1,
     27,
-    (select pkey from postgres_encodings where encoding='SQL_ASCII' and postgres_version=(select version from postgres_versions where minor_version='8.1')),
+    (
+        select
+            pkey
+        from
+            postgres_encodings
+        where
+            encoding='SQL_ASCII'
+            and postgres_version=(
+                select
+                    pkey
+                from
+                    technology_versions
+                where
+                    name='postgresql'
+                    and version like '8.1.%'
+                    and operating_system_version=(select pkey from operating_system_versions where operating_system='mandriva' and version_number='2006.0')
+            )
+    ),
     false,
     true,
     false
@@ -102,7 +209,24 @@ values(
     'danshome',
     1,
     24,
-    (select pkey from postgres_encodings where encoding='SQL_ASCII' and postgres_version=(select version from postgres_versions where minor_version='8.1')),
+    (
+        select
+            pkey
+        from
+            postgres_encodings
+        where
+            encoding='SQL_ASCII'
+            and postgres_version=(
+                select
+                    pkey
+                from
+                    technology_versions
+                where
+                    name='postgresql'
+                    and version like '8.1.%'
+                    and operating_system_version=(select pkey from operating_system_versions where operating_system='mandriva' and version_number='2006.0')
+            )
+    ),
     false,
     true,
     false

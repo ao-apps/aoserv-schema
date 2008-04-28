@@ -36,7 +36,7 @@ alter table credit_cards
 alter table credit_cards
   add constraint encryption_card_number_recipient_fkey
   foreign key (encryption_card_number_recipient)
-  references encryption_recipients (pkey)
+  references encryption_keys (pkey)
   on delete restrict
   on update cascade
 ;
@@ -50,7 +50,7 @@ alter table credit_cards
 alter table credit_cards
   add constraint encryption_expiration_recipient_fkey
   foreign key (encryption_expiration_recipient)
-  references encryption_recipients (pkey)
+  references encryption_keys (pkey)
   on delete restrict
   on update cascade
 ;

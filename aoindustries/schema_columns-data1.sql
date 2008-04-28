@@ -496,15 +496,16 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'cvs_repos
 commit;
 begin;
 \echo daemon_profile
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'server', 0, 'hostname', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'level', 1, 'int', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'classname', 2, 'string', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'method_name', 3, 'string', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'parameter', 4, 'string', true, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'use_count', 5, 'long', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'total_time', 6, 'interval', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'min_time', 7, 'interval', true, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'max_time', 8, 'interval', true, false, false, '', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'server', 0, 'hostname', false, false, false, '', '1.0a100', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'ao_server', 1, 'hostname', false, false, false, '', '1.31', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'level', 2, 'int', false, false, false, '', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'classname', 3, 'string', false, false, false, '', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'method_name', 4, 'string', false, false, false, '', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'parameter', 5, 'string', true, false, false, '', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'use_count', 6, 'long', false, false, false, '', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'total_time', 7, 'interval', false, false, false, '', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'min_time', 8, 'interval', true, false, false, '', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'max_time', 9, 'interval', true, false, false, '', '1.0a100', null;
 commit;
 begin;
 \echo disable_log

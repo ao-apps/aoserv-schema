@@ -604,7 +604,7 @@ updated AOSH command set_file_backup_setting
 updated AOSH command remove_file_backup_setting
 updated AOSH command add_business_server
 updated AOSH command invalidate
-updated AOSH command invalidate ao_servers.hostname, servers.package.name||''/''||servers.name, or servers.pkey
+updated AOSH command invalidate ao_servers.hostname, servers.package.name||\'/\'||servers.name, or servers.pkey
 removed file_backup_settings.recurse
 removed failover_file_replications.from_server
 added failover_file_replications.server
@@ -645,5 +645,8 @@ added credit_cards.encrypted_expiration
 added credit_cards.encryption_expiration_from
 added credit_cards.encryption_expiration_recipient
 removed backup_reports.uncompressed_size
-removed backup_reports.compressed_size'
+removed backup_reports.compressed_size
+removed daemon_profile.server
+added daemon_profile.ao_server'
+);
 commit;

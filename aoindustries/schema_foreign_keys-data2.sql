@@ -154,7 +154,8 @@ select add_schema_foreign_key('cvs_repositories', 'disable_log', 'disable_log', 
 commit;
 begin;
 \echo daemon_profile
-select add_schema_foreign_key('daemon_profile', 'server', 'servers', 'hostname', '1.0a100', null);
+select add_schema_foreign_key('daemon_profile', 'server', 'servers', 'hostname', '1.0a100', '1.30');
+select add_schema_foreign_key('daemon_profile', 'ao_server', 'ao_servers', 'hostname', '1.31', null);
 commit;
 begin;
 \echo disable_log

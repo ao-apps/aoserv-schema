@@ -10,3 +10,7 @@ create index servers_administrator_idx on servers (
 create index servers_operating_system_version_idx on servers (
   operating_system_version
 );
+create unique index servers_package_name_uni on servers (
+  package,
+  name
+);

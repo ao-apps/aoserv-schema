@@ -3,12 +3,6 @@ create table server_farms (
     constraint server_farms_pkey primary key,
   description text
     not null,
-  protected_net text
-    not null,
-  allow_same_server_backup bool
-    not null,
-  backup_farm text
-    not null,
   owner integer
     not null,
   use_restricted_smtp_port bool

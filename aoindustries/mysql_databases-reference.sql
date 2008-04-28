@@ -12,17 +12,3 @@ alter table mysql_databases
   on delete restrict
   on update cascade
 ;
-alter table mysql_databases
-  add constraint backup_level_fkey
-  foreign key (backup_level)
-  references backup_levels (level)
-  on delete restrict
-  on update cascade
-;
-alter table mysql_databases
-  add constraint backup_retention_fkey
-  foreign key (backup_retention)
-  references backup_retentions (days)
-  on delete restrict
-  on update cascade
-;

@@ -18,14 +18,6 @@ create table packages (
     default now(),
   created_by text
     not null,
-  daily_smtp_in_limit int
-    not null,
-  daily_smtp_in_bandwidth_limit int8
-    not null,
-  daily_smtp_out_limit int
-    not null,
-  daily_smtp_out_bandwidth_limit int8
-    not null,
   disable_log integer,
   email_in_burst integer,
   email_in_rate float4,

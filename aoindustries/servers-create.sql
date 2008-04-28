@@ -6,27 +6,12 @@ create table servers (
   pkey integer
     default nextval('servers_pkey_seq')
     constraint servers_pkey primary key,
-  hostname text
-    not null
-    unique,
   farm text
     not null,
-  owner text
-    not null,
-  administrator text
-    not null,
-  description text
-    not null,
-  backup_hour integer
-    not null
-    constraint backup_hour_chk
-      check (backup_hour>=0 and backup_hour<=23),
-  last_backup_time timestamp,
-  operating_system_version integer
-    not null,
-  asset_label text,
-  minimum_power float4,
-  maximum_power float4
+  description text not null,
+  operating_system_version integer,
+  package integer not null,
+  name text not null check (length(name)>0 and name not like '%/%')
 );
 grant all on servers to aoadmin;
 grant select, insert, update on servers to aoserv_app;

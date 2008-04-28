@@ -16,10 +16,6 @@ create table cvs_repositories (
     not null,
   created timestamp
     not null,
-  backup_level smallint
-    not null,
-  backup_retention smallint
-    not null,
   disable_log integer
 );
 grant all on cvs_repositories to aoadmin;

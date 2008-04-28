@@ -22,22 +22,6 @@ create table httpd_sites (
   server_admin text
     not null,
   content_src text,
-  config_backup_level smallint
-    not null,
-  config_backup_retention smallint
-    not null,
-  file_backup_level smallint
-    not null,
-  file_backup_retention smallint
-    not null,
-  ftp_backup_level smallint
-    not null,
-  ftp_backup_retention smallint
-    not null,
-  log_backup_level smallint
-    not null,
-  log_backup_retention smallint
-    not null,
   disable_log integer,
   is_manual bool
     not null,

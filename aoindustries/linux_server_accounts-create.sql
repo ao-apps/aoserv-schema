@@ -14,18 +14,6 @@ create table linux_server_accounts (
     not null,
   home text
     not null,
-  cron_backup_level smallint
-    not null,
-  cron_backup_retention smallint
-    not null,
-  home_backup_level smallint
-    not null,
-  home_backup_retention smallint
-    not null,
-  inbox_backup_level smallint
-    not null,
-  inbox_backup_retention smallint
-    not null,
   autoresponder_from integer,
   autoresponder_subject text,
   autoresponder_path text,

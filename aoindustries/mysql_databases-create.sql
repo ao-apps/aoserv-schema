@@ -12,10 +12,6 @@ create table mysql_databases (
     not null,
   package text
     not null,
-  backup_level smallint
-    not null,
-  backup_retention smallint
-    not null,
   unique (mysql_server, name)
 );
 grant all on mysql_databases to aoadmin;

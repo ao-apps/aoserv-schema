@@ -8,9 +8,9 @@ create table linux_acc_addresses (
     constraint linux_acc_addresses_pkey primary key,
   email_address integer
     not null,
-  linux_account text
+  linux_server_account integer
     not null,
-  unique(email_address, linux_account)
+  unique(email_address, linux_server_account)
 );
 grant all on linux_acc_addresses to aoadmin;
 grant select, insert, update, delete on linux_acc_addresses to aoserv_app;

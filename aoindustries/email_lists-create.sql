@@ -8,13 +8,9 @@ create table email_lists (
     constraint email_lists_pkey primary key,
   path text
     not null,
-  linux_account integer
+  linux_server_account integer
     not null,
-  linux_group integer
-    not null,
-  backup_level smallint
-    not null,
-  backup_retention smallint
+  linux_server_group integer
     not null,
   disable_log integer
 );

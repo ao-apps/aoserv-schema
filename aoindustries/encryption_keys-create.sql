@@ -10,14 +10,12 @@ create table encryption_keys (
     not null,
   id text
     not null,
-  signup_signer bool
+  signup_from bool
     not null,
   signup_recipient bool
     not null,
-  credit_card_signer bool
-    not null,
-  credit_card_recipient bool
-    not null
+  -- May not use the same key for from (signing) and receiving (no security added since both would be in the same place)
+  check (!(signup_from and signup_recipient))
 );
 grant all on encryption_keys to aoadmin;
 grant select on encryption_keys to aoserv_app;

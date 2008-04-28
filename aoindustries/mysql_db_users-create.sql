@@ -8,7 +8,7 @@ create table mysql_db_users (
     constraint mysql_db_users_pkey primary key,
   mysql_database integer
     not null,
-  mysql_user integer
+  mysql_server_user integer
     not null,
   select_priv bool
     not null
@@ -61,7 +61,7 @@ create table mysql_db_users (
   execute_priv bool
     not null
     default false,
-  unique (mysql_database, mysql_user)
+  unique (mysql_database, mysql_server_user)
 );
 grant all on mysql_db_users to aoadmin;
 grant select, update, insert, delete on mysql_db_users to aoserv_app;

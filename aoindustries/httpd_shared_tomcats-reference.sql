@@ -27,48 +27,6 @@ alter table httpd_shared_tomcats
   on update cascade
 ;
 alter table httpd_shared_tomcats
-  add constraint config_backup_level_fkey
-  foreign key (config_backup_level)
-  references backup_levels (level)
-  on delete restrict
-  on update cascade
-;
-alter table httpd_shared_tomcats
-  add constraint config_backup_retention_fkey
-  foreign key (config_backup_retention)
-  references backup_retentions (days)
-  on delete restrict
-  on update cascade
-;
-alter table httpd_shared_tomcats
-  add constraint file_backup_level_fkey
-  foreign key (file_backup_level)
-  references backup_levels (level)
-  on delete restrict
-  on update cascade
-;
-alter table httpd_shared_tomcats
-  add constraint file_backup_retention_fkey
-  foreign key (file_backup_retention)
-  references backup_retentions (days)
-  on delete restrict
-  on update cascade
-;
-alter table httpd_shared_tomcats
-  add constraint log_backup_level_fkey
-  foreign key (log_backup_level)
-  references backup_levels (level)
-  on delete restrict
-  on update cascade
-;
-alter table httpd_shared_tomcats
-  add constraint log_backup_retention_fkey
-  foreign key (log_backup_retention)
-  references backup_retentions (days)
-  on delete restrict
-  on update cascade
-;
-alter table httpd_shared_tomcats
   add constraint disable_log_fkey
   foreign key (disable_log)
   references disable_log (pkey)

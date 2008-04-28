@@ -29,6 +29,14 @@ insert into aosh_commands values(
   'globally invalidates a table',
   '<i>table_name</i> [<i>server</i>]',
   '1.0a100',
+  '1.30'
+);
+insert into aosh_commands values(
+  'invalidate',
+  null,
+  'globally invalidates a table',
+  '<i>table_name</i> [<i>ao_servers.hostname</i> or <i>servers.package.name</i>/<i>servers.name</i> or <i>servers.pkey</i>]',
+  '1.31',
   null
 );
 insert into aosh_commands values(
@@ -109,7 +117,7 @@ insert into aosh_commands values(
   'restarts the InterBase database server',
   '<i>ao_server</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'restart_mysql',
@@ -157,7 +165,7 @@ insert into aosh_commands values(
   'starts the InterBase database server',
   '<i>ao_server</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'start_mysql',
@@ -205,7 +213,7 @@ insert into aosh_commands values(
   'stops the InterBase database server',
   '<i>ao_server</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'stop_mysql',
@@ -253,7 +261,7 @@ insert into aosh_commands values(
   'gets the contents of a backup data set',
   '<i>pkey</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'remove_unused_backup_data',
@@ -389,6 +397,14 @@ insert into aosh_commands values(
   'grants a business access to a server',
   '<i>business</i> <i>server</i> <i>can_configure_backup</i>',
   '1.0a102',
+  '1.30'
+);
+insert into aosh_commands values(
+  'add_business_server',
+  'business_servers',
+  'grants a business access to a server',
+  '<i>business</i> <i>server</i>',
+  '1.31',
   null
 );
 insert into aosh_commands values(
@@ -565,7 +581,7 @@ insert into aosh_commands values(
   'sets the backup retention for a CVS repository',
   '<i>ao_server</i> <i>path</i> <i>backup_retention</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'set_cvs_repository_mode',
@@ -813,7 +829,7 @@ insert into aosh_commands values(
   'sets the backup retention for a list',
   '<i>path</i> <i>ao_server</i> <i>backup_retention</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'add_email_pipe_address',
@@ -909,7 +925,7 @@ insert into aosh_commands values(
   'creates a new FileBackupDevice',
   '<i>device</i> <i>can_backup</i> <i>description</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'get_file_backup',
@@ -917,7 +933,7 @@ insert into aosh_commands values(
   'gets the contents of a file backup',
   '<i>pkey</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'remove_file_backup',
@@ -925,7 +941,7 @@ insert into aosh_commands values(
   'removes a backup copy of a file from the system',
   '<i>pkey</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'add_file_backup_setting',
@@ -933,6 +949,14 @@ insert into aosh_commands values(
   'creates a new FileBackupSetting',
   '<i>server</i> <i>path</i> <i>package</i> <i>backup_level</i> <i>backup_retention</i> <i>recurse</i>',
   '1.0a100',
+  '1.30'
+);
+insert into aosh_commands values(
+  'add_file_backup_setting',
+  'file_backup_settings',
+  'creates a new FileBackupSetting',
+  '<i>replication</i> <i>path</i> <i>backup_enabled</i>',
+  '1.31',
   null
 );
 insert into aosh_commands values(
@@ -941,6 +965,14 @@ insert into aosh_commands values(
   'removes a FileBackupSetting',
   '<i>server</i> <i>path</i>',
   '1.0a100',
+  '1.30'
+);
+insert into aosh_commands values(
+  'remove_file_backup_setting',
+  'file_backup_settings',
+  'removes a FileBackupSetting',
+  '<i>replication</i> <i>path</i>',
+  '1.31',
   null
 );
 insert into aosh_commands values(
@@ -949,6 +981,14 @@ insert into aosh_commands values(
   'sets the values in a FileBackupSetting',
   '<i>server</i> <i>path</i> <i>package</i> <i>backup_level</i> <i>backup_retention</i> <i>recurse</i>',
   '1.0a100',
+  '1.30'
+);
+insert into aosh_commands values(
+  'set_file_backup_setting',
+  'file_backup_settings',
+  'sets the values in a FileBackupSetting',
+  '<i>replication</i> <i>path</i> <i>backup_enabled</i>',
+  '1.31',
   null
 );
 insert into aosh_commands values(
@@ -1037,7 +1077,7 @@ insert into aosh_commands values(
   'sets the config file backup retention for a Multi-Site Tomcat JVM',
   '<i>name</i> <i>ao_server</i> <i>backup_retention</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'set_httpd_shared_tomcat_file_backup_retention',
@@ -1045,7 +1085,7 @@ insert into aosh_commands values(
   'sets the file backup retention for a Multi-Site Tomcat JVM',
   '<i>name</i> <i>ao_server</i> <i>backup_retention</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'set_httpd_shared_tomcat_is_manual',
@@ -1061,7 +1101,7 @@ insert into aosh_commands values(
   'sets the log file backup retention for a Multi-Site Tomcat JVM',
   '<i>name</i> <i>ao_server</i> <i>backup_retention</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'disable_httpd_site_bind',
@@ -1189,7 +1229,7 @@ insert into aosh_commands values(
   'sets the config file backup retention for a web site',
   '<i>site_name</i> <i>ao_server</i> <i>backup_retention</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'set_httpd_site_file_backup_retention',
@@ -1197,7 +1237,7 @@ insert into aosh_commands values(
   'sets the file backup retention for a web site',
   '<i>site_name</i> <i>ao_server</i> <i>backup_retention</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'set_httpd_site_ftp_backup_retention',
@@ -1205,7 +1245,7 @@ insert into aosh_commands values(
   'sets the ftp file backup retention for a web site',
   '<i>site_name</i> <i>ao_server</i> <i>backup_retention</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'set_httpd_site_is_manual',
@@ -1221,7 +1261,7 @@ insert into aosh_commands values(
   'sets the log file backup retention for a web site',
   '<i>site_name</i> <i>ao_server</i> <i>backup_retention</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'set_httpd_site_server_admin',
@@ -1365,7 +1405,7 @@ insert into aosh_commands values(
   'retrieves the contents of an InterBase backup from a backup server',
   '<i>pkey</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'remove_interbase_backup',
@@ -1373,7 +1413,7 @@ insert into aosh_commands values(
   'removes the contents of an InterBase backup from the backup servers',
   '<i>pkey</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'add_interbase_database',
@@ -1381,7 +1421,7 @@ insert into aosh_commands values(
   'creates a new InterBase database',
   '<i>ao_server</i> <i>db_group</i> <i>name</i> <i>datdba</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'backup_interbase_database',
@@ -1389,7 +1429,7 @@ insert into aosh_commands values(
   'dumps the contents of a database onto a backup server',
   '<i>ao_server</i> <i>db_group</i> <i>name</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'check_interbase_database_name',
@@ -1397,7 +1437,7 @@ insert into aosh_commands values(
   'checks the validity for an InterBase database name',
   '<i>name</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'dump_interbase_database',
@@ -1405,7 +1445,7 @@ insert into aosh_commands values(
   'dumps the contents of an InterBase database',
   '<i>ao_server</i> <i>db_group</i> <i>name</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'generate_interbase_database_name',
@@ -1413,7 +1453,7 @@ insert into aosh_commands values(
   'generates a per-server and per-group unique InterBase database name',
   '<i>ao_server</i> <i>db_group</i> <i>template_base</i> <i>template_added</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'is_interbase_database_name_available',
@@ -1421,7 +1461,7 @@ insert into aosh_commands values(
   'checks the availability of an InterBase database name',
   '<i>ao_server</i> <i>db_group</i> <i>name</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'remove_interbase_database',
@@ -1429,7 +1469,7 @@ insert into aosh_commands values(
   'removes an InterBase database from the system',
   '<i>ao_server</i> <i>db_group</i> <i>name</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'add_interbase_db_group',
@@ -1437,7 +1477,7 @@ insert into aosh_commands values(
   'adds an InterBase database group to the system',
   '<i>ao_server</i> <i>db_group</i> <i>linux_group</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'check_interbase_db_group_name',
@@ -1445,7 +1485,7 @@ insert into aosh_commands values(
   'checks for format of an InterBase database group name',
   '<i>name</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'generate_interbase_db_group_name',
@@ -1453,7 +1493,7 @@ insert into aosh_commands values(
   'generates a per-server unique InterBase database group name',
   '<i>ao_server</i> <i>template_base</i> <i>template_added</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'is_interbase_db_group_name_available',
@@ -1461,7 +1501,7 @@ insert into aosh_commands values(
   'determines if an InterBase database group name is available',
   '<i>ao_server</i> <i>db_group</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'remove_interbase_db_group',
@@ -1469,7 +1509,7 @@ insert into aosh_commands values(
   'removes an InterBase database group from the system',
   '<i>ao_server</i> <i>db_group</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'add_interbase_server_user',
@@ -1477,7 +1517,7 @@ insert into aosh_commands values(
   'grants an InterBase account access to a server',
   '<i>username</i> <i>ao_server</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'disable_interbase_server_user',
@@ -1485,7 +1525,7 @@ insert into aosh_commands values(
   'disables an InterBase account on one server',
   '<i>username</i> <i>ao_server</i> <i>reason</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'enable_interbase_server_user',
@@ -1493,7 +1533,7 @@ insert into aosh_commands values(
   'enables an InterBase account on one server',
   '<i>username</i> <i>ao_server</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'is_interbase_server_user_password_set',
@@ -1501,7 +1541,7 @@ insert into aosh_commands values(
   'determines if an InterBase account password is set',
   '<i>username</i> <i>ao_server</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'remove_interbase_server_user',
@@ -1509,7 +1549,7 @@ insert into aosh_commands values(
   'revokes an InterBase account\'s access to a server',
   '<i>username</i> <i>ao_server</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'set_interbase_server_user_password',
@@ -1517,7 +1557,7 @@ insert into aosh_commands values(
   'sets the password for an InterBase accounts access to one server',
   '<i>username</i> <i>ao_server</i> <i>password</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'add_interbase_user',
@@ -1525,7 +1565,7 @@ insert into aosh_commands values(
   'adds an InterBase user to the system',
   '<i>username</i> {""|<i>first_name</i>} {""|<i>middle_name</i>} {""|<i>last_name</i>}',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'are_interbase_user_passwords_set',
@@ -1533,7 +1573,7 @@ insert into aosh_commands values(
   'determines if <b>all</b>, <b>some</b>, or <b>none</b> of the passwords for an InterBase account are set',
   '<i>username</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'check_interbase_password',
@@ -1541,7 +1581,7 @@ insert into aosh_commands values(
   'checks the strength of a password that will be used for an InterBase account',
   '<i>username</i> <i>password</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'check_interbase_username',
@@ -1549,7 +1589,7 @@ insert into aosh_commands values(
   'determines if a username may be used for an InterBase account',
   '<i>username</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'disable_interbase_user',
@@ -1557,7 +1597,7 @@ insert into aosh_commands values(
   'disables an InterBase account, including its access to all database servers',
   '<i>username</i> <i>reason</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'enable_interbase_user',
@@ -1565,7 +1605,7 @@ insert into aosh_commands values(
   'enables an InterBase account, including its access to all database servers',
   '<i>username</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'remove_interbase_user',
@@ -1573,7 +1613,7 @@ insert into aosh_commands values(
   'removes an InterBase user from the system',
   '<i>username</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'set_interbase_user_password',
@@ -1581,7 +1621,7 @@ insert into aosh_commands values(
   'sets the password used to access an InterBase user',
   '<i>username</i> {""|<i>password</i>}',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'wait_for_interbase_rebuild',
@@ -1589,7 +1629,7 @@ insert into aosh_commands values(
   'waits for any pending or processing InterBase server updates to complete',
   '<i>ao_server</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'check_ip_address',
@@ -1965,7 +2005,7 @@ insert into aosh_commands values(
   'sets the cron file backup retention for a Linux account on one server',
   '<i>username</i> <i>ao_server</i> <i>backup_retention</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'set_linux_server_account_home_backup_retention',
@@ -1973,7 +2013,7 @@ insert into aosh_commands values(
   'sets the home directory backup retention for a Linux account on one server',
   '<i>username</i> <i>ao_server</i> <i>backup_retention</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'set_linux_server_account_inbox_backup_retention',
@@ -1981,7 +2021,7 @@ insert into aosh_commands values(
   'sets the email inbox directory backup retention for a Linux account on one server',
   '<i>username</i> <i>ao_server</i> <i>backup_retention</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'set_linux_server_account_junk_email_retention',
@@ -2117,7 +2157,7 @@ insert into aosh_commands values(
   'sets the backup retention for a Majordomo server',
   '<i>domain</i> <i>ao_server</i> <i>backup_retention</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'get_mysql_backup',
@@ -2125,7 +2165,7 @@ insert into aosh_commands values(
   'gets the contents of a MySQL database backup',
   '<i>pkey</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'remove_mysql_backup',
@@ -2133,7 +2173,7 @@ insert into aosh_commands values(
   'removes a MySQL database backup from the system',
   '<i>pkey</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'add_mysql_database',
@@ -2165,7 +2205,7 @@ insert into aosh_commands values(
   'stores a compressed dump of a MySQL database in the backup system',
   '<i>database_name</i> <i>mysql_server</i> <i>ao_server</i>',
   '1.4',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'check_mysql_database_name',
@@ -2245,7 +2285,7 @@ insert into aosh_commands values(
   'sets the backup retention for a MySQL database',
   '<i>database_name</i> <i>mysql_server</i> <i>ao_server</i> <i>backup_retention</i>',
   '1.4',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'wait_for_mysql_database_rebuild',
@@ -2637,7 +2677,7 @@ insert into aosh_commands values(
   'gets the contents of a PostgreSQL database backup',
   '<i>pkey</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'remove_postgres_backup',
@@ -2645,7 +2685,7 @@ insert into aosh_commands values(
   'removes a PostgreSQL database backup from the system',
   '<i>pkey</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'add_postgres_database',
@@ -2669,7 +2709,7 @@ insert into aosh_commands values(
   'stores a compressed dump of a PostgreSQL database in the backup system',
   '<i>database_name</i> <i>postgres_server</i> <i>ao_server</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'check_postgres_database_name',
@@ -2717,7 +2757,7 @@ insert into aosh_commands values(
   'sets the backup retention for a PostgreSQL database',
   '<i>database_name</i> <i>postgres_server</i> <i>ao_server</i> <i>backup_retention</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'wait_for_postgres_database_rebuild',
@@ -2933,7 +2973,7 @@ insert into aosh_commands values(
   'adds to the daily SMTP statistics',
   '<i>package</i> <i>date</i> <i>ao_server</i> <i>in_count</i> <i>in_bandwidth</i> <i>out_count</i> <i>out_bandwidth</i>',
   '1.0a100',
-  null
+  '1.30'
 );
 insert into aosh_commands values(
   'add_backup_server',

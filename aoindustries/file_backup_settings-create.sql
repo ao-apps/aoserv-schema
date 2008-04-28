@@ -6,19 +6,13 @@ create table file_backup_settings (
   pkey smallint
     default nextval('file_backup_settings_pkey_seq')
     constraint file_backup_settings_pkey primary key,
-  server integer
+  replication integer
     not null,
   path text
     not null,
-  package integer
+  backup_enabled boolean
     not null,
-  backup_level smallint
-    not null,
-  backup_retention smallint
-    not null,
-  recurse bool
-    not null,
-  unique(server, path)
+  unique(replication, path)
 );
 grant all on file_backup_settings to aoadmin;
 grant select, insert, update, delete on file_backup_settings to aoserv_app;

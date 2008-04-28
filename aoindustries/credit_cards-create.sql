@@ -32,6 +32,21 @@ create table credit_cards (
   deactivated_on timestamp,
   deactivate_reason text,
   description text,
+  encrypted_card_number text,
+  encryption_card_number_from integer,
+  encryption_card_number_recipient integer,
+  encrypted_expiration text,
+  encryption_expiration_from integer,
+  encryption_expiration_recipient integer,
+  check (
+    (
+        encrypted_card_number is null and encryption_card_number_from is null and encryption_card_number_recipient is null
+        and encrypted_expiration is null and encryption_expiration_from is null and encryption_expiration_recipient is null
+    ) or (
+        encrypted_card_number is not null and encryption_card_number_from is not null and encryption_card_number_recipient is not null
+        and encrypted_expiration is not null and encryption_expiration_from is not null and encryption_expiration_recipient is not null
+    )
+  )
   unique(processor_id, provider_unique_id)
 );
 grant all on credit_cards to aoadmin;

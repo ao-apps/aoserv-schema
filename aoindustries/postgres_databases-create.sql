@@ -18,10 +18,6 @@ create table postgres_databases (
     not null,
   allow_conn bool
     not null,
-  backup_level smallint
-    not null,
-  backup_retention smallint
-    not null,
   enable_postgis bool
     not null,
   unique (name, postgres_server)

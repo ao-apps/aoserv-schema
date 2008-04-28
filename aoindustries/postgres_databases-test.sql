@@ -9,8 +9,6 @@ values(
     (select pkey from postgres_encodings where encoding='LATIN1' and postgres_version=(select version from postgres_versions where minor_version='8.1')),
     true,
     false,
-    0,
-    31,
     false
 );
 insert into
@@ -23,8 +21,6 @@ values(
     (select pkey from postgres_encodings where encoding='LATIN1' and postgres_version=(select version from postgres_versions where minor_version='8.1')),
     true,
     true,
-    2,
-    31,
     false
 );
 insert into
@@ -37,8 +33,6 @@ values(
     (select pkey from postgres_encodings where encoding='SQL_ASCII' and postgres_version=(select version from postgres_versions where minor_version='8.1')),
     false,
     true,
-    2,
-    31,
     false
 );
 insert into
@@ -51,8 +45,6 @@ values(
     (select pkey from postgres_encodings where encoding='SQL_ASCII' and postgres_version=(select version from postgres_versions where minor_version='8.1')),
     false,
     true,
-    2,
-    31,
     false
 );
 insert into
@@ -65,8 +57,6 @@ values(
     (select pkey from postgres_encodings where encoding='UTF8' and postgres_version=(select version from postgres_versions where minor_version='8.1')),
     false,
     true,
-    2,
-    31,
     false
 );
 insert into
@@ -79,8 +69,6 @@ values(
     (select pkey from postgres_encodings where encoding='SQL_ASCII' and postgres_version=(select version from postgres_versions where minor_version='8.1')),
     false,
     true,
-    1,
-    7,
     false
 );
 insert into
@@ -93,8 +81,6 @@ values(
     (select pkey from postgres_encodings where encoding='UTF8' and postgres_version=(select version from postgres_versions where minor_version='8.1')),
     false,
     true,
-    2,
-    7,
     false
 );
 insert into
@@ -107,8 +93,6 @@ values(
     (select pkey from postgres_encodings where encoding='SQL_ASCII' and postgres_version=(select version from postgres_versions where minor_version='8.1')),
     false,
     true,
-    2,
-    7,
     false
 );
 insert into
@@ -121,8 +105,6 @@ values(
     (select pkey from postgres_encodings where encoding='SQL_ASCII' and postgres_version=(select version from postgres_versions where minor_version='8.1')),
     false,
     true,
-    2,
-    31,
     false
 );
 SELECT setval ('"postgres_databases_pkey_seq"', 17, true);

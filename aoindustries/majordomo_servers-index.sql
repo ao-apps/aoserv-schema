@@ -16,9 +16,3 @@ create index majordomo_servers_owner_majordomo_add_idx on majordomo_servers (
 create index majordomo_servers_majordomo_owner_add_idx on majordomo_servers (
   majordomo_owner_add
 );
-create index majordomo_servers_backup_level_idx on majordomo_servers (
-  backup_level
-);
-create index majordomo_servers_backup_retention_idx on majordomo_servers (
-  backup_retention
-);

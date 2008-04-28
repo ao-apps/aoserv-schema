@@ -6,20 +6,19 @@ create table failover_file_replications (
   pkey integer
     default nextval('failover_file_replications_pkey_seq')
     constraint failover_file_replications_pk primary key,
-  from_server integer
-    not null,
-  to_server integer
-    not null,
+  server integer not null,
+  backup_partition integer not null,
   max_bit_rate integer,
-  last_start_time timestamp,
   use_compression bool not null,
   retention smallint not null,
   connect_address text,
   connect_from text,
   enabled bool not null,
-  to_path text not null,
-  chunk_always bool not null,
-  unique(from_server, to_server)
+  quota_gid integer,
+  unique(server, backup_partition),
+  unique(backup_partition, quota_gid),
+  -- Failover mirrors (retention=1) may not be on a quota-enabled partition
+  check(not(retention=1 and quota_gid is not null))
 );
 grant all on failover_file_replications to aoadmin;
 grant select, update on failover_file_replications to aoserv_app;

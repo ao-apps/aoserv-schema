@@ -12,13 +12,9 @@ create table business_servers (
     not null,
   is_default bool
     not null,
-  can_configure_backup bool
-    not null,
   can_control_apache bool
     not null,
   can_control_cron bool
-    not null,
-  can_control_interbase bool
     not null,
   can_control_mysql bool
     not null,

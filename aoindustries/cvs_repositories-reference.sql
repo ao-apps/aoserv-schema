@@ -13,20 +13,6 @@ alter table cvs_repositories
   on update cascade
 ;
 alter table cvs_repositories
-  add constraint backup_level_fkey
-  foreign key (backup_level)
-  references backup_levels (level)
-  on delete restrict
-  on update cascade
-;
-alter table cvs_repositories
-  add constraint backup_retention_fkey
-  foreign key (backup_retention)
-  references backup_retentions (days)
-  on delete restrict
-  on update cascade
-;
-alter table cvs_repositories
   add constraint disable_log_fkey
   foreign key (disable_log)
   references disable_log (pkey)

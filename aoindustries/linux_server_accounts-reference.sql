@@ -20,48 +20,6 @@ alter table linux_server_accounts
   on update cascade
 ;
 alter table linux_server_accounts
-  add constraint cron_backup_level_fkey
-  foreign key (cron_backup_level)
-  references backup_levels (level)
-  on delete restrict
-  on update cascade
-;
-alter table linux_server_accounts
-  add constraint cron_backup_retention_fkey
-  foreign key (cron_backup_retention)
-  references backup_retentions (days)
-  on delete restrict
-  on update cascade
-;
-alter table linux_server_accounts
-  add constraint home_backup_level_fkey
-  foreign key (home_backup_level)
-  references backup_levels (level)
-  on delete restrict
-  on update cascade
-;
-alter table linux_server_accounts
-  add constraint home_backup_retention_fkey
-  foreign key (home_backup_retention)
-  references backup_retentions (days)
-  on delete restrict
-  on update cascade
-;
-alter table linux_server_accounts
-  add constraint inbox_backup_level_fkey
-  foreign key (inbox_backup_level)
-  references backup_levels (level)
-  on delete restrict
-  on update cascade
-;
-alter table linux_server_accounts
-  add constraint inbox_backup_retention_fkey
-  foreign key (inbox_backup_retention)
-  references backup_retentions (days)
-  on delete restrict
-  on update cascade
-;
-alter table linux_server_accounts
   add constraint autoresponder_from_fkey
   foreign key (autoresponder_from)
   references linux_acc_addresses (pkey)

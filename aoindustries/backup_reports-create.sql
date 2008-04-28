@@ -14,13 +14,8 @@ create table backup_reports (
     not null,
   file_count integer
     not null,
-  uncompressed_size int8
-    not null,
-  compressed_size int8
-    not null,
   disk_size int8
-    not null,
-  unique(date, server, package)
+    not null
 );
 grant all on backup_reports to aoadmin;
 grant select, update, insert, delete on backup_reports to aoserv_app;

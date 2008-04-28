@@ -12,9 +12,13 @@ create table failover_file_schedule (
     not null
     constraint hour_chk
       check (hour>=0 and hour<=23),
+  minute smallint
+    not null
+    constraint minute_chk
+      check (minute>=0 and minute<=59),
   enabled bool
     not null,
-  unique(replication, hour)
+  unique(replication, hour, minute)
 );
 grant all on failover_file_schedule to aoadmin;
 grant select on failover_file_schedule to aoserv_app;

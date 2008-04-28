@@ -10,11 +10,9 @@ create table schema_tables (
     not null,
   description text
     not null,
-  dataverse_editor text,
   since_version text
     not null,
   last_version text,
-  default_order_by text,
   unique(table_id)
 );
 grant all on schema_tables to aoadmin;

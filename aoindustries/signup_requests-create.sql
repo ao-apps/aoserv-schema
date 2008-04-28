@@ -40,7 +40,9 @@ create table signup_requests (
   -- The encrypted credit card details and password
   encrypted_data text not null,
   -- The public key that was used to encrypt the credit card details and password
-  encryption_key integer not null,
+  encryption_from integer not null,
+  -- The recipient for the encrypted content
+  encryption_recipient integer not null,
   completed_by text,
   completed_time timestamp
 );

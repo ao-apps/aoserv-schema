@@ -27,62 +27,6 @@ alter table httpd_sites
   on update cascade
 ;
 alter table httpd_sites
-  add constraint config_backup_level_fkey
-  foreign key (config_backup_level)
-  references backup_levels (level)
-  on delete restrict
-  on update cascade
-;
-alter table httpd_sites
-  add constraint config_backup_retention_fkey
-  foreign key (config_backup_retention)
-  references backup_retentions (days)
-  on delete restrict
-  on update cascade
-;
-alter table httpd_sites
-  add constraint file_backup_level_fkey
-  foreign key (file_backup_level)
-  references backup_levels (level)
-  on delete restrict
-  on update cascade
-;
-alter table httpd_sites
-  add constraint file_backup_retention_fkey
-  foreign key (file_backup_retention)
-  references backup_retentions (days)
-  on delete restrict
-  on update cascade
-;
-alter table httpd_sites
-  add constraint ftp_backup_level_fkey
-  foreign key (ftp_backup_level)
-  references backup_levels (level)
-  on delete restrict
-  on update cascade
-;
-alter table httpd_sites
-  add constraint ftp_backup_retention_fkey
-  foreign key (ftp_backup_retention)
-  references backup_retentions (days)
-  on delete restrict
-  on update cascade
-;
-alter table httpd_sites
-  add constraint log_backup_level_fkey
-  foreign key (log_backup_level)
-  references backup_levels (level)
-  on delete restrict
-  on update cascade
-;
-alter table httpd_sites
-  add constraint log_backup_retention_fkey
-  foreign key (log_backup_retention)
-  references backup_retentions (days)
-  on delete restrict
-  on update cascade
-;
-alter table httpd_sites
   add constraint disable_log_fkey
   foreign key (disable_log)
   references disable_log (pkey)

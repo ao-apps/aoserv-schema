@@ -12,10 +12,6 @@ create table majordomo_servers (
   owner_majordomo_add integer
     not null,
   majordomo_owner_add integer
-    not null,
-  backup_level smallint
-    not null,
-  backup_retention smallint
     not null
 );
 grant all on majordomo_servers to aoadmin;

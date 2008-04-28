@@ -20,18 +20,6 @@ create table httpd_shared_tomcats (
     not null,
   is_overflow bool
     not null,
-  config_backup_level smallint
-    not null,
-  config_backup_retention smallint
-    not null,
-  file_backup_level smallint
-    not null,
-  file_backup_retention smallint
-    not null,
-  log_backup_level smallint
-    not null,
-  log_backup_retention smallint
-    not null,
   disable_log integer,
   tomcat4_worker integer
     unique,

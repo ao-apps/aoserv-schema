@@ -5,10 +5,8 @@ insert into schema_tables values(
     'Action Types',
     true,
     'Table action_types is a lookup for the ticket_actions table showing possible actions for a ticket in the tickets table',
-    null,
     '1.0a100',
-    null,
-    'description'
+    null
 );
 insert into schema_tables values(
     'actions',
@@ -16,10 +14,8 @@ insert into schema_tables values(
     'Actions',
     false,
     'Table actions includes information regarding specific actions taken on items in the tickets table',
-    null,
     '1.0a100',
-    null,
-    'ticket_id,time,pkey'
+    null
 );
 insert into schema_tables values(
     'ao_server_daemon_hosts',
@@ -27,22 +23,17 @@ insert into schema_tables values(
     'AOServ Server Daemon Hosts',
     false,
     '<code>ao_server_daemon_hosts</code> stores which hosts may connect to the AOServ Daemon on a server.',
-    null,
     '1.0a100',
-    null,
-    'ao_server.server.hostname,host'
+    null
 );
 insert into schema_tables values(
     'ao_servers',
     (select count(*) from schema_tables),
     'AOServ Servers',
     false,
-    'The ao_servers table keeps track of all the servers that are
-running the AOServ distribution.',
-    null,
+    'The ao_servers table keeps track of all the servers that are running the AOServ distribution.',
     '1.0a100',
-    null,
-    'server.hostname'
+    null
 );
 insert into schema_tables values(
     'aoserv_permissions',
@@ -50,10 +41,8 @@ insert into schema_tables values(
     'AOServ Permissions',
     true,
     '<code>aoserv_permissions</code> lists all of the possible permissions in the AOServ system.',
-    null,
     '1.21',
-    null,
-    'sort_order'
+    null
 );
 insert into schema_tables values(
     'aoserv_protocols',
@@ -61,10 +50,8 @@ insert into schema_tables values(
     'AOServ Protocols',
     true,
     '<code>aoserv_protocols</code> keeps track of the different versions of the protocol and what is available in that protocol.',
-    null,
     '1.0a101',
-    null,
-    'created'
+    null
 );
 insert into schema_tables values(
     'aosh_commands',
@@ -72,10 +59,8 @@ insert into schema_tables values(
     'AOSH Commands',
     true,
     '<code>aosh_commands</code> stores the details about each command that may be used in the AO shell.',
-    null,
     '1.0a100',
-    null,
-    'command'
+    null
 );
 insert into schema_tables values(
     'architectures',
@@ -83,10 +68,8 @@ insert into schema_tables values(
     'Architectures',
     true,
     'The architectures table provides all the possible computer architectures for the servers table.',
-    null,
     '1.0a100',
-    null,
-    'name'
+    null
 );
 insert into schema_tables values(
     'backup_data',
@@ -94,10 +77,8 @@ insert into schema_tables values(
     'Backup Data',
     false,
     'The <code>backup_data</code> table stores the details of unique set of backup data.',
-    null,
     '1.0a100',
-    null,
-    'pkey'
+    '1.30'
 );
 insert into schema_tables values(
     'backup_levels',
@@ -105,10 +86,8 @@ insert into schema_tables values(
     'Backup Levels',
     true,
     '<code>backup_levels</code> stores all of the possible backup paranoia levels.',
-    null,
     '1.0a100',
-    null,
-    'level'
+    '1.30'
 );
 insert into schema_tables values(
     'backup_partitions',
@@ -116,10 +95,8 @@ insert into schema_tables values(
     'Backup Partitions',
     false,
     'The <code>backup_partitions</code> table stores the details of each backup location.',
-    null,
     '1.0a100',
-    null,
-    'ao_server.server.hostname,device,path'
+    null
 );
 insert into schema_tables values(
     'backup_reports',
@@ -127,10 +104,8 @@ insert into schema_tables values(
     'Backup Reports',
     false,
     'The <code>backup_reports</code> table stores the daily summary of backup system usage.',
-    null,
     '1.0a101',
-    null,
-    'date desc,server.hostname,package'
+    null
 );
 insert into schema_tables values(
     'backup_retentions',
@@ -138,10 +113,8 @@ insert into schema_tables values(
     'Backup Retentions',
     true,
     '<code>backup_retentions</code> stores all of the possible backup retention times.',
-    null,
     '1.0a100',
-    null,
-    'days'
+    null
 );
 insert into schema_tables values(
     'bank_accounts',
@@ -149,34 +122,26 @@ insert into schema_tables values(
     'Bank Accounts',
     false,
     'The bank_accounts table stores all the bank accounts we operate.',
-    null,
     '1.0a100',
-    null,
-    'name'
+    null
 );
 insert into schema_tables values(
     'bank_transaction_types',
     (select count(*) from schema_tables),
     'Bank Transaction Types',
     false,
-    'The bank_transaction_types table stores all the possible types
-of transactions for bank_transactions.',
-    null,
+    'The bank_transaction_types table stores all the possible types of transactions for bank_transactions.',
     '1.0a100',
-    null,
-    'display'
+    null
 );
 insert into schema_tables values(
     'bank_transactions',
     (select count(*) from schema_tables),
     'Bank Transactions',
     false,
-    'The bank_transactions table stores all the the transactions
-that have occured on a bank account.',
-    null,
+    'The bank_transactions table stores all the the transactions that have occured on a bank account.',
     '1.0a100',
-    null,
-    'time::date,transid'
+    null
 );
 insert into schema_tables values(
     'banks',
@@ -184,35 +149,26 @@ insert into schema_tables values(
     'Banks',
     false,
     'The banks table stores information about each bank we deal with',
-    null,
     '1.0a100',
-    null,
-    'name'
+    null
 );
 insert into schema_tables values(
     'blackhole_email_addresses',
     (select count(*) from schema_tables),
     'Blackhole Email Addresses',
     false,
-    'The blackhole_email_addresses is a list of email addresses
-in which all email sent to them is immediately discarded
-via /dev/null.',
-    null,
+    'The blackhole_email_addresses is a list of email addresses in which all email sent to them is immediately discarded via /dev/null.',
     '1.0a100',
-    null,
-    'email_address.domain,email_address.domain.ao_server.server.hostname,email_address.address'
+    null
 );
 insert into schema_tables values(
     'business_administrators',
     (select count(*) from schema_tables),
     'Business Administrators',
     false,
-    'The business_administrators table stores details about the
-people who are allowed to access the aoserv and aoweb utilities.',
-    null,
+    'The business_administrators table stores details about the people who are allowed to access the aoserv and aoweb utilities.',
     '1.0a100',
-    null,
-    'username'
+    null
 );
 insert into schema_tables values(
     'business_administrator_permissions',
@@ -220,23 +176,17 @@ insert into schema_tables values(
     'Business Administrator Permissions',
     false,
     'Grants administrative permissions.',
-    null,
     '1.21',
-    null,
-    'username,permission.sort_order'
+    null
 );
 insert into schema_tables values(
     'business_profiles',
     (select count(*) from schema_tables),
     'Business Profiles',
     false,
-    'The business_profiles stores all the old profile data for a
-business.  This is done so that old contacts may be used in case
-of an emergency.',
-    null,
+    'The business_profiles stores all the old profile data for a business.  This is done so that old contacts may be used in case of an emergency.',
     '1.0a100',
-    null,
-    'accounting,priority desc'
+    null
 );
 insert into schema_tables values(
     'businesses',
@@ -244,24 +194,17 @@ insert into schema_tables values(
     'Businesses',
     false,
     'The businesses table stores details about businesses',
-    null,
     '1.0a100',
-    null,
-    'accounting'
+    null
 );
 insert into schema_tables values(
     'business_servers',
     (select count(*) from schema_tables),
     'Business Servers',
     false,
-    'The business_servers table stores which servers may be accessed
-by which business.  A child business can only access a subset
-of the parent business\' servers.  Only one entry per business
-is flagged as default.',
-    null,
+    'The business_servers table stores which servers may be accessed by which business.  A child business can only access a subset of the parent business'' servers.  Only one entry per business is flagged as default.',
     '1.0a100',
-    null,
-    'accounting,server.hostname'
+    null
 );
 insert into schema_tables values(
     'client_jvm_profile',
@@ -269,10 +212,8 @@ insert into schema_tables values(
     'Client JVM Profile',
     false,
     '',
-    null,
     '1.0a100',
-    null,
-    'classname,method_name,parameter'
+    null
 );
 insert into schema_tables values(
     'country_codes',
@@ -280,10 +221,8 @@ insert into schema_tables values(
     'Country Codes',
     true,
     'The country_codes table contains all of the valid country codes.  This data was obtained from http://digitalid.verisign.com/ccodes.html',
-    null,
     '1.0a100',
-    null,
-    'name'
+    null
 );
 insert into schema_tables values(
     'credit_card_processors',
@@ -291,10 +230,8 @@ insert into schema_tables values(
     'Credit Card Processors',
     false,
     'The credit_card_processors table stores all of the different credit card processing merchant accounts.',
-    null,
     '1.29',
-    null,
-    'accounting,provider_id'
+    null
 );
 insert into schema_tables values(
     'credit_card_transactions',
@@ -302,10 +239,8 @@ insert into schema_tables values(
     'Credit Card Transactions',
     false,
     'The credit_card_transactions table stores the complete history of credit card processor transactions.',
-    null,
     '1.29',
-    null,
-    'accounting,authorization_time,pkey'
+    null
 );
 insert into schema_tables values(
     'credit_cards',
@@ -313,10 +248,8 @@ insert into schema_tables values(
     'Credit Cards',
     false,
     'The credit_cards table stores all of the client credit card information in an encrypted format.',
-    null,
     '1.0a100',
-    null,
-    'accounting,created'
+    null
 );
 insert into schema_tables values(
     'cvs_repositories',
@@ -324,10 +257,8 @@ insert into schema_tables values(
     'CVS Repositories',
     false,
     'The <code>cvs_repositories</code> table stores the details of each CVSROOT',
-    null,
     '1.0a100',
-    null,
-    'linux_server_account.ao_server.server.hostname,path'
+    null
 );
 insert into schema_tables values(
     'daemon_profile',
@@ -335,10 +266,8 @@ insert into schema_tables values(
     'Daemon Profile',
     false,
     '',
-    null,
     '1.0a100',
-    null,
-    'server,classname,method_name,parameter'
+    null
 );
 insert into schema_tables values(
     'disable_log',
@@ -346,10 +275,8 @@ insert into schema_tables values(
     'Disable Log',
     false,
     'The <code>disable_log</code> logs all the times things are disabled.',
-    null,
     '1.0a100',
-    null,
-    'time,accounting,pkey'
+    null
 );
 insert into schema_tables values(
     'distro_file_types',
@@ -357,10 +284,8 @@ insert into schema_tables values(
     'Distro File Types',
     false,
     'The distro_file_types stores all of the possible file types.',
-    null,
     '1.0a100',
-    null,
-    'type'
+    null
 );
 insert into schema_tables values(
     'distro_files',
@@ -368,10 +293,8 @@ insert into schema_tables values(
     'Distro Files',
     false,
     'The distro_files stores all of the file attributes in the templates.',
-    null,
     '1.0a100',
-    null,
-    'path,operating_system_version'
+    null
 );
 insert into schema_tables values(
     'dns_forbidden_zones',
@@ -379,10 +302,8 @@ insert into schema_tables values(
     'DNS Forbidden Zones',
     true,
     '<code>dns_forbidden_zones</code> stores all of the DNS zones that may not be hosted by the name servers',
-    null,
     '1.0a100',
-    null,
-    'zone'
+    null
 );
 insert into schema_tables values(
     'dns_records',
@@ -390,10 +311,8 @@ insert into schema_tables values(
     'DNS Records',
     false,
     '<code>dns_records</code> stores all of individual records of the name server.',
-    null,
     '1.0a100',
-    null,
-    'zone,domain,type,mx_priority,destination'
+    null
 );
 insert into schema_tables values(
     'dns_tlds',
@@ -401,10 +320,8 @@ insert into schema_tables values(
     'DNS TLDs',
     true,
     '<code>dns_tlds</code> stores all of the domains that are considered to be "top level domains".',
-    null,
     '1.0a100',
-    null,
-    'domain'
+    null
 );
 insert into schema_tables values(
     'dns_types',
@@ -412,10 +329,8 @@ insert into schema_tables values(
     'DNS Types',
     true,
     '<code>dns_types</code> stores all of the types of entries that may be placed in a line of a zone file.',
-    null,
     '1.0a100',
-    null,
-    'description'
+    null
 );
 insert into schema_tables values(
     'dns_zones',
@@ -424,10 +339,8 @@ insert into schema_tables values(
     'DNS Zones',
     false,
     '<code>dns_zones</code> stores all of the DNS zones.',
-    null,
     '1.0a100',
-    null,
-    'zone'
+    null
 );
 insert into schema_tables values(
     'email_addresses',
@@ -435,10 +348,8 @@ insert into schema_tables values(
     'Email Addresses',
     false,
     'The email_addresses table stores a central pool of all email addresses.',
-    null,
     '1.0a100',
-    null,
-    'domain.domain,domain.ao_server.server.hostname,address'
+    null
 );
 insert into schema_tables values(
     'email_attachment_blocks',
@@ -446,10 +357,8 @@ insert into schema_tables values(
     'Email Attachment Blocks',
     false,
     'The email_attachment_blocks table stores all attachment types that are currently blocked.',
-    null,
     '1.0a116',
-    null,
-    'linux_server_account.username,linux_server_account.ao_server.server.hostname,extension'
+    null
 );
 insert into schema_tables values(
     'email_attachment_types',
@@ -457,22 +366,26 @@ insert into schema_tables values(
     'Email Attachment Types',
     true,
     '<code>email_attachment_types</code> stores all of the possible attachment extensions that may be blocked.',
-    null,
     '1.0a116',
-    null,
-    'extension'
+    null
 );
-insert into schema_tables values('email_blacklists', (select count(*) from schema_tables), 'Email Blacklists', false, '', null, '1.0a105', '1.0a121');
+insert into schema_tables values(
+    'email_blacklists',
+    (select count(*) from schema_tables),
+    'Email Blacklists',
+    false,
+    '',
+    '1.0a105',
+    '1.0a121'
+);
 insert into schema_tables values(
     'email_domains',
     (select count(*) from schema_tables),
     'Email Domains',
     false,
     'The email_domains table stores all the domains that the MTA responds to.',
-    null,
     '1.0a100',
-    null,
-    'domain,ao_server.server.hostname'
+    null
 );
 insert into schema_tables values(
     'email_forwarding',
@@ -480,10 +393,8 @@ insert into schema_tables values(
     'Email Forwarding',
     false,
     'The email_forwarding sends email addresssed to email_addresses to another address.',
-    null,
     '1.0a100',
-    null,
-    'email_address.domain.domain,email_address.domain.ao_server.server.hostname,email_address.address,destination'
+    null
 );
 insert into schema_tables values(
     'email_list_addresses',
@@ -491,10 +402,8 @@ insert into schema_tables values(
     'Email List Addresses',
     false,
     'The email_list_addresses attaches the email_addresses to the email lists.',
-    null,
     '1.0a100',
-    null,
-    'email_address.domain,email_address.domain.ao_server.server.hostname,email_address.address,email_list.path,email_list.linux_account.ao_server.server.hostname'
+    null
 );
 insert into schema_tables values(
     'email_lists',
@@ -502,10 +411,8 @@ insert into schema_tables values(
     'Email Lists',
     false,
     'The email_lists table stores pointers to all the list files that are used for email.',
-    null,
     '1.0a100',
-    null,
-    'path,linux_account.ao_server.server.hostname'
+    null
 );
 insert into schema_tables values(
     'email_pipe_addresses',
@@ -513,10 +420,8 @@ insert into schema_tables values(
     'Email Pipe Addresses',
     false,
     'The email_pipe_addresses attaches the email_addresses to the email pipes.',
-    null,
     '1.0a100',
-    null,
-    'email_address.domain,email_address.domain.ao_server.server.hostname,email_address.address,email_pipe.path'
+    null
 );
 insert into schema_tables values(
     'email_pipes',
@@ -524,10 +429,8 @@ insert into schema_tables values(
     'Email Pipes',
     false,
     'The email_pipes table stores pointers to all the processes that are used for direct delivery of email.',
-    null,
     '1.0a100',
-    null,
-    'path,ao_server.server.hostname'
+    null
 );
 insert into schema_tables values(
     'email_smtp_relay_types',
@@ -535,10 +438,8 @@ insert into schema_tables values(
     'Email SMTP Relay Types',
     true,
     'The email_smtp_relay_types table stores all the different types of SMTP rules.',
-    null,
     '1.0a100',
-    null,
-    'name'
+    null
 );
 insert into schema_tables values(
     'email_smtp_relays',
@@ -546,10 +447,8 @@ insert into schema_tables values(
     'Email SMTP Relays',
     false,
     'The email_smtp_relays table stores the SMTP server access rules.',
-    null,
     '1.0a100',
-    null,
-    'ao_server.server.hostname,host,package'
+    null
 );
 insert into schema_tables values(
     'email_sa_integration_modes',
@@ -557,10 +456,8 @@ insert into schema_tables values(
     'Email SpamAssassin Integration Modes',
     true,
     'The email_sa_integration_modes tables provides all the possible spam assassin itegration modes supported.',
-    null,
     '1.0a120',
-    null,
-    'sort_order'
+    null
 );
 insert into schema_tables values(
     'encryption_keys',
@@ -568,10 +465,8 @@ insert into schema_tables values(
     'Encryption Keys',
     false,
     'The encryption_keys table stores the list of GPG key ids on a per-business basis.',
-    null,
     '1.23',
-    null,
-    'accounting,id'
+    null
 );
 insert into schema_tables values(
     'expense_categories',
@@ -579,10 +474,8 @@ insert into schema_tables values(
     'Expense Categories',
     false,
     'The expense_categories table is a lookup for bank_transactions, and is used to organize expenditures for accounting purposes.',
-    null,
     '1.0a100',
-    null,
-    'expense_code'
+    null
 );
 insert into schema_tables values(
     'failover_file_log',
@@ -590,10 +483,8 @@ insert into schema_tables values(
     'Failover File Log',
     false,
     'The failover_file_log records statistics about each finished failover file replication.',
-    null,
     '1.0a100',
-    null,
-    'end_time,replication.from_server.server.hostname,replication.to_server.server.hostname'
+    null
 );
 insert into schema_tables values(
     'failover_file_replications',
@@ -601,10 +492,8 @@ insert into schema_tables values(
     'Failover File Replications',
     false,
     'The failover_file_replications configures the replication of files from servers to failover servers.',
-    null,
     '1.0a100',
-    null,
-    'from_server.server.hostname,max_bit_rate desc,to_server.server.hostname'
+    null
 );
 insert into schema_tables values(
     'failover_file_schedule',
@@ -612,10 +501,8 @@ insert into schema_tables values(
     'Failover File Schedule',
     false,
     'The failover_file_schedule controls when replications occur.',
-    null,
     '1.0a100',
-    null,
-    'replication.from_server.server.hostname,replication.to_server.server.hostname,hour'
+    null
 );
 insert into schema_tables values(
     'failover_mysql_replications',
@@ -623,10 +510,8 @@ insert into schema_tables values(
     'Failover MySQL Replications',
     false,
     'The failover_mysql_replications indicates a failover replication is using MySQL replication for /var/lib/mysql/... instead of file-based replication.',
-    null,
     '1.28',
-    null,
-    'mysql_server.name,mysql_server.ao_server.server.hostname,replication.to_server.server.hostname'
+    null
 );
 insert into schema_tables values(
     'file_backups',
@@ -634,21 +519,17 @@ insert into schema_tables values(
     'File Backups',
     false,
     'The <code>file_backups</code> table stores the details of each backed-up file.',
-    null,
     '1.0a100',
-    null,
-    'server.hostname,path,create_time desc'
+    '1.30'
 );
 insert into schema_tables values(
     'file_backup_devices',
     (select count(*) from schema_tables),
     'File Backup Devices',
-    true,
     'The <code>file_backup_devices</code> table stores the details of each device used by the backup system.',
     null,
     '1.0a100',
-    null,
-    'device'
+    '1.30'
 );
 insert into schema_tables values(
     'file_backup_roots',
@@ -656,10 +537,8 @@ insert into schema_tables values(
     'File Backup Roots',
     false,
     'The <code>file_backup_roots</code> table stores the entry points for browsing the <code>file_backups</code>.',
-    null,
     '1.0a100',
-    null,
-    'path,server.hostname,package.name'
+    '1.30'
 );
 insert into schema_tables values(
     'file_backup_settings',
@@ -667,10 +546,8 @@ insert into schema_tables values(
     'File Backup Settings',
     false,
     'The <code>file_backup_settings</code> table overrides everything in the backup system except <code>file_backup_devices</code>.',
-    null,
     '1.0a100',
-    null,
-    'server.hostname,path'
+    null
 );
 insert into schema_tables values(
     'file_backup_stats',
@@ -678,37 +555,26 @@ insert into schema_tables values(
     'File Backup Stats',
     false,
     'The <code>file_backup_stats</code> table stores the details of each backup interation through the filesystem.',
-    null,
     '1.0a100',
-    null,
-    'server.hostname,end_time'
+    '1.30'
 );
 insert into schema_tables values(
     'ftp_guest_users',
     (select count(*) from schema_tables),
     'FTP Guest Users',
     false,
-    'Each <code>linux_account</code> may optionally be a guest FTP user.
-A guest FTP user is restricted to FTP access in their home directory.
-The passwd and group files are created such that any username or
-group in the same business resolve to the correct text names.',
-    null,
+    'Each <code>linux_account</code> may optionally be a guest FTP user.  A guest FTP user is restricted to FTP access in their home directory.  The passwd and group files are created such that any username or group in the same business resolve to the correct text names.',
     '1.0a100',
-    null,
-    'username'
+    null
 );
 insert into schema_tables values(
     'httpd_binds',
     (select count(*) from schema_tables),
     'Httpd Binds',
     false,
-    'The <code>httpd_binds</code> table represents all the ip_address
-port binding combinations.  The app_protocol of the bind
-should always be HTTP or HTTPS.',
-    null,
+    'The <code>httpd_binds</code> table represents all the ip_address port binding combinations.  The app_protocol of the bind should always be HTTP or HTTPS.',
     '1.0a100',
-    null,
-    'net_bind.ao_server.server.hostname,net_bind.ip_address,net_bind.port,net_bind.net_protocol'
+    null
 );
 insert into schema_tables values(
     'httpd_jboss_sites',
@@ -716,10 +582,8 @@ insert into schema_tables values(
     'Httpd JBoss Sites',
     false,
     '<code>httpd_jboss_sites</code> ties httpd_sites to a jboss version to its httpd_shared_tomcat JVM.',
-    null,
     '1.0a100',
-    null,
-    'tomcat_site.httpd_site.site_name,tomcat_site.httpd_site.ao_server.server.hostname'
+    null
 );
 insert into schema_tables values(
     'httpd_jboss_versions',
@@ -727,10 +591,8 @@ insert into schema_tables values(
     'Httpd JBoss Versions',
     true,
     '<code>httpd_jboss_versions</code> is a lookup table containing information about different jboss versions.',
-    null,
     '1.0a100',
-    null,
-    'version.version'
+    null
 );
 insert into schema_tables values(
     'httpd_jk_codes',
@@ -740,10 +602,8 @@ insert into schema_tables values(
     'The httpd_jk_codes table contains all the possible mod_jk codes.
 The codes must be unique for one httpd_sites when the site is used
 in multiple httpd_servers.',
-    null,
     '1.0a100',
-    null,
-    'code'
+    null
 );
 insert into schema_tables values(
     'httpd_jk_protocols',
@@ -751,10 +611,8 @@ insert into schema_tables values(
     'Httpd JK Protocols',
     true,
     'The httpd_jk_protocols table contains all of the possible protocols used by the mod_jk Apache module.',
-    null,
     '1.0a100',
-    null,
-    'protocol'
+    null
 );
 insert into schema_tables values(
     'httpd_servers',
@@ -762,10 +620,8 @@ insert into schema_tables values(
     'Httpd Servers',
     false,
     'The httpd_servers table contains a list of all the Apache servers.',
-    null,
     '1.0a100',
-    null,
-    'ao_server.server.hostname,number'
+    null
 );
 insert into schema_tables values(
     'httpd_shared_tomcats',
@@ -773,10 +629,8 @@ insert into schema_tables values(
     'Httpd Shared Tomcats',
     false,
     '<code>httpd_shared_tomcats</code> stores information about the JVM shared by httpd_tomcat_shared_sites.',
-    null,
     '1.0a100',
-    null,
-    'name,ao_server.server.hostname'
+    null
 );
 insert into schema_tables values(
     'httpd_site_authenticated_locations',
@@ -784,10 +638,8 @@ insert into schema_tables values(
     'Httpd Site Authenticated Locations',
     false,
     'The <code>httpd_site_authenticated_locations</code> configured Apache basic authentication using Location directives.',
-    null,
     '1.18',
-    null,
-    'httpd_site.site_name,httpd_site.ao_server.server.hostname,path'
+    null
 );
 insert into schema_tables values(
     'httpd_site_binds',
@@ -795,10 +647,8 @@ insert into schema_tables values(
     'Httpd Site Binds',
     false,
     'The <code>httpd_site_binds</code> attaches httpd_sites to httpd_binds.',
-    null,
     '1.0a100',
-    null,
-    'httpd_site.site_name,httpd_site.ao_server.server.hostname,httpd_bind.net_bind.ip_address,httpd_bind.net_bind.port,httpd_bind.net_bind.net_protocol'
+    null
 );
 insert into schema_tables values(
     'httpd_site_urls',
@@ -806,10 +656,8 @@ insert into schema_tables values(
     'Httpd Site URLs',
     false,
     'The <code>httpd_site_urls</code> stores the hostnames that a site will respond to.',
-    null,
     '1.0a100',
-    null,
-    'hostname,httpd_site_bind.httpd_site.site_name,httpd_site_bind.httpd_site.ao_server.server.hostname'
+    null
 );
 insert into schema_tables values(
     'httpd_sites',
@@ -823,10 +671,8 @@ remain unique between one set of servers.  Such as AO Industries
 will use unique names across all of its virtual servers, while
 resellers may also choose to use unique names across their sets
 of dedicated machines.',
-    null,
     '1.0a100',
-    null,
-    'site_name,ao_server.server.hostname'
+    null
 );
 insert into schema_tables values(
     'httpd_static_sites',
@@ -834,10 +680,8 @@ insert into schema_tables values(
     'Httpd Static Sites',
     false,
     'The <code>httpd_static_sites</code> stores the details of all sites that simply host static content only.',
-    null,
     '1.0a100',
-    null,
-    'httpd_site.site_name,httpd_site.ao_server.server.hostname'
+    null
 );
 insert into schema_tables values(
     'httpd_tomcat_contexts',
@@ -845,10 +689,8 @@ insert into schema_tables values(
     'Httpd Tomcat Contexts',
     false,
     'The <code>httpd_tomcat_contexts</code> stores the details of all contexts for all Tomcat sites.',
-    null,
     '1.0a100',
-    null,
-    'tomcat_site.httpd_site.site_name,tomcat_site.httpd_site.ao_server.server.hostname,path'
+    null
 );
 insert into schema_tables values(
     'httpd_tomcat_data_sources',
@@ -856,10 +698,8 @@ insert into schema_tables values(
     'Httpd Tomcat Data Sources',
     false,
     'The <code>httpd_tomcat_data_sources</code> stores the data sources on a per-context basis.',
-    null,
     '1.5',
-    null,
-    'tomcat_context.tomcat_site.httpd_site.site_name,tomcat_context.tomcat_site.httpd_site.ao_server.server.hostname,tomcat_context.path,name'
+    null
 );
 insert into schema_tables values(
     'httpd_tomcat_parameters',
@@ -867,10 +707,8 @@ insert into schema_tables values(
     'Httpd Tomcat Parameters',
     false,
     'The <code>httpd_tomcat_parameters</code> stores the parameters on a per-context basis.',
-    null,
     '1.5',
-    null,
-    'tomcat_context.tomcat_site.httpd_site.site_name,tomcat_context.tomcat_site.httpd_site.ao_server.server.hostname,tomcat_context.path,name'
+    null
 );
 insert into schema_tables values(
     'httpd_tomcat_sites',
@@ -878,10 +716,8 @@ insert into schema_tables values(
     'Httpd Tomcat Sites',
     false,
     'The <code>httpd_tomcat_sites</code> stores the details of all sites based on the Tomcat servlet engine.  This includes JBoss, single instance Tomcats, and a Tomcat that runs in a shared Java VM.',
-    null,
     '1.0a100',
-    null,
-    'httpd_site.site_name,httpd_site.ao_server.server.hostname'
+    null
 );
 insert into schema_tables values(
     'httpd_tomcat_shared_sites',
@@ -889,10 +725,8 @@ insert into schema_tables values(
     'Httpd Tomcat Shared Sites',
     false,
     '<code>httpd_tomcat_shared_sites</code> ties the httpd_tomcat_site to its httpd_shared_tomcat JVM.',
-    null,
     '1.0a100',
-    null,
-    'tomcat_site.httpd_site.site_name,tomcat_site.httpd_site.ao_server.server.hostname'
+    null
 );
 insert into schema_tables values(
     'httpd_tomcat_std_sites',
@@ -900,10 +734,8 @@ insert into schema_tables values(
     'Httpd Tomcat Std Sites',
     false,
     'The <code>httpd_tomcat_std_sites</code> table stores the details for each site that is self contained in its /www directory.',
-    null,
     '1.0a100',
-    null,
-    'tomcat_site.httpd_site.site_name,tomcat_site.httpd_site.ao_server.server.hostname'
+    null
 );
 insert into schema_tables values(
     'httpd_tomcat_versions',
@@ -911,20 +743,16 @@ insert into schema_tables values(
     'Httpd Tomcat Versions',
     true,
     'The <code>httpd_tomcat_versions</code> is a lookup of all the available versions of Tomcat.',
-    null,
     '1.0a100',
-    null,
-    'version.version'
+    null
 );
 insert into schema_tables values(
     'httpd_workers',
     (select count(*) from schema_tables),
     'Httpd Workers',
     false, 'The httpd_workers table contains all of the workers that are registered on each server.',
-    null,
     '1.0a100',
-    null,
-    'net_bind.ao_server.server.hostname,code'
+    null
 );
 insert into schema_tables values(
     'incoming_payments',
@@ -934,10 +762,8 @@ insert into schema_tables values(
     'The incoming_payments table stores encrypted credit card numbers
 associated with transactions.  These numbers are only kept until
 the accounting department transfers the data to their records.',
-    null,
     '1.0a100',
-    '1.28',
-    'transid.time::date,transid'
+    '1.28'
 );
 insert into schema_tables values(
     'interbase_backups',
@@ -945,10 +771,8 @@ insert into schema_tables values(
     'InterBase Backups',
     false,
     'The interbase_backups table stores the information about each backup of an InterBase database in the system.',
-    null,
     '1.0a100',
-    null,
-    'db_group_name,db_name,ao_server.server.hostname,end_time'
+    '1.30'
 );
 insert into schema_tables values(
     'interbase_databases',
@@ -956,10 +780,8 @@ insert into schema_tables values(
     'InterBase Databases',
     false,
     'The <code>interbase_databases</code> table stores the details of each database.',
-    null,
     '1.0a100',
-    null,
-    'db_group.name,db_group.linux_server_group.ao_server.server.hostname,name'
+    '1.30'
 );
 insert into schema_tables values(
     'interbase_db_groups',
@@ -967,10 +789,8 @@ insert into schema_tables values(
     'InterBase DB Groups',
     false,
     'The <code>interbase_db_groups</code> table provides groupings of InterBase databases belonging to one <code>linux_group</code>.',
-    null,
     '1.0a100',
-    null,
-    'name,linux_server_group.ao_server.server.hostname'
+    '1.30'
 );
 insert into schema_tables values(
     'interbase_reserved_words',
@@ -978,10 +798,8 @@ insert into schema_tables values(
     'InterBase Reserved Words',
     true,
     'The <code>interbase_reserved_words</code> table contains all of the InterBase reserved words.',
-    null,
     '1.0a100',
-    null,
-    'word'
+    '1.30'
 );
 insert into schema_tables values(
     'interbase_server_users',
@@ -989,10 +807,8 @@ insert into schema_tables values(
     'InterBase Server Users',
     false,
     'The <code>interbase_server_users</code> grants an <code>interbase_user</code> access to a server.',
-    null,
     '1.0a100',
-    null,
-    'username,ao_server.server.hostname'
+    '1.30'
 );
 insert into schema_tables values(
     'interbase_users',
@@ -1000,10 +816,8 @@ insert into schema_tables values(
     'InterBase Users',
     false,
     'The <code>interbase_users</code> table contains the global details for an InterBase user.',
-    null,
     '1.0a100',
-    null,
-    'username'
+    '1.30'
 );
 insert into schema_tables values(
     'ip_addresses',
@@ -1011,22 +825,26 @@ insert into schema_tables values(
     'IP Addresses',
     false,
     'The ip_addresses table has an entry for every IP address hosted on our machines.',
-    null,
     '1.0a100',
-    null,
-    'ip_address,net_device.ao_server.server.hostname,net_device.device_id'
+    null
 );
-insert into schema_tables values('limits', (select count(*) from schema_tables), 'Limits', true, '', null, '1.0a100', '1.0a122');
+insert into schema_tables values(
+    'limits',
+    (select count(*) from schema_tables),
+    'Limits',
+    true,
+    '',
+    '1.0a100',
+    '1.0a122'
+);
 insert into schema_tables values(
     'linux_acc_addresses',
     (select count(*) from schema_tables),
     'Linux Account Addresses',
     false,
     'The linux_acc_addresses table links email addresses to linux accounts.',
-    null,
     '1.0a100',
-    null,
-    'email_address.domain,email_address.domain.ao_server.server.hostname,email_address.address,linux_account'
+    null
 );
 insert into schema_tables values(
     'linux_account_types',
@@ -1034,10 +852,8 @@ insert into schema_tables values(
     'Linux Account Types',
     true,
     'The linux_account_types table stores all the different types of linux accounts.',
-    null,
     '1.0a100',
-    null,
-    'description'
+    null
 );
 insert into schema_tables values(
     'linux_accounts',
@@ -1045,10 +861,8 @@ insert into schema_tables values(
     'Linux Accounts',
     false,
     'The linux_accounts table stores all of the linux account info that is common to all machines.',
-    null,
     '1.0a100',
-    null,
-    'username'
+    null
 );
 insert into schema_tables values(
     'linux_group_accounts',
@@ -1056,10 +870,8 @@ insert into schema_tables values(
     'Linux Group Accounts',
     false,
     'The linux_group_accounts stores the alternate users for linux groups.',
-    null,
     '1.0a100',
-    null,
-    'group_name,username'
+    null
 );
 insert into schema_tables values(
     'linux_group_types',
@@ -1067,10 +879,8 @@ insert into schema_tables values(
     'Linux Group Types',
     true,
     'The linux_group_types table stores all the different types of linux groups.',
-    null,
     '1.0a100',
-    null,
-    'description'
+    null
 );
 insert into schema_tables values(
     'linux_groups',
@@ -1078,22 +888,16 @@ insert into schema_tables values(
     'Linux Groups',
     false,
     'The linux_groups table stores the details of each linux group that are common to every server.',
-    null,
     '1.0a100',
-    null,
-    'name'
+    null
 );
 insert into schema_tables values(
     'linux_ids',
     (select count(*) from schema_tables),
     'Linux IDs',
     true,
-    'The linux_ids is a table of all the GID and UID values that
-are acceptable for a linux_server_group or linux_server_account.
-0-499 are flagged as system and 500-65533 are user.',
-    null,
+    'The linux_ids is a table of all the GID and UID values that are acceptable for a linux_server_group or linux_server_account.  0-499 are flagged as system and 500-65533 are user.',
     '1.0a100',
-    null,
     null
 );
 insert into schema_tables values(
@@ -1102,10 +906,8 @@ insert into schema_tables values(
     'Linux Server Accounts',
     false,
     'The linux_server_accounts table contains the user configuration that is unique to each server.',
-    null,
     '1.0a100',
-    null,
-    'username,ao_server.server.hostname'
+    null
 );
 insert into schema_tables values(
     'linux_server_groups',
@@ -1113,10 +915,8 @@ insert into schema_tables values(
     'Linux Server Groups',
     false,
     'The linux_server_groups table stores the details about the groups that exist on the servers.',
-    null,
     '1.0a100',
-    null,
-    'name,ao_server.server.hostname'
+    null
 );
 insert into schema_tables values(
     'majordomo_lists',
@@ -1124,10 +924,8 @@ insert into schema_tables values(
     'Majordomo Lists',
     false,
     'The majordomo_lists table stores the details of each list in a majordomo_server.',
-    null,
     '1.0a100',
-    null,
-    'majordomo_server.domain.domain,majordomo_server.domain.ao_server.server.hostname,name'
+    null
 );
 insert into schema_tables values(
     'majordomo_servers',
@@ -1135,10 +933,8 @@ insert into schema_tables values(
     'Majordomo Servers',
     false,
     'The majordomo_servers table stores all the details for one domain of Majordomo hosting.',
-    null,
     '1.0a100',
-    null,
-    'domain.domain,domain.ao_server.server.hostname'
+    null
 );
 insert into schema_tables values(
     'majordomo_versions',
@@ -1146,10 +942,8 @@ insert into schema_tables values(
     'Majordomo Versions',
     true,
     'The majordomo_versions table contains a list of all the supported versions of the Majordomo manages email list server.',
-    null,
     '1.0a100',
-    null,
-    'version'
+    null
 );
 insert into schema_tables values(
     'master_history',
@@ -1157,9 +951,7 @@ insert into schema_tables values(
     'Master History',
     false,
     '',
-    null,
     '1.0a100',
-    null,
     null
 );
 insert into schema_tables values(
@@ -1168,10 +960,8 @@ insert into schema_tables values(
     'Master Hosts',
     false,
     '<code>master_hosts</code> stores which hosts each user may connect from.',
-    null,
     '1.0a100',
-    null,
-    'username,host'
+    null
 );
 insert into schema_tables values(
     'master_processes',
@@ -1179,9 +969,7 @@ insert into schema_tables values(
     'Master Processes',
     false,
     '',
-    null,
     '1.0a100',
-    null,
     null
 );
 insert into schema_tables values(
@@ -1190,10 +978,8 @@ insert into schema_tables values(
     'Master Server Profile',
     false,
     '',
-    null,
     '1.0a100',
-    null,
-    'classname,method_name,parameter'
+    null
 );
 insert into schema_tables values(
     'master_server_stats',
@@ -1201,9 +987,7 @@ insert into schema_tables values(
     'Master Server Stats',
     false,
     '',
-    null,
     '1.0a100',
-    null,
     null
 );
 insert into schema_tables values(
@@ -1212,10 +996,8 @@ insert into schema_tables values(
     'Master Servers',
     false,
     '<code>master_servers</code> stores which servers each user may control.',
-    null,
     '1.0a100',
-    null,
-    'username,server'
+    null
 );
 insert into schema_tables values(
     'master_users',
@@ -1223,10 +1005,8 @@ insert into schema_tables values(
     'Master Users',
     false,
     '<code>master_users</code> stores the authorization information for people that may access the master controller.',
-    null,
     '1.0a100',
-    null,
-    'username'
+    null
 );
 insert into schema_tables values(
     'merchant_accounts',
@@ -1234,10 +1014,8 @@ insert into schema_tables values(
     'Merchant Accounts',
     false,
     'The merchant_accounts contains all the information about the merchant account providers we do business with.',
-    null,
     '1.0a100',
-    '1.28',
-    'name'
+    '1.28'
 );
 insert into schema_tables values(
     'monthly_charges',
@@ -1245,10 +1023,8 @@ insert into schema_tables values(
     'Monthly Charges',
     false,
     'The monthly_charges table contains an entry for each transaction that is automatically charged each month.',
-    null,
     '1.0a100',
-    null,
-    'accounting,package,type,created'
+    null
 );
 insert into schema_tables values(
     'mysql_backups',
@@ -1256,10 +1032,8 @@ insert into schema_tables values(
     'MySQL Backups',
     false,
     'The mysql_backups table stores the information about each backup of a MySQL database in the system.',
-    null,
     '1.0a100',
-    null,
-    'db_name,mysql_server.name,mysql_server.ao_server.server.hostname,end_time'
+    '1.30'
 );
 insert into schema_tables values(
     'mysql_databases',
@@ -1267,24 +1041,17 @@ insert into schema_tables values(
     'MySQL Databases',
     false,
     'The mysql_databases table stores the information about each MySQL database in the system.',
-    null,
     '1.0a100',
-    null,
-    'name,mysql_server.name,mysql_server.ao_server.server.hostname'
+    null
 );
 insert into schema_tables values(
     'mysql_db_users',
     (select count(*) from schema_tables),
     'MySQL DB Users',
     false,
-    'The <code>mysql_db_users</code> table stores which
-<code>mysql_server_users</code> can access which
-<code>mysql_databases</code>.  The user permissions are also
-contained in each row.',
-    null,
+    'The <code>mysql_db_users</code> table stores which <code>mysql_server_users</code> can access which <code>mysql_databases</code>.  The user permissions are also contained in each row.',
     '1.0a100',
-    null,
-    'mysql_database.name,mysql_database.mysql_server.name,mysql_database.mysql_server.ao_server.server.hostname,mysql_user'
+    null
 );
 insert into schema_tables values(
     'mysql_hosts',
@@ -1292,7 +1059,6 @@ insert into schema_tables values(
     'MySQL Hosts',
     false,
     'The mysql_hosts table stores all of the list of hosts that are allowed to connect to each mysql server.',
-    null,
     '1.0a100',
     '1.3'
 );
@@ -1302,10 +1068,8 @@ insert into schema_tables values(
     'MySQL Reserved Words',
     true,
     '<code>mysql_reserved_words</code> may not be used for database or table names in MySQL.',
-    null,
     '1.0a100',
-    null,
-    'word'
+    null
 );
 insert into schema_tables values(
     'mysql_server_users',
@@ -1313,10 +1077,8 @@ insert into schema_tables values(
     'MySQL Server Users',
     false,
     'The mysql_server_users table contains all the server-specific information about a mysql_user',
-    null,
     '1.0a100',
-    null,
-    'username,mysql_server.name,mysql_server.ao_server.server.hostname'
+    null
 );
 insert into schema_tables values(
     'mysql_servers',
@@ -1324,23 +1086,17 @@ insert into schema_tables values(
     'MySQL Servers',
     false,
     'The mysql_servers table stores the information about each MySQL instance in the system.',
-    null,
     '1.4',
-    null,
-    'name,ao_server.server.hostname'
+    null
 );
 insert into schema_tables values(
     'mysql_users',
     (select count(*) from schema_tables),
     'MySQL Users',
     false,
-    'The mysql_users table stores all of the user info that is common
-for every MySQL server a user has a MySQL user account on.  The
-server specifics are stored in the mysql_server_users table.',
-    null,
+    'The mysql_users table stores all of the user info that is common for every MySQL server a user has a MySQL user account on.  The server specifics are stored in the mysql_server_users table.',
     '1.0a100',
-    null,
-    'username'
+    null
 );
 insert into schema_tables values(
     'net_binds',
@@ -1367,10 +1123,8 @@ Four types of IP addresses exist:
   <li>loopback - Processes bind internally in the server.  Monitoring
                  may only be performed from localhost.
 </ol>',
-    null,
     '1.0a100',
-    null,
-    'ao_server.server.hostname,ip_address.ip_address,ip_address.net_device.device_id,port,net_protocol'
+    null
 );
 insert into schema_tables values(
     'net_device_host_routes',
@@ -1378,7 +1132,6 @@ insert into schema_tables values(
     'Net Device Host Routes',
     false,
     '',
-    null,
     '1.0a100',
     '1.0a130'
 );
@@ -1388,10 +1141,8 @@ insert into schema_tables values(
     'Net Device IDs',
     true,
     'The net_device_ids contains all the network devices used on Linux servers.',
-    null,
     '1.0a100',
-    null,
-    'name'
+    null
 );
 insert into schema_tables values(
     'net_device_local_routes',
@@ -1399,7 +1150,6 @@ insert into schema_tables values(
     'Net Device Local Routes',
     false,
     '',
-    null,
     '1.0a100',
     '1.0a130'
 );
@@ -1409,21 +1159,25 @@ insert into schema_tables values(
     'Net Devices',
     false,
     'The net_devices table contains each device used by Linux servers.',
-    null,
     '1.0a100',
-    null,
-    'ao_server.server.hostname,device_id'
+    null
 );
-insert into schema_tables values('net_monitoring_times', (select count(*) from schema_tables), 'Net Monitoring Times', true, '', null, '1.0a100', '1.0a103');
+insert into schema_tables values(
+    'net_monitoring_times',
+    (select count(*) from schema_tables),
+    'Net Monitoring Times',
+    true,
+    '',
+    '1.0a100',
+    '1.0a103'
+);
 insert into schema_tables values(
     'net_ports',
     (select count(*) from schema_tables),
     'Net Ports',
     true,
     'The net_ports table contains all of the possible network ports.',
-    null,
     '1.0a100',
-    null,
     null
 );
 insert into schema_tables values(
@@ -1432,10 +1186,8 @@ insert into schema_tables values(
     'Net Protocols',
     true,
     '<code>net_protocols</code> lists the possible network protocols used in <code>net_binds</code>.',
-    null,
     '1.0a100',
-    null,
-    'protocol'
+    null
 );
 insert into schema_tables values(
     'net_tcp_redirects',
@@ -1443,10 +1195,8 @@ insert into schema_tables values(
     'Net TCP Redirects',
     false,
     'The net_tcp_redirects table stores all of the xinetd redirect configurations.',
-    null,
     '1.0a111',
-    null,
-    'net_bind.ao_server.server.hostname,net_bind.ip_address.ip_address,net_bind.ip_address.net_device.device_id,net_bind.port,net_bind.net_protocol'
+    null
 );
 insert into schema_tables values(
     'notice_log',
@@ -1454,10 +1204,8 @@ insert into schema_tables values(
     'Notice Log',
     false,
     'The table notice_log contains information about any late or non-payment notices.',
-    null,
     '1.0a100',
-    null,
-    'create_time,pkey'
+    null
 );
 insert into schema_tables values(
     'notice_types',
@@ -1465,10 +1213,8 @@ insert into schema_tables values(
     'Notice Types',
     true,
     'The table notice_types provides lookup information for the notice_log table',
-    null,
     '1.0a100',
-    null,
-    'type'
+    null
 );
 insert into schema_tables values(
     'operating_system_versions',
@@ -1476,10 +1222,8 @@ insert into schema_tables values(
     'Operating System Versions',
     true,
     'The operating_system_versions table provides all the supported versions of operating_systems.',
-    null,
     '1.0a100',
-    null,
-    'sort_order'
+    null
 );
 insert into schema_tables values(
     'operating_systems',
@@ -1487,10 +1231,8 @@ insert into schema_tables values(
     'Operating Systems',
     true,
     'The operating_systems table stores represents each type of operating system.',
-    null,
     '1.0a100',
-    null,
-    'name'
+    null
 );
 insert into schema_tables values(
     'package_categories',
@@ -1498,10 +1240,8 @@ insert into schema_tables values(
     'Package Categories',
     true,
     'The various categories for package_definitions.',
-    null,
     '1.0a123',
-    null,
-    'name'
+    null
 );
 insert into schema_tables values(
     'package_definition_limits',
@@ -1509,10 +1249,8 @@ insert into schema_tables values(
     'Package Definition Limits',
     false,
     'The package_definition_limits table defines the limits for each package_definition and resource combination.',
-    null,
     '1.0a123',
-    null,
-    'package_definition.accounting,package_definition.category,package_definition.monthly_rate,package_definition.name,package_definition.version,pkey'
+    null
 );
 insert into schema_tables values(
     'package_definitions',
@@ -1520,10 +1258,8 @@ insert into schema_tables values(
     'Package Definitions',
     false,
     'The package_definitions table stores a list of supported services.',
-    null,
     '1.0a123',
-    null,
-    'accounting,category,monthly_rate,name,version'
+    null
 );
 insert into schema_tables values(
     'packages',
@@ -1531,10 +1267,8 @@ insert into schema_tables values(
     'Packages',
     false,
     'The packages table stores information about each package that businesses have signed up for.',
-    null,
     '1.0a100',
-    null,
-    'name'
+    null
 );
 insert into schema_tables values(
     'payment_types',
@@ -1542,9 +1276,8 @@ insert into schema_tables values(
     'Payment Types',
     true,
     'The payment_types table stores all the acceptable payment forms',
-    null,
     '1.0a100',
-    null,
+    null
     'name'
 );
 insert into schema_tables values(
@@ -1553,10 +1286,8 @@ insert into schema_tables values(
     'Phone Numbers',
     false,
     'The phone_numbers table stores phone numbers that are additional to business_administrators and businesses.',
-    null,
     '1.0a100',
-    null,
-    'business,person'
+    '1.30'
 );
 insert into schema_tables values(
     'postgres_backups',
@@ -1564,10 +1295,8 @@ insert into schema_tables values(
     'PostgreSQL Backups',
     false,
     'The postgres_backups table stores the information about each backup of a PostgreSQL database in the system.',
-    null,
     '1.0a100',
-    null,
-    'db_name,postgres_server.name,postgres_server.ao_server.server.hostname,end_time'
+    '1.30'
 );
 insert into schema_tables values(
     'postgres_databases',
@@ -1575,10 +1304,8 @@ insert into schema_tables values(
     'PostgreSQL Databases',
     false,
     'The postgres_databases table stores the information about each PostgreSQL database in the system.',
-    null,
     '1.0a100',
-    null,
-    'name,postgres_server.name,postgres_server.ao_server.server.hostname'
+    null
 );
 insert into schema_tables values(
     'postgres_encodings',
@@ -1586,10 +1313,8 @@ insert into schema_tables values(
     'PostgreSQL Encodings',
     true,
     'The postgres_encodings table stores the information about each PostgreSQL database encoding supported.',
-    null,
     '1.0a100',
-    null,
-    'encoding'
+    null
 );
 insert into schema_tables values(
     'postgres_reserved_words',
@@ -1597,10 +1322,8 @@ insert into schema_tables values(
     'PostgreSQL Reserved Words',
     true,
     '<code>postgres_reserved_words</code> may not be used for database or table named in PostgreSQL.',
-    null,
     '1.0a100',
-    null,
-    'word'
+    null
 );
 insert into schema_tables values(
     'postgres_server_users',
@@ -1608,10 +1331,8 @@ insert into schema_tables values(
     'PostgreSQL Server Users',
     false,
     'The postgres_server_users table stores the specific attributes of postgres_users for one server.',
-    null,
     '1.0a100',
-    null,
-    'username,postgres_server.name,postgres_server.ao_server.server.hostname'
+    null
 );
 insert into schema_tables values(
     'postgres_servers',
@@ -1619,10 +1340,8 @@ insert into schema_tables values(
     'PostgreSQL Servers',
     false,
     'The postgres_servers table stores the information about each PostgreSQL instance in the system.',
-    null,
     '1.0a100',
-    null,
-    'name,ao_server.server.hostname'
+    null
 );
 insert into schema_tables values(
     'postgres_users',
@@ -1634,10 +1353,8 @@ Because a single person may have access to multiple PostgreSQL
 servers, this table represents what is common to them across all
 machines.  The machine specific details are in the
 postgres_server_users table.',
-    null,
     '1.0a100',
-    null,
-    'username'
+    null
 );
 insert into schema_tables values(
     'postgres_versions',
@@ -1645,10 +1362,8 @@ insert into schema_tables values(
     'PostgreSQL Versions',
     true,
     'The <code>postgres_versions</code> is a lookup of all the available versions of PostgreSQL.',
-    null,
     '1.0a100',
-    null,
-    'version.version'
+    null
 );
 insert into schema_tables values(
     'private_ftp_servers',
@@ -1656,10 +1371,8 @@ insert into schema_tables values(
     'Private FTP Servers',
     false,
     'The private_ftp_servers table contains an entry for each private FTP server hosted.',
-    null,
     '1.0a100',
-    null,
-    'net_bind.ao_server.server.hostname,net_bind.ip_address.ip_address,net_bind.ip_address.net_device.device_id,net_bind.port,net_bind.net_protocol'
+    null
 );
 insert into schema_tables values(
     'protocols',
@@ -1667,22 +1380,26 @@ insert into schema_tables values(
     'Protocols',
     true,
     'The protocols table has an entry for each service protocol along with the default port numbers.',
-    null,
     '1.0a100',
-    null,
-    'port,net_protocol'
+    null
 );
-insert into schema_tables values('rates', (select count(*) from schema_tables), 'Rates', true, '', null, '1.0a100', '1.0a122');
+insert into schema_tables values(
+    'rates',
+    (select count(*) from schema_tables),
+    'Rates',
+    true,
+    '',
+    '1.0a100',
+    '1.0a122'
+);
 insert into schema_tables values(
     'resources',
     (select count(*) from schema_tables),
     'Resources',
     true,
     'The resources table stores a list of resources that may be charged',
-    null,
     '1.0a100',
-    null,
-    'name'
+    null
 );
 insert into schema_tables values(
     'schema_columns',
@@ -1690,7 +1407,6 @@ insert into schema_tables values(
     'Schema Columns',
     true,
     '<code>schema_columns</code> stores the details about the data contained in each column.',
-    null,
     '1.0a100',
     null
 );
@@ -1700,9 +1416,7 @@ insert into schema_tables values(
     'Schema Foreign Keys',
     true,
     '<code>schema_foreign_keys</code> tables stores all the foreign key info for the database.',
-    null,
     '1.0a100',
-    null,
     null
 );
 insert into schema_tables values(
@@ -1711,9 +1425,7 @@ insert into schema_tables values(
     'Schema Tables',
     true,
     '<code>schema_tables</code> stores table names, display names, and descriptions for each table.',
-    null,
     '1.0a100',
-    null,
     null
 );
 insert into schema_tables values(
@@ -1722,32 +1434,26 @@ insert into schema_tables values(
     'Schema Types',
     true,
     '<code>schema_types</code> stores names and unique numbers for each type.',
-    null,
     '1.0a100',
-    null,
     null
 );
 insert into schema_tables values(
     'sendmail_smtp_stats',
     (select count(*) from schema_tables),
     'Sendmail SMTP Stats',
-    false, 'The sendmail_smtp_stats table stores stats on SMTP server use.',
-    null,
+    false,
+    'The sendmail_smtp_stats table stores stats on SMTP server use.',
     '1.0a100',
-    null,
-    'package,date,ao_server.server.hostname'
+    '1.30'
 );
 insert into schema_tables values(
     'server_farms',
     (select count(*) from schema_tables),
     'Server Farms',
     false,
-    'The server_farms table stores the details about each unique
-server farm (or location) that exists.',
-    null,
+    'The server_farms table stores the details about each unique server farm (or location) that exists.',
     '1.0a100',
-    null,
-    'name'
+    null
 );
 insert into schema_tables values(
     'server_reports',
@@ -1755,10 +1461,8 @@ insert into schema_tables values(
     'Server Reports',
     false,
     'Each server_reports its use and load statistics to the database periodically.',
-    null,
     '1.0a100',
-    null,
-    'pkey'
+    '1.30'
 );
 insert into schema_tables values(
     'servers',
@@ -1766,10 +1470,8 @@ insert into schema_tables values(
     'Servers',
     false,
     'The servers table keeps track of all the servers that are referenced in the database',
-    null,
     '1.0a100',
-    null,
-    'hostname'
+    null
 );
 insert into schema_tables values(
     'service_levels',
@@ -1777,7 +1479,6 @@ insert into schema_tables values(
     'Service Levels',
     true,
     '',
-    null,
     '1.0a100',
     '1.0a122'
 );
@@ -1787,10 +1488,8 @@ insert into schema_tables values(
     'Shells',
     true,
     'The shells table stores all the shells that may be used in a linux account.',
-    null,
     '1.0a100',
-    null,
-    'path'
+    null
 );
 insert into schema_tables values(
     'signup_request_options',
@@ -1798,10 +1497,8 @@ insert into schema_tables values(
     'Sign-Up Request Options',
     false,
     'The options for each specific sign-up type.',
-    null,
     '1.23',
-    null,
-    'request.accounting,request.time,name'
+    null
 );
 insert into schema_tables values(
     'signup_requests',
@@ -1809,10 +1506,8 @@ insert into schema_tables values(
     'Sign-Up Requests',
     false,
     'One sign-up request for any time of service.',
-    null,
     '1.23',
-    null,
-    'accounting,time'
+    null
 );
 insert into schema_tables values(
     'spam_email_messages',
@@ -1820,10 +1515,8 @@ insert into schema_tables values(
     'Spam Email Messages',
     false,
     'The spam_email_messages table stores all of the reported spam.',
-    null,
     '1.0a100',
-    null,
-    'pkey'
+    null
 );
 insert into schema_tables values(
     'sr_cpu',
@@ -1831,10 +1524,8 @@ insert into schema_tables values(
     'Server CPU Report',
     false,
     'sr_cpu - Doesn\'t exist in failover state',
-    null,
     '1.0a100',
-    null,
-    'server_report.time,server_report.ao_server.server.hostname,cpu_number'
+    '1.30'
 );
 insert into schema_tables values(
     'sr_db_mysql',
@@ -1842,10 +1533,8 @@ insert into schema_tables values(
     'Server MySQL Report',
     false,
     'sr_db_mysql - Doesn\'t exist if not a MySQL server',
-    null,
     '1.0a100',
-    null,
-    'server_report.time,server_report.ao_server.server.hostname'
+    '1.30'
 );
 insert into schema_tables values(
     'sr_db_postgres',
@@ -1853,10 +1542,8 @@ insert into schema_tables values(
     'Server PostgreSQL Report',
     false,
     'server_rep_db_postgres - Doesn\'t exist in failover state or if not a PostgreSQL server',
-    null,
     '1.0a100',
-    null,
-    'server_report.time,server_report.ao_server.server.hostname'
+    '1.30'
 );
 insert into schema_tables values(
     'sr_disk_access',
@@ -1864,10 +1551,8 @@ insert into schema_tables values(
     'Server Disk Access Report',
     false,
     'sr_disk_access - Doesn\'t exist in failover state',
-    null,
     '1.0a100',
-    null,
-    'server_report.time,server_report.ao_server.server.hostname,device_major,device_minor'
+    '1.30'
 );
 insert into schema_tables values(
     'sr_disk_mdstat',
@@ -1875,10 +1560,8 @@ insert into schema_tables values(
     'Server RAID Disk Report',
     false,
     'sr_disk_mdstat - Doesn\'t exist in failover state',
-    null,
     '1.0a100',
-    null,
-    'server_report.time,server_report.ao_server.server.hostname,device_major,device_minor'
+    '1.30'
 );
 insert into schema_tables values(
     'sr_disk_space',
@@ -1886,10 +1569,8 @@ insert into schema_tables values(
     'Server Disk Space Report',
     false,
     '',
-    null,
     '1.0a100',
-    null,
-    'server_report.time,server_report.ao_server.server.hostname,device_major,device_minor'
+    '1.30'
 );
 insert into schema_tables values(
     'sr_kernel',
@@ -1897,10 +1578,8 @@ insert into schema_tables values(
     'Server Kernel Report',
     false,
     'sr_kernel - Doesn\'t exist in failover state',
-    null,
     '1.0a100',
-    null,
-    'server_report.time,server_report.ao_server.server.hostname'
+    '1.30'
 );
 insert into schema_tables values(
     'sr_load',
@@ -1908,10 +1587,8 @@ insert into schema_tables values(
     'Server Load Report',
     false,
     'sr_load - Doesn\'t exist in failover state',
-    null,
     '1.0a100',
-    null,
-    'server_report.time,server_report.ao_server.server.hostname'
+    '1.30'
 );
 insert into schema_tables values(
     'sr_memory',
@@ -1919,10 +1596,8 @@ insert into schema_tables values(
     'Server Memory Report',
     false,
     'sr_memory - Doesn\'t exist in failover state',
-    null,
     '1.0a100',
-    null,
-    'server_report.time,server_report.ao_server.server.hostname'
+    '1.30'
 );
 insert into schema_tables values(
     'sr_net_devices',
@@ -1930,10 +1605,8 @@ insert into schema_tables values(
     'Server Net Device Report',
     false,
     'sr_net_devices - Doesn\'t exist in failover state',
-    null,
     '1.0a100',
-    null,
-    'server_report.time,server_report.ao_server.server.hostname,device_id'
+    '1.30'
 );
 insert into schema_tables values(
     'sr_net_icmp',
@@ -1941,10 +1614,8 @@ insert into schema_tables values(
     'Server Net ICMP Report',
     false,
     'sr_net_icmp - Doesn\'t exist in failover state',
-    null,
     '1.0a100',
-    null,
-    'server_report.time,server_report.ao_server.server.hostname'
+    '1.30'
 );
 insert into schema_tables values(
     'sr_net_ip',
@@ -1952,10 +1623,8 @@ insert into schema_tables values(
     'Server Net IP Report',
     false,
     'sr_net_ip - Doesn\'t exist in failover state',
-    null,
     '1.0a100',
-    null,
-    'server_report.time,server_report.ao_server.server.hostname'
+    '1.30'
 );
 insert into schema_tables values(
     'sr_net_tcp',
@@ -1963,10 +1632,8 @@ insert into schema_tables values(
     'Server Net TCP Report',
     false,
     'sr_net_tcp - Doesn\'t exist in failover state',
-    null,
     '1.0a100',
-    null,
-    'server_report.time,server_report.ao_server.server.hostname'
+    '1.30'
 );
 insert into schema_tables values(
     'sr_net_udp',
@@ -1974,10 +1641,8 @@ insert into schema_tables values(
     'Server Net UDP Report',
     false,
     'sr_net_udp - Doesn\'t exist in failover state',
-    null,
     '1.0a100',
-    null,
-    'server_report.time,server_report.ao_server.server.hostname'
+    '1.30'
 );
 insert into schema_tables values(
     'sr_num_users',
@@ -1985,10 +1650,8 @@ insert into schema_tables values(
     'Server User Report',
     false,
     '',
-    null,
     '1.0a100',
-    null,
-    'server_report.time,server_report.ao_server.server.hostname'
+    '1.30'
 );
 insert into schema_tables values(
     'sr_paging',
@@ -1996,10 +1659,8 @@ insert into schema_tables values(
     'Server Paging Report',
     false,
     'sr_paging - Doesn\'t exist in failover state',
-    null,
     '1.0a100',
-    null,
-    'server_report.time,server_report.ao_server.server.hostname'
+    '1.30'
 );
 insert into schema_tables values(
     'sr_processes',
@@ -2007,32 +1668,26 @@ insert into schema_tables values(
     'Server Process Report',
     false,
     '/proc/<PID>/status',
-    null,
     '1.0a100',
-    null,
-    'server_report.time,server_report.ao_server.server.hostname'
+    '1.30'
 );
 insert into schema_tables values(
     'sr_swap_rate',
     (select count(*) from schema_tables),
     'Server Swap Rate Report',
     false,
-    'sr_swap_rate - Doesn\'t exist in failover state',
-    null,
+    'sr_swap_rate - Doesn''t exist in failover state',
     '1.0a100',
-    null,
-    'server_report.time,server_report.ao_server.server.hostname'
+    '1.30'
 );
 insert into schema_tables values(
     'sr_swap_size',
     (select count(*) from schema_tables),
     'Server Swap Size Report',
     false,
-    'sr_swap_size - Doesn\'t exist in failover state',
-    null,
+    'sr_swap_size - Doesn''t exist in failover state',
     '1.0a100',
-    null,
-    'server_report.time,server_report.ao_server.server.hostname,device_major,device_minor'
+    '1.30'
 );
 insert into schema_tables values(
     'system_email_aliases',
@@ -2040,10 +1695,8 @@ insert into schema_tables values(
     'System Email Aliases',
     false,
     'The system_email_aliases is a list of all entries that are placed in /etc/aliases but are not part of the other tables.',
-    null,
     '1.0a100',
-    null,
-    'ao_server.server.hostname,address'
+    null
 );
 insert into schema_tables values(
     'technologies',
@@ -2051,34 +1704,26 @@ insert into schema_tables values(
     'Technologies',
     true,
     'The technologies table contains the list of all software packages and the classes they belong to.',
-    null,
     '1.0a100',
-    null,
-    'name,class'
+    null
 );
 insert into schema_tables values(
     'technology_classes',
     (select count(*) from schema_tables),
     'Technology Classes',
     true,
-    'The technology_classes table defines the classes that may be used
-in the technologies table',
-    null,
+    'The technology_classes table defines the classes that may be used in the technologies table',
     '1.0a100',
-    null,
-    'name'
+    null
 );
 insert into schema_tables values(
     'technology_names',
     (select count(*) from schema_tables),
     'Technology Names',
     true,
-    'The technology_names table contains all of the unique names of
-software packages that are installed in the servers.',
-    null,
+    'The technology_names table contains all of the unique names of software packages that are installed in the servers.',
     '1.0a100',
-    null,
-    'name'
+    null
 );
 insert into schema_tables values(
     'technology_versions',
@@ -2086,10 +1731,8 @@ insert into schema_tables values(
     'Technology Versions',
     true,
     'The technology_versions table contains the list of all software packages, owners, and versions.',
-    null,
     '1.0a100',
-    null,
-    'name,version'
+    null
 );
 insert into schema_tables values(
     'ticket_priorities',
@@ -2097,10 +1740,8 @@ insert into schema_tables values(
     'Ticket Priorities',
     true,
     'Table ticket_priorities is a lookup table for tickets',
-    null,
     '1.0a100',
-    null,
-    'priority'
+    null
 );
 insert into schema_tables values(
     'ticket_stati',
@@ -2108,10 +1749,8 @@ insert into schema_tables values(
     'Ticket Statuses',
     true,
     'Table ticket_stati is a lookup table for tickets',
-    null,
     '1.0a100',
-    null,
-    'status'
+    null
 );
 insert into schema_tables values(
     'ticket_types',
@@ -2119,10 +1758,8 @@ insert into schema_tables values(
     'Ticket Types',
     true,
     'Table ticket_types is a lookup for tickets showing types of service requests',
-    null,
     '1.0a100',
-    null,
-    'type'
+    null
 );
 insert into schema_tables values(
     'tickets',
@@ -2130,10 +1767,8 @@ insert into schema_tables values(
     'Tickets',
     false,
     'Table tickets contains information on service requests',
-    null,
     '1.0a100',
-    null,
-    'pkey'
+    null
 );
 insert into schema_tables values(
     'time_zones',
@@ -2141,10 +1776,8 @@ insert into schema_tables values(
     'Time Zones',
     true,
     'The allowed time zones for a server',
-    null,
     '1.2',
-    null,
-    'name'
+    null
 );
 insert into schema_tables values(
     'transaction_types',
@@ -2152,10 +1785,8 @@ insert into schema_tables values(
     'Transaction Types',
     true,
     'The transaction_types table stores all the types of transactions.',
-    null,
     '1.0a123',
-    null,
-    'name'
+    null
 );
 insert into schema_tables values(
     'transactions',
@@ -2163,22 +1794,17 @@ insert into schema_tables values(
     'Transactions',
     false,
     'The transactions table keeps track of all transactions that have occured with the businesses',
-    null,
     '1.0a100',
-    null,
-   'time::date,transid'
+    null
 );
 insert into schema_tables values(
     'us_states',
     (select count(*) from schema_tables),
     'US States',
     true,
-    'The us_states table contains an entry for each state in the
-United States.',
-    null,
+    'The us_states table contains an entry for each state in the United States.',
     '1.0a100',
-    null,
-    'name'
+    null
 );
 insert into schema_tables values(
     'usernames',
@@ -2190,10 +1816,8 @@ Every username is unique across the system, and may be used
 for multiple services.  Regardless of the system, the username
 always belongs to one business, and preferrably one actual
 person or system.',
-    null,
     '1.0a100',
-    null,
-    'username'
+    null
 );
 insert into schema_tables values(
     'whois_history',
@@ -2201,9 +1825,7 @@ insert into schema_tables values(
     'Whois History',
     false,
     'The output from whois lookups are logged weekly to keep track of when customers begin and end using the systems.',
-    null,
     '1.20',
-    null,
-    'accounting,zone,time'
+    null
 );
 commit;

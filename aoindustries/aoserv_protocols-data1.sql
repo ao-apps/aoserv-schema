@@ -418,4 +418,232 @@ insert into aoserv_protocols values(
 added credit_card_providers table to support new ao-credit-cards package
 added credit_card_transactions table to support new ao-credit-cards package'
 );
+insert into aoserv_protocols values(
+  '1.30',
+  '2008-03-18',
+  'updated ip_address.ping_monitor_enabled'
+);
+insert into aoserv_protocols values(
+  '1.31',
+  '2008-04-12',
+  'removed backup_data table
+removed backup_levels table
+removed backup_partitions.device
+removed backup_partitions.minimum_free_space
+removed backup_partitions.desired_free_space
+removed backup_partitions.fill_order
+removed file_backups table
+removed file_backup_devices table
+removed file_backup_roots table
+removed file_backup_stats table
+removed file_paths table
+removed interbase_backups table
+removed mysql_backups table
+removed postgres_backups table
+removed cvs_repositories.backup_level
+removed cvs_repositories.backup_retention
+removed linux_server_accounts.cron_backup_level
+removed linux_server_accounts.cron_backup_retention
+removed linux_server_accounts.home_backup_level
+removed linux_server_accounts.home_backup_retention
+removed linux_server_accounts.inbox_backup_level
+removed linux_server_accounts.inbox_backup_retention
+removed httpd_shared_tomcats.config_backup_level
+removed httpd_shared_tomcats.config_backup_retention
+removed httpd_shared_tomcats.file_backup_level
+removed httpd_shared_tomcats.file_backup_retention
+removed httpd_shared_tomcats.log_backup_level
+removed httpd_shared_tomcats.log_backup_retention
+removed httpd_sites.config_backup_level
+removed httpd_sites.config_backup_retention
+removed httpd_sites.file_backup_level
+removed httpd_sites.file_backup_retention
+removed httpd_sites.ftp_backup_level
+removed httpd_sites.ftp_backup_retention
+removed httpd_sites.log_backup_level
+removed httpd_sites.log_backup_retention
+removed email_lists.backup_level
+removed email_lists.backup_retention
+removed interbase_databases.backup_level
+removed interbase_databases.backup_retention
+removed file_backup_settings.backup_level
+added file_backup_settings.backup_enabled
+removed file_backup_settings.backup_retention
+removed mysql_databases.backup_level
+removed mysql_databases.backup_retention
+removed postgres_databases.backup_level
+removed postgres_databases.backup_retention
+removed majordomo_servers.backup_level
+removed majordomo_servers.backup_retention
+removed servers.backup_hour
+removed servers.last_backup_time
+removed server_farms.protected_net
+removed server_farms.allow_same_server_backup
+removed server_farms.backup_farm
+removed server_reports table
+removed sr_cpu table
+removed sr_db_mysql table
+removed sr_db_postgres table
+removed sr_disk_access table
+removed sr_disk_mdstat table
+removed sr_disk_space table
+removed sr_kernel table
+removed sr_load table
+removed sr_memory table
+removed sr_net_devices table
+removed sr_net_icmp table
+removed sr_net_ip table
+removed sr_net_tcp table
+removed sr_net_udp table
+removed sr_num_users table
+removed sr_paging table
+removed sr_processes table
+removed sr_swap_rate table
+removed sr_swap_size table
+removed sendmail_smtp_stats table
+removed interbase_databases table
+removed interbase_db_groups table
+removed interbase_reserved_words table
+removed interbase_server_users table
+removed interbase_users table
+removed packages.daily_smtp_in_limit
+removed packages.daily_smtp_in_bandwidth_limit
+removed packages.daily_smtp_out_limit
+removed packages.daily_smtp_out_bandwidth_limit
+removed ao_servers.num_cpu
+removed ao_servers.cpu_speed
+removed ao_servers.ram
+removed ao_servers.rack
+removed ao_servers.disk
+removed ao_servers.wildcard_https
+removed ao_servers.is_interbase
+removed ao_servers.is_dns
+removed ao_servers.is_router
+removed ao_servers.iptables_name
+removed ao_servers.server_report_delay
+removed ao_servers.server_report_interval
+removed ao_servers.is_qmail
+removed ao_servers.xeroscape_name
+removed ao_servers.value
+removed ao_servers.monitoring_enabled
+removed ao_servers.emailmon_password
+removed ao_servers.ftpmon_password
+removed servers.owner
+removed servers.administrator
+removed servers.asset_label
+removed servers.minimum_power
+removed servers.maximum_power
+removed servers.hostname
+added servers.package
+added servers.name (unique per package)
+added ao_servers.hostname
+removed business_servers.can_control_interbase
+removed AOSH command set_httpd_shared_tomcat_config_backup_retention
+removed AOSH command set_httpd_shared_tomcat_file_backup_retention
+removed AOSH command set_httpd_shared_tomcat_log_backup_retention
+removed AOSH command set_linux_server_account_cron_backup_retention
+removed AOSH command set_linux_server_account_home_backup_retention
+removed AOSH command set_linux_server_account_inbox_backup_retention
+removed AOSH command set_httpd_site_config_backup_retention
+removed AOSH command set_httpd_site_file_backup_retention
+removed AOSH command set_httpd_site_ftp_backup_retention
+removed AOSH command set_httpd_site_log_backup_retention
+removed AOSH command set_cvs_repository_backup_retention
+removed AOSH command set_email_list_backup_retention
+removed AOSH command set_majordomo_server_backup_retention
+removed AOSH command set_mysql_database_backup_retention
+removed AOSH command set_postgres_database_backup_retention
+removed AOSH command backup_mysql_database
+removed AOSH command backup_interbase_database
+removed AOSH command backup_postgres_database
+removed AOSH command restart_interbase
+removed AOSH command start_interbase
+removed AOSH command stop_interbase
+removed AOSH command get_backup_data
+removed AOSH command get_file_backup
+removed AOSH command remove_file_backup
+removed AOSH command add_file_backup_device
+removed AOSH command get_interbase_backup
+removed AOSH command remove_interbase_backup
+removed AOSH command get_mysql_backup
+removed AOSH command remove_mysql_backup
+removed AOSH command get_postgres_backup
+removed AOSH command remove_postgres_backup
+removed AOSH command add_sendmail_smtp_stat
+removed AOSH command add_interbase_database
+removed AOSH command check_interbase_database_name
+removed AOSH command dump_interbase_database
+removed AOSH command generate_interbase_database_name
+removed AOSH command is_interbase_database_name_available
+removed AOSH command remove_interbase_database
+removed AOSH command add_interbase_db_group
+removed AOSH command check_interbase_db_group_name
+removed AOSH command generate_interbase_db_group_name
+removed AOSH command is_interbase_db_group_name_available
+removed AOSH command remove_interbase_db_group
+removed AOSH command add_interbase_server_user
+removed AOSH command disable_interbase_server_user
+removed AOSH command enable_interbase_server_user
+removed AOSH command is_interbase_server_user_password_set
+removed AOSH command remove_interbase_server_user
+removed AOSH command set_interbase_server_user_password
+removed AOSH command add_interbase_user
+removed AOSH command are_interbase_user_passwords_set
+removed AOSH command check_interbase_password
+removed AOSH command check_interbase_username
+removed AOSH command disable_interbase_user
+removed AOSH command enable_interbase_user
+removed AOSH command remove_interbase_user
+removed AOSH command set_interbase_user_password
+removed AOSH command wait_for_interbase_rebuild
+removed file_backup_settings.package
+removed business_servers.can_configure_backup
+deleted from aoserv_permissions: set_interbase_server_user_password
+updated AOSH command add_file_backup_setting
+updated AOSH command set_file_backup_setting
+updated AOSH command remove_file_backup_setting
+updated AOSH command add_business_server
+updated AOSH command invalidate
+updated AOSH command invalidate ao_servers.hostname, servers.package.name||''/''||servers.name, or servers.pkey
+removed file_backup_settings.recurse
+removed failover_file_replications.from_server
+added failover_file_replications.server
+removed failover_file_replications.to_server
+removed failover_file_replications.to_path
+added failover_file_replications.backup_partition
+removed failover_file_replications.last_start_time
+removed failover_file_replications.chunk_always
+added failover_file_replications.quota_gid
+added backup_partitions.quota_enabled
+added failover_file_schedule.minute
+removed file_backup_settings.server
+added file_backup_settings.replication
+removed schema_table.default_order_by because there is not an easy way to provide cross-version compatibility
+removed schema_table.dataverse_editor
+removed schema_foreign_keys.is_bridge
+removed schema_foreign_keys.tied_bridge
+renamed email_lists.linux_account to linux_server_account
+renamed email_lists.linux_group to linux_server_group
+renamed mysql_db_users.mysql_user to mysql_server_user
+removed phone_numbers table
+removed linux_acc_addresses.linux_account
+added linux_acc_addresses.linux_server_account
+added signup_requests.encryption_recipient
+removed signup_requests.encryption_key
+added signup_requests.encryption_from
+removed encryption_keys.credit_card_signer
+removed encryption_keys.credit_card_recipient
+removed encryption_keys.signup_signer
+added encryption_keys.signup_from
+added credit_card_processors.encryption_from
+added credit_card_processors.encryption_recipient
+added credit_cards.encrypted_card_number
+added credit_cards.encryption_card_number_from
+added credit_cards.encryption_card_number_recipient
+added credit_cards.encrypted_card_expiration
+added credit_cards.encrypted_expiration
+added credit_cards.encryption_expiration_from
+added credit_cards.encryption_expiration_recipient
+removed backup_reports.uncompressed_size
+removed backup_reports.compressed_size'
 commit;

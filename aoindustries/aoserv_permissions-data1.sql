@@ -2,70 +2,65 @@ begin;
 -- business_administrators
 insert into aoserv_permissions values(
     'set_business_administrator_password',
-    (select count(*) from aoserv_permissions)
+    0
 );
 -- credit_card_processors
 insert into aoserv_permissions values(
     'get_credit_card_processors',
-    (select count(*) from aoserv_permissions)
+    1
 );
 -- credit_card_transactions
 insert into aoserv_permissions values(
     'add_credit_card_transaction',
-    (select count(*) from aoserv_permissions)
+    2
 );
 insert into aoserv_permissions values(
     'credit_card_transaction_sale_completed',
-    (select count(*) from aoserv_permissions)
+    3
 );
 insert into aoserv_permissions values(
     'get_credit_card_transactions',
-    (select count(*) from aoserv_permissions)
+    4
 );
 -- credit_cards
 insert into aoserv_permissions values(
     'get_credit_cards',
-    (select count(*) from aoserv_permissions)
+    5
 );
 insert into aoserv_permissions values(
     'add_credit_card',
-    (select count(*) from aoserv_permissions)
+    6
 );
 insert into aoserv_permissions values(
     'delete_credit_card',
-    (select count(*) from aoserv_permissions)
+    7
 );
 insert into aoserv_permissions values(
     'edit_credit_card',
-    (select count(*) from aoserv_permissions)
-);
--- interbase_server_users
-insert into aoserv_permissions values(
-    'set_interbase_server_user_password',
-    (select count(*) from aoserv_permissions)
+    8
 );
 -- linux_server_accounts
 insert into aoserv_permissions values(
     'set_linux_server_account_password',
-    (select count(*) from aoserv_permissions)
+    10
 );
 -- mysql_server_users
 insert into aoserv_permissions values(
     'set_mysql_server_user_password',
-    (select count(*) from aoserv_permissions)
+    11
 );
 -- mysql_servers
 insert into aoserv_permissions values(
     'get_mysql_master_status',
-    (select count(*) from aoserv_permissions)
+    12
 );
 insert into aoserv_permissions values(
     'get_mysql_slave_status',
-    (select count(*) from aoserv_permissions)
+    13
 );
 -- postgres_server_users
 insert into aoserv_permissions values(
     'set_postgres_server_user_password',
-    (select count(*) from aoserv_permissions)
+    14
 );
 commit;

@@ -23,6 +23,7 @@ create table ip_addresses (
     not null,
   is_dhcp bool
     not null,
+  ping_monitor_enabled bool not null,
   unique(ip_address, net_device)
 );
 grant all on ip_addresses to aoadmin;

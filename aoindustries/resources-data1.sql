@@ -51,4 +51,5 @@ hardware_ram_ddr2_667_nonecc_2x1024	 pair	 pairs	/pair	2 GB DDR2-667 non-ECC (2x
 hardware_ram_ddr2_667_nonecc_2x0512	 pair	 pairs	/pair	1 GB DDR2-667 non-ECC (2x512 MB)
 hardware_processor_coreduo_t2300e	 processor	 processors	/processor	Intel Core Duo T2300E Yonah, Dual-Core, 1.667GHz, 2x1MB Cache
 hardware_processor_coreduo_t2400	 processor	 processors	/processor	Intel Core Duo T2400 Yonah, Dual-Core, 1.833GHz, 2x1MB Cache
+mysql_replication	replication	replications	/replication	Fail-Over Mirror with MySQL Replication
 \.

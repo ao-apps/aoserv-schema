@@ -30,4 +30,5 @@ insert into schema_types values('url', 27);
 insert into schema_types values('username', 28);
 insert into schema_types values('zip', 29);
 insert into schema_types values('zone', 30);
+insert into schema_types values('big_decimal', 31);
 commit;

@@ -21,4 +21,4 @@ create table failover_file_schedule (
   unique(replication, hour, minute)
 );
 grant all on failover_file_schedule to aoadmin;
-grant select on failover_file_schedule to aoserv_app;
+grant select, insert, delete on failover_file_schedule to aoserv_app;

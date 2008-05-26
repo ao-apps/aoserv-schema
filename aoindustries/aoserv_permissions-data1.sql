@@ -20,52 +20,56 @@ insert into aoserv_permissions values(
     3
 );
 insert into aoserv_permissions values(
-    'credit_card_transaction_sale_completed',
+    'credit_card_transaction_authorize_completed',
     4
 );
 insert into aoserv_permissions values(
-    'get_credit_card_transactions',
+    'credit_card_transaction_sale_completed',
     5
+);
+insert into aoserv_permissions values(
+    'get_credit_card_transactions',
+    6
 );
 -- credit_cards
 insert into aoserv_permissions values(
     'get_credit_cards',
-    6
-);
-insert into aoserv_permissions values(
-    'add_credit_card',
     7
 );
 insert into aoserv_permissions values(
-    'delete_credit_card',
+    'add_credit_card',
     8
 );
 insert into aoserv_permissions values(
-    'edit_credit_card',
+    'delete_credit_card',
     9
+);
+insert into aoserv_permissions values(
+    'edit_credit_card',
+    10
 );
 -- linux_server_accounts
 insert into aoserv_permissions values(
     'set_linux_server_account_password',
-    10
+    11
 );
 -- mysql_server_users
 insert into aoserv_permissions values(
     'set_mysql_server_user_password',
-    11
+    12
 );
 -- mysql_servers
 insert into aoserv_permissions values(
     'get_mysql_master_status',
-    12
+    13
 );
 insert into aoserv_permissions values(
     'get_mysql_slave_status',
-    13
+    14
 );
 -- postgres_server_users
 insert into aoserv_permissions values(
     'set_postgres_server_user_password',
-    14
+    15
 );
 commit;

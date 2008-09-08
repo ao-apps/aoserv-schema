@@ -1645,6 +1645,14 @@ insert into aosh_commands values(
   'determines if an IP address is currently in use',
   '<i>ip_address</i> <i>ao_server</i> <i>net_device</i>',
   '1.0a100',
+  '1.32'
+);
+insert into aosh_commands values(
+  'is_ip_address_used',
+  'ip_addresses',
+  'determines if an IP address is currently in use',
+  '<i>ip_address</i> <i>server</i> <i>net_device</i>',
+  '1.33',
   null
 );
 insert into aosh_commands values(
@@ -1669,6 +1677,14 @@ insert into aosh_commands values(
   'sets the hostname associated with an IP address',
   '<i>ip_address</i> <i>ao_server</i> <i>net_device</i> <i>hostname</i>',
   '1.0a100',
+  '1.32'
+);
+insert into aosh_commands values(
+  'set_ip_address_hostname',
+  'ip_addresses',
+  'sets the hostname associated with an IP address',
+  '<i>ip_address</i> <i>server</i> <i>net_device</i> <i>hostname</i>',
+  '1.33',
   null
 );
 insert into aosh_commands values(
@@ -1677,6 +1693,14 @@ insert into aosh_commands values(
   'sets the package ownership of an IP address',
   '<i>ip_address</i> <i>ao_server</i> <i>net_device</i> <i>package</i>',
   '1.0a100',
+  '1.32'
+);
+insert into aosh_commands values(
+  'set_ip_address_package',
+  'ip_addresses',
+  'sets the package ownership of an IP address',
+  '<i>ip_address</i> <i>server</i> <i>net_device</i> <i>package</i>',
+  '1.33',
   null
 );
 insert into aosh_commands values(
@@ -2581,6 +2605,14 @@ insert into aosh_commands values(
   'adds a net binds to the system',
   '<i>ao_server</i> <i>package</i> <i>ip_address</i> <i>net_device</i> <i>port</i> <i>net_protocol</i> <i>app_protocol</i> <i>open_firewall</i> <i>monitoring_enabled</i>',
   '1.0a104',
+  '1.32'
+);
+insert into aosh_commands values(
+  'add_net_bind',
+  'net_binds',
+  'adds a net binds to the system',
+  '<i>server</i> <i>package</i> <i>ip_address</i> <i>net_device</i> <i>port</i> <i>net_protocol</i> <i>app_protocol</i> <i>open_firewall</i> <i>monitoring_enabled</i>',
+  '1.33',
   null
 );
 insert into aosh_commands values(

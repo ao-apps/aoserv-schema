@@ -649,4 +649,20 @@ removed backup_reports.compressed_size
 removed daemon_profile.server
 added daemon_profile.ao_server'
 );
+insert into aoserv_protocols values(
+  '1.32',
+  '2008-06-28',
+  'added servers.monitoring_enabled'
+);
+insert into aoserv_protocols values(
+  '1.33',
+  '2008-08-15',
+  'renamed net_devices.ao_server to server, references servers instead of ao_servers
+renamed net_binds.ao_server to server, references servers instead of ao_servers'
+);
+insert into aoserv_protocols values(
+  '1.34',
+  '2008-08-17',
+  'added ip_addresses.external_ip_address'
+);
 commit;

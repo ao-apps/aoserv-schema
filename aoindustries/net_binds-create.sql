@@ -8,7 +8,7 @@ create table net_binds (
     constraint net_binds_pkey primary key,
   package text
     not null,
-  ao_server integer
+  server integer
     not null,
   ip_address integer
     not null,
@@ -22,7 +22,7 @@ create table net_binds (
     not null,
   monitoring_enabled bool
     not null,
-  unique(ao_server, ip_address, port, net_protocol)
+  unique(server, ip_address, port, net_protocol)
 );
 grant all on net_binds to aoadmin;
 grant select, insert, update, delete on net_binds to aoserv_app;

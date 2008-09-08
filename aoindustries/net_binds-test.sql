@@ -1,4 +1,4 @@
-COPY net_binds (pkey, package, ao_server, ip_address, port, net_protocol, app_protocol, open_firewall, monitoring_enabled) FROM stdin;
+COPY net_binds (pkey, package, server, ip_address, port, net_protocol, app_protocol, open_firewall, monitoring_enabled) FROM stdin;
 1	AOINDUSTRIES	2	1	3306	tcp	MySQL	t	t
 2	AOINDUSTRIES	2	1	3307	tcp	MySQL	t	t
 15	AOINDUSTRIES	2	1	5433	tcp	PostgreSQL	f	t

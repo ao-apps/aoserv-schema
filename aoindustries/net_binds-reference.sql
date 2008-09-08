@@ -6,9 +6,9 @@ alter table net_binds
   on update cascade
 ;
 alter table net_binds
-  add constraint ao_server_fkey
-  foreign key (ao_server)
-  references ao_servers (server)
+  add constraint server_fkey
+  foreign key (server)
+  references servers (pkey)
   on delete restrict
   on update cascade
 ;

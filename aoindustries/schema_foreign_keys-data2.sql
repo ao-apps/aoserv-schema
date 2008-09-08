@@ -602,7 +602,8 @@ commit;
 begin;
 \echo net_binds
 select add_schema_foreign_key('net_binds', 'package', 'packages', 'name', '1.0a100', null);
-select add_schema_foreign_key('net_binds', 'ao_server', 'ao_servers', 'server', '1.0a100', null);
+select add_schema_foreign_key('net_binds', 'ao_server', 'ao_servers', 'server', '1.0a100', '1.32');
+select add_schema_foreign_key('net_binds', 'server', 'servers', 'pkey', '1.33', null);
 select add_schema_foreign_key('net_binds', 'ip_address', 'ip_addresses', 'pkey', '1.0a100', null);
 select add_schema_foreign_key('net_binds', 'port', 'net_ports', 'port', '1.0a100', null);
 select add_schema_foreign_key('net_binds', 'net_protocol', 'net_protocols', 'protocol', '1.0a100', null);
@@ -620,7 +621,8 @@ select add_schema_foreign_key('net_device_local_routes', 'net_device', 'net_devi
 commit;
 begin;
 \echo net_devices
-select add_schema_foreign_key('net_devices', 'ao_server', 'ao_servers', 'server', '1.0a100', null);
+select add_schema_foreign_key('net_devices', 'ao_server', 'ao_servers', 'server', '1.0a100', '1.32');
+select add_schema_foreign_key('net_devices', 'server', 'servers', 'pkey', '1.33', null);
 select add_schema_foreign_key('net_devices', 'device_id', 'net_device_ids', 'name', '1.0a100', null);
 commit;
 begin;

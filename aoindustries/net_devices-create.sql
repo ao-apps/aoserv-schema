@@ -6,7 +6,7 @@ create table net_devices (
   pkey integer
     default nextval('net_devices_pkey_seq')
     constraint net_devices_pkey primary key,
-  ao_server integer
+  server integer
     not null,
   device_id text
     not null,
@@ -20,7 +20,7 @@ create table net_devices (
   broadcast text,
   mac_address text,
   max_bit_rate int8,
-  unique(ao_server, device_id)
+  unique(server, device_id)
 );
 grant all on net_devices to aoadmin;
 grant select on net_devices to aoserv_app;

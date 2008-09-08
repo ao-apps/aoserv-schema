@@ -1,7 +1,7 @@
 alter table net_devices
-  add constraint ao_server_fkey
-  foreign key (ao_server)
-  references ao_servers (server)
+  add constraint server_fkey
+  foreign key (server)
+  references servers (pkey)
   on delete restrict
   on update cascade
 ;

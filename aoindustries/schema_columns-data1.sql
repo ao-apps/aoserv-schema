@@ -1091,6 +1091,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addres
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'is_overflow', 9, 'boolean', false, false, false, 'indicates that the IP address is shared by different accounts', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'is_dhcp', 10, 'boolean', false, false, false, 'the IP address is obtained via DHCP', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'ping_monitor_enabled', 11, 'boolean', false, false, false, 'if ping (ICMP ECHO) is available for monitoring, defaults to true', '1.30', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'external_ip_address', 12, 'ip_address', true, false, false, 'the external IP address, if different than ip_address', '1.34', null;
 commit;
 begin;
 \echo limits
@@ -1438,17 +1439,18 @@ begin;
 \echo net_binds
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'pkey', 0, 'pkey', false, true, false, 'a generated pkey', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'package', 1, 'package', false, false, false, 'the package that owns the opened port', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'ao_server', 2, 'fkey', false, false, false, 'the pkey of the server that this port is bound on', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'ip_address', 3, 'fkey', false, false, false, 'the pkey of the IP address that is bound to', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'port', 4, 'int', false, false, false, 'the port number that is bound', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'net_protocol', 5, 'string', false, false, false, 'the network protocol (<code>net_protocols</code>)', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'app_protocol', 6, 'string', false, false, false, 'the application protocol (<code>protocols</code>)', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'open_firewall', 7, 'boolean', false, false, false, 'flags if the firewall should be opened for this port', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitor_delay', 8, 'int', true, false, false, '', '1.0a100', '1.0a103';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitor_parameter', 9, 'string', true, false, false, '', '1.0a100', '1.0a103';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitor_contact', 10, 'string', true, false, false, '', '1.0a100', '1.0a103';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitor_info', 11, 'string', true, false, false, '', '1.0a100', '1.0a103';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitoring_enabled', 12, 'boolean', false, false, false, 'turns on monitoring of the port', '1.0a104', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'ao_server', 2, 'fkey', false, false, false, 'the pkey of the server that this port is bound on', '1.0a100', '1.32';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'server', 3, 'fkey', false, false, false, 'the pkey of the server that this port is bound on', '1.33', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'ip_address', 4, 'fkey', false, false, false, 'the pkey of the IP address that is bound to', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'port', 5, 'int', false, false, false, 'the port number that is bound', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'net_protocol', 6, 'string', false, false, false, 'the network protocol (<code>net_protocols</code>)', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'app_protocol', 7, 'string', false, false, false, 'the application protocol (<code>protocols</code>)', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'open_firewall', 8, 'boolean', false, false, false, 'flags if the firewall should be opened for this port', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitor_delay', 9, 'int', true, false, false, '', '1.0a100', '1.0a103';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitor_parameter', 10, 'string', true, false, false, '', '1.0a100', '1.0a103';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitor_contact', 11, 'string', true, false, false, '', '1.0a100', '1.0a103';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitor_info', 12, 'string', true, false, false, '', '1.0a100', '1.0a103';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitoring_enabled', 13, 'boolean', false, false, false, 'turns on monitoring of the port', '1.0a104', null;
 commit;
 begin;
 \echo net_device_host_routes
@@ -1470,17 +1472,18 @@ commit;
 begin;
 \echo net_devices
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'pkey', 0, 'pkey', false, true, false, 'a unique, generated pkey', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'ao_server', 1, 'fkey', false, false, false, 'the pkey of the server that contains the device', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'device_id', 2, 'string', false, false, false, 'the name of the device', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'description', 3, 'string', false, false, false, 'a description of the device', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'delete_redhat_route', 4, 'string', true, false, false, 'the default routing from the network scripts that should be removed', '1.0a100', '1.0a111';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'delete_route', 5, 'string', true, false, false, 'the default routing from the network scripts that should be removed', '1.0a112', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'gateway', 6, 'ip_address', true, false, false, 'the gateway IP address', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'netmask', 7, 'string', false, false, false, 'the netmask of the local network', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'network', 8, 'ip_address', true, false, false, 'the local network', '1.0a112', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'broadcast', 9, 'ip_address', true, false, false, 'the broadcast IP', '1.0a112', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'mac_address', 10, 'string', true, false, false, 'the MAC address to be used on the device', '1.0a128', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'max_bit_rate', 11, 'long', true, false, false, 'the maximum bits per second for this network device', '1.2', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'ao_server', 1, 'fkey', false, false, false, 'the pkey of the server that contains the device', '1.0a100', '1.32';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'server', 2, 'fkey', false, false, false, 'the pkey of the server that contains the device', '1.33', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'device_id', 3, 'string', false, false, false, 'the name of the device', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'description', 4, 'string', false, false, false, 'a description of the device', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'delete_redhat_route', 5, 'string', true, false, false, 'the default routing from the network scripts that should be removed', '1.0a100', '1.0a111';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'delete_route', 6, 'string', true, false, false, 'the default routing from the network scripts that should be removed', '1.0a112', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'gateway', 7, 'ip_address', true, false, false, 'the gateway IP address', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'netmask', 8, 'string', false, false, false, 'the netmask of the local network', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'network', 9, 'ip_address', true, false, false, 'the local network', '1.0a112', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'broadcast', 10, 'ip_address', true, false, false, 'the broadcast IP', '1.0a112', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'mac_address', 11, 'string', true, false, false, 'the MAC address to be used on the device', '1.0a128', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'max_bit_rate', 12, 'long', true, false, false, 'the maximum bits per second for this network device', '1.2', null;
 commit;
 begin;
 \echo net_monitoring_times
@@ -1818,6 +1821,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'servers',
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'servers', 'maximum_power', 13, 'float', true, false, false, 'the maximum power consumption in amps', '1.16', '1.30';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'servers', 'package', 14, 'fkey', false, false, false, 'the package accountable for resources used by the server', '1.31', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'servers', 'name', 15, 'string', false, false, false, 'the per-package unique name of the server (no special formatting required)', '1.31', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'servers', 'monitoring_enabled', 16, 'boolean', false, false, false, 'enables/disables monitoring', '1.32', null;
 commit;
 begin;
 \echo service_levels

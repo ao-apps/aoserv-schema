@@ -279,6 +279,15 @@ insert into schema_tables values(
     null
 );
 insert into schema_tables values(
+    'disk_types',
+    (select count(*) from schema_tables),
+    'Disk Types',
+    true,
+    'The possible types of disk interfaces.',
+    '1.36',
+    null
+);
+insert into schema_tables values(
     'distro_file_types',
     (select count(*) from schema_tables),
     'Distro File Types',
@@ -1280,6 +1289,15 @@ insert into schema_tables values(
     null
 );
 insert into schema_tables values(
+    'physical_servers',
+    (select count(*) from schema_tables),
+    'Physical Servers',
+    false,
+    'The physical servers consume rack space and electricity and optionally provide cluster resources.',
+    '1.36',
+    null
+);
+insert into schema_tables values(
     'phone_numbers',
     (select count(*) from schema_tables),
     'Phone Numbers',
@@ -1374,12 +1392,39 @@ insert into schema_tables values(
     null
 );
 insert into schema_tables values(
+    'processor_types',
+    (select count(*) from schema_tables),
+    'Processor Types',
+    true,
+    'The possible types of processors for cluster QoS management.',
+    '1.36',
+    null
+);
+insert into schema_tables values(
     'protocols',
     (select count(*) from schema_tables),
     'Protocols',
     true,
     'The protocols table has an entry for each service protocol along with the default port numbers.',
     '1.0a100',
+    null
+);
+insert into schema_tables values(
+    'racks',
+    (select count(*) from schema_tables),
+    'Racks',
+    false,
+    'Each server farm may manage cluster resources on a per-rack basis.',
+    '1.36',
+    null
+);
+insert into schema_tables values(
+    'raid_types',
+    (select count(*) from schema_tables),
+    'RAID Types',
+    true,
+    'The possible types of RAID configurations for cluster QoS management.',
+    '1.36',
     null
 );
 insert into schema_tables values(
@@ -1819,6 +1864,24 @@ person or system.',
     null
 );
 insert into schema_tables values(
+    'virtual_disks',
+    (select count(*) from schema_tables),
+    'Virtual Disks',
+    false,
+    'The virtual disk configurations for cluster QoS management.',
+    '1.36',
+    null
+);
+insert into schema_tables values(
+    'virtual_servers',
+    (select count(*) from schema_tables),
+    'Virtual Servers',
+    false,
+    'A virtual server is any server that is a guest in the virtualized clustering.',
+    '1.36',
+    null
+);
+insert into schema_tables values(
     'whois_history',
     (select count(*) from schema_tables),
     'Whois History',
@@ -1828,3 +1891,6 @@ insert into schema_tables values(
     null
 );
 commit;
+
+\echo vacuuming
+vacuum full analyze schema_tables;

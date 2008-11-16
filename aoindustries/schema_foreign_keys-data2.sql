@@ -662,6 +662,12 @@ select add_schema_foreign_key('packages', 'created_by', 'business_administrators
 select add_schema_foreign_key('packages', 'disable_log', 'disable_log', 'pkey', '1.0a100', null);
 commit;
 begin;
+\echo physical_servers
+select add_schema_foreign_key('physical_servers', 'server', 'servers', 'pkey', '1.36', null);
+select add_schema_foreign_key('physical_servers', 'rack', 'racks', 'pkey', '1.36', null);
+select add_schema_foreign_key('physical_servers', 'processor_type', 'processor_types', 'type', '1.36', null);
+commit;
+begin;
 \echo postgres_backups
 select add_schema_foreign_key('postgres_backups', 'package', 'packages', 'pkey', '1.0a100', '1.30');
 select add_schema_foreign_key('postgres_backups', 'postgres_server', 'postgres_servers', 'pkey', '1.0a100', '1.30');
@@ -717,6 +723,10 @@ begin;
 \echo protocols
 select add_schema_foreign_key('protocols', 'port', 'net_ports', 'port', '1.0a100', null);
 select add_schema_foreign_key('protocols', 'net_protocol', 'net_protocols', 'protocol', '1.0a105', null);
+commit;
+begin;
+\echo racks
+select add_schema_foreign_key('racks', 'farm', 'server_farms', 'name', '1.36', null);
 commit;
 begin;
 \echo schema_columns
@@ -910,9 +920,29 @@ select add_schema_foreign_key('usernames', 'package', 'packages', 'name', '1.0a1
 select add_schema_foreign_key('usernames', 'disable_log', 'disable_log', 'pkey', '1.0a100', null);
 commit;
 begin;
+\echo virtual_disks
+select add_schema_foreign_key('virtual_disks', 'virtual_server', 'virtual_servers', 'server', '1.36', null);
+select add_schema_foreign_key('virtual_disks', 'primary_minimum_raid_type', 'raid_types', 'type', '1.36', null);
+select add_schema_foreign_key('virtual_disks', 'secondary_minimum_raid_type', 'raid_types', 'type', '1.36', null);
+select add_schema_foreign_key('virtual_disks', 'primary_minimum_disk_type', 'disk_types', 'type', '1.36', null);
+select add_schema_foreign_key('virtual_disks', 'secondary_minimum_disk_type', 'disk_types', 'type', '1.36', null);
+commit;
+begin;
+\echo virtual_servers
+select add_schema_foreign_key('virtual_servers', 'server', 'servers', 'pkey', '1.36', null);
+select add_schema_foreign_key('virtual_servers', 'primary_minimum_processor_type', 'processor_types', 'type', '1.36', null);
+select add_schema_foreign_key('virtual_servers', 'secondary_minimum_processor_type', 'processor_types', 'type', '1.36', null);
+select add_schema_foreign_key('virtual_servers', 'minimum_processor_architecture', 'architectures', 'name', '1.36', null);
+select add_schema_foreign_key('virtual_servers', 'primary_physical_server', 'physical_servers', 'server', '1.36', null);
+select add_schema_foreign_key('virtual_servers', 'secondary_physical_server', 'physical_servers', 'server', '1.36', null);
+commit;
+begin;
 \echo whois_history
 select add_schema_foreign_key('whois_history', 'accounting', 'businesses', 'accounting', '1.20', null);
 commit;
 
 drop function add_schema_foreign_key (text,text,text,text,text,text);
 drop function get_schema_column (text,text,text,text);
+
+\echo vacuuming
+vacuum full analyze schema_foreign_keys;

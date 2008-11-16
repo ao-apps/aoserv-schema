@@ -665,4 +665,27 @@ insert into aoserv_protocols values(
   '2008-08-17',
   'added ip_addresses.external_ip_address'
 );
+insert into aoserv_protocols values(
+  '1.35',
+  '2008-10-24',
+  'added ao_servers.monitoring_load_low
+added ao_servers.monitoring_load_medium
+added ao_servers.monitoring_load_high
+added ao_servers.monitoring_load_critical
+added net_devices.monitoring_bit_rate_low
+added net_devices.monitoring_bit_rate_medium
+added net_devices.monitoring_bit_rate_high
+added net_devices.monitoring_bit_rate_critical'
+);
+insert into aoserv_protocols values(
+  '1.36',
+  '2008-11-15',
+  'added disk_types table
+added physical_servers table
+added processor_types table
+added racks table
+added raid_types table
+added virtual_disks table
+added virtual_servers table'
+);
 commit;

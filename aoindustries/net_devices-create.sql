@@ -20,6 +20,10 @@ create table net_devices (
   broadcast text,
   mac_address text,
   max_bit_rate int8,
+  monitoring_bit_rate_low int8,
+  monitoring_bit_rate_medium int8 check (monitoring_bit_rate_medium is null or monitoring_bit_rate_low is not null and monitoring_bit_rate_medium>monitoring_bit_rate_low),
+  monitoring_bit_rate_high int8 check (monitoring_bit_rate_high is null or monitoring_bit_rate_medium is not null and monitoring_bit_rate_high>monitoring_bit_rate_medium),
+  monitoring_bit_rate_critical int8 check (monitoring_bit_rate_critical is null or monitoring_bit_rate_high is not null and monitoring_bit_rate_critical>monitoring_bit_rate_high),
   unique(server, device_id)
 );
 grant all on net_devices to aoadmin;

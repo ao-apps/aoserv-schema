@@ -72,6 +72,10 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_server
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'restrict_outbound_email', 33, 'boolean', false, false, false, 'controls if outbound email may only come from address hosted on this machine', '1.8', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'daemon_connect_address', 34, 'string', true, false, false, 'provides a specific address to use for connecting to AOServDaemon', '1.11', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'failover_batch_size', 35, 'int', false, false, false, 'the batch size used for failover replications coming from this server', '1.12', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'monitoring_load_low', 36, 'float', true, false, false, 'the 5-minute load average that will trigger a low-level alert', '1.35', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'monitoring_load_medium', 37, 'float', true, false, false, 'the 5-minute load average that will trigger a medium-level alert', '1.35', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'monitoring_load_high', 38, 'float', true, false, false, 'the 5-minute load average that will trigger a high-level alert', '1.35', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'monitoring_load_critical', 39, 'float', true, false, false, 'the 5-minute load average that will trigger a critical-level alert', '1.35', null;
 commit;
 begin;
 \echo aoserv_permissions
@@ -518,6 +522,11 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'disable_l
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'disable_log', 'accounting', 2, 'accounting', false, false, false, 'the business whos resources are being disabled', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'disable_log', 'disabled_by', 3, 'username', false, false, false, 'the person who disabled the accounts', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'disable_log', 'disable_reason', 4, 'string', true, false, false, 'the optional reason the accounts were disabled', '1.0a100', null;
+commit;
+begin;
+\echo disk_types
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'disk_types', 'type', 0, 'string', false, true, true, 'the unique name of the type of disk', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'disk_types', 'sort_order', 1, 'short', false, true, true, 'the sort order of the disk, those sorted higher may be substituted for those sorted lower', '1.36', null;
 commit;
 begin;
 \echo distro_file_types
@@ -1484,6 +1493,10 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devic
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'broadcast', 10, 'ip_address', true, false, false, 'the broadcast IP', '1.0a112', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'mac_address', 11, 'string', true, false, false, 'the MAC address to be used on the device', '1.0a128', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'max_bit_rate', 12, 'long', true, false, false, 'the maximum bits per second for this network device', '1.2', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'monitoring_bit_rate_low', 13, 'long', true, false, false, 'the 5-minute average that will trigger a low-level alert', '1.35', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'monitoring_bit_rate_medium', 14, 'long', true, false, false, 'the 5-minute average that will trigger a medium-level alert', '1.35', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'monitoring_bit_rate_high', 15, 'long', true, false, false, 'the 5-minute average that will trigger a high-level alert', '1.35', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'monitoring_bit_rate_critical', 16, 'long', true, false, false, 'the 5-minute average that will trigger a critical-level alert', '1.35', null;
 commit;
 begin;
 \echo net_monitoring_times
@@ -1606,6 +1619,17 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'payment_t
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'payment_types', 'allow_web', 3, 'boolean', false, false, true, 'indicates if payment is allowed via a web form', '1.0a100', null;
 commit;
 begin;
+\echo physical_servers
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'physical_servers', 'server', 0, 'fkey', false, true, false, 'a reference to servers', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'physical_servers', 'rack', 1, 'fkey', true, false, false, 'the rack that houses this server', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'physical_servers', 'rack_units', 2, 'short', true, false, false, 'the number of rack units', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'physical_servers', 'ram', 3, 'int', true, false, false, 'the total number of megabytes of RAM in this server', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'physical_servers', 'processor_type', 4, 'string', true, false, false, 'the processor type', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'physical_servers', 'processor_speed', 5, 'int', true, false, false, 'the processor speed in MHz', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'physical_servers', 'processor_cores', 6, 'int', true, false, false, 'the total number of processor cores, hyperthreads are counted as different cores', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'physical_servers', 'max_power', 7, 'float', true, false, false, 'the number of amps this server consumes under peak load', '1.36', null;
+commit;
+begin;
 \echo phone_numbers
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'phone_numbers', 'pkey', 0, 'pkey', false, true, false, 'a generated, unique id', '1.0a100', '1.30';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'phone_numbers', 'created', 1, 'time', false, false, false, 'time the entry was created', '1.0a100', '1.30';
@@ -1704,12 +1728,30 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_f
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'allow_anonymous', 10, 'boolean', false, false, false, 'enabled or disabled anonymous access to the server', '1.0a113', null;
 commit;
 begin;
+\echo processor_types
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'processor_types', 'type', 0, 'string', false, true, true, 'the unique name of the type of processor', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'processor_types', 'sort_order', 1, 'short', false, true, true, 'the sort order of the processor, those sorted higher may be substituted for those sorted lower', '1.36', null;
+commit;
+begin;
 \echo protocols
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'protocol', 0, 'string', false, true, true, 'the unique name of the protocol', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'port', 1, 'int', false, false, true, 'the default port of the protocol', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'name', 2, 'string', false, false, true, 'the name of the service', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'is_user_service', 3, 'boolean', false, false, true, 'indicates that a user may add and remove this service', '1.0a105', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'net_protocol', 4, 'string', false, false, true, 'the default network protocol for this protocol', '1.0a105', null;
+commit;
+begin;
+\echo racks
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'racks', 'pkey', 0, 'pkey', false, true, false, 'the unique ID for the rack', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'racks', 'farm', 1, 'string', false, false, false, 'the server_farm housing the rack', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'racks', 'name', 2, 'string', false, false, false, 'the per-farm unique name', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'racks', 'max_power', 3, 'float', true, false, false, 'the maximum electrical load supported by the rack', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'racks', 'total_rack_units', 4, 'int', true, false, false, 'the number of rack units of physical space', '1.36', null;
+commit;
+begin;
+\echo raid_types
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'raid_types', 'type', 0, 'string', false, true, true, 'the unique name of the type of RAID configuration', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'raid_types', 'sort_order', 1, 'short', false, true, true, 'the sort order of the RAID type, those sorted higher may be substituted for those sorted lower', '1.36', null;
 commit;
 begin;
 \echo rates
@@ -2573,6 +2615,42 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'usernames
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'usernames', 'disable_log', 2, 'fkey', true, false, false, 'indicates that the username is disabled', '1.0a100', null;
 commit;
 begin;
+\echo virtual_disks
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_disks', 'pkey', 0, 'pkey', false, true, false, 'a generated unique ID', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_disks', 'virtual_server', 1, 'fkey', false, false, false, 'the virtual server this disk belongs to', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_disks', 'device', 2, 'string', false, false, false, 'the per-virtual-server unique device, such as xvda or xvdb', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_disks', 'primary_minimum_raid_type', 3, 'string', true, false, false, 'the minimum RAID type for the primary physical server', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_disks', 'secondary_minimum_raid_type', 4, 'string', true, false, false, 'the minimum RAID type for the secondary physical server', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_disks', 'primary_minimum_disk_type', 5, 'string', true, false, false, 'the minimum disk type for the primary physical server', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_disks', 'secondary_minimum_disk_type', 6, 'string', true, false, false, 'the minimum disk type for the secondary physical server', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_disks', 'primary_minimum_disk_speed', 7, 'int', true, false, false, 'the minimum disk speed in RPM for the primary physical server', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_disks', 'secondary_minimum_disk_speed', 8, 'int', true, false, false, 'the minimum disk speed in RPM for the secondary physical server', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_disks', 'extents', 9, 'int', false, false, false, 'the total number of LVM extents for this device', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_disks', 'primary_weight', 10, 'short', false, false, false, 'the amount of primary disk I/O allocated to this virtual device on a scale of 1-1024', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_disks', 'secondary_weight', 11, 'short', false, false, false, 'the amount of secondary disk I/O allocated to this virtual device on a scale of 1-1024', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_disks', 'primary_physical_volumes_locked', 12, 'boolean', false, false, false, 'indicates this device is locked and should not be moved by automated means', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_disks', 'secondary_physical_volumes_locked', 13, 'boolean', false, false, false, 'indicates this device is locked and should not be moved by automated means', '1.36', null;
+commit;
+begin;
+\echo virtual_servers
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_servers', 'server', 0, 'fkey', false, true, false, 'the server that is virtualized', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_servers', 'primary_ram', 1, 'int', false, false, false, 'the amount of RAM required in primary mode in megabytes', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_servers', 'secondary_ram', 2, 'int', false, false, false, 'the amount of RAM required in primary mode in megabytes or 0 if secondary not required', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_servers', 'primary_minimum_processor_type', 3, 'string', true, false, false, 'the minimum processor type in primary mode', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_servers', 'secondary_minimum_processor_type', 4, 'string', true, false, false, 'the minimum processor type in secondary mode', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_servers', 'minimum_processor_architecture', 5, 'string', false, false, false, 'the minimum processor architecture, compatible architectures may be substituted', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_servers', 'primary_minimum_processor_speed', 6, 'int', true, false, false, 'the minimum processor speed in MHz for primary mode', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_servers', 'secondary_minimum_processor_speed', 7, 'int', true, false, false, 'the minimum processor speed in MHz for secondary mode', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_servers', 'primary_processor_cores', 8, 'short', false, false, false, 'the number of processor cores used in primary mode', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_servers', 'secondary_processor_cores', 9, 'short', false, false, false, 'the number of processor cores used in secondary mode', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_servers', 'primary_processor_weight', 10, 'short', false, false, false, 'the processor allocation weight in primary mode on a scale of 1-1024', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_servers', 'secondary_processor_weight', 11, 'short', false, false, false, 'the processor allocation weight in secondary mode on a scale of 1-1024', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_servers', 'primary_physical_server', 12, 'fkey', false, false, false, 'the physical server that provides the primary mode resources', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_servers', 'primary_physical_server_locked', 13, 'boolean', false, false, false, 'indicates the primary server is locked and should not be moved by automated means', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_servers', 'secondary_physical_server', 14, 'fkey', false, false, false, 'the physical server that provides the secondary mode resources', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_servers', 'secondary_physical_server_locked', 15, 'boolean', false, false, false, 'indicates the secondary server is locked and should not be moved by automated means', '1.36', null;
+commit;
+begin;
 \echo whois_history
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'whois_history', 'pkey', 0, 'pkey', false, true, false, 'a unique, generated identifier', '1.20', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'whois_history', 'time', 1, 'time', false, false, false, 'the time the whois query was performed', '1.20', null;
@@ -2580,3 +2658,5 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'whois_his
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'whois_history', 'zone', 3, 'zone', false, false, false, 'the top level domain (zone) that was queried', '1.20', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'whois_history', 'whois_output', 4, 'string', false, false, false, 'the output from the whois lookup', '1.20', null;
 commit;
+\echo vacuuming
+vacuum full analyze schema_columns;

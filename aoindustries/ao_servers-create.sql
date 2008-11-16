@@ -21,7 +21,11 @@ create table ao_servers (
   jilter_bind integer,
   restrict_outbound_email bool not null,
   daemon_connect_address text,
-  failover_batch_size integer not null
+  failover_batch_size integer not null,
+  monitoring_load_low float4,
+  monitoring_load_medium float4 check (monitoring_load_medium is null or monitoring_load_low is not null and monitoring_load_medium>monitoring_load_low),
+  monitoring_load_high float4 check (monitoring_load_high is null or monitoring_load_medium is not null and monitoring_load_high>monitoring_load_medium),
+  monitoring_load_critical float4 check (monitoring_load_critical is null or monitoring_load_high is not null and monitoring_load_critical>monitoring_load_high)
 );
 grant all on ao_servers to aoadmin;
 grant select, update on ao_servers to aoserv_app;

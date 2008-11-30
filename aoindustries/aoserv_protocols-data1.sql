@@ -688,4 +688,16 @@ added raid_types table
 added virtual_disks table
 added virtual_servers table'
 );
+insert into aoserv_protocols values(
+  '1.37',
+  '2008-11-16',
+  'added physical_servers.supports_hvm
+added virtual_servers.requires_hvm'
+);
+insert into aoserv_protocols values(
+  '1.38',
+  '2008-11-30',
+  'removed net_devices.netmask
+added ip_addresses.netmask'
+);
 commit;

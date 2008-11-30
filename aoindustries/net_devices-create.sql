@@ -14,8 +14,6 @@ create table net_devices (
     not null,
   delete_route text,
   gateway text,
-  netmask text
-    not null,
   network text,
   broadcast text,
   mac_address text,

@@ -11,7 +11,8 @@ create table physical_servers (
   processor_cores integer
     check (processor_cores is null or processor_cores>0),
   max_power float4
-    check (max_power is null or max_power>0)
+    check (max_power is null or max_power>0),
+  supports_hvm boolean
 );
 grant all on physical_servers to aoadmin;
 grant select on physical_servers to aoserv_app;

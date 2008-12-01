@@ -700,4 +700,10 @@ insert into aoserv_protocols values(
   'removed net_devices.netmask
 added ip_addresses.netmask'
 );
+insert into aoserv_protocols values(
+  '1.39',
+  '2008-12-01',
+  'removed private_ftp_servers.root
+removed private_ftp_servers.linux_server_group'
+);
 commit;

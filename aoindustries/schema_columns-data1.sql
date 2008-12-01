@@ -1719,14 +1719,14 @@ begin;
 \echo private_ftp_servers
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'ip_address', 0, 'fkey', false, true, false, 'the pkey of the net_bind that the FTP server is on', '1.0a100', '1.0a112';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'net_bind', 1, 'fkey', false, true, false, 'the root directory', '1.0a113', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'root', 2, 'path', false, false, false, 'the file transfers are logged to', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'root', 2, 'path', false, false, false, 'the file transfers are logged to', '1.0a100', '1.38';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'logfile', 3, 'path', false, false, false, 'the file transfers are logged to', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'hostname', 4, 'hostname', false, false, false, 'the hostname the server reports', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'email', 5, 'email', false, false, false, 'the email address the server reports', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'price', 6, 'decimal_2', true, false, false, '', '1.0a100', '1.0a122';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'created', 7, 'time', false, false, false, 'the time the server was added', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'linux_server_account', 8, 'int', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'linux_server_group', 9, 'int', false, false, false, '', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'linux_server_group', 9, 'int', false, false, false, '', '1.0a100', '1.38';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'allow_anonymous', 10, 'boolean', false, false, false, 'enabled or disabled anonymous access to the server', '1.0a113', null;
 commit;
 begin;

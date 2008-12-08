@@ -34,7 +34,6 @@ aoserv-master	4582	AO Serv Master	f	tcp
 FTP	21	File Transfer Protocol	t	tcp
 SSH	22	Secure Shell	t	tcp
 Telnet	23	Telnet	t	tcp
-POP2	109	Post Office Protocol Version 2	t	tcp
 POP3	110	Post Office Protocol Version 3	t	tcp
 IMAP2	143	IMAP Version 2	t	tcp
 SIMAP	993	Secure IMAP	t	tcp

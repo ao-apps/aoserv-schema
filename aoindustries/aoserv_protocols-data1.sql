@@ -706,4 +706,9 @@ insert into aoserv_protocols values(
   'removed private_ftp_servers.root
 removed private_ftp_servers.linux_server_group'
 );
+insert into aoserv_protocols values(
+  '1.40',
+  '2008-12-09',
+  'added linux_server_accounts.sa_discard_score'
+);
 commit;

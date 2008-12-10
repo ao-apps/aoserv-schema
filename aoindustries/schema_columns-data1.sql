@@ -1182,6 +1182,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_ser
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'junk_email_retention', 20, 'int', true, false, false, 'the number of days before messages in the Junk folder are automatically removed.', '1.0a120', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'sa_integration_mode', 21, 'string', false, false, false, 'the integration mode for SpamAssassin', '1.0a120', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'sa_required_score', 22, 'float', false, false, false, 'the minimum SpamAssassin score considered Junk', '1.0a124', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'sa_discard_score', 23, 'int', true, false, false, 'the minimum SpamAssassin score that will be discarded instead of tagged or placed in the Junk folder', '1.40', null;
 commit;
 begin;
 \echo linux_server_groups

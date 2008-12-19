@@ -1408,6 +1408,9 @@ COPY "technology_versions" FROM stdin;
 17	postgresql	8.0.8	2006-06-22 10:19:00-05	orion	45
 18	postgresql	8.1.4	2006-06-22 10:20:00-05	orion	45
 2586	postgresql	8.1.4	2006-09-12 15:57:00-05	orion	47
+3315	postgresql	7.1.3	2008-12-18 23:46:24.432728	orion	67
+3316	postgresql	7.2.8	2008-12-19 00:00:23.724925	orion	67
+3317	postgresql	7.3.21	2008-12-18 23:46:53.531062	orion	67
 3296	postgresql	8.1.9	2006-09-12 15:57:00-05	orion	67
 3298	postgresql	8.3.0	2008-01-28 11:22:00-05	orion	67
 \.

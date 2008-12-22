@@ -34,4 +34,4 @@ create table httpd_servers (
   unique(ao_server, number)
 );
 grant all on httpd_servers to aoadmin;
-grant select on httpd_servers to aoserv_app;
+grant select, delete on httpd_servers to aoserv_app;

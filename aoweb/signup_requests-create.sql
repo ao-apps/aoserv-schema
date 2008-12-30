@@ -30,3 +30,4 @@ create table signup_requests (
 );
 grant all on signup_requests to aoadmin;
 grant select, insert, update, delete on signup_requests to aoweb_app;
+grant select on signup_requests to aoweb_noc_app;

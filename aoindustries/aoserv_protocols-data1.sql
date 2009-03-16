@@ -711,4 +711,34 @@ insert into aoserv_protocols values(
   '2008-12-09',
   'added linux_server_accounts.sa_discard_score'
 );
+insert into aoserv_protocols values(
+  '1.41',
+  '2009-03-12',
+  'renamed virtual_servers.primary_minimum_processor_type to minimum_processor_type
+removed virtual_servers.secondary_minimum_processor_type
+renamed virtual_servers.primary_minimum_processor_speed to minimum_processor_speed
+removed virtual_servers.secondary_minimum_processor_speed
+renamed virtual_servers.primary_processor_cores to processor_cores
+removed virtual_servers.secondary_processor_cores
+renamed virtual_servers.primary_processor_weight to processor_weight
+removed virtual_servers.secondary_processor_weight
+removed virtual_servers.primary_physical_server
+removed virtual_servers.secondary_physical_server
+renamed virtual_disks.primary_minimum_raid_type to minimum_raid_type
+removed virtual_disks.secondary_minimum_raid_type
+renamed virtual_disks.primary_minimum_disk_type to minimum_disk_type
+removed virtual_disks.secondary_minimum_disk_type
+renamed virtual_disks.primary_minimum_disk_speed to minimum_disk_speed
+removed virtual_disks.secondary_minimum_disk_speed
+renamed virtual_disks.primary_weight to weight
+removed virtual_disks.secondary_weight'
+);
+insert into aoserv_protocols values(
+  '1.42',
+  '2009-03-15',
+  'removed virtual_disks.minimum_raid_type
+removed virtual_disks.minimum_disk_type
+removed disk_types
+removed raid_types'
+);
 commit;

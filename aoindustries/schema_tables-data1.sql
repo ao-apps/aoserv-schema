@@ -285,7 +285,7 @@ insert into schema_tables values(
     true,
     'The possible types of disk interfaces.',
     '1.36',
-    null
+    '1.41'
 );
 insert into schema_tables values(
     'distro_file_types',
@@ -1425,7 +1425,7 @@ insert into schema_tables values(
     true,
     'The possible types of RAID configurations for cluster QoS management.',
     '1.36',
-    null
+    '1.41'
 );
 insert into schema_tables values(
     'rates',

@@ -922,19 +922,22 @@ commit;
 begin;
 \echo virtual_disks
 select add_schema_foreign_key('virtual_disks', 'virtual_server', 'virtual_servers', 'server', '1.36', null);
-select add_schema_foreign_key('virtual_disks', 'primary_minimum_raid_type', 'raid_types', 'type', '1.36', null);
-select add_schema_foreign_key('virtual_disks', 'secondary_minimum_raid_type', 'raid_types', 'type', '1.36', null);
-select add_schema_foreign_key('virtual_disks', 'primary_minimum_disk_type', 'disk_types', 'type', '1.36', null);
-select add_schema_foreign_key('virtual_disks', 'secondary_minimum_disk_type', 'disk_types', 'type', '1.36', null);
+select add_schema_foreign_key('virtual_disks', 'minimum_raid_type', 'raid_types', 'type', '1.41', '1.41');
+select add_schema_foreign_key('virtual_disks', 'primary_minimum_raid_type', 'raid_types', 'type', '1.36', '1.40');
+select add_schema_foreign_key('virtual_disks', 'secondary_minimum_raid_type', 'raid_types', 'type', '1.36', '1.40');
+select add_schema_foreign_key('virtual_disks', 'minimum_disk_type', 'disk_types', 'type', '1.41', '1.41');
+select add_schema_foreign_key('virtual_disks', 'primary_minimum_disk_type', 'disk_types', 'type', '1.36', '1.40');
+select add_schema_foreign_key('virtual_disks', 'secondary_minimum_disk_type', 'disk_types', 'type', '1.36', '1.40');
 commit;
 begin;
 \echo virtual_servers
 select add_schema_foreign_key('virtual_servers', 'server', 'servers', 'pkey', '1.36', null);
-select add_schema_foreign_key('virtual_servers', 'primary_minimum_processor_type', 'processor_types', 'type', '1.36', null);
-select add_schema_foreign_key('virtual_servers', 'secondary_minimum_processor_type', 'processor_types', 'type', '1.36', null);
+select add_schema_foreign_key('virtual_servers', 'minimum_processor_type', 'processor_types', 'type', '1.41', null);
+select add_schema_foreign_key('virtual_servers', 'primary_minimum_processor_type', 'processor_types', 'type', '1.36', '1.40');
+select add_schema_foreign_key('virtual_servers', 'secondary_minimum_processor_type', 'processor_types', 'type', '1.36', '1.40');
 select add_schema_foreign_key('virtual_servers', 'minimum_processor_architecture', 'architectures', 'name', '1.36', null);
-select add_schema_foreign_key('virtual_servers', 'primary_physical_server', 'physical_servers', 'server', '1.36', null);
-select add_schema_foreign_key('virtual_servers', 'secondary_physical_server', 'physical_servers', 'server', '1.36', null);
+select add_schema_foreign_key('virtual_servers', 'primary_physical_server', 'physical_servers', 'server', '1.36', '1.40');
+select add_schema_foreign_key('virtual_servers', 'secondary_physical_server', 'physical_servers', 'server', '1.36', '1.40');
 commit;
 begin;
 \echo whois_history

@@ -11,23 +11,14 @@ create table virtual_disks (
   device text
     not null
     check (device=lower(device)),
-  primary_minimum_raid_type text,
-  secondary_minimum_raid_type text,
-  primary_minimum_disk_type text,
-  secondary_minimum_disk_type text,
-  primary_minimum_disk_speed integer
-    check (primary_minimum_disk_speed is null or primary_minimum_disk_speed>0),
-  secondary_minimum_disk_speed integer
-    check (secondary_minimum_disk_speed is null or secondary_minimum_disk_speed>0),
+  minimum_disk_speed integer
+    check (minimum_disk_speed is null or minimum_disk_speed>0),
   extents integer
     not null
     check (extents>0),
-  primary_weight smallint
+  weight smallint
     not null
-    check (primary_weight>=1 and primary_weight<=1024),
-  secondary_weight smallint
-    not null
-    check (secondary_weight>=1 and secondary_weight<=1024),
+    check (weight>=1 and weight<=1024),
   primary_physical_volumes_locked boolean
     not null,
   secondary_physical_volumes_locked boolean

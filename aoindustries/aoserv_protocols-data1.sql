@@ -741,4 +741,17 @@ removed virtual_disks.minimum_disk_type
 removed disk_types
 removed raid_types'
 );
+insert into aoserv_protocols values(
+  '1.43',
+  '2009-03-18',
+  'added virtual_servers.primary_ram_target
+added virtual_servers.secondary_ram_target
+added virtual_servers.minimum_processor_speed_target
+added virtual_servers.processor_cores_target
+added virtual_servers.processor_weight_target
+added virtual_disks.minimum_disk_speed_target
+added virtual_disks.weight_target
+removed virtual_disks.primary_physical_volumes_locked
+removed virtual_disks.secondary_physical_volumes_locked'
+);
 commit;

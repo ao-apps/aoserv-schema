@@ -13,16 +13,17 @@ create table virtual_disks (
     check (device=lower(device)),
   minimum_disk_speed integer
     check (minimum_disk_speed is null or minimum_disk_speed>0),
+  minimum_disk_speed_target integer
+    check (minimum_disk_speed_target is null or minimum_disk_speed_target>0),
   extents integer
     not null
     check (extents>0),
   weight smallint
     not null
-    check (weight>=1 and weight<=1024),
-  primary_physical_volumes_locked boolean
-    not null,
-  secondary_physical_volumes_locked boolean
-    not null,
+    check (weight in (1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024)),
+  weight_target smallint
+    not null
+    check (weight_target in (1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024)),
   unique(virtual_server, device)
 );
 grant all on virtual_disks to aoadmin;

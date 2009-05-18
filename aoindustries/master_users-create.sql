@@ -16,9 +16,6 @@ create table master_users (
   can_access_admin_web bool
     default false
     not null,
-  is_ticket_admin bool
-    default false
-    not null,
   is_dns_admin bool
     default false
     not null

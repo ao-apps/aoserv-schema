@@ -1,7 +1,6 @@
 create table ticket_stati (
-  status       text       not null
-                          constraint ticket_stati_pkey primary key,
-  description  text       not null
+  status text primary key,
+  sort_order smallint not null unique
 );
 grant all on ticket_stati to aoadmin;
-grant select, update on ticket_stati to aoserv_app;
+grant select on ticket_stati to aoserv_app;

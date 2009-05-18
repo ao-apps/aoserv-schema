@@ -754,4 +754,80 @@ added virtual_disks.weight_target
 removed virtual_disks.primary_physical_volumes_locked
 removed virtual_disks.secondary_physical_volumes_locked'
 );
+insert into aoserv_protocols values(
+  '1.44',
+  '2009-05-16',
+  'removed actions table
+added ticket_actions table
+removed action_types table
+added ticket_action_types table
+added brands table
+added languages table
+added resellers table
+added ticket_assignments table
+added ticket_brand_categories table
+added ticket_categories table
+added business_administrators.support_code
+removed master_users.is_ticket_admin
+removed package_definitions.accounting
+added package_definitions.brand
+removed signup_requests.accounting
+added signup_requests.brand
+removed ticket_stati.description
+added ticket_stati.sort_order
+removed ticket_types.description
+removed ticket_types.client_view
+added tickets.reseller
+added tickets.language
+added tickets.category
+added tickets.from_address
+added tickets.summary
+made tickets.details nullable
+added tickets.raw_email
+removed tickets.deadline
+removed tickets.close_date
+removed tickets.closed_by
+removed tickets.technology
+removed tickets.assigned_to
+added tickets.status_timeout
+added tickets.internal_notes
+removed encryption_keys.signup_from
+removed encryption_keys.signup_recipient
+removed GET_OBJECT(actions) command
+removed GET_ACTIONS_TICKET command
+removed GET_ACTIONS_BUSINESS_ADMINISTRATOR command
+removed GET_CACHED_ROW_COUNT(actions) command
+removed GET_ROW_COUNT(actions) command
+removed GET_CACHED_ROW_COUNT(tickets) command
+removed GET_ROW_COUNT(tickets) command
+removed GET_OBJECT(tickets) command
+removed GET_TICKETS_BUSINESS_ADMINISTRATOR command
+removed GET_TICKETS_BUSINESS command
+removed GET_TICKETS_CREATED_BUSINESS_ADMINISTRATOR command
+removed GET_TICKETS_CLOSED_BUSINESS_ADMINISTRATOR command
+removed change_ticket_deadline AOSH command
+removed change_ticket_technology AOSH command
+updated add_business_administrator command
+TODO: updated add_ticket AOSH command
+TODO: added GET_TICKET_DETAILS command
+TODO: added GET_TICKET_RAW_EMAIL command
+TODO: added GET_TICKET_INTERNAL_NOTES command
+TODO: added GET_TICKET_ACTION_OLD_VALUE command
+TODO: added GET_TICKET_ACTION_DETAILS command
+TODO: added GET_TICKET_ACTION_RAW_EMAIL command
+Check: BOUNCE_TICKET
+CHANGE_TICKET_ADMIN_PRIORITY
+CHANGE_TICKET_CLIENT_PRIORITY
+CHANGE_TICKET_TYPE
+COMPLETE_TICKET
+HOLD_TICKET
+KILL_TICKET
+REACTIVATE_TICKET
+SET_TICKET_ASSIGNED_TO
+TICKET_WORK
+SET_TICKET_CONTACT_EMAILS
+SET_TICKET_CONTACT_PHONE_NUMBERS
+SET_TICKET_BUSINESS
+'
+);
 commit;

@@ -47,9 +47,9 @@ create or replace function add_schema_foreign_key (text,text,text,text,text,text
 select setval('schema_foreign_keys_pkey_seq', 1, false);
 begin;
 \echo actions
-select add_schema_foreign_key('actions', 'ticket_id', 'tickets', 'pkey', '1.0a100', null);
-select add_schema_foreign_key('actions', 'administrator', 'business_administrators', 'username', '1.0a100', null);
-select add_schema_foreign_key('actions', 'action_type', 'action_types', 'type', '1.0a100', null);
+select add_schema_foreign_key('actions', 'ticket_id', 'tickets', 'pkey', '1.0a100', '1.43');
+select add_schema_foreign_key('actions', 'administrator', 'business_administrators', 'username', '1.0a100', '1.43');
+select add_schema_foreign_key('actions', 'action_type', 'action_types', 'type', '1.0a100', '1.43');
 commit;
 begin;
 \echo ao_server_daemon_hosts
@@ -100,6 +100,18 @@ commit;
 begin;
 \echo blackhole_email_addresses
 select add_schema_foreign_key('blackhole_email_addresses', 'email_address', 'email_addresses', 'pkey', '1.0a100', null);
+commit;
+begin;
+\echo brands
+select add_schema_foreign_key('brands', 'accounting', 'businesses', 'accounting', '1.44', null);
+select add_schema_foreign_key('brands', 'smtp_linux_server_account', 'linux_server_accounts', 'pkey', '1.44', null);
+select add_schema_foreign_key('brands', 'imap_linux_server_account', 'linux_server_accounts', 'pkey', '1.44', null);
+select add_schema_foreign_key('brands', 'support_email_address', 'email_addresses', 'pkey', '1.44', null);
+select add_schema_foreign_key('brands', 'signup_email_address', 'email_addresses', 'pkey', '1.44', null);
+select add_schema_foreign_key('brands', 'ticket_encryption_from', 'encryption_keys', 'pkey', '1.44', null);
+select add_schema_foreign_key('brands', 'ticket_encryption_recipient', 'encryption_keys', 'pkey', '1.44', null);
+select add_schema_foreign_key('brands', 'signup_encryption_from', 'encryption_keys', 'pkey', '1.44', null);
+select add_schema_foreign_key('brands', 'signup_encryption_recipient', 'encryption_keys', 'pkey', '1.44', null);
 commit;
 begin;
 \echo business_administrators
@@ -649,7 +661,8 @@ select add_schema_foreign_key('package_definition_limits', 'additional_transacti
 commit;
 begin;
 \echo package_definitions
-select add_schema_foreign_key('package_definitions', 'accounting', 'businesses', 'accounting', '1.0a123', null);
+select add_schema_foreign_key('package_definitions', 'accounting', 'businesses', 'accounting', '1.0a123', '1.43');
+select add_schema_foreign_key('package_definitions', 'brand', 'brands', 'accounting', '1.44', null);
 select add_schema_foreign_key('package_definitions', 'category', 'package_categories', 'name', '1.0a123', null);
 select add_schema_foreign_key('package_definitions', 'setup_fee_transaction_type', 'transaction_types', 'name', '1.0a123', null);
 select add_schema_foreign_key('package_definitions', 'monthly_rate_transaction_type', 'transaction_types', 'name', '1.0a123', null);
@@ -729,6 +742,10 @@ begin;
 select add_schema_foreign_key('racks', 'farm', 'server_farms', 'name', '1.36', null);
 commit;
 begin;
+\echo resellers
+select add_schema_foreign_key('resellers', 'accounting', 'brands', 'accounting', '1.44', null);
+commit;
+begin;
 \echo schema_columns
 select add_schema_foreign_key('schema_columns', 'table_name', 'schema_tables', 'name', '1.0a100', null);
 select add_schema_foreign_key('schema_columns', 'type', 'schema_types', 'type', '1.0a100', null);
@@ -783,7 +800,8 @@ select add_schema_foreign_key('signup_request_options', 'request', 'signup_reque
 commit;
 begin;
 \echo signup_requests
-select add_schema_foreign_key('signup_requests', 'accounting', 'businesses', 'accounting', '1.23', null);
+select add_schema_foreign_key('signup_requests', 'accounting', 'businesses', 'accounting', '1.23', '1.43');
+select add_schema_foreign_key('signup_requests', 'brand', 'brands', 'accounting', '1.44', null);
 select add_schema_foreign_key('signup_requests', 'package_definition', 'package_definitions', 'pkey', '1.23', null);
 select add_schema_foreign_key('signup_requests', 'business_country', 'country_codes', 'code', '1.23', null);
 select add_schema_foreign_key('signup_requests', 'ba_country', 'country_codes', 'code', '1.23', null);
@@ -888,19 +906,43 @@ select add_schema_foreign_key('technology_versions', 'owner', 'master_users', 'u
 select add_schema_foreign_key('technology_versions', 'operating_system_version', 'operating_system_versions', 'pkey', '1.0a108', null);
 commit;
 begin;
+\echo ticket_actions
+select add_schema_foreign_key('ticket_actions', 'ticket', 'tickets', 'pkey', '1.44', null);
+select add_schema_foreign_key('ticket_actions', 'administrator', 'business_administrators', 'username', '1.44', null);
+select add_schema_foreign_key('ticket_actions', 'action_type', 'ticket_action_types', 'type', '1.44', null);
+commit;
+begin;
+\echo ticket_assignments
+select add_schema_foreign_key('ticket_assignments', 'ticket', 'tickets', 'pkey', '1.44', null);
+select add_schema_foreign_key('ticket_assignments', 'reseller', 'resellers', 'accounting', '1.44', null);
+select add_schema_foreign_key('ticket_assignments', 'administrator', 'business_administrators', 'username', '1.44', null);
+commit;
+begin;
+\echo ticket_brand_categories
+select add_schema_foreign_key('ticket_brand_categories', 'brand', 'brands', 'accounting', '1.44', null);
+select add_schema_foreign_key('ticket_brand_categories', 'category', 'ticket_categories', 'pkey', '1.44', null);
+commit;
+begin;
+\echo ticket_categories
+select add_schema_foreign_key('ticket_categories', 'parent', 'ticket_categories', 'pkey', '1.44', null);
+commit;
+begin;
 \echo tickets
+select add_schema_foreign_key('tickets', 'reseller', 'resellers', 'accounting', '1.44', null);
 select add_schema_foreign_key('tickets', 'package', 'packages', 'name', '1.0a100', '1.0a125');
 select add_schema_foreign_key('tickets', 'accounting', 'businesses', 'accounting', '1.0a126', null);
+select add_schema_foreign_key('tickets', 'language', 'languages', 'code', '1.44', null);
 select add_schema_foreign_key('tickets', 'administrator', 'business_administrators', 'username', '1.0a100', '1.0a125');
 select add_schema_foreign_key('tickets', 'created_by', 'business_administrators', 'username', '1.0a126', null);
+select add_schema_foreign_key('tickets', 'category', 'ticket_categories', 'pkey', '1.44', null);
 select add_schema_foreign_key('tickets', 'ticket_type', 'ticket_types', 'type', '1.0a100', null);
-select add_schema_foreign_key('tickets', 'closed_by', 'business_administrators', 'username', '1.0a100', null);
+select add_schema_foreign_key('tickets', 'closed_by', 'business_administrators', 'username', '1.0a100', '1.43');
 select add_schema_foreign_key('tickets', 'client_priority', 'ticket_priorities', 'priority', '1.0a100', null);
 select add_schema_foreign_key('tickets', 'admin_priority', 'ticket_priorities', 'priority', '1.0a100', '1.9');
 select add_schema_foreign_key('tickets', 'admin_priority', 'ticket_priorities', 'priority', '1.10', null);
-select add_schema_foreign_key('tickets', 'technology', 'technology_names', 'name', '1.0a100', null);
+select add_schema_foreign_key('tickets', 'technology', 'technology_names', 'name', '1.0a100', '1.43');
 select add_schema_foreign_key('tickets', 'status', 'ticket_stati', 'status', '1.0a100', null);
-select add_schema_foreign_key('tickets', 'assigned_to', 'business_administrators', 'username', '1.0a125', null);
+select add_schema_foreign_key('tickets', 'assigned_to', 'business_administrators', 'username', '1.0a125', '1.43');
 commit;
 begin;
 \echo transactions

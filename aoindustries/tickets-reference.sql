@@ -1,4 +1,11 @@
 alter table tickets
+  add constraint reseller_fkey
+  foreign key (reseller)
+  references resellers (accounting)
+  on update cascade
+  on delete restrict
+;
+alter table tickets
   add constraint accounting_fkey
   foreign key (accounting)
   references businesses (accounting)
@@ -6,9 +13,23 @@ alter table tickets
   on delete restrict
 ;
 alter table tickets
+  add constraint language_fkey
+  foreign key (language)
+  references languages (code)
+  on update cascade
+  on delete restrict
+;
+alter table tickets
   add constraint created_by_fkey
   foreign key (created_by)
   references business_administrators (username)
+  on update cascade
+  on delete restrict
+;
+alter table tickets
+  add constraint category_fkey
+  foreign key (category)
+  references ticket_categories (pkey)
   on update cascade
   on delete restrict
 ;
@@ -34,23 +55,9 @@ alter table tickets
   on delete restrict
 ;
 alter table tickets
-  add constraint technology_fkey
-  foreign key (technology)
-  references technology_names (name)
-  on update cascade
-  on delete restrict
-;
-alter table tickets
   add constraint status_fkey
   foreign key (status)
   references ticket_stati (status)
-  on update cascade
-  on delete restrict
-;
-alter table tickets
-  add constraint assigned_to_fkey
-  foreign key (assigned_to)
-  references business_administrators (username)
   on update cascade
   on delete restrict
 ;

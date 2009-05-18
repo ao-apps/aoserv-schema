@@ -6,7 +6,7 @@ create table signup_requests (
   pkey integer
     default nextval('signup_requests_pkey_seq')
     constraint signup_requests_pkey primary key,
-  accounting text not null,
+  brand text not null,
   time timestamp not null default now(),
   ip_address text not null,
   package_definition integer not null,

@@ -6,7 +6,7 @@ create table package_definitions (
   pkey integer
     default nextval('package_definitions_pkey_seq')
     constraint package_definitions_pkey primary key,
-  accounting text
+  brand text
     not null,
   category text
     not null,
@@ -27,8 +27,7 @@ create table package_definitions (
   active bool
     not null,
   approved bool
-    not null,
-  unique(accounting, category, name, version)
+    not null
 );
 grant all on package_definitions to aoadmin;
 grant select, insert, update, delete on package_definitions to aoserv_app;

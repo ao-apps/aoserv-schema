@@ -301,6 +301,14 @@ insert into aosh_commands values(
   'adds a business administrator to the list of people who may maintain the account',
   '<i>username</i> <i>full_name</i> {""|<i>title</i>} {""|<i>birthday</i>} <i>is_private</i> <i>work_phone</i> {""|<i>home_phone</i>} {""|<i>cell_phone</i>} {""|<i>fax</i>} <i>email_address</i> {""|<i>address1</i>} {""|<i>address2</i>} {""|<i>city</i>} {""|<i>state</i>} {""|<i>country</i>} {""|<i>zip</i>}',
   '1.0a100',
+  '1.43'
+);
+insert into aosh_commands values(
+  'add_business_administrator',
+  'business_administrators',
+  'adds a business administrator to the list of people who may maintain the account',
+  '<i>username</i> <i>full_name</i> {""|<i>title</i>} {""|<i>birthday</i>} <i>is_private</i> <i>work_phone</i> {""|<i>home_phone</i>} {""|<i>cell_phone</i>} {""|<i>fax</i>} <i>email_address</i> {""|<i>address1</i>} {""|<i>address2</i>} {""|<i>city</i>} {""|<i>state</i>} {""|<i>country</i>} {""|<i>zip</i>} <i>enable_email_support</i>',
+  '1.44',
   null
 );
 insert into aosh_commands values(
@@ -3053,6 +3061,14 @@ insert into aosh_commands values(
   'adds a new ticket',
   '<i>{""|accounting}</i> <i>business_administrator</i> <i>type</i> <i>details</i> {""|<i>deadline</i>} <i>client_priority</i> <i>admin_priority</i> {""|<i>technology</i>} {""|<i>assigned_to</i>} {""|<i>contact_emails</i>} {""|<i>contact_phone_numbers</i>}',
   '1.0a126',
+  '1.43'
+);
+insert into aosh_commands values(
+  'add_ticket',
+  'tickets',
+  'adds a new ticket',
+  '<i>{""|accounting}</i> <i>language</i> {""|<i>category</i>} <i>type</i> <i>summary</i> {""|<i>details</i>} <i>client_priority</i> {""|<i>contact_emails</i>} {""|<i>contact_phone_numbers</i>}',
+  '1.44',
   null
 );
 insert into aosh_commands values(
@@ -3093,7 +3109,7 @@ insert into aosh_commands values(
   'changes the deadline for a ticket',
   '<i>ticket_id</i> {""|<i>deadline</i>} <i>business_administrator</i> <i>comments</i>',
   '1.0a100',
-  null
+  '1.43'
 );
 insert into aosh_commands values(
   'change_ticket_technology',
@@ -3101,7 +3117,7 @@ insert into aosh_commands values(
   'changes the technology associated with a ticket',
   '<i>ticket_id</i> {""|<i>technology</i>} <i>business_administrator</i> <i>comments</i>',
   '1.0a100',
-  null
+  '1.43'
 );
 insert into aosh_commands values(
   'change_ticket_type',

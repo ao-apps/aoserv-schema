@@ -1,5 +1,5 @@
-create index signup_requests_accounting_ind on signup_requests (
-  accounting
+create index signup_requests_brand_ind on signup_requests (
+  brand
 );
 create index signup_requests_package_definition_ind on signup_requests (
   package_definition

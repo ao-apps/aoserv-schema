@@ -29,7 +29,7 @@ create table business_administrators (
   email text
     not null
     constraint email_chk
-      check (length(email)>0),
+      check (length(email)>0 and email=trim(email)),
   address1 text,
   address2 text,
   city text,
@@ -37,7 +37,8 @@ create table business_administrators (
   country char(2),
   zip text,
   disable_log integer,
-  can_switch_users boolean not null
+  can_switch_users boolean not null,
+  support_code text -- If null, support requests may not be initiated via email
 );
 grant all on business_administrators to aoadmin;
 grant select, insert, update, delete on business_administrators to aoserv_app;

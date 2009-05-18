@@ -6,7 +6,7 @@ insert into schema_tables values(
     true,
     'Table action_types is a lookup for the ticket_actions table showing possible actions for a ticket in the tickets table',
     '1.0a100',
-    null
+    '1.43'
 );
 insert into schema_tables values(
     'actions',
@@ -15,7 +15,7 @@ insert into schema_tables values(
     false,
     'Table actions includes information regarding specific actions taken on items in the tickets table',
     '1.0a100',
-    null
+    '1.43'
 );
 insert into schema_tables values(
     'ao_server_daemon_hosts',
@@ -159,6 +159,15 @@ insert into schema_tables values(
     false,
     'The blackhole_email_addresses is a list of email addresses in which all email sent to them is immediately discarded via /dev/null.',
     '1.0a100',
+    null
+);
+insert into schema_tables values(
+    'brands',
+    (select count(*) from schema_tables),
+    'Brands',
+    false,
+    'Each brand has separate website, packages, nameservers, and support',
+    '1.44',
     null
 );
 insert into schema_tables values(
@@ -838,6 +847,15 @@ insert into schema_tables values(
     null
 );
 insert into schema_tables values(
+    'languages',
+    (select count(*) from schema_tables),
+    'Languages',
+    true,
+    'The languages table provides all the possible languages for brands.',
+    '1.44',
+    null
+);
+insert into schema_tables values(
     'limits',
     (select count(*) from schema_tables),
     'Limits',
@@ -1437,6 +1455,15 @@ insert into schema_tables values(
     '1.0a122'
 );
 insert into schema_tables values(
+    'resellers',
+    (select count(*) from schema_tables),
+    'Resellers',
+    false,
+    'A reseller may provide ticket-based support',
+    '1.44',
+    null
+);
+insert into schema_tables values(
     'resources',
     (select count(*) from schema_tables),
     'Resources',
@@ -1776,6 +1803,53 @@ insert into schema_tables values(
     true,
     'The technology_versions table contains the list of all software packages, owners, and versions.',
     '1.0a100',
+    null
+);
+insert into schema_tables values(
+    'ticket_action_types',
+    (select count(*) from schema_tables),
+    'Ticket Action Types',
+    true,
+    'Table ticket_action_types is a lookup for all of the possible actions that may be made to a ticket',
+    '1.44',
+    null
+);
+insert into schema_tables values(
+    'ticket_actions',
+    (select count(*) from schema_tables),
+    'Ticket Actions',
+    false,
+    'The ticket_actions table represent a complete history of the changes that have been made to a ticket.
+When a ticket is initially created it has no actions.  Any change from its initial state will cause
+an action to be logged.',
+    '1.44',
+    null
+);
+insert into schema_tables values(
+    'ticket_assignments',
+    (select count(*) from schema_tables),
+    'Ticket Assignments',
+    false,
+    'Tickets may be assigned to specific administrators at each reseller level.',
+    '1.44',
+    null
+);
+insert into schema_tables values(
+    'ticket_brand_categories',
+    (select count(*) from schema_tables),
+    'Ticket Brand Categories',
+    false,
+    'Each brand may select which categories will be visible for ticket support.',
+    '1.44',
+    null
+);
+insert into schema_tables values(
+    'ticket_categories',
+    (select count(*) from schema_tables),
+    'Ticket Categories',
+    false,
+    'Each ticket may be associated with one of these hierichical categories.',
+    '1.44',
     null
 );
 insert into schema_tables values(

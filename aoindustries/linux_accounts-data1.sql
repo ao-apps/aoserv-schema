@@ -21,8 +21,8 @@ emailmon	Email Monitoring Account	\N	\N	\N	application	/bin/false	2004-06-27 17:
 ftpmon	FTP Monitoring Account	\N	\N	\N	application	/usr/bin/ftponly	2004-06-27 17:30:26.011751-05	\N
 news	news	\N	\N	\N	application	/sbin/nologin	2004-12-16 21:55:24.729454-06	\N
 uucp	uucp	\N	\N	\N	application	/sbin/nologin	2004-12-16 22:02:04.466034-06	\N
-sshd	system user for openssh	\N	\N	\N	application	/bin/true	2004-12-16 22:05:22.249823-06	\N
-smmsp	system user for sendmail	\N	\N	\N	application	/dev/null	2004-12-16 22:06:40.369597-06	\N
+sshd	system user for openssh	\N	\N	\N	application	/sbin/nologin	2004-12-16 22:05:22.249823-06	\N
+smmsp	system user for sendmail	\N	\N	\N	application	/sbin/nologin	2004-12-16 22:06:40.369597-06	\N
 root	root	\N	\N	\N	system	/bin/bash	2001-09-03 13:48:37-05	\N
 sync	sync	\N	\N	\N	system	/bin/sync	2001-09-03 13:50:22-05	\N
 shutdown	shutdown	\N	\N	\N	system	/sbin/shutdown	2001-09-03 13:50:40-05	\N
@@ -38,7 +38,7 @@ mysql	MySQL Server	\N	\N	\N	application	/bin/bash	2001-09-03 13:55:40-05	\N
 named	Named	\N	\N	\N	application	/bin/false	2001-09-03 13:57:03-05	\N
 postgres	PostgreSQL Server	\N	\N	\N	application	/bin/bash	2001-09-03 13:58:11-05	\N
 xfs	X Font Server	\N	\N	\N	application	/bin/false	2001-09-03 13:55:22-05	\N
-mailnull	mailnull	\N	\N	\N	application	/dev/null	2001-09-03 13:53:14-05	\N
+mailnull	mailnull	\N	\N	\N	application	/sbin/nologin	2001-09-03 13:53:14-05	\N
 interbase	InterBase Server	\N	\N	\N	application	/bin/bash	2001-09-04 00:58:35-05	\N
 httpd	httpd	\N	\N	\N	application	/bin/bash	2001-09-04 11:56:54-05	\N
 awstats	AWStats Background Log Processing	\N	\N	\N	application	/bin/false	2005-12-03 08:30:20.130052-06	\N

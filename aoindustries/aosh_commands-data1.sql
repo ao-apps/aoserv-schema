@@ -3064,20 +3064,12 @@ insert into aosh_commands values(
   '1.43'
 );
 insert into aosh_commands values(
-  'add_ticket',
-  'tickets',
-  'adds a new ticket',
-  '<i>{""|accounting}</i> <i>language</i> {""|<i>category</i>} <i>type</i> <i>summary</i> {""|<i>details</i>} <i>client_priority</i> {""|<i>contact_emails</i>} {""|<i>contact_phone_numbers</i>}',
-  '1.44',
-  null
-);
-insert into aosh_commands values(
   'add_ticket_work',
   'tickets',
   'adds work information to a ticket',
   '<i>ticket_id</i> <i>business_administrator</i> <i>comments</i>',
   '1.0a100',
-  null
+  '1.43'
 );
 insert into aosh_commands values(
   'bounce_ticket',
@@ -3085,7 +3077,7 @@ insert into aosh_commands values(
   'bounces a ticket',
   '<i>ticket_id</i> <i>business_administrator</i> <i>comments</i>',
   '1.0a100',
-  null
+  '1.43'
 );
 insert into aosh_commands values(
   'change_ticket_admin_priority',
@@ -3093,7 +3085,7 @@ insert into aosh_commands values(
   'changes the administrative priority of a ticket',
   '<i>ticket_id</i> <i>priority</i> <i>business_administrator</i> <i>comments</i>',
   '1.0a100',
-  null
+  '1.43'
 );
 insert into aosh_commands values(
   'change_ticket_client_priority',
@@ -3101,7 +3093,7 @@ insert into aosh_commands values(
   'changes the client priority of a ticket',
   '<i>ticket_id</i> <i>priority</i> <i>business_administrator</i> <i>comments</i>',
   '1.0a100',
-  null
+  '1.43'
 );
 insert into aosh_commands values(
   'change_ticket_deadline',
@@ -3125,7 +3117,7 @@ insert into aosh_commands values(
   'changes the type of a ticket',
   '<i>ticket_id</i> <i>type</i> <i>business_administrator</i> <i>comments</i>',
   '1.0a100',
-  null
+  '1.43'
 );
 insert into aosh_commands values(
   'complete_ticket',
@@ -3133,7 +3125,7 @@ insert into aosh_commands values(
   'completes a ticket',
   '<i>ticket_id</i> <i>business_administrator</i> <i>comments</i>',
   '1.0a100',
-  null
+  '1.43'
 );
 insert into aosh_commands values(
   'hold_ticket',
@@ -3141,7 +3133,7 @@ insert into aosh_commands values(
   'places a ticket in the hold state',
   '<i>ticket_id</i> <i>comments</i>',
   '1.0a100',
-  null
+  '1.43'
 );
 insert into aosh_commands values(
   'kill_ticket',
@@ -3149,7 +3141,7 @@ insert into aosh_commands values(
   'kills a ticket',
   '<i>ticket_id</i> <i>business_administrator</i> <i>comments</i>',
   '1.0a100',
-  null
+  '1.43'
 );
 insert into aosh_commands values(
   'reactivate_ticket',
@@ -3157,7 +3149,7 @@ insert into aosh_commands values(
   'reactivates a ticket that is on hold',
   '<i>ticket_id</i> <i>business_administrator</i> <i>comments</i>',
   '1.0a100',
-  null
+  '1.43'
 );
 insert into aosh_commands values(
   'add_transaction',

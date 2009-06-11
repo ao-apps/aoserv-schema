@@ -72,4 +72,13 @@ insert into aoserv_permissions values(
     'set_postgres_server_user_password',
     15
 );
+-- tickets
+insert into aoserv_permissions values(
+    'add_ticket',
+    16
+);
+insert into aoserv_permissions values(
+    'edit_ticket',
+    17
+);
 commit;

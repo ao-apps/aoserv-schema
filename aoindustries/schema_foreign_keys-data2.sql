@@ -910,6 +910,16 @@ begin;
 select add_schema_foreign_key('ticket_actions', 'ticket', 'tickets', 'pkey', '1.44', null);
 select add_schema_foreign_key('ticket_actions', 'administrator', 'business_administrators', 'username', '1.44', null);
 select add_schema_foreign_key('ticket_actions', 'action_type', 'ticket_action_types', 'type', '1.44', null);
+select add_schema_foreign_key('ticket_actions', 'old_accounting', 'businesses', 'accounting', '1.44', null);
+select add_schema_foreign_key('ticket_actions', 'new_accounting', 'businesses', 'accounting', '1.44', null);
+select add_schema_foreign_key('ticket_actions', 'old_priority', 'ticket_priorities', 'priority', '1.44', null);
+select add_schema_foreign_key('ticket_actions', 'new_priority', 'ticket_priorities', 'priority', '1.44', null);
+select add_schema_foreign_key('ticket_actions', 'old_status', 'ticket_stati', 'status', '1.44', null);
+select add_schema_foreign_key('ticket_actions', 'new_status', 'ticket_stati', 'status', '1.44', null);
+select add_schema_foreign_key('ticket_actions', 'old_assigned_to', 'business_administrators', 'username', '1.44', null);
+select add_schema_foreign_key('ticket_actions', 'new_assigned_to', 'business_administrators', 'username', '1.44', null);
+select add_schema_foreign_key('ticket_actions', 'old_category', 'ticket_categories', 'pkey', '1.44', null);
+select add_schema_foreign_key('ticket_actions', 'new_category', 'ticket_categories', 'pkey', '1.44', null);
 commit;
 begin;
 \echo ticket_assignments

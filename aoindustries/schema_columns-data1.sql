@@ -2566,11 +2566,22 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_ac
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'administrator', 2, 'username', true, false, false, '', '1.44', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'time', 3, 'time', false, false, false, '', '1.44', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'action_type', 4, 'string', false, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'old_value', 5, 'string', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'from_address', 6, 'email', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'summary', 7, 'string', false, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'details', 8, 'string', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'raw_email', 9, 'string', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'old_accounting', 5, 'string', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'new_accounting', 6, 'string', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'old_priority', 7, 'string', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'new_priority', 8, 'string', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'old_status', 9, 'string', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'new_status', 10, 'string', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'old_assigned_to', 11, 'string', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'new_assigned_to', 12, 'string', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'old_category', 13, 'fkey', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'new_category', 14, 'fkey', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'old_value', 15, 'string', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'new_value', 16, 'string', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'from_address', 17, 'email', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'summary', 18, 'string', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'details', 19, 'string', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'raw_email', 20, 'string', true, false, false, '', '1.44', null;
 commit;
 begin;
 \echo ticket_assignments

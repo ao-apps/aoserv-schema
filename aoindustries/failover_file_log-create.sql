@@ -23,4 +23,4 @@ create table failover_file_log (
     not null
 );
 grant all on failover_file_log to aoadmin;
-grant select, insert, update on failover_file_log to aoserv_app;
+grant select, insert, update, delete on failover_file_log to aoserv_app;

@@ -1,34 +1,17 @@
 begin;
---insert into ticket_action_types values('type_changed', false);
---insert into ticket_action_types values('completed', false);
---insert into ticket_action_types values('held', true);
---insert into ticket_action_types values('junked', true);
---insert into ticket_action_types values('deleted', true);
---insert into ticket_action_types values('bounced', false);
---insert into ticket_action_types values('reply', false);
--- TODO: Add as needed
--- TODO: Single status changed action?
+insert into ticket_action_types values('set_business', false); -- Was SB
+insert into ticket_action_types values('set_contact_emails', false); -- Was SE
+insert into ticket_action_types values('set_contact_phone_numbers', false); -- Was SP
+insert into ticket_action_types values('set_client_priority', false); -- Was CP
+insert into ticket_action_types values('set_summary', false);
+insert into ticket_action_types values('add_annotation', false); -- Was WK
+insert into ticket_action_types values('set_status', false); -- Was AH, AK, BO, CH, CK, CO, RE
+insert into ticket_action_types values('set_admin_priority', true); -- Was AP
+insert into ticket_action_types values('assign', true); -- Was AS
+insert into ticket_action_types values('set_category', false); -- Was TY
 commit;
 
-/*
-COPY "action_types" FROM stdin;
-OP	Ticket opened
-TY	Ticket type changed
-DL	Ticket deadline changed
-CO	Ticket completed
-CH	Put on hold per client
-AK	Killed per admin
-CK	Killed per client
-AH	Put on hold per admin
-BO	Ticket bounced
-WK	Work entry created
-TC	Relevent technology changed
-AP	Admin priority reset
-CP	Client priority reset
-RE	Ticket reactivated
-AS	Assigned
-SP	Set Phone Numbers
-SE	Set Email Addresses
-SB	Set Business
-\.
-*/
+-- These are no longer used:
+-- OP	Ticket opened
+-- DL	Ticket deadline changed
+-- TC	Relevent technology changed

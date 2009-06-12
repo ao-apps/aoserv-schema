@@ -810,4 +810,17 @@ removed change_ticket_technology AOSH command
 updated add_business_administrator command
 removed ticket-related AOSH commands'
 );
+insert into aoserv_protocols values(
+  '1.45',
+  '2009-06-11',
+  'removed package_definitions.brand
+added package_definitions.accounting'
+);
+insert into aoserv_protocols values(
+  '1.46',
+  '2009-06-12',
+  'added tickets.brand
+added brands.smtp_host
+added brands.imap_host'
+);
 commit;

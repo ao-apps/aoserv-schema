@@ -99,6 +99,7 @@ insert into ticket_categories values(92, null, 'aoserv');
     insert into ticket_categories values(94, 92, 'aosh');
     insert into ticket_categories values(95, 92, 'aoserv_daemon');
     insert into ticket_categories values(96, 92, 'aoweb_struts');
+        insert into ticket_categories values(109, 96, 'control_panels');
 insert into ticket_categories values(97, null, 'ip_addresses');
 insert into ticket_categories values(98, null, 'performance');
 insert into ticket_categories values(99, null, 'reliability');

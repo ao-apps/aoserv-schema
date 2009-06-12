@@ -662,7 +662,8 @@ commit;
 begin;
 \echo package_definitions
 select add_schema_foreign_key('package_definitions', 'accounting', 'businesses', 'accounting', '1.0a123', '1.43');
-select add_schema_foreign_key('package_definitions', 'brand', 'brands', 'accounting', '1.44', null);
+select add_schema_foreign_key('package_definitions', 'brand', 'brands', 'accounting', '1.44', '1.44');
+select add_schema_foreign_key('package_definitions', 'accounting', 'businesses', 'accounting', '1.45', null);
 select add_schema_foreign_key('package_definitions', 'category', 'package_categories', 'name', '1.0a123', null);
 select add_schema_foreign_key('package_definitions', 'setup_fee_transaction_type', 'transaction_types', 'name', '1.0a123', null);
 select add_schema_foreign_key('package_definitions', 'monthly_rate_transaction_type', 'transaction_types', 'name', '1.0a123', null);
@@ -938,6 +939,7 @@ select add_schema_foreign_key('ticket_categories', 'parent', 'ticket_categories'
 commit;
 begin;
 \echo tickets
+select add_schema_foreign_key('tickets', 'brand', 'brands', 'accounting', '1.46', null);
 select add_schema_foreign_key('tickets', 'reseller', 'resellers', 'accounting', '1.44', null);
 select add_schema_foreign_key('tickets', 'package', 'packages', 'name', '1.0a100', '1.0a125');
 select add_schema_foreign_key('tickets', 'accounting', 'businesses', 'accounting', '1.0a126', null);

@@ -1,3 +1,6 @@
+create index tickets_brand_idx on tickets (
+  brand
+);
 create index tickets_reseller_idx on tickets (
   reseller
 );

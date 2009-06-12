@@ -6,7 +6,7 @@ create table package_definitions (
   pkey integer
     default nextval('package_definitions_pkey_seq')
     constraint package_definitions_pkey primary key,
-  brand text
+  accounting text
     not null,
   category text
     not null,

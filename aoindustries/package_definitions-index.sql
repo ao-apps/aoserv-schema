@@ -1,5 +1,5 @@
 create unique index package_definitions_uni on package_definitions (
-  brand,
+  accounting,
   category,
   name,
   version

@@ -6,9 +6,9 @@ alter table package_definitions
   on update cascade
 ;
 alter table package_definitions
-  add constraint brand_fkey
-  foreign key (brand)
-  references brands (accounting)
+  add constraint accounting_fkey
+  foreign key (accounting)
+  references businesses (accounting)
   on delete restrict
   on update cascade
 ;

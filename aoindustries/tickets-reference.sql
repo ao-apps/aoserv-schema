@@ -1,4 +1,11 @@
 alter table tickets
+  add constraint brand_fkey
+  foreign key (brand)
+  references brands (accounting)
+  on update cascade
+  on delete restrict
+;
+alter table tickets
   add constraint reseller_fkey
   foreign key (reseller)
   references resellers (accounting)

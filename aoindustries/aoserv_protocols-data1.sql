@@ -823,4 +823,9 @@ insert into aoserv_protocols values(
 added brands.smtp_host
 added brands.imap_host'
 );
+insert into aoserv_protocols values(
+  '1.47',
+  '2009-06-13',
+  'Cache invalidation signals only require response from client when a server is waiting for synchronous invalidation'
+);
 commit;

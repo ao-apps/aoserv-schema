@@ -8,8 +8,10 @@ insert into brands values(
   'ns4.aoindustries.com', -- nameserver4
   -- Email settings
   84, -- (select pkey from linux_server_accounts where ao_server=(select server from ao_servers where hostname='mandriva20060.test.aoindustries.com') and username='aoadmin'), -- smtp_linux_server_account
+  null, -- smtp_host
   'changeme', -- smtp_password
   84, -- (select pkey from linux_server_accounts where ao_server=(select server from ao_servers where hostname='mandriva20060.test.aoindustries.com') and username='aoadmin'), -- imap_linux_server_account
+  null, -- imap_host
   'changeme', -- imap_password
   9, -- support_email_address
   'AO Industries, Inc. - Support', -- support_email_display

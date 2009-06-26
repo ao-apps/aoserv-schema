@@ -828,4 +828,15 @@ insert into aoserv_protocols values(
   '2009-06-13',
   'Cache invalidation signals only require response from client when a server is waiting for synchronous invalidation'
 );
+insert into aoserv_protocols values(
+  '1.48',
+  '2009-06-24',
+  'Added from_address to add_ticket command'
+);
+insert into aoserv_protocols values(
+  '1.49',
+  '2009-06-25',
+  'added ticket_actions.old_type
+added ticket_actions.new_type'
+);
 commit;

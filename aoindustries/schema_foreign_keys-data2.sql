@@ -915,6 +915,8 @@ select add_schema_foreign_key('ticket_actions', 'old_accounting', 'businesses', 
 select add_schema_foreign_key('ticket_actions', 'new_accounting', 'businesses', 'accounting', '1.44', null);
 select add_schema_foreign_key('ticket_actions', 'old_priority', 'ticket_priorities', 'priority', '1.44', null);
 select add_schema_foreign_key('ticket_actions', 'new_priority', 'ticket_priorities', 'priority', '1.44', null);
+select add_schema_foreign_key('ticket_actions', 'old_type', 'ticket_types', 'type', '1.49', null);
+select add_schema_foreign_key('ticket_actions', 'new_type', 'ticket_types', 'type', '1.49', null);
 select add_schema_foreign_key('ticket_actions', 'old_status', 'ticket_stati', 'status', '1.44', null);
 select add_schema_foreign_key('ticket_actions', 'new_status', 'ticket_stati', 'status', '1.44', null);
 select add_schema_foreign_key('ticket_actions', 'old_assigned_to', 'business_administrators', 'username', '1.44', null);

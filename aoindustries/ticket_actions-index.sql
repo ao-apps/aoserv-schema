@@ -19,6 +19,12 @@ create index ticket_actions_old_priority_idx on ticket_actions (
 create index ticket_actions_new_priority_idx on ticket_actions (
   new_priority
 );
+create index ticket_actions_old_type_idx on ticket_actions (
+  old_type
+);
+create index ticket_actions_new_type_idx on ticket_actions (
+  new_type
+);
 create index ticket_actions_old_status_idx on ticket_actions (
   old_status
 );

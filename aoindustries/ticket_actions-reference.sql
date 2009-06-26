@@ -48,6 +48,20 @@ alter table ticket_actions
   on delete restrict
 ;
 alter table ticket_actions
+  add constraint old_type_fkey
+  foreign key (old_type)
+  references ticket_types (type)
+  on update cascade
+  on delete restrict
+;
+alter table ticket_actions
+  add constraint new_type_fkey
+  foreign key (new_type)
+  references ticket_types (type)
+  on update cascade
+  on delete restrict
+;
+alter table ticket_actions
   add constraint old_status_fkey
   foreign key (old_status)
   references ticket_stati (status)

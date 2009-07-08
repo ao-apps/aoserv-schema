@@ -98,6 +98,7 @@ insert into ticket_categories values(92, null, 'aoserv');
     insert into ticket_categories values(93, 92, 'aoserv_client');
     insert into ticket_categories values(94, 92, 'aosh');
     insert into ticket_categories values(95, 92, 'aoserv_daemon');
+    insert into ticket_categories values(110, 92, 'aoserv_master');
     insert into ticket_categories values(96, 92, 'aoweb_struts');
         insert into ticket_categories values(109, 96, 'control_panels');
 insert into ticket_categories values(97, null, 'ip_addresses');

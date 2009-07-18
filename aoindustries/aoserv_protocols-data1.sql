@@ -839,4 +839,9 @@ insert into aoserv_protocols values(
   'added ticket_actions.old_type
 added ticket_actions.new_type'
 );
+insert into aoserv_protocols values(
+  '1.50',
+  '2009-07-17',
+  'made ticket_actions.administrator nullable for master-generated actions'
+);
 commit;

@@ -21,7 +21,7 @@ as
   )
   union all select
     'Total:',
-    (select sum(*) from businesses where canceled is null and parent='AOINDUSTRIES')
+    (select count(*) from businesses where canceled is null and parent='AOINDUSTRIES')
 --    sum(num_cpu),
 --    sum(cpu_speed),
 --    sum(num_cpu*cpu_speed),

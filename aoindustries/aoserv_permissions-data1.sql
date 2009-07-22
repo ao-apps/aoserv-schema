@@ -81,4 +81,9 @@ insert into aoserv_permissions values(
     'edit_ticket',
     17
 );
+-- virtual_servers
+insert into aoserv_permissions values(
+    'vnc_console',
+    18
+);
 commit;

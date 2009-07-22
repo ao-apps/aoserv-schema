@@ -223,6 +223,9 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'aoweb_struts_noindex', 33, 'boolean', false, false, false, '', '1.44', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'aoweb_struts_google_analytics_new_tracking_code', 34, 'string', true, false, false, '', '1.44', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'aoweb_struts_signup_admin_address', 35, 'string', false, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'aoweb_struts_vnc_bind', 36, 'fkey', false, true, false, '', '1.52', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'aoweb_struts_keystore_type', 37, 'string', false, false, false, '', '1.53', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'aoweb_struts_keystore_password', 38, 'string', false, false, false, '', '1.53', null;
 commit;
 begin;
 \echo business_administrators
@@ -361,6 +364,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_servers', 'can_control_postgresql', 9, 'boolean', false, false, false, '', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_servers', 'can_control_xfs', 10, 'boolean', false, false, false, '', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_servers', 'can_control_xvfb', 11, 'boolean', false, false, false, '', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_servers', 'can_vnc_console', 12, 'boolean', false, false, false, '', '1.51', null;
 commit;
 begin;
 \echo client_jvm_profile
@@ -2780,6 +2784,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_s
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_servers', 'secondary_physical_server', 23, 'fkey', false, false, false, 'the physical server that provides the secondary mode resources', '1.36', '1.40';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_servers', 'secondary_physical_server_locked', 24, 'boolean', false, false, false, 'indicates the secondary server is locked and should not be moved by automated means', '1.36', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_servers', 'requires_hvm', 25, 'boolean', false, false, false, 'indicates requires full hardware virtualization', '1.37', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_servers', 'vnc_password', 26, 'string', false, true, false, 'the password for VNC console access or null to disable VNC access', '1.51', null;
 commit;
 begin;
 \echo whois_history

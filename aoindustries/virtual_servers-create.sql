@@ -38,7 +38,10 @@ create table virtual_servers (
     default false,
   requires_hvm boolean
     not null
-    default false
+    default false,
+  vnc_password text
+    unique
+    check (length(vnc_password)>=8) -- Must be at least 8 characters
 );
 grant all on virtual_servers to aoadmin;
 grant select on virtual_servers to aoserv_app;

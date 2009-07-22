@@ -46,7 +46,10 @@ create table brands (
   aoweb_struts_google_verify_content text,
   aoweb_struts_noindex bool not null,
   aoweb_struts_google_analytics_new_tracking_code text,
-  aoweb_struts_signup_admin_address text not null -- Notified for each sign-up
+  aoweb_struts_signup_admin_address text not null, -- Notified for each sign-up
+  aoweb_struts_vnc_bind integer not null,
+  aoweb_struts_keystore_type text not null,
+  aoweb_struts_keystore_password text not null
 );
 grant all on brands to aoadmin;
 grant select on brands to aoserv_app;

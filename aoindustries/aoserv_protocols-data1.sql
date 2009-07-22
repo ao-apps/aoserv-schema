@@ -831,7 +831,7 @@ insert into aoserv_protocols values(
 insert into aoserv_protocols values(
   '1.48',
   '2009-06-24',
-  'Added from_address to add_ticket command'
+  'added from_address to add_ticket command'
 );
 insert into aoserv_protocols values(
   '1.49',
@@ -843,5 +843,25 @@ insert into aoserv_protocols values(
   '1.50',
   '2009-07-17',
   'made ticket_actions.administrator nullable for master-generated actions'
+);
+insert into aoserv_protocols values(
+  '1.51',
+  '2009-07-19',
+  'removed REQUEST_DAEMON_ACCESS
+added REQUEST_REPLICATION_DAEMON_ACCESS
+added REQUEST_VNC_CONSOLE_DAEMON_ACCESS
+added business_servers.can_vnc_console
+added virtual_servers.vnc_password'
+);
+insert into aoserv_protocols values(
+  '1.52',
+  '2009-07-21',
+  'added brands.aoweb_struts_vnc_bind'
+);
+insert into aoserv_protocols values(
+  '1.53',
+  '2009-07-22',
+  'added brands.aoweb_struts_keystore_type
+added brands.aoweb_struts_keystore_password'
 );
 commit;

@@ -40,3 +40,6 @@ create index brands_signup_encryption_from_idx on brands (
 create index brands_signup_encryption_recipient_idx on brands (
     signup_encryption_recipient
 );
+create unique index brands_aoweb_struts_vnc_bind_idx on brands (
+    aoweb_struts_vnc_bind
+);

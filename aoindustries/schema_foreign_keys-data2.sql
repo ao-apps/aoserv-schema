@@ -112,6 +112,7 @@ select add_schema_foreign_key('brands', 'ticket_encryption_from', 'encryption_ke
 select add_schema_foreign_key('brands', 'ticket_encryption_recipient', 'encryption_keys', 'pkey', '1.44', null);
 select add_schema_foreign_key('brands', 'signup_encryption_from', 'encryption_keys', 'pkey', '1.44', null);
 select add_schema_foreign_key('brands', 'signup_encryption_recipient', 'encryption_keys', 'pkey', '1.44', null);
+select add_schema_foreign_key('brands', 'aoweb_struts_vnc_bind', 'net_binds', 'pkey', '1.52', null);
 commit;
 begin;
 \echo business_administrators

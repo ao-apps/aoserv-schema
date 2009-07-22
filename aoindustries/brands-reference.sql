@@ -61,3 +61,10 @@ alter table brands
   on update cascade
   on delete restrict
 ;
+alter table brands
+  add constraint aoweb_struts_vnc_bind_fkey
+  foreign key (aoweb_struts_vnc_bind)
+  references net_binds (pkey)
+  on update cascade
+  on delete restrict
+;

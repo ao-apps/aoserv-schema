@@ -21,7 +21,7 @@ values(
                 where
                     name='postgresql'
                     and version like '8.1.%'
-                    and operating_system_version=(select pkey from operating_system_versions where operating_system='mandriva' and version_number='2006.0')
+                    and operating_system_version=(select pkey from operating_system_versions where operating_system='centos' and version_number='5')
             )
     ),
     true,
@@ -50,7 +50,7 @@ values(
                 where
                     name='postgresql'
                     and version like '8.1.%'
-                    and operating_system_version=(select pkey from operating_system_versions where operating_system='mandriva' and version_number='2006.0')
+                    and operating_system_version=(select pkey from operating_system_versions where operating_system='centos' and version_number='5')
             )
     ),
     true,
@@ -79,7 +79,7 @@ values(
                 where
                     name='postgresql'
                     and version like '8.1.%'
-                    and operating_system_version=(select pkey from operating_system_versions where operating_system='mandriva' and version_number='2006.0')
+                    and operating_system_version=(select pkey from operating_system_versions where operating_system='centos' and version_number='5')
             )
     ),
     false,
@@ -108,7 +108,7 @@ values(
                 where
                     name='postgresql'
                     and version like '8.1.%'
-                    and operating_system_version=(select pkey from operating_system_versions where operating_system='mandriva' and version_number='2006.0')
+                    and operating_system_version=(select pkey from operating_system_versions where operating_system='centos' and version_number='5')
             )
     ),
     false,
@@ -137,7 +137,7 @@ values(
                 where
                     name='postgresql'
                     and version like '8.1.%'
-                    and operating_system_version=(select pkey from operating_system_versions where operating_system='mandriva' and version_number='2006.0')
+                    and operating_system_version=(select pkey from operating_system_versions where operating_system='centos' and version_number='5')
             )
     ),
     false,
@@ -166,7 +166,7 @@ values(
                 where
                     name='postgresql'
                     and version like '8.1.%'
-                    and operating_system_version=(select pkey from operating_system_versions where operating_system='mandriva' and version_number='2006.0')
+                    and operating_system_version=(select pkey from operating_system_versions where operating_system='centos' and version_number='5')
             )
     ),
     false,
@@ -195,7 +195,7 @@ values(
                 where
                     name='postgresql'
                     and version like '8.1.%'
-                    and operating_system_version=(select pkey from operating_system_versions where operating_system='mandriva' and version_number='2006.0')
+                    and operating_system_version=(select pkey from operating_system_versions where operating_system='centos' and version_number='5')
             )
     ),
     false,
@@ -224,7 +224,7 @@ values(
                 where
                     name='postgresql'
                     and version like '8.1.%'
-                    and operating_system_version=(select pkey from operating_system_versions where operating_system='mandriva' and version_number='2006.0')
+                    and operating_system_version=(select pkey from operating_system_versions where operating_system='centos' and version_number='5')
             )
     ),
     false,

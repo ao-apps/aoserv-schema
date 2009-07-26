@@ -17,7 +17,7 @@ test14	AOINDUSTRIES	\N
 test15	AOINDUSTRIES	\N
 privatecart_app	AOINDUSTRIES	\N
 dan	AOINDUSTRIES	\N
-mandriva20060_svr	AOINDUSTRIES	\N
+test_svr	AOINDUSTRIES	\N
 testimap	AOINDUSTRIES	\N
 epharmaprod_app	AOINDUSTRIES	\N
 affiliates_app	AOINDUSTRIES	\N

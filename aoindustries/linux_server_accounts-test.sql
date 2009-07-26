@@ -86,6 +86,14 @@ insert into linux_server_accounts values(
   '/var/lib/nfs',
   null, null, null, false, null, null, '2009-07-26 08:26:13.19232-05', true, null, null, 'none', 3.0, 20
 );
+insert into linux_server_accounts values(
+  12,
+  'named',
+  2,
+  25,
+  '/var/named',
+  null, null, null, false, null, null, '2009-07-26 10:08:17.011332-05', true, null, null, 'none', 3.0, 20
+);
 
 COPY linux_server_accounts (pkey, username, ao_server, uid, home, autoresponder_from, autoresponder_subject, autoresponder_path, is_autoresponder_enabled, disable_log, predisable_password, created, use_inbox, trash_email_retention, junk_email_retention, sa_integration_mode, sa_required_score) FROM stdin;
 73	apache	2	48	/var/www	\N	\N	\N	f	\N	\N	2004-12-16 22:04:08.645501-06	t	\N	31	pop3	3

@@ -1,5 +1,6 @@
 COPY linux_group_accounts (pkey, group_name, username, is_primary) FROM stdin;
 1	root	root	t
+2	avahi	avahi	t
 3	bin	bin	t
 4	daemon	daemon	t
 5	adm	adm	t
@@ -8,15 +9,21 @@ COPY linux_group_accounts (pkey, group_name, username, is_primary) FROM stdin;
 8	root	shutdown	t
 9	root	halt	t
 10	mail	mail	t
-26	news	news	t
-14	users	games	t
+11	mail	cyrus	t
+12	saslauth	cyrus	f
 13	root	operator	t
+14	users	games	t
 16	ftp	ftp	t
 17	nobody	nobody	t
 18	mailnull	mailnull	t
 19	rpc	rpc	t
+20	dbus	dbus	t
 21	xfs	xfs	t
 22	mysql	mysql	t
+23	ftpmon	ftpmon	t
+24	gopher	gopher	t
+25	mailonly	emailmon	t
+26	news	news	t
 27	aoadmin	aoadmin	t
 28	named	named	t
 29	nscd	nscd	t
@@ -36,24 +43,19 @@ COPY linux_group_accounts (pkey, group_name, username, is_primary) FROM stdin;
 43	lp	daemon	f
 44	wheel	root	f
 45	interbase	interbase	t
-46	httpd	httpd	t
+46	apache	apache	t
+47	haldaemon	haldaemon	t
 48	xvfb	xvfb	t
-168	rpm	rpm	t
-169	ntp	ntp	t
-284	nofiles	alias	t
-285	nofiles	qmaild	t
-286	nofiles	qmaill	t
-287	nofiles	qmailp	t
-288	qmail	qmailq	t
-289	qmail	qmailr	t
-290	qmail	qmails	t
-298	vcsa	vcsa	t
 49	uucp	uucp	t
-23	ftpmon	ftpmon	t
-25	mailonly	emailmon	t
+50	pcap	pcap	t
+51	distcache	distcache	t
+52	nfsnobody	nfsnobody	t
+53	rpcuser	rpcuser	t
 54	sshd	sshd	t
 55	smmsp	smmsp	t
-56	nogroup	nobody	t
-7188	awstats	awstats	t
+56	rpm	rpm	t
+57	ntp	ntp	t
+58	vcsa	vcsa	t
+59	awstats	awstats	t
 \.
-SELECT setval ('"linux_group_accounts_pkey_seq"', 7188, true);
+SELECT setval ('"linux_group_accounts_pkey_seq"', 60, true);

@@ -1353,19 +1353,6 @@ COPY "technology_versions" FROM stdin;
 1641	cos	27May2002	2004-01-12 18:26:44.888488-06	orion	14
 2509	cos	05Nov2002	2005-04-20 14:43:12.21774-05	orion	14
 13	cos	05Nov2002	2006-06-19 05:50:00-05	orion	47
-2	MySQL	4.1.20	2006-06-06 14:37:00-05	orion	14
-4	MySQL	4.1.20-max	2006-06-06 14:38:00-05	orion	14
-5	MySQL	4.1.20-source	2006-06-06 14:39:00-05	orion	14
-3	MySQL	5.0.22	2006-06-06 14:40:00-05	orion	14
-6	MySQL	5.0.22-max	2006-06-06 14:41:00-05	orion	14
-7	MySQL	5.0.22-source	2006-06-06 14:42:00-05	orion	14
-3236	MySQL	4.1.21	2006-10-12 17:40:00-05	orion	45
-3237	MySQL	4.1.21-max	2006-10-12 17:44:00-05	orion	45
-3238	MySQL	4.1.21-source	2006-10-12 17:48:00-05	orion	45
-3239	MySQL	5.0.26	2006-10-12 17:50:00-05	orion	45
-3240	MySQL	5.0.26-max	2006-10-12 17:57:00-05	orion	45
-3241	MySQL	5.0.26-source	2006-10-12 18:00:00-05	orion	45
-10	MySQL	5.0.22	2006-06-16 21:35:00-05	orion	47
 2494	mysql-connector-java	3.0.11	2004-02-25 20:06:34.708966-06	orion	14
 2538	mysql-connector-java	3.0.16-ga	2005-04-20 16:41:01.976122-05	orion	14
 2539	mysql-connector-java	3.1.8	2005-04-20 16:41:09.326345-05	orion	14
@@ -1414,5 +1401,20 @@ COPY "technology_versions" FROM stdin;
 3296	postgresql	8.1.9	2006-09-12 15:57:00-05	orion	67
 3298	postgresql	8.3.0	2008-01-28 11:22:00-05	orion	67
 \.
-
-SELECT setval ('"technology_versions_pkey_seq"', 3243, true);
+-- create temp table mysql_versions as select * from technology_versions where name='MySQL';
+-- copy mysql_versions to stdout;
+-- drop table mysql_versions;
+COPY "technology_versions" FROM stdin;
+3236	MySQL	4.1.21	2006-10-12 17:40:00	orion	45
+3237	MySQL	4.1.21-max	2006-10-12 17:44:00	orion	45
+10	MySQL	5.0.27	2006-11-08 03:42:56.584713	orion	47
+3239	MySQL	5.0.27	2006-11-08 03:42:56.584713	orion	45
+3240	MySQL	5.0.27-max	2006-11-08 03:44:39.924509	orion	45
+3267	MySQL	4.0.27-max	2006-11-12 16:30:21.107872	orion	45
+3318	MySQL	4.0.27-max	2008-12-19 03:52:27.012693	orion	67
+3319	MySQL	4.1.21	2008-12-19 03:52:33.793097	orion	67
+3320	MySQL	4.1.21-max	2008-12-19 03:52:37.475328	orion	67
+3321	MySQL	5.0.27	2008-12-19 03:52:43.348683	orion	67
+3322	MySQL	5.0.27-max	2008-12-19 03:52:46.538637	orion	67
+\.
+SELECT setval ('"technology_versions_pkey_seq"', 3323, true);

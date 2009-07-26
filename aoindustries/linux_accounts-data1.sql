@@ -8,13 +8,6 @@ operator	operator	\N	\N	\N	system	/sbin/nologin	2001-09-03 13:51:56-05	\N
 games	games	\N	\N	\N	application	/sbin/nologin	2001-09-03 13:52:08-05	\N
 ftp	FTP User	\N	\N	\N	application	/sbin/nologin	2001-09-03 13:52:34-05	\N
 nobody	Nobody	\N	\N	\N	system	/sbin/nologin	2001-09-03 13:52:48-05	\N
-alias	qmail aliases	\N	\N	\N	application	/bin/false	2002-10-03 23:49:33-05	\N
-qmaild	qmaild	\N	\N	\N	application	/bin/false	2002-10-03 23:49:39-05	\N
-qmaill	qmaill	\N	\N	\N	application	/bin/false	2002-10-03 23:49:43-05	\N
-qmailp	qmailp	\N	\N	\N	application	/bin/false	2002-10-03 23:49:48-05	\N
-qmailq	qmailq	\N	\N	\N	application	/bin/false	2002-10-03 23:49:53-05	\N
-qmailr	qmailr	\N	\N	\N	application	/bin/false	2002-10-03 23:49:59-05	\N
-qmails	qmails	\N	\N	\N	application	/bin/false	2002-10-03 23:50:04-05	\N
 mail	mail	\N	\N	\N	system	/sbin/nologin	2001-09-03 13:51:18-05	\N
 vcsa	virtual console memory owner	\N	\N	\N	system	/sbin/nologin	2002-12-10 01:49:26.483663-06	\N
 emailmon	Email Monitoring Account	\N	\N	\N	application	/bin/false	2004-06-27 17:29:02.960684-05	\N
@@ -40,6 +33,15 @@ postgres	PostgreSQL Server	\N	\N	\N	application	/bin/bash	2001-09-03 13:58:11-05
 xfs	X Font Server	\N	\N	\N	application	/bin/false	2001-09-03 13:55:22-05	\N
 mailnull	mailnull	\N	\N	\N	application	/sbin/nologin	2001-09-03 13:53:14-05	\N
 interbase	InterBase Server	\N	\N	\N	application	/bin/bash	2001-09-04 00:58:35-05	\N
-httpd	httpd	\N	\N	\N	application	/bin/bash	2001-09-04 11:56:54-05	\N
+apache	Apache	\N	\N	\N	application	/sbin/nologin	2006-06-19 04:11:54.116605	\N
 awstats	AWStats Background Log Processing	\N	\N	\N	application	/bin/false	2005-12-03 08:30:20.130052-06	\N
+avahi	Avahi daemon	\N	\N	\N	system	/sbin/nologin	2008-01-04 14:08:55.930677	\N
+cyrus	Cyrus IMAP Server	\N	\N	\N	application	/bin/bash	2006-11-30 16:32:59.466179	\N
+gopher	gopher	\N	\N	\N	application	/sbin/nologin	2006-06-19 03:54:35.67468	\N
+dbus	System message bus	\N	\N	\N	application	/sbin/nologin	2006-06-19 03:56:39.344773	\N
+haldaemon	HAL daemon	\N	\N	\N	application	/sbin/nologin	2006-06-19 03:59:38.195281	\N
+pcap	pcap	\N	\N	\N	system	/sbin/nologin	2006-06-19 04:10:35.710186	\N
+distcache	Distcache	\N	\N	\N	system	/sbin/nologin	2008-01-04 14:15:52.337433	\N
+nfsnobody	Anonymous NFS User	\N	\N	\N	system	/sbin/nologin	2008-01-04 14:19:36.415161	\N
+rpcuser	RPC Service User	\N	\N	\N	system	/sbin/nologin	2008-01-04 14:23:56.786483	\N
 \.

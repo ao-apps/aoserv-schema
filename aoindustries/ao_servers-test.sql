@@ -1,6 +1,6 @@
 insert into ao_servers values(
     2,
-    'mandriva20060.test.aoindustries.com',
+    'test.aoindustries.com',
 	26,
 	'VI5w/QIiGMa6g',
 	16,

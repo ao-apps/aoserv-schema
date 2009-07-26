@@ -7,10 +7,10 @@ insert into brands values(
   'ns3.aoindustries.com', -- nameserver3
   'ns4.aoindustries.com', -- nameserver4
   -- Email settings
-  84, -- (select pkey from linux_server_accounts where ao_server=(select server from ao_servers where hostname='mandriva20060.test.aoindustries.com') and username='aoadmin'), -- smtp_linux_server_account
+  84, -- (select pkey from linux_server_accounts where ao_server=(select server from ao_servers where hostname='test.aoindustries.com') and username='aoadmin'), -- smtp_linux_server_account
   null, -- smtp_host
   'changeme', -- smtp_password
-  84, -- (select pkey from linux_server_accounts where ao_server=(select server from ao_servers where hostname='mandriva20060.test.aoindustries.com') and username='aoadmin'), -- imap_linux_server_account
+  84, -- (select pkey from linux_server_accounts where ao_server=(select server from ao_servers where hostname='test.aoindustries.com') and username='aoadmin'), -- imap_linux_server_account
   null, -- imap_host
   'changeme', -- imap_password
   9, -- support_email_address
@@ -43,6 +43,9 @@ insert into brands values(
   'LkZ4Gi54ofbw9ghm320JHKcrYlGf4SzIzMa7geNmcbM=', -- aoweb_struts_google_verify_content
   false, -- aoweb_struts_noindex
   'UA-8801760-3', -- aoweb_struts_google_analytics_new_tracking_code
-  'support@aoindustries.com' -- aoweb_struts_signup_admin_address
+  'support@aoindustries.com', -- aoweb_struts_signup_admin_address
+  4, -- aoweb_struts_vnc_bind
+  'PKCS12', -- aoweb_struts_keystore_type
+  '9FleckAbay9' -- aoweb_struts_keystore_password
 );
 commit;

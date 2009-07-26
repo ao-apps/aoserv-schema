@@ -1,3 +1,4 @@
+begin;
 COPY net_binds (pkey, package, server, ip_address, port, net_protocol, app_protocol, open_firewall, monitoring_enabled) FROM stdin;
 1	AOINDUSTRIES	2	1	3306	tcp	MySQL	t	t
 2	AOINDUSTRIES	2	1	3307	tcp	MySQL	t	t
@@ -21,5 +22,19 @@ COPY net_binds (pkey, package, server, ip_address, port, net_protocol, app_proto
 46	AOINDUSTRIES	2	5	10003	tcp	user	f	f
 47	AOINDUSTRIES	2	5	10004	tcp	user	f	f
 48	AOINDUSTRIES	2	5	10005	tcp	user	f	f
+4	AOINDUSTRIES	2	5	5900	tcp	RFB	t	t
 \.
+-- sieve
+insert into net_binds values(
+  3,
+  'AOINDUSTRIES',
+  2,
+  5,
+  2000,
+  'tcp',
+  'sieve',
+  false,
+  true
+);
 SELECT setval ('"net_binds_pkey_seq"', 40, true);
+commit;

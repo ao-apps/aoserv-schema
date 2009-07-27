@@ -1400,11 +1400,6 @@ COPY "technology_versions" FROM stdin;
 3317	postgresql	7.3.21	2008-12-18 23:46:53.531062	orion	67
 3296	postgresql	8.1.9	2006-09-12 15:57:00-05	orion	67
 3298	postgresql	8.3.0	2008-01-28 11:22:00-05	orion	67
-\.
--- create temp table mysql_versions as select * from technology_versions where name='MySQL';
--- copy mysql_versions to stdout;
--- drop table mysql_versions;
-COPY "technology_versions" FROM stdin;
 3236	MySQL	4.1.21	2006-10-12 17:40:00	orion	45
 3237	MySQL	4.1.21-max	2006-10-12 17:44:00	orion	45
 10	MySQL	5.0.27	2006-11-08 03:42:56.584713	orion	47
@@ -1416,5 +1411,7 @@ COPY "technology_versions" FROM stdin;
 3320	MySQL	4.1.21-max	2008-12-19 03:52:37.475328	orion	67
 3321	MySQL	5.0.27	2008-12-19 03:52:43.348683	orion	67
 3322	MySQL	5.0.27-max	2008-12-19 03:52:46.538637	orion	67
+3323	MySQL	5.1.36	2009-07-26 20:46:28.264049-05	orion	67
+3324	MySQL	5.1.36	2009-07-26 20:46:46.465938-05	orion	47
 \.
-SELECT setval ('"technology_versions_pkey_seq"', 3323, true);
+SELECT setval ('"technology_versions_pkey_seq"', 3325, true);

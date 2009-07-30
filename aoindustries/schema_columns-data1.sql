@@ -1413,6 +1413,8 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'create_routine_priv', 18, 'boolean', false, false, false, 'the Create_routine_priv', '1.4', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'alter_routine_priv', 19, 'boolean', false, false, false, 'the Alter_routine_priv', '1.4', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'execute_priv', 20, 'boolean', false, false, false, 'the Execute_priv', '1.4', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'event_priv', 21, 'boolean', false, false, false, 'the Event_priv', '1.54', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'trigger_priv', 22, 'boolean', false, false, false, 'the Trigger_priv', '1.54', null;
 commit;
 begin;
 \echo mysql_hosts
@@ -1492,7 +1494,9 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_use
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'create_routine_priv', 24, 'boolean', false, false, false, '', '1.4', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'alter_routine_priv', 25, 'boolean', false, false, false, '', '1.4', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'create_user_priv', 26, 'boolean', false, false, false, '', '1.4', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'disable_log', 27, 'fkey', true, false, false, 'indicates that this account is disabled', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'event_priv', 27, 'boolean', false, false, false, 'the Event_priv', '1.54', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'trigger_priv', 28, 'boolean', false, false, false, 'the Trigger_priv', '1.54', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'disable_log', 29, 'fkey', true, false, false, 'indicates that this account is disabled', '1.0a100', null;
 commit;
 begin;
 \echo net_binds

@@ -61,6 +61,12 @@ create table mysql_db_users (
   execute_priv bool
     not null
     default false,
+  event_priv bool
+    not null
+    default false,
+  trigger_priv bool
+    not null
+    default false,
   unique (mysql_database, mysql_server_user)
 );
 grant all on mysql_db_users to aoadmin;

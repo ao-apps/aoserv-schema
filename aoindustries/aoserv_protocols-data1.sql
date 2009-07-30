@@ -864,4 +864,12 @@ insert into aoserv_protocols values(
   'added brands.aoweb_struts_keystore_type
 added brands.aoweb_struts_keystore_password'
 );
+insert into aoserv_protocols values(
+  '1.54',
+  '2009-07-29',
+  'added mysql_users.event_priv
+added mysql_users.trigger_priv
+added mysql_db_users.event_priv
+added mysql_db_users.trigger_priv'
+);
 commit;

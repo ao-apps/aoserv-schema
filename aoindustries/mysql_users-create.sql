@@ -79,6 +79,12 @@ create table mysql_users (
   create_user_priv bool
     not null
     default false,
+  event_priv bool
+    not null
+    default false,
+  trigger_priv bool
+    not null
+    default false,
   disable_log integer
 );
 grant all on mysql_users to aoadmin;

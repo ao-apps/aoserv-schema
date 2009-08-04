@@ -2,88 +2,97 @@ begin;
 -- business_administrators
 insert into aoserv_permissions values(
     'set_business_administrator_password',
-    0
+    (select count(*) from aoserv_permissions)
 );
 -- businesses
 insert into aoserv_permissions values(
     'cancel_business',
-    1
+    (select count(*) from aoserv_permissions)
 );
 -- credit_card_processors
 insert into aoserv_permissions values(
     'get_credit_card_processors',
-    2
+    (select count(*) from aoserv_permissions)
 );
 -- credit_card_transactions
 insert into aoserv_permissions values(
     'add_credit_card_transaction',
-    3
+    (select count(*) from aoserv_permissions)
 );
 insert into aoserv_permissions values(
     'credit_card_transaction_authorize_completed',
-    4
+    (select count(*) from aoserv_permissions)
 );
 insert into aoserv_permissions values(
     'credit_card_transaction_sale_completed',
-    5
+    (select count(*) from aoserv_permissions)
 );
 insert into aoserv_permissions values(
     'get_credit_card_transactions',
-    6
+    (select count(*) from aoserv_permissions)
 );
 -- credit_cards
 insert into aoserv_permissions values(
     'get_credit_cards',
-    7
+    (select count(*) from aoserv_permissions)
 );
 insert into aoserv_permissions values(
     'add_credit_card',
-    8
+    (select count(*) from aoserv_permissions)
 );
 insert into aoserv_permissions values(
     'delete_credit_card',
-    9
+    (select count(*) from aoserv_permissions)
 );
 insert into aoserv_permissions values(
     'edit_credit_card',
-    10
+    (select count(*) from aoserv_permissions)
 );
 -- linux_server_accounts
 insert into aoserv_permissions values(
     'set_linux_server_account_password',
-    11
+    (select count(*) from aoserv_permissions)
+);
+-- mysql_databases
+insert into aoserv_permissions values(
+    'check_mysql_tables',
+    (select count(*) from aoserv_permissions)
+);
+insert into aoserv_permissions values(
+    'get_mysql_table_status',
+    (select count(*) from aoserv_permissions)
 );
 -- mysql_server_users
 insert into aoserv_permissions values(
     'set_mysql_server_user_password',
-    12
+    (select count(*) from aoserv_permissions)
 );
 -- mysql_servers
 insert into aoserv_permissions values(
     'get_mysql_master_status',
-    13
+    (select count(*) from aoserv_permissions)
 );
 insert into aoserv_permissions values(
     'get_mysql_slave_status',
-    14
+    (select count(*) from aoserv_permissions)
 );
 -- postgres_server_users
 insert into aoserv_permissions values(
     'set_postgres_server_user_password',
-    15
+    (select count(*) from aoserv_permissions)
 );
 -- tickets
 insert into aoserv_permissions values(
     'add_ticket',
-    16
+    (select count(*) from aoserv_permissions)
 );
 insert into aoserv_permissions values(
     'edit_ticket',
-    17
+    (select count(*) from aoserv_permissions)
 );
 -- virtual_servers
 insert into aoserv_permissions values(
     'vnc_console',
-    18
+    (select count(*) from aoserv_permissions)
 );
 commit;

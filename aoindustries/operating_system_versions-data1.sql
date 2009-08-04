@@ -5,6 +5,7 @@ insert into operating_system_versions (pkey, operating_system, version_number, v
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(67, 'centos', '5', '5', 'i686,x86_64', 'CentOS 5 (i686 and x86_64) (Xen Guest and Standalone)', true, (select count(*)+1 from operating_system_versions));
 -- debian
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(1, 'debian', '3.0r1', 'Woody', 'i386', 'Debian 3.0r1 (i386)', false, (select count(*)+1 from operating_system_versions));
+insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(68, 'debian', '5', 'Lenny', 'x86_64', 'Debian 5 (x86_64)', false, (select count(*)+1 from operating_system_versions));
 -- fedora
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(50, 'fedora', '1', 'Yarrow', 'i386', 'Fedora Core 1 (i386)', false, (select count(*)+1 from operating_system_versions));
 insert into operating_system_versions (pkey, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(51, 'fedora', '2', 'Tettnang', 'i386', 'Fedora Core 2 (i386)', false, (select count(*)+1 from operating_system_versions));

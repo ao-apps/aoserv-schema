@@ -872,4 +872,9 @@ added mysql_users.trigger_priv
 added mysql_db_users.event_priv
 added mysql_db_users.trigger_priv'
 );
+insert into aoserv_protocols values(
+  '1.55',
+  '2009-08-01',
+  'added get_mysql_table_status command'
+);
 commit;

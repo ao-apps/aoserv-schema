@@ -721,6 +721,22 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smt
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_relays', 'disable_log', 9, 'fkey', true, false, false, 'indicates that the rule is disabled', '1.0a100', null;
 commit;
 begin;
+\echo email_smtp_smart_hosts
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_smart_hosts', 'net_bind', 0, 'fkey', false, true, false, 'a reference to the port that is being used as a Smart Host', '1.57', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_smart_hosts', 'total_out_burst', 1, 'int', true, false, false, 'the aggregate email burst limit for all emails sent through this host, null means unlimited', '1.57', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_smart_hosts', 'total_out_rate', 2, 'float', true, false, false, 'the sustained email rate for all emails sent through this host, null means unlimited', '1.57', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_smart_hosts', 'default_domain_out_burst', 3, 'int', true, false, false, 'the default per-domain email burst limit when no domain-specific value is provided in email_smtp_smart_host_domains, null means unlimited', '1.57', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_smart_hosts', 'default_domain_out_rate', 4, 'float', true, false, false, 'the default per-domain email rate when no domain-specific value is provided in email_smtp_smart_host_domains, null means unlimited', '1.57', null;
+commit;
+begin;
+\echo email_smtp_smart_host_domains
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_smart_host_domains', 'pkey', 0, 'pkey', false, true, false, 'a generated unique key', '1.57', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_smart_host_domains', 'smart_host', 1, 'fkey', false, false, false, 'the Smart Host that is being configured', '1.57', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_smart_host_domains', 'domain', 2, 'hostname', false, false, false, 'the specific domain that is being configured', '1.57', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_smart_host_domains', 'domain_out_burst', 3, 'int', true, false, false, 'the domain-specific email burst limit, null means unlimited', '1.57', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_smart_host_domains', 'domain_out_rate', 4, 'float', true, false, false, 'the domain-specific email rate, null means unlimited', '1.57', null;
+commit;
+begin;
 \echo email_sa_integration_modes
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_sa_integration_modes', 'name', 0, 'string', false, true, true, 'the unique name of the mode', '1.0a120', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_sa_integration_modes', 'display', 1, 'string', false, false, true, 'the display value for the mode', '1.0a120', null;
@@ -784,6 +800,10 @@ begin;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_mysql_replications', 'pkey', 0, 'pkey', false, true, false, 'a generated, unique id', '1.28', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_mysql_replications', 'replication', 1, 'fkey', false, false, false, 'the replication that was performed', '1.28', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_mysql_replications', 'mysql_server', 2, 'fkey', false, false, false, 'the MySQL Server that is being replicated', '1.28', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_mysql_replications', 'monitoring_seconds_behind_low', 3, 'int', true, false, false, 'the seconds behind where will trigger low alert level', '1.56', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_mysql_replications', 'monitoring_seconds_behind_medium', 4, 'int', true, false, false, 'the seconds behind where will trigger medium alert level', '1.56', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_mysql_replications', 'monitoring_seconds_behind_high', 5, 'int', true, false, false, 'the seconds behind where will trigger high alert level', '1.56', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_mysql_replications', 'monitoring_seconds_behind_critical', 6, 'int', true, false, false, 'the seconds behind where will trigger critical alert level', '1.56', null;
 commit;
 begin;
 \echo file_backups

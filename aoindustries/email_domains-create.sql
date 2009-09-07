@@ -8,6 +8,7 @@ create table email_domains (
     constraint email_domains_pkey primary key,
   domain text
     not null,
+  check (domain=lower(trim(domain))),
   ao_server integer
     not null,
   package text

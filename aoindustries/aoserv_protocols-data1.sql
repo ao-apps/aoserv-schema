@@ -877,4 +877,19 @@ insert into aoserv_protocols values(
   '2009-08-01',
   'added get_mysql_table_status command'
 );
+insert into aoserv_protocols values(
+  '1.56',
+  '2009-08-06',
+  'added failover_mysql_replications.monitoring_seconds_behind_low
+added failover_mysql_replications.monitoring_seconds_behind_medium
+added failover_mysql_replications.monitoring_seconds_behind_high
+added failover_mysql_replications.monitoring_seconds_behind_critical'
+);
+insert into aoserv_protocols values(
+  '1.57',
+  '2009-08-22',
+  'added email_smtp_smart_hosts table
+added email_smtp_smart_host_domains table
+added servers.smtp_smart_host column'
+);
 commit;

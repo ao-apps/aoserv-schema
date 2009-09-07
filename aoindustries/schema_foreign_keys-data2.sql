@@ -244,6 +244,14 @@ select add_schema_foreign_key('email_smtp_relays', 'type', 'email_smtp_relay_typ
 select add_schema_foreign_key('email_smtp_relays', 'disable_log', 'disable_log', 'pkey', '1.0a100', null);
 commit;
 begin;
+\echo email_smtp_smart_host_domains
+select add_schema_foreign_key('email_smtp_smart_host_domains', 'smart_host', 'email_smtp_smart_hosts', 'net_bind', '1.57', null);
+commit;
+begin;
+\echo email_smtp_smart_hosts
+select add_schema_foreign_key('email_smtp_smart_hosts', 'net_bind', 'net_binds', 'pkey', '1.57', null);
+commit;
+begin;
 \echo encryption_keys
 select add_schema_foreign_key('encryption_keys', 'accounting', 'businesses', 'accounting', '1.23', null);
 commit;

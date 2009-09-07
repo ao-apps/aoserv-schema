@@ -362,7 +362,7 @@ create table ticket_actions (
 --    )
 );
 grant all on ticket_actions to aoadmin;
-grant select, insert on ticket_actions to aoserv_app;
+grant select, insert, delete on ticket_actions to aoserv_app;
 
 
 

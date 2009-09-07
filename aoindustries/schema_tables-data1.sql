@@ -469,6 +469,24 @@ insert into schema_tables values(
     null
 );
 insert into schema_tables values(
+    'email_smtp_smart_host_domains',
+    (select count(*) from schema_tables),
+    'Email SMTP Smart Host Domains',
+    false,
+    'The email_smtp_smart_host_domains table stores optional per-domain settings for email_smtp_smart_hosts.',
+    '1.57',
+    null
+);
+insert into schema_tables values(
+    'email_smtp_smart_hosts',
+    (select count(*) from schema_tables),
+    'Email SMTP Smart Hosts',
+    false,
+    'The email_smtp_smart_hosts table indicates a SMTP port is configured as a SmartHost for one or more servers.',
+    '1.57',
+    null
+);
+insert into schema_tables values(
     'email_sa_integration_modes',
     (select count(*) from schema_tables),
     'Email SpamAssassin Integration Modes',

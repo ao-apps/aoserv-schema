@@ -9,7 +9,11 @@ create table failover_mysql_replications (
   replication integer
     not null,
   mysql_server integer
-    not null
+    not null,
+  monitoring_seconds_behind_low integer check (monitoring_seconds_behind_low is null or monitoring_seconds_behind_low>0),
+  monitoring_seconds_behind_medium integer check (monitoring_seconds_behind_medium is null or monitoring_seconds_behind_low is not null and monitoring_seconds_behind_medium>monitoring_seconds_behind_low),
+  monitoring_seconds_behind_high integer check (monitoring_seconds_behind_high is null or monitoring_seconds_behind_medium is not null and monitoring_seconds_behind_high>monitoring_seconds_behind_medium),
+  monitoring_seconds_behind_critical integer check (monitoring_seconds_behind_critical is null or monitoring_seconds_behind_high is not null and monitoring_seconds_behind_critical>monitoring_seconds_behind_high)
 );
 grant all on failover_mysql_replications to aoadmin;
 grant select on failover_mysql_replications to aoserv_app;

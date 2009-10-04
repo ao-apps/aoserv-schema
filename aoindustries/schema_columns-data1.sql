@@ -1534,6 +1534,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitor_contact', 11, 'string', true, false, false, '', '1.0a100', '1.0a103';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitor_info', 12, 'string', true, false, false, '', '1.0a100', '1.0a103';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitoring_enabled', 13, 'boolean', false, false, false, 'turns on monitoring of the port', '1.0a104', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitoring_parameters', 14, 'string', true, false, false, 'the URL-encoded name=value pairs of monitoring parameters', '1.58', null;
 commit;
 begin;
 \echo net_device_host_routes

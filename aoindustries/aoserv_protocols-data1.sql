@@ -892,4 +892,9 @@ insert into aoserv_protocols values(
 added email_smtp_smart_host_domains table
 added servers.smtp_smart_host column'
 );
+insert into aoserv_protocols values(
+  '1.58',
+  '2009-09-21',
+  'added net_binds.monitoring_parameters column'
+);
 commit;

@@ -19,3 +19,10 @@ alter table mysql_servers
   on delete restrict
   on update cascade
 ;
+alter table mysql_servers
+  add constraint package_fkey
+  foreign key (package)
+  references packages (name)
+  on delete restrict
+  on update cascade
+;

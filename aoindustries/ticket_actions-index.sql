@@ -14,3 +14,5 @@ create index ticket_actions_old_assigned_to_idx on ticket_actions (old_assigned_
 create index ticket_actions_new_assigned_to_idx on ticket_actions (new_assigned_to);
 create index ticket_actions_old_category_idx on ticket_actions (old_category);
 create index ticket_actions_new_category_idx on ticket_actions (new_category);
+cluster ticket_actions using ticket_actions_ticket_idx;
+analyze ticket_actions;

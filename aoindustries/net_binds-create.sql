@@ -22,6 +22,7 @@ create table net_binds (
     not null,
   monitoring_enabled bool
     not null,
+  monitoring_parameters text,
   unique(server, ip_address, port, net_protocol)
 );
 grant all on net_binds to aoadmin;

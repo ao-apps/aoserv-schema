@@ -1,3 +1,6 @@
+create index failover_mysql_replications_ao_server_ind on failover_mysql_replications (
+  ao_server
+);
 create index failover_mysql_replications_replication_ind on failover_mysql_replications (
   replication
 );

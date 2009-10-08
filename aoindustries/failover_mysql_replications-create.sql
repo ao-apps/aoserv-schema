@@ -6,8 +6,12 @@ create table failover_mysql_replications (
   pkey integer
     default nextval('failover_mysql_replications_pkey_seq')
     constraint failover_mysql_replications_pkey primary key,
-  replication integer
-    not null,
+  ao_server integer,
+  replication integer,
+  check ( -- Must be one or the other
+    (ao_server is not null and replication is null)
+    or (ao_server is null and replication is not null)
+  ),
   mysql_server integer
     not null,
   monitoring_seconds_behind_low integer check (monitoring_seconds_behind_low is null or monitoring_seconds_behind_low>0),

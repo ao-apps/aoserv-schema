@@ -1,4 +1,11 @@
 alter table failover_mysql_replications
+  add constraint ao_server_fkey
+  foreign key (ao_server)
+  references ao_servers (server)
+  on delete restrict
+  on update cascade
+;
+alter table failover_mysql_replications
   add constraint replication_fkey
   foreign key (replication)
   references failover_file_replications (pkey)

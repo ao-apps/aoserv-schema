@@ -798,12 +798,14 @@ commit;
 begin;
 \echo failover_mysql_replications
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_mysql_replications', 'pkey', 0, 'pkey', false, true, false, 'a generated, unique id', '1.28', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_mysql_replications', 'replication', 1, 'fkey', false, false, false, 'the replication that was performed', '1.28', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_mysql_replications', 'mysql_server', 2, 'fkey', false, false, false, 'the MySQL Server that is being replicated', '1.28', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_mysql_replications', 'monitoring_seconds_behind_low', 3, 'int', true, false, false, 'the seconds behind where will trigger low alert level', '1.56', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_mysql_replications', 'monitoring_seconds_behind_medium', 4, 'int', true, false, false, 'the seconds behind where will trigger medium alert level', '1.56', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_mysql_replications', 'monitoring_seconds_behind_high', 5, 'int', true, false, false, 'the seconds behind where will trigger high alert level', '1.56', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_mysql_replications', 'monitoring_seconds_behind_critical', 6, 'int', true, false, false, 'the seconds behind where will trigger critical alert level', '1.56', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_mysql_replications', 'ao_server', 1, 'fkey', true, false, false, 'the ao_server the receives the replication', '1.59', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_mysql_replications', 'replication', 2, 'fkey', false, false, false, 'the failover server that receives the replication', '1.28', '1.58';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_mysql_replications', 'replication', 3, 'fkey', true, false, false, 'the failover server that receives the replication', '1.59', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_mysql_replications', 'mysql_server', 4, 'fkey', false, false, false, 'the MySQL Server that is being replicated', '1.28', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_mysql_replications', 'monitoring_seconds_behind_low', 5, 'int', true, false, false, 'the seconds behind where will trigger low alert level', '1.56', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_mysql_replications', 'monitoring_seconds_behind_medium', 6, 'int', true, false, false, 'the seconds behind where will trigger medium alert level', '1.56', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_mysql_replications', 'monitoring_seconds_behind_high', 7, 'int', true, false, false, 'the seconds behind where will trigger high alert level', '1.56', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_mysql_replications', 'monitoring_seconds_behind_critical', 8, 'int', true, false, false, 'the seconds behind where will trigger critical alert level', '1.56', null;
 commit;
 begin;
 \echo file_backups

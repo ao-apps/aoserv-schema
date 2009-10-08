@@ -897,4 +897,10 @@ insert into aoserv_protocols values(
   '2009-09-21',
   'added net_binds.monitoring_parameters column'
 );
+insert into aoserv_protocols values(
+  '1.59',
+  '2009-10-08',
+  'added failover_mysql_replications.ao_server
+made failover_mysql_replications.replication nullable'
+);
 commit;

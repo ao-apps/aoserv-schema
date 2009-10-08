@@ -274,7 +274,9 @@ select add_schema_foreign_key('failover_file_schedule', 'replication', 'failover
 commit;
 begin;
 \echo failover_mysql_replications
-select add_schema_foreign_key('failover_mysql_replications', 'replication', 'failover_file_replications', 'pkey', '1.28', null);
+select add_schema_foreign_key('failover_mysql_replications', 'ao_server', 'ao_servers', 'server', '1.59', null);
+select add_schema_foreign_key('failover_mysql_replications', 'replication', 'failover_file_replications', 'pkey', '1.28', '1.58');
+select add_schema_foreign_key('failover_mysql_replications', 'replication', 'failover_file_replications', 'pkey', '1.59', null);
 select add_schema_foreign_key('failover_mysql_replications', 'mysql_server', 'mysql_servers', 'pkey', '1.28', null);
 commit;
 begin;

@@ -903,4 +903,9 @@ insert into aoserv_protocols values(
   'added failover_mysql_replications.ao_server
 made failover_mysql_replications.replication nullable'
 );
+insert into aoserv_protocols values(
+  '1.60',
+  '2009-10-09',
+  'now checking the table status on MySQL slaves'
+);
 commit;

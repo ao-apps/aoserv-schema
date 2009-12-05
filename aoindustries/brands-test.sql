@@ -24,11 +24,11 @@ insert into brands values(
   1, -- signup_encryption_from
   2, -- signup_encryption_recipient
   -- Telephone contacts
-  '(866) 270-6195', -- support_toll_free
+  '(800) 519-9541', -- support_toll_free
   '(251) 607-9556', -- support_day_phone
   '(205) 454-2556', -- support_emergency_phone1
   '(251) 463-8964', -- support_emergency_phone2
-  '(251) 607-9557', -- support_fax
+  '(251) 382-1197', -- support_fax
   -- Mailing address
   'AO Industries, Inc.', -- support_mailing_address1
   '7262 Bull Pen Cir', -- support_mailing_address2

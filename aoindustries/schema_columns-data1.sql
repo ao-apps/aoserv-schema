@@ -1635,7 +1635,7 @@ begin;
 \echo package_categories
 commit;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'package_categories', 'name', 0, 'string', false, true, true, 'the category name', '1.0a123', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'package_categories', 'display', 1, 'string', false, false, true, 'the display value', '1.0a123', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'package_categories', 'display', 1, 'string', false, false, true, 'the display value', '1.0a123', '1.60';
 begin;
 \echo package_definition_limits
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'package_definition_limits', 'pkey', 0, 'pkey', false, true, false, 'the unique identifier for this limit', '1.0a123', null;
@@ -1851,10 +1851,10 @@ begin;
 \echo resources
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'name', 0, 'string', false, true, true, 'the name of the specific resource', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'unit', 1, 'string', false, false, true, '', '1.0a100', '1.0a122';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'singular_display_unit', 2, 'string', false, false, true, 'the unit for display purposes (singular)', '1.0a123', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'plural_display_unit', 3, 'string', false, false, true, 'the unit for display purposes (plural)', '1.0a123', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'per_unit', 4, 'string', false, false, true, 'the unit for display as a "per"', '1.0a123', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'description', 5, 'string', false, false, true, 'a description of the resource', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'singular_display_unit', 2, 'string', false, false, true, 'the unit for display purposes (singular)', '1.0a123', '1.60';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'plural_display_unit', 3, 'string', false, false, true, 'the unit for display purposes (plural)', '1.0a123', '1.60';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'per_unit', 4, 'string', false, false, true, 'the unit for display as a "per"', '1.0a123', '1.60';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'description', 5, 'string', false, false, true, 'a description of the resource', '1.0a100', '1.60';
 commit;
 begin;
 \echo schema_columns
@@ -2692,9 +2692,9 @@ commit;
 begin;
 \echo transaction_types
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transaction_types', 'name', 0, 'string', false, true, true, 'the name of the type', '1.0a122', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transaction_types', 'display', 1, 'string', false, false, true, 'the short display value', '1.0a122', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transaction_types', 'description', 2, 'string', false, false, true, 'a description of the type of payment', '1.0a122', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transaction_types', 'unit', 3, 'string', false, false, true, 'the unit of the transaction type', '1.0a122', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transaction_types', 'display', 1, 'string', false, false, true, 'the short display value', '1.0a122', '1.60';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transaction_types', 'description', 2, 'string', false, false, true, 'a description of the type of payment', '1.0a122', '1.60';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transaction_types', 'unit', 3, 'string', false, false, true, 'the unit of the transaction type', '1.0a122', '1.60';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transaction_types', 'is_credit', 4, 'boolean', false, false, true, 'indicates that this type of transaction represents payment or credit', '1.0a122', null;
 commit;
 begin;

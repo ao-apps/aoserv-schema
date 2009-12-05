@@ -908,4 +908,16 @@ insert into aoserv_protocols values(
   '2009-10-09',
   'now checking the table status on MySQL slaves'
 );
+insert into aoserv_protocols values(
+  '1.61',
+  '2009-12-05',
+  'removed package_categories.display
+removed resources.singular_display_unit
+removed resources.plural_display_unit
+removed resources.per_unit
+removed resources.description
+removed transaction_types.display
+removed transaction_types.description
+removed transaction_types.unit'
+);
 commit;

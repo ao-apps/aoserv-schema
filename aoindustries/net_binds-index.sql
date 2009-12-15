@@ -1,5 +1,5 @@
-create index net_binds_package_idx on net_binds (
-  package
+create index net_binds_accounting_idx on net_binds (
+  accounting
 );
 create index net_binds_ip_address_idx on net_binds (
   ip_address

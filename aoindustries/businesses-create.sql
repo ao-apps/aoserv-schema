@@ -1,25 +1,25 @@
 create table businesses (
-  accounting text
-    constraint businesses_pkey primary key,
+  accounting text primary key,
   contract_version text,
-  created timestamp
-    default now()
-    not null,
+  created timestamp default now() not null,
   canceled timestamp,
   cancel_reason text,
   parent text,
-  can_add_backup_server bool
-    not null,
-  can_add_businesses bool
-    not null,
-  can_see_prices bool
-    not null,
+  can_add_backup_server bool not null,
+  can_add_businesses bool not null,
+  can_see_prices bool not null,
   disable_log integer,
   do_not_disable_reason text,
-  auto_enable bool
-    not null,
-  bill_parent bool
-    not null
+  auto_enable bool not null,
+  bill_parent bool not null,
+  package_definition integer not null,
+  created_by text not null,
+  email_in_burst integer,
+  email_in_rate float4,
+  email_out_burst integer,
+  email_out_rate float4,
+  email_relay_burst integer,
+  email_relay_rate float4
 );
 grant all on businesses to aoadmin;
 grant select, insert, update, delete on businesses to aoserv_app;

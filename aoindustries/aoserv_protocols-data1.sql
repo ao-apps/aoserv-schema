@@ -920,4 +920,10 @@ removed transaction_types.display
 removed transaction_types.description
 removed transaction_types.unit'
 );
+insert into aoserv_protocols values(
+  '1.62',
+  '2009-12-14',
+  'removed packages table - columns added to businesses
+removed backup_reports'
+);
 commit;

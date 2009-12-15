@@ -6,12 +6,13 @@ backup_files
 bandwidth
 consulting
 disk
+drupal
 failover
 httpd
 ip
 javavm
 joomla
-pop
+email
 rack
 hardware_processor_p4_32
 hardware_processor_p4_34

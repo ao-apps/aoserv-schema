@@ -1,4 +1,4 @@
-COPY mysql_databases (pkey, name, mysql_server, package) FROM stdin;
+COPY mysql_databases (pkey, name, mysql_server, accounting) FROM stdin;
 1	mysql	2	AOINDUSTRIES
 2	information_schema	2	AOINDUSTRIES
 3	mysql	1	AOINDUSTRIES

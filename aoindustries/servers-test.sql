@@ -4,7 +4,7 @@ insert into servers values(
 	'freedom',
 	'Nested Test Server',
 	67,
-	1,
+	'AOINDUSTRIES',
 	'test.aoindustries.com',
     true
 );

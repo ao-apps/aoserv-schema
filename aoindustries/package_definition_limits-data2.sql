@@ -38,7 +38,7 @@ COPY "package_definition_limits" FROM stdin;
 1322	116	httpd	1	10	5.00	httpd
 1323	116	ip	2	50	5.00	ip
 1324	116	javavm	5	20	5.00	javavm
-1325	116	pop	40	400	1.00	pop
+1325	116	email	40	400	1.00	email
 1326	116	site	5	50	2.00	site
 1327	116	user	5	50	2.00	user
 1264	115	hardware_processor_xeon_306	2	2	\N	\N
@@ -54,7 +54,7 @@ COPY "package_definition_limits" FROM stdin;
 1277	115	failover	120	\N	0.50	managed
 1278	115	javavm	\N	\N	\N	\N
 1279	115	httpd	\N	\N	\N	\N
-1280	115	pop	\N	\N	\N	\N
+1280	115	email	\N	\N	\N	\N
 1281	115	site	\N	\N	\N	\N
 1282	115	user	\N	\N	\N	\N
 1283	115	consulting	0	\N	120.00	consulting
@@ -80,7 +80,7 @@ COPY "package_definition_limits" FROM stdin;
 416	50	disk	3	30	5.00	disk
 417	50	ip	1	30	5.00	ip
 418	50	javavm	1	10	5.00	javavm
-419	50	pop	20	200	1.00	pop
+419	50	email	20	200	1.00	email
 420	50	site	3	30	2.00	site
 1388	113	bandwidth	40	\N	1.00	bandwidth
 1389	113	consulting	0	\N	120.00	consulting
@@ -122,7 +122,7 @@ COPY "package_definition_limits" FROM stdin;
 329	45	httpd	\N	\N	\N	\N
 330	45	ip	\N	\N	\N	\N
 331	45	javavm	\N	\N	\N	\N
-332	45	pop	\N	\N	\N	\N
+332	45	email	\N	\N	\N	\N
 333	45	rack	\N	\N	\N	\N
 334	45	site	\N	\N	\N	\N
 335	45	sysadmin	\N	\N	\N	\N
@@ -175,7 +175,7 @@ COPY "package_definition_limits" FROM stdin;
 908	5	httpd	1	20	5.00	httpd
 909	5	ip	4	100	5.00	ip
 910	5	javavm	4	40	5.00	javavm
-911	5	pop	\N	\N	\N	\N
+911	5	email	\N	\N	\N	\N
 912	5	site	\N	\N	\N	\N
 913	5	user	12	120	2.00	user
 1080	100	hardware_processor_p4_32	1	1	\N	\N
@@ -191,7 +191,7 @@ COPY "package_definition_limits" FROM stdin;
 1093	100	failover	120	\N	0.50	managed
 1094	100	javavm	\N	\N	\N	\N
 1095	100	httpd	\N	\N	\N	\N
-1097	100	pop	\N	\N	\N	\N
+1097	100	email	\N	\N	\N	\N
 1098	100	site	\N	\N	\N	\N
 1099	100	user	\N	\N	\N	\N
 1100	100	consulting	0	\N	120.00	consulting
@@ -206,7 +206,7 @@ COPY "package_definition_limits" FROM stdin;
 30	4	httpd	1	10	5.00	httpd
 31	4	ip	2	50	5.00	ip
 32	4	javavm	2	20	5.00	javavm
-33	4	pop	40	400	1.00	pop
+33	4	email	40	400	1.00	email
 34	4	site	5	50	2.00	site
 35	4	user	5	50	2.00	user
 171	4	consulting	0	\N	120.00	consulting
@@ -218,7 +218,7 @@ COPY "package_definition_limits" FROM stdin;
 831	3	httpd	0	10	5.00	httpd
 832	3	ip	1	30	5.00	ip
 833	3	javavm	1	10	5.00	javavm
-834	3	pop	20	200	1.00	pop
+834	3	email	20	200	1.00	email
 835	3	site	3	30	2.00	site
 836	3	user	3	30	2.00	user
 999	2	javavm	1	2	5.00	javavm
@@ -227,7 +227,7 @@ COPY "package_definition_limits" FROM stdin;
 11	2	bandwidth	6	\N	1.00	bandwidth
 12	2	disk	2	20	5.00	disk
 13	2	ip	0	20	5.00	ip
-14	2	pop	10	100	1.00	pop
+14	2	email	10	100	1.00	email
 15	2	site	2	20	2.00	site
 16	2	user	2	20	2.00	user
 169	2	consulting	0	\N	120.00	consulting
@@ -237,7 +237,7 @@ COPY "package_definition_limits" FROM stdin;
 3	1	bandwidth	3	\N	1.00	bandwidth
 4	1	disk	1	10	5.00	disk
 5	1	ip	0	10	5.00	ip
-6	1	pop	5	50	1.00	pop
+6	1	email	5	50	1.00	email
 7	1	site	1	10	2.00	site
 8	1	user	1	10	2.00	user
 168	1	consulting	0	\N	120.00	consulting
@@ -254,7 +254,7 @@ COPY "package_definition_limits" FROM stdin;
 161	32	failover	120	\N	0.50	managed
 162	32	javavm	\N	\N	\N	\N
 163	32	httpd	\N	\N	\N	\N
-165	32	pop	\N	\N	\N	\N
+165	32	email	\N	\N	\N	\N
 166	32	site	\N	\N	\N	\N
 167	32	user	\N	\N	\N	\N
 199	32	consulting	0	\N	120.00	consulting
@@ -270,7 +270,7 @@ COPY "package_definition_limits" FROM stdin;
 1043	96	httpd	0	10	5.00	httpd
 1044	96	ip	1	30	5.00	ip
 1045	96	javavm	1	10	5.00	javavm
-1046	96	pop	20	200	1.00	pop
+1046	96	email	20	200	1.00	email
 1047	96	site	3	30	2.00	site
 1048	96	user	3	30	2.00	user
 128	31	hardware_processor_p4_32	1	1	\N	\N
@@ -286,7 +286,7 @@ COPY "package_definition_limits" FROM stdin;
 141	31	failover	120	\N	0.50	managed
 142	31	javavm	\N	\N	\N	\N
 143	31	httpd	\N	\N	\N	\N
-145	31	pop	\N	\N	\N	\N
+145	31	email	\N	\N	\N	\N
 146	31	site	\N	\N	\N	\N
 147	31	user	\N	\N	\N	\N
 198	31	consulting	0	\N	120.00	consulting
@@ -332,7 +332,7 @@ COPY "package_definition_limits" FROM stdin;
 984	90	httpd	1	10	5.00	httpd
 985	90	ip	2	50	5.00	ip
 986	90	javavm	2	20	5.00	javavm
-987	90	pop	40	400	1.00	pop
+987	90	email	40	400	1.00	email
 988	90	site	\N	\N	\N	\N
 989	90	user	5	50	2.00	user
 102	25	rack	12	12	\N	\N
@@ -349,7 +349,7 @@ COPY "package_definition_limits" FROM stdin;
 930	87	httpd	0	10	5.00	httpd
 931	87	ip	1	30	5.00	ip
 932	87	javavm	1	10	5.00	javavm
-933	87	pop	20	200	1.00	pop
+933	87	email	20	200	1.00	email
 934	87	site	8	30	2.00	site
 935	87	user	4	30	2.00	user
 99	22	rack	2	2	\N	\N
@@ -369,7 +369,7 @@ COPY "package_definition_limits" FROM stdin;
 1364	86	httpd	\N	\N	\N	\N
 1365	86	ip	\N	\N	\N	\N
 1366	86	javavm	\N	\N	\N	\N
-1367	86	pop	\N	\N	\N	\N
+1367	86	email	\N	\N	\N	\N
 1368	86	site	\N	\N	\N	\N
 1369	86	user	\N	\N	\N	\N
 1356	86	hardware_disk_sata_7200_120	2	4	20.00	managed
@@ -383,7 +383,7 @@ COPY "package_definition_limits" FROM stdin;
 92	21	javavm	\N	\N	\N	\N
 93	21	httpd	\N	\N	\N	\N
 94	21	ip	\N	\N	\N	\N
-95	21	pop	\N	\N	\N	\N
+95	21	email	\N	\N	\N	\N
 96	21	site	\N	\N	\N	\N
 97	21	sysadmin	1	\N	200.00	sysadmin
 98	21	user	\N	\N	\N	\N
@@ -402,7 +402,7 @@ COPY "package_definition_limits" FROM stdin;
 799	83	disk	3	30	5.00	disk
 800	83	ip	1	30	5.00	ip
 801	83	javavm	1	10	5.00	javavm
-802	83	pop	20	200	1.00	pop
+802	83	email	20	200	1.00	email
 803	83	site	3	30	2.00	site
 804	83	user	3	30	2.00	user
 805	83	consulting	0	\N	120.00	consulting
@@ -417,7 +417,7 @@ COPY "package_definition_limits" FROM stdin;
 789	82	httpd	1	10	5.00	httpd
 790	82	ip	2	50	5.00	ip
 791	82	javavm	2	20	5.00	javavm
-792	82	pop	40	400	1.00	pop
+792	82	email	40	400	1.00	email
 793	82	site	5	50	2.00	site
 794	82	user	5	50	2.00	user
 795	82	consulting	0	\N	120.00	consulting
@@ -432,7 +432,7 @@ COPY "package_definition_limits" FROM stdin;
 778	81	httpd	1	10	5.00	httpd
 779	81	ip	2	50	5.00	ip
 780	81	javavm	2	20	5.00	javavm
-781	81	pop	40	400	1.00	pop
+781	81	email	40	400	1.00	email
 782	81	site	5	50	2.00	site
 783	81	user	5	50	2.00	user
 784	81	consulting	0	\N	120.00	consulting
@@ -447,7 +447,7 @@ COPY "package_definition_limits" FROM stdin;
 766	80	httpd	1	10	5.00	httpd
 767	80	ip	2	50	5.00	ip
 768	80	javavm	2	20	5.00	javavm
-769	80	pop	40	400	1.00	pop
+769	80	email	40	400	1.00	email
 771	80	user	5	50	2.00	user
 772	80	consulting	0	\N	120.00	consulting
 770	80	site	10	50	2.00	site

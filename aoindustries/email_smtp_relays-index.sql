@@ -1,5 +1,7 @@
-create index email_smtp_relays_package_ind on email_smtp_relays (
-  package
+create unique index email_smtp_relays_uni on email_smtp_relays (
+  accounting,
+  ao_server,
+  "host"
 );
 create index email_smtp_relays_server_ind on email_smtp_relays (
   ao_server

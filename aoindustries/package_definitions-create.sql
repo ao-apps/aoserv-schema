@@ -18,10 +18,11 @@ create table package_definitions (
     not null,
   description text
     not null,
-  setup_fee decimal(9,2),
+  setup_fee decimal(9,2) check (setup_fee is null or setup_fee>0),
   setup_fee_transaction_type text,
   monthly_rate decimal(9,2)
-    not null,
+    not null
+    check (monthly_rate>=0),
   monthly_rate_transaction_type text
     not null,
   active bool

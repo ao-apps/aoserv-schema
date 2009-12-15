@@ -453,6 +453,14 @@ insert into aosh_commands values(
   'adds a new business to the system',
   '<i>accounting_code</i> <i>contract_version</i> <i>default_server</i> <i>parent_business</i> <i>can_add_backup_server</i> <i>can_add_businesses</i> <i>can_see_prices</i> <i>bill_parent</i>',
   '1.0a103',
+  '1.61'
+);
+insert into aosh_commands values(
+  'add_business',
+  'businesses',
+  'adds a new business to the system',
+  '<i>accounting_code</i> <i>contract_version</i> <i>default_server</i> <i>parent_business</i> <i>can_add_backup_server</i> <i>can_add_businesses</i> <i>can_see_prices</i> <i>bill_parent</i> <i>package_definition</i>',
+  '1.62',
   null
 );
 insert into aosh_commands values(
@@ -645,6 +653,14 @@ insert into aosh_commands values(
   'adds a zone to the name servers',
   '<i>package</i> <i>zone</i> <i>ip_address</i> <i>ttl</i>',
   '1.0a127',
+  '1.61'
+);
+insert into aosh_commands values(
+  'add_dns_zone',
+  'dns_zones',
+  'adds a zone to the name servers',
+  '<i>accounting</i> <i>zone</i> <i>ip_address</i> <i>ttl</i>',
+  '1.62',
   null
 );
 insert into aosh_commands values(
@@ -709,6 +725,14 @@ insert into aosh_commands values(
   'adds a new email domain',
   '<i>domain</i> <i>ao_server</i> <i>package</i>',
   '1.0a100',
+  '1.61'
+);
+insert into aosh_commands values(
+  'add_email_domain',
+  'email_domains',
+  'adds a new email domain',
+  '<i>domain</i> <i>ao_server</i> <i>accounting</i>',
+  '1.62',
   null
 );
 insert into aosh_commands values(
@@ -861,6 +885,14 @@ insert into aosh_commands values(
   'adds a new email pipe',
   '<i>ao_server</i> <i>path</i> <i>package</i>',
   '1.0a100',
+  '1.61'
+);
+insert into aosh_commands values(
+  'add_email_pipe',
+  'email_pipes',
+  'adds a new email pipe',
+  '<i>ao_server</i> <i>path</i> <i>accounting</i>',
+  '1.62',
   null
 );
 insert into aosh_commands values(
@@ -893,6 +925,14 @@ insert into aosh_commands values(
   'adds a SMTP relay rule',
   '<i>package</i> {""|<i>ao_server</i>} <i>host</i> <i>type</i> {""|<i>duration</i>}',
   '1.0a100',
+  '1.61'
+);
+insert into aosh_commands values(
+  'add_email_smtp_relay',
+  'email_smtp_relays',
+  'adds a SMTP relay rule',
+  '<i>accounting</i> {""|<i>ao_server</i>} <i>host</i> <i>type</i> {""|<i>duration</i>}',
+  '1.62',
   null
 );
 insert into aosh_commands values(
@@ -1021,6 +1061,14 @@ insert into aosh_commands values(
   'creates a new web site space running a JBoss configuration',
   '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin_email</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} <i>jboss_version</i> <i>primary_http_hostname</i> {""|<i>content_source</i>} [<i>alternate_http_hostname</i>]...',
   '1.0a100',
+  '1.61'
+);
+insert into aosh_commands values(
+  'add_httpd_jboss_site',
+  'httpd_jboss_sites',
+  'creates a new web site space running a JBoss configuration',
+  '<i>ao_server</i> <i>site_name</i> <i>accounting</i> <i>username</i> <i>group</i> <i>server_admin_email</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} <i>jboss_version</i> <i>primary_http_hostname</i> [<i>alternate_http_hostname</i>]...',
+  '1.62',
   null
 );
 insert into aosh_commands values(
@@ -1381,6 +1429,14 @@ insert into aosh_commands values(
   'creates a new web site space running a shared Tomcat configuration',
   '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} {""|<i>shared_tomcat_name</i>} {""|<i>tomcat_version</i>} <i>primary_http_hostname</i> {""|<i>content_source</i>} [<i>alternate_http_hostname</i>]...',
   '1.0a100',
+  '1.61'
+);
+insert into aosh_commands values(
+  'add_httpd_tomcat_shared_site',
+  'httpd_tomcat_shared_sites',
+  'creates a new web site space running a shared Tomcat configuration',
+  '<i>ao_server</i> <i>site_name</i> <i>accounting</i> <i>username</i> <i>group</i> <i>server_admin</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} {""|<i>shared_tomcat_name</i>} {""|<i>tomcat_version</i>} <i>primary_http_hostname</i> [<i>alternate_http_hostname</i>]...',
+  '1.62',
   null
 );
 insert into aosh_commands values(
@@ -1389,6 +1445,14 @@ insert into aosh_commands values(
   'creates a new web site space running a standard Tomcat configuration',
   '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} <i>tomcat_version</i> <i>primary_http_hostname</i> {""|<i>content_source</i>} [<i>alternate_http_hostname</i>]...',
   '1.0a100',
+  '1.61'
+);
+insert into aosh_commands values(
+  'add_httpd_tomcat_std_site',
+  'httpd_tomcat_std_sites',
+  'creates a new web site space running a standard Tomcat configuration',
+  '<i>ao_server</i> <i>site_name</i> <i>accounting</i> <i>username</i> <i>group</i> <i>server_admin</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} <i>tomcat_version</i> <i>primary_http_hostname</i> [<i>alternate_http_hostname</i>]...',
+  '1.62',
   null
 );
 insert into aosh_commands values(
@@ -1672,6 +1736,14 @@ insert into aosh_commands values(
   null
 );
 insert into aosh_commands values(
+  'set_ip_address_business',
+  'ip_addresses',
+  'sets the business ownership of an IP address',
+  '<i>ip_address</i> <i>server</i> <i>net_device</i> <i>accounting</i>',
+  '1.62',
+  null
+);
+insert into aosh_commands values(
   'set_ip_address_dhcp_address',
   'ip_addresses',
   'sets the new IP address for a DHCP-enabled device',
@@ -1709,7 +1781,7 @@ insert into aosh_commands values(
   'sets the package ownership of an IP address',
   '<i>ip_address</i> <i>server</i> <i>net_device</i> <i>package</i>',
   '1.33',
-  null
+  '1.61'
 );
 insert into aosh_commands values(
   'add_linux_acc_address',
@@ -1885,6 +1957,14 @@ insert into aosh_commands values(
   'adds a new Linux group',
   '<i>group</i> <i>package</i> <i>type</i>',
   '1.0a100',
+  '1.61'
+);
+insert into aosh_commands values(
+  'add_linux_group',
+  'linux_groups',
+  'adds a new Linux group',
+  '<i>group</i> <i>accounting</i> <i>type</i>',
+  '1.62',
   null
 );
 insert into aosh_commands values(
@@ -2221,6 +2301,14 @@ insert into aosh_commands values(
   'adds a new MySQL database',
   '<i>database_name</i> <i>mysql_server</i> <i>ao_server</i> <i>package</i>',
   '1.4',
+  '1.61'
+);
+insert into aosh_commands values(
+  'add_mysql_database',
+  'mysql_databases',
+  'adds a new MySQL database',
+  '<i>database_name</i> <i>mysql_server</i> <i>ao_server</i> <i>accounting</i>',
+  '1.62',
   null
 );
 insert into aosh_commands values(
@@ -2629,6 +2717,14 @@ insert into aosh_commands values(
   'adds a net binds to the system',
   '<i>server</i> <i>package</i> <i>ip_address</i> <i>net_device</i> <i>port</i> <i>net_protocol</i> <i>app_protocol</i> <i>open_firewall</i> <i>monitoring_enabled</i>',
   '1.33',
+  '1.61'
+);
+insert into aosh_commands values(
+  'add_net_bind',
+  'net_binds',
+  'adds a net binds to the system',
+  '<i>server</i> <i>accounting</i> <i>ip_address</i> <i>net_device</i> <i>port</i> <i>net_protocol</i> <i>app_protocol</i> <i>open_firewall</i> <i>monitoring_enabled</i>',
+  '1.62',
   null
 );
 insert into aosh_commands values(
@@ -2677,7 +2773,7 @@ insert into aosh_commands values(
   'adds a new package to a business',
   '<i>package</i> <i>business</i> <i>package_definition</i>',
   '1.0a123',
-  null
+  '1.61'
 );
 insert into aosh_commands values(
   'check_package_name',
@@ -2685,7 +2781,7 @@ insert into aosh_commands values(
   'checks the format of a package name',
   '<i>package</i>',
   '1.0a100',
-  null
+  '1.61'
 );
 insert into aosh_commands values(
   'disable_package',
@@ -2693,7 +2789,7 @@ insert into aosh_commands values(
   'disables a package and everything in it, except its business administrators',
   '<i>name</i> <i>reason</i>',
   '1.0a100',
-  null
+  '1.61'
 );
 insert into aosh_commands values(
   'enable_package',
@@ -2701,7 +2797,7 @@ insert into aosh_commands values(
   'enables a package and everything in it',
   '<i>name</i>',
   '1.0a100',
-  null
+  '1.61'
 );
 insert into aosh_commands values(
   'generate_package_name',
@@ -2709,7 +2805,7 @@ insert into aosh_commands values(
   'generates a unique package name based on a template',
   '<i>template</i>',
   '1.0a100',
-  null
+  '1.61'
 );
 insert into aosh_commands values(
   'is_package_name_available',
@@ -2717,7 +2813,7 @@ insert into aosh_commands values(
   'checks the availability of a package name',
   '<i>package</i>',
   '1.0a100',
-  null
+  '1.61'
 );
 insert into aosh_commands values(
   'get_postgres_backup',
@@ -3197,6 +3293,14 @@ insert into aosh_commands values(
   'adds a new username',
   '<i>package</i> <i>username</i>',
   '1.0a100',
+  '1.61'
+);
+insert into aosh_commands values(
+  'add_username',
+  'usernames',
+  'adds a new username',
+  '<i>accounting</i> <i>username</i>',
+  '1.62',
   null
 );
 insert into aosh_commands values(

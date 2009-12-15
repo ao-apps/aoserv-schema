@@ -105,7 +105,7 @@ insert into schema_tables values(
     false,
     'The <code>backup_reports</code> table stores the daily summary of backup system usage.',
     '1.0a101',
-    null
+    '1.61'
 );
 insert into schema_tables values(
     'backup_retentions',
@@ -1313,7 +1313,7 @@ insert into schema_tables values(
     false,
     'The packages table stores information about each package that businesses have signed up for.',
     '1.0a100',
-    null
+    '1.61'
 );
 insert into schema_tables values(
     'payment_types',

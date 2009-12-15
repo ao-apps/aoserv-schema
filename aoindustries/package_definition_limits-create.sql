@@ -12,7 +12,7 @@ create table package_definition_limits (
     not null,
   soft_limit integer,
   hard_limit integer,
-  additional_rate decimal(9,2),
+  additional_rate decimal(9,2) check (additional_rate is null or additional_rate>0),
   additional_transaction_type text,
   unique(package_definition, resource)
 );

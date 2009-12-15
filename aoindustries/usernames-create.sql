@@ -9,8 +9,7 @@ create table usernames (
       and username not like 'cyrus@%'   -- Can't start with cyrus
       and username not like '%@default' -- Can't end with @default
     ),
-  package text
-    not null,
+  accounting text not null,
   disable_log integer
 );
 grant all on usernames to aoadmin;

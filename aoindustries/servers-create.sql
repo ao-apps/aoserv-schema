@@ -10,7 +10,7 @@ create table servers (
     not null,
   description text not null,
   operating_system_version integer,
-  package integer not null,
+  accounting text not null,
   name text not null check (length(name)>0 and name not like '%/%'),
   monitoring_enabled boolean not null default true
 );

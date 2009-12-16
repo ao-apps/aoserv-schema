@@ -350,7 +350,7 @@ account',
     null
 ;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'businesses', 'package_definition', 14, 'fkey', false, false, false, 'the definition of the package', '1.62', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'businesses', 'created_by', 15, 'username', false, false, false, '', '1.62', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'businesses', 'created_by', 15, 'username', true, false, false, '', '1.62', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'businesses', 'email_in_burst', 16, 'int', true, false, false, 'the maximum burst of inbound email before limiting begins', '1.62', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'businesses', 'email_in_rate', 17, 'float', true, false, false, 'the number of sustained inbound emails per second', '1.62', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'businesses', 'email_out_burst', 18, 'int', true, false, false, 'the maximum burst of outbound email before limiting begins', '1.62', null;
@@ -1660,11 +1660,12 @@ begin;
 \echo package_definition_limits
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'package_definition_limits', 'pkey', 0, 'pkey', false, true, false, 'the unique identifier for this limit', '1.0a123', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'package_definition_limits', 'package_definition', 1, 'fkey', false, false, false, 'the pkey of the package definition', '1.0a123', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'package_definition_limits', 'resource', 2, 'string', false, false, false, 'the resource name', '1.0a123', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'package_definition_limits', 'soft_limit', 3, 'int', true, false, false, 'the number that may be used for additional charges are added, NULL means unlimited', '1.0a123', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'package_definition_limits', 'hard_limit', 4, 'int', true, false, false, 'the maximum number that may be allocated, NULL means unlimited', '1.0a123', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'package_definition_limits', 'additional_rate', 5, 'decimal_2', true, false, false, 'the monthly rate for those past the soft_limit', '1.0a123', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'package_definition_limits', 'additional_transaction_type', 6, 'string', true, false, false, '', '1.0a123', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'package_definition_limits', 'resource', 2, 'string', false, false, false, 'the resource name', '1.0a123', '1.61';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'package_definition_limits', 'resource_type', 3, 'string', false, false, false, 'the resource type', '1.62', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'package_definition_limits', 'soft_limit', 4, 'int', true, false, false, 'the number that may be used for additional charges are added, NULL means unlimited', '1.0a123', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'package_definition_limits', 'hard_limit', 5, 'int', true, false, false, 'the maximum number that may be allocated, NULL means unlimited', '1.0a123', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'package_definition_limits', 'additional_rate', 6, 'decimal_2', true, false, false, 'the monthly rate for those past the soft_limit', '1.0a123', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'package_definition_limits', 'additional_transaction_type', 7, 'string', true, false, false, '', '1.0a123', null;
 commit;
 begin;
 \echo package_definitions
@@ -1868,13 +1869,26 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resellers
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resellers', 'ticket_auto_escalate', 1, 'boolean', false, false, false, '', '1.44', null;
 commit;
 begin;
+\echo resource_types
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resource_types', 'name', 0, 'string', false, true, true, 'the name of the resource type', '1.62', null;
+commit;
+begin;
 \echo resources
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'name', 0, 'string', false, true, true, 'the name of the specific resource', '1.0a100', null;
+-- Renamed to resource_types
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'name', 0, 'string', false, true, true, 'the name of the specific resource', '1.0a100', '1.61';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'unit', 1, 'string', false, false, true, '', '1.0a100', '1.0a122';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'singular_display_unit', 2, 'string', false, false, true, 'the unit for display purposes (singular)', '1.0a123', '1.60';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'plural_display_unit', 3, 'string', false, false, true, 'the unit for display purposes (plural)', '1.0a123', '1.60';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'per_unit', 4, 'string', false, false, true, 'the unit for display as a "per"', '1.0a123', '1.60';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'description', 5, 'string', false, false, true, 'a description of the resource', '1.0a100', '1.60';
+-- New version of the table
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'pkey', 6, 'pkey', false, true, false, 'a generated unique pkey', '1.62', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'owner', 7, 'accounting', true, false, false, 'the business that owns this resource', '1.62', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'resource_type', 8, 'string', false, false, false, 'the type of resource', '1.62', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'created', 9, 'time', false, false, false, 'the time the resources was created', '1.62', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'created_by', 10, 'username', false, false, false, 'the administrator who created the resource', '1.62', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'disable_log', 11, 'fkey', true, false, false, 'indicates the resource is disabled', '1.62', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'last_enabled', 12, 'time', false, false, false, 'the time the resources was last enabled or the creation time if never disabled', '1.62', null;
 commit;
 begin;
 \echo schema_columns

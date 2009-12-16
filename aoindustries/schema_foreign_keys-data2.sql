@@ -681,7 +681,8 @@ commit;
 begin;
 \echo package_definition_limits
 select add_schema_foreign_key('package_definition_limits', 'package_definition', 'package_definitions', 'pkey', '1.0a123', null);
-select add_schema_foreign_key('package_definition_limits', 'resource', 'resources', 'name', '1.0a123', null);
+select add_schema_foreign_key('package_definition_limits', 'resource', 'resources', 'name', '1.0a123', '1.61');
+select add_schema_foreign_key('package_definition_limits', 'resource_type', 'resource_types', 'name', '1.62', null);
 select add_schema_foreign_key('package_definition_limits', 'additional_transaction_type', 'transaction_types', 'name', '1.0a123', null);
 commit;
 begin;
@@ -770,6 +771,13 @@ commit;
 begin;
 \echo resellers
 select add_schema_foreign_key('resellers', 'accounting', 'brands', 'accounting', '1.44', null);
+commit;
+begin;
+\echo resources
+select add_schema_foreign_key('resources', 'owner', 'businesses', 'accounting', '1.62', null);
+select add_schema_foreign_key('resources', 'resource_type', 'resource_types', 'name', '1.62', null);
+select add_schema_foreign_key('resources', 'created_by', 'business_administrators', 'username', '1.62', null);
+select add_schema_foreign_key('resources', 'disable_log', 'disable_log', 'pkey', '1.62', null);
 commit;
 begin;
 \echo schema_columns

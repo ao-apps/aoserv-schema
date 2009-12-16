@@ -924,6 +924,8 @@ insert into aoserv_protocols values(
   '1.62',
   '2009-12-14',
   'removed packages table - columns added to businesses
-removed backup_reports'
+removed backup_reports
+renamed resources table to resource_types
+added new resources table'
 );
 commit;

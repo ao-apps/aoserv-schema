@@ -4,7 +4,12 @@ create table businesses (
   created timestamp default now() not null,
   canceled timestamp,
   cancel_reason text,
-  parent text,
+  parent text check (
+    case
+        when accounting='AOINDUSTRIES' then parent is null -- switch to resourceId=1
+        else parent is not null
+    end
+  ),
   can_add_backup_server bool not null,
   can_add_businesses bool not null,
   can_see_prices bool not null,
@@ -13,7 +18,12 @@ create table businesses (
   auto_enable bool not null,
   bill_parent bool not null,
   package_definition integer not null,
-  created_by text not null,
+  created_by text check (
+    case
+        when accounting='AOINDUSTRIES' then created_by is null -- switch to resourceId=1
+        else created_by is not null
+    end
+  ),
   email_in_burst integer,
   email_in_rate float4,
   email_out_burst integer,

@@ -1,17 +1,10 @@
 create table schema_tables (
-  name text
-    not null
-    constraint schema_tables_pkey primary key,
-  table_id int
-    not null,
-  display text
-    not null,
-  is_public bool
-    not null,
-  description text
-    not null,
-  since_version text
-    not null,
+  name text primary key,
+  table_id int not null,
+  display text not null,
+  is_public bool not null,
+  description text not null,
+  since_version text not null,
   last_version text,
   unique(table_id)
 );

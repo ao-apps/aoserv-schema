@@ -1,57 +1,10 @@
-COPY "resources" FROM stdin;
-aoserv_daemon
-aoserv_master
-backup_disk
-backup_files
-bandwidth
-consulting
-disk
-drupal
-failover
-httpd
-ip
-javavm
-joomla
-email
-rack
-hardware_processor_p4_32
-hardware_processor_p4_34
-hardware_processor_xeon_306
-hardware_processor_xeon_34
-hardware_ram_ddr400_nonecc
-hardware_ram_ddr400_ecc
-hardware_disk_scsi_10000_73
-hardware_disk_scsi_15000_36
-hardware_disk_scsi_15000_73
-site
-sysadmin
-user
-hardware_ram_ddr2_667_ecc
-hardware_ram_ddr2_667_nonecc
-hardware_ram_ddr2_800_ecc
-hardware_power_redundant_500
-hardware_disk_controller_sata_16
-hardware_disk_sata_7200_500
-hardware_disk_sata_7200_750
-hardware_disk_sata_7200_120
-hardware_disk_sata_7200_250
-hardware_processor_coreduo_t2500
-hardware_processor_xeon_e5335
-hardware_processor_xeon_e5355
-hardware_processor_coreduo_t2600
-hardware_disk_sata_7200_160
-hardware_disk_sata_7200_080
-hardware_disk_sata_10000_150
-hardware_disk_sata_10000_074
-hardware_disk_ide_7200_080
-hardware_disk_ide_7200_160
-hardware_disk_ide_7200_250
-hardware_disk_ide_7200_400
-hardware_disk_ide_7200_500
-hardware_disk_ide_7200_750
-hardware_ram_ddr2_667_nonecc_2x1024
-hardware_ram_ddr2_667_nonecc_2x0512
-hardware_processor_coreduo_t2300e
-hardware_processor_coreduo_t2400
-mysql_replication
-\.
+insert into resources values(
+  1,
+  null,
+  'business',
+  now(),
+  'orion',
+  null,
+  now()
+);
+SELECT setval ('"resources_pkey_seq"', 2, true);

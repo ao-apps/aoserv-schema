@@ -6,16 +6,16 @@ alter table package_definition_limits
   on update cascade
 ;
 alter table package_definition_limits
-  add constraint resource_fkey
-  foreign key (resource)
-  references resources (name)
+  add constraint resource_type_fkey
+  foreign key (resource_type)
+  references resource_types ("name")
   on delete restrict
   on update cascade
 ;
 alter table package_definition_limits
   add constraint additional_transaction_type_fkey
   foreign key (additional_transaction_type)
-  references transaction_types (name)
+  references transaction_types ("name")
   on delete restrict
   on update cascade
 ;

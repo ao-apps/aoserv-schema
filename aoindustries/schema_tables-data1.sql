@@ -1482,11 +1482,20 @@ insert into schema_tables values(
     null
 );
 insert into schema_tables values(
+    'resource_types',
+    (select count(*) from schema_tables),
+    'Resource Types',
+    true,
+    'The types of billable resources',
+    '1.62',
+    null
+);
+insert into schema_tables values(
     'resources',
     (select count(*) from schema_tables),
     'Resources',
-    true,
-    'The resources table stores a list of resources that may be charged',
+    false,
+    'All billable resources',
     '1.0a100',
     null
 );

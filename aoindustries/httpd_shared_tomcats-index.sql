@@ -1,3 +1,7 @@
+create unique index httpd_shared_tomcats_uni on httpd_shared_tomcats (
+  ao_server,
+  "name"
+);
 create index httpd_shared_tomcats_version_idx on httpd_shared_tomcats (
   version
 );

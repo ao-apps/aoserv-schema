@@ -388,8 +388,10 @@ begin;
 select add_schema_foreign_key('httpd_sites', 'ao_server', 'ao_servers', 'server', '1.0a100', null);
 select add_schema_foreign_key('httpd_sites', 'package', 'packages', 'name', '1.0a100', '1.61');
 select add_schema_foreign_key('httpd_sites', 'accounting', 'businesses', 'accounting', '1.62', null);
-select add_schema_foreign_key('httpd_sites', 'linux_account', 'linux_accounts', 'username', '1.0a100', null);
-select add_schema_foreign_key('httpd_sites', 'linux_group', 'linux_groups', 'name', '1.0a100', null);
+select add_schema_foreign_key('httpd_sites', 'linux_account', 'linux_accounts', 'username', '1.0a100', '1.61');
+select add_schema_foreign_key('httpd_sites', 'linux_server_account', 'linux_server_accounts', 'pkey', '1.62', null);
+select add_schema_foreign_key('httpd_sites', 'linux_group', 'linux_groups', 'name', '1.0a100', '1.61');
+select add_schema_foreign_key('httpd_sites', 'linux_server_group', 'linux_server_groups', 'pkey', '1.62', null);
 select add_schema_foreign_key('httpd_sites', 'config_backup_level', 'backup_levels', 'level', '1.0a100', '1.30');
 select add_schema_foreign_key('httpd_sites', 'config_backup_retention', 'backup_retentions', 'days', '1.0a100', '1.30');
 select add_schema_foreign_key('httpd_sites', 'file_backup_level', 'backup_levels', 'level', '1.0a100', '1.30');
@@ -609,7 +611,8 @@ begin;
 \echo mysql_db_users
 select add_schema_foreign_key('mysql_db_users', 'mysql_database', 'mysql_databases', 'pkey', '1.0a100', null);
 select add_schema_foreign_key('mysql_db_users', 'mysql_user', 'mysql_server_users', 'pkey', '1.0a100', '1.30');
-select add_schema_foreign_key('mysql_db_users', 'mysql_server_user', 'mysql_server_users', 'pkey', '1.31', null);
+select add_schema_foreign_key('mysql_db_users', 'mysql_server_user', 'mysql_server_users', 'pkey', '1.31', '1.61');
+select add_schema_foreign_key('mysql_db_users', 'mysql_user', 'mysql_users', 'pkey', '1.62', null);
 commit;
 begin;
 \echo mysql_hosts
@@ -617,10 +620,10 @@ select add_schema_foreign_key('mysql_hosts', 'ao_server', 'ao_servers', 'server'
 commit;
 begin;
 \echo mysql_server_users
-select add_schema_foreign_key('mysql_server_users', 'username', 'mysql_users', 'username', '1.0a100', null);
+select add_schema_foreign_key('mysql_server_users', 'username', 'mysql_users', 'username', '1.0a100', '1.61');
 select add_schema_foreign_key('mysql_server_users', 'ao_server', 'ao_servers', 'server', '1.0a100', '1.3');
-select add_schema_foreign_key('mysql_server_users', 'mysql_server', 'mysql_servers', 'pkey', '1.4', null);
-select add_schema_foreign_key('mysql_server_users', 'disable_log', 'disable_log', 'pkey', '1.0a100', null);
+select add_schema_foreign_key('mysql_server_users', 'mysql_server', 'mysql_servers', 'pkey', '1.4', '1.61');
+select add_schema_foreign_key('mysql_server_users', 'disable_log', 'disable_log', 'pkey', '1.0a100', '1.61');
 commit;
 begin;
 \echo mysql_servers
@@ -632,7 +635,9 @@ select add_schema_foreign_key('mysql_servers', 'accounting', 'businesses', 'acco
 commit;
 begin;
 \echo mysql_users
-select add_schema_foreign_key('mysql_users', 'username', 'usernames', 'username', '1.0a100', null);
+select add_schema_foreign_key('mysql_users', 'username', 'usernames', 'username', '1.0a100', '1.61');
+select add_schema_foreign_key('mysql_users', 'username', 'usernames', 'username', '1.62', null);
+select add_schema_foreign_key('mysql_users', 'mysql_server', 'mysql_servers', 'pkey', '1.62', null);
 select add_schema_foreign_key('mysql_users', 'disable_log', 'disable_log', 'pkey', '1.0a100', null);
 commit;
 begin;

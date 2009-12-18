@@ -926,6 +926,7 @@ insert into aoserv_protocols values(
   'removed packages table - columns added to businesses
 removed backup_reports
 renamed resources table to resource_types
-added new resources table'
+added new resources table
+removed mysql_server_users table - columns added to mysql_users'
 );
 commit;

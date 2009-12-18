@@ -1094,7 +1094,7 @@ insert into schema_tables values(
     (select count(*) from schema_tables),
     'MySQL DB Users',
     false,
-    'The <code>mysql_db_users</code> table stores which <code>mysql_server_users</code> can access which <code>mysql_databases</code>.  The user permissions are also contained in each row.',
+    'The <code>mysql_db_users</code> table stores which <code>mysql_users</code> can access which <code>mysql_databases</code>.  The user permissions are also contained in each row.',
     '1.0a100',
     null
 );
@@ -1123,7 +1123,7 @@ insert into schema_tables values(
     false,
     'The mysql_server_users table contains all the server-specific information about a mysql_user',
     '1.0a100',
-    null
+    '1.61'
 );
 insert into schema_tables values(
     'mysql_servers',
@@ -1139,7 +1139,7 @@ insert into schema_tables values(
     (select count(*) from schema_tables),
     'MySQL Users',
     false,
-    'The mysql_users table stores all of the user info that is common for every MySQL server a user has a MySQL user account on.  The server specifics are stored in the mysql_server_users table.',
+    'The mysql_users table stores all of the user info for every MySQL user.',
     '1.0a100',
     null
 );

@@ -950,8 +950,8 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sha
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'version', 3, 'fkey',false, false, false, 'the tomcat version', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'linux_server_account', 4, 'fkey', false, false, false, 'the account under which this tomcat runs', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'linux_server_group', 5, 'fkey', false, false, false, 'the group to which this tomcat is assigned', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'is_secure', 6, 'boolean', false, false, false, 'is the jvm secure', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'is_overflow', 7, 'boolean', false, false, false, 'is an overflow JVM for several accounts', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'is_secure', 6, 'boolean', false, false, false, 'is the jvm secure', '1.0a100', '1.61';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'is_overflow', 7, 'boolean', false, false, false, 'is an overflow JVM for several accounts', '1.0a100', '1.61';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'config_backup_level', 8, 'short', false, false, false, 'the number of copies of config backups to store', '1.0a100', '1.30';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'config_backup_retention', 9, 'short', false, false, false, 'the number of days backups are maintained', '1.0a100', '1.30';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'file_backup_level', 10, 'short', false, false, false, 'the number of copies of backups to store', '1.0a100', '1.30';
@@ -1019,21 +1019,23 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sit
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'list_first', 3, 'boolean', false, false, false, 'if <code>true</code>, this site will be listed first in the Apache configs.  This is normally used only for the "not found" site for each httpd_server.', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'package', 4, 'package', false, false, false, 'the package that the site is part of', '1.0a100', '1.61';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'accounting', 5, 'accounting', false, false, false, 'the business that the site is part of', '1.62', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'linux_account', 6, 'username', false, false, false, 'the user the site "runs as"', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'linux_group', 7, 'string', false, false, false, 'the primary group that can edit the site content', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'server_admin', 8, 'email', false, false, false, 'the email address of the server administrator.  This address is provided when an error occurs.  The value is most often <code>webmaster@<i>domain.com</i></code>', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'content_src', 9, 'path', true, false, false, 'optional content added to site on creation', '1.0a100', '1.61';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'config_backup_level', 10, 'short', false, false, false, 'the number of copies of config backup files', '1.0a100', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'config_backup_retention', 11, 'short', false, false, false, 'the number of days backups will be kept', '1.0a100', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'file_backup_level', 12, 'short', false, false, false, 'the number of copies of backup files', '1.0a100', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'file_backup_retention', 13, 'short', false, false, false, 'the number of days backups will be kept', '1.0a100', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'ftp_backup_level', 14, 'short', false, false, false, 'the number of copies of FTP backup files', '1.0a100', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'ftp_backup_retention', 15, 'short', false, false, false, 'the number of days backups will be kept', '1.0a100', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'log_backup_level', 16, 'short', false, false, false, 'the number of copies of log backup files', '1.0a100', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'log_backup_retention', 17, 'short', false, false, false, 'the number of days backups will be kept', '1.0a100', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'disable_log', 18, 'fkey', true, false, false, 'indicates that the site is disabled', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'is_manual', 19, 'boolean', false, false, false, 'configuration of this server is performed manually', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'awstats_skip_files', 20, 'string', true, false, false, 'the SkipFiles setting for AWStats', '1.0a129', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'linux_account', 6, 'username', false, false, false, 'the user the site "runs as"', '1.0a100', '1.61';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'linux_server_account', 7, 'fkey', false, false, false, 'the user the site "runs as"', '1.62', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'linux_group', 8, 'string', false, false, false, 'the primary group that can edit the site content', '1.0a100', '1.61';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'linux_server_group', 9, 'fkey', false, false, false, 'the primary group that can edit the site content', '1.62', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'server_admin', 10, 'email', false, false, false, 'the email address of the server administrator.  This address is provided when an error occurs.  The value is most often <code>webmaster@<i>domain.com</i></code>', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'content_src', 11, 'path', true, false, false, 'optional content added to site on creation', '1.0a100', '1.61';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'config_backup_level', 12, 'short', false, false, false, 'the number of copies of config backup files', '1.0a100', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'config_backup_retention', 13, 'short', false, false, false, 'the number of days backups will be kept', '1.0a100', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'file_backup_level', 14, 'short', false, false, false, 'the number of copies of backup files', '1.0a100', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'file_backup_retention', 15, 'short', false, false, false, 'the number of days backups will be kept', '1.0a100', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'ftp_backup_level', 16, 'short', false, false, false, 'the number of copies of FTP backup files', '1.0a100', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'ftp_backup_retention', 17, 'short', false, false, false, 'the number of days backups will be kept', '1.0a100', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'log_backup_level', 18, 'short', false, false, false, 'the number of copies of log backup files', '1.0a100', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'log_backup_retention', 19, 'short', false, false, false, 'the number of days backups will be kept', '1.0a100', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'disable_log', 20, 'fkey', true, false, false, 'indicates that the site is disabled', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'is_manual', 21, 'boolean', false, false, false, 'configuration of this server is performed manually', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'awstats_skip_files', 22, 'string', true, false, false, 'the SkipFiles setting for AWStats', '1.0a129', null;
 commit;
 begin;
 \echo httpd_static_sites
@@ -1435,26 +1437,27 @@ begin;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'pkey', 0, 'pkey', false, true, false, 'a generated primary key', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'mysql_database', 1, 'fkey', false, false, false, 'the pkey in mysql_databases', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'mysql_user', 2, 'fkey', false, false, false, 'the pkey in mysql_server_users', '1.0a100', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'mysql_server_user', 3, 'fkey', false, false, false, 'the pkey in mysql_server_users', '1.31', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'select_priv', 4, 'boolean', false, false, false, 'the SELECT privilege', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'insert_priv', 5, 'boolean', false, false, false, 'the INSERT privilege', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'update_priv', 6, 'boolean', false, false, false, 'the UPDATE privilege', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'delete_priv', 7, 'boolean', false, false, false, 'the DELETE privilege', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'create_priv', 8, 'boolean', false, false, false, 'the CREATE privilege', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'drop_priv', 9, 'boolean', false, false, false, 'the DROP privilege', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'grant_priv', 10, 'boolean', false, false, false, 'the GRANT privilege', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'references_priv', 11, 'boolean', false, false, false, 'the REFERENCES privilege', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'index_priv', 12, 'boolean', false, false, false, 'the INDEX privilege', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'alter_priv', 13, 'boolean', false, false, false, 'the ALTER privilete', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'create_tmp_table_priv', 14, 'boolean', false, false, false, 'the Create_tmp_table_priv', '1.0a111', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'lock_tables_priv', 15, 'boolean', false, false, false, 'the Lock_tables_priv', '1.0a111', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'create_view_priv', 16, 'boolean', false, false, false, 'the Create_view_priv', '1.4', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'show_view_priv', 17, 'boolean', false, false, false, 'the Show_view_priv', '1.4', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'create_routine_priv', 18, 'boolean', false, false, false, 'the Create_routine_priv', '1.4', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'alter_routine_priv', 19, 'boolean', false, false, false, 'the Alter_routine_priv', '1.4', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'execute_priv', 20, 'boolean', false, false, false, 'the Execute_priv', '1.4', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'event_priv', 21, 'boolean', false, false, false, 'the Event_priv', '1.54', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'trigger_priv', 22, 'boolean', false, false, false, 'the Trigger_priv', '1.54', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'mysql_server_user', 3, 'fkey', false, false, false, 'the pkey in mysql_server_users', '1.31', '1.61';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'mysql_user', 4, 'fkey', false, false, false, 'the pkey in mysql_users', '1.62', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'select_priv', 5, 'boolean', false, false, false, 'the SELECT privilege', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'insert_priv', 6, 'boolean', false, false, false, 'the INSERT privilege', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'update_priv', 7, 'boolean', false, false, false, 'the UPDATE privilege', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'delete_priv', 8, 'boolean', false, false, false, 'the DELETE privilege', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'create_priv', 9, 'boolean', false, false, false, 'the CREATE privilege', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'drop_priv', 10, 'boolean', false, false, false, 'the DROP privilege', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'grant_priv', 11, 'boolean', false, false, false, 'the GRANT privilege', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'references_priv', 12, 'boolean', false, false, false, 'the REFERENCES privilege', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'index_priv', 13, 'boolean', false, false, false, 'the INDEX privilege', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'alter_priv', 14, 'boolean', false, false, false, 'the ALTER privilete', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'create_tmp_table_priv', 15, 'boolean', false, false, false, 'the Create_tmp_table_priv', '1.0a111', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'lock_tables_priv', 16, 'boolean', false, false, false, 'the Lock_tables_priv', '1.0a111', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'create_view_priv', 17, 'boolean', false, false, false, 'the Create_view_priv', '1.4', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'show_view_priv', 18, 'boolean', false, false, false, 'the Show_view_priv', '1.4', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'create_routine_priv', 19, 'boolean', false, false, false, 'the Create_routine_priv', '1.4', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'alter_routine_priv', 20, 'boolean', false, false, false, 'the Alter_routine_priv', '1.4', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'execute_priv', 21, 'boolean', false, false, false, 'the Execute_priv', '1.4', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'event_priv', 22, 'boolean', false, false, false, 'the Event_priv', '1.54', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_db_users', 'trigger_priv', 23, 'boolean', false, false, false, 'the Trigger_priv', '1.54', null;
 commit;
 begin;
 \echo mysql_hosts
@@ -1468,32 +1471,17 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_res
 commit;
 begin;
 \echo mysql_server_users
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'pkey', 0, 'pkey', false, true, false, 'a generated primary key', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'username', 1, 'username', false, false, false, 'the username', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'pkey', 0, 'pkey', false, true, false, 'a generated primary key', '1.0a100', '1.61';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'username', 1, 'username', false, false, false, 'the username', '1.0a100', '1.61';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'ao_server', 2, 'fkey', false, false, false, 'the pkey of the MySQL server', '1.0a100', '1.3';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'mysql_server', 3, 'fkey', false, false, false, 'the pkey of the MySQL server', '1.4', null;
-insert into schema_columns select
-    nextval('schema_columns_pkey_seq'),
-    'mysql_server_users',
-    'host',
-    4,
-    'ip_address',
-    false,
-    false,
-    false,
-'the host this user is allowed to connect from,
-if this is not null, all access is restricted to these
-hosts, otherwise the entries in mysql_db_users and
-mysql_hosts are used.',
-    '1.0a100',
-    null
-;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'disable_log', 5, 'fkey', true, false, false, 'indicates that this account is disabled', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'predisable_password', 6, 'string', true, false, false, 'the password used before the account was disabled', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'max_questions', 7, 'int', false, false, false, 'the maximum number of questions to this database server, 0 means unlimited', '1.4', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'max_updates', 8, 'int', false, false, false, 'the maximum number of updates to this database server, 0 means unlimited', '1.4', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'max_connections', 9, 'int', false, false, false, 'the maximum number of connections to this database server, 0 means unlimited', '1.0a111', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'max_user_connections', 10, 'int', false, false, false, 'the maximum number of user connections to this database server, 0 means unlimited', '1.4', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'mysql_server', 3, 'fkey', false, false, false, 'the pkey of the MySQL server', '1.4', '1.61';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'host', 4, 'ip_address', false, false, false, 'the host this user is allowed to connect from, if this is not null, all access is restricted to these hosts, otherwise the entries in mysql_db_users and mysql_hosts are used.', '1.0a100', '1.61';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'disable_log', 5, 'fkey', true, false, false, 'indicates that this account is disabled', '1.0a100', '1.61';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'predisable_password', 6, 'string', true, false, false, 'the password used before the account was disabled', '1.0a100', '1.61';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'max_questions', 7, 'int', false, false, false, 'the maximum number of questions to this database server, 0 means unlimited', '1.4', '1.61';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'max_updates', 8, 'int', false, false, false, 'the maximum number of updates to this database server, 0 means unlimited', '1.4', '1.61';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'max_connections', 9, 'int', false, false, false, 'the maximum number of connections to this database server, 0 means unlimited', '1.0a111', '1.61';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'max_user_connections', 10, 'int', false, false, false, 'the maximum number of user connections to this database server, 0 means unlimited', '1.4', '1.61';
 commit;
 begin;
 \echo mysql_servers
@@ -1508,36 +1496,45 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_ser
 commit;
 begin;
 \echo mysql_users
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'username', 0, 'username', false, true, false, 'the username of the MySQL user', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'select_priv', 1, 'boolean', false, false, false, 'the SELECT privilege to all databases', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'insert_priv', 2, 'boolean', false, false, false, 'the INSERT privilege to all databases', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'update_priv', 3, 'boolean', false, false, false, 'the UPDATE privilege to all databases', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'delete_priv', 4, 'boolean', false, false, false, 'the DELETE privilege to all databases', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'create_priv', 5, 'boolean', false, false, false, 'the CREATE privilege to all databases', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'drop_priv', 6, 'boolean', false, false, false, 'the DROP privilege to all databases', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'reload_priv', 7, 'boolean', false, false, false, 'the RELOAD privilege to all databases', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'shutdown_priv', 8, 'boolean', false, false, false, 'the SHUTDOWN privilege to all databases', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'process_priv', 9, 'boolean', false, false, false, 'the PROCESS privilege to all databases', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'file_priv', 10, 'boolean', false, false, false, 'the FILE privilege to all databases', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'grant_priv', 11, 'boolean', false, false, false, 'the GRANT privilege to all databases', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'references_priv', 12, 'boolean', false, false, false, 'the REFERENCES privilege to all databases', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'index_priv', 13, 'boolean', false, false, false, 'the INDEX privilege to all databases', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'alter_priv', 14, 'boolean', false, false, false, 'the ALTER privilete to all databases', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'show_db_priv', 15, 'boolean', false, false, false, '', '1.0a111', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'super_priv', 16, 'boolean', false, false, false, '', '1.0a111', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'create_tmp_table_priv', 17, 'boolean', false, false, false, '', '1.0a111', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'lock_tables_priv', 18, 'boolean', false, false, false, '', '1.0a111', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'execute_priv', 19, 'boolean', false, false, false, '', '1.0a111', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'repl_slave_priv', 20, 'boolean', false, false, false, '', '1.0a111', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'repl_client_priv', 21, 'boolean', false, false, false, '', '1.0a111', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'create_view_priv', 22, 'boolean', false, false, false, '', '1.4', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'show_view_priv', 23, 'boolean', false, false, false, '', '1.4', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'create_routine_priv', 24, 'boolean', false, false, false, '', '1.4', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'alter_routine_priv', 25, 'boolean', false, false, false, '', '1.4', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'create_user_priv', 26, 'boolean', false, false, false, '', '1.4', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'event_priv', 27, 'boolean', false, false, false, 'the Event_priv', '1.54', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'trigger_priv', 28, 'boolean', false, false, false, 'the Trigger_priv', '1.54', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'disable_log', 29, 'fkey', true, false, false, 'indicates that this account is disabled', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'pkey', 0, 'pkey', false, true, false, 'a generated primary key', '1.62', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'username', 1, 'username', false, true, false, 'the username of the MySQL user', '1.0a100', '1.61';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'username', 2, 'username', false, false, false, 'the username of the MySQL user', '1.62', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'mysql_server', 3, 'fkey', false, false, false, 'the pkey of the MySQL server', '1.62', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'host', 4, 'ip_address', false, false, false, 'the host this user is allowed to connect from, if this is not null, all access is restricted to these hosts, otherwise the entries in mysql_db_users and mysql_hosts are used.', '1.62', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'select_priv', 5, 'boolean', false, false, false, 'the SELECT privilege to all databases', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'insert_priv', 6, 'boolean', false, false, false, 'the INSERT privilege to all databases', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'update_priv', 7, 'boolean', false, false, false, 'the UPDATE privilege to all databases', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'delete_priv', 8, 'boolean', false, false, false, 'the DELETE privilege to all databases', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'create_priv', 9, 'boolean', false, false, false, 'the CREATE privilege to all databases', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'drop_priv', 10, 'boolean', false, false, false, 'the DROP privilege to all databases', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'reload_priv', 11, 'boolean', false, false, false, 'the RELOAD privilege to all databases', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'shutdown_priv', 12, 'boolean', false, false, false, 'the SHUTDOWN privilege to all databases', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'process_priv', 13, 'boolean', false, false, false, 'the PROCESS privilege to all databases', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'file_priv', 14, 'boolean', false, false, false, 'the FILE privilege to all databases', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'grant_priv', 15, 'boolean', false, false, false, 'the GRANT privilege to all databases', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'references_priv', 16, 'boolean', false, false, false, 'the REFERENCES privilege to all databases', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'index_priv', 17, 'boolean', false, false, false, 'the INDEX privilege to all databases', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'alter_priv', 18, 'boolean', false, false, false, 'the ALTER privilete to all databases', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'show_db_priv', 19, 'boolean', false, false, false, '', '1.0a111', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'super_priv', 20, 'boolean', false, false, false, '', '1.0a111', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'create_tmp_table_priv', 21, 'boolean', false, false, false, '', '1.0a111', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'lock_tables_priv', 22, 'boolean', false, false, false, '', '1.0a111', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'execute_priv', 23, 'boolean', false, false, false, '', '1.0a111', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'repl_slave_priv', 24, 'boolean', false, false, false, '', '1.0a111', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'repl_client_priv', 25, 'boolean', false, false, false, '', '1.0a111', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'create_view_priv', 26, 'boolean', false, false, false, '', '1.4', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'show_view_priv', 27, 'boolean', false, false, false, '', '1.4', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'create_routine_priv', 28, 'boolean', false, false, false, '', '1.4', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'alter_routine_priv', 29, 'boolean', false, false, false, '', '1.4', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'create_user_priv', 30, 'boolean', false, false, false, '', '1.4', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'event_priv', 31, 'boolean', false, false, false, 'the Event_priv', '1.54', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'trigger_priv', 32, 'boolean', false, false, false, 'the Trigger_priv', '1.54', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'disable_log', 33, 'fkey', true, false, false, 'indicates that this account is disabled', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'predisable_password', 34, 'string', true, false, false, 'the password used before the account was disabled', '1.62', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'max_questions', 35, 'int', false, false, false, 'the maximum number of questions to this database server, 0 means unlimited', '1.62', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'max_updates', 36, 'int', false, false, false, 'the maximum number of updates to this database server, 0 means unlimited', '1.62', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'max_connections', 37, 'int', false, false, false, 'the maximum number of connections to this database server, 0 means unlimited', '1.62', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'max_user_connections', 38, 'int', false, false, false, 'the maximum number of user connections to this database server, 0 means unlimited', '1.62', null;
 commit;
 begin;
 \echo net_binds
@@ -1883,7 +1880,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'description', 5, 'string', false, false, true, 'a description of the resource', '1.0a100', '1.60';
 -- New version of the table
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'pkey', 6, 'pkey', false, true, false, 'a generated unique pkey', '1.62', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'owner', 7, 'accounting', true, false, false, 'the business that owns this resource', '1.62', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'owner', 7, 'accounting', false, false, false, 'the business that owns this resource', '1.62', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'resource_type', 8, 'string', false, false, false, 'the type of resource', '1.62', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'created', 9, 'time', false, false, false, 'the time the resources was created', '1.62', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'created_by', 10, 'username', false, false, false, 'the administrator who created the resource', '1.62', null;
@@ -2766,7 +2763,7 @@ discover - discover card, last four in payment_info',
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'payment_info', 10, 'string', true, false, false, 'the payment info, such as last four of credit card number of check number', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'merchant_account', 11, 'string', true, false, false, 'the merchant account that the payment was processed through', '1.0a100', '1.28';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'processor', 12, 'string', true, false, false, 'the credit card processor that handled the payment', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'credit_card_transaction', 13, 'fkey', true, false, false, 'the credit card transaction for this transaction', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'credit_card_transaction', 13, 'fkey', true, true, false, 'the credit card transaction for this transaction', '1.29', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'apr_num', 14, 'int', true, false, false, 'the approval number for given transaction', '1.0a100', '1.0a127';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'apr_num', 15, 'string', true, false, false, 'the approval number for given transaction', '1.0a128', '1.28';
 insert into schema_columns select

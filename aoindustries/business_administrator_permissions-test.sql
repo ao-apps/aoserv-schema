@@ -1,5 +1,5 @@
-insert into business_administrator_permissions values(1, 'orion', 'set_mysql_server_user_password');
-insert into business_administrator_permissions values(2, 'testuser', 'set_mysql_server_user_password');
+insert into business_administrator_permissions values(1, 'orion', 'set_mysql_user_password');
+insert into business_administrator_permissions values(2, 'testuser', 'set_mysql_user_password');
 insert into business_administrator_permissions values(3, 'orion', 'cancel_business');
 insert into business_administrator_permissions values(4, 'testuser', 'add_ticket');
 insert into business_administrator_permissions values(5, 'orion', 'add_ticket');

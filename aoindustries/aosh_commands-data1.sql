@@ -1435,7 +1435,7 @@ insert into aosh_commands values(
   'add_httpd_tomcat_shared_site',
   'httpd_tomcat_shared_sites',
   'creates a new web site space running a shared Tomcat configuration',
-  '<i>ao_server</i> <i>site_name</i> <i>accounting</i> <i>username</i> <i>group</i> <i>server_admin</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} {""|<i>shared_tomcat_name</i>} {""|<i>tomcat_version</i>} <i>primary_http_hostname</i> [<i>alternate_http_hostname</i>]...',
+  '<i>ao_server</i> <i>site_name</i> <i>accounting</i> <i>username</i> <i>group</i> <i>server_admin</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} <i>shared_tomcat_name</i> <i>primary_http_hostname</i> [<i>alternate_http_hostname</i>]...',
   '1.62',
   null
 );
@@ -2541,7 +2541,7 @@ insert into aosh_commands values(
   'adds a MySQL user to a server',
   '<i>username</i> <i>mysql_server</i> <i>ao_server</i> <i>host</i>',
   '1.4',
-  null
+  '1.61'
 );
 insert into aosh_commands values(
   'disable_mysql_server_user',
@@ -2557,7 +2557,7 @@ insert into aosh_commands values(
   'disables a MySQL account on one server',
   '<i>username</i> <i>mysql_server</i> <i>ao_server</i> <i>reason</i>',
   '1.4',
-  null
+  '1.61'
 );
 insert into aosh_commands values(
   'enable_mysql_server_user',
@@ -2573,7 +2573,7 @@ insert into aosh_commands values(
   'enables a MySQL account on one server',
   '<i>username</i> <i>mysql_server</i> <i>ao_server</i>',
   '1.4',
-  null
+  '1.61'
 );
 insert into aosh_commands values(
   'is_mysql_server_user_password_set',
@@ -2589,7 +2589,7 @@ insert into aosh_commands values(
   'determines if a MySQL account password is set',
   '<i>username</i> <i>mysql_server</i> <i>ao_server</i>',
   '1.4',
-  null
+  '1.61'
 );
 insert into aosh_commands values(
   'remove_mysql_server_user',
@@ -2605,7 +2605,7 @@ insert into aosh_commands values(
   'removes a MySQL user from a server',
   '<i>username</i> <i>mysql_server</i> <i>ao_server</i>',
   '1.4',
-  null
+  '1.61'
 );
 insert into aosh_commands values(
   'set_mysql_server_user_password',
@@ -2621,7 +2621,7 @@ insert into aosh_commands values(
   'sets the password for a MySQL user on one server',
   '<i>username</i> <i>mysql_server</i> <i>ao_server</i> <i>password</i>',
   '1.4',
-  null
+  '1.61'
 );
 insert into aosh_commands values(
   'add_mysql_user',
@@ -2629,6 +2629,14 @@ insert into aosh_commands values(
   'adds a MySQL user to the system',
   '<i>username</i>',
   '1.0a100',
+  '1.61'
+);
+insert into aosh_commands values(
+  'add_mysql_user',
+  'mysql_users',
+  'adds a MySQL user to a server',
+  '<i>username</i> <i>mysql_server</i> <i>ao_server</i> <i>host</i>',
+  '1.62',
   null
 );
 insert into aosh_commands values(
@@ -2637,6 +2645,14 @@ insert into aosh_commands values(
   'determines if <b>all</b>, <b>some</b>, or <b>none</b> of the passwords for a MySQL account are set',
   '<i>username</i>',
   '1.0a100',
+  '1.61'
+);
+insert into aosh_commands values(
+  'is_mysql_user_password_set',
+  'mysql_users',
+  'determines if a MySQL account password is set',
+  '<i>username</i> <i>mysql_server</i> <i>ao_server</i>',
+  '1.62',
   null
 );
 insert into aosh_commands values(
@@ -2661,6 +2677,14 @@ insert into aosh_commands values(
   'disables a MySQL account on all servers',
   '<i>username</i> <i>reason</i>',
   '1.0a100',
+  '1.61'
+);
+insert into aosh_commands values(
+  'disable_mysql_user',
+  'mysql_users',
+  'disables a MySQL account on one server',
+  '<i>username</i> <i>mysql_server</i> <i>ao_server</i> <i>reason</i>',
+  '1.62',
   null
 );
 insert into aosh_commands values(
@@ -2669,6 +2693,14 @@ insert into aosh_commands values(
   'enables a MySQL account on all servers',
   '<i>username</i>',
   '1.0a100',
+  '1.61'
+);
+insert into aosh_commands values(
+  'enable_mysql_user',
+  'mysql_users',
+  'enables a MySQL account on one server',
+  '<i>username</i> <i>mysql_server</i> <i>ao_server</i>',
+  '1.62',
   null
 );
 insert into aosh_commands values(
@@ -2677,6 +2709,14 @@ insert into aosh_commands values(
   'removes a MySQL user from the system',
   '<i>username</i>',
   '1.0a100',
+  '1.61'
+);
+insert into aosh_commands values(
+  'remove_mysql_user',
+  'mysql_users',
+  'removes a MySQL user from a server',
+  '<i>username</i> <i>mysql_server</i> <i>ao_server</i>',
+  '1.62',
   null
 );
 insert into aosh_commands values(
@@ -2685,6 +2725,14 @@ insert into aosh_commands values(
   'sets the password for a MySQL user on all servers',
   '<i>username</i> <i>password</i>',
   '1.0a100',
+  '1.61'
+);
+insert into aosh_commands values(
+  'set_mysql_user_password',
+  'mysql_users',
+  'sets the password for a MySQL user on one server',
+  '<i>username</i> <i>mysql_server</i> <i>ao_server</i> <i>password</i>',
+  '1.62',
   null
 );
 insert into aosh_commands values(

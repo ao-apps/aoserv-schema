@@ -6,9 +6,9 @@ alter table mysql_db_users
   on update cascade
 ;
 alter table mysql_db_users
-  add constraint mysql_server_user_fkey
-  foreign key (mysql_server_user)
-  references mysql_server_users (pkey)
+  add constraint mysql_user_fkey
+  foreign key (mysql_user)
+  references mysql_users (pkey)
   on delete restrict
   on update cascade
 ;

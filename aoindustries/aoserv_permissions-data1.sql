@@ -62,11 +62,6 @@ insert into aoserv_permissions values(
     'get_mysql_table_status',
     (select count(*) from aoserv_permissions)
 );
--- mysql_server_users
-insert into aoserv_permissions values(
-    'set_mysql_server_user_password',
-    (select count(*) from aoserv_permissions)
-);
 -- mysql_servers
 insert into aoserv_permissions values(
     'get_mysql_master_status',
@@ -74,6 +69,11 @@ insert into aoserv_permissions values(
 );
 insert into aoserv_permissions values(
     'get_mysql_slave_status',
+    (select count(*) from aoserv_permissions)
+);
+-- mysql_users
+insert into aoserv_permissions values(
+    'set_mysql_user_password',
     (select count(*) from aoserv_permissions)
 );
 -- postgres_server_users

@@ -2,7 +2,6 @@ COPY "resource_types" FROM stdin;
 aoserv_daemon
 aoserv_master
 bandwidth
-business
 consulting
 disk
 httpd
@@ -177,4 +176,5 @@ smf
 phpbb
 phpgroupware
 oscommerce
+mysql_server
 \.

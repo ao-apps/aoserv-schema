@@ -3,13 +3,9 @@ grant all on mysql_db_users_pkey_seq to aoadmin;
 grant select, update on mysql_db_users_pkey_seq to aoserv_app;
 
 create table mysql_db_users (
-  pkey integer
-    default nextval('mysql_db_users_pkey_seq')
-    constraint mysql_db_users_pkey primary key,
-  mysql_database integer
-    not null,
-  mysql_server_user integer
-    not null,
+  pkey integer default nextval('mysql_db_users_pkey_seq') primary key,
+  mysql_database integer not null,
+  mysql_user integer not null,
   select_priv bool
     not null
     default false,
@@ -66,8 +62,7 @@ create table mysql_db_users (
     default false,
   trigger_priv bool
     not null
-    default false,
-  unique (mysql_database, mysql_server_user)
+    default false
 );
 grant all on mysql_db_users to aoadmin;
 grant select, update, insert, delete on mysql_db_users to aoserv_app;

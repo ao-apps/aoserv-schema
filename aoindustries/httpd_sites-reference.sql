@@ -13,16 +13,16 @@ alter table httpd_sites
   on update cascade
 ;
 alter table httpd_sites
-  add constraint linux_account_fkey
-  foreign key (linux_account)
-  references linux_accounts (username)
+  add constraint linux_server_account_fkey
+  foreign key (linux_server_account)
+  references linux_server_accounts (pkey)
   on delete restrict
   on update cascade
 ;
 alter table httpd_sites
-  add constraint linux_group_fkey
-  foreign key (linux_group)
-  references linux_groups (name)
+  add constraint linux_server_group_fkey
+  foreign key (linux_server_group)
+  references linux_server_groups (pkey)
   on delete restrict
   on update cascade
 ;

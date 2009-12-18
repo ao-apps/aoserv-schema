@@ -4,65 +4,28 @@ grant select, update on mysql_db_users_pkey_seq to aoserv_app;
 
 create table mysql_db_users (
   pkey integer default nextval('mysql_db_users_pkey_seq') primary key,
+  mysql_server integer not null, -- This is not selected by the client, it is used to reference superkeys to ensure the database and user are for the same mysql_server
   mysql_database integer not null,
   mysql_user integer not null,
-  select_priv bool
-    not null
-    default false,
-  insert_priv bool
-    not null
-    default false,
-  update_priv bool
-    not null
-    default false,
-  delete_priv bool
-    not null
-    default false,
-  create_priv bool
-    not null
-    default false,
-  drop_priv bool
-    not null
-    default false,
-  grant_priv bool
-    not null
-    default false,
-  references_priv bool
-    not null
-    default false,
-  index_priv bool
-    not null
-    default false,
-  alter_priv bool
-    not null
-    default false,
-  create_tmp_table_priv bool
-    not null
-    default false,
-  lock_tables_priv bool
-    not null
-    default false,
-  create_view_priv bool
-    not null
-    default false,
-  show_view_priv bool
-    not null
-    default false,
-  create_routine_priv bool
-    not null
-    default false,
-  alter_routine_priv bool
-    not null
-    default false,
-  execute_priv bool
-    not null
-    default false,
-  event_priv bool
-    not null
-    default false,
-  trigger_priv bool
-    not null
-    default false
+  select_priv bool not null default false,
+  insert_priv bool not null default false,
+  update_priv bool not null default false,
+  delete_priv bool not null default false,
+  create_priv bool not null default false,
+  drop_priv bool not null default false,
+  grant_priv bool not null default false,
+  references_priv bool not null default false,
+  index_priv bool not null default false,
+  alter_priv bool not null default false,
+  create_tmp_table_priv bool not null default false,
+  lock_tables_priv bool not null default false,
+  create_view_priv bool not null default false,
+  show_view_priv bool not null default false,
+  create_routine_priv bool not null default false,
+  alter_routine_priv bool not null default false,
+  execute_priv bool not null default false,
+  event_priv bool not null default false,
+  trigger_priv bool not null default false
 );
 grant all on mysql_db_users to aoadmin;
 grant select, update, insert, delete on mysql_db_users to aoserv_app;

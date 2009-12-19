@@ -21,6 +21,11 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_server
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_server_daemon_hosts', 'host', 2, 'ip_address', false, false, false, 'the hostname or IP address that is allowed to connect', '1.0a100', null;
 commit;
 begin;
+\echo ao_server_resources
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_server_resources', 'resource', 0, 'fkey', false, true, false, 'a resource id', '1.62', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_server_resources', 'ao_server', 1, 'fkey', false, false, false, 'the pkey of the ao_server', '1.62', null;
+commit;
+begin;
 \echo ao_servers
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'server', 0, 'fkey', false, true, false, 'a reference to servers', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'num_cpu', 1, 'int', false, false, false, 'the number of CPUs in the machine', '1.0a100', '1.30';
@@ -1485,14 +1490,14 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_ser
 commit;
 begin;
 \echo mysql_servers
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'pkey', 0, 'pkey', false, true, false, 'a unique, generated primary key', '1.4', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'name', 1, 'string', false, false, false, 'the name of the database', '1.4', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'ao_server', 2, 'fkey', false, false, false, 'the pkey of the server that this database is hosted on', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'version', 3, 'fkey', false, false, false, 'the pkey of the MySQL version', '1.4', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'max_connections', 4, 'int', false, false, false, 'the maximum number of connections for the db', '1.4', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'net_bind', 5, 'fkey', false, true, false, 'the port the servers binds to', '1.4', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'package', 6, 'package', false, false, false, 'the package that owns the instance', '1.28', '1.61';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'accounting', 7, 'accounting', false, false, false, 'the business that owns the instance', '1.62', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'pkey', 0, 'pkey', false, true, false, 'a unique, generated primary key', '1.4', '1.61';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'ao_server_resource', 1, 'pkey', false, true, false, 'the unique resource id', '1.62', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'name', 2, 'string', false, false, false, 'the name of the database', '1.4', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'ao_server', 3, 'fkey', false, false, false, 'the pkey of the server that this database is hosted on', '1.0a100', '1.61';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'version', 4, 'fkey', false, false, false, 'the pkey of the MySQL version', '1.4', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'max_connections', 5, 'int', false, false, false, 'the maximum number of connections for the db', '1.4', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'net_bind', 6, 'fkey', false, true, false, 'the port the servers binds to', '1.4', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'package', 7, 'package', false, false, false, 'the package that owns the instance', '1.28', '1.61';
 commit;
 begin;
 \echo mysql_users
@@ -1540,9 +1545,9 @@ begin;
 \echo net_binds
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'pkey', 0, 'pkey', false, true, false, 'a generated pkey', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'package', 1, 'package', false, false, false, 'the package that owns the opened port', '1.0a100', '1.61';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'accounting', 2, 'accounting', false, false, false, 'the business that owns the opened port', '1.62', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'business_server', 2, 'fkey', false, false, false, 'the business and server this bind is on', '1.62', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'ao_server', 3, 'fkey', false, false, false, 'the pkey of the server that this port is bound on', '1.0a100', '1.32';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'server', 4, 'fkey', false, false, false, 'the pkey of the server that this port is bound on', '1.33', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'server', 4, 'fkey', false, false, false, 'the pkey of the server that this port is bound on', '1.33', '1.61';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'ip_address', 5, 'fkey', false, false, false, 'the pkey of the IP address that is bound to', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'port', 6, 'int', false, false, false, 'the port number that is bound', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'net_protocol', 7, 'string', false, false, false, 'the network protocol (<code>net_protocols</code>)', '1.0a100', null;
@@ -1880,8 +1885,8 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'description', 5, 'string', false, false, true, 'a description of the resource', '1.0a100', '1.60';
 -- New version of the table
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'pkey', 6, 'pkey', false, true, false, 'a generated unique pkey', '1.62', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'owner', 7, 'accounting', false, false, false, 'the business that owns this resource', '1.62', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'resource_type', 8, 'string', false, false, false, 'the type of resource', '1.62', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'resource_type', 7, 'string', false, false, false, 'the type of resource', '1.62', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'accounting', 8, 'accounting', false, false, false, 'the business that owns this resource', '1.62', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'created', 9, 'time', false, false, false, 'the time the resources was created', '1.62', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'created_by', 10, 'username', false, false, false, 'the administrator who created the resource', '1.62', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'resources', 'disable_log', 11, 'fkey', true, false, false, 'indicates the resource is disabled', '1.62', null;

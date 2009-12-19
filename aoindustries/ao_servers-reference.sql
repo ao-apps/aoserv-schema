@@ -7,8 +7,8 @@ alter table ao_servers
 ;
 alter table ao_servers
   add constraint daemon_bind_fkey
-  foreign key (daemon_bind)
-  references net_binds (pkey)
+  foreign key (server, daemon_bind)
+  references net_binds (server, pkey)
   on delete restrict
   on update cascade
 ;
@@ -42,8 +42,8 @@ alter table ao_servers
 ;
 alter table ao_servers
   add constraint jilter_bind_fkey
-  foreign key (jilter_bind)
-  references net_binds (pkey)
+  foreign key (server, jilter_bind)
+  references net_binds (server, pkey)
   on delete restrict
   on update cascade
 ;

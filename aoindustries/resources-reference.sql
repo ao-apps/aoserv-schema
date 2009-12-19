@@ -1,14 +1,14 @@
 alter table resources
-  add constraint owner_fkey
-  foreign key (owner)
-  references businesses (accounting)
+  add constraint resource_type_fkey
+  foreign key (resource_type)
+  references resource_types ("name")
   on delete restrict
   on update cascade
 ;
 alter table resources
-  add constraint resource_type_fkey
-  foreign key (resource_type)
-  references resource_types ("name")
+  add constraint accounting_fkey
+  foreign key (accounting)
+  references businesses (accounting)
   on delete restrict
   on update cascade
 ;

@@ -27,6 +27,15 @@ insert into schema_tables values(
     null
 );
 insert into schema_tables values(
+    'ao_server_resources',
+    (select count(*) from schema_tables),
+    'AOServ Server Resources',
+    false,
+    'The ao_server_resources table keeps track of all the resources within a server running the AOServ distribution.',
+    '1.62',
+    null
+);
+insert into schema_tables values(
     'ao_servers',
     (select count(*) from schema_tables),
     'AOServ Servers',

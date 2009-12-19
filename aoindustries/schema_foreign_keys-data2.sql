@@ -56,6 +56,11 @@ begin;
 select add_schema_foreign_key('ao_server_daemon_hosts', 'ao_server', 'ao_servers', 'server', '1.0a100', null);
 commit;
 begin;
+\echo ao_server_resources
+select add_schema_foreign_key('ao_server_resources', 'resource', 'resources', 'pkey', '1.62', null);
+select add_schema_foreign_key('ao_server_resources', 'ao_server', 'ao_servers', 'server', '1.62', null);
+commit;
+begin;
 \echo ao_servers
 select add_schema_foreign_key('ao_servers', 'server', 'servers', 'pkey', '1.0a100', null);
 select add_schema_foreign_key('ao_servers', 'daemon_bind', 'net_binds', 'pkey', '1.0a100', null);
@@ -283,7 +288,8 @@ begin;
 select add_schema_foreign_key('failover_mysql_replications', 'ao_server', 'ao_servers', 'server', '1.59', null);
 select add_schema_foreign_key('failover_mysql_replications', 'replication', 'failover_file_replications', 'pkey', '1.28', '1.58');
 select add_schema_foreign_key('failover_mysql_replications', 'replication', 'failover_file_replications', 'pkey', '1.59', null);
-select add_schema_foreign_key('failover_mysql_replications', 'mysql_server', 'mysql_servers', 'pkey', '1.28', null);
+select add_schema_foreign_key('failover_mysql_replications', 'mysql_server', 'mysql_servers', 'pkey', '1.28', '1.61');
+select add_schema_foreign_key('failover_mysql_replications', 'mysql_server', 'mysql_servers', 'ao_server_resource', '1.62', null);
 commit;
 begin;
 \echo file_backups
@@ -601,7 +607,8 @@ commit;
 begin;
 \echo mysql_databases
 select add_schema_foreign_key('mysql_databases', 'ao_server', 'ao_servers', 'server', '1.0a100', '1.3');
-select add_schema_foreign_key('mysql_databases', 'mysql_server', 'mysql_servers', 'pkey', '1.4', null);
+select add_schema_foreign_key('mysql_databases', 'mysql_server', 'mysql_servers', 'pkey', '1.4', '1.61');
+select add_schema_foreign_key('mysql_databases', 'mysql_server', 'mysql_servers', 'ao_server_resource', '1.62', null);
 select add_schema_foreign_key('mysql_databases', 'package', 'packages', 'name', '1.0a100', '1.61');
 select add_schema_foreign_key('mysql_databases', 'accounting', 'businesses', 'accounting', '1.62', null);
 select add_schema_foreign_key('mysql_databases', 'backup_level', 'backup_levels', 'level', '1.0a100', '1.30');
@@ -627,25 +634,25 @@ select add_schema_foreign_key('mysql_server_users', 'disable_log', 'disable_log'
 commit;
 begin;
 \echo mysql_servers
-select add_schema_foreign_key('mysql_servers', 'ao_server', 'ao_servers', 'server', '1.4', null);
+select add_schema_foreign_key('mysql_servers', 'ao_server_resource', 'ao_server_resources', 'resource', '1.62', null);
+select add_schema_foreign_key('mysql_servers', 'ao_server', 'ao_servers', 'server', '1.4', '1.61');
 select add_schema_foreign_key('mysql_servers', 'version', 'technology_versions', 'pkey', '1.4', null);
 select add_schema_foreign_key('mysql_servers', 'net_bind', 'net_binds', 'pkey', '1.4', null);
 select add_schema_foreign_key('mysql_servers', 'package', 'packages', 'name', '1.28', '1.61');
-select add_schema_foreign_key('mysql_servers', 'accounting', 'businesses', 'accounting', '1.62', null);
 commit;
 begin;
 \echo mysql_users
 select add_schema_foreign_key('mysql_users', 'username', 'usernames', 'username', '1.0a100', '1.61');
 select add_schema_foreign_key('mysql_users', 'username', 'usernames', 'username', '1.62', null);
-select add_schema_foreign_key('mysql_users', 'mysql_server', 'mysql_servers', 'pkey', '1.62', null);
+select add_schema_foreign_key('mysql_users', 'mysql_server', 'mysql_servers', 'ao_server_resource', '1.62', null);
 select add_schema_foreign_key('mysql_users', 'disable_log', 'disable_log', 'pkey', '1.0a100', null);
 commit;
 begin;
 \echo net_binds
 select add_schema_foreign_key('net_binds', 'package', 'packages', 'name', '1.0a100', '1.61');
-select add_schema_foreign_key('net_binds', 'accounting', 'businesses', 'accounting', '1.62', null);
+select add_schema_foreign_key('net_binds', 'business_server', 'business_servers', 'pkey', '1.62', null);
 select add_schema_foreign_key('net_binds', 'ao_server', 'ao_servers', 'server', '1.0a100', '1.32');
-select add_schema_foreign_key('net_binds', 'server', 'servers', 'pkey', '1.33', null);
+select add_schema_foreign_key('net_binds', 'server', 'servers', 'pkey', '1.33', '1.61');
 select add_schema_foreign_key('net_binds', 'ip_address', 'ip_addresses', 'pkey', '1.0a100', null);
 select add_schema_foreign_key('net_binds', 'port', 'net_ports', 'port', '1.0a100', null);
 select add_schema_foreign_key('net_binds', 'net_protocol', 'net_protocols', 'protocol', '1.0a100', null);
@@ -779,8 +786,8 @@ select add_schema_foreign_key('resellers', 'accounting', 'brands', 'accounting',
 commit;
 begin;
 \echo resources
-select add_schema_foreign_key('resources', 'owner', 'businesses', 'accounting', '1.62', null);
 select add_schema_foreign_key('resources', 'resource_type', 'resource_types', 'name', '1.62', null);
+select add_schema_foreign_key('resources', 'accounting', 'businesses', 'accounting', '1.62', null);
 select add_schema_foreign_key('resources', 'created_by', 'business_administrators', 'username', '1.62', null);
 select add_schema_foreign_key('resources', 'disable_log', 'disable_log', 'pkey', '1.62', null);
 commit;

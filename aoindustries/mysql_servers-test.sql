@@ -1,7 +1,10 @@
+begin;
 insert into mysql_servers values(
     1,
-    '4.1',
+    'mysql_server',
+   'AOINDUSTRIES',
     2,
+    '4.1',
     (
         select
             pkey
@@ -15,13 +18,14 @@ insert into mysql_servers values(
             and operating_system_version=(select pkey from operating_system_versions where operating_system='centos' and version_number='5')
     ),
     1000,
-    1,
-    'AOINDUSTRIES'
+    1
 );
 insert into mysql_servers values(
     2,
-    '5.0',
+    'mysql_server',
+   'AOINDUSTRIES',
     2,
+    '5.0',
     (
         select
             pkey
@@ -35,6 +39,6 @@ insert into mysql_servers values(
             and operating_system_version=(select pkey from operating_system_versions where operating_system='centos' and version_number='5')
     ),
     1000,
-    2,
-    'AOINDUSTRIES'
+    2
 );
+commit;

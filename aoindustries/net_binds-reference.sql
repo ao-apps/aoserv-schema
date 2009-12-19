@@ -1,14 +1,14 @@
 alter table net_binds
   add constraint accounting_fkey
-  foreign key (accounting)
-  references businesses (accounting)
+  foreign key (accounting, business_server)
+  references business_servers (accounting, pkey)
   on delete restrict
   on update cascade
 ;
 alter table net_binds
   add constraint server_fkey
-  foreign key (server)
-  references servers (pkey)
+  foreign key (server, business_server)
+  references business_servers (server, pkey)
   on delete restrict
   on update cascade
 ;

@@ -165,7 +165,6 @@ hardware_ram_ddr2_667_ecc_4096
 hardware_ram_ddr2_667_ecc_8192
 joomla
 drupal
-mysql_database
 postgresql_database
 wordpress
 xoops
@@ -176,5 +175,7 @@ smf
 phpbb
 phpgroupware
 oscommerce
+mysql_database
 mysql_server
+mysql_user
 \.

@@ -1,7 +1,6 @@
-COPY mysql_databases (pkey, name, mysql_server, accounting) FROM stdin;
-1	mysql	2	AOINDUSTRIES
-2	information_schema	2	AOINDUSTRIES
-3	mysql	1	AOINDUSTRIES
-40	newmediaworks	1	NMW
+COPY mysql_databases FROM stdin;
+6	mysql_database	2	mysql	2
+7	mysql_database	2	information_schema	2
+8	mysql_database	2	mysql	1
+9	mysql_database	2	newmediaworks	1
 \.
-SELECT setval ('"mysql_databases_pkey_seq"', 42, true);

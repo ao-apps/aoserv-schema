@@ -1,1275 +1,1275 @@
 COPY "technology_names" FROM stdin;
-analog	\N	\N	\N	\N	\N
-anonftp	\N	\N	\N	\N	\N
-Socket	\N	\N	\N	\N	\N
-Spreadsheet-WriteExcel	\N	\N	\N	\N	\N
-daemontools	\N	\N	\N	\N	\N
-dot-forward	\N	\N	\N	\N	\N
-fastforward	\N	\N	\N	\N	\N
-qmail	\N	\N	\N	\N	\N
-apache	\N	\N	\N	\N	\N
-apache-devel	\N	\N	\N	\N	\N
-Apache-JSSI	\N	\N	\N	\N	\N
-Apache-Jyve	\N	\N	\N	\N	\N
-Apache-Turbine	\N	\N	\N	\N	\N
-ash	\N	\N	\N	\N	\N
-aspell	\N	\N	\N	\N	\N
-autoconf	\N	\N	\N	\N	\N
-automake	\N	\N	\N	\N	\N
-basesystem	\N	\N	\N	\N	\N
-bash	\N	\N	\N	\N	\N
-bc	\N	\N	\N	\N	\N
-bdflush	\N	\N	\N	\N	\N
-bind	\N	\N	\N	\N	\N
-bind-utils	\N	\N	\N	\N	\N
-binutils	\N	\N	\N	\N	\N
-byacc	\N	\N	\N	\N	\N
-bzip2	\N	\N	\N	\N	\N
-caching-nameserver	\N	\N	\N	\N	\N
-chkconfig	\N	\N	\N	\N	\N
-chkfontpath	\N	\N	\N	\N	\N
-compat-libstdc++	\N	\N	\N	\N	\N
-console-tools	\N	\N	\N	\N	\N
-ucspi-tcp	\N	\N	\N	\N	\N
-cos	\N	\N	\N	\N	\N
-cpio	\N	\N	\N	\N	\N
-cpp	\N	\N	\N	\N	\N
-cracklib	\N	\N	\N	\N	\N
-cracklib-dicts	\N	\N	\N	\N	\N
-crontabs	\N	\N	\N	\N	\N
-Crypt-CBC	\N	\N	\N	\N	\N
-Crypt-DES	\N	\N	\N	\N	\N
-cvs	\N	\N	\N	\N	\N
-cyrus-sasl	\N	\N	\N	\N	\N
-Data-ShowTable	\N	\N	\N	\N	\N
-db1	\N	\N	\N	\N	\N
-db2	\N	\N	\N	\N	\N
-db3	\N	\N	\N	\N	\N
-DBD-Pg	\N	\N	\N	\N	\N
-DBI	\N	\N	\N	\N	\N
-dev	\N	\N	\N	\N	\N
-dev86	\N	\N	\N	\N	\N
-diffutils	\N	\N	\N	\N	\N
-Digest-MD5	\N	\N	\N	\N	\N
-ezmlm	\N	\N	\N	\N	\N
-mrtg	\N	\N	\N	\N	\N
-e2fsprogs	\N	\N	\N	\N	\N
-e2fsprogs-devel	\N	\N	\N	\N	\N
-ecs	\N	\N	\N	\N	\N
-ed	\N	\N	\N	\N	\N
-elm	\N	\N	\N	\N	\N
-sysstat	\N	\N	\N	\N	\N
-hwcrypto	\N	\N	\N	\N	\N
-emacs	\N	\N	\N	\N	\N
-emacs-el	\N	\N	\N	\N	\N
-emacs-leim	\N	\N	\N	\N	\N
-emacs-nox	\N	\N	\N	\N	\N
-emacs-X11	\N	\N	\N	\N	\N
-expect	\N	\N	\N	\N	\N
-fastcgi	\N	\N	\N	\N	\N
-FCGI	\N	\N	\N	\N	\N
-fftw	\N	\N	\N	\N	\N
-fftw-devel	\N	\N	\N	\N	\N
-file	\N	\N	\N	\N	\N
-filesystem	\N	\N	\N	\N	\N
-fileutils	\N	\N	\N	\N	\N
-findutils	\N	\N	\N	\N	\N
-flex	\N	\N	\N	\N	\N
-fop	\N	\N	\N	\N	\N
-fortune-mod	\N	\N	\N	\N	\N
-FreeMarker	\N	\N	\N	\N	\N
-freetype	\N	\N	\N	\N	\N
-ftp	\N	\N	\N	\N	\N
-iptables-ipv6	\N	\N	\N	\N	\N
-Garbage	\N	\N	\N	\N	\N
-gawk	\N	\N	\N	\N	\N
-gcc	\N	\N	\N	\N	\N
-gcc-c++	\N	\N	\N	\N	\N
-gcc-g77	\N	\N	\N	\N	\N
-gcc-objc	\N	\N	\N	\N	\N
-gd	\N	\N	\N	\N	\N
-gdb	\N	\N	\N	\N	\N
-gdbm	\N	\N	\N	\N	\N
-gdbm-devel	\N	\N	\N	\N	\N
-ghostscript	\N	\N	\N	\N	\N
-ghostscript-fonts	\N	\N	\N	\N	\N
-glib	\N	\N	\N	\N	\N
-glibc	\N	\N	\N	\N	\N
-glibc-common	\N	\N	\N	\N	\N
-glibc-devel	\N	\N	\N	\N	\N
-glib-devel	\N	\N	\N	\N	\N
-gmp	\N	\N	\N	\N	\N
-gnupg	\N	\N	\N	\N	\N
-gnu.regexp	\N	\N	\N	\N	\N
-grep	\N	\N	\N	\N	\N
-groff	\N	\N	\N	\N	\N
-gtk+	\N	\N	\N	\N	\N
-gtk+-devel	\N	\N	\N	\N	\N
-gzip	\N	\N	\N	\N	\N
-hdparm	\N	\N	\N	\N	\N
-HTML-Parser	\N	\N	\N	\N	\N
-imap	\N	\N	\N	\N	\N
-indexhtml	\N	\N	\N	\N	\N
-info	\N	\N	\N	\N	\N
-initscripts	\N	\N	\N	\N	\N
-InterBaseSS_LI	\N	\N	\N	\N	\N
-InterClient	\N	\N	\N	\N	\N
-iptraf	\N	\N	\N	\N	\N
-iputils	\N	\N	\N	\N	\N
-jaf	\N	\N	\N	\N	\N
-castor	\N	\N	\N	\N	\N
-jakarta-cocoon	\N	\N	\N	\N	\N
-jakarta-oro	\N	\N	\N	\N	\N
-jakarta-regexp	\N	\N	\N	\N	\N
-jakarta-servletapi	\N	\N	\N	\N	\N
-jakarta-slide	\N	\N	\N	\N	\N
-eject	\N	\N	\N	\N	\N
-jakarta-taglibs	\N	\N	\N	\N	\N
-jakarta-tomcat	\N	\N	\N	\N	\N
-jakarta-watchdog	\N	\N	\N	\N	\N
-javamail	\N	\N	\N	\N	\N
-JBoss	\N	\N	\N	\N	\N
-jdbc	\N	\N	\N	\N	\N
-tkinter	\N	\N	\N	\N	\N
-ant	\N	\N	\N	\N	\N
-JSDK	\N	\N	\N	\N	\N
-JSP	\N	\N	\N	\N	\N
-jsse	\N	\N	\N	\N	\N
-kavachart	\N	\N	\N	\N	\N
-kernel-headers	\N	\N	\N	\N	\N
-kernel-smp	\N	\N	\N	\N	\N
-krb5-libs	\N	\N	\N	\N	\N
-less	\N	\N	\N	\N	\N
-libgr	\N	\N	\N	\N	\N
-libjpeg	\N	\N	\N	\N	\N
-libjpeg-devel	\N	\N	\N	\N	\N
-libmcrypt	\N	\N	\N	\N	\N
-libnet	\N	\N	\N	\N	\N
-libpng	\N	\N	\N	\N	\N
-libpng-devel	\N	\N	\N	\N	\N
-libstdc++	\N	\N	\N	\N	\N
-libstdc++-devel	\N	\N	\N	\N	\N
-tmpwatch	\N	\N	\N	\N	\N
-libtermcap	\N	\N	\N	\N	\N
-libtiff	\N	\N	\N	\N	\N
-libtool	\N	\N	\N	\N	\N
-libtool-libs	\N	\N	\N	\N	\N
-libungif	\N	\N	\N	\N	\N
-libungif-progs	\N	\N	\N	\N	\N
-libwww-perl	\N	\N	\N	\N	\N
-lilo	\N	\N	\N	\N	\N
-linuxconf	\N	\N	\N	\N	\N
-logrotate	\N	\N	\N	\N	\N
-traceroute	\N	\N	\N	\N	\N
-losetup	\N	\N	\N	\N	\N
-lslk	\N	\N	\N	\N	\N
-lsof	\N	\N	\N	\N	\N
-ltrace	\N	\N	\N	\N	\N
-lynx	\N	\N	\N	\N	\N
-m4	\N	\N	\N	\N	\N
-mailcap	\N	\N	\N	\N	\N
-mailx	\N	\N	\N	\N	\N
-majordomo	\N	\N	\N	\N	\N
-make	\N	\N	\N	\N	\N
-MAKEDEV	\N	\N	\N	\N	\N
-man	\N	\N	\N	\N	\N
-man-pages	\N	\N	\N	\N	\N
-mc	\N	\N	\N	\N	\N
-mcrypt	\N	\N	\N	\N	\N
-Mesa	\N	\N	\N	\N	\N
-metamail	\N	\N	\N	\N	\N
-MIME-Base64	\N	\N	\N	\N	\N
-mingetty	\N	\N	\N	\N	\N
-mkbootdisk	\N	\N	\N	\N	\N
-mkinitrd	\N	\N	\N	\N	\N
-mktemp	\N	\N	\N	\N	\N
-mm-mysql	\N	\N	\N	\N	\N
-mod_ssl	\N	\N	\N	\N	\N
-modutils	\N	\N	\N	\N	\N
-mount	\N	\N	\N	\N	\N
-Msql-Mysql-modules	\N	\N	\N	\N	\N
-mutt	\N	\N	\N	\N	\N
-mx	\N	\N	\N	\N	\N
-ncompress	\N	\N	\N	\N	\N
-ncurses	\N	\N	\N	\N	\N
-ncurses4	\N	\N	\N	\N	\N
-ncurses-devel	\N	\N	\N	\N	\N
-unzip	\N	\N	\N	\N	\N
-Net-Daemon	\N	\N	\N	\N	\N
-net-tools	\N	\N	\N	\N	\N
-nscd	\N	\N	\N	\N	\N
-openldap	\N	\N	\N	\N	\N
-openssh	\N	\N	\N	\N	\N
-openssh-clients	\N	\N	\N	\N	\N
-openssh-server	\N	\N	\N	\N	\N
-openssl	\N	\N	\N	\N	\N
-openssl-devel	\N	\N	\N	\N	\N
-openxml	\N	\N	\N	\N	\N
-ozone	\N	\N	\N	\N	\N
-pam	\N	\N	\N	\N	\N
-passwd	\N	\N	\N	\N	\N
-patch	\N	\N	\N	\N	\N
-perl	\N	\N	\N	\N	\N
-php	\N	\N	\N	\N	\N
-URI	\N	\N	\N	\N	\N
-urw-fonts	\N	\N	\N	\N	\N
-utempter	\N	\N	\N	\N	\N
-phpMyAdmin	\N	\N	\N	\N	\N
-util-linux	\N	\N	\N	\N	\N
-village	\N	\N	\N	\N	\N
-pidentd	\N	\N	\N	\N	\N
-pine	\N	\N	\N	\N	\N
-PlRPC	\N	\N	\N	\N	\N
-pmake	\N	\N	\N	\N	\N
-vim-common	\N	\N	\N	\N	\N
-PoolMan	\N	\N	\N	\N	\N
-pop3	\N	\N	\N	\N	\N
-popt	\N	\N	\N	\N	\N
-postgresql	\N	\N	\N	\N	\N
-procinfo	\N	\N	\N	\N	\N
-procmail	\N	\N	\N	\N	\N
-procps	\N	\N	\N	\N	\N
-vim-minimal	\N	\N	\N	\N	\N
-psmisc	\N	\N	\N	\N	\N
-pspell	\N	\N	\N	\N	\N
-pvm	\N	\N	\N	\N	\N
-pvm-gui	\N	\N	\N	\N	\N
-pwdb	\N	\N	\N	\N	\N
-python	\N	\N	\N	\N	\N
-vixie-cron	\N	\N	\N	\N	\N
-qt	\N	\N	\N	\N	\N
-perl-suidperl	\N	\N	\N	\N	\N
-webmacro	\N	\N	\N	\N	\N
-raidtools	\N	\N	\N	\N	\N
-wget	\N	\N	\N	\N	\N
-readline	\N	\N	\N	\N	\N
-readline-devel	\N	\N	\N	\N	\N
-redhat-logos	\N	\N	\N	\N	\N
-redhat-release	\N	\N	\N	\N	\N
-rgrep	\N	\N	\N	\N	\N
-rmt	\N	\N	\N	\N	\N
-rootfiles	\N	\N	\N	\N	\N
-rpm	\N	\N	\N	\N	\N
-rpm-build	\N	\N	\N	\N	\N
-which	\N	\N	\N	\N	\N
-sash	\N	\N	\N	\N	\N
-screen	\N	\N	\N	\N	\N
-sed	\N	\N	\N	\N	\N
-sendmail	\N	\N	\N	\N	\N
-sendmail-cf	\N	\N	\N	\N	\N
-setserial	\N	\N	\N	\N	\N
-setup	\N	\N	\N	\N	\N
-shadow-utils	\N	\N	\N	\N	\N
-sharutils	\N	\N	\N	\N	\N
-sh-utils	\N	\N	\N	\N	\N
-slang	\N	\N	\N	\N	\N
-slocate	\N	\N	\N	\N	\N
-words	\N	\N	\N	\N	\N
-spfc	\N	\N	\N	\N	\N
-wu-ftpd	\N	\N	\N	\N	\N
-wv	\N	\N	\N	\N	\N
-xang	\N	\N	\N	\N	\N
-stat	\N	\N	\N	\N	\N
-Storable	\N	\N	\N	\N	\N
-stunnel	\N	\N	\N	\N	\N
-Xaw3d	\N	\N	\N	\N	\N
-symlinks	\N	\N	\N	\N	\N
-sysklogd	\N	\N	\N	\N	\N
-SysVinit	\N	\N	\N	\N	\N
-talk	\N	\N	\N	\N	\N
-talk-server	\N	\N	\N	\N	\N
-tar	\N	\N	\N	\N	\N
-tcl	\N	\N	\N	\N	\N
-tcpdump	\N	\N	\N	\N	\N
-tcp_wrappers	\N	\N	\N	\N	\N
-tcsh	\N	\N	\N	\N	\N
-telnet	\N	\N	\N	\N	\N
-telnet-server	\N	\N	\N	\N	\N
-termcap	\N	\N	\N	\N	\N
-texinfo	\N	\N	\N	\N	\N
-textutils	\N	\N	\N	\N	\N
-time	\N	\N	\N	\N	\N
-tix	\N	\N	\N	\N	\N
-tk	\N	\N	\N	\N	\N
-kernel-doc	\N	\N	\N	\N	\N
-ezmlm-idx	\N	\N	\N	\N	\N
-qmail-smtpd-auth	\N	\N	\N	\N	\N
-dhcpcd	\N	\N	\N	\N	\N
-mod_jk	\N	\N	\N	\N	\N
-rdist	\N	\N	\N	\N	\N
-rsync	\N	\N	\N	\N	\N
-XFree86	\N	\N	\N	\N	\N
-XFree86-100dpi-fonts	\N	\N	\N	\N	\N
-XFree86-75dpi-fonts	\N	\N	\N	\N	\N
-XFree86-devel	\N	\N	\N	\N	\N
-XFree86-ISO8859-2-75dpi-fonts	\N	\N	\N	\N	\N
-XFree86-libs	\N	\N	\N	\N	\N
-XFree86-xfs	\N	\N	\N	\N	\N
-XFree86-Xvfb	\N	\N	\N	\N	\N
-xinetd	\N	\N	\N	\N	\N
-xmlrpc-java	\N	\N	\N	\N	\N
-zip	\N	\N	\N	\N	\N
-zlib	\N	\N	\N	\N	\N
-zlib-devel	\N	\N	\N	\N	\N
-ApacheDBI	\N	\N	\N	\N	\N
-aspell-devel	\N	\N	\N	\N	\N
-bind-devel	\N	\N	\N	\N	\N
-bzip2-devel	\N	\N	\N	\N	\N
-bzip2-libs	\N	\N	\N	\N	\N
-curl	\N	\N	\N	\N	\N
-curl-devel	\N	\N	\N	\N	\N
-cyrus-sasl-md5	\N	\N	\N	\N	\N
-cyrus-sasl-plain	\N	\N	\N	\N	\N
-db2-devel	\N	\N	\N	\N	\N
-db3-devel	\N	\N	\N	\N	\N
-dialog	\N	\N	\N	\N	\N
-dosfstools	\N	\N	\N	\N	\N
-expat	\N	\N	\N	\N	\N
-expat-devel	\N	\N	\N	\N	\N
-finger	\N	\N	\N	\N	\N
-freetype-devel	\N	\N	\N	\N	\N
-gcc3	\N	\N	\N	\N	\N
-gcc3-c++	\N	\N	\N	\N	\N
-gcc3-g77	\N	\N	\N	\N	\N
-gcc3-java	\N	\N	\N	\N	\N
-gcc3-objc	\N	\N	\N	\N	\N
-gcc-chill	\N	\N	\N	\N	\N
-gcc-java	\N	\N	\N	\N	\N
-gd-devel	\N	\N	\N	\N	\N
-glibc-profile	\N	\N	\N	\N	\N
-gmp-devel	\N	\N	\N	\N	\N
-imap-devel	\N	\N	\N	\N	\N
-iproute	\N	\N	\N	\N	\N
-iptables	\N	\N	\N	\N	\N
-jikes	\N	\N	\N	\N	\N
-kernel	\N	\N	\N	\N	\N
-krb5-devel	\N	\N	\N	\N	\N
-libcap	\N	\N	\N	\N	\N
-libgcc	\N	\N	\N	\N	\N
-libgcj	\N	\N	\N	\N	\N
-libgcj3	\N	\N	\N	\N	\N
-libgcj3-devel	\N	\N	\N	\N	\N
-libgcj-devel	\N	\N	\N	\N	\N
-libmcrypt-devel	\N	\N	\N	\N	\N
-libstdc++3	\N	\N	\N	\N	\N
-libstdc++3-devel	\N	\N	\N	\N	\N
-libtiff-devel	\N	\N	\N	\N	\N
-libxml2	\N	\N	\N	\N	\N
-libxml2-devel	\N	\N	\N	\N	\N
-libxslt	\N	\N	\N	\N	\N
-libxslt-devel	\N	\N	\N	\N	\N
-mhash	\N	\N	\N	\N	\N
-mhash-devel	\N	\N	\N	\N	\N
-mm	\N	\N	\N	\N	\N
-mm-devel	\N	\N	\N	\N	\N
-mod_dav	\N	\N	\N	\N	\N
-mod_perl	\N	\N	\N	\N	\N
-nc	\N	\N	\N	\N	\N
-ntp	\N	\N	\N	\N	\N
-openldap-clients	\N	\N	\N	\N	\N
-openldap-devel	\N	\N	\N	\N	\N
-openssl095a	\N	\N	\N	\N	\N
-openssl096	\N	\N	\N	\N	\N
-openssl-perl	\N	\N	\N	\N	\N
-pam-devel	\N	\N	\N	\N	\N
-pdflib	\N	\N	\N	\N	\N
-pdflib-devel	\N	\N	\N	\N	\N
-perl-CGI	\N	\N	\N	\N	\N
-perl-CPAN	\N	\N	\N	\N	\N
-perl-DB_File	\N	\N	\N	\N	\N
-perl-NDBM_File	\N	\N	\N	\N	\N
-pspell-devel	\N	\N	\N	\N	\N
-srm	\N	\N	\N	\N	\N
-syslinux	\N	\N	\N	\N	\N
-tamago	\N	\N	\N	\N	\N
-tetex	\N	\N	\N	\N	\N
-tetex-fonts	\N	\N	\N	\N	\N
-ttfonts	\N	\N	\N	\N	\N
-ttfonts-ja	\N	\N	\N	\N	\N
-ucd-snmp	\N	\N	\N	\N	\N
-ucd-snmp-devel	\N	\N	\N	\N	\N
-ucd-snmp-utils	\N	\N	\N	\N	\N
-unixODBC	\N	\N	\N	\N	\N
-unixODBC-devel	\N	\N	\N	\N	\N
-VFlib2	\N	\N	\N	\N	\N
-vim-enhanced	\N	\N	\N	\N	\N
-whois	\N	\N	\N	\N	\N
-XFree86-cyrillic-fonts	\N	\N	\N	\N	\N
-XFree86-ISO8859-15-100dpi-fonts	\N	\N	\N	\N	\N
-XFree86-ISO8859-15-75dpi-fonts	\N	\N	\N	\N	\N
-XFree86-ISO8859-2-100dpi-fonts	\N	\N	\N	\N	\N
-XFree86-ISO8859-9-100dpi-fonts	\N	\N	\N	\N	\N
-XFree86-ISO8859-9-75dpi-fonts	\N	\N	\N	\N	\N
-PGPcmdln	\N	\N	\N	\N	\N
-soap	\N	\N	\N	\N	\N
-jdk	\N	\N	\N	\N	\N
-xerces	\N	\N	\N	\N	\N
-xalan	\N	\N	\N	\N	\N
-IBMJava	\N	\N	\N	\N	\N
-j2sdk	\N	\N	\N	\N	\N
-httperf	\N	\N	\N	\N	\N
-struts	\N	\N	\N	\N	\N
-Bundle-libnet	\N	\N	\N	\N	\N
-CGI	\N	\N	\N	\N	\N
-File-Temp	\N	\N	\N	\N	\N
-HTML-Tagset	\N	\N	\N	\N	\N
-Parse-RecDescent	\N	\N	\N	\N	\N
-python-devel	\N	\N	\N	\N	\N
-qt-devel	\N	\N	\N	\N	\N
-python2	\N	\N	\N	\N	\N
-python2-devel	\N	\N	\N	\N	\N
-python-docs	\N	\N	\N	\N	\N
-python-tools	\N	\N	\N	\N	\N
-Devel-CoreStack	\N	\N	\N	\N	\N
-HTML-Element-Extended	\N	\N	\N	\N	\N
-HTML-Tree	\N	\N	\N	\N	\N
-libxml-perl	\N	\N	\N	\N	\N
-Scalar-List-Utils	\N	\N	\N	\N	\N
-Test-Harness	\N	\N	\N	\N	\N
-Test-Simple	\N	\N	\N	\N	\N
-XML-DOM	\N	\N	\N	\N	\N
-XML-GDOME	\N	\N	\N	\N	\N
-XML-LibXML	\N	\N	\N	\N	\N
-XML-LibXML-Common	\N	\N	\N	\N	\N
-XML-NamespaceSupport	\N	\N	\N	\N	\N
-XML-Parser	\N	\N	\N	\N	\N
-XML-RegExp	\N	\N	\N	\N	\N
-XML-SAX	\N	\N	\N	\N	\N
-XML-Simple	\N	\N	\N	\N	\N
-XML-SimpleObject	\N	\N	\N	\N	\N
-XML-TreeBuilder	\N	\N	\N	\N	\N
-XML-Twig	\N	\N	\N	\N	\N
-XML-Writer	\N	\N	\N	\N	\N
-XML-XSLT	\N	\N	\N	\N	\N
-gdome2	\N	\N	\N	\N	\N
-gdome2-devel	\N	\N	\N	\N	\N
-samba	\N	\N	\N	\N	\N
-samba-common	\N	\N	\N	\N	\N
-AppConfig	\N	\N	\N	\N	\N
-libnas2-static-devel	\N	\N	\N	\N	\N
-libqt3	\N	\N	\N	\N	\N
-libqt3-devel	\N	\N	\N	\N	\N
-bootloader-utils	\N	\N	\N	\N	\N
-Archive-Tar	\N	\N	\N	\N	\N
-Compress-Zlib	\N	\N	\N	\N	\N
-DateManip	\N	\N	\N	\N	\N
-DBIx-Password	\N	\N	\N	\N	\N
-Email-Valid	\N	\N	\N	\N	\N
-Font-AFM	\N	\N	\N	\N	\N
-HTML-Format	\N	\N	\N	\N	\N
-Image-Size	\N	\N	\N	\N	\N
-libapreq	\N	\N	\N	\N	\N
-Mail-Sendmail	\N	\N	\N	\N	\N
-MailTools	\N	\N	\N	\N	\N
-MD5	\N	\N	\N	\N	\N
-Schedule-Cron	\N	\N	\N	\N	\N
-Template-Toolkit	\N	\N	\N	\N	\N
-TimeDate	\N	\N	\N	\N	\N
-Time-HiRes	\N	\N	\N	\N	\N
-Time-modules	\N	\N	\N	\N	\N
-XML-RSS	\N	\N	\N	\N	\N
-IO-Zlib	\N	\N	\N	\N	\N
-Apache-Test	\N	\N	\N	\N	\N
-Test-Manifest	\N	\N	\N	\N	\N
-ExtUtils-MakeMaker	\N	\N	\N	\N	\N
-reiserfs-utils	\N	\N	\N	\N	\N
-cyrus-sasl-devel	\N	\N	\N	\N	\N
-ImageMagick	\N	\N	\N	\N	\N
-ImageMagick-Magick++	\N	\N	\N	\N	\N
-ImageMagick-devel	\N	\N	\N	\N	\N
-libqt3-mysql	\N	\N	\N	\N	\N
-libqt3-odbc	\N	\N	\N	\N	\N
-libunixODBC2	\N	\N	\N	\N	\N
-common-licenses	\N	\N	\N	\N	\N
-libunixODBC2-qt	\N	\N	\N	\N	\N
-coreutils	\N	\N	\N	\N	\N
-coreutils-doc	\N	\N	\N	\N	\N
-libunixODBC2-devel	\N	\N	\N	\N	\N
-nas	\N	\N	\N	\N	\N
-qt3-common	\N	\N	\N	\N	\N
-qt3-example	\N	\N	\N	\N	\N
-VFlib2-devel	\N	\N	\N	\N	\N
-wv-devel	\N	\N	\N	\N	\N
-libXaw3d7	\N	\N	\N	\N	\N
-elfutils	\N	\N	\N	\N	\N
-etcskel	\N	\N	\N	\N	\N
-libXaw3d7-devel	\N	\N	\N	\N	\N
-libgdome0	\N	\N	\N	\N	\N
-libgdome0-devel	\N	\N	\N	\N	\N
-fontconfig	\N	\N	\N	\N	\N
-font-tools	\N	\N	\N	\N	\N
-mysql-connector-java	\N	\N	\N	\N	\N
-freetype-tools	\N	\N	\N	\N	\N
-libdb4.1-devel	\N	\N	\N	\N	\N
-gcc-cpp	\N	\N	\N	\N	\N
-gettext-base	\N	\N	\N	\N	\N
-libdb4.1-static-devel	\N	\N	\N	\N	\N
-libdbcxx4.1	\N	\N	\N	\N	\N
-gpg-pubkey	\N	\N	\N	\N	\N
-libldap2-devel	\N	\N	\N	\N	\N
-groff-for-man	\N	\N	\N	\N	\N
-gtk+2.0	\N	\N	\N	\N	\N
-gtkdialogs	\N	\N	\N	\N	\N
-libldap2-devel-static	\N	\N	\N	\N	\N
-libsasl2-devel	\N	\N	\N	\N	\N
-ifplugd	\N	\N	\N	\N	\N
-tcp_wrappers-devel	\N	\N	\N	\N	\N
-info-install	\N	\N	\N	\N	\N
-apache-modules	\N	\N	\N	\N	\N
-iproute2	\N	\N	\N	\N	\N
-db1-devel	\N	\N	\N	\N	\N
-db1-tools	\N	\N	\N	\N	\N
-libmm1	\N	\N	\N	\N	\N
-kernel-enterprise	\N	\N	\N	\N	\N
-libmm1-devel	\N	\N	\N	\N	\N
-ldconfig	\N	\N	\N	\N	\N
-libmm1-static-devel	\N	\N	\N	\N	\N
-libacl1	\N	\N	\N	\N	\N
-libatk1.0_0	\N	\N	\N	\N	\N
-libattr1	\N	\N	\N	\N	\N
-libbzip2_1	\N	\N	\N	\N	\N
-libconsole0	\N	\N	\N	\N	\N
-libcrack2	\N	\N	\N	\N	\N
-libcups2	\N	\N	\N	\N	\N
-libcurl2	\N	\N	\N	\N	\N
-libdb4.1	\N	\N	\N	\N	\N
-libelfutils1	\N	\N	\N	\N	\N
-libexpat0	\N	\N	\N	\N	\N
-libext2fs2	\N	\N	\N	\N	\N
-libfontconfig1	\N	\N	\N	\N	\N
-libfreetype6	\N	\N	\N	\N	\N
-libgcc1	\N	\N	\N	\N	\N
-libgd2	\N	\N	\N	\N	\N
-libgdbm2	\N	\N	\N	\N	\N
-libgdk_pixbuf2.0_0	\N	\N	\N	\N	\N
-libglade2.0_0	\N	\N	\N	\N	\N
-libglib1.2	\N	\N	\N	\N	\N
-libglib2.0_0	\N	\N	\N	\N	\N
-libgpm1	\N	\N	\N	\N	\N
-libgtk+2.0_0	\N	\N	\N	\N	\N
-libgtk+-x11-2.0_0	\N	\N	\N	\N	\N
-libintl2	\N	\N	\N	\N	\N
-libjpeg62	\N	\N	\N	\N	\N
-libkrb51	\N	\N	\N	\N	\N
-libldap2	\N	\N	\N	\N	\N
-libmagic1	\N	\N	\N	\N	\N
-libMesaGLU1	\N	\N	\N	\N	\N
-libncurses5	\N	\N	\N	\N	\N
-libnet-snmp50	\N	\N	\N	\N	\N
-libnewt0.51	\N	\N	\N	\N	\N
-libopenssl0.9.7	\N	\N	\N	\N	\N
-libpango1.0_0	\N	\N	\N	\N	\N
-libpcre0	\N	\N	\N	\N	\N
-libpng3	\N	\N	\N	\N	\N
-libpwdb0	\N	\N	\N	\N	\N
-libpython2.3	\N	\N	\N	\N	\N
-libreadline4	\N	\N	\N	\N	\N
-libsasl2	\N	\N	\N	\N	\N
-libslang1	\N	\N	\N	\N	\N
-libstdc++5	\N	\N	\N	\N	\N
-libtermcap2	\N	\N	\N	\N	\N
-libtiff3	\N	\N	\N	\N	\N
-libuser	\N	\N	\N	\N	\N
-libuser1	\N	\N	\N	\N	\N
-libutempter0	\N	\N	\N	\N	\N
-libxclass0	\N	\N	\N	\N	\N
-libxfree86	\N	\N	\N	\N	\N
-apache-source	\N	\N	\N	\N	\N
-libxpm4	\N	\N	\N	\N	\N
-db3-utils	\N	\N	\N	\N	\N
-locales	\N	\N	\N	\N	\N
-locales-en	\N	\N	\N	\N	\N
-libsasl2-plug-crammd5	\N	\N	\N	\N	\N
-libsasl2-plug-digestmd5	\N	\N	\N	\N	\N
-libsasl2-plug-gssapi	\N	\N	\N	\N	\N
-libsasl2-plug-login	\N	\N	\N	\N	\N
-libsasl2-plug-plain	\N	\N	\N	\N	\N
-makedev	\N	\N	\N	\N	\N
-Mail-SpamAssassin	\N	\N	\N	\N	\N
-mandrake-release	\N	\N	\N	\N	\N
-mdk-menu-messages	\N	\N	\N	\N	\N
-menu	\N	\N	\N	\N	\N
-gcc-colorgcc	\N	\N	\N	\N	\N
-mpage	\N	\N	\N	\N	\N
-gcc-gnat	\N	\N	\N	\N	\N
-perl-ExtUtils_PerlPP	\N	\N	\N	\N	\N
-gcc-gpc	\N	\N	\N	\N	\N
-net-snmp	\N	\N	\N	\N	\N
-net-snmp-mibs	\N	\N	\N	\N	\N
-net-snmp-utils	\N	\N	\N	\N	\N
-gcj-tools	\N	\N	\N	\N	\N
-libbinutils2	\N	\N	\N	\N	\N
-libf2c0	\N	\N	\N	\N	\N
-libgcj4	\N	\N	\N	\N	\N
-libgcj4-devel	\N	\N	\N	\N	\N
-libgcj4-static-devel	\N	\N	\N	\N	\N
-pango	\N	\N	\N	\N	\N
-libgnat1	\N	\N	\N	\N	\N
-tetex-latex	\N	\N	\N	\N	\N
-perl-Authen-SASL	\N	\N	\N	\N	\N
-perl-base	\N	\N	\N	\N	\N
-perl-Convert-ASN1	\N	\N	\N	\N	\N
-perl-Digest-HMAC	\N	\N	\N	\N	\N
-perl-Digest-SHA1	\N	\N	\N	\N	\N
-perl-Expect	\N	\N	\N	\N	\N
-perl-Glib	\N	\N	\N	\N	\N
-perl-Gtk2	\N	\N	\N	\N	\N
-perl-HTML-Parser	\N	\N	\N	\N	\N
-perl-HTML-Tagset	\N	\N	\N	\N	\N
-perl-IO-Tty	\N	\N	\N	\N	\N
-perl-ldap	\N	\N	\N	\N	\N
-perl-libwww-perl	\N	\N	\N	\N	\N
-perl-Locale-gettext	\N	\N	\N	\N	\N
-perl-MDK-Common	\N	\N	\N	\N	\N
-perl-URI	\N	\N	\N	\N	\N
-perl-URPM	\N	\N	\N	\N	\N
-perl-XML-NamespaceSupport	\N	\N	\N	\N	\N
-perl-XML-Parser	\N	\N	\N	\N	\N
-perl-XML-SAX	\N	\N	\N	\N	\N
-libstdc++5-devel	\N	\N	\N	\N	\N
-zlib1-devel	\N	\N	\N	\N	\N
-proftpd	\N	\N	\N	\N	\N
-proftpd-anonymous	\N	\N	\N	\N	\N
-pwdb-conf	\N	\N	\N	\N	\N
-python-base	\N	\N	\N	\N	\N
-apache2	\N	\N	\N	\N	\N
-reiserfsprogs	\N	\N	\N	\N	\N
-apache2-common	\N	\N	\N	\N	\N
-apache2-mod_cache	\N	\N	\N	\N	\N
-apache2-mod_dav	\N	\N	\N	\N	\N
-rpm-helper	\N	\N	\N	\N	\N
-rpmtools	\N	\N	\N	\N	\N
-apache2-mod_deflate	\N	\N	\N	\N	\N
-samba-server	\N	\N	\N	\N	\N
-apache2-mod_disk_cache	\N	\N	\N	\N	\N
-apache2-mod_perl	\N	\N	\N	\N	\N
-apache2-mod_proxy	\N	\N	\N	\N	\N
-apache2-mod_ssl	\N	\N	\N	\N	\N
-strace	\N	\N	\N	\N	\N
-apache2-mod_suexec	\N	\N	\N	\N	\N
-apache2-modules	\N	\N	\N	\N	\N
-apache-conf	\N	\N	\N	\N	\N
-libapr0	\N	\N	\N	\N	\N
-t1utils	\N	\N	\N	\N	\N
-mod_perl-common	\N	\N	\N	\N	\N
-perl-BSD-Resource	\N	\N	\N	\N	\N
-perl-Devel-Symdump	\N	\N	\N	\N	\N
-perl-DBI	\N	\N	\N	\N	\N
-timezone	\N	\N	\N	\N	\N
-ADVX-build	\N	\N	\N	\N	\N
-apache2-devel	\N	\N	\N	\N	\N
-apache2-mod_perl-devel	\N	\N	\N	\N	\N
-usermode	\N	\N	\N	\N	\N
-usermode-consoleonly	\N	\N	\N	\N	\N
-libexpat0-devel	\N	\N	\N	\N	\N
-libgdbm2-devel	\N	\N	\N	\N	\N
-libopenssl0.9.7-devel	\N	\N	\N	\N	\N
-gcc2.96	\N	\N	\N	\N	\N
-gcc2.96-c++	\N	\N	\N	\N	\N
-gcc2.96-cpp	\N	\N	\N	\N	\N
-xclass-icons	\N	\N	\N	\N	\N
-libstdc++2.10	\N	\N	\N	\N	\N
-libstdc++2.10-devel	\N	\N	\N	\N	\N
-perl-devel	\N	\N	\N	\N	\N
-xinitrc	\N	\N	\N	\N	\N
-zcip	\N	\N	\N	\N	\N
-zlib1	\N	\N	\N	\N	\N
-locales-am	\N	\N	\N	\N	\N
-locales-ar	\N	\N	\N	\N	\N
-locales-as	\N	\N	\N	\N	\N
-locales-az	\N	\N	\N	\N	\N
-locales-be	\N	\N	\N	\N	\N
-locales-bg	\N	\N	\N	\N	\N
-locales-bn	\N	\N	\N	\N	\N
-locales-br	\N	\N	\N	\N	\N
-locales-bs	\N	\N	\N	\N	\N
-locales-ca	\N	\N	\N	\N	\N
-locales-cs	\N	\N	\N	\N	\N
-locales-cy	\N	\N	\N	\N	\N
-locales-da	\N	\N	\N	\N	\N
-locales-de	\N	\N	\N	\N	\N
-locales-el	\N	\N	\N	\N	\N
-perl-FCGI	\N	\N	\N	\N	\N
-locales-eo	\N	\N	\N	\N	\N
-locales-es	\N	\N	\N	\N	\N
-locales-et	\N	\N	\N	\N	\N
-locales-eu	\N	\N	\N	\N	\N
-locales-fa	\N	\N	\N	\N	\N
-locales-fi	\N	\N	\N	\N	\N
-locales-fo	\N	\N	\N	\N	\N
-locales-fr	\N	\N	\N	\N	\N
-locales-ga	\N	\N	\N	\N	\N
-locales-gd	\N	\N	\N	\N	\N
-locales-gl	\N	\N	\N	\N	\N
-locales-gv	\N	\N	\N	\N	\N
-locales-he	\N	\N	\N	\N	\N
-locales-hi	\N	\N	\N	\N	\N
-locales-hr	\N	\N	\N	\N	\N
-locales-hu	\N	\N	\N	\N	\N
-locales-hy	\N	\N	\N	\N	\N
-locales-id	\N	\N	\N	\N	\N
-locales-is	\N	\N	\N	\N	\N
-locales-it	\N	\N	\N	\N	\N
-locales-iu	\N	\N	\N	\N	\N
-locales-ja	\N	\N	\N	\N	\N
-locales-ka	\N	\N	\N	\N	\N
-locales-kl	\N	\N	\N	\N	\N
-locales-kn	\N	\N	\N	\N	\N
-locales-ko	\N	\N	\N	\N	\N
-locales-kw	\N	\N	\N	\N	\N
-locales-lo	\N	\N	\N	\N	\N
-locales-lt	\N	\N	\N	\N	\N
-locales-lv	\N	\N	\N	\N	\N
-locales-mi	\N	\N	\N	\N	\N
-locales-mk	\N	\N	\N	\N	\N
-locales-ml	\N	\N	\N	\N	\N
-locales-mn	\N	\N	\N	\N	\N
-locales-mr	\N	\N	\N	\N	\N
-locales-ms	\N	\N	\N	\N	\N
-locales-mt	\N	\N	\N	\N	\N
-locales-nl	\N	\N	\N	\N	\N
-locales-no	\N	\N	\N	\N	\N
-locales-oc	\N	\N	\N	\N	\N
-locales-ph	\N	\N	\N	\N	\N
-locales-pl	\N	\N	\N	\N	\N
-locales-pp	\N	\N	\N	\N	\N
-locales-pt	\N	\N	\N	\N	\N
-locales-ro	\N	\N	\N	\N	\N
-locales-ru	\N	\N	\N	\N	\N
-locales-se	\N	\N	\N	\N	\N
-locales-sk	\N	\N	\N	\N	\N
-locales-sl	\N	\N	\N	\N	\N
-locales-sq	\N	\N	\N	\N	\N
-locales-sr	\N	\N	\N	\N	\N
-locales-st	\N	\N	\N	\N	\N
-locales-sv	\N	\N	\N	\N	\N
-locales-ta	\N	\N	\N	\N	\N
-locales-te	\N	\N	\N	\N	\N
-locales-tg	\N	\N	\N	\N	\N
-locales-th	\N	\N	\N	\N	\N
-locales-tr	\N	\N	\N	\N	\N
-locales-tt	\N	\N	\N	\N	\N
-locales-uk	\N	\N	\N	\N	\N
-locales-ur	\N	\N	\N	\N	\N
-locales-uz	\N	\N	\N	\N	\N
-locales-vi	\N	\N	\N	\N	\N
-locales-wa	\N	\N	\N	\N	\N
-locales-xh	\N	\N	\N	\N	\N
-locales-yi	\N	\N	\N	\N	\N
-locales-zh	\N	\N	\N	\N	\N
-locales-zu	\N	\N	\N	\N	\N
-aspell-br	\N	\N	\N	\N	\N
-aspell-ca	\N	\N	\N	\N	\N
-aspell-cy	\N	\N	\N	\N	\N
-aspell-da	\N	\N	\N	\N	\N
-aspell-de	\N	\N	\N	\N	\N
-aspell-el	\N	\N	\N	\N	\N
-aspell-en	\N	\N	\N	\N	\N
-aspell-eo	\N	\N	\N	\N	\N
-aspell-es	\N	\N	\N	\N	\N
-aspell-fo	\N	\N	\N	\N	\N
-aspell-fr	\N	\N	\N	\N	\N
-aspell-ga	\N	\N	\N	\N	\N
-aspell-hr	\N	\N	\N	\N	\N
-aspell-hu	\N	\N	\N	\N	\N
-aspell-it	\N	\N	\N	\N	\N
-aspell-nl	\N	\N	\N	\N	\N
-aspell-no	\N	\N	\N	\N	\N
-aspell-pl	\N	\N	\N	\N	\N
-aspell-pt	\N	\N	\N	\N	\N
-aspell-ro	\N	\N	\N	\N	\N
-aspell-ru	\N	\N	\N	\N	\N
-aspell-sk	\N	\N	\N	\N	\N
-aspell-sv	\N	\N	\N	\N	\N
-aspell-uk	\N	\N	\N	\N	\N
-libaspell15	\N	\N	\N	\N	\N
-libaspell15-devel	\N	\N	\N	\N	\N
-libbzip2_1-devel	\N	\N	\N	\N	\N
-ftp-client-krb5	\N	\N	\N	\N	\N
-perl-Compress-Zlib	\N	\N	\N	\N	\N
-libcurl2-devel	\N	\N	\N	\N	\N
-perl-Data-ShowTable	\N	\N	\N	\N	\N
-perl-DateManip	\N	\N	\N	\N	\N
-libdb3.3	\N	\N	\N	\N	\N
-libdbtcl3.3	\N	\N	\N	\N	\N
-libdbtcl4.1	\N	\N	\N	\N	\N
-tcllib	\N	\N	\N	\N	\N
-perl-DBD-Pg	\N	\N	\N	\N	\N
-dev86-devel	\N	\N	\N	\N	\N
-Digest	\N	\N	\N	\N	\N
-gettext	\N	\N	\N	\N	\N
-gettext-devel	\N	\N	\N	\N	\N
-HDF	\N	\N	\N	\N	\N
-hdf5	\N	\N	\N	\N	\N
-HDF-util	\N	\N	\N	\N	\N
-intltool	\N	\N	\N	\N	\N
-libexif9	\N	\N	\N	\N	\N
-libexif9-devel	\N	\N	\N	\N	\N
-libfontconfig1-devel	\N	\N	\N	\N	\N
-libfreetype6-devel	\N	\N	\N	\N	\N
-libfreetype6-static-devel	\N	\N	\N	\N	\N
-libgimpprint1	\N	\N	\N	\N	\N
-libgimpprint1-devel	\N	\N	\N	\N	\N
-libgmp3	\N	\N	\N	\N	\N
-libgmp3-devel	\N	\N	\N	\N	\N
-libhdf5_0	\N	\N	\N	\N	\N
-libhdf5_0-devel	\N	\N	\N	\N	\N
-libjpeg62-devel	\N	\N	\N	\N	\N
-libjpeg62-static-devel	\N	\N	\N	\N	\N
-libjpeg-progs	\N	\N	\N	\N	\N
-liblcms1	\N	\N	\N	\N	\N
-liblcms1-devel	\N	\N	\N	\N	\N
-libMagick5.5.7	\N	\N	\N	\N	\N
-libMagick5.5.7-devel	\N	\N	\N	\N	\N
-libnetpbm9	\N	\N	\N	\N	\N
-libnetpbm9-devel	\N	\N	\N	\N	\N
-libnetpbm9-static-devel	\N	\N	\N	\N	\N
-libpng3-devel	\N	\N	\N	\N	\N
-libpng3-static-devel	\N	\N	\N	\N	\N
-libpython2.3-devel	\N	\N	\N	\N	\N
-libtiff3-devel	\N	\N	\N	\N	\N
-libtiff3-static-devel	\N	\N	\N	\N	\N
-libtiff-progs	\N	\N	\N	\N	\N
-libwmf0.2_7	\N	\N	\N	\N	\N
-libwmf0.2_7-devel	\N	\N	\N	\N	\N
-libwmf	\N	\N	\N	\N	\N
-libxfree86-devel	\N	\N	\N	\N	\N
-libxfree86-static-devel	\N	\N	\N	\N	\N
-perl-File-NCopy	\N	\N	\N	\N	\N
-libxml2-python	\N	\N	\N	\N	\N
-libxml2-utils	\N	\N	\N	\N	\N
-libxpm4-devel	\N	\N	\N	\N	\N
-libxslt1	\N	\N	\N	\N	\N
-libxslt1-devel	\N	\N	\N	\N	\N
-netpbm	\N	\N	\N	\N	\N
-perl-Apache-Filter	\N	\N	\N	\N	\N
-perl-Apache-Session	\N	\N	\N	\N	\N
-perl-Apache-SSI	\N	\N	\N	\N	\N
-perl-Array-RefElem	\N	\N	\N	\N	\N
-perl-Authen-PAM	\N	\N	\N	\N	\N
-perl-Authen-Smb	\N	\N	\N	\N	\N
-perl-CGI-Fast	\N	\N	\N	\N	\N
-perl-Convert-BER	\N	\N	\N	\N	\N
-perl-Crypt-OpenSSL-DSA	\N	\N	\N	\N	\N
-perl-Crypt-OpenSSL-RSA	\N	\N	\N	\N	\N
-perl-Crypt-SSLeay	\N	\N	\N	\N	\N
-perl-Curses	\N	\N	\N	\N	\N
-perl-Data-Dump	\N	\N	\N	\N	\N
-perl-Data-DumpXML	\N	\N	\N	\N	\N
-bison	\N	\N	\N	\N	\N
-perl-DBI-ProfileDumper-Apache	\N	\N	\N	\N	\N
-perl-DBI-proxy	\N	\N	\N	\N	\N
-perl-DBIx-Recordset	\N	\N	\N	\N	\N
-perl-Digest-BubbleBabble	\N	\N	\N	\N	\N
-perl-Digest-MD2	\N	\N	\N	\N	\N
-perl-Digest-Nilsimsa	\N	\N	\N	\N	\N
-perl-doc	\N	\N	\N	\N	\N
-perl-ExtUtils-Depends	\N	\N	\N	\N	\N
-perl-ExtUtils_F77	\N	\N	\N	\N	\N
-libwv-1.0_0	\N	\N	\N	\N	\N
-libwv-1.0_0-devel	\N	\N	\N	\N	\N
-spamassassin	\N	\N	\N	\N	\N
-perl-File-Slurp	\N	\N	\N	\N	\N
-perl-File-Tail	\N	\N	\N	\N	\N
-perl-Filter	\N	\N	\N	\N	\N
-perlftlib	\N	\N	\N	\N	\N
-perl-GD	\N	\N	\N	\N	\N
-perl-HTML-Clean	\N	\N	\N	\N	\N
-perl-HTML-FillInForm	\N	\N	\N	\N	\N
-perl-HTML-SimpleParse	\N	\N	\N	\N	\N
-perl-Image-Size	\N	\N	\N	\N	\N
-perl-Inline	\N	\N	\N	\N	\N
-perl-IO-stringy	\N	\N	\N	\N	\N
-perl-libxml-enno	\N	\N	\N	\N	\N
-perl-libxml-perl	\N	\N	\N	\N	\N
-perl-Magick	\N	\N	\N	\N	\N
-perl-Mail-Sender	\N	\N	\N	\N	\N
-perl-Mail-Sendmail	\N	\N	\N	\N	\N
-perl-Mail-SpamAssassin	\N	\N	\N	\N	\N
-perl-MailTools	\N	\N	\N	\N	\N
-perl-MDK-Common-devel	\N	\N	\N	\N	\N
-perl-MIME-tools	\N	\N	\N	\N	\N
-perl-MLDBM	\N	\N	\N	\N	\N
-perl-MLDBM-Sync	\N	\N	\N	\N	\N
-perl-Mon	\N	\N	\N	\N	\N
-perl-MP3-Info	\N	\N	\N	\N	\N
-perl-Msgcat	\N	\N	\N	\N	\N
-perl-Mysql	\N	\N	\N	\N	\N
-perl-Net-Daemon	\N	\N	\N	\N	\N
-perl-Net-DNS	\N	\N	\N	\N	\N
-perl-Net-DNS-SEC	\N	\N	\N	\N	\N
-perl-Net-IPv4Addr	\N	\N	\N	\N	\N
-perl-Net_SSLeay	\N	\N	\N	\N	\N
-perl-Net-Telnet	\N	\N	\N	\N	\N
-perl-Net-XWhois	\N	\N	\N	\N	\N
-perl-Parse-RecDescent	\N	\N	\N	\N	\N
-perl-Parse-Yapp	\N	\N	\N	\N	\N
-perl-Period	\N	\N	\N	\N	\N
-perl-PerlIO-gzip	\N	\N	\N	\N	\N
-perl-PlRPC	\N	\N	\N	\N	\N
-perl-Razor-Agent	\N	\N	\N	\N	\N
-perl-String-ShellQuote	\N	\N	\N	\N	\N
-perl-Term-Readline-Gnu	\N	\N	\N	\N	\N
-perl-Text-Template	\N	\N	\N	\N	\N
-perl-Tie-Cache	\N	\N	\N	\N	\N
-perl-Tie-TextDir	\N	\N	\N	\N	\N
-perl-TimeDate	\N	\N	\N	\N	\N
-perl-Tk	\N	\N	\N	\N	\N
-perl-Tk-devel	\N	\N	\N	\N	\N
-perl-Tk-doc	\N	\N	\N	\N	\N
-perl-XML-Encoding	\N	\N	\N	\N	\N
-perl-XML-LibXML	\N	\N	\N	\N	\N
-perl-XML-LibXML-Common	\N	\N	\N	\N	\N
-perl-XML-LibXSLT	\N	\N	\N	\N	\N
-perl-XML-RSS	\N	\N	\N	\N	\N
-perl-XML-Simple	\N	\N	\N	\N	\N
-perl-XML-Twig	\N	\N	\N	\N	\N
-perl-XML-Writer	\N	\N	\N	\N	\N
-perl-XML-XSLT	\N	\N	\N	\N	\N
-libMesaGL1	\N	\N	\N	\N	\N
-spamassassin-tools	\N	\N	\N	\N	\N
-python-imaging	\N	\N	\N	\N	\N
-pythonlib	\N	\N	\N	\N	\N
-python-numeric	\N	\N	\N	\N	\N
-python-numeric-devel	\N	\N	\N	\N	\N
-python-utmp	\N	\N	\N	\N	\N
-tetex-dvips	\N	\N	\N	\N	\N
-tkcvs	\N	\N	\N	\N	\N
-libelfutils1-devel	\N	\N	\N	\N	\N
-libelfutils1-static-devel	\N	\N	\N	\N	\N
-popt-devel	\N	\N	\N	\N	\N
-rpm-devel	\N	\N	\N	\N	\N
-libfftw2	\N	\N	\N	\N	\N
-libfftw2-devel	\N	\N	\N	\N	\N
-libgpm1-devel	\N	\N	\N	\N	\N
-freetype2-tools	\N	\N	\N	\N	\N
-gd-utils	\N	\N	\N	\N	\N
-libgd2-devel	\N	\N	\N	\N	\N
-libgd2-static-devel	\N	\N	\N	\N	\N
-libncurses5-devel	\N	\N	\N	\N	\N
-libglib1.2-devel	\N	\N	\N	\N	\N
-pkgconfig	\N	\N	\N	\N	\N
-glibc-i18ndata	\N	\N	\N	\N	\N
-glibc-static-devel	\N	\N	\N	\N	\N
-glibc-utils	\N	\N	\N	\N	\N
-glib-gettextize	\N	\N	\N	\N	\N
-libatk1.0_0-devel	\N	\N	\N	\N	\N
-libgdk_pixbuf2.0_0-devel	\N	\N	\N	\N	\N
-libglib2.0_0-devel	\N	\N	\N	\N	\N
-libgtk+1.2	\N	\N	\N	\N	\N
-libgtk+1.2-devel	\N	\N	\N	\N	\N
-libgtk+2.0_0-devel	\N	\N	\N	\N	\N
-libpango1.0_0-devel	\N	\N	\N	\N	\N
-imap-utils	\N	\N	\N	\N	\N
-libext2fs2-devel	\N	\N	\N	\N	\N
-libkrb51-devel	\N	\N	\N	\N	\N
-libltdl3	\N	\N	\N	\N	\N
-libmcrypt4	\N	\N	\N	\N	\N
-libmhash2	\N	\N	\N	\N	\N
-libltdl3-devel	\N	\N	\N	\N	\N
-libmcrypt4-devel	\N	\N	\N	\N	\N
-libmhash2-devel	\N	\N	\N	\N	\N
-libmng1	\N	\N	\N	\N	\N
-libmng1-devel	\N	\N	\N	\N	\N
-libmng1-static-devel	\N	\N	\N	\N	\N
-libungif4	\N	\N	\N	\N	\N
-libungif4-devel	\N	\N	\N	\N	\N
-libungif4-static-devel	\N	\N	\N	\N	\N
-ncurses-extraterms	\N	\N	\N	\N	\N
-foomatic-db	\N	\N	\N	\N	\N
-foomatic-db-engine	\N	\N	\N	\N	\N
-foomatic-filters	\N	\N	\N	\N	\N
-libgtkmm1.2	\N	\N	\N	\N	\N
-libgtkmm1.2-devel	\N	\N	\N	\N	\N
-libgtkmm1.2-static-devel	\N	\N	\N	\N	\N
-libijs0	\N	\N	\N	\N	\N
-libijs0-devel	\N	\N	\N	\N	\N
-libsigc++1.0	\N	\N	\N	\N	\N
-libsigc++1.0-devel	\N	\N	\N	\N	\N
-libsigc++1.0-examples	\N	\N	\N	\N	\N
-omni	\N	\N	\N	\N	\N
-printer-filters	\N	\N	\N	\N	\N
-psutils	\N	\N	\N	\N	\N
-PDFlib	\N	\N	\N	\N	\N
-libreadline4-devel	\N	\N	\N	\N	\N
-libpcap0	\N	\N	\N	\N	\N
-libpcap0-devel	\N	\N	\N	\N	\N
-telnet-client-krb5	\N	\N	\N	\N	\N
-telnet-server-krb5	\N	\N	\N	\N	\N
-cdialog	\N	\N	\N	\N	\N
-libnet-snmp50-devel	\N	\N	\N	\N	\N
-libnet-snmp50-static-devel	\N	\N	\N	\N	\N
-libMesaGLU1-devel	\N	\N	\N	\N	\N
-libnas2	\N	\N	\N	\N	\N
-libnas2-devel	\N	\N	\N	\N	\N
-dhcp-client	\N	\N	\N	\N	\N
-dhcp-common	\N	\N	\N	\N	\N
-dhcp-server	\N	\N	\N	\N	\N
-jetspeed	\N	\N	\N	\N	\N
-ldetect-lst	\N	\N	\N	\N	\N
-bcel	\N	\N	\N	\N	\N
-bsf	\N	\N	\N	\N	\N
-netprofile	\N	\N	\N	\N	\N
-cactus	\N	\N	\N	\N	\N
-hivemind	\N	\N	\N	\N	\N
-jakarta-jcs	\N	\N	\N	\N	\N
-jakarta-commons-attributes	\N	\N	\N	\N	\N
-jakarta-commons-beanutils	\N	\N	\N	\N	\N
-jakarta-commons-betwixt	\N	\N	\N	\N	\N
-jakarta-commons-chain	\N	\N	\N	\N	\N
-jakarta-commons-cli	\N	\N	\N	\N	\N
-jakarta-commons-codec	\N	\N	\N	\N	\N
-jakarta-commons-collections	\N	\N	\N	\N	\N
-jakarta-commons-configuration	\N	\N	\N	\N	\N
-jakarta-commons-daemon	\N	\N	\N	\N	\N
-jakarta-commons-dbcp	\N	\N	\N	\N	\N
-jakarta-commons-dbutils	\N	\N	\N	\N	\N
-jakarta-commons-digester	\N	\N	\N	\N	\N
-jakarta-commons-discovery	\N	\N	\N	\N	\N
-jakarta-commons-el	\N	\N	\N	\N	\N
-jakarta-commons-fileupload	\N	\N	\N	\N	\N
-jakarta-commons-httpclient	\N	\N	\N	\N	\N
-jakarta-commons-io	\N	\N	\N	\N	\N
-jakarta-commons-jelly	\N	\N	\N	\N	\N
-jakarta-commons-jexl	\N	\N	\N	\N	\N
-jakarta-commons-lang	\N	\N	\N	\N	\N
-jakarta-commons-jxpath	\N	\N	\N	\N	\N
-jakarta-commons-launcher	\N	\N	\N	\N	\N
-jakarta-commons-logging	\N	\N	\N	\N	\N
-jakarta-commons-math	\N	\N	\N	\N	\N
-jakarta-commons-modeler	\N	\N	\N	\N	\N
-jakarta-commons-net	\N	\N	\N	\N	\N
-jakarta-commons-pool	\N	\N	\N	\N	\N
-jakarta-commons-primitives	\N	\N	\N	\N	\N
-jakarta-commons-transaction	\N	\N	\N	\N	\N
-jakarta-commons-validator	\N	\N	\N	\N	\N
-jakarta-poi	\N	\N	\N	\N	\N
-jakarta-tapestry	\N	\N	\N	\N	\N
-jakarta-velocity	\N	\N	\N	\N	\N
-jakarta-velocity-tools	\N	\N	\N	\N	\N
-forrest	\N	\N	\N	\N	\N
-lucene	\N	\N	\N	\N	\N
-myfaces	\N	\N	\N	\N	\N
-axis	\N	\N	\N	\N	\N
-jaxme	\N	\N	\N	\N	\N
-juddi	\N	\N	\N	\N	\N
-wsif	\N	\N	\N	\N	\N
-batik	\N	\N	\N	\N	\N
-MySQL	\N	\N	\N	\N	\N
-acl	\N	\N	\N	\N	\N
-acpid	\N	\N	\N	\N	\N
-anacron	\N	\N	\N	\N	\N
-apr	\N	\N	\N	\N	\N
-apr-util	\N	\N	\N	\N	\N
-at	\N	\N	\N	\N	\N
-attr	\N	\N	\N	\N	\N
-audit	\N	\N	\N	\N	\N
-audit-libs	\N	\N	\N	\N	\N
-authconfig	\N	\N	\N	\N	\N
-autofs	\N	\N	\N	\N	\N
-automake14	\N	\N	\N	\N	\N
-automake15	\N	\N	\N	\N	\N
-automake16	\N	\N	\N	\N	\N
-automake17	\N	\N	\N	\N	\N
-beecrypt	\N	\N	\N	\N	\N
-bind-libs	\N	\N	\N	\N	\N
-bluez-bluefw	\N	\N	\N	\N	\N
-bluez-hcidump	\N	\N	\N	\N	\N
-bluez-libs	\N	\N	\N	\N	\N
-bluez-utils	\N	\N	\N	\N	\N
-cdecl	\N	\N	\N	\N	\N
-cdparanoia-libs	\N	\N	\N	\N	\N
-checkpolicy	\N	\N	\N	\N	\N
-compat-db	\N	\N	\N	\N	\N
-compat-libcom_err	\N	\N	\N	\N	\N
-compat-libgcc-296	\N	\N	\N	\N	\N
-compat-libstdc++-296	\N	\N	\N	\N	\N
-compat-libstdc++-33	\N	\N	\N	\N	\N
-compat-openldap	\N	\N	\N	\N	\N
-comps	\N	\N	\N	\N	\N
-crash	\N	\N	\N	\N	\N
-crypto-utils	\N	\N	\N	\N	\N
-cryptsetup	\N	\N	\N	\N	\N
-cscope	\N	\N	\N	\N	\N
-ctags	\N	\N	\N	\N	\N
-cups	\N	\N	\N	\N	\N
-cups-libs	\N	\N	\N	\N	\N
-cyrus-sasl-gssapi	\N	\N	\N	\N	\N
-cyrus-sasl-ntlm	\N	\N	\N	\N	\N
-db4	\N	\N	\N	\N	\N
-db4-devel	\N	\N	\N	\N	\N
-db4-utils	\N	\N	\N	\N	\N
-dbus	\N	\N	\N	\N	\N
-dbus-devel	\N	\N	\N	\N	\N
-dbus-glib	\N	\N	\N	\N	\N
-dbus-python	\N	\N	\N	\N	\N
-desktop-file-utils	\N	\N	\N	\N	\N
-device-mapper	\N	\N	\N	\N	\N
-dhclient	\N	\N	\N	\N	\N
-dhcpv6_client	\N	\N	\N	\N	\N
-diffstat	\N	\N	\N	\N	\N
-diskdumputils	\N	\N	\N	\N	\N
-distcache	\N	\N	\N	\N	\N
-dmraid	\N	\N	\N	\N	\N
-dos2unix	\N	\N	\N	\N	\N
-dump	\N	\N	\N	\N	\N
-elfutils-libelf	\N	\N	\N	\N	\N
-emacs-common	\N	\N	\N	\N	\N
-ethtool	\N	\N	\N	\N	\N
-fbset	\N	\N	\N	\N	\N
-gamin	\N	\N	\N	\N	\N
-glib2	\N	\N	\N	\N	\N
-glib2-devel	\N	\N	\N	\N	\N
-glibc-headers	\N	\N	\N	\N	\N
-glibc-kernheaders	\N	\N	\N	\N	\N
-grub	\N	\N	\N	\N	\N
-hal	\N	\N	\N	\N	\N
-hesiod	\N	\N	\N	\N	\N
-hotplug	\N	\N	\N	\N	\N
-htmlview	\N	\N	\N	\N	\N
-httpd	\N	\N	\N	\N	\N
-httpd-suexec	\N	\N	\N	\N	\N
-hwdata	\N	\N	\N	\N	\N
-indent	\N	\N	\N	\N	\N
-ipsec-tools	\N	\N	\N	\N	\N
-iptstate	\N	\N	\N	\N	\N
-irda-utils	\N	\N	\N	\N	\N
-isdn4k-utils	\N	\N	\N	\N	\N
-jpackage-utils	\N	\N	\N	\N	\N
-jwhois	\N	\N	\N	\N	\N
-kbd	\N	\N	\N	\N	\N
-kernel-devel	\N	\N	\N	\N	\N
-kernel-smp-devel	\N	\N	\N	\N	\N
-kernel-utils	\N	\N	\N	\N	\N
-krb5-workstation	\N	\N	\N	\N	\N
-kudzu	\N	\N	\N	\N	\N
-lftp	\N	\N	\N	\N	\N
-lha	\N	\N	\N	\N	\N
-libacl	\N	\N	\N	\N	\N
-libattr	\N	\N	\N	\N	\N
-libc-client	\N	\N	\N	\N	\N
-libdbi	\N	\N	\N	\N	\N
-libexif	\N	\N	\N	\N	\N
-libf2c	\N	\N	\N	\N	\N
-libgcrypt	\N	\N	\N	\N	\N
-libgpg-error	\N	\N	\N	\N	\N
-libidn	\N	\N	\N	\N	\N
-libidn-devel	\N	\N	\N	\N	\N
-libobjc	\N	\N	\N	\N	\N
-libpcap	\N	\N	\N	\N	\N
-libselinux	\N	\N	\N	\N	\N
-libselinux-devel	\N	\N	\N	\N	\N
-libsepol	\N	\N	\N	\N	\N
-libtermcap-devel	\N	\N	\N	\N	\N
-libusb	\N	\N	\N	\N	\N
-libuser-devel	\N	\N	\N	\N	\N
-libwvstreams	\N	\N	\N	\N	\N
-lm_sensors	\N	\N	\N	\N	\N
-lockdev	\N	\N	\N	\N	\N
-lockdev-devel	\N	\N	\N	\N	\N
-logwatch	\N	\N	\N	\N	\N
-lrzsz	\N	\N	\N	\N	\N
-lvm2	\N	\N	\N	\N	\N
-mcelog	\N	\N	\N	\N	\N
-mdadm	\N	\N	\N	\N	\N
-memtest86+	\N	\N	\N	\N	\N
-mgetty	\N	\N	\N	\N	\N
-minicom	\N	\N	\N	\N	\N
-module-init-tools	\N	\N	\N	\N	\N
-mozilla-nspr	\N	\N	\N	\N	\N
-mozilla-nss	\N	\N	\N	\N	\N
-mtools	\N	\N	\N	\N	\N
-mtr	\N	\N	\N	\N	\N
-mt-st	\N	\N	\N	\N	\N
-nano	\N	\N	\N	\N	\N
-netconfig	\N	\N	\N	\N	\N
-netdump	\N	\N	\N	\N	\N
-newt	\N	\N	\N	\N	\N
-newt-devel	\N	\N	\N	\N	\N
-newt-perl	\N	\N	\N	\N	\N
-nfs-utils	\N	\N	\N	\N	\N
-nss_db	\N	\N	\N	\N	\N
-nss_ldap	\N	\N	\N	\N	\N
-ntsysv	\N	\N	\N	\N	\N
-numactl	\N	\N	\N	\N	\N
-openssl096b	\N	\N	\N	\N	\N
-pam_ccreds	\N	\N	\N	\N	\N
-pam_krb5	\N	\N	\N	\N	\N
-pam_passwdqc	\N	\N	\N	\N	\N
-pam_smb	\N	\N	\N	\N	\N
-parted	\N	\N	\N	\N	\N
-patchutils	\N	\N	\N	\N	\N
-pax	\N	\N	\N	\N	\N
-pciutils	\N	\N	\N	\N	\N
-pciutils-devel	\N	\N	\N	\N	\N
-pcmcia	\N	\N	\N	\N	\N
-pcre	\N	\N	\N	\N	\N
-pdksh	\N	\N	\N	\N	\N
-perl-LDAP	\N	\N	\N	\N	\N
-perl-XML-Dumper	\N	\N	\N	\N	\N
-perl-XML-Grove	\N	\N	\N	\N	\N
-pinfo	\N	\N	\N	\N	\N
-policycoreutils	\N	\N	\N	\N	\N
-portmap	\N	\N	\N	\N	\N
-ppp	\N	\N	\N	\N	\N
-prelink	\N	\N	\N	\N	\N
-psacct	\N	\N	\N	\N	\N
-psgml	\N	\N	\N	\N	\N
-pstack	\N	\N	\N	\N	\N
-pyOpenSSL	\N	\N	\N	\N	\N
-python-ldap	\N	\N	\N	\N	\N
-pyxf86config	\N	\N	\N	\N	\N
-PyXML	\N	\N	\N	\N	\N
-quota	\N	\N	\N	\N	\N
-rcs	\N	\N	\N	\N	\N
-rdate	\N	\N	\N	\N	\N
-redhat-lsb	\N	\N	\N	\N	\N
-redhat-menus	\N	\N	\N	\N	\N
-redhat-release-4ES	\N	\N	\N	\N	\N
-redhat-rpm-config	\N	\N	\N	\N	\N
-rhnlib	\N	\N	\N	\N	\N
-rhpl	\N	\N	\N	\N	\N
-rpmdb-redhat-4	\N	\N	\N	\N	\N
-rpm-libs	\N	\N	\N	\N	\N
-rpm-python	\N	\N	\N	\N	\N
-rp-pppoe	\N	\N	\N	\N	\N
-rsh	\N	\N	\N	\N	\N
-ruby-libs	\N	\N	\N	\N	\N
-schedutils	\N	\N	\N	\N	\N
-selinux-policy-targeted	\N	\N	\N	\N	\N
-setarch	\N	\N	\N	\N	\N
-setools	\N	\N	\N	\N	\N
-setuptool	\N	\N	\N	\N	\N
-sgml-common	\N	\N	\N	\N	\N
-shared-mime-info	\N	\N	\N	\N	\N
-slang-devel	\N	\N	\N	\N	\N
-specspo	\N	\N	\N	\N	\N
-splint	\N	\N	\N	\N	\N
-statserial	\N	\N	\N	\N	\N
-sudo	\N	\N	\N	\N	\N
-sysfsutils	\N	\N	\N	\N	\N
-sysfsutils-devel	\N	\N	\N	\N	\N
-sysreport	\N	\N	\N	\N	\N
-system-config-mouse	\N	\N	\N	\N	\N
-system-config-network-tui	\N	\N	\N	\N	\N
-system-config-securitylevel-tui	\N	\N	\N	\N	\N
-ttmkfdir	\N	\N	\N	\N	\N
-tzdata	\N	\N	\N	\N	\N
-udev	\N	\N	\N	\N	\N
-unix2dos	\N	\N	\N	\N	\N
-up2date	\N	\N	\N	\N	\N
-usbutils	\N	\N	\N	\N	\N
-valgrind	\N	\N	\N	\N	\N
-valgrind-callgrind	\N	\N	\N	\N	\N
-vconfig	\N	\N	\N	\N	\N
-w3c-libwww	\N	\N	\N	\N	\N
-wireless-tools	\N	\N	\N	\N	\N
-wvdial	\N	\N	\N	\N	\N
-xml-common	\N	\N	\N	\N	\N
-xmlsec1	\N	\N	\N	\N	\N
-xmlsec1-openssl	\N	\N	\N	\N	\N
-xorg-x11-libs	\N	\N	\N	\N	\N
-xorg-x11-Mesa-libGL	\N	\N	\N	\N	\N
-ypbind	\N	\N	\N	\N	\N
-yp-tools	\N	\N	\N	\N	\N
+analog
+anonftp
+Socket
+Spreadsheet-WriteExcel
+daemontools
+dot-forward
+fastforward
+qmail
+apache
+apache-devel
+Apache-JSSI
+Apache-Jyve
+Apache-Turbine
+ash
+aspell
+autoconf
+automake
+basesystem
+bash
+bc
+bdflush
+bind
+bind-utils
+binutils
+byacc
+bzip2
+caching-nameserver
+chkconfig
+chkfontpath
+compat-libstdc++
+console-tools
+ucspi-tcp
+cos
+cpio
+cpp
+cracklib
+cracklib-dicts
+crontabs
+Crypt-CBC
+Crypt-DES
+cvs
+cyrus-sasl
+Data-ShowTable
+db1
+db2
+db3
+DBD-Pg
+DBI
+dev
+dev86
+diffutils
+Digest-MD5
+ezmlm
+mrtg
+e2fsprogs
+e2fsprogs-devel
+ecs
+ed
+elm
+sysstat
+hwcrypto
+emacs
+emacs-el
+emacs-leim
+emacs-nox
+emacs-X11
+expect
+fastcgi
+FCGI
+fftw
+fftw-devel
+file
+filesystem
+fileutils
+findutils
+flex
+fop
+fortune-mod
+FreeMarker
+freetype
+ftp
+iptables-ipv6
+Garbage
+gawk
+gcc
+gcc-c++
+gcc-g77
+gcc-objc
+gd
+gdb
+gdbm
+gdbm-devel
+ghostscript
+ghostscript-fonts
+glib
+glibc
+glibc-common
+glibc-devel
+glib-devel
+gmp
+gnupg
+gnu.regexp
+grep
+groff
+gtk+
+gtk+-devel
+gzip
+hdparm
+HTML-Parser
+imap
+indexhtml
+info
+initscripts
+InterBaseSS_LI
+InterClient
+iptraf
+iputils
+jaf
+castor
+jakarta-cocoon
+jakarta-oro
+jakarta-regexp
+jakarta-servletapi
+jakarta-slide
+eject
+jakarta-taglibs
+jakarta-tomcat
+jakarta-watchdog
+javamail
+JBoss
+jdbc
+tkinter
+ant
+JSDK
+JSP
+jsse
+kavachart
+kernel-headers
+kernel-smp
+krb5-libs
+less
+libgr
+libjpeg
+libjpeg-devel
+libmcrypt
+libnet
+libpng
+libpng-devel
+libstdc++
+libstdc++-devel
+tmpwatch
+libtermcap
+libtiff
+libtool
+libtool-libs
+libungif
+libungif-progs
+libwww-perl
+lilo
+linuxconf
+logrotate
+traceroute
+losetup
+lslk
+lsof
+ltrace
+lynx
+m4
+mailcap
+mailx
+majordomo
+make
+MAKEDEV
+man
+man-pages
+mc
+mcrypt
+Mesa
+metamail
+MIME-Base64
+mingetty
+mkbootdisk
+mkinitrd
+mktemp
+mm-mysql
+mod_ssl
+modutils
+mount
+Msql-Mysql-modules
+mutt
+mx
+ncompress
+ncurses
+ncurses4
+ncurses-devel
+unzip
+Net-Daemon
+net-tools
+nscd
+openldap
+openssh
+openssh-clients
+openssh-server
+openssl
+openssl-devel
+openxml
+ozone
+pam
+passwd
+patch
+perl
+php
+URI
+urw-fonts
+utempter
+phpMyAdmin
+util-linux
+village
+pidentd
+pine
+PlRPC
+pmake
+vim-common
+PoolMan
+pop3
+popt
+postgresql
+procinfo
+procmail
+procps
+vim-minimal
+psmisc
+pspell
+pvm
+pvm-gui
+pwdb
+python
+vixie-cron
+qt
+perl-suidperl
+webmacro
+raidtools
+wget
+readline
+readline-devel
+redhat-logos
+redhat-release
+rgrep
+rmt
+rootfiles
+rpm
+rpm-build
+which
+sash
+screen
+sed
+sendmail
+sendmail-cf
+setserial
+setup
+shadow-utils
+sharutils
+sh-utils
+slang
+slocate
+words
+spfc
+wu-ftpd
+wv
+xang
+stat
+Storable
+stunnel
+Xaw3d
+symlinks
+sysklogd
+SysVinit
+talk
+talk-server
+tar
+tcl
+tcpdump
+tcp_wrappers
+tcsh
+telnet
+telnet-server
+termcap
+texinfo
+textutils
+time
+tix
+tk
+kernel-doc
+ezmlm-idx
+qmail-smtpd-auth
+dhcpcd
+mod_jk
+rdist
+rsync
+XFree86
+XFree86-100dpi-fonts
+XFree86-75dpi-fonts
+XFree86-devel
+XFree86-ISO8859-2-75dpi-fonts
+XFree86-libs
+XFree86-xfs
+XFree86-Xvfb
+xinetd
+xmlrpc-java
+zip
+zlib
+zlib-devel
+ApacheDBI
+aspell-devel
+bind-devel
+bzip2-devel
+bzip2-libs
+curl
+curl-devel
+cyrus-sasl-md5
+cyrus-sasl-plain
+db2-devel
+db3-devel
+dialog
+dosfstools
+expat
+expat-devel
+finger
+freetype-devel
+gcc3
+gcc3-c++
+gcc3-g77
+gcc3-java
+gcc3-objc
+gcc-chill
+gcc-java
+gd-devel
+glibc-profile
+gmp-devel
+imap-devel
+iproute
+iptables
+jikes
+kernel
+krb5-devel
+libcap
+libgcc
+libgcj
+libgcj3
+libgcj3-devel
+libgcj-devel
+libmcrypt-devel
+libstdc++3
+libstdc++3-devel
+libtiff-devel
+libxml2
+libxml2-devel
+libxslt
+libxslt-devel
+mhash
+mhash-devel
+mm
+mm-devel
+mod_dav
+mod_perl
+nc
+ntp
+openldap-clients
+openldap-devel
+openssl095a
+openssl096
+openssl-perl
+pam-devel
+pdflib
+pdflib-devel
+perl-CGI
+perl-CPAN
+perl-DB_File
+perl-NDBM_File
+pspell-devel
+srm
+syslinux
+tamago
+tetex
+tetex-fonts
+ttfonts
+ttfonts-ja
+ucd-snmp
+ucd-snmp-devel
+ucd-snmp-utils
+unixODBC
+unixODBC-devel
+VFlib2
+vim-enhanced
+whois
+XFree86-cyrillic-fonts
+XFree86-ISO8859-15-100dpi-fonts
+XFree86-ISO8859-15-75dpi-fonts
+XFree86-ISO8859-2-100dpi-fonts
+XFree86-ISO8859-9-100dpi-fonts
+XFree86-ISO8859-9-75dpi-fonts
+PGPcmdln
+soap
+jdk
+xerces
+xalan
+IBMJava
+j2sdk
+httperf
+struts
+Bundle-libnet
+CGI
+File-Temp
+HTML-Tagset
+Parse-RecDescent
+python-devel
+qt-devel
+python2
+python2-devel
+python-docs
+python-tools
+Devel-CoreStack
+HTML-Element-Extended
+HTML-Tree
+libxml-perl
+Scalar-List-Utils
+Test-Harness
+Test-Simple
+XML-DOM
+XML-GDOME
+XML-LibXML
+XML-LibXML-Common
+XML-NamespaceSupport
+XML-Parser
+XML-RegExp
+XML-SAX
+XML-Simple
+XML-SimpleObject
+XML-TreeBuilder
+XML-Twig
+XML-Writer
+XML-XSLT
+gdome2
+gdome2-devel
+samba
+samba-common
+AppConfig
+libnas2-static-devel
+libqt3
+libqt3-devel
+bootloader-utils
+Archive-Tar
+Compress-Zlib
+DateManip
+DBIx-Password
+Email-Valid
+Font-AFM
+HTML-Format
+Image-Size
+libapreq
+Mail-Sendmail
+MailTools
+MD5
+Schedule-Cron
+Template-Toolkit
+TimeDate
+Time-HiRes
+Time-modules
+XML-RSS
+IO-Zlib
+Apache-Test
+Test-Manifest
+ExtUtils-MakeMaker
+reiserfs-utils
+cyrus-sasl-devel
+ImageMagick
+ImageMagick-Magick++
+ImageMagick-devel
+libqt3-mysql
+libqt3-odbc
+libunixODBC2
+common-licenses
+libunixODBC2-qt
+coreutils
+coreutils-doc
+libunixODBC2-devel
+nas
+qt3-common
+qt3-example
+VFlib2-devel
+wv-devel
+libXaw3d7
+elfutils
+etcskel
+libXaw3d7-devel
+libgdome0
+libgdome0-devel
+fontconfig
+font-tools
+mysql-connector-java
+freetype-tools
+libdb4.1-devel
+gcc-cpp
+gettext-base
+libdb4.1-static-devel
+libdbcxx4.1
+gpg-pubkey
+libldap2-devel
+groff-for-man
+gtk+2.0
+gtkdialogs
+libldap2-devel-static
+libsasl2-devel
+ifplugd
+tcp_wrappers-devel
+info-install
+apache-modules
+iproute2
+db1-devel
+db1-tools
+libmm1
+kernel-enterprise
+libmm1-devel
+ldconfig
+libmm1-static-devel
+libacl1
+libatk1.0_0
+libattr1
+libbzip2_1
+libconsole0
+libcrack2
+libcups2
+libcurl2
+libdb4.1
+libelfutils1
+libexpat0
+libext2fs2
+libfontconfig1
+libfreetype6
+libgcc1
+libgd2
+libgdbm2
+libgdk_pixbuf2.0_0
+libglade2.0_0
+libglib1.2
+libglib2.0_0
+libgpm1
+libgtk+2.0_0
+libgtk+-x11-2.0_0
+libintl2
+libjpeg62
+libkrb51
+libldap2
+libmagic1
+libMesaGLU1
+libncurses5
+libnet-snmp50
+libnewt0.51
+libopenssl0.9.7
+libpango1.0_0
+libpcre0
+libpng3
+libpwdb0
+libpython2.3
+libreadline4
+libsasl2
+libslang1
+libstdc++5
+libtermcap2
+libtiff3
+libuser
+libuser1
+libutempter0
+libxclass0
+libxfree86
+apache-source
+libxpm4
+db3-utils
+locales
+locales-en
+libsasl2-plug-crammd5
+libsasl2-plug-digestmd5
+libsasl2-plug-gssapi
+libsasl2-plug-login
+libsasl2-plug-plain
+makedev
+Mail-SpamAssassin
+mandrake-release
+mdk-menu-messages
+menu
+gcc-colorgcc
+mpage
+gcc-gnat
+perl-ExtUtils_PerlPP
+gcc-gpc
+net-snmp
+net-snmp-mibs
+net-snmp-utils
+gcj-tools
+libbinutils2
+libf2c0
+libgcj4
+libgcj4-devel
+libgcj4-static-devel
+pango
+libgnat1
+tetex-latex
+perl-Authen-SASL
+perl-base
+perl-Convert-ASN1
+perl-Digest-HMAC
+perl-Digest-SHA1
+perl-Expect
+perl-Glib
+perl-Gtk2
+perl-HTML-Parser
+perl-HTML-Tagset
+perl-IO-Tty
+perl-ldap
+perl-libwww-perl
+perl-Locale-gettext
+perl-MDK-Common
+perl-URI
+perl-URPM
+perl-XML-NamespaceSupport
+perl-XML-Parser
+perl-XML-SAX
+libstdc++5-devel
+zlib1-devel
+proftpd
+proftpd-anonymous
+pwdb-conf
+python-base
+apache2
+reiserfsprogs
+apache2-common
+apache2-mod_cache
+apache2-mod_dav
+rpm-helper
+rpmtools
+apache2-mod_deflate
+samba-server
+apache2-mod_disk_cache
+apache2-mod_perl
+apache2-mod_proxy
+apache2-mod_ssl
+strace
+apache2-mod_suexec
+apache2-modules
+apache-conf
+libapr0
+t1utils
+mod_perl-common
+perl-BSD-Resource
+perl-Devel-Symdump
+perl-DBI
+timezone
+ADVX-build
+apache2-devel
+apache2-mod_perl-devel
+usermode
+usermode-consoleonly
+libexpat0-devel
+libgdbm2-devel
+libopenssl0.9.7-devel
+gcc2.96
+gcc2.96-c++
+gcc2.96-cpp
+xclass-icons
+libstdc++2.10
+libstdc++2.10-devel
+perl-devel
+xinitrc
+zcip
+zlib1
+locales-am
+locales-ar
+locales-as
+locales-az
+locales-be
+locales-bg
+locales-bn
+locales-br
+locales-bs
+locales-ca
+locales-cs
+locales-cy
+locales-da
+locales-de
+locales-el
+perl-FCGI
+locales-eo
+locales-es
+locales-et
+locales-eu
+locales-fa
+locales-fi
+locales-fo
+locales-fr
+locales-ga
+locales-gd
+locales-gl
+locales-gv
+locales-he
+locales-hi
+locales-hr
+locales-hu
+locales-hy
+locales-id
+locales-is
+locales-it
+locales-iu
+locales-ja
+locales-ka
+locales-kl
+locales-kn
+locales-ko
+locales-kw
+locales-lo
+locales-lt
+locales-lv
+locales-mi
+locales-mk
+locales-ml
+locales-mn
+locales-mr
+locales-ms
+locales-mt
+locales-nl
+locales-no
+locales-oc
+locales-ph
+locales-pl
+locales-pp
+locales-pt
+locales-ro
+locales-ru
+locales-se
+locales-sk
+locales-sl
+locales-sq
+locales-sr
+locales-st
+locales-sv
+locales-ta
+locales-te
+locales-tg
+locales-th
+locales-tr
+locales-tt
+locales-uk
+locales-ur
+locales-uz
+locales-vi
+locales-wa
+locales-xh
+locales-yi
+locales-zh
+locales-zu
+aspell-br
+aspell-ca
+aspell-cy
+aspell-da
+aspell-de
+aspell-el
+aspell-en
+aspell-eo
+aspell-es
+aspell-fo
+aspell-fr
+aspell-ga
+aspell-hr
+aspell-hu
+aspell-it
+aspell-nl
+aspell-no
+aspell-pl
+aspell-pt
+aspell-ro
+aspell-ru
+aspell-sk
+aspell-sv
+aspell-uk
+libaspell15
+libaspell15-devel
+libbzip2_1-devel
+ftp-client-krb5
+perl-Compress-Zlib
+libcurl2-devel
+perl-Data-ShowTable
+perl-DateManip
+libdb3.3
+libdbtcl3.3
+libdbtcl4.1
+tcllib
+perl-DBD-Pg
+dev86-devel
+Digest
+gettext
+gettext-devel
+HDF
+hdf5
+HDF-util
+intltool
+libexif9
+libexif9-devel
+libfontconfig1-devel
+libfreetype6-devel
+libfreetype6-static-devel
+libgimpprint1
+libgimpprint1-devel
+libgmp3
+libgmp3-devel
+libhdf5_0
+libhdf5_0-devel
+libjpeg62-devel
+libjpeg62-static-devel
+libjpeg-progs
+liblcms1
+liblcms1-devel
+libMagick5.5.7
+libMagick5.5.7-devel
+libnetpbm9
+libnetpbm9-devel
+libnetpbm9-static-devel
+libpng3-devel
+libpng3-static-devel
+libpython2.3-devel
+libtiff3-devel
+libtiff3-static-devel
+libtiff-progs
+libwmf0.2_7
+libwmf0.2_7-devel
+libwmf
+libxfree86-devel
+libxfree86-static-devel
+perl-File-NCopy
+libxml2-python
+libxml2-utils
+libxpm4-devel
+libxslt1
+libxslt1-devel
+netpbm
+perl-Apache-Filter
+perl-Apache-Session
+perl-Apache-SSI
+perl-Array-RefElem
+perl-Authen-PAM
+perl-Authen-Smb
+perl-CGI-Fast
+perl-Convert-BER
+perl-Crypt-OpenSSL-DSA
+perl-Crypt-OpenSSL-RSA
+perl-Crypt-SSLeay
+perl-Curses
+perl-Data-Dump
+perl-Data-DumpXML
+bison
+perl-DBI-ProfileDumper-Apache
+perl-DBI-proxy
+perl-DBIx-Recordset
+perl-Digest-BubbleBabble
+perl-Digest-MD2
+perl-Digest-Nilsimsa
+perl-doc
+perl-ExtUtils-Depends
+perl-ExtUtils_F77
+libwv-1.0_0
+libwv-1.0_0-devel
+spamassassin
+perl-File-Slurp
+perl-File-Tail
+perl-Filter
+perlftlib
+perl-GD
+perl-HTML-Clean
+perl-HTML-FillInForm
+perl-HTML-SimpleParse
+perl-Image-Size
+perl-Inline
+perl-IO-stringy
+perl-libxml-enno
+perl-libxml-perl
+perl-Magick
+perl-Mail-Sender
+perl-Mail-Sendmail
+perl-Mail-SpamAssassin
+perl-MailTools
+perl-MDK-Common-devel
+perl-MIME-tools
+perl-MLDBM
+perl-MLDBM-Sync
+perl-Mon
+perl-MP3-Info
+perl-Msgcat
+perl-Mysql
+perl-Net-Daemon
+perl-Net-DNS
+perl-Net-DNS-SEC
+perl-Net-IPv4Addr
+perl-Net_SSLeay
+perl-Net-Telnet
+perl-Net-XWhois
+perl-Parse-RecDescent
+perl-Parse-Yapp
+perl-Period
+perl-PerlIO-gzip
+perl-PlRPC
+perl-Razor-Agent
+perl-String-ShellQuote
+perl-Term-Readline-Gnu
+perl-Text-Template
+perl-Tie-Cache
+perl-Tie-TextDir
+perl-TimeDate
+perl-Tk
+perl-Tk-devel
+perl-Tk-doc
+perl-XML-Encoding
+perl-XML-LibXML
+perl-XML-LibXML-Common
+perl-XML-LibXSLT
+perl-XML-RSS
+perl-XML-Simple
+perl-XML-Twig
+perl-XML-Writer
+perl-XML-XSLT
+libMesaGL1
+spamassassin-tools
+python-imaging
+pythonlib
+python-numeric
+python-numeric-devel
+python-utmp
+tetex-dvips
+tkcvs
+libelfutils1-devel
+libelfutils1-static-devel
+popt-devel
+rpm-devel
+libfftw2
+libfftw2-devel
+libgpm1-devel
+freetype2-tools
+gd-utils
+libgd2-devel
+libgd2-static-devel
+libncurses5-devel
+libglib1.2-devel
+pkgconfig
+glibc-i18ndata
+glibc-static-devel
+glibc-utils
+glib-gettextize
+libatk1.0_0-devel
+libgdk_pixbuf2.0_0-devel
+libglib2.0_0-devel
+libgtk+1.2
+libgtk+1.2-devel
+libgtk+2.0_0-devel
+libpango1.0_0-devel
+imap-utils
+libext2fs2-devel
+libkrb51-devel
+libltdl3
+libmcrypt4
+libmhash2
+libltdl3-devel
+libmcrypt4-devel
+libmhash2-devel
+libmng1
+libmng1-devel
+libmng1-static-devel
+libungif4
+libungif4-devel
+libungif4-static-devel
+ncurses-extraterms
+foomatic-db
+foomatic-db-engine
+foomatic-filters
+libgtkmm1.2
+libgtkmm1.2-devel
+libgtkmm1.2-static-devel
+libijs0
+libijs0-devel
+libsigc++1.0
+libsigc++1.0-devel
+libsigc++1.0-examples
+omni
+printer-filters
+psutils
+PDFlib
+libreadline4-devel
+libpcap0
+libpcap0-devel
+telnet-client-krb5
+telnet-server-krb5
+cdialog
+libnet-snmp50-devel
+libnet-snmp50-static-devel
+libMesaGLU1-devel
+libnas2
+libnas2-devel
+dhcp-client
+dhcp-common
+dhcp-server
+jetspeed
+ldetect-lst
+bcel
+bsf
+netprofile
+cactus
+hivemind
+jakarta-jcs
+jakarta-commons-attributes
+jakarta-commons-beanutils
+jakarta-commons-betwixt
+jakarta-commons-chain
+jakarta-commons-cli
+jakarta-commons-codec
+jakarta-commons-collections
+jakarta-commons-configuration
+jakarta-commons-daemon
+jakarta-commons-dbcp
+jakarta-commons-dbutils
+jakarta-commons-digester
+jakarta-commons-discovery
+jakarta-commons-el
+jakarta-commons-fileupload
+jakarta-commons-httpclient
+jakarta-commons-io
+jakarta-commons-jelly
+jakarta-commons-jexl
+jakarta-commons-lang
+jakarta-commons-jxpath
+jakarta-commons-launcher
+jakarta-commons-logging
+jakarta-commons-math
+jakarta-commons-modeler
+jakarta-commons-net
+jakarta-commons-pool
+jakarta-commons-primitives
+jakarta-commons-transaction
+jakarta-commons-validator
+jakarta-poi
+jakarta-tapestry
+jakarta-velocity
+jakarta-velocity-tools
+forrest
+lucene
+myfaces
+axis
+jaxme
+juddi
+wsif
+batik
+MySQL
+acl
+acpid
+anacron
+apr
+apr-util
+at
+attr
+audit
+audit-libs
+authconfig
+autofs
+automake14
+automake15
+automake16
+automake17
+beecrypt
+bind-libs
+bluez-bluefw
+bluez-hcidump
+bluez-libs
+bluez-utils
+cdecl
+cdparanoia-libs
+checkpolicy
+compat-db
+compat-libcom_err
+compat-libgcc-296
+compat-libstdc++-296
+compat-libstdc++-33
+compat-openldap
+comps
+crash
+crypto-utils
+cryptsetup
+cscope
+ctags
+cups
+cups-libs
+cyrus-sasl-gssapi
+cyrus-sasl-ntlm
+db4
+db4-devel
+db4-utils
+dbus
+dbus-devel
+dbus-glib
+dbus-python
+desktop-file-utils
+device-mapper
+dhclient
+dhcpv6_client
+diffstat
+diskdumputils
+distcache
+dmraid
+dos2unix
+dump
+elfutils-libelf
+emacs-common
+ethtool
+fbset
+gamin
+glib2
+glib2-devel
+glibc-headers
+glibc-kernheaders
+grub
+hal
+hesiod
+hotplug
+htmlview
+httpd
+httpd-suexec
+hwdata
+indent
+ipsec-tools
+iptstate
+irda-utils
+isdn4k-utils
+jpackage-utils
+jwhois
+kbd
+kernel-devel
+kernel-smp-devel
+kernel-utils
+krb5-workstation
+kudzu
+lftp
+lha
+libacl
+libattr
+libc-client
+libdbi
+libexif
+libf2c
+libgcrypt
+libgpg-error
+libidn
+libidn-devel
+libobjc
+libpcap
+libselinux
+libselinux-devel
+libsepol
+libtermcap-devel
+libusb
+libuser-devel
+libwvstreams
+lm_sensors
+lockdev
+lockdev-devel
+logwatch
+lrzsz
+lvm2
+mcelog
+mdadm
+memtest86+
+mgetty
+minicom
+module-init-tools
+mozilla-nspr
+mozilla-nss
+mtools
+mtr
+mt-st
+nano
+netconfig
+netdump
+newt
+newt-devel
+newt-perl
+nfs-utils
+nss_db
+nss_ldap
+ntsysv
+numactl
+openssl096b
+pam_ccreds
+pam_krb5
+pam_passwdqc
+pam_smb
+parted
+patchutils
+pax
+pciutils
+pciutils-devel
+pcmcia
+pcre
+pdksh
+perl-LDAP
+perl-XML-Dumper
+perl-XML-Grove
+pinfo
+policycoreutils
+portmap
+ppp
+prelink
+psacct
+psgml
+pstack
+pyOpenSSL
+python-ldap
+pyxf86config
+PyXML
+quota
+rcs
+rdate
+redhat-lsb
+redhat-menus
+redhat-release-4ES
+redhat-rpm-config
+rhnlib
+rhpl
+rpmdb-redhat-4
+rpm-libs
+rpm-python
+rp-pppoe
+rsh
+ruby-libs
+schedutils
+selinux-policy-targeted
+setarch
+setools
+setuptool
+sgml-common
+shared-mime-info
+slang-devel
+specspo
+splint
+statserial
+sudo
+sysfsutils
+sysfsutils-devel
+sysreport
+system-config-mouse
+system-config-network-tui
+system-config-securitylevel-tui
+ttmkfdir
+tzdata
+udev
+unix2dos
+up2date
+usbutils
+valgrind
+valgrind-callgrind
+vconfig
+w3c-libwww
+wireless-tools
+wvdial
+xml-common
+xmlsec1
+xmlsec1-openssl
+xorg-x11-libs
+xorg-x11-Mesa-libGL
+ypbind
+yp-tools
 \.

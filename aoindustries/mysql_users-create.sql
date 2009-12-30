@@ -1,9 +1,8 @@
-create sequence mysql_users_pkey_seq cycle;
-grant all on mysql_users_pkey_seq to aoadmin;
-grant select, update on mysql_users_pkey_seq to aoserv_app;
-
 create table mysql_users (
-  pkey integer default nextval('mysql_users_pkey_seq') primary key,
+  ao_server_resource integer primary key,
+  resource_type text not null check (resource_type='mysql_user'), -- Used as hidden constant type reference constraint
+  accounting text not null, -- Used as hidden reference to usernames and ao_server_resources only
+  ao_server integer not null, -- Used as hidden reference to mysql_servers and ao_server_resources only
   username text not null,
   mysql_server integer not null,
   host text,
@@ -35,7 +34,6 @@ create table mysql_users (
   create_user_priv bool not null default false,
   event_priv bool not null default false,
   trigger_priv bool not null default false,
-  disable_log integer,
   predisable_password text,
   max_questions integer not null check (max_questions>=0),
   max_updates integer not null check (max_updates>=0),

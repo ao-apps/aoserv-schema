@@ -166,6 +166,8 @@ hardware_ram_ddr2_667_ecc_8192
 joomla
 drupal
 postgresql_database
+postgresql_server
+postgresql_user
 wordpress
 xoops
 mediawiki

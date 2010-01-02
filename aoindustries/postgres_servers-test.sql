@@ -1,7 +1,9 @@
 insert into postgres_servers values(
-    1,
-    '8.1',
+    10,
+    'postgresql_server',
+    'AOINDUSTRIES',
     2,
+    '8.1',
     (
         select
             pkey

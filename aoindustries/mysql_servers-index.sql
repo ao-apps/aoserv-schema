@@ -13,6 +13,9 @@ create unique index mysql_servers_ao_server_super on mysql_servers (
 create index mysql_servers_version_idx on mysql_servers (
   version
 );
+create unique index mysql_servers_net_bind_uni on mysql_servers (
+  net_bind
+);
 create unique index mysql_servers_net_bind_super on mysql_servers (
   ao_server,
   net_bind

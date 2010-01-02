@@ -4,8 +4,8 @@ insert into
 values(
     9,
     'template0',
-    1,
-    16,
+    10,
+    11,
     (
         select
             pkey
@@ -33,8 +33,8 @@ insert into
 values(
     10,
     'template1',
-    1,
-    16,
+    10,
+    11,
     (
         select
             pkey
@@ -62,8 +62,8 @@ insert into
 values(
     11,
     'aoindustries',
-    1,
-    17,
+    10,
+    12,
     (
         select
             pkey
@@ -91,8 +91,8 @@ insert into
 values(
     13,
     'aoweb',
-    1,
-    17,
+    10,
+    12,
     (
         select
             pkey
@@ -120,8 +120,8 @@ insert into
 values(
     14,
     'aoserv',
-    1,
-    16,
+    10,
+    11,
     (
         select
             pkey
@@ -149,8 +149,8 @@ insert into
 values(
     17,
     'edrugstore',
-    1,
-    27,
+    10,
+    16,
     (
         select
             pkey
@@ -178,8 +178,8 @@ insert into
 values(
     18,
     'edrugstore_sessions',
-    1,
-    27,
+    10,
+    16,
     (
         select
             pkey
@@ -207,8 +207,8 @@ insert into
 values(
     16,
     'danshome',
-    1,
-    24,
+    10,
+    22,
     (
         select
             pkey

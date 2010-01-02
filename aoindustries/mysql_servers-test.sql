@@ -2,7 +2,7 @@ begin;
 insert into mysql_servers values(
     1,
     'mysql_server',
-   'AOINDUSTRIES',
+    'AOINDUSTRIES',
     2,
     '4.1',
     (
@@ -23,7 +23,7 @@ insert into mysql_servers values(
 insert into mysql_servers values(
     2,
     'mysql_server',
-   'AOINDUSTRIES',
+    'AOINDUSTRIES',
     2,
     '5.0',
     (

@@ -6,7 +6,7 @@ create table mysql_servers (
   "name" text not null,
   version integer not null,
   max_connections integer not null,
-  net_bind integer not null unique
+  net_bind integer not null
 );
 grant all on mysql_servers to aoadmin;
 grant select, insert, update, delete on mysql_servers to aoserv_app;

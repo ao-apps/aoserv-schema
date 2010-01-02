@@ -24,5 +24,6 @@ insert into resources values(22, 'postgresql_user',   'AOINDUSTRIES', '2010-01-0
 insert into resources values(23, 'postgresql_user',   'AOINDUSTRIES', '2010-01-02 13:01:45.162245-06', 'orion', null, '2010-01-02 13:01:45.162245-06');
 insert into resources values(24, 'postgresql_user',   'AOINDUSTRIES', '2010-01-02 13:01:45.162245-06', 'orion', null, '2010-01-02 13:01:45.162245-06');
 insert into resources values(25, 'postgresql_user',   'AOINDUSTRIES', '2010-01-02 13:01:45.162245-06', 'orion', null, '2010-01-02 13:01:45.162245-06');
+insert into resources values(26, 'postgresql_user',   'AOINDUSTRIES', '2010-01-02 13:01:45.162245-06', 'orion', null, '2010-01-02 13:01:45.162245-06');
 commit;
-SELECT setval ('"resources_pkey_seq"', 26, true);
+SELECT setval ('"resources_pkey_seq"', 27, true);

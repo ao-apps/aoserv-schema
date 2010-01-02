@@ -24,4 +24,5 @@ insert into ao_server_resources values(22, 'postgresql_user',   'AOINDUSTRIES', 
 insert into ao_server_resources values(23, 'postgresql_user',   'AOINDUSTRIES', 2);
 insert into ao_server_resources values(24, 'postgresql_user',   'AOINDUSTRIES', 2);
 insert into ao_server_resources values(25, 'postgresql_user',   'AOINDUSTRIES', 2);
+insert into ao_server_resources values(26, 'postgresql_user',   'AOINDUSTRIES', 2);
 commit;

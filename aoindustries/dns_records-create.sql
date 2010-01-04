@@ -6,18 +6,18 @@ create table dns_records (
   pkey integer
     default nextval('dns_records_pkey_seq')
     constraint dns_records_pkey primary key,
-  zone text
+  "zone" text
     not null,
-  domain text
+  "domain" text
     not null,
-  type text
+  "type" text
     not null,
   mx_priority integer,
   destination text
     not null,
   dhcp_address integer,
   ttl integer,
-  unique(zone, domain, type, destination)
-) without oids;
+  unique("zone", "domain", "type", destination)
+);
 grant all on dns_records to aoadmin;
 grant select, insert, update, delete on dns_records to aoserv_app;

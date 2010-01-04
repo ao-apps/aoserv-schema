@@ -19,10 +19,3 @@ alter table failover_file_replications
   on delete restrict
   on update cascade
 ;
-alter table failover_file_replications
-  add constraint quota_gid_fkey
-  foreign key (quota_gid)
-  references linux_ids (id)
-  on delete restrict
-  on update cascade
-;

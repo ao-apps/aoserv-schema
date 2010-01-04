@@ -1,8 +1,12 @@
+begin;
 -- 8.1
 insert into
     postgres_databases
 values(
-    9,
+    26,
+    'postgresql_database',
+    'AOINDUSTRIES',
+    2,
     'template0',
     10,
     11,
@@ -31,7 +35,10 @@ values(
 insert into
     postgres_databases
 values(
-    10,
+    27,
+    'postgresql_database',
+    'AOINDUSTRIES',
+    2,
     'template1',
     10,
     11,
@@ -60,7 +67,10 @@ values(
 insert into
     postgres_databases
 values(
-    11,
+    28,
+    'postgresql_database',
+    'AOINDUSTRIES',
+    2,
     'aoindustries',
     10,
     12,
@@ -89,7 +99,10 @@ values(
 insert into
     postgres_databases
 values(
-    13,
+    29,
+    'postgresql_database',
+    'AOINDUSTRIES',
+    2,
     'aoweb',
     10,
     12,
@@ -118,7 +131,10 @@ values(
 insert into
     postgres_databases
 values(
-    14,
+    30,
+    'postgresql_database',
+    'AOINDUSTRIES',
+    2,
     'aoserv',
     10,
     11,
@@ -147,7 +163,10 @@ values(
 insert into
     postgres_databases
 values(
-    17,
+    31,
+    'postgresql_database',
+    'AOINDUSTRIES',
+    2,
     'edrugstore',
     10,
     16,
@@ -176,7 +195,10 @@ values(
 insert into
     postgres_databases
 values(
-    18,
+    32,
+    'postgresql_database',
+    'AOINDUSTRIES',
+    2,
     'edrugstore_sessions',
     10,
     16,
@@ -205,7 +227,10 @@ values(
 insert into
     postgres_databases
 values(
-    16,
+    33,
+    'postgresql_database',
+    'AOINDUSTRIES',
+    2,
     'danshome',
     10,
     22,
@@ -231,4 +256,4 @@ values(
     true,
     false
 );
-SELECT setval ('"postgres_databases_pkey_seq"', 17, true);
+commit;

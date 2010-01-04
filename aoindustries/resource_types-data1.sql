@@ -17,7 +17,6 @@ hardware_ram_ddr400_nonecc
 hardware_ram_ddr400_ecc
 site
 sysadmin
-user
 hardware_ram_ddr2_667_nonecc
 hardware_ram_ddr2_800_ecc
 hardware_power_redundant_500
@@ -72,7 +71,6 @@ xaraya
 xmb
 hardware_disk_controller_scsi_16
 hardware_disk_controller_scsi_16_raid5
-email
 hardware_disk_10000_036
 hardware_disk_10000_073
 hardware_disk_15000_036
@@ -180,4 +178,10 @@ oscommerce
 mysql_database
 mysql_server
 mysql_user
+shell_group
+system_group
+shell_account
+email_inbox
+ftponly_account
+system_account
 \.

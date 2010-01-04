@@ -5,4 +5,4 @@ create table notice_types (
     not null
 );
 grant all on notice_types to aoadmin;
-grant select, update on notice_types to aoserv_app;
+grant select on notice_types to aoserv_app;

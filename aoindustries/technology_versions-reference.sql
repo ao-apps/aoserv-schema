@@ -1,7 +1,7 @@
 alter table technology_versions
   add constraint name_fkey
   foreign key (name)
-  references technology_names (name)
+  references technology_names ("name")
   on delete restrict
   on update cascade
 ;

@@ -8,7 +8,7 @@ create table net_binds (
   server integer not null, -- Hidden, used for integrity only
   business_server integer not null,
   ip_address integer not null,
-  port integer not null,
+  port integer not null check (port between 1 and 65535),
   net_protocol text not null,
   app_protocol text not null,
   open_firewall bool not null,

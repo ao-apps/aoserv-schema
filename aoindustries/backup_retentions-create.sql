@@ -5,4 +5,4 @@ create table backup_retentions (
     not null
 );
 grant all on backup_retentions to aoadmin;
-grant select, update on backup_retentions to aoserv_app;
+grant select on backup_retentions to aoserv_app;

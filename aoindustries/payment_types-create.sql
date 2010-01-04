@@ -9,4 +9,4 @@ create table payment_types (
     not null
 );
 grant all on payment_types to aoadmin;
-grant select, update on payment_types to aoserv_app;
+grant select on payment_types to aoserv_app;

@@ -32,4 +32,4 @@ as
 --    ao_servers
 ;
 grant all on server_stats to aoadmin;
-grant select, update on server_stats to aoserv_app;
+grant select on server_stats to aoserv_app;

@@ -5,7 +5,7 @@ grant select, update on email_pipes_pkey_seq to aoserv_app;
 create table email_pipes (
   pkey integer default nextval('email_pipes_pkey_seq') constraint email_pipes_pkey primary key,
   ao_server integer not null,
-  path text not null,
+  "path" text not null,
   accounting text not null,
   disable_log integer
 );

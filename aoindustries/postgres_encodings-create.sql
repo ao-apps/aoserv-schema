@@ -13,4 +13,4 @@ create table postgres_encodings (
   unique(encoding, postgres_version)
 );
 grant all on postgres_encodings to aoadmin;
-grant select, update on postgres_encodings to aoserv_app;
+grant select on postgres_encodings to aoserv_app;

@@ -4,10 +4,10 @@ create table business_administrators (
   password text
     default '*'
     not null,
-  name text
+  "name" text
     not null
     constraint name_chk
-      check (length(name)>0),
+      check (length("name")>0),
   title text,
   birthday varchar(32),
   is_preferred bool
@@ -33,7 +33,7 @@ create table business_administrators (
   address1 text,
   address2 text,
   city text,
-  state text,
+  "state" text,
   country char(2),
   zip text,
   disable_log integer,

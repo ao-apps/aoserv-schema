@@ -12,10 +12,8 @@ create table private_ftp_servers (
   created timestamp
     default now()
     not null,
-  linux_server_account integer
-    not null,
-  linux_server_group integer
-    not null,
+  linux_account integer not null,
+  linux_group integer not null,
   allow_anonymous bool
     not null
 );

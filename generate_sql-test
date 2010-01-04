@@ -7,7 +7,16 @@ then
 	exit 1
 fi
 
-for FILE in ${DIR}/${DB_NAME}/*-test.sql
+for FILE in ${DIR}/${DB_NAME}/*-test1.sql
+do
+	if [ -f "${FILE}" ]
+	then
+		echo "\\echo ${FILE}"
+		cat "${FILE}"
+	fi
+done
+
+for FILE in ${DIR}/${DB_NAME}/*-test2.sql
 do
 	if [ -f "${FILE}" ]
 	then

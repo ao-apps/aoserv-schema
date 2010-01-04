@@ -7,10 +7,10 @@ insert into brands values(
   'ns3.aoindustries.com', -- nameserver3
   'ns4.aoindustries.com', -- nameserver4
   -- Email settings
-  84, -- (select pkey from linux_server_accounts where ao_server=(select server from ao_servers where hostname='test.aoindustries.com') and username='aoadmin'), -- smtp_linux_server_account
+  76, -- (select ao_server_resource from linux_accounts where ao_server=(select server from ao_servers where hostname='test.aoindustries.com') and username='aoadmin'), -- smtp_linux_server_account
   null, -- smtp_host
   'changeme', -- smtp_password
-  84, -- (select pkey from linux_server_accounts where ao_server=(select server from ao_servers where hostname='test.aoindustries.com') and username='aoadmin'), -- imap_linux_server_account
+  76, -- (select ao_server_resource from linux_accounts where ao_server=(select server from ao_servers where hostname='test.aoindustries.com') and username='aoadmin'), -- imap_linux_server_account
   null, -- imap_host
   'changeme', -- imap_password
   9, -- support_email_address

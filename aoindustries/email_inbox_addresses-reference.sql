@@ -1,14 +1,14 @@
-alter table linux_acc_addresses
+alter table email_inbox_addresses
   add constraint email_address_fkey
   foreign key (email_address)
   references email_addresses (pkey)
   on delete restrict
   on update cascade
 ;
-alter table linux_acc_addresses
-  add constraint linux_server_account_fkey
-  foreign key (linux_server_account)
-  references linux_server_accounts (pkey)
+alter table email_inbox_addresses
+  add constraint email_inbox_fkey
+  foreign key (email_inbox)
+  references email_inboxes (linux_account)
   on delete restrict
   on update cascade
 ;

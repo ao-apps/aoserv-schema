@@ -8,14 +8,14 @@ create table httpd_tomcat_parameters (
     constraint httpd_tomcat_parameters_pkey primary key,
   tomcat_context integer
     not null,
-  name text
+  "name" text
     not null,
   value text
     not null,
   override bool
     not null,
   description text,
-  unique(tomcat_context, name)
+  unique(tomcat_context, "name")
 );
 grant all on httpd_tomcat_parameters to aoadmin;
 grant select, insert, update, delete on httpd_tomcat_parameters to aoserv_app;

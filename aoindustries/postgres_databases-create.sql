@@ -1,17 +1,15 @@
-create sequence postgres_databases_pkey_seq cycle;
-grant all on postgres_databases_pkey_seq to aoadmin;
-grant select, update on postgres_databases_pkey_seq to aoserv_app;
-
 create table postgres_databases (
-  pkey integer default nextval('postgres_databases_pkey_seq') primary key,
-  name text not null,
+  ao_server_resource integer primary key,
+  resource_type text not null check (resource_type='postgresql_database'), -- Used as hidden constant type reference constraint
+  accounting text not null, -- Used as hidden reference to ao_server_resources only
+  ao_server integer not null, -- Used as hidden reference to postgres_servers and ao_server_resources only
+  "name" text not null,
   postgres_server integer not null,
   datdba integer not null,
   encoding integer not null,
   is_template bool not null,
   allow_conn bool not null,
-  enable_postgis bool not null,
-  unique (name, postgres_server)
+  enable_postgis bool not null
 );
 grant all on postgres_databases to aoadmin;
 grant select, insert, update, delete on postgres_databases to aoserv_app;

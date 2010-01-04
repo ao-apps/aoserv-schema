@@ -22,14 +22,14 @@ alter table transactions
 alter table transactions
   add constraint type_fkey
   foreign key (type)
-  references transaction_types (name)
+  references transaction_types ("name")
   on delete restrict
   on update cascade
 ;
 alter table transactions
   add constraint payment_type_fkey
   foreign key (payment_type)
-  references payment_types (name)
+  references payment_types ("name")
   on delete restrict
   on update cascade
 ;

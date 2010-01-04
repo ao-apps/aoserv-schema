@@ -32,4 +32,4 @@ create table ao_servers (
   monitoring_load_critical float4 check (monitoring_load_critical is null or monitoring_load_high is not null and monitoring_load_critical>monitoring_load_high)
 );
 grant all on ao_servers to aoadmin;
-grant select, update on ao_servers to aoserv_app;
+grant select on ao_servers to aoserv_app;

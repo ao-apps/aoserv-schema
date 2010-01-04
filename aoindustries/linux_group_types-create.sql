@@ -1,8 +1,5 @@
 create table linux_group_types (
-  name text
-    constraint linux_group_types_pkey primary key,
-  description text
-    not null
+  resource_type text primary key
 );
 grant all on linux_group_types to aoadmin;
-grant select, update on linux_group_types to aoserv_app;
+grant select on linux_group_types to aoserv_app;

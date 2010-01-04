@@ -1,7 +1,7 @@
 alter table aosh_commands
   add constraint table_name_fkey
-  foreign key (table_name)
-  references schema_tables (name)
+  foreign key ("table_name")
+  references schema_tables ("name")
   on delete restrict
   on update cascade
 ;

@@ -6,7 +6,7 @@ create table email_lists (
   pkey integer
     default nextval('email_lists_pkey_seq')
     constraint email_lists_pkey primary key,
-  path text
+  "path" text
     not null,
   linux_server_account integer
     not null,

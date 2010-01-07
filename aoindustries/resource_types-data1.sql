@@ -4,7 +4,6 @@ aoserv_master
 bandwidth
 consulting
 disk
-httpd
 ip
 javavm
 virtuemart
@@ -15,7 +14,6 @@ hardware_processor_xeon_306
 hardware_processor_xeon_34
 hardware_ram_ddr400_nonecc
 hardware_ram_ddr400_ecc
-site
 sysadmin
 hardware_ram_ddr2_667_nonecc
 hardware_ram_ddr2_800_ecc
@@ -184,4 +182,10 @@ shell_account
 email_inbox
 ftponly_account
 system_account
+httpd_server
+httpd_shared_tomcat
+httpd_jboss_site
+httpd_static_site
+httpd_tomcat_shared_site
+httpd_tomcat_std_site
 \.

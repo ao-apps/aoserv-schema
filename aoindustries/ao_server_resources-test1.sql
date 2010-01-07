@@ -128,4 +128,5 @@ insert into ao_server_resources values(126, 'system_group',        'AOINDUSTRIES
 insert into ao_server_resources values(127, 'system_group',        'AOINDUSTRIES', 2);
 insert into ao_server_resources values(128, 'shell_group',         'AOINDUSTRIES', 2);
 insert into ao_server_resources values(129, 'shell_group',         'AOINDUSTRIES', 2);
+insert into ao_server_resources values(130, 'httpd_static_site',   'AOINDUSTRIES', 2);
 commit;

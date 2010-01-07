@@ -128,5 +128,6 @@ insert into resources values(126, 'system_group',        'AOINDUSTRIES', '2004-1
 insert into resources values(127, 'system_group',        'AOINDUSTRIES', '2004-12-16 20:02:11.178601-06', 'orion', null, '2004-12-16 20:02:11.178601-06'); -- xvfb
 insert into resources values(128, 'shell_group',         'AOINDUSTRIES', '2004-12-16 20:27:13.373372-06', 'orion', null, '2004-12-16 20:27:13.373372-06'); -- aoadmin
 insert into resources values(129, 'shell_group',         'AOINDUSTRIES', '2004-12-16 20:27:19.141660-06', 'orion', null, '2004-12-16 20:27:19.141660-06'); -- ftpmon
+insert into resources values(130, 'httpd_static_site',   'AOINDUSTRIES', '2010-01-06 17:19:53.147526-06', 'orion', null, '2010-01-06 17:19:53.147526-06'); -- disabled
 commit;
-select setval ('"resources_pkey_seq"', 130, true);
+select setval ('"resources_pkey_seq"', 131, true);

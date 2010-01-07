@@ -27,3 +27,11 @@ create index linux_account_group_group_name_idx on linux_account_groups (
   group_name,
   linux_group
 );
+create unique index linux_account_group_linux_account_type_super on linux_account_groups (
+  linux_account_type,
+  pkey
+);
+create unique index linux_account_group_ao_server_super on linux_account_groups (
+  ao_server,
+  pkey
+);

@@ -3,7 +3,9 @@ create table linux_accounts (
   linux_account_type text not null,
   accounting text not null, -- Used as hidden reference to usernames and ao_server_resources only
   ao_server integer not null, -- Used as hidden reference to ao_server_resources only
-  username text not null,
+  username text not null check (
+    username not in ('etc', 'lib', 'postmaster', 'mailer-daemon')
+  ),
   uid integer not null check (
     case
       when linux_account_type='shell_account' then uid between 500 and 65533

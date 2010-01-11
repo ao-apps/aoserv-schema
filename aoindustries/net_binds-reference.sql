@@ -14,8 +14,8 @@ alter table net_binds
 ;
 alter table net_binds
   add constraint ip_address_fkey
-  foreign key (ip_address)
-  references ip_addresses (pkey)
+  foreign key (server, ip_address)
+  references ip_addresses (server, server_resource)
   on delete restrict
   on update cascade
 ;

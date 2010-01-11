@@ -30,3 +30,7 @@ create unique index net_binds_server_super on net_binds (
   server,
   pkey
 );
+create index net_binds_ip_address_idx on net_binds (
+  server,
+  ip_address
+);

@@ -1,14 +1,21 @@
 alter table ip_addresses
-  add constraint net_device_fkey
-  foreign key (net_device)
-  references net_devices (pkey)
+  add constraint resource_type_fkey
+  foreign key (resource_type, server_resource)
+  references server_resources (resource_type, resource)
   on delete restrict
   on update cascade
 ;
 alter table ip_addresses
-  add constraint accounting_fkey
-  foreign key (accounting)
-  references businesses (accounting)
+  add constraint server_fkey
+  foreign key (server, server_resource)
+  references server_resources (server, resource)
+  on delete restrict
+  on update cascade
+;
+alter table ip_addresses
+  add constraint net_device_fkey
+  foreign key (server, net_device)
+  references net_devices (server, pkey)
   on delete restrict
   on update cascade
 ;

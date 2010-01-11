@@ -1,4 +1,4 @@
-COPY ip_addresses FROM stdin;
-4	127.0.0.1	3	f	localhost	AOINDUSTRIES	2004-12-16 19:57:48.018907-06	f	f	f	t	\N	255.0.0.0
-5	192.168.1.129	4	f	test.aoindustries.com	AOINDUSTRIES	2004-12-16 19:58:45.847031-06	f	t	f	t	\N	255.255.255.0
-\.
+begin;
+insert into ip_addresses values(131, 'ip_address', 2, '127.0.0.1',     3, false, 'localhost',             false, false, false, false, null, 8);
+insert into ip_addresses values(132, 'ip_address', 2, '192.168.1.129', 4, false, 'test.aoindustries.com', false, true,  false, true,  null, 24);
+commit;

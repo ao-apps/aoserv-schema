@@ -5,7 +5,7 @@ create table httpd_sites (
   ao_server integer not null, -- Used as hidden reference to linux_account_groups and ao_server_resources only
   site_name text not null check (
     site_name=lower(site_name)
-    && site_name not in ('aquota.user')
+    and site_name not in ('aquota.user')
   ),
   list_first boolean default false not null,
   linux_account_group integer not null,

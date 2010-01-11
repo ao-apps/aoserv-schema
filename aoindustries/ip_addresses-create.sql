@@ -1,22 +1,52 @@
-create sequence ip_addresses_pkey_seq cycle;
-grant all on ip_addresses_pkey_seq to aoadmin;
-grant select, update on ip_addresses_pkey_seq to aoserv_app;
-
 create table ip_addresses (
-  pkey integer default nextval('ip_addresses_pkey_seq') constraint ip_addresses_pkey primary key,
-  ip_address text not null,
+  server_resource integer primary key,
+  resource_type text not null check (resource_type='ip_address'), -- Used as hidden constant type reference constraint
+  server integer not null, -- Used as hidden reference to net_devices and server_resources only
+  ip_address text not null check (ip_address!='0.0.0.0' and ip_address!='::'),
   net_device int,
-  is_alias bool not null,
+  is_alias bool not null check (
+    -- May only be flagged as an alias while assigned to a net_device
+    net_device is not null or not is_alias
+  ),
   hostname text not null,
-  accounting text not null,
-  created timestamp not null,
   available bool not null,
   is_overflow bool not null,
   is_dhcp bool not null,
   ping_monitor_enabled bool not null,
   external_ip_address text,
-  netmask text not null,
-  unique(ip_address, net_device)
+  netmask smallint not null check (
+    netmask>0 and (
+      case
+        when ip_address like '%:%' then netmask<=128
+        else netmask<=32
+      end
+    )
+  ),
+  check (
+    -- loopback restrictions
+    case
+      when ip_address like '127.%.%.%' then
+        net_device is not null
+        and is_alias=ip_address!='127.0.0.1'
+        and not available
+        and not is_overflow
+        and not is_dhcp
+        and not ping_monitor_enabled
+        and external_ip_address is null
+        and netmask=8
+      when ip_address='::1' then
+        net_device is not null
+        and not is_alias
+        and not available
+        and not is_overflow
+        and not is_dhcp
+        and not ping_monitor_enabled
+        and external_ip_address is null
+        and netmask=128
+      else
+        true
+    end
+  )
 );
 grant all on ip_addresses to aoadmin;
 grant select, update on ip_addresses to aoserv_app;

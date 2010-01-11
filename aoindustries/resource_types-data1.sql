@@ -4,7 +4,6 @@ aoserv_master
 bandwidth
 consulting
 disk
-ip
 javavm
 virtuemart
 rack
@@ -188,4 +187,6 @@ httpd_jboss_site
 httpd_static_site
 httpd_tomcat_shared_site
 httpd_tomcat_std_site
+ip_address
+cvs_repository
 \.

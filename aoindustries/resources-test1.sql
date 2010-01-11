@@ -129,5 +129,8 @@ insert into resources values(127, 'system_group',        'AOINDUSTRIES', '2004-1
 insert into resources values(128, 'shell_group',         'AOINDUSTRIES', '2004-12-16 20:27:13.373372-06', 'orion', null, '2004-12-16 20:27:13.373372-06'); -- aoadmin
 insert into resources values(129, 'shell_group',         'AOINDUSTRIES', '2004-12-16 20:27:19.141660-06', 'orion', null, '2004-12-16 20:27:19.141660-06'); -- ftpmon
 insert into resources values(130, 'httpd_static_site',   'AOINDUSTRIES', '2010-01-06 17:19:53.147526-06', 'orion', null, '2010-01-06 17:19:53.147526-06'); -- disabled
+insert into resources values(131, 'ip_address',          'AOINDUSTRIES', '2004-12-16 19:57:48.018907-06', 'orion', null, '2004-12-16 19:57:48.018907-06'); -- 127.0.0.1
+insert into resources values(132, 'ip_address',          'AOINDUSTRIES', '2004-12-16 19:58:45.847031-06', 'orion', null, '2004-12-16 19:58:45.847031-06'); -- 192.168.1.129
+insert into resources values(133, 'cvs_repository',      'AOINDUSTRIES', '2010-01-12 09:54:59.111841-06', 'orion', null, '2010-01-12 09:54:59.111841-06');
 commit;
-select setval ('"resources_pkey_seq"', 131, true);
+select setval ('"resources_pkey_seq"', 134, true);

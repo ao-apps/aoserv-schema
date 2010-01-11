@@ -2,7 +2,7 @@ COPY "package_definition_limits" FROM stdin;
 998	1	httpd_tomcat_std_site	1	2	5.00	javavm
 3	1	bandwidth	3	\N	1.00	bandwidth
 4	1	disk	1	10	5.00	disk
-5	1	ip	0	10	5.00	ip
+5	1	ip_address	0	10	5.00	ip
 6	1	email_inbox	5	50	1.00	email
 7	1	httpd_static_site	1	10	2.00	site
 8	1	shell_account	1	10	2.00	user
@@ -20,7 +20,7 @@ COPY "package_definition_limits" FROM stdin;
 145	31	email_inbox	\N	\N	\N	\N
 146	31	httpd_static_site	\N	\N	\N	\N
 147	31	shell_account	\N	\N	\N	\N
-144	31	ip	32	\N	1.00	ip
+144	31	ip_address	32	\N	1.00	ip
 131	31	hardware_disk_7200_120	2	4	20.00	managed
 132	31	hardware_disk_7200_250	0	4	15.00	managed
 \.

@@ -7,12 +7,6 @@ create table business_servers (
   accounting text not null,
   server integer not null,
   is_default bool not null,
-  can_control_apache bool not null,
-  can_control_cron bool not null,
-  can_control_mysql bool not null,
-  can_control_postgresql bool not null,
-  can_control_xfs bool not null,
-  can_control_xvfb bool not null,
   can_vnc_console bool not null default false
 );
 grant all on business_servers to aoadmin;

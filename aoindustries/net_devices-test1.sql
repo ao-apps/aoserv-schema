@@ -4,7 +4,6 @@ insert into net_devices values(
 	2,
 	'lo',
 	'loopback device',
-	null, -- delete_route
     null, -- gateway
     null, -- network
     null, -- broadcast,
@@ -20,7 +19,6 @@ insert into net_devices values(
 	2,
 	'eth0',
 	'Nested Test Servers',
-	null,
 	'192.168.1.3',
 	'192.168.1.0',
 	'192.168.1.255',

@@ -6,15 +6,15 @@ alter table brands
   on delete restrict
 ;
 alter table brands
-  add constraint smtp_linux_server_account_fkey
-  foreign key (smtp_linux_server_account)
+  add constraint smtp_email_inbox_fkey
+  foreign key (smtp_email_inbox)
   references email_inboxes (linux_account)
   on update cascade
   on delete restrict
 ;
 alter table brands
-  add constraint imap_linux_server_account_fkey
-  foreign key (imap_linux_server_account)
+  add constraint imap_email_inbox_fkey
+  foreign key (imap_email_inbox)
   references email_inboxes (linux_account)
   on update cascade
   on delete restrict

@@ -6,5 +6,6 @@ create index ticket_assignments_reseller_idx on ticket_assignments (
   reseller
 );
 create index ticket_assignments_administrator_idx on ticket_assignments (
+  administrator_accounting,
   administrator
 );

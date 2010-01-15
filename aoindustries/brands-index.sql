@@ -1,8 +1,8 @@
 create unique index brands_smtp_uni on brands (
-    smtp_linux_server_account
+    smtp_email_inbox
 );
 create unique index brands_imap_uni on brands (
-    imap_linux_server_account
+    imap_email_inbox
 );
 create unique index brands_support_email_address_uni on brands (
     support_email_address

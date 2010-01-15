@@ -2,6 +2,7 @@ create index tickets_brand_idx on tickets (
   brand
 );
 create index tickets_reseller_idx on tickets (
+  ticket_auto_escalate,
   reseller
 );
 create index tickets_accounting_idx on tickets (

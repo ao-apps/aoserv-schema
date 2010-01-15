@@ -1,10 +1,11 @@
 create table tickets (
-  pkey integer primary key,
+  ticket_id integer primary key,
   brand text not null, -- The brand that the ticket originated from
-  reseller text not null, -- The currently allocated reseller (escalataion level) - should never be allocated to a auto-escelate reseller - how to enforce in PostgreSQL?
+  reseller text not null, -- The currently allocated reseller (escalataion level)
+  ticket_auto_escalate bool not null check (not ticket_auto_escalate), -- Hidden reference to resellers only
   accounting text, -- The accounting code that submitted the ticket, if available
   language text not null,
-  created_by text, -- The business_administrator who created the ticket, if available
+  created_by text not null, -- The business_administrator who created the ticket
   category integer, -- An optional category
   ticket_type text not null,
   from_address text, -- The from email address, if submitted by email
@@ -16,8 +17,8 @@ create table tickets (
   admin_priority text,
   status text not null,
   status_timeout timestamp, -- Will change back to "open" at this time
-  contact_emails text not null, -- Comma/space-separated, populated to include cc
-  contact_phone_numbers text not null, -- Comma-separated
+  contact_emails text[] not null, -- Populated to include cc
+  contact_phone_numbers text[] not null,
   internal_notes text not null, -- May be modified, filtered from client
   -- Enforce status/status_timeout consistency
   check (

@@ -1,8 +1,10 @@
-COPY "dns_types" FROM stdin;
-A	Address	f	t
-CNAME	Canonical Name	f	f
-MX	Mail Exchanger	t	f
-NS	Name Server	f	f
-PTR	Pointer	f	f
-TXT	Text Record	f	f
-\.
+begin;
+insert into dns_types values('A');
+insert into dns_types values('AAAA');
+insert into dns_types values('CNAME');
+insert into dns_types values('MX');
+insert into dns_types values('NS');
+insert into dns_types values('PTR');
+insert into dns_types values('SPF');
+insert into dns_types values('TXT');
+commit;

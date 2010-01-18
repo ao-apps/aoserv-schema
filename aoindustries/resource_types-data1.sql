@@ -188,4 +188,7 @@ httpd_static_site
 httpd_tomcat_shared_site
 httpd_tomcat_std_site
 ip_address
+cvs_repository
+dns_record
+dns_zone
 \.

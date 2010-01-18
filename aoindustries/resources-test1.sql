@@ -132,5 +132,6 @@ insert into resources values(130, 'httpd_static_site',   'AOINDUSTRIES', '2010-0
 insert into resources values(131, 'ip_address',          'AOINDUSTRIES', '2004-12-16 19:57:48.018907-06', 'orion', null, '2004-12-16 19:57:48.018907-06'); -- 127.0.0.1
 insert into resources values(132, 'ip_address',          'AOINDUSTRIES', '2004-12-16 19:58:45.847031-06', 'orion', null, '2004-12-16 19:58:45.847031-06'); -- 192.168.1.129
 insert into resources values(133, 'cvs_repository',      'AOINDUSTRIES', '2010-01-12 09:54:59.111841-06', 'orion', null, '2010-01-12 09:54:59.111841-06');
+insert into resources values(134, 'httpd_server',        'AOINDUSTRIES', '2010-01-17 22:26:50.377349-06', 'orion', null, '2010-01-17 22:26:50.377349-06');
 commit;
-select setval ('"resources_pkey_seq"', 134, true);
+select setval ('"resources_pkey_seq"', 135, true);

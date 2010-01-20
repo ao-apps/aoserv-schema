@@ -1,112 +1,112 @@
-COPY "email_attachment_types" FROM stdin;
-ade	Microsoft Access project extension	t
-adp	Microsoft Access project	t
-msp	Microsoft Windows Installer Patch	t
-asd	*.asd file	t
-mst	Microsoft Visual Test Source Files	t
-asx	Windows Media Audio or Video shortcut	f
-bas	Visual Basic class module	t
-bat	Batch file	t
-obj	Relocatable Object Code	t
-cab	*.cab file	t
-cer	*.cer file	t
-chm	Compiled HTML Help file	t
-cil	*.cil file	t
-cmd	Windows NT Command script	t
-ocx	Object Linking and Embedding (OLE) Control Extension	t
-cpl	Control Panel extension	t
-crt	Security certificate	t
-csh	KornShell script file	t
-ov?	Program File Overlay	f
-pcd	Photo CD MS Compiled Script	t
-pgm	Program File	t
-ppt	MS PowerPoint Presentation	f
-prc	Palmpilot Resource File	f
-reg	Registry Entries	t
-fxp	Microsoft Visual FoxPro compiled program	t
-hlp	Help file	t
-hta	HTML program	t
-inf	Setup Information	t
-rtf	Rich Text Format	f
-ins	Internet Naming Service	t
-scr	Screen Saver or Script	t
-isp	Internet Communication settings	t
-smm	Ami Pro Macro	t
-ksh	KornShell script file	t
-sys	System Device Driver	t
-lnk	Shortcut	t
-mda	Microsoft Access add-in program	f
-url	Internet Shortcut	t
-mde	Microsoft Access MDE database	t
-mdt	Microsoft Access workgroup information	t
-mdw	Microsoft Access workgroup information	t
-mdz	Microsoft Access wizard program	f
-msc	Microsoft Common Console document	t
-vxd	Virtual Device Driver	t
-pot	PowerPoint Templates	t
-pl	PERL Script	f
-net	*.net file	t
-nws	*.nws file	t
-pm	PERL Module	f
-ops	Office XP settings	t
-pps	MS PowerPoint Presentation	f
-pd	*.pd file	t
-pif	Shortcut to MS-DOS program	t
-prf	Microsoft Outlook profile settings	f
-prg	Microsoft Visual FoxPro program	f
-pst	Microsoft Outlook Personal Folders file	f
-pwl	*.pwl file	t
-rar	*.rar file	f
-eml	MS Outlook Express E-mail	f
-rm	*.rm file	t
-scf	Windows Explorer command	f
-email	MS Outlook Express E-mail	f
-sct	Windows Script Component	t
-shb	Shell Scrap Object	t
-shm	*.shm file	t
-shs	Shell Scrap Object	t
-src	*.src file	t
-vb	VBScript file	t
-vbe	VBScript encoded script file	t
-vbs	Visual Basic Script file	t
-vbx	*.vbx file	t
-wfs	*.wfs file	t
-wsc	Windows Script Component	t
-wsf	Windows Script file	t
-wsh	Windows Script Host Settings file	t
-xls	*.xls file	f
-xlt	*.xlt file	t
-xml	*.xml file	f
-zip	*.zip file	f
-386	Windows Enhanced Mode Driver	t
-adt	Abstract Data Type	t
-app	Application File	f
-asp	Active Server Page	t
-bin	Binary File	t
-btm	4DOS Batch To Memory Batch File	t
-cbt	Computer Based Training	t
-cla	Java Class File	f
-class	Java Class File	f
-com	Command (Executable File)	t
-csc	Corel Script File	t
-css	Hypertext Cascading Style Sheet	f
-dll	Dynamic Link Library	t
-doc	MS Word Document	f
-dot	MS Word Document Template	t
-drv	Device Driver	t
-exe	Executable File	t
-fon	Font	t
-htm	Hypertext Markeup Language	f
-html	Hypertext Markeup Language	f
-ini	Initialization File	t
-lib	Library	t
-mdb	Microsoft Access Database	t
-js	JScript Script file	f
-jse	Jscript Encoded Script file	f
-mht	MHTML Document	f
-mhtm	MHTML Document	f
-mhtml	MHTML Document	f
-mp3	MP3 Program	f
-mso	Math Script Object	t
-msi	Microsoft Windows Installer Package	t
-\.
+begin;
+insert into email_attachment_types values('386', true);
+insert into email_attachment_types values('ade', true);
+insert into email_attachment_types values('adp', true);
+insert into email_attachment_types values('adt', true);
+insert into email_attachment_types values('app', false);
+insert into email_attachment_types values('asd', true);
+insert into email_attachment_types values('asp', true);
+insert into email_attachment_types values('asx', false);
+insert into email_attachment_types values('bas', true);
+insert into email_attachment_types values('bat', true);
+insert into email_attachment_types values('bin', true);
+insert into email_attachment_types values('btm', true);
+insert into email_attachment_types values('cab', true);
+insert into email_attachment_types values('cbt', true);
+insert into email_attachment_types values('cer', true);
+insert into email_attachment_types values('chm', true);
+insert into email_attachment_types values('cil', true);
+insert into email_attachment_types values('cla', false);
+insert into email_attachment_types values('class', false);
+insert into email_attachment_types values('cmd', true);
+insert into email_attachment_types values('com', true);
+insert into email_attachment_types values('cpl', true);
+insert into email_attachment_types values('crt', true);
+insert into email_attachment_types values('csc', true);
+insert into email_attachment_types values('csh', true);
+insert into email_attachment_types values('css', false);
+insert into email_attachment_types values('dll', true);
+insert into email_attachment_types values('doc', false);
+insert into email_attachment_types values('dot', true);
+insert into email_attachment_types values('drv', true);
+insert into email_attachment_types values('email', false);
+insert into email_attachment_types values('eml', false);
+insert into email_attachment_types values('exe', true);
+insert into email_attachment_types values('fon', true);
+insert into email_attachment_types values('fxp', true);
+insert into email_attachment_types values('hlp', true);
+insert into email_attachment_types values('hta', true);
+insert into email_attachment_types values('htm', false);
+insert into email_attachment_types values('html', false);
+insert into email_attachment_types values('inf', true);
+insert into email_attachment_types values('ini', true);
+insert into email_attachment_types values('ins', true);
+insert into email_attachment_types values('isp', true);
+insert into email_attachment_types values('js', false);
+insert into email_attachment_types values('jse', false);
+insert into email_attachment_types values('ksh', true);
+insert into email_attachment_types values('lib', true);
+insert into email_attachment_types values('lnk', true);
+insert into email_attachment_types values('mda', false);
+insert into email_attachment_types values('mdb', true);
+insert into email_attachment_types values('mde', true);
+insert into email_attachment_types values('mdt', true);
+insert into email_attachment_types values('mdw', true);
+insert into email_attachment_types values('mdz', false);
+insert into email_attachment_types values('mht', false);
+insert into email_attachment_types values('mhtm', false);
+insert into email_attachment_types values('mhtml', false);
+insert into email_attachment_types values('mp3', false);
+insert into email_attachment_types values('msc', true);
+insert into email_attachment_types values('msi', true);
+insert into email_attachment_types values('mso', true);
+insert into email_attachment_types values('msp', true);
+insert into email_attachment_types values('mst', true);
+insert into email_attachment_types values('net', true);
+insert into email_attachment_types values('nws', true);
+insert into email_attachment_types values('obj', true);
+insert into email_attachment_types values('ocx', true);
+insert into email_attachment_types values('ops', true);
+insert into email_attachment_types values('ov?', false);
+insert into email_attachment_types values('pcd', true);
+insert into email_attachment_types values('pd', true);
+insert into email_attachment_types values('pgm', true);
+insert into email_attachment_types values('pif', true);
+insert into email_attachment_types values('pl', false);
+insert into email_attachment_types values('pm', false);
+insert into email_attachment_types values('pot', true);
+insert into email_attachment_types values('pps', false);
+insert into email_attachment_types values('ppt', false);
+insert into email_attachment_types values('prc', false);
+insert into email_attachment_types values('prf', false);
+insert into email_attachment_types values('prg', false);
+insert into email_attachment_types values('pst', false);
+insert into email_attachment_types values('pwl', true);
+insert into email_attachment_types values('rar', false);
+insert into email_attachment_types values('reg', true);
+insert into email_attachment_types values('rm', true);
+insert into email_attachment_types values('rtf', false);
+insert into email_attachment_types values('scf', false);
+insert into email_attachment_types values('scr', true);
+insert into email_attachment_types values('sct', true);
+insert into email_attachment_types values('shb', true);
+insert into email_attachment_types values('shm', true);
+insert into email_attachment_types values('shs', true);
+insert into email_attachment_types values('smm', true);
+insert into email_attachment_types values('src', true);
+insert into email_attachment_types values('sys', true);
+insert into email_attachment_types values('url', true);
+insert into email_attachment_types values('vb', true);
+insert into email_attachment_types values('vbe', true);
+insert into email_attachment_types values('vbs', true);
+insert into email_attachment_types values('vbx', true);
+insert into email_attachment_types values('vxd', true);
+insert into email_attachment_types values('wfs', true);
+insert into email_attachment_types values('wsc', true);
+insert into email_attachment_types values('wsf', true);
+insert into email_attachment_types values('wsh', true);
+insert into email_attachment_types values('xls', false);
+insert into email_attachment_types values('xlt', true);
+insert into email_attachment_types values('xml', false);
+insert into email_attachment_types values('zip', false);
+commit;

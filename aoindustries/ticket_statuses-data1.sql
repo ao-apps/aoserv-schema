@@ -1,13 +1,13 @@
 begin;
-insert into ticket_stati values('junk', 0);
-insert into ticket_stati values('deleted', 1);
-insert into ticket_stati values('closed', 2);
-insert into ticket_stati values('bounced', 3);
-insert into ticket_stati values('hold', 4);
-insert into ticket_stati values('open', 5);
+insert into ticket_statuses values('junk', 0);
+insert into ticket_statuses values('deleted', 1);
+insert into ticket_statuses values('closed', 2);
+insert into ticket_statuses values('bounced', 3);
+insert into ticket_statuses values('hold', 4);
+insert into ticket_statuses values('open', 5);
 commit;
 
---COPY "ticket_stati" FROM stdin;
+--COPY "ticket_statuses" FROM stdin;
 --New	New ticket - no work has been done
 --Underway	Work is currently being done on this ticket
 --Bounced	Awaiting additional information from client - cannot proceed

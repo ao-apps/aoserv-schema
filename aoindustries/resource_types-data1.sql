@@ -191,4 +191,5 @@ ip_address
 cvs_repository
 dns_record
 dns_zone
+private_ftp_server
 \.

@@ -2,7 +2,7 @@ create table business_administrators (
   username text primary key,
   accounting text not null, -- Used as internal reference to usernames only
   password text default '*' not null,
-  "name" text not null check (length("name")>0),
+  full_name text not null check (length(full_name)>0),
   title text,
   birthday varchar(32),
   is_preferred bool default false not null,

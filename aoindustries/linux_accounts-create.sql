@@ -21,6 +21,7 @@ create table linux_accounts (
   office_phone text,
   home_phone text,
   shell text not null check (
+    -- This matches that checked by LinuxAccountType.Constant
     case
       when linux_account_type='shell_account' then shell in ('/sbin/nologin', '/bin/bash', '/bin/ksh', '/bin/sh', '/bin/tcsh')
       when linux_account_type='email_inbox' then shell in ('/sbin/nologin', '/usr/bin/passwd')

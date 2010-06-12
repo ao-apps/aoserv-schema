@@ -8,7 +8,7 @@ create table failover_file_replications (
     constraint failover_file_replications_pk primary key,
   server integer not null,
   backup_partition integer not null,
-  max_bit_rate integer,
+  max_bit_rate int8,
   use_compression bool not null,
   retention smallint not null,
   connect_address text,

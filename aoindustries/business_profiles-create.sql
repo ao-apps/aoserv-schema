@@ -3,46 +3,25 @@ grant all on business_profiles_pkey_seq to aoadmin;
 grant select, update on business_profiles_pkey_seq to aoserv_app;
 
 create table business_profiles (
-  pkey integer
-    default nextval('business_profiles_pkey_seq')
-    constraint business_profiles_pkey primary key,
-  accounting text
-    not null,
-  priority integer
-    default 1
-    not null,
-  name text
-    not null,
-  private bool
-    default true
-    not null,
-  phone text
-    not null,
+  pkey integer default nextval('business_profiles_pkey_seq') primary key,
+  accounting text not null,
+  priority integer default 1 not null,
+  "name" text not null,
+  private bool default true not null,
+  phone text not null,
   fax text,
-  address1 text
-    not null,
+  address1 text not null,
   address2 text,
-  city text
-    not null,
-  state text,
-  country char(2)
-    default 'US'
-    not null,
+  city text not null,
+  "state" text,
+  country char(2) not null,
   zip text,
-  send_invoice bool
-    default false
-    not null,
-  created timestamp
-    default now()
-    not null,
-  billing_contact text
-    not null,
-  billing_email text
-    not null,
-  technical_contact text
-    not null,
-  technical_email text
-    not null,
+  send_invoice bool default false not null,
+  created timestamp default now() not null,
+  billing_contact text not null,
+  billing_email text not null,
+  technical_contact text not null,
+  technical_email text not null,
   unique(accounting, priority)
 );
 grant all on business_profiles to aoadmin;

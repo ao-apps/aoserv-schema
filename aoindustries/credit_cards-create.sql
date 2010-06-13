@@ -21,7 +21,7 @@ create table credit_cards (
   street_address1 text not null,
   street_address2 text,
   city text not null,
-  state text,
+  "state" text,
   postal_code text,
   country_code character(2) not null,
   created timestamp not null,

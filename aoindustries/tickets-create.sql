@@ -17,8 +17,8 @@ create table tickets (
   admin_priority text,
   status text not null,
   status_timeout timestamp, -- Will change back to "open" at this time
-  contact_emails text[] not null, -- Populated to include cc
-  contact_phone_numbers text[] not null,
+  contact_emails text not null, -- Populated to include cc
+  contact_phone_numbers text not null,
   internal_notes text not null, -- May be modified, filtered from client
   -- Enforce status/status_timeout consistency
   check (

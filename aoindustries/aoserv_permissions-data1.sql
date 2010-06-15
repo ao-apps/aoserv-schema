@@ -81,6 +81,11 @@ insert into aoserv_permissions values(
     'set_postgres_server_user_password',
     (select count(*) from aoserv_permissions)
 );
+-- ticket_actions
+insert into aoserv_permissions values(
+    'add_ticket_annotation',
+    (select count(*) from aoserv_permissions)
+);
 -- tickets
 insert into aoserv_permissions values(
     'add_ticket',
@@ -88,6 +93,10 @@ insert into aoserv_permissions values(
 );
 insert into aoserv_permissions values(
     'edit_ticket',
+    (select count(*) from aoserv_permissions)
+);
+insert into aoserv_permissions values(
+    'get_ticket_details',
     (select count(*) from aoserv_permissions)
 );
 -- virtual_servers

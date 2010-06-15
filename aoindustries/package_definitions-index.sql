@@ -1,11 +1,13 @@
 create unique index package_definitions_uni on package_definitions (
-  accounting,
   category,
-  name,
+  "name",
   version
 );
 create index package_definitions_category_idx on package_definitions (
   category
+);
+create index package_definitions_currency_ind on package_definitions (
+  currency
 );
 create index package_definitions_setup_fee_transaction_type_idx on package_definitions (
   setup_fee_transaction_type

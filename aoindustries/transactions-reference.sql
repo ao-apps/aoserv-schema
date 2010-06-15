@@ -21,8 +21,15 @@ alter table transactions
 ;
 alter table transactions
   add constraint type_fkey
-  foreign key (type)
+  foreign key ("type")
   references transaction_types ("name")
+  on delete restrict
+  on update cascade
+;
+alter table transactions
+  add constraint currency_fkey
+  foreign key (currency)
+  references currencies (code)
   on delete restrict
   on update cascade
 ;

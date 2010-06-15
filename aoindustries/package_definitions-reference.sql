@@ -6,9 +6,9 @@ alter table package_definitions
   on update cascade
 ;
 alter table package_definitions
-  add constraint accounting_fkey
-  foreign key (accounting)
-  references businesses (accounting)
+  add constraint currency_fkey
+  foreign key (currency)
+  references currencies (code)
   on delete restrict
   on update cascade
 ;

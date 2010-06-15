@@ -10,6 +10,9 @@ create index transactions_username_ind on transactions (
 create index transactions_type_ind on transactions (
   "type"
 );
+create index transactions_currency_ind on transactions (
+  currency
+);
 create index transactions_payment_type_ind on transactions (
   payment_type
 );

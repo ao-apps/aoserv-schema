@@ -9,8 +9,10 @@ insert into aoserv_role_permissions values(default, 3, 'add_ticket');
 -- AOWeb Struts
 insert into aoserv_role_permissions values(default, 4, 'add_ticket');
 -- Business Administrator
+insert into aoserv_role_permissions values(default, 5, 'add_ticket_annotation');
 insert into aoserv_role_permissions values(default, 5, 'add_ticket');
 insert into aoserv_role_permissions values(default, 5, 'edit_ticket');
+insert into aoserv_role_permissions values(default, 5, 'get_ticket_details');
 insert into aoserv_role_permissions values(default, 5, 'set_mysql_user_password');
 -- AWStats Proxy
 commit;

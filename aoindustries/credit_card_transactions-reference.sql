@@ -13,6 +13,13 @@ alter table credit_card_transactions
   on update cascade
 ;
 alter table credit_card_transactions
+  add constraint currency_fkey
+  foreign key (currency)
+  references currencies (code)
+  on delete restrict
+  on update cascade
+;
+alter table credit_card_transactions
   add constraint shipping_country_code_fkey
   foreign key (shipping_country_code)
   references country_codes (code)

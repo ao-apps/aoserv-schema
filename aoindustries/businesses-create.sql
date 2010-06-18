@@ -44,6 +44,7 @@ grant select, insert, update, delete on businesses to aoserv_app;
  * $2  the accounting code of the business or parent
  *
  *********************************************************************/
+/*
 create or replace function is_business_or_parent (text,text) returns bool as 'select false;' language 'sql' with(isstrict);
 create or replace function is_business_or_parent_recurse (text,text)
   returns bool
@@ -70,3 +71,4 @@ create or replace function is_business_or_parent (text,text)
   language 'sql'
   with(isstrict)
 ;
+*/

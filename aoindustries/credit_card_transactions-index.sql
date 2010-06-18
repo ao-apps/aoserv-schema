@@ -1,6 +1,9 @@
 create index credit_card_transactions_accounting_idx on credit_card_transactions (
   accounting
 );
+create index credit_card_transactions_currency_ind on credit_card_transactions (
+  currency
+);
 create index credit_card_transactions_shipping_country_code_idx on credit_card_transactions (
   shipping_country_code
 );

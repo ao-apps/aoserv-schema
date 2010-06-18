@@ -17,7 +17,7 @@ as
     where
       se.pkey=ao.server
     order by
-      reverse_hostname(ao.hostname)
+      ao.hostname
   )
   union all select
     'Total:',

@@ -11,7 +11,7 @@ create table transactions (
   "type" text not null,
   description text not null,
   quantity decimal(8,3) not null default 1 check (quantity>0),
-  currency char(3) not null default 'USD',
+  currency char(3) not null,
   rate decimal not null,
   payment_type text,
   payment_info text,

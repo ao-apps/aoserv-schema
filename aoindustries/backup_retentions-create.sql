@@ -1,8 +1,5 @@
 create table backup_retentions (
-  days smallint
-    constraint backup_retentions_pkey primary key,
-  display text
-    not null
+  days smallint primary key
 );
 grant all on backup_retentions to aoadmin;
 grant select on backup_retentions to aoserv_app;

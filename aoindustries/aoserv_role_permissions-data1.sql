@@ -1,6 +1,13 @@
 select setval('aoserv_role_permissions_pkey_seq', 1, true);
 begin;
 -- Read-Only
+insert into aoserv_role_permissions values(default, 1, 'check_mysql_tables');
+insert into aoserv_role_permissions values(default, 1, 'get_credit_card_processors');
+insert into aoserv_role_permissions values(default, 1, 'get_credit_cards');
+insert into aoserv_role_permissions values(default, 1, 'get_credit_card_transactions');
+insert into aoserv_role_permissions values(default, 1, 'get_mysql_master_status');
+insert into aoserv_role_permissions values(default, 1, 'get_mysql_slave_status');
+insert into aoserv_role_permissions values(default, 1, 'get_mysql_table_status');
 insert into aoserv_role_permissions values(default, 1, 'get_ticket_details');
 insert into aoserv_role_permissions values(default, 1, 'get_transaction_description');
 -- Master User

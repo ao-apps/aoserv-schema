@@ -19,6 +19,6 @@ create index transactions_payment_type_ind on transactions (
 create index transactions_processor_ind on transactions (
   processor
 );
-create index transactions_credit_card_transaction_ind on transactions (
+create unique index transactions_credit_card_transaction_uni on transactions (
   credit_card_transaction
 );

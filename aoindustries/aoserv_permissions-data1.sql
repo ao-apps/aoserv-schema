@@ -99,6 +99,15 @@ insert into aoserv_permissions values(
     'get_ticket_details',
     (select count(*) from aoserv_permissions)
 );
+-- transactions
+insert into aoserv_permissions values(
+    'add_transaction',
+    (select count(*) from aoserv_permissions)
+);
+insert into aoserv_permissions values(
+    'get_transaction_description',
+    (select count(*) from aoserv_permissions)
+);
 -- virtual_servers
 insert into aoserv_permissions values(
     'vnc_console',

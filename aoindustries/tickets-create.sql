@@ -4,7 +4,7 @@ create table tickets (
   reseller text not null, -- The currently allocated reseller (escalataion level)
   ticket_auto_escalate bool not null check (not ticket_auto_escalate), -- Hidden reference to resellers only
   accounting text, -- The accounting code that submitted the ticket, if available
-  language text not null,
+  "language" text not null,
   created_by text not null, -- The business_administrator who created the ticket
   category integer, -- An optional category
   ticket_type text not null,
@@ -32,79 +32,3 @@ create table tickets (
 );
 grant all on tickets to aoadmin;
 grant select, insert, update, delete on tickets to aoserv_app;
-
-
-
-
-/* Conversion:
-insert into
-    tickets
-select
-    pkey,
-    'AOINDUSTRIES',
-    accounting,
-    'en',
-    created_by,
-    case
-        when ticket_type='Accounting' then '19'
-        when ticket_type='AOServ' then '92'
-        when ticket_type='CGI' then '23'
-        when ticket_type='Control Panel' then '109'
-        when ticket_type='CVS' then '55'
-        when ticket_type='DNS/Host Names' then '57'
-        when ticket_type='Email' then '1'
-        when ticket_type='InterBase' then '18'
-        when ticket_type='Java Virtual Machine' then '24'
-        when ticket_type='Logging/Stats' then '64'
-        when ticket_type='MySQL' then '13'
-        when ticket_type='NOTE: Install Note' then null
-        when ticket_type='Performance' then '98'
-        when ticket_type='PHP' then '36'
-        when ticket_type='PostgreSQL' then '16'
-        when ticket_type='Shell Account' then '44'
-        when ticket_type='Tickets' then '102'
-        when ticket_type='TODO: Event' then null
-        when ticket_type='TODO: Hardware' then '104'
-        when ticket_type='TODO: Monitoring' then '100'
-        when ticket_type='TODO: Payment' then '21'
-        when ticket_type='TODO: Reliability' then '99'
-        when ticket_type='TODO: Security' then '66'
-        when ticket_type='TODO: Support Tools' then '101'
-        when ticket_type='Websites' then '49'
-        when ticket_type='XML' then null
-        when ticket_type='' or ticket_type is null then null
-        else ticket_type -- Cause error
-    end :: integer,
-    case when
-        ticket_type in ('TODO: Event', 'NOTE: Install Note') then 'internal'
-        else 'support'
-    end,
-    null,
-    '(No summary)',
-    details,
-    null,
-    open_date,
-    client_priority,
-    admin_priority,
-    case
-        when status='Admin Hold' then 'hold'
-        when status='Admin Kill' then 'deleted'
-        when status='Bounced' then 'bounced'
-        when status='Client Hold' then 'hold'
-        when status='Client Kill' then 'deleted'
-        when status='Completed' then 'closed'
-        when status='New' then 'open'
-        when status='Underway' then 'open'
-        else 'bad_status'
-    end,
-    case
-        when status in ('Admin Hold', 'Bounced', 'Client Hold') then (now()+'1 month'::interval)
-        else null
-    end,
-    contact_emails,
-    contact_phone_numbers,
-    ''
-from
-    tickets_20090611
-;
-*/

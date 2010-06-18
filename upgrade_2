@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+# Converts AOServ 1.0 database to AOServ 2.0
+#
+set -e
+DIR=`dirname "$0"`
+"${DIR}/upgrade_2_1_clear"
+"${DIR}/upgrade_2_2_copy_production"
+"${DIR}/upgrade_2_3_convert_data"
+echo "Done"

@@ -2,18 +2,19 @@
 #
 # Copies the production database to a schema named "aoserv1".  Database must be empty.
 #
-set -e
 DIR=`dirname "$0"`
 read -p "Please confirm database is empty (\d and \dn) then press <Enter>: "
 (
   # Copy the production database
-  ssh aoadmin@master.aoindustries.com /opt/postgresql-8.3-i686/bin/pg_dump \
-    -p 5447 \
-    --blobs \
-    --no-owner \
-    --no-privileges \
-    aoindustries
+  ssh aoadmin@master.aoindustries.com "/opt/postgresql-8.3-i686/bin/pg_dump -p 5447 --blobs --no-owner --no-privileges aoindustries | gzip"
+) \
+| gunzip \
+| /ao/bin/ssh aoadmin@192.168.1.129 "psql -p 5433 aoindustries" 2>&1 \
+| grep -i error \
+| grep -v "ERROR:  parameter \"standard_conforming_strings\" cannot be changed" \
+| grep -v "ERROR:  must be superuser to create procedural language"
 
+(
   # Remove unnecessary views
   cat <<EOF
   drop view account_balances;

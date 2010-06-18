@@ -1,0 +1,315 @@
+#!/bin/bash
+#
+# Converts data from AOServ 1.0 database to AOServ 2.0
+#
+set -e
+DIR=`dirname "$0"`
+(
+  (
+    # Clear database
+    "${DIR}/generate_sql-drop" "aoindustries"
+  ) | /ao/bin/ssh aoadmin@192.168.1.129 "psql -p 5433 aoindustries" 2>&1 | grep -i error | grep -v " does not exist$"
+)
+read -p "Please confirm public schema is empty (\d) then press <Enter>: "
+(
+  # Create database objects
+  "${DIR}/generate_sql-create" "aoindustries"
+
+  # Convert data
+  cat <<EOF
+  -- TODO: ao_server_daemon_hosts                      | table    | aoadmin
+  -- TODO: ao_server_daemon_hosts_pkey_seq             | sequence | aoadmin
+  -- TODO: ao_server_resources                         | table    | aoadmin
+  -- TODO: ao_servers                                  | table    | aoadmin
+EOF
+  cat "${DIR}/aoindustries/aoserv_permissions-data1.sql"
+  cat "${DIR}/aoindustries/aoserv_role_permissions-data1.sql"
+  cat "${DIR}/aoindustries/aoserv_roles-data1.sql"
+  cat "${DIR}/aoindustries/architectures-data1.sql"
+  cat <<EOF
+  -- TODO: backup_partitions                           | table    | aoadmin
+  -- TODO: backup_partitions_pkey_seq                  | sequence | aoadmin
+  -- TODO: backup_retentions                           | table    | aoadmin
+  -- TODO: bank_accounts                               | table    | aoadmin
+  -- TODO: bank_transaction_types                      | table    | aoadmin
+  -- TODO: bank_transactions                           | table    | aoadmin
+  -- TODO: bank_transactions_transid_seq               | sequence | aoadmin
+  -- TODO: banks                                       | table    | aoadmin
+  -- TODO: blackhole_email_addresses                   | table    | aoadmin
+  -- TODO: brands                                      | table    | aoadmin
+  -- TODO: business_administrator_roles                | table    | aoadmin
+  -- TODO: business_administrator_roles_pkey_seq       | sequence | aoadmin
+  insert into business_administrators select
+    ba.username,
+    pk.accounting,
+    ba.password,
+    ba.name,
+    ba.title,
+    ba.birthday,
+    ba.is_preferred,
+    ba.private,
+    ba.created,
+    ba.work_phone,
+    ba.home_phone,
+    ba.cell_phone,
+    ba.fax,
+    ba.email,
+    ba.address1,
+    ba.address2,
+    ba.city,
+    ba.state,
+    ba.country,
+    ba.zip,
+    ba.disable_log,
+    ba.can_switch_users,
+    ba.support_code
+  from
+    aoserv1.business_administrators ba
+    inner join aoserv1.usernames un on ba.username=un.username
+    inner join aoserv1.packages pk on un.package=pk.name
+  ;
+  -- TODO: business_profiles                           | table    | aoadmin
+  -- TODO: business_profiles_pkey_seq                  | sequence | aoadmin
+  -- TODO: business_servers                            | table    | aoadmin
+  -- TODO: business_servers_pkey_seq                   | sequence | aoadmin
+  insert into businesses select
+    bu.accounting,
+    bu.contract_version,
+    bu.created,
+    bu.canceled,
+    bu.cancel_reason,
+    bu.parent,
+    bu.can_add_backup_server,
+    bu.can_add_businesses,
+    bu.can_see_prices,
+    bu.disable_log,
+    bu.do_not_disable_reason,
+    bu.auto_enable,
+    bu.bill_parent,
+    pk.package_definition,
+    case when bu.accounting='AOINDUSTRIES' then null else pk.created_by end,
+    pk.email_in_burst,
+    pk.email_in_rate,
+    pk.email_out_burst,
+    pk.email_out_rate,
+    pk.email_relay_burst,
+    pk.email_relay_rate
+  from
+    aoserv1.businesses bu
+    inner join aoserv1.packages pk on bu.accounting=pk.accounting
+  ;
+  insert into country_codes select * from aoserv1.country_codes;
+  -- TODO: credit_card_processors                      | table    | aoadmin
+  -- TODO: credit_card_transactions                    | table    | aoadmin
+  -- TODO: credit_card_transactions_pkey_seq           | sequence | aoadmin
+  -- TODO: credit_cards                                | table    | aoadmin
+  -- TODO: credit_cards_pkey_seq                       | sequence | aoadmin
+EOF
+  cat "${DIR}/aoindustries/currencies-data1.sql"
+  cat <<EOF
+  -- TODO: cvs_repositories                            | table    | aoadmin
+  insert into disable_log select * from aoserv1.disable_log;
+  -- TODO: disable_log_pkey_seq                        | sequence | aoadmin
+  -- TODO: distro_file_types                           | table    | aoadmin
+  -- TODO: distro_files                                | table    | aoadmin
+  -- TODO: distro_files_pkey_seq                       | sequence | aoadmin
+  -- TODO: dns_records                                 | table    | aoadmin
+  -- TODO: dns_tlds                                    | table    | aoadmin
+  -- TODO: dns_types                                   | table    | aoadmin
+  -- TODO: dns_zones                                   | table    | aoadmin
+  -- TODO: email_addresses                             | table    | aoadmin
+  -- TODO: email_addresses_pkey_seq                    | sequence | aoadmin
+  -- TODO: email_attachment_blocks                     | table    | aoadmin
+  -- TODO: email_attachment_blocks_pkey_seq            | sequence | aoadmin
+  -- TODO: email_attachment_types                      | table    | aoadmin
+  -- TODO: email_domains                               | table    | aoadmin
+  -- TODO: email_domains_pkey_seq                      | sequence | aoadmin
+  -- TODO: email_forwarding                            | table    | aoadmin
+  -- TODO: email_forwarding_pkey_seq                   | sequence | aoadmin
+  -- TODO: email_inbox_addresses                       | table    | aoadmin
+  -- TODO: email_inbox_addresses_pkey_seq              | sequence | aoadmin
+  -- TODO: email_inboxes                               | table    | aoadmin
+  -- TODO: email_list_addresses                        | table    | aoadmin
+  -- TODO: email_list_addresses_pkey_seq               | sequence | aoadmin
+  -- TODO: email_lists                                 | table    | aoadmin
+  -- TODO: email_lists_pkey_seq                        | sequence | aoadmin
+  -- TODO: email_pipe_addresses                        | table    | aoadmin
+  -- TODO: email_pipe_addresses_pkey_seq               | sequence | aoadmin
+  -- TODO: email_pipes                                 | table    | aoadmin
+  -- TODO: email_pipes_pkey_seq                        | sequence | aoadmin
+  -- TODO: email_sa_integration_modes                  | table    | aoadmin
+  -- TODO: email_smtp_relay_types                      | table    | aoadmin
+  -- TODO: email_smtp_relays                           | table    | aoadmin
+  -- TODO: email_smtp_relays_pkey_seq                  | sequence | aoadmin
+  -- TODO: email_smtp_smart_host_domains               | table    | aoadmin
+  -- TODO: email_smtp_smart_host_domains_pkey_seq      | sequence | aoadmin
+  -- TODO: email_smtp_smart_hosts                      | table    | aoadmin
+  -- TODO: encryption_keys                             | table    | aoadmin
+  -- TODO: encryption_keys_pkey_seq                    | sequence | aoadmin
+  -- TODO: expense_categories                          | table    | aoadmin
+  -- TODO: failover_file_log                           | table    | aoadmin
+  -- TODO: failover_file_log_pkey_seq                  | sequence | aoadmin
+  -- TODO: failover_file_replications                  | table    | aoadmin
+  -- TODO: failover_file_replications_pkey_seq         | sequence | aoadmin
+  -- TODO: failover_file_schedule                      | table    | aoadmin
+  -- TODO: failover_file_schedule_pkey_seq             | sequence | aoadmin
+  -- TODO: failover_mysql_replications                 | table    | aoadmin
+  -- TODO: failover_mysql_replications_pkey_seq        | sequence | aoadmin
+  -- TODO: file_backup_settings                        | table    | aoadmin
+  -- TODO: file_backup_settings_pkey_seq               | sequence | aoadmin
+  -- TODO: ftp_guest_users                             | table    | aoadmin
+  -- TODO: group_names                                 | table    | aoadmin
+  -- TODO: httpd_binds                                 | table    | aoadmin
+  -- TODO: httpd_jboss_sites                           | table    | aoadmin
+  -- TODO: httpd_jboss_versions                        | table    | aoadmin
+  -- TODO: httpd_jk_codes                              | table    | aoadmin
+  -- TODO: httpd_jk_protocols                          | table    | aoadmin
+  -- TODO: httpd_servers                               | table    | aoadmin
+  -- TODO: httpd_shared_tomcats                        | table    | aoadmin
+  -- TODO: httpd_shared_tomcats_pkey_seq               | sequence | aoadmin
+  -- TODO: httpd_site_authenticated_locations          | table    | aoadmin
+  -- TODO: httpd_site_authenticated_locations_pkey_seq | sequence | aoadmin
+  -- TODO: httpd_site_binds                            | table    | aoadmin
+  -- TODO: httpd_site_binds_pkey_seq                   | sequence | aoadmin
+  -- TODO: httpd_site_urls                             | table    | aoadmin
+  -- TODO: httpd_site_urls_pkey_seq                    | sequence | aoadmin
+  -- TODO: httpd_sites                                 | table    | aoadmin
+  -- TODO: httpd_static_sites                          | table    | aoadmin
+  -- TODO: httpd_tomcat_contexts                       | table    | aoadmin
+  -- TODO: httpd_tomcat_contexts_pkey_seq              | sequence | aoadmin
+  -- TODO: httpd_tomcat_data_sources                   | table    | aoadmin
+  -- TODO: httpd_tomcat_data_sources_pkey_seq          | sequence | aoadmin
+  -- TODO: httpd_tomcat_parameters                     | table    | aoadmin
+  -- TODO: httpd_tomcat_parameters_pkey_seq            | sequence | aoadmin
+  -- TODO: httpd_tomcat_shared_sites                   | table    | aoadmin
+  -- TODO: httpd_tomcat_sites                          | table    | aoadmin
+  -- TODO: httpd_tomcat_std_sites                      | table    | aoadmin
+  -- TODO: httpd_tomcat_versions                       | table    | aoadmin
+  -- TODO: httpd_workers                               | table    | aoadmin
+  -- TODO: httpd_workers_pkey_seq                      | sequence | aoadmin
+  -- TODO: ip_addresses                                | table    | aoadmin
+  -- TODO: languages                                   | table    | aoadmin
+  -- TODO: linux_account_groups                        | table    | aoadmin
+  -- TODO: linux_account_groups_pkey_seq               | sequence | aoadmin
+  -- TODO: linux_account_types                         | table    | aoadmin
+  -- TODO: linux_accounts                              | table    | aoadmin
+  -- TODO: linux_group_types                           | table    | aoadmin
+  -- TODO: linux_groups                                | table    | aoadmin
+  -- TODO: majordomo_lists                             | table    | aoadmin
+  -- TODO: majordomo_servers                           | table    | aoadmin
+  -- TODO: majordomo_versions                          | table    | aoadmin
+  -- TODO: master_hosts                                | table    | aoadmin
+  -- TODO: master_hosts_pkey_seq                       | sequence | aoadmin
+  -- TODO: master_servers                              | table    | aoadmin
+  -- TODO: master_servers_pkey_seq                     | sequence | aoadmin
+  -- TODO: master_users                                | table    | aoadmin
+  -- TODO: monthly_charges                             | table    | aoadmin
+  -- TODO: monthly_charges_pkey_seq                    | sequence | aoadmin
+  -- TODO: mysql_databases                             | table    | aoadmin
+  -- TODO: mysql_db_users                              | table    | aoadmin
+  -- TODO: mysql_db_users_pkey_seq                     | sequence | aoadmin
+  -- TODO: mysql_servers                               | table    | aoadmin
+  -- TODO: mysql_users                                 | table    | aoadmin
+  -- TODO: net_binds                                   | table    | aoadmin
+  -- TODO: net_binds_pkey_seq                          | sequence | aoadmin
+  -- TODO: net_device_ids                              | table    | aoadmin
+  -- TODO: net_devices                                 | table    | aoadmin
+  -- TODO: net_devices_pkey_seq                        | sequence | aoadmin
+  -- TODO: net_protocols                               | table    | aoadmin
+  -- TODO: net_tcp_redirects                           | table    | aoadmin
+  -- TODO: notice_log                                  | table    | aoadmin
+  -- TODO: notice_log_pkey_seq                         | sequence | aoadmin
+  -- TODO: notice_types                                | table    | aoadmin
+  -- TODO: operating_system_versions                   | table    | aoadmin
+  -- TODO: operating_system_versions_pkey_seq          | sequence | aoadmin
+  -- TODO: operating_systems                           | table    | aoadmin
+  insert into package_categories select * from aoserv1.package_categories;
+  -- TODO: package_definition_businesses               | table    | aoadmin
+  -- TODO: package_definition_businesses_pkey_seq      | sequence | aoadmin
+  -- TODO: package_definition_limits                   | table    | aoadmin
+  -- TODO: package_definition_limits_pkey_seq          | sequence | aoadmin
+  insert into package_definitions select
+    pkey,
+    category,
+    case when accounting='AOINDUSTRIES' then name else accounting||'_'||name end,
+    version,
+    'USD',
+    setup_fee,
+    setup_fee_transaction_type,
+    monthly_rate,
+    monthly_rate_transaction_type,
+    approved
+  from aoserv1.package_definitions;
+  -- TODO: package_definitions_pkey_seq                | sequence | aoadmin
+  -- TODO: payment_types                               | table    | aoadmin
+  -- TODO: physical_servers                            | table    | aoadmin
+  -- TODO: postgres_databases                          | table    | aoadmin
+  -- TODO: postgres_encodings                          | table    | aoadmin
+  -- TODO: postgres_encodings_pkey_seq                 | sequence | aoadmin
+  -- TODO: postgres_servers                            | table    | aoadmin
+  -- TODO: postgres_users                              | table    | aoadmin
+  -- TODO: postgres_versions                           | table    | aoadmin
+  -- TODO: private_ftp_servers                         | table    | aoadmin
+  -- TODO: processor_types                             | table    | aoadmin
+  -- TODO: protocols                                   | table    | aoadmin
+  -- TODO: racks                                       | table    | aoadmin
+  -- TODO: racks_pkey_seq                              | sequence | aoadmin
+  -- TODO: resellers                                   | table    | aoadmin
+  -- TODO: resource_types                              | table    | aoadmin
+  -- TODO: resources                                   | table    | aoadmin
+  -- TODO: resources_pkey_seq                          | sequence | aoadmin
+  -- TODO: server_farms                                | table    | aoadmin
+  -- TODO: server_resources                            | table    | aoadmin
+  -- TODO: servers                                     | table    | aoadmin
+  -- TODO: servers_pkey_seq                            | sequence | aoadmin
+  -- TODO: shells                                      | table    | aoadmin
+  -- TODO: signup_request_options                      | table    | aoadmin
+  -- TODO: signup_request_options_pkey_seq             | sequence | aoadmin
+  -- TODO: signup_requests                             | table    | aoadmin
+  -- TODO: signup_requests_pkey_seq                    | sequence | aoadmin
+  -- TODO: spam_email_messages                         | table    | aoadmin
+  -- TODO: spam_email_messages_pkey_seq                | sequence | aoadmin
+  -- TODO: system_email_aliases                        | table    | aoadmin
+  -- TODO: system_email_aliases_pkey_seq               | sequence | aoadmin
+  -- TODO: technologies                                | table    | aoadmin
+  -- TODO: technologies_pkey_seq                       | sequence | aoadmin
+  -- TODO: technology_classes                          | table    | aoadmin
+  -- TODO: technology_names                            | table    | aoadmin
+  -- TODO: technology_versions                         | table    | aoadmin
+  -- TODO: technology_versions_pkey_seq                | sequence | aoadmin
+  -- TODO: ticket_action_types                         | table    | aoadmin
+  -- TODO: ticket_actions                              | table    | aoadmin
+  -- TODO: ticket_actions_pkey_seq                     | sequence | aoadmin
+  -- TODO: ticket_assignments                          | table    | aoadmin
+  -- TODO: ticket_assignments_pkey_seq                 | sequence | aoadmin
+  -- TODO: ticket_brand_categories                     | table    | aoadmin
+  -- TODO: ticket_categories                           | table    | aoadmin
+  -- TODO: ticket_priorities                           | table    | aoadmin
+  -- TODO: ticket_statuses                             | table    | aoadmin
+  -- TODO: ticket_types                                | table    | aoadmin
+  -- TODO: tickets                                     | table    | aoadmin
+  -- TODO: time_zones                                  | table    | aoadmin
+  insert into transaction_types select * from aoserv1.transaction_types;
+  -- TODO: transactions                                | table    | aoadmin
+  -- TODO: transactions_transid_seq                    | sequence | aoadmin
+  -- TODO: us_states                                   | table    | aoadmin
+  insert into usernames select
+    un.username,
+    pk.accounting,
+    un.disable_log
+  from
+    aoserv1.usernames un
+    inner join aoserv1.packages pk on un.package=pk.name
+  ;
+  -- TODO: virtual_disks                               | table    | aoadmin
+  -- TODO: virtual_disks_pkey_seq                      | sequence | aoadmin
+  -- TODO: virtual_servers                             | table    | aoadmin
+  -- TODO: whois_history                               | table    | aoadmin
+  -- TODO: whois_history_pkey_seq                      | sequence | aoadmin
+EOF
+  # Complete database objects
+  "${DIR}/generate_sql-view" "aoindustries"
+  "${DIR}/generate_sql-index" "aoindustries"
+  "${DIR}/generate_sql-vacuum" "aoindustries"
+  "${DIR}/generate_sql-reference" "aoindustries"
+) | /ao/bin/ssh aoadmin@192.168.1.129 "psql -p 5433 aoindustries" 2>&1 | grep -i error

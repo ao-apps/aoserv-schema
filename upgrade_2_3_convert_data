@@ -2,14 +2,11 @@
 #
 # Converts data from AOServ 1.0 database to AOServ 2.0
 #
-set -e
 DIR=`dirname "$0"`
 (
-  (
-    # Clear database
-    "${DIR}/generate_sql-drop" "aoindustries"
-  ) | /ao/bin/ssh aoadmin@192.168.1.129 "psql -p 5433 aoindustries" 2>&1 | grep -i error | grep -v " does not exist$"
-)
+  # Clear database
+  "${DIR}/generate_sql-drop" "aoindustries"
+) | /ao/bin/ssh aoadmin@192.168.1.129 "psql -p 5433 aoindustries" 2>&1 | grep -i error | grep -v " does not exist$"
 read -p "Please confirm public schema is empty (\d) then press <Enter>: "
 (
   # Create database objects
@@ -31,14 +28,12 @@ EOF
   -- TODO: backup_partitions_pkey_seq                  | sequence | aoadmin
 EOF
   cat "${DIR}/aoindustries/backup_retentions-data1.sql"
-  cat <<EOF
-  -- TODO: bank_accounts                               | table    | aoadmin
-EOF
+  echo "insert into bank_accounts select * from aoserv1.bank_accounts;"
   cat "${DIR}/aoindustries/bank_transaction_types-data1.sql"
   cat <<EOF
   -- TODO: bank_transactions                           | table    | aoadmin
   -- TODO: bank_transactions_transid_seq               | sequence | aoadmin
-  -- TODO: banks                                       | table    | aoadmin
+  insert into banks select * from aoserv1.banks;
   -- TODO: blackhole_email_addresses                   | table    | aoadmin
   -- TODO: brands                                      | table    | aoadmin
   -- TODO: business_administrator_roles                | table    | aoadmin
@@ -113,7 +108,7 @@ EOF
   cat <<EOF
   -- TODO: cvs_repositories                            | table    | aoadmin
   insert into disable_log select * from aoserv1.disable_log;
-  -- TODO: disable_log_pkey_seq                        | sequence | aoadmin
+  select setval('disable_log_pkey_seq', (select coalesce(max(pkey)+1, 1) from disable_log));
   -- TODO: distro_file_types                           | table    | aoadmin
   -- TODO: distro_files                                | table    | aoadmin
   -- TODO: distro_files_pkey_seq                       | sequence | aoadmin
@@ -275,7 +270,7 @@ EOF
     monthly_rate_transaction_type,
     approved
   from aoserv1.package_definitions;
-  -- TODO: package_definitions_pkey_seq                | sequence | aoadmin
+  select setval('package_definitions_pkey_seq', (select coalesce(max(pkey)+1, 1) from package_definitions));
   -- TODO: payment_types                               | table    | aoadmin
   -- TODO: physical_servers                            | table    | aoadmin
   -- TODO: postgres_databases                          | table    | aoadmin

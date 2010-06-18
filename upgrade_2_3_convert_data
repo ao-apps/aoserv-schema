@@ -13,7 +13,7 @@ read -p "Please confirm public schema is empty (\d) then press <Enter>: "
   "${DIR}/generate_sql-create" "aoindustries"
 
   # Convert data
-cat <<EOF
+  cat <<EOF
   -- TODO: ao_server_daemon_hosts                      | table    | aoadmin
   -- TODO: ao_server_daemon_hosts_pkey_seq             | sequence | aoadmin
   -- TODO: ao_server_resources                         | table    | aoadmin
@@ -23,17 +23,19 @@ EOF
   cat "${DIR}/aoindustries/aoserv_role_permissions-data1.sql"
   cat "${DIR}/aoindustries/aoserv_roles-data1.sql"
   cat "${DIR}/aoindustries/architectures-data1.sql"
-cat <<EOF
+  cat <<EOF
   -- TODO: backup_partitions                           | table    | aoadmin
   -- TODO: backup_partitions_pkey_seq                  | sequence | aoadmin
 EOF
   cat "${DIR}/aoindustries/backup_retentions-data1.sql"
-  echo "insert into bank_accounts select * from aoserv1.bank_accounts;"
+  cat <<EOF
+  -- TODO: bank_accounts                               | table    | aoadmin
+EOF
   cat "${DIR}/aoindustries/bank_transaction_types-data1.sql"
-cat <<EOF
-  insert into bank_transactions select * from aoserv1.bank_transactions;
-  select setval('bank_transactions_transid_seq', (select coalesce(max(transid)+1, 1) from bank_transactions));
-  insert into banks select * from aoserv1.banks;
+  cat <<EOF
+  -- TODO: bank_transactions                           | table    | aoadmin
+  -- TODO: bank_transactions_transid_seq               | sequence | aoadmin
+  -- TODO: banks                                       | table    | aoadmin
   -- TODO: blackhole_email_addresses                   | table    | aoadmin
   -- TODO: brands                                      | table    | aoadmin
   -- TODO: business_administrator_roles                | table    | aoadmin
@@ -98,17 +100,17 @@ cat <<EOF
     inner join aoserv1.packages pk on bu.accounting=pk.accounting
   ;
   insert into country_codes select * from aoserv1.country_codes;
-  insert into credit_card_processors select * from aoserv1.credit_card_processors;
-  insert into credit_card_transactions select * from aoserv1.credit_card_transactions;
-  select setval('credit_card_transactions_pkey_seq', (select coalesce(max(pkey)+1, 1) from credit_card_transactions));
-  insert into credit_cards select * from aoserv1.credit_cards;
-  select setval('credit_cards_pkey_seq', (select coalesce(max(pkey)+1, 1) from credit_cards));
+  -- TODO: credit_card_processors                      | table    | aoadmin
+  -- TODO: credit_card_transactions                    | table    | aoadmin
+  -- TODO: credit_card_transactions_pkey_seq           | sequence | aoadmin
+  -- TODO: credit_cards                                | table    | aoadmin
+  -- TODO: credit_cards_pkey_seq                       | sequence | aoadmin
 EOF
   cat "${DIR}/aoindustries/currencies-data1.sql"
-cat <<EOF
+  cat <<EOF
   -- TODO: cvs_repositories                            | table    | aoadmin
   insert into disable_log select * from aoserv1.disable_log;
-  select setval('disable_log_pkey_seq', (select coalesce(max(pkey)+1, 1) from disable_log));
+  -- TODO: disable_log_pkey_seq                        | sequence | aoadmin
   -- TODO: distro_file_types                           | table    | aoadmin
   -- TODO: distro_files                                | table    | aoadmin
   -- TODO: distro_files_pkey_seq                       | sequence | aoadmin
@@ -143,11 +145,8 @@ cat <<EOF
   -- TODO: email_smtp_smart_host_domains               | table    | aoadmin
   -- TODO: email_smtp_smart_host_domains_pkey_seq      | sequence | aoadmin
   -- TODO: email_smtp_smart_hosts                      | table    | aoadmin
-  insert into encryption_keys select * from aoserv1.encryption_keys;
-  select setval('encryption_keys_pkey_seq', (select coalesce(max(pkey)+1, 1) from encryption_keys));
-  -- TODO:                              | table    | aoadmin
+  -- TODO: encryption_keys                             | table    | aoadmin
   -- TODO: encryption_keys_pkey_seq                    | sequence | aoadmin
-  insert into expense_categories select * from aoserv1.expense_categories;
   -- TODO: expense_categories                          | table    | aoadmin
   -- TODO: failover_file_log                           | table    | aoadmin
   -- TODO: failover_file_log_pkey_seq                  | sequence | aoadmin
@@ -192,16 +191,11 @@ cat <<EOF
   -- TODO: ip_addresses                                | table    | aoadmin
 EOF
   cat "${DIR}/aoindustries/languages-data1.sql"
-cat <<EOF
+  cat <<EOF
   -- TODO: linux_account_groups                        | table    | aoadmin
   -- TODO: linux_account_groups_pkey_seq               | sequence | aoadmin
-EOF
-  cat "${DIR}/aoindustries/linux_account_types-data1.sql"
-cat <<EOF
+  -- TODO: linux_account_types                         | table    | aoadmin
   -- TODO: linux_accounts                              | table    | aoadmin
-EOF
-  cat "${DIR}/aoindustries/linux_group_types-data1.sql"
-cat <<EOF
   -- TODO: linux_group_types                           | table    | aoadmin
   -- TODO: linux_groups                                | table    | aoadmin
   -- TODO: majordomo_lists                             | table    | aoadmin
@@ -229,10 +223,9 @@ cat <<EOF
   -- TODO: notice_log                                  | table    | aoadmin
   -- TODO: notice_log_pkey_seq                         | sequence | aoadmin
   -- TODO: notice_types                                | table    | aoadmin
-EOF
-  cat "${DIR}/aoindustries/operating_system_versions-data1.sql"
-  cat "${DIR}/aoindustries/operating_systems-data1.sql"
-cat <<EOF
+  -- TODO: operating_system_versions                   | table    | aoadmin
+  -- TODO: operating_system_versions_pkey_seq          | sequence | aoadmin
+  -- TODO: operating_systems                           | table    | aoadmin
   insert into package_categories select * from aoserv1.package_categories;
   select setval('package_definition_businesses_pkey_seq', 1);
   insert into package_definition_businesses select
@@ -279,10 +272,8 @@ cat <<EOF
     monthly_rate_transaction_type,
     approved
   from aoserv1.package_definitions;
-  select setval('package_definitions_pkey_seq', (select coalesce(max(pkey)+1, 1) from package_definitions));
-EOF
-  cat "${DIR}/aoindustries/payment_types-data1.sql"
-cat <<EOF
+  -- TODO: package_definitions_pkey_seq                | sequence | aoadmin
+  -- TODO: payment_types                               | table    | aoadmin
   -- TODO: physical_servers                            | table    | aoadmin
   -- TODO: postgres_databases                          | table    | aoadmin
   -- TODO: postgres_encodings                          | table    | aoadmin
@@ -291,14 +282,14 @@ cat <<EOF
   -- TODO: postgres_users                              | table    | aoadmin
   -- TODO: postgres_versions                           | table    | aoadmin
   -- TODO: private_ftp_servers                         | table    | aoadmin
-  insert into processor_types select * from aoserv1.processor_types;
+  -- TODO: processor_types                             | table    | aoadmin
   -- TODO: protocols                                   | table    | aoadmin
   -- TODO: racks                                       | table    | aoadmin
   -- TODO: racks_pkey_seq                              | sequence | aoadmin
   -- TODO: resellers                                   | table    | aoadmin
 EOF
   cat "${DIR}/aoindustries/resource_types-data1.sql"
-cat <<EOF
+  cat <<EOF
   -- TODO: resources                                   | table    | aoadmin
   -- TODO: resources_pkey_seq                          | sequence | aoadmin
   insert into server_farms select
@@ -311,22 +302,11 @@ cat <<EOF
     inner join aoserv1.packages pk on sf.owner=pk.pkey
   ;
   -- TODO: server_resources                            | table    | aoadmin
-  insert into servers select
-    se.pkey,
-    se.farm,
-    se.description,
-    se.operating_system_version,
-    pk.accounting,
-    se.name,
-    se.monitoring_enabled
-  from
-    aoserv1.servers se
-    inner join aoserv1.packages pk on se.package=pk.pkey
-  ;
-  select setval('servers_pkey_seq', (select coalesce(max(pkey)+1, 1) from servers));
+  -- TODO: servers                                     | table    | aoadmin
+  -- TODO: servers_pkey_seq                            | sequence | aoadmin
 EOF
   cat "${DIR}/aoindustries/shells-data1.sql"
-cat <<EOF
+  cat <<EOF
   -- TODO: signup_request_options                      | table    | aoadmin
   -- TODO: signup_request_options_pkey_seq             | sequence | aoadmin
   -- TODO: signup_requests                             | table    | aoadmin
@@ -343,7 +323,7 @@ cat <<EOF
   -- TODO: technology_versions_pkey_seq                | sequence | aoadmin
 EOF
   cat "${DIR}/aoindustries/ticket_action_types-data1.sql"
-cat <<EOF
+  cat <<EOF
   -- TODO: ticket_actions                              | table    | aoadmin
   -- TODO: ticket_actions_pkey_seq                     | sequence | aoadmin
   -- TODO: ticket_assignments                          | table    | aoadmin
@@ -354,30 +334,14 @@ EOF
   cat "${DIR}/aoindustries/ticket_priorities-data1.sql"
   cat "${DIR}/aoindustries/ticket_statuses-data1.sql"
   cat "${DIR}/aoindustries/ticket_types-data1.sql"
-cat <<EOF
+  cat <<EOF
   -- TODO: tickets                                     | table    | aoadmin
 EOF
   cat "${DIR}/aoindustries/time_zones-data1.sql"
-cat <<EOF
+  cat <<EOF
   insert into transaction_types select * from aoserv1.transaction_types;
-  insert into transactions select
-    transid,
-    time,
-    accounting,
-    source_accounting,
-    username,
-    type,
-    description,
-    quantity,
-    'USD',
-    rate,
-    payment_type,
-    payment_info,
-    processor,
-    credit_card_transaction,
-    payment_confirmed
-  from aoserv1.transactions;
-  select setval('transactions_transid_seq', (select coalesce(max(transid)+1, 1) from transactions));
+  -- TODO: transactions                                | table    | aoadmin
+  -- TODO: transactions_transid_seq                    | sequence | aoadmin
   insert into us_states select * from aoserv1.us_states;
   insert into usernames select
     un.username,
@@ -389,7 +353,7 @@ cat <<EOF
   ;
   -- TODO: virtual_disks                               | table    | aoadmin
   -- TODO: virtual_disks_pkey_seq                      | sequence | aoadmin
-  insert into virtual_servers select * from aoserv1.virtual_servers;
+  -- TODO: virtual_servers                             | table    | aoadmin
   -- TODO: whois_history                               | table    | aoadmin
   -- TODO: whois_history_pkey_seq                      | sequence | aoadmin
 EOF

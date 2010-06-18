@@ -27,6 +27,22 @@ read -p "Please confirm database is empty (\d and \dn) then press <Enter>: "
 
   -- Move copy into different schema
   create schema aoserv1;
+  alter function hex_to_int8(text) set schema aoserv1;
+  alter function hexchar_to_int8(text) set schema aoserv1;
+  alter function ip_octet1(text) set schema aoserv1;
+  alter function ip_octet2(text) set schema aoserv1;
+  alter function ip_octet3(text) set schema aoserv1;
+  alter function ip_octet4(text) set schema aoserv1;
+  alter function is_business_or_parent(text, text) set schema aoserv1;
+  alter function is_business_or_parent_recurse(text, text) set schema aoserv1;
+  alter function pad_ip_address(text) set schema aoserv1;
+  alter function pos_period1(text) set schema aoserv1;
+  alter function pos_period2(text) set schema aoserv1;
+  alter function pos_period3(text) set schema aoserv1;
+  alter function pos_period4(text) set schema aoserv1;
+  alter function pos_period5(text) set schema aoserv1;
+  alter function pos_period6(text) set schema aoserv1;
+  alter function reverse_hostname(text) set schema aoserv1;
   alter table ao_server_daemon_hosts set schema aoserv1;
   alter sequence ao_server_daemon_hosts_pkey_seq set schema aoserv1;
   alter table ao_servers set schema aoserv1;

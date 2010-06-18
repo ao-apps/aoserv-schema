@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# Clears the database, including aoserv1 schema
+#
+set -e
+DIR=`dirname "$0"`
+(
+  # Clear database
+  "${DIR}/generate_sql-drop" "aoindustries"
+  echo "drop schema aoserv1 cascade;"
+) | /ao/bin/ssh aoadmin@192.168.1.129 "psql -p 5433 aoindustries" 2>&1 | grep -i error

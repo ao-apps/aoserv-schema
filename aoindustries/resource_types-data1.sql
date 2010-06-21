@@ -172,24 +172,25 @@ smf
 phpbb
 phpgroupware
 oscommerce
-mysql_database
-mysql_server
-mysql_user
-shell_group
-system_group
-shell_account
-email_inbox
-ftponly_account
-system_account
-httpd_server
-httpd_shared_tomcat
-httpd_jboss_site
-httpd_static_site
-httpd_tomcat_shared_site
-httpd_tomcat_std_site
-ip_address
-cvs_repository
-dns_record
-dns_zone
-private_ftp_server
 \.
+begin;
+insert into resource_types values('mysql_database');            --
+insert into resource_types values('mysql_server');              --
+insert into resource_types values('mysql_user');                --
+insert into resource_types values('shell_group');               --
+insert into resource_types values('system_group');              --
+insert into resource_types values('shell_account');             --
+insert into resource_types values('email_inbox');               --
+insert into resource_types values('ftponly_account');           --
+insert into resource_types values('system_account');            --
+insert into resource_types values('httpd_server');              --
+insert into resource_types values('httpd_shared_tomcat');       --
+insert into resource_types values('httpd_jboss_site');          --
+insert into resource_types values('httpd_static_site');         --
+insert into resource_types values('httpd_tomcat_shared_site');  --
+insert into resource_types values('httpd_tomcat_std_site');     --
+insert into resource_types values('ip_address');                --
+insert into resource_types values('cvs_repository');            --
+insert into resource_types values('dns_record');                -- 1000000+
+insert into resource_types values('dns_zone');                  --       1+
+insert into resource_types values('private_ftp_server');        --

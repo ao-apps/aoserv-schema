@@ -14,30 +14,248 @@ read -p "Please confirm public schema is empty (\d) then press <Enter>: "
 
   # Convert data
 cat <<EOF
-  -- TODO: ao_server_daemon_hosts                      | table    | aoadmin
-  -- TODO: ao_server_daemon_hosts_pkey_seq             | sequence | aoadmin
-  -- TODO: ao_server_resources                         | table    | aoadmin
-  -- TODO: ao_servers                                  | table    | aoadmin
+  insert into ao_server_daemon_hosts select * from aoserv1.ao_server_daemon_hosts;
+  select setval('ao_server_daemon_hosts_pkey_seq', (select coalesce(max(pkey)+1, 1) from ao_server_daemon_hosts), false);
+  insert into ao_server_resources select
+    lsg.pkey + 4000000,
+    case
+      when lg.type in ('user') then 'shell_group'
+      when lg.type in ('system') then 'system_group'
+      else 'Unknown group type: ' || lg.type
+    end,
+    pk.accounting,
+    lsg.ao_server
+  from
+    aoserv1.linux_server_groups lsg
+    inner join aoserv1.linux_groups lg on lsg.name=lg.name
+    inner join aoserv1.packages pk on lg.package=pk.name
+  ;
+  insert into ao_server_resources select
+    lsa.pkey + 5000000,
+    case
+      when la.type in ('application', 'user') then 'shell_account'
+      when la.type in ('email') then 'email_inbox'
+      when la.type in ('ftponly') then 'ftponly_account'
+      when la.type in ('system') then 'system_account'
+      else 'Unknown account type: ' || la.type
+    end,
+    pk.accounting,
+    lsa.ao_server
+  from
+    aoserv1.linux_server_accounts lsa
+    inner join aoserv1.linux_accounts la on lsa.username=la.username
+    inner join aoserv1.usernames un on la.username=un.username
+    inner join aoserv1.packages pk on un.package=pk.name
+  ;
+  insert into ao_server_resources select
+    cr.pkey + 6000000,
+    'cvs_repository',
+    pk.accounting,
+    lsa.ao_server
+  from
+    aoserv1.cvs_repositories cr
+    inner join aoserv1.linux_server_accounts lsa on cr.linux_server_account=lsa.pkey
+    inner join aoserv1.linux_accounts la on lsa.username=la.username
+    inner join aoserv1.usernames un on la.username=un.username
+    inner join aoserv1.packages pk on un.package=pk.name
+  ;
+  insert into ao_servers select * from aoserv1.ao_servers;
 EOF
   cat "${DIR}/aoindustries/aoserv_permissions-data1.sql"
   cat "${DIR}/aoindustries/aoserv_role_permissions-data1.sql"
   cat "${DIR}/aoindustries/aoserv_roles-data1.sql"
   cat "${DIR}/aoindustries/architectures-data1.sql"
 cat <<EOF
-  -- TODO: backup_partitions                           | table    | aoadmin
-  -- TODO: backup_partitions_pkey_seq                  | sequence | aoadmin
+  insert into backup_partitions select * from aoserv1.backup_partitions;
+  select setval('backup_partitions_pkey_seq', (select coalesce(max(pkey)+1, 1) from backup_partitions), false);
 EOF
   cat "${DIR}/aoindustries/backup_retentions-data1.sql"
   echo "insert into bank_accounts select * from aoserv1.bank_accounts;"
   cat "${DIR}/aoindustries/bank_transaction_types-data1.sql"
 cat <<EOF
   insert into bank_transactions select * from aoserv1.bank_transactions;
-  select setval('bank_transactions_transid_seq', (select coalesce(max(transid)+1, 1) from bank_transactions));
+  select setval('bank_transactions_transid_seq', (select coalesce(max(transid)+1, 1) from bank_transactions), false);
   insert into banks select * from aoserv1.banks;
-  -- TODO: blackhole_email_addresses                   | table    | aoadmin
-  -- TODO: brands                                      | table    | aoadmin
-  -- TODO: business_administrator_roles                | table    | aoadmin
-  -- TODO: business_administrator_roles_pkey_seq       | sequence | aoadmin
+  insert into brands select
+    br.accounting,
+    br.nameserver1,
+    br.nameserver2,
+    br.nameserver3,
+    br.nameserver4,
+    br.smtp_linux_server_account + 5000000,
+    br.smtp_host,
+    br.smtp_password,
+    br.imap_linux_server_account + 5000000,
+    br.imap_host,
+    br.imap_password,
+    br.support_email_address,
+    br.support_email_display,
+    br.signup_email_address,
+    br.signup_email_display,
+    br.ticket_encryption_from,
+    br.ticket_encryption_recipient,
+    br.signup_encryption_from,
+    br.signup_encryption_recipient,
+    br.support_toll_free,
+    br.support_day_phone,
+    br.support_emergency_phone1,
+    br.support_emergency_phone2,
+    br.support_fax,
+    br.support_mailing_address1,
+    br.support_mailing_address2,
+    br.support_mailing_address3,
+    br.support_mailing_address4,
+    br.english_enabled,
+    br.japanese_enabled,
+    br.aoweb_struts_http_url_base,
+    br.aoweb_struts_https_url_base,
+    br.aoweb_struts_google_verify_content,
+    br.aoweb_struts_noindex,
+    br.aoweb_struts_google_analytics_new_tracking_code,
+    br.aoweb_struts_signup_admin_address,
+    br.aoweb_struts_vnc_bind,
+    br.aoweb_struts_keystore_type,
+    br.aoweb_struts_keystore_password
+  from aoserv1.brands br;
+  select setval('business_administrator_roles_pkey_seq', 1, false);
+  insert into business_administrator_roles select
+    nextval('business_administrator_roles_pkey_seq'),
+    username,
+    case
+      -- Master User
+      when username in (
+        'aoserv',
+        'assassyn',
+        'biscuit',
+        'bugnugger',
+        'chris24',
+        'jasondavies',
+        'kaori',
+        'oldaodeacon',
+        'orion',
+        'root'
+      ) then 2
+      -- AOServ Daemon
+      when username in (
+        'ao1_kc_svr',
+        'aq_svr',
+        'backup42_ineedmybackup_com',
+        'backup73_svr',
+        'centos5_svr',
+        'dais_svr',
+        'db2_fc_softwaremiracles_com_svr',
+        'dlserver_svr',
+        'guggenheim_svr',
+        'gw1_fc_svr',
+        'gw1_mob_svr',
+        'gw2_fc_svr',
+        'keepandshare_svr',
+        'masterdb_keepandshare_svr',
+        'master_svr',
+        'mob_kc_svr',
+        'ns1_svr',
+        'ns2_svr',
+        'ns3_svr',
+        'ns4_svr',
+        'pertinence_svr',
+        'slavedb1_svr',
+        'suspendo_svr',
+        'swimconn_svr',
+        'w1_fc_insightsys_svr',
+        'www1_everylocalad_svr',
+        'www1_fc_enduraquest_svr',
+        'www1_fc_lnxhosting_ca_svr',
+        'www1_fc_nmw_svr',
+        'www1_fc_oe_svr',
+        'www1_fc_softwaremiracles',
+        'www1_foliolizer_svr',
+        'www1_kc_svr',
+        'www1_leagle_svr',
+        'www1_limlom_svr',
+        'www1_nl_mygreenisland_com_svr',
+        'www1_pca_svr',
+        'www2_fc_nmw_svr',
+        'www2_fc_softwaremiracles',
+        'www2_kc_svr',
+        'www3_kc_svr',
+        'www4_kc_svr',
+        'www5_kc_svr',
+        'www6_kc_svr',
+        'www7_kc_svr',
+        'www8_kc_svr',
+        'www9_fc_svr',
+        'xen1_mob_svr',
+        'xen2_mob_svr',
+        'xen907_1_svr',
+        'xen907_2_svr',
+        'xen907_3_svr',
+        'xen907_4_svr',
+        'xen907_5_svr',
+        'xen914_1_svr',
+        'xen914_2_svr',
+        'xen914_4_svr',
+        'xen914_5_svr',
+        'xen917_1_svr',
+        'xen917_2_svr',
+        'xen917_3_svr',
+        'xen917_4_svr',
+        'xen917_5_svr',
+        'xen_917_6_svr'
+      ) then 3
+      -- AOWeb Struts
+      when username in (
+        'aointernet_web_app',
+        'aoweb_app',
+        'cloudhosting_web_app',
+        'cloudservers_web_app',
+        'cmsguys_web_app',
+        'commerceguys_web_app',
+        'drupalguys_web_app',
+        'forumguys_web_app',
+        'glassfishhosting_web_app',
+        'grailshosting_web_app',
+        'groupwareguys_web_app',
+        'hostingguys',
+        'hostingguys_web_app',
+        'j2eehosting_web_app',
+        'javaee5hosting_web_app',
+        'javaguys_web_app',
+        'jbosshosting_web_app',
+        'joomlaguys_web_app',
+        'jspguys_web_app',
+        'mamboguys_web_app',
+        'mediawikiguys_web_app',
+        'mysqlguys_web_app',
+        'nmwcontrolpanel_web_app',
+        'oscommerceguys_web_app',
+        'pharmacyhosting_web_app',
+        'phpbbguys_web_app',
+        'phpgroupwarehosting_web_app',
+        'phpguys_web_app',
+        'postgishosting_web_app',
+        'postgresqlhost_web_app',
+        'pythonguys_web_app',
+        'railshost_web_app',
+        'rubyguys_web_app',
+        'smfguys_web_app',
+        'tikiwikihosting_web_app',
+        'tomcatguys_web_app',
+        'virtuemarthosting_web_app',
+        'wikiguys_web_app',
+        'xenguys_web_app',
+        'xoopshosting_web_app'
+      ) then 4
+      -- AWStats Proxy
+      when username in (
+        'build_awstats',
+        'edrugstore_awstats',
+        'edrugtest_awstats',
+        'leagleaw'
+      ) then 6
+      -- Business Administrator
+      else 5
+    end
+  from aoserv1.business_administrators;
   insert into business_administrators select
     ba.username,
     pk.accounting,
@@ -68,9 +286,9 @@ cat <<EOF
     inner join aoserv1.packages pk on un.package=pk.name
   ;
   insert into business_profiles select * from aoserv1.business_profiles;
-  select setval('business_profiles_pkey_seq', (select coalesce(max(pkey)+1, 1) from business_profiles));
+  select setval('business_profiles_pkey_seq', (select coalesce(max(pkey)+1, 1) from business_profiles), false);
   insert into business_servers select pkey, accounting, server, is_default, can_vnc_console from aoserv1.business_servers;
-  select setval('business_servers_pkey_seq', (select coalesce(max(pkey)+1, 1) from business_servers));
+  select setval('business_servers_pkey_seq', (select coalesce(max(pkey)+1, 1) from business_servers), false);
   insert into businesses select
     bu.accounting,
     bu.contract_version,
@@ -100,18 +318,20 @@ cat <<EOF
   insert into country_codes select * from aoserv1.country_codes;
   insert into credit_card_processors select * from aoserv1.credit_card_processors;
   insert into credit_card_transactions select * from aoserv1.credit_card_transactions;
-  select setval('credit_card_transactions_pkey_seq', (select coalesce(max(pkey)+1, 1) from credit_card_transactions));
+  select setval('credit_card_transactions_pkey_seq', (select coalesce(max(pkey)+1, 1) from credit_card_transactions), false);
   insert into credit_cards select * from aoserv1.credit_cards;
-  select setval('credit_cards_pkey_seq', (select coalesce(max(pkey)+1, 1) from credit_cards));
+  select setval('credit_cards_pkey_seq', (select coalesce(max(pkey)+1, 1) from credit_cards), false);
 EOF
   cat "${DIR}/aoindustries/currencies-data1.sql"
 cat <<EOF
-  -- TODO: cvs_repositories                            | table    | aoadmin
   insert into disable_log select * from aoserv1.disable_log;
-  select setval('disable_log_pkey_seq', (select coalesce(max(pkey)+1, 1) from disable_log));
-  -- TODO: insert into distro_files select * from aoserv1.distro_files;
-  -- TODO: select setval('distro_files_pkey_seq', (select coalesce(max(pkey)+1, 1) from distro_files));
-  select setval('resources_pkey_seq', 1);
+  select setval('disable_log_pkey_seq', (select coalesce(max(pkey)+1, 1) from disable_log), false);
+  insert into distro_files select * from aoserv1.distro_files;
+  select setval('distro_files_pkey_seq', (select coalesce(max(pkey)+1, 1) from distro_files), false);
+EOF
+  cat "${DIR}/aoindustries/distro_file_types-data1.sql"
+cat <<EOF
+  select setval('resources_pkey_seq', 1, false);
   insert into dns_zones select
     nextval('resources_pkey_seq'),
     'dns_zone',
@@ -159,51 +379,110 @@ cat <<EOF
 EOF
   cat "${DIR}/aoindustries/dns_types-data1.sql"
 cat <<EOF
-  -- TODO: email_addresses                             | table    | aoadmin
-  -- TODO: email_addresses_pkey_seq                    | sequence | aoadmin
-  -- TODO: email_attachment_blocks                     | table    | aoadmin
-  -- TODO: email_attachment_blocks_pkey_seq            | sequence | aoadmin
-  -- TODO: email_attachment_types                      | table    | aoadmin
-  -- TODO: email_domains                               | table    | aoadmin
-  -- TODO: email_domains_pkey_seq                      | sequence | aoadmin
-  -- TODO: email_forwarding                            | table    | aoadmin
-  -- TODO: email_forwarding_pkey_seq                   | sequence | aoadmin
-  -- TODO: email_inbox_addresses                       | table    | aoadmin
-  -- TODO: email_inbox_addresses_pkey_seq              | sequence | aoadmin
-  -- TODO: email_inboxes                               | table    | aoadmin
-  -- TODO: email_list_addresses                        | table    | aoadmin
-  -- TODO: email_list_addresses_pkey_seq               | sequence | aoadmin
-  -- TODO: email_lists                                 | table    | aoadmin
-  -- TODO: email_lists_pkey_seq                        | sequence | aoadmin
-  -- TODO: email_pipe_addresses                        | table    | aoadmin
-  -- TODO: email_pipe_addresses_pkey_seq               | sequence | aoadmin
-  -- TODO: email_pipes                                 | table    | aoadmin
-  -- TODO: email_pipes_pkey_seq                        | sequence | aoadmin
-  -- TODO: email_sa_integration_modes                  | table    | aoadmin
-  -- TODO: email_smtp_relay_types                      | table    | aoadmin
-  -- TODO: email_smtp_relays                           | table    | aoadmin
-  -- TODO: email_smtp_relays_pkey_seq                  | sequence | aoadmin
-  -- TODO: email_smtp_smart_host_domains               | table    | aoadmin
-  -- TODO: email_smtp_smart_host_domains_pkey_seq      | sequence | aoadmin
-  -- TODO: email_smtp_smart_hosts                      | table    | aoadmin
+  insert into email_addresses select pkey, address, domain+3000000 from aoserv1.email_addresses;
+  select setval('email_addresses_pkey_seq', (select coalesce(max(pkey)+1, 1) from email_addresses), false);
+  insert into email_attachment_blocks select
+    eab.pkey,
+    eab.linux_server_account + 5000000,
+    eab.extension
+  from
+    aoserv1.email_attachment_blocks eab
+    inner join aoserv1.linux_server_accounts lsa on eab.linux_server_account=lsa.pkey
+    inner join aoserv1.linux_accounts la on lsa.username=la.username
+  where
+    la.type in ('application', 'user', 'email')
+  ;
+  select setval('email_attachment_blocks_pkey_seq', (select coalesce(max(pkey)+1, 1) from email_attachment_blocks), false);
+  insert into email_attachment_types select extension, is_default_block from aoserv1.email_attachment_types;
+  insert into email_domains select
+    ed.pkey+3000000,
+    ed.domain,
+    ed.ao_server,
+    pk.accounting
+  from
+    aoserv1.email_domains ed
+    inner join aoserv1.packages pk on ed.package=pk.name
+  ;
+  select setval('email_domains_pkey_seq', (select coalesce(max(pkey)+1, 1) from email_domains), false);
+  insert into email_forwarding select * from aoserv1.email_forwarding;
+  select setval('email_forwarding_pkey_seq', (select coalesce(max(pkey)+1, 1) from email_forwarding), false);
+  insert into email_inbox_addresses select
+    laa.pkey,
+    laa.email_address,
+    laa.linux_server_account + 5000000
+  from
+    aoserv1.linux_acc_addresses laa
+  ;
+  select setval('email_inbox_addresses_pkey_seq', (select coalesce(max(pkey)+1, 1) from email_inbox_addresses), false);
+  insert into email_inboxes select
+    lsa.pkey + 5000000,
+    case
+      when la.type in ('application', 'user') then 'shell_account'
+      when la.type in ('email') then 'email_inbox'
+      else 'Unknown account type: ' || la.type
+    end,
+    lsa.autoresponder_from,
+    lsa.autoresponder_subject,
+    lsa.autoresponder_path,
+    lsa.is_autoresponder_enabled,
+    lsa.use_inbox,
+    lsa.trash_email_retention,
+    lsa.junk_email_retention,
+    lsa.sa_integration_mode,
+    lsa.sa_required_score,
+    lsa.sa_discard_score
+  from
+    aoserv1.linux_server_accounts lsa
+    inner join aoserv1.linux_accounts la on lsa.username=la.username
+  where
+    la.type in ('application', 'user', 'email')
+  ;
+  insert into email_list_addresses select * from aoserv1.email_list_addresses;
+  select setval('email_list_addresses_pkey_seq', (select coalesce(max(pkey)+1, 1) from email_list_addresses), false);
+  insert into email_lists select pkey, path, linux_server_account + 5000000, linux_server_group + 4000000, disable_log from aoserv1.email_lists;
+  select setval('email_lists_pkey_seq', (select coalesce(max(pkey)+1, 1) from email_lists), false);
+  insert into email_pipe_addresses select * from aoserv1.email_pipe_addresses;
+  select setval('email_pipe_addresses_pkey_seq', (select coalesce(max(pkey)+1, 1) from email_pipe_addresses), false);
+  insert into email_pipes select * from aoserv1.email_pipes;
+  select setval('email_pipes_pkey_seq', (select coalesce(max(pkey)+1, 1) from email_pipes), false);
+EOF
+  cat "${DIR}/aoindustries/email_sa_integration_modes-data1.sql"
+  cat "${DIR}/aoindustries/email_smtp_relay_types-data1.sql"
+cat <<EOF
+  insert into email_smtp_relays select * from aoserv1.email_smtp_relays;
+  select setval('email_smtp_relays_pkey_seq', (select coalesce(max(pkey)+1, 1) from email_smtp_relays), false);
+  insert into email_smtp_smart_host_domains select * from aoserv1.email_smtp_smart_host_domains;
+  select setval('email_smtp_smart_host_domains_pkey_seq', (select coalesce(max(pkey)+1, 1) from email_smtp_smart_host_domains), false);
+  insert into email_smtp_smart_hosts select * from aoserv1.email_smtp_smart_hosts;
   insert into encryption_keys select * from aoserv1.encryption_keys;
-  select setval('encryption_keys_pkey_seq', (select coalesce(max(pkey)+1, 1) from encryption_keys));
-  -- TODO:                              | table    | aoadmin
-  -- TODO: encryption_keys_pkey_seq                    | sequence | aoadmin
+  select setval('encryption_keys_pkey_seq', (select coalesce(max(pkey)+1, 1) from encryption_keys), false);
   insert into expense_categories select * from aoserv1.expense_categories;
-  -- TODO: expense_categories                          | table    | aoadmin
-  -- TODO: failover_file_log                           | table    | aoadmin
-  -- TODO: failover_file_log_pkey_seq                  | sequence | aoadmin
-  -- TODO: failover_file_replications                  | table    | aoadmin
-  -- TODO: failover_file_replications_pkey_seq         | sequence | aoadmin
-  -- TODO: failover_file_schedule                      | table    | aoadmin
-  -- TODO: failover_file_schedule_pkey_seq             | sequence | aoadmin
+  insert into failover_file_log select * from aoserv1.failover_file_log;
+  select setval('failover_file_log_pkey_seq', (select coalesce(max(pkey)+1, 1) from failover_file_log), false);
+  insert into failover_file_replications select * from aoserv1.failover_file_replications;
+  select setval('failover_file_replications_pkey_seq', (select coalesce(max(pkey)+1, 1) from failover_file_replications), false);
+  insert into failover_file_schedule select * from aoserv1.failover_file_schedule;
+  select setval('failover_file_schedule_pkey_seq', (select coalesce(max(pkey)+1, 1) from failover_file_schedule), false);
   -- TODO: failover_mysql_replications                 | table    | aoadmin
   -- TODO: failover_mysql_replications_pkey_seq        | sequence | aoadmin
-  -- TODO: file_backup_settings                        | table    | aoadmin
-  -- TODO: file_backup_settings_pkey_seq               | sequence | aoadmin
-  -- TODO: ftp_guest_users                             | table    | aoadmin
-  -- TODO: group_names                                 | table    | aoadmin
+  insert into file_backup_settings select * from aoserv1.file_backup_settings;
+  select setval('file_backup_settings_pkey_seq', (select coalesce(max(pkey)+1, 1) from file_backup_settings), false);
+  insert into ftp_guest_users select
+    lsa.pkey + 5000000,
+    'ftponly_account'
+  from
+    aoserv1.ftp_guest_users fgu
+    inner join aoserv1.linux_server_accounts lsa on fgu.username=lsa.username
+  ;
+  insert into group_names select distinct
+    lsg.name,
+    pk.accounting,
+    null::integer
+  from
+    aoserv1.linux_server_groups lsg
+    inner join aoserv1.linux_groups lg on lsg.name=lg.name
+    inner join aoserv1.packages pk on lg.package=pk.name
+  ;
   -- TODO: httpd_binds                                 | table    | aoadmin
   -- TODO: httpd_jboss_sites                           | table    | aoadmin
   -- TODO: httpd_jboss_versions                        | table    | aoadmin
@@ -232,28 +511,164 @@ cat <<EOF
   -- TODO: httpd_tomcat_versions                       | table    | aoadmin
   -- TODO: httpd_workers                               | table    | aoadmin
   -- TODO: httpd_workers_pkey_seq                      | sequence | aoadmin
-  -- TODO: ip_addresses                                | table    | aoadmin
+  insert into ip_addresses select
+    ia.pkey+2000000,
+    'ip_address',
+    case when
+      ia.net_device is null
+    then
+      (select server from aoserv1.ao_servers where hostname='master.aoindustries.com')
+    else
+      (select nd.server from aoserv1.net_devices nd where nd.pkey=ia.net_device)
+    end,
+    ia.ip_address,
+    ia.net_device,
+    ia.is_alias,
+    ia.hostname,
+    ia.available,
+    ia.is_overflow,
+    ia.is_dhcp,
+    ia.ping_monitor_enabled,
+    ia.external_ip_address,
+    case
+      when ia.netmask='255.0.0.0' then 8::smallint
+      when ia.netmask='255.255.255.0' then 24::smallint
+      when ia.netmask='255.255.255.128' then 25::smallint
+      when ia.netmask='255.255.255.192' then 26::smallint
+      when ia.netmask='255.255.255.248' then 29::smallint
+      else ('Unknown netmask: ' || ia.netmask)::smallint
+    end
+  from
+    aoserv1.ip_addresses ia
+    inner join aoserv1.packages pk on ia.package=pk.name
+  where
+    ia.ip_address!='0.0.0.0'
+  ;
 EOF
   cat "${DIR}/aoindustries/languages-data1.sql"
 cat <<EOF
-  -- TODO: linux_account_groups                        | table    | aoadmin
-  -- TODO: linux_account_groups_pkey_seq               | sequence | aoadmin
+  select setval('linux_account_groups_pkey_seq', 1, false);
+  insert into linux_account_groups select
+    nextval('linux_account_groups_pkey_seq'),
+    lsa.pkey + 5000000,
+    case
+      when la.type in ('application', 'user') then 'shell_account'
+      when la.type in ('email') then 'email_inbox'
+      when la.type in ('ftponly') then 'ftponly_account'
+      when la.type in ('system') then 'system_account'
+      else 'Unknown account type: ' || la.type
+    end,
+    lsa.ao_server,
+    lsg.pkey + 4000000,
+    case
+      when lg.type in ('user') then 'shell_group'
+      when lg.type in ('system') then 'system_group'
+      else 'Unknown group type: ' || lg.type
+    end,
+    lg.name,
+    lga.is_primary
+  from
+    aoserv1.linux_group_accounts lga
+    inner join aoserv1.linux_accounts la on lga.username=la.username
+    inner join aoserv1.linux_server_accounts lsa on la.username=lsa.username
+    inner join aoserv1.linux_groups lg on lga.group_name=lg.name
+    inner join aoserv1.linux_server_groups lsg on lg.name=lsg.name
+  where
+    lsa.ao_server=lsg.ao_server
+  ;
+  insert into cvs_repositories select
+    cr.pkey + 6000000,
+    'cvs_repository',
+    lsa.ao_server,
+    cr.path,
+    lag.pkey,
+    lag.linux_account_type,
+    cr.mode
+  from
+    aoserv1.cvs_repositories cr
+    inner join aoserv1.linux_server_accounts lsa on cr.linux_server_account=lsa.pkey
+    left outer join linux_account_groups lag on
+      cr.linux_server_account + 5000000 = lag.linux_account
+      and cr.linux_server_group + 4000000 = lag.linux_group
+      and lsa.ao_server = lag.ao_server
+  ;
 EOF
   cat "${DIR}/aoindustries/linux_account_types-data1.sql"
 cat <<EOF
-  -- TODO: linux_accounts                              | table    | aoadmin
+  insert into linux_accounts select
+    lsa.pkey + 5000000,
+    case
+      when la.type in ('application', 'user') then 'shell_account'
+      when la.type in ('email') then 'email_inbox'
+      when la.type in ('ftponly') then 'ftponly_account'
+      when la.type in ('system') then 'system_account'
+      else 'Unknown account type: ' || la.type
+    end,
+    pk.accounting,
+    lsa.ao_server,
+    lsa.username,
+    lsa.uid,
+    lsa.home,
+    la.name,
+    case when la.office_location is null or length(la.office_location)=0 then null else la.office_location end,
+    case when la.office_phone is null or length(la.office_phone)=0 then null else la.office_phone end,
+    case when la.home_phone is null or length(la.home_phone)=0 then null else la.home_phone end,
+    la.shell,
+    lsa.predisable_password
+  from
+    aoserv1.linux_server_accounts lsa
+    inner join aoserv1.linux_accounts la on lsa.username=la.username
+    inner join aoserv1.usernames un on la.username=un.username
+    inner join aoserv1.packages pk on un.package=pk.name
+  ;
 EOF
   cat "${DIR}/aoindustries/linux_group_types-data1.sql"
 cat <<EOF
-  -- TODO: linux_group_types                           | table    | aoadmin
-  -- TODO: linux_groups                                | table    | aoadmin
-  -- TODO: majordomo_lists                             | table    | aoadmin
-  -- TODO: majordomo_servers                           | table    | aoadmin
-  -- TODO: majordomo_versions                          | table    | aoadmin
-  -- TODO: master_hosts                                | table    | aoadmin
-  -- TODO: master_hosts_pkey_seq                       | sequence | aoadmin
-  -- TODO: master_servers                              | table    | aoadmin
-  -- TODO: master_servers_pkey_seq                     | sequence | aoadmin
+  insert into linux_groups select
+    lsg.pkey + 4000000,
+    case
+      when lg.type in ('user') then 'shell_group'
+      when lg.type in ('system') then 'system_group'
+      else 'Unknown group type: ' || lg.type
+    end,
+    pk.accounting,
+    lsg.ao_server,
+    lsg.name,
+    lsg.gid
+  from
+    aoserv1.linux_server_groups lsg
+    inner join aoserv1.linux_groups lg on lsg.name=lg.name
+    inner join aoserv1.packages pk on lg.package=pk.name
+  ;
+  insert into majordomo_lists select
+    email_list,
+    majordomo_server + 3000000,
+    name,
+    listname_pipe_add,
+    listname_list_add,
+    owner_listname_add,
+    listname_owner_add,
+    listname_approval_add,
+    listname_request_pipe_add
+  from
+    aoserv1.majordomo_lists
+  ;
+  insert into majordomo_servers select
+    domain + 3000000,
+    linux_server_account + 5000000,
+    linux_server_group + 4000000,
+    version,
+    majordomo_pipe_address,
+    owner_majordomo_add,
+    majordomo_owner_add
+  from
+    aoserv1.majordomo_servers
+  ;
+  insert into majordomo_versions select * from aoserv1.majordomo_versions;
+  insert into master_hosts select * from aoserv1.master_hosts;
+  select setval('master_hosts_pkey_seq', (select coalesce(max(pkey)+1, 1) from master_hosts), false);
+  insert into master_servers select * from aoserv1.master_servers;
+  select setval('master_servers_pkey_seq', (select coalesce(max(pkey)+1, 1) from master_servers), false);
   insert into master_users select * from aoserv1.master_users;
   -- TODO: monthly_charges                             | table    | aoadmin
   -- TODO: monthly_charges_pkey_seq                    | sequence | aoadmin
@@ -262,22 +677,39 @@ cat <<EOF
   -- TODO: mysql_db_users_pkey_seq                     | sequence | aoadmin
   -- TODO: mysql_servers                               | table    | aoadmin
   -- TODO: mysql_users                                 | table    | aoadmin
-  -- TODO: net_binds                                   | table    | aoadmin
-  -- TODO: net_binds_pkey_seq                          | sequence | aoadmin
+  insert into net_binds select
+    nb.pkey,
+    pk.accounting,
+    nb.server,
+    bs.pkey,
+    case when ia.ip_address='0.0.0.0' then null else 2000000+nb.ip_address end,
+    nb.port,
+    nb.net_protocol,
+    nb.app_protocol,
+    nb.open_firewall,
+    nb.monitoring_enabled,
+    nb.monitoring_parameters
+  from
+    aoserv1.net_binds nb
+    inner join aoserv1.ip_addresses ia on nb.ip_address=ia.pkey
+    inner join aoserv1.packages pk on nb.package=pk.name
+    inner join aoserv1.business_servers bs on pk.accounting=bs.accounting and nb.server=bs.server
+  ;
+  select setval('net_binds_pkey_seq', (select coalesce(max(pkey)+1, 1) from net_binds), false);
   insert into net_device_ids select * from aoserv1.net_device_ids;
-  -- TODO: net_devices                                 | table    | aoadmin
-  -- TODO: net_devices_pkey_seq                        | sequence | aoadmin
+  insert into net_devices select pkey, server, device_id, description, gateway, network, broadcast, mac_address, max_bit_rate, monitoring_bit_rate_low, monitoring_bit_rate_medium, monitoring_bit_rate_high, monitoring_bit_rate_critical from aoserv1.net_devices;
+  select setval('net_devices_pkey_seq', (select coalesce(max(pkey)+1, 1) from net_devices), false);
   insert into net_protocols select * from aoserv1.net_protocols;
-  -- TODO: net_tcp_redirects                           | table    | aoadmin
-  -- TODO: notice_log                                  | table    | aoadmin
-  -- TODO: notice_log_pkey_seq                         | sequence | aoadmin
+  insert into net_tcp_redirects select * from aoserv1.net_tcp_redirects;
+  insert into notice_log select * from aoserv1.notice_log;
+  select setval('notice_log_pkey_seq', (select coalesce(max(pkey)+1, 1) from notice_log), false);
 EOF
   cat "${DIR}/aoindustries/notice_types-data1.sql"
   cat "${DIR}/aoindustries/operating_system_versions-data1.sql"
   cat "${DIR}/aoindustries/operating_systems-data1.sql"
 cat <<EOF
   insert into package_categories select * from aoserv1.package_categories;
-  select setval('package_definition_businesses_pkey_seq', 1);
+  select setval('package_definition_businesses_pkey_seq', 1, false);
   insert into package_definition_businesses select
     nextval('package_definition_businesses_pkey_seq'),
     pkey,
@@ -308,7 +740,7 @@ cat <<EOF
   where
     resource!='site'
   ;
-  select setval('package_definition_limits_pkey_seq', (select coalesce(max(pkey)+1, 1) from package_definition_limits));
+  select setval('package_definition_limits_pkey_seq', (select coalesce(max(pkey)+1, 1) from package_definition_limits), false);
   insert into package_definitions select
     pkey,
     category,
@@ -321,11 +753,11 @@ cat <<EOF
     monthly_rate_transaction_type,
     approved
   from aoserv1.package_definitions;
-  select setval('package_definitions_pkey_seq', (select coalesce(max(pkey)+1, 1) from package_definitions));
+  select setval('package_definitions_pkey_seq', (select coalesce(max(pkey)+1, 1) from package_definitions), false);
 EOF
   cat "${DIR}/aoindustries/payment_types-data1.sql"
 cat <<EOF
-  -- TODO: physical_servers                            | table    | aoadmin
+  insert into physical_servers select * from aoserv1.physical_servers;
   -- TODO: postgres_databases                          | table    | aoadmin
 EOF
   cat "${DIR}/aoindustries/postgres_encodings-data1.sql"
@@ -337,12 +769,12 @@ cat <<EOF
   insert into processor_types select * from aoserv1.processor_types;
   insert into protocols select * from aoserv1.protocols;
   insert into racks select * from aoserv1.racks;
-  select setval('racks_pkey_seq', (select coalesce(max(pkey)+1, 1) from racks));
-  -- TODO: resellers                                   | table    | aoadmin
+  select setval('racks_pkey_seq', (select coalesce(max(pkey)+1, 1) from racks), false);
+  insert into resellers select * from aoserv1.resellers;
 EOF
   cat "${DIR}/aoindustries/resource_types-data1.sql"
 cat <<EOF
-  select setval('resources_pkey_seq', 1);
+  select setval('resources_pkey_seq', 1, false);
   insert into resources select
     nextval('resources_pkey_seq'),
     'dns_zone',
@@ -370,8 +802,72 @@ cat <<EOF
     inner join aoserv1.dns_zones dz on dr.zone=dz.zone
     inner join aoserv1.packages pk on dz.package=pk.name
   ;
-  -- TODO: remaining resources
-  -- TODO: pack resources_pkey_seq at the end of this process
+  insert into resources select
+    ia.pkey+2000000,
+    'ip_address',
+    pk.accounting,
+    ia.created,
+    'orion',
+    null,
+    ia.created
+  from
+    aoserv1.ip_addresses ia
+    inner join aoserv1.packages pk on ia.package=pk.name
+  where
+    ia.ip_address!='0.0.0.0'
+  ;
+  insert into resources select
+    lsg.pkey + 4000000,
+    case
+      when lg.type in ('user') then 'shell_group'
+      when lg.type in ('system') then 'system_group'
+      else 'Unknown group type: ' || lg.type
+    end,
+    pk.accounting,
+    lsg.created,
+    'orion',
+    null,
+    lsg.created
+  from
+    aoserv1.linux_server_groups lsg
+    inner join aoserv1.linux_groups lg on lsg.name=lg.name
+    inner join aoserv1.packages pk on lg.package=pk.name
+  ;
+  insert into resources select
+    lsa.pkey + 5000000,
+    case
+      when la.type in ('application', 'user') then 'shell_account'
+      when la.type in ('email') then 'email_inbox'
+      when la.type in ('ftponly') then 'ftponly_account'
+      when la.type in ('system') then 'system_account'
+      else 'Unknown account type: ' || la.type
+    end,
+    pk.accounting,
+    lsa.created,
+    'orion',
+    lsa.disable_log,
+    lsa.created
+  from
+    aoserv1.linux_server_accounts lsa
+    inner join aoserv1.linux_accounts la on lsa.username=la.username
+    inner join aoserv1.usernames un on la.username=un.username
+    inner join aoserv1.packages pk on un.package=pk.name
+  ;
+  insert into resources select
+    cr.pkey + 6000000,
+    'cvs_repository',
+    pk.accounting,
+    cr.created,
+    'orion',
+    cr.disable_log,
+    cr.created
+  from
+    aoserv1.cvs_repositories cr
+    inner join aoserv1.linux_server_accounts lsa on cr.linux_server_account=lsa.pkey
+    inner join aoserv1.linux_accounts la on lsa.username=la.username
+    inner join aoserv1.usernames un on la.username=un.username
+    inner join aoserv1.packages pk on un.package=pk.name
+  ;
   insert into server_farms select
     sf.name,
     sf.description,
@@ -381,7 +877,23 @@ cat <<EOF
     aoserv1.server_farms sf
     inner join aoserv1.packages pk on sf.owner=pk.pkey
   ;
-  -- TODO: server_resources                            | table    | aoadmin
+  insert into server_resources select
+    ia.pkey+2000000,
+    'ip_address',
+    pk.accounting,
+    case when
+      ia.net_device is null
+    then
+      (select server from aoserv1.ao_servers where hostname='master.aoindustries.com')
+    else
+      (select nd.server from aoserv1.net_devices nd where nd.pkey=ia.net_device)
+    end
+  from
+    aoserv1.ip_addresses ia
+    inner join aoserv1.packages pk on ia.package=pk.name
+  where
+    ia.ip_address!='0.0.0.0'
+  ;
   insert into servers select
     se.pkey,
     se.farm,
@@ -394,65 +906,64 @@ cat <<EOF
     aoserv1.servers se
     inner join aoserv1.packages pk on se.package=pk.pkey
   ;
-  select setval('servers_pkey_seq', (select coalesce(max(pkey)+1, 1) from servers));
+  select setval('servers_pkey_seq', (select coalesce(max(pkey)+1, 1) from servers), false);
 EOF
   cat "${DIR}/aoindustries/shells-data1.sql"
 cat <<EOF
-  -- TODO: signup_request_options                      | table    | aoadmin
-  -- TODO: signup_request_options_pkey_seq             | sequence | aoadmin
+  insert into signup_request_options select * from aoserv1.signup_request_options;
+  select setval('signup_request_options_pkey_seq', (select coalesce(max(pkey)+1, 1) from signup_request_options), false);
   insert into signup_requests select * from aoserv1.signup_requests;
-  select setval('signup_requests_pkey_seq', 1154);
-  -- TODO: spam_email_messages                         | table    | aoadmin
+  select setval('signup_requests_pkey_seq', 1154, false);
+  -- TODO: insert into spam_email_messages select * from aoserv1.spam_email_messages;
   -- TODO: spam_email_messages_pkey_seq                | sequence | aoadmin
-  -- TODO: system_email_aliases                        | table    | aoadmin
-  -- TODO: system_email_aliases_pkey_seq               | sequence | aoadmin
+  insert into system_email_aliases select * from aoserv1.system_email_aliases;
+  select setval('system_email_aliases_pkey_seq', (select coalesce(max(pkey)+1, 1) from system_email_aliases), false);
   insert into technologies select * from aoserv1.technologies;
-  select setval('technologies_pkey_seq', (select coalesce(max(pkey)+1, 1) from technologies));
+  select setval('technologies_pkey_seq', (select coalesce(max(pkey)+1, 1) from technologies), false);
   insert into technology_classes select name from aoserv1.technology_classes;
   insert into technology_names select name from aoserv1.technology_names;
   insert into technology_versions select * from aoserv1.technology_versions;
-  select setval('technology_versions_pkey_seq', (select coalesce(max(pkey)+1, 1) from technology_versions));
+  select setval('technology_versions_pkey_seq', (select coalesce(max(pkey)+1, 1) from technology_versions), false);
 EOF
   cat "${DIR}/aoindustries/ticket_action_types-data1.sql"
 cat <<EOF
-  -- TODO: ticket_actions                              | table    | aoadmin
-  -- TODO: ticket_actions_pkey_seq                     | sequence | aoadmin
+  insert into ticket_actions select * from aoserv1.ticket_actions;
+  select setval('ticket_actions_pkey_seq', (select coalesce(max(pkey)+1, 1) from ticket_actions), false);
   -- TODO: ticket_assignments                          | table    | aoadmin
   -- TODO: ticket_assignments_pkey_seq                 | sequence | aoadmin
-  -- TODO: ticket_brand_categories                     | table    | aoadmin
-  -- TODO: ticket_categories                           | table    | aoadmin
+  insert into ticket_brand_categories select * from aoserv1.ticket_brand_categories;
+  insert into ticket_categories select * from aoserv1.ticket_categories;
 EOF
   cat "${DIR}/aoindustries/ticket_priorities-data1.sql"
   cat "${DIR}/aoindustries/ticket_statuses-data1.sql"
   cat "${DIR}/aoindustries/ticket_types-data1.sql"
 cat <<EOF
-
--- TODO:  insert into tickets select
--- TODO:    ti.pkey,
--- TODO:    ti.brand,
--- TODO:    ti.reseller,
--- TODO:    re.ticket_auto_escalate,
--- TODO:    ti.accounting,
--- TODO:    ti.language,
--- TODO:    case when ti.created_by is null then 'root' else ti.created_by end,
--- TODO:    ti.category,
--- TODO:    ti.ticket_type,
--- TODO:    ti.from_address,
--- TODO:    ti.summary,
--- TODO:    ti.details,
--- TODO:    ti.raw_email,
--- TODO:    ti.open_date,
--- TODO:    ti.client_priority,
--- TODO:    ti.admin_priority,
--- TODO:    ti.status,
--- TODO:    ti.status_timeout,
--- TODO:    ti.contact_emails,
--- TODO:    ti.contact_phone_numbers,
--- TODO:    ti.internal_notes
--- TODO:  from
--- TODO:    aoserv1.tickets ti
--- TODO:    inner join aoserv1.resellers re on ti.reseller=re.accounting
--- TODO:  ;
+  insert into tickets select
+    ti.pkey,
+    ti.brand,
+    ti.reseller,
+    re.ticket_auto_escalate,
+    ti.accounting,
+    ti.language,
+    case when ti.created_by is null then 'root' else ti.created_by end,
+    ti.category,
+    ti.ticket_type,
+    ti.from_address,
+    ti.summary,
+    ti.details,
+    ti.raw_email,
+    ti.open_date,
+    ti.client_priority,
+    ti.admin_priority,
+    ti.status,
+    ti.status_timeout,
+    ti.contact_emails,
+    ti.contact_phone_numbers,
+    ti.internal_notes
+  from
+    aoserv1.tickets ti
+    inner join aoserv1.resellers re on ti.reseller=re.accounting
+  ;
   insert into time_zones select * from aoserv1.time_zones;
   insert into transaction_types select * from aoserv1.transaction_types;
   insert into transactions select
@@ -474,7 +985,7 @@ cat <<EOF
   from
     aoserv1.transactions
   ;
-  select setval('transactions_transid_seq', (select coalesce(max(transid)+1, 1) from transactions));
+  select setval('transactions_transid_seq', (select coalesce(max(transid)+1, 1) from transactions), false);
   insert into us_states select * from aoserv1.us_states;
   insert into usernames select
     un.username,
@@ -484,11 +995,12 @@ cat <<EOF
     aoserv1.usernames un
     inner join aoserv1.packages pk on un.package=pk.name
   ;
-  -- TODO: virtual_disks                               | table    | aoadmin
-  -- TODO: virtual_disks_pkey_seq                      | sequence | aoadmin
+  insert into virtual_disks select * from aoserv1.virtual_disks;
+  select setval('virtual_disks_pkey_seq', (select coalesce(max(pkey)+1, 1) from virtual_disks), false);
   insert into virtual_servers select * from aoserv1.virtual_servers;
-  -- TODO: whois_history                               | table    | aoadmin
-  -- TODO: whois_history_pkey_seq                      | sequence | aoadmin
+  insert into whois_history select * from aoserv1.whois_history;
+  select setval('whois_history_pkey_seq', (select coalesce(max(pkey)+1, 1) from whois_history), false);
+  -- TODO: pack resources_pkey_seq at the end of this process - ordered by created time?
 EOF
   # Complete database objects
   "${DIR}/generate_sql-view" "aoindustries"

@@ -8,7 +8,14 @@ create table private_ftp_servers (
   hostname text not null,
   email text not null,
   linux_account_group integer not null,
-  linux_account_type text not null check (linux_account_type in ('shell_account', 'ftponly_account')), -- Hidden reference to linux_account_groups only
+  linux_account_type text not null -- Hidden reference to linux_account_groups only
+    check (
+      linux_account_type in (
+        'system_account', -- TODO: How can we make vsftpd run with user privileges?
+        'shell_account',
+        'ftponly_account'
+      )
+    ),
   allow_anonymous bool not null
 );
 grant all on private_ftp_servers to aoadmin;

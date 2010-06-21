@@ -7,7 +7,7 @@ create table linux_groups (
   gid integer not null check (
     case
       when linux_group_type='shell_group' then gid between 500 and 65533
-      when linux_group_type='system_group' then gid between 0 and 500 or gid in (65534, 65535)
+      when linux_group_type='system_group' then gid between 0 and 499 or gid in (65534, 65535)
       else false
     end
   )

@@ -1,10 +1,12 @@
 create unique index dns_records_resource_type_super on dns_records (
   resource_type, resource
 );
-create unique index dns_records_mx_priority_uni on dns_records (
-  "zone",
-  mx_priority
-) where "type"='MX';
+-- Need not be unique
+-- create unique index dns_records_mx_priority_uni on dns_records (
+--   "zone",
+--   "domain",
+--   mx_priority
+-- ) where "type"='MX';
 create unique index dns_records_ip_address_uni on dns_records (
   "zone",
   "domain",

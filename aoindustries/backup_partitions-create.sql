@@ -6,7 +6,6 @@ create table backup_partitions (
   pkey integer default nextval('backup_partitions_pkey_seq') primary key,
   ao_server integer not null,
   "path" text not null,
-  enabled bool not null,
   quota_enabled bool not null,
   unique(ao_server, "path")
 );

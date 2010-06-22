@@ -174,25 +174,23 @@ phpgroupware
 oscommerce
 \.
 begin;
-insert into resource_types values('mysql_database');            -- +
-insert into resource_types values('mysql_server');              -- +8000000
-insert into resource_types values('mysql_user');                -- +
-insert into resource_types values('shell_group');               -- +4000000
-insert into resource_types values('system_group');              -- +4000000
-insert into resource_types values('shell_account');             -- +5000000
-insert into resource_types values('email_inbox');               -- +5000000
-insert into resource_types values('ftponly_account');           -- +5000000
-insert into resource_types values('system_account');            -- +5000000
-insert into resource_types values('httpd_server');              -- +
-insert into resource_types values('httpd_shared_tomcat');       -- +
-insert into resource_types values('httpd_jboss_site');          -- +
-insert into resource_types values('httpd_static_site');         -- +
-insert into resource_types values('httpd_tomcat_shared_site');  -- +
-insert into resource_types values('httpd_tomcat_std_site');     -- +
-insert into resource_types values('ip_address');                -- +2000000
-insert into resource_types values('cvs_repository');            -- +6000000
-insert into resource_types values('dns_record');                -- +1000000
-insert into resource_types values('dns_zone');                  -- +      0
-insert into resource_types values('private_ftp_server');        -- +7000000
-insert into resource_types values('email_domains');             -- +3000000
-commit;
+insert into resource_types values('mysql_database');            --
+insert into resource_types values('mysql_server');              --
+insert into resource_types values('mysql_user');                --
+insert into resource_types values('shell_group');               --
+insert into resource_types values('system_group');              --
+insert into resource_types values('shell_account');             --
+insert into resource_types values('email_inbox');               --
+insert into resource_types values('ftponly_account');           --
+insert into resource_types values('system_account');            --
+insert into resource_types values('httpd_server');              --
+insert into resource_types values('httpd_shared_tomcat');       --
+insert into resource_types values('httpd_jboss_site');          --
+insert into resource_types values('httpd_static_site');         --
+insert into resource_types values('httpd_tomcat_shared_site');  --
+insert into resource_types values('httpd_tomcat_std_site');     --
+insert into resource_types values('ip_address');                -- 2000000+
+insert into resource_types values('cvs_repository');            --
+insert into resource_types values('dns_record');                -- 1000000+
+insert into resource_types values('dns_zone');                  --       1+
+insert into resource_types values('private_ftp_server');        --

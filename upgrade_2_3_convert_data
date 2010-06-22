@@ -16,7 +16,20 @@ read -p "Please confirm public schema is empty (\d) then press <Enter>: "
 cat <<EOF
   insert into ao_server_daemon_hosts select * from aoserv1.ao_server_daemon_hosts;
   select setval('ao_server_daemon_hosts_pkey_seq', (select coalesce(max(pkey)+1, 1) from ao_server_daemon_hosts), false);
-  -- TODO: ao_server_resources                         | table    | aoadmin
+  insert into ao_server_resources select
+    lsg.pkey + 4000000,
+    case
+      when lg.type in ('user') then 'shell_group'
+      when lg.type in ('system') then 'system_group'
+      else 'Unknown group type: ' || lg.type
+    end,
+    pk.accounting,
+    lsg.ao_server
+  from
+    aoserv1.linux_server_groups lsg
+    inner join aoserv1.linux_groups lg on lsg.name=lg.name
+    inner join aoserv1.packages pk on lg.package=pk.name
+  ;
   insert into ao_servers select * from aoserv1.ao_servers;
 EOF
   cat "${DIR}/aoindustries/aoserv_permissions-data1.sql"
@@ -34,7 +47,6 @@ cat <<EOF
   insert into bank_transactions select * from aoserv1.bank_transactions;
   select setval('bank_transactions_transid_seq', (select coalesce(max(transid)+1, 1) from bank_transactions), false);
   insert into banks select * from aoserv1.banks;
-  -- TODO: blackhole_email_addresses                   | table    | aoadmin
   -- TODO: brands                                      | table    | aoadmin
   -- TODO: business_administrator_roles                | table    | aoadmin
   -- TODO: business_administrator_roles_pkey_seq       | sequence | aoadmin
@@ -159,12 +171,21 @@ cat <<EOF
 EOF
   cat "${DIR}/aoindustries/dns_types-data1.sql"
 cat <<EOF
-  -- TODO: email_addresses                             | table    | aoadmin
-  -- TODO: email_addresses_pkey_seq                    | sequence | aoadmin
+  insert into email_addresses select pkey, address, domain+3000000 from aoserv1.email_addresses;
+  select setval('email_addresses_pkey_seq', (select coalesce(max(pkey)+1, 1) from email_addresses), false);
   -- TODO: email_attachment_blocks                     | table    | aoadmin
   -- TODO: email_attachment_blocks_pkey_seq            | sequence | aoadmin
   -- TODO: email_attachment_types                      | table    | aoadmin
-  -- TODO: email_domains                               | table    | aoadmin
+  insert into email_domains select
+    ed.pkey+3000000,
+    ed.domain,
+    ed.ao_server,
+    pk.accounting
+  from
+    aoserv1.email_domains ed
+    inner join aoserv1.packages pk on ed.package=pk.name
+  ;
+  select setval('email_domains_pkey_seq', (select coalesce(max(pkey)+1, 1) from email_domains), false);
   -- TODO: email_domains_pkey_seq                      | sequence | aoadmin
   -- TODO: email_forwarding                            | table    | aoadmin
   -- TODO: email_forwarding_pkey_seq                   | sequence | aoadmin
@@ -203,7 +224,15 @@ cat <<EOF
   -- TODO: file_backup_settings                        | table    | aoadmin
   -- TODO: file_backup_settings_pkey_seq               | sequence | aoadmin
   -- TODO: ftp_guest_users                             | table    | aoadmin
-  -- TODO: group_names                                 | table    | aoadmin
+  insert into group_names select distinct
+    lsg.name,
+    pk.accounting,
+    null::integer
+  from
+    aoserv1.linux_server_groups lsg
+    inner join aoserv1.linux_groups lg on lsg.name=lg.name
+    inner join aoserv1.packages pk on lg.package=pk.name
+  ;
   -- TODO: httpd_binds                                 | table    | aoadmin
   -- TODO: httpd_jboss_sites                           | table    | aoadmin
   -- TODO: httpd_jboss_versions                        | table    | aoadmin
@@ -277,8 +306,22 @@ cat <<EOF
 EOF
   cat "${DIR}/aoindustries/linux_group_types-data1.sql"
 cat <<EOF
-  -- TODO: linux_group_types                           | table    | aoadmin
-  -- TODO: linux_groups                                | table    | aoadmin
+  insert into linux_groups select
+    lsg.pkey + 4000000,
+    case
+      when lg.type in ('user') then 'shell_group'
+      when lg.type in ('system') then 'system_group'
+      else 'Unknown group type: ' || lg.type
+    end,
+    pk.accounting,
+    lsg.ao_server,
+    lsg.name,
+    lsg.gid
+  from
+    aoserv1.linux_server_groups lsg
+    inner join aoserv1.linux_groups lg on lsg.name=lg.name
+    inner join aoserv1.packages pk on lg.package=pk.name
+  ;
   -- TODO: majordomo_lists                             | table    | aoadmin
   -- TODO: majordomo_servers                           | table    | aoadmin
   -- TODO: majordomo_versions                          | table    | aoadmin
@@ -433,6 +476,23 @@ cat <<EOF
     inner join aoserv1.packages pk on ia.package=pk.name
   where
     ia.ip_address!='0.0.0.0'
+  ;
+  insert into resources select
+    lsg.pkey + 4000000,
+    case
+      when lg.type in ('user') then 'shell_group'
+      when lg.type in ('system') then 'system_group'
+      else 'Unknown group type: ' || lg.type
+    end,
+    pk.accounting,
+    lsg.created,
+    'orion',
+    null,
+    lsg.created
+  from
+    aoserv1.linux_server_groups lsg
+    inner join aoserv1.linux_groups lg on lsg.name=lg.name
+    inner join aoserv1.packages pk on lg.package=pk.name
   ;
   -- TODO: remaining resources
   -- TODO: pack resources_pkey_seq at the end of this process

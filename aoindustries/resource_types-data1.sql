@@ -160,9 +160,6 @@ hardware_ram_ddr2_667_ecc_4096
 hardware_ram_ddr2_667_ecc_8192
 joomla
 drupal
-postgresql_database
-postgresql_server
-postgresql_user
 wordpress
 xoops
 mediawiki
@@ -174,25 +171,28 @@ phpgroupware
 oscommerce
 \.
 begin;
-insert into resource_types values('mysql_database');            --
-insert into resource_types values('mysql_server');              -- 7000000+
-insert into resource_types values('mysql_user');                --
-insert into resource_types values('shell_group');               -- 4000000+
-insert into resource_types values('system_group');              -- 4000000+
-insert into resource_types values('shell_account');             -- 5000000+
-insert into resource_types values('email_inbox');               -- 5000000+
-insert into resource_types values('ftponly_account');           -- 5000000+
-insert into resource_types values('system_account');            -- 5000000+
-insert into resource_types values('httpd_server');              --
-insert into resource_types values('httpd_shared_tomcat');       --
-insert into resource_types values('httpd_jboss_site');          --
-insert into resource_types values('httpd_static_site');         --
-insert into resource_types values('httpd_tomcat_shared_site');  --
-insert into resource_types values('httpd_tomcat_std_site');     --
-insert into resource_types values('ip_address');                -- 2000000+
-insert into resource_types values('cvs_repository');            -- 6000000+
-insert into resource_types values('dns_record');                -- 1000000+
-insert into resource_types values('dns_zone');                  --       1+
-insert into resource_types values('private_ftp_server');        --
-insert into resource_types values('email_domains');             -- 3000000+
+insert into resource_types values('mysql_database');            -- + 9000000
+insert into resource_types values('mysql_server');              -- + 8000000
+insert into resource_types values('mysql_user');                -- +10000000
+insert into resource_types values('shell_group');               -- + 4000000
+insert into resource_types values('system_group');              -- + 4000000
+insert into resource_types values('shell_account');             -- + 5000000
+insert into resource_types values('email_inbox');               -- + 5000000
+insert into resource_types values('ftponly_account');           -- + 5000000
+insert into resource_types values('system_account');            -- + 5000000
+insert into resource_types values('httpd_server');              -- +14000000
+insert into resource_types values('httpd_shared_tomcat');       -- +16000000 (TODO)
+insert into resource_types values('httpd_jboss_site');          -- +15000000
+insert into resource_types values('httpd_static_site');         -- +15000000
+insert into resource_types values('httpd_tomcat_shared_site');  -- +15000000
+insert into resource_types values('httpd_tomcat_std_site');     -- +15000000
+insert into resource_types values('ip_address');                -- + 2000000
+insert into resource_types values('cvs_repository');            -- + 6000000
+insert into resource_types values('dns_record');                -- + 1000000
+insert into resource_types values('dns_zone');                  -- +       0
+insert into resource_types values('private_ftp_server');        -- + 7000000
+insert into resource_types values('email_domains');             -- + 3000000
+insert into resource_types values('postgresql_database');       -- +12000000
+insert into resource_types values('postgresql_server');         -- +11000000
+insert into resource_types values('postgresql_user');           -- +13000000
 commit;

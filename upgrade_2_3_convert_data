@@ -246,6 +246,10 @@ cat <<EOF
     nextval('business_administrator_roles_pkey_seq'),
     username,
     case
+      -- Read-Only
+      when username in (
+        'root'
+      ) then 1
       -- Master User
       when username in (
         'aoserv',
@@ -256,8 +260,7 @@ cat <<EOF
         'jasondavies',
         'kaori',
         'oldaodeacon',
-        'orion',
-        'root'
+        'orion'
       ) then 2
       -- AOServ Daemon
       when username in (

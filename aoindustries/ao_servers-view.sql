@@ -4,7 +4,7 @@ as
   (
     select
       ao.hostname,
-      (select count(*) from business_servers bs, businesses bu where se.pkey=bs.server and bs.is_default and bs.accounting=bu.accounting and bu.canceled is null and bu.parent='AOINDUSTRIES') as business_count
+      (select count(*) from business_servers bs, businesses bu where se.resource=bs.server and bs.is_default and bs.accounting=bu.accounting and bu.canceled is null and bu.parent='AOINDUSTRIES') as business_count
 --      ao.num_cpu,
 --      ao.cpu_speed,
 --      ao.num_cpu*ao.cpu_speed as total_cpu,
@@ -15,7 +15,7 @@ as
       servers se,
       ao_servers ao
     where
-      se.pkey=ao.server
+      se.resource=ao.server
     order by
       ao.hostname
   )

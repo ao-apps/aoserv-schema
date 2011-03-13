@@ -553,6 +553,24 @@ cat <<EOF
 EOF
   cat "${DIR}/aoindustries/distro_file_types-data1.sql"
 cat <<EOF
+  select setval('resources_pkey_seq', 17000001, false);
+  insert into dns_zones select
+    nextval('resources_pkey_seq'),
+    'dns_zone',
+    pk.accounting,
+    dz.zone,
+    dz.file,
+    dz.hostmaster,
+    dz.serial,
+    dz.ttl
+  from
+    aoserv1.dns_zones dz
+    inner join aoserv1.packages pk on dz.package=pk.name
+  order by
+    dz.zone
+  ;
+  update dns_zones set zone=substring(zone from 1 for length(zone)-1) where zone like '%.';
+  update dns_zones set hostmaster=substring(hostmaster from 1 for length(hostmaster)-1) where hostmaster like '%.';
   insert into dns_tlds select domain from aoserv1.dns_tlds;
 EOF
   cat "${DIR}/aoindustries/dns_types-data1.sql"
@@ -831,55 +849,6 @@ cat <<EOF
     inner join aoserv1.packages pk on ia.package=pk.name
   where
     ia.ip_address!='0.0.0.0'
-  ;
-EOF
-  cat "${DIR}/aoindustries/resource_types-data1.sql"
-cat <<EOF
-  select setval('resources_pkey_seq', 17000001, false);
-  insert into resources select
-    nextval('resources_pkey_seq'),
-    'dns_zone',
-    pk.accounting,
-    now(),
-    'orion',
-    null,
-    now()
-  from
-    aoserv1.dns_zones dz
-    inner join aoserv1.packages pk on dz.package=pk.name
-  order by
-    dz.zone
-  ;
-  select setval('resources_pkey_seq', 17000001, false);
-  insert into dns_zones select
-    nextval('resources_pkey_seq'),
-    'dns_zone',
-    pk.accounting,
-    dz.zone,
-    dz.file,
-    dz.hostmaster,
-    dz.serial,
-    dz.ttl
-  from
-    aoserv1.dns_zones dz
-    inner join aoserv1.packages pk on dz.package=pk.name
-  order by
-    dz.zone
-  ;
-  update dns_zones set zone=substring(zone from 1 for length(zone)-1) where zone like '%.';
-  update dns_zones set hostmaster=substring(hostmaster from 1 for length(hostmaster)-1) where hostmaster like '%.';
-  insert into resources select
-    dr.pkey+1000000,
-    'dns_record',
-    pk.accounting,
-    now(),
-    'orion',
-    null,
-    now()
-  from
-    aoserv1.dns_records dr
-    inner join aoserv1.dns_zones dz on dr.zone=dz.zone
-    inner join aoserv1.packages pk on dz.package=pk.name
   ;
   insert into dns_records select
     dr.pkey+1000000,
@@ -1409,6 +1378,37 @@ cat <<EOF
   insert into processor_types select * from aoserv1.processor_types;
   insert into protocols select * from aoserv1.protocols;
   insert into resellers select * from aoserv1.resellers;
+EOF
+  cat "${DIR}/aoindustries/resource_types-data1.sql"
+cat <<EOF
+  select setval('resources_pkey_seq', 17000001, false);
+  insert into resources select
+    nextval('resources_pkey_seq'),
+    'dns_zone',
+    pk.accounting,
+    now(),
+    'orion',
+    null,
+    now()
+  from
+    aoserv1.dns_zones dz
+    inner join aoserv1.packages pk on dz.package=pk.name
+  order by
+    dz.zone
+  ;
+  insert into resources select
+    dr.pkey+1000000,
+    'dns_record',
+    pk.accounting,
+    now(),
+    'orion',
+    null,
+    now()
+  from
+    aoserv1.dns_records dr
+    inner join aoserv1.dns_zones dz on dr.zone=dz.zone
+    inner join aoserv1.packages pk on dz.package=pk.name
+  ;
   insert into resources select
     ia.pkey+2000000,
     'ip_address',

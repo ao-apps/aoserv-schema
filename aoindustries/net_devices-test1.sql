@@ -1,7 +1,7 @@
 begin;
 insert into net_devices values(
     3,
-	2,
+	135,
 	'lo',
 	'loopback device',
     null, -- gateway
@@ -16,7 +16,7 @@ insert into net_devices values(
 );
 insert into net_devices values(
     4,
-	2,
+	135,
 	'eth0',
 	'Nested Test Servers',
 	'192.168.1.3',

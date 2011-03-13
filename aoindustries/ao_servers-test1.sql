@@ -1,5 +1,5 @@
 insert into ao_servers values(
-    2,
+    135,
     'test.aoindustries.com',
 	26,
 	'VI5w/QIiGMa6g',

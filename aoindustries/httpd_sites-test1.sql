@@ -3,7 +3,7 @@ insert into httpd_sites values(
   130, -- ao_server_resource
   'httpd_static_site', -- resource_type
   'AOINDUSTRIES', -- accounting
-  2, -- ao_server
+  135, -- ao_server
   'disable', -- site_name
   false, -- list_first
   27, -- linux_account_group

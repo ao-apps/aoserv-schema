@@ -1,10 +1,11 @@
 begin;
 insert into servers values(
-    2,
-	'freedom',
+    135,
+    'virtual_server',
+    'AOINDUSTRIES',
+	136,
 	'Nested Test Server',
 	67,
-	'AOINDUSTRIES',
 	'test.aoindustries.com',
     true
 );

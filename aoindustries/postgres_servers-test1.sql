@@ -2,7 +2,7 @@ insert into postgres_servers values(
     10,
     'postgresql_server',
     'AOINDUSTRIES',
-    2,
+    135,
     '8.1',
     (
         select

@@ -3,7 +3,7 @@ insert into mysql_servers values(
     1,
     'mysql_server',
     'AOINDUSTRIES',
-    2,
+    135,
     '4.1',
     (
         select
@@ -24,7 +24,7 @@ insert into mysql_servers values(
     2,
     'mysql_server',
     'AOINDUSTRIES',
-    2,
+    135,
     '5.0',
     (
         select

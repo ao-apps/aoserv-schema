@@ -1,7 +1,7 @@
 alter table failover_file_replications
   add constraint server_fkey
   foreign key (server)
-  references servers (pkey)
+  references servers (resource)
   on delete restrict
   on update cascade
 ;

@@ -6,7 +6,6 @@ consulting
 disk
 javavm
 virtuemart
-rack
 hardware_processor_p4_32
 hardware_processor_p4_34
 hardware_processor_xeon_306
@@ -149,6 +148,7 @@ hardware_processor_virtual.125
 hardware_processor_virtual.25
 hardware_processor_virtual.5
 hardware_disk_7200_1000_raid1
+hardware_disk_7200_2000_raid1
 hardware_disk_15000_146_raid1
 hardware_ram_ddr2_667_ecc_0256
 hardware_ram_ddr2_667_ecc_0512
@@ -189,10 +189,15 @@ insert into resource_types values('httpd_tomcat_std_site');     -- +15000000
 insert into resource_types values('ip_address');                -- + 2000000
 insert into resource_types values('cvs_repository');            -- + 6000000
 insert into resource_types values('dns_record');                -- + 1000000
-insert into resource_types values('dns_zone');                  -- +       0
+insert into resource_types values('dns_zone');                  -- +17000000
 insert into resource_types values('private_ftp_server');        -- + 7000000
-insert into resource_types values('email_domains');             -- + 3000000
+insert into resource_types values('email_domain');              -- + 3000000 (TODO)
 insert into resource_types values('postgresql_database');       -- +12000000
 insert into resource_types values('postgresql_server');         -- +11000000
 insert into resource_types values('postgresql_user');           -- +13000000
+insert into resource_types values('backup_server');             -- +       0
+insert into resource_types values('physical_server');           -- +       0
+insert into resource_types values('virtual_server');            -- +       0
+insert into resource_types values('rack');                      -- +18000000
+insert into resource_types values('server_farm');               -- +19000000
 commit;

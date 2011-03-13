@@ -31,7 +31,7 @@ create table dns_records (
     end
   ),
   dhcp_address integer check (
-    "type" not in ('A', 'AAAA') or dhcp_address is null -- Only allowed for A and AAAA records
+    "type" in ('A', 'AAAA') or dhcp_address is null -- Only allowed for A and AAAA records
   ),
   ttl integer check (ttl is null or ttl>0)
 );

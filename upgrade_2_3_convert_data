@@ -183,6 +183,95 @@ cat <<EOF
     inner join aoserv1.packages pk on hs.package=pk.name
   ;
 
+  select setval('resources_pkey_seq', 19000001, false);
+  insert into resources select
+    nextval('resources_pkey_seq'),
+    'server_farm',
+    pk.accounting,
+    now(),
+    'orion',
+    null,
+    now()
+  from
+    aoserv1.server_farms sf
+    inner join aoserv1.packages pk on sf.owner=pk.pkey
+  order by
+    sf.name
+  ;
+
+  select setval('resources_pkey_seq', 19000001, false);
+  insert into server_farms select
+    nextval('resources_pkey_seq'),
+    'server_farm',
+    sf.name,
+    sf.description,
+    sf.use_restricted_smtp_port
+  from
+    aoserv1.server_farms sf
+  order by
+    sf.name
+  ;
+
+  insert into resources select
+    se.pkey,
+    'backup_server',
+    pk.accounting,
+
+    now(),
+    'orion',
+    null,
+    now()
+  from
+    aoserv1.servers se
+    inner join aoserv1.packages pk on se.package=pk.pkey
+  where
+    se.pkey not in (select server from aoserv1.physical_servers) and se.pkey not in (select server from aoserv1.virtual_servers)
+  ;
+  insert into resources select
+    ps.server,
+    'physical_server',
+    pk.accounting,
+    now(),
+    'orion',
+    null,
+    now()
+  from
+    aoserv1.physical_servers ps
+    inner join aoserv1.servers se on ps.server=se.pkey
+    inner join aoserv1.packages pk on se.package=pk.pkey
+  ;
+  insert into resources select
+    vs.server,
+    'virtual_server',
+    pk.accounting,
+    now(),
+    'orion',
+    null,
+    now()
+  from
+    aoserv1.virtual_servers vs
+    inner join aoserv1.servers se on vs.server=se.pkey
+    inner join aoserv1.packages pk on se.package=pk.pkey
+  ;
+
+  insert into servers select
+    se.pkey,
+    case
+        when (select count(*) from aoserv1.physical_servers ps where se.pkey=ps.server)>0 then 'physical_server'
+        when (select count(*) from aoserv1.virtual_servers vs where se.pkey=vs.server)>0 then 'virtual_server'
+        else 'backup_server'
+    end,
+    pk.accounting,
+    (select sf.resource from server_farms sf where sf.name=se.farm),
+    se.description,
+    se.operating_system_version,
+    se.name,
+    se.monitoring_enabled
+  from
+    aoserv1.servers se
+    inner join aoserv1.packages pk on se.package=pk.pkey
+  ;
+
   insert into ao_servers select * from aoserv1.ao_servers;
 EOF
   cat "${DIR}/aoindustries/aoserv_permissions-data1.sql"
@@ -190,6 +279,14 @@ EOF
   cat "${DIR}/aoindustries/aoserv_roles-data1.sql"
   cat "${DIR}/aoindustries/architectures-data1.sql"
 cat <<EOF
+  insert into backup_servers select
+    se.pkey,
+    'backup_server'
+  from
+    aoserv1.servers se
+  where
+    se.pkey not in (select server from aoserv1.physical_servers) and se.pkey not in (select server from aoserv1.virtual_servers)
+  ;
   insert into backup_partitions select pkey, ao_server, path, quota_enabled from aoserv1.backup_partitions;
   select setval('backup_partitions_pkey_seq', (select coalesce(max(pkey)+1, 1) from backup_partitions), false);
 EOF
@@ -456,7 +553,7 @@ cat <<EOF
 EOF
   cat "${DIR}/aoindustries/distro_file_types-data1.sql"
 cat <<EOF
-  select setval('resources_pkey_seq', 1, false);
+  select setval('resources_pkey_seq', 17000001, false);
   insert into dns_zones select
     nextval('resources_pkey_seq'),
     'dns_zone',
@@ -582,7 +679,18 @@ cat <<EOF
   insert into encryption_keys select * from aoserv1.encryption_keys;
   select setval('encryption_keys_pkey_seq', (select coalesce(max(pkey)+1, 1) from encryption_keys), false);
   insert into expense_categories select * from aoserv1.expense_categories;
-  insert into failover_file_log select * from aoserv1.failover_file_log;
+  insert into failover_file_log select
+    pkey,
+    replication,
+    start_time,
+    case when end_time<start_time then start_time else end_time end,
+    scanned,
+    updated,
+    bytes,
+    is_successful
+  from
+    aoserv1.failover_file_log
+  ;
   select setval('failover_file_log_pkey_seq', (select coalesce(max(pkey)+1, 1) from failover_file_log), false);
   insert into failover_file_replications select * from aoserv1.failover_file_replications;
   select setval('failover_file_replications_pkey_seq', (select coalesce(max(pkey)+1, 1) from failover_file_replications), false);
@@ -1189,7 +1297,6 @@ cat <<EOF
 EOF
   cat "${DIR}/aoindustries/payment_types-data1.sql"
 cat <<EOF
-  insert into physical_servers select * from aoserv1.physical_servers;
   insert into postgres_databases select
     pd.pkey + 12000000,
     'postgresql_database',
@@ -1270,13 +1377,11 @@ cat <<EOF
   ;
   insert into processor_types select * from aoserv1.processor_types;
   insert into protocols select * from aoserv1.protocols;
-  insert into racks select * from aoserv1.racks;
-  select setval('racks_pkey_seq', (select coalesce(max(pkey)+1, 1) from racks), false);
   insert into resellers select * from aoserv1.resellers;
 EOF
   cat "${DIR}/aoindustries/resource_types-data1.sql"
 cat <<EOF
-  select setval('resources_pkey_seq', 1, false);
+  select setval('resources_pkey_seq', 17000001, false);
   insert into resources select
     nextval('resources_pkey_seq'),
     'dns_zone',
@@ -1526,15 +1631,29 @@ cat <<EOF
     inner join aoserv1.packages pk on hs.package=pk.name
   ;
 
-  insert into server_farms select
-    sf.name,
-    sf.description,
-    pk.accounting,
-    sf.use_restricted_smtp_port
+  insert into resources select
+    pkey + 18000000,
+    'rack',
+    'AOINDUSTRIES',
+    now(),
+    'orion',
+    null,
+    now()
   from
-    aoserv1.server_farms sf
-    inner join aoserv1.packages pk on sf.owner=pk.pkey
+    aoserv1.racks
   ;
+  insert into racks select
+    r.pkey + 18000000,
+    'rack',
+    sf.resource,
+    r.name,
+    r.max_power,
+    r.total_rack_units
+  from
+    aoserv1.racks r
+    inner join server_farms sf on r.farm=sf.name
+  ;
+
   insert into server_resources select
     ia.pkey+2000000,
     'ip_address',
@@ -1552,19 +1671,24 @@ cat <<EOF
   where
     ia.ip_address!='0.0.0.0'
   ;
-  insert into servers select
-    se.pkey,
+  insert into physical_servers select
+    ps.server,
+    'physical_server',
     se.farm,
-    se.description,
-    se.operating_system_version,
-    pk.accounting,
-    se.name,
-    se.monitoring_enabled
+    ps.rack + 18000000,
+    r.farm,
+    ps.rack_units,
+    ps.ram,
+    ps.processor_type,
+    ps.processor_speed,
+    ps.processor_cores,
+    ps.max_power,
+    ps.supports_hvm
   from
-    aoserv1.servers se
-    inner join aoserv1.packages pk on se.package=pk.pkey
+    aoserv1.physical_servers ps
+    inner join servers se on ps.server=se.resource
+    inner join racks r on (ps.rack + 18000000) = r.resource
   ;
-  select setval('servers_pkey_seq', (select coalesce(max(pkey)+1, 1) from servers), false);
 EOF
   cat "${DIR}/aoindustries/shells-data1.sql"
 cat <<EOF
@@ -1665,7 +1789,30 @@ cat <<EOF
   ;
   insert into virtual_disks select * from aoserv1.virtual_disks;
   select setval('virtual_disks_pkey_seq', (select coalesce(max(pkey)+1, 1) from virtual_disks), false);
-  insert into virtual_servers select * from aoserv1.virtual_servers;
+  insert into virtual_servers select
+    vs.server,
+    'virtual_server',
+    vs.primary_ram,
+    vs.primary_ram_target,
+    vs.secondary_ram,
+    vs.secondary_ram_target,
+    vs.minimum_processor_type,
+    vs.minimum_processor_architecture,
+    vs.minimum_processor_speed,
+    vs.minimum_processor_speed_target,
+    vs.processor_cores,
+    vs.processor_cores_target,
+    vs.processor_weight,
+    vs.processor_weight_target,
+    vs.primary_physical_server_locked,
+    vs.secondary_physical_server_locked,
+    vs.requires_hvm,
+    vs.vnc_password
+  from
+    aoserv1.virtual_servers vs
+    inner join aoserv1.servers se on vs.server=se.pkey
+    inner join aoserv1.packages pk on se.package=pk.pkey
+  ;
   insert into whois_history select * from aoserv1.whois_history;
   select setval('whois_history_pkey_seq', (select coalesce(max(pkey)+1, 1) from whois_history), false);
   -- TODO: pack resources_pkey_seq at the end of this process - ordered by created time?

@@ -1,7 +1,7 @@
-alter table server_farms
+alter table backup_servers
   add constraint resource_fkey
   foreign key (resource_type, resource)
-  references resources (resource_type, pkey)
+  references servers (resource_type, resource)
   on delete restrict
   on update cascade
 ;

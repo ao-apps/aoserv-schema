@@ -1,7 +1,7 @@
 alter table virtual_servers
-  add constraint server_fkey
-  foreign key (server)
-  references servers (pkey)
+  add constraint resource_fkey
+  foreign key (resource_type, resource)
+  references servers (resource_type, resource)
   on delete restrict
   on update cascade
 ;

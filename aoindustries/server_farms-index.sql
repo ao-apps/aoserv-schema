@@ -1,3 +1,4 @@
-create index server_farms_owner_idx on server_farms (
-  owner
+create unique index server_farms_resource_type_super on server_farms (
+  resource_type,
+  resource
 );

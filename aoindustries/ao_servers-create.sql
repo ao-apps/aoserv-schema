@@ -1,6 +1,7 @@
 create table ao_servers (
   server integer
     constraint ao_servers_pkey primary key,
+    -- TODO: Super key of server to make sure resource_type is either 'virtual_server' or 'physical_server'
   hostname text not null unique
     check(
       hostname=lower(hostname) -- Must be all lowercase

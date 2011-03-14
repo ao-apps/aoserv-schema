@@ -14,8 +14,11 @@ read -p "Please confirm public schema is empty (\d) then press <Enter>: "
 
   # Convert data
 cat <<EOF
+  \echo ao_server_daemon_hosts
   insert into ao_server_daemon_hosts select * from aoserv1.ao_server_daemon_hosts;
   select setval('ao_server_daemon_hosts_pkey_seq', (select coalesce(max(pkey)+1, 1) from ao_server_daemon_hosts), false);
+
+  \echo ao_server_resources from linux_server_groups
   insert into ao_server_resources select
     lsg.pkey + 4000000,
     case
@@ -27,8 +30,8 @@ cat <<EOF
     lsg.ao_server
   from
     aoserv1.linux_server_groups lsg
-    inner join aoserv1.linux_groups lg on lsg.name=lg.name
-    inner join aoserv1.packages pk on lg.package=pk.name
+    left outer join aoserv1.linux_groups lg on lsg.name=lg.name
+    left outer join aoserv1.packages pk on lg.package=pk.name
   ;
   insert into ao_server_resources select
     lsa.pkey + 5000000,
@@ -43,9 +46,9 @@ cat <<EOF
     lsa.ao_server
   from
     aoserv1.linux_server_accounts lsa
-    inner join aoserv1.linux_accounts la on lsa.username=la.username
-    inner join aoserv1.usernames un on la.username=un.username
-    inner join aoserv1.packages pk on un.package=pk.name
+    left outer join aoserv1.linux_accounts la on lsa.username=la.username
+    left outer join aoserv1.usernames un on la.username=un.username
+    left outer join aoserv1.packages pk on un.package=pk.name
   ;
   insert into ao_server_resources select
     cr.pkey + 6000000,
@@ -54,10 +57,10 @@ cat <<EOF
     lsa.ao_server
   from
     aoserv1.cvs_repositories cr
-    inner join aoserv1.linux_server_accounts lsa on cr.linux_server_account=lsa.pkey
-    inner join aoserv1.linux_accounts la on lsa.username=la.username
-    inner join aoserv1.usernames un on la.username=un.username
-    inner join aoserv1.packages pk on un.package=pk.name
+    left outer join aoserv1.linux_server_accounts lsa on cr.linux_server_account=lsa.pkey
+    left outer join aoserv1.linux_accounts la on lsa.username=la.username
+    left outer join aoserv1.usernames un on la.username=un.username
+    left outer join aoserv1.packages pk on un.package=pk.name
   ;
   insert into ao_server_resources select
     pfs.net_bind + 7000000,
@@ -66,9 +69,9 @@ cat <<EOF
     lsa.ao_server
   from
     aoserv1.private_ftp_servers pfs
-    inner join aoserv1.linux_server_accounts lsa on pfs.linux_server_account=lsa.pkey
-    inner join aoserv1.usernames un on lsa.username=un.username
-    inner join aoserv1.packages pk on un.package=pk.name
+    left outer join aoserv1.linux_server_accounts lsa on pfs.linux_server_account=lsa.pkey
+    left outer join aoserv1.usernames un on lsa.username=un.username
+    left outer join aoserv1.packages pk on un.package=pk.name
   ;
   insert into ao_server_resources select
     ms.pkey + 8000000,
@@ -77,7 +80,7 @@ cat <<EOF
     ms.ao_server
   from
     aoserv1.mysql_servers ms
-    inner join aoserv1.packages pk on ms.package=pk.name
+    left outer join aoserv1.packages pk on ms.package=pk.name
   ;
   insert into ao_server_resources select
     md.pkey + 9000000,
@@ -86,8 +89,8 @@ cat <<EOF
     ms.ao_server
   from
     aoserv1.mysql_databases md
-    inner join aoserv1.packages pk on md.package=pk.name
-    inner join aoserv1.mysql_servers ms on md.mysql_server=ms.pkey
+    left outer join aoserv1.packages pk on md.package=pk.name
+    left outer join aoserv1.mysql_servers ms on md.mysql_server=ms.pkey
   ;
   insert into ao_server_resources select
     msu.pkey + 10000000,
@@ -96,9 +99,9 @@ cat <<EOF
     ms.ao_server
   from
     aoserv1.mysql_server_users msu
-    inner join aoserv1.usernames un on msu.username=un.username
-    inner join aoserv1.packages pk on un.package=pk.name
-    inner join aoserv1.mysql_servers ms on msu.mysql_server=ms.pkey
+    left outer join aoserv1.usernames un on msu.username=un.username
+    left outer join aoserv1.packages pk on un.package=pk.name
+    left outer join aoserv1.mysql_servers ms on msu.mysql_server=ms.pkey
   ;
   insert into ao_server_resources select
     ps.pkey + 11000000,
@@ -107,8 +110,8 @@ cat <<EOF
     ps.ao_server
   from
     aoserv1.postgres_servers ps
-    inner join aoserv1.net_binds nb on ps.net_bind=nb.pkey
-    inner join aoserv1.packages pk on nb.package=pk.name
+    left outer join aoserv1.net_binds nb on ps.net_bind=nb.pkey
+    left outer join aoserv1.packages pk on nb.package=pk.name
   ;
   insert into ao_server_resources select
     pd.pkey + 12000000,
@@ -117,10 +120,10 @@ cat <<EOF
     ps.ao_server
   from
     aoserv1.postgres_databases pd
-    inner join aoserv1.postgres_server_users psu on pd.datdba=psu.pkey
-    inner join aoserv1.usernames un on psu.username=un.username
-    inner join aoserv1.packages pk on un.package=pk.name
-    inner join aoserv1.postgres_servers ps on pd.postgres_server=ps.pkey
+    left outer join aoserv1.postgres_server_users psu on pd.datdba=psu.pkey
+    left outer join aoserv1.usernames un on psu.username=un.username
+    left outer join aoserv1.packages pk on un.package=pk.name
+    left outer join aoserv1.postgres_servers ps on pd.postgres_server=ps.pkey
   ;
   insert into ao_server_resources select
     psu.pkey + 13000000,
@@ -129,9 +132,9 @@ cat <<EOF
     ps.ao_server
   from
     aoserv1.postgres_server_users psu
-    inner join aoserv1.usernames un on psu.username=un.username
-    inner join aoserv1.packages pk on un.package=pk.name
-    inner join aoserv1.postgres_servers ps on psu.postgres_server=ps.pkey
+    left outer join aoserv1.usernames un on psu.username=un.username
+    left outer join aoserv1.packages pk on un.package=pk.name
+    left outer join aoserv1.postgres_servers ps on psu.postgres_server=ps.pkey
   ;
   insert into ao_server_resources select
     hs.pkey + 14000000,
@@ -140,7 +143,7 @@ cat <<EOF
     hs.ao_server
   from
     aoserv1.httpd_servers hs
-    inner join aoserv1.packages pk on hs.package=pk.pkey
+    left outer join aoserv1.packages pk on hs.package=pk.pkey
   ;
   insert into ao_server_resources select
     hs.pkey + 15000000,
@@ -149,8 +152,8 @@ cat <<EOF
     hs.ao_server
   from
     aoserv1.httpd_jboss_sites hjs
-    inner join aoserv1.httpd_sites hs on hjs.tomcat_site=hs.pkey
-    inner join aoserv1.packages pk on hs.package=pk.name
+    left outer join aoserv1.httpd_sites hs on hjs.tomcat_site=hs.pkey
+    left outer join aoserv1.packages pk on hs.package=pk.name
   ;
   insert into ao_server_resources select
     hs.pkey + 15000000,
@@ -159,8 +162,8 @@ cat <<EOF
     hs.ao_server
   from
     aoserv1.httpd_static_sites hss
-    inner join aoserv1.httpd_sites hs on hss.httpd_site=hs.pkey
-    inner join aoserv1.packages pk on hs.package=pk.name
+    left outer join aoserv1.httpd_sites hs on hss.httpd_site=hs.pkey
+    left outer join aoserv1.packages pk on hs.package=pk.name
   ;
   insert into ao_server_resources select
     hs.pkey + 15000000,
@@ -169,8 +172,8 @@ cat <<EOF
     hs.ao_server
   from
     aoserv1.httpd_tomcat_std_sites htss
-    inner join aoserv1.httpd_sites hs on htss.tomcat_site=hs.pkey
-    inner join aoserv1.packages pk on hs.package=pk.name
+    left outer join aoserv1.httpd_sites hs on htss.tomcat_site=hs.pkey
+    left outer join aoserv1.packages pk on hs.package=pk.name
   ;
   insert into ao_server_resources select
     hs.pkey + 15000000,
@@ -179,8 +182,8 @@ cat <<EOF
     hs.ao_server
   from
     aoserv1.httpd_tomcat_shared_sites htss
-    inner join aoserv1.httpd_sites hs on htss.tomcat_site=hs.pkey
-    inner join aoserv1.packages pk on hs.package=pk.name
+    left outer join aoserv1.httpd_sites hs on htss.tomcat_site=hs.pkey
+    left outer join aoserv1.packages pk on hs.package=pk.name
   ;
 
   select setval('resources_pkey_seq', 19000001, false);
@@ -194,7 +197,7 @@ cat <<EOF
     now()
   from
     aoserv1.server_farms sf
-    inner join aoserv1.packages pk on sf.owner=pk.pkey
+    left outer join aoserv1.packages pk on sf.owner=pk.pkey
   order by
     sf.name
   ;
@@ -223,7 +226,7 @@ cat <<EOF
     now()
   from
     aoserv1.servers se
-    inner join aoserv1.packages pk on se.package=pk.pkey
+    left outer join aoserv1.packages pk on se.package=pk.pkey
   where
     se.pkey not in (select server from aoserv1.physical_servers) and se.pkey not in (select server from aoserv1.virtual_servers)
   ;
@@ -237,8 +240,8 @@ cat <<EOF
     now()
   from
     aoserv1.physical_servers ps
-    inner join aoserv1.servers se on ps.server=se.pkey
-    inner join aoserv1.packages pk on se.package=pk.pkey
+    left outer join aoserv1.servers se on ps.server=se.pkey
+    left outer join aoserv1.packages pk on se.package=pk.pkey
   ;
   insert into resources select
     vs.server,
@@ -250,8 +253,8 @@ cat <<EOF
     now()
   from
     aoserv1.virtual_servers vs
-    inner join aoserv1.servers se on vs.server=se.pkey
-    inner join aoserv1.packages pk on se.package=pk.pkey
+    left outer join aoserv1.servers se on vs.server=se.pkey
+    left outer join aoserv1.packages pk on se.package=pk.pkey
   ;
 
   insert into servers select
@@ -269,7 +272,7 @@ cat <<EOF
     se.monitoring_enabled
   from
     aoserv1.servers se
-    inner join aoserv1.packages pk on se.package=pk.pkey
+    left outer join aoserv1.packages pk on se.package=pk.pkey
   ;
 
   insert into ao_servers select * from aoserv1.ao_servers;
@@ -504,8 +507,8 @@ cat <<EOF
     ba.support_code
   from
     aoserv1.business_administrators ba
-    inner join aoserv1.usernames un on ba.username=un.username
-    inner join aoserv1.packages pk on un.package=pk.name
+    left outer join aoserv1.usernames un on ba.username=un.username
+    left outer join aoserv1.packages pk on un.package=pk.name
   ;
   insert into business_profiles select * from aoserv1.business_profiles;
   select setval('business_profiles_pkey_seq', (select coalesce(max(pkey)+1, 1) from business_profiles), false);
@@ -535,7 +538,7 @@ cat <<EOF
     pk.email_relay_rate
   from
     aoserv1.businesses bu
-    inner join aoserv1.packages pk on bu.accounting=pk.accounting
+    left outer join aoserv1.packages pk on bu.accounting=pk.accounting
   ;
   insert into country_codes select * from aoserv1.country_codes;
   insert into credit_card_processors select * from aoserv1.credit_card_processors;
@@ -565,8 +568,8 @@ cat <<EOF
     eab.extension
   from
     aoserv1.email_attachment_blocks eab
-    inner join aoserv1.linux_server_accounts lsa on eab.linux_server_account=lsa.pkey
-    inner join aoserv1.linux_accounts la on lsa.username=la.username
+    left outer join aoserv1.linux_server_accounts lsa on eab.linux_server_account=lsa.pkey
+    left outer join aoserv1.linux_accounts la on lsa.username=la.username
   where
     la.type in ('application', 'user', 'email')
   ;
@@ -579,7 +582,7 @@ cat <<EOF
     pk.accounting
   from
     aoserv1.email_domains ed
-    inner join aoserv1.packages pk on ed.package=pk.name
+    left outer join aoserv1.packages pk on ed.package=pk.name
   ;
   select setval('email_domains_pkey_seq', (select coalesce(max(pkey)+1, 1) from email_domains), false);
   insert into email_forwarding select * from aoserv1.email_forwarding;
@@ -611,7 +614,7 @@ cat <<EOF
     lsa.sa_discard_score
   from
     aoserv1.linux_server_accounts lsa
-    inner join aoserv1.linux_accounts la on lsa.username=la.username
+    left outer join aoserv1.linux_accounts la on lsa.username=la.username
   where
     la.type in ('application', 'user', 'email')
   ;
@@ -672,7 +675,7 @@ cat <<EOF
     'ftponly_account'
   from
     aoserv1.ftp_guest_users fgu
-    inner join aoserv1.linux_server_accounts lsa on fgu.username=lsa.username
+    left outer join aoserv1.linux_server_accounts lsa on fgu.username=lsa.username
   ;
   insert into group_names select distinct
     lsg.name,
@@ -680,8 +683,8 @@ cat <<EOF
     null::integer
   from
     aoserv1.linux_server_groups lsg
-    inner join aoserv1.linux_groups lg on lsg.name=lg.name
-    inner join aoserv1.packages pk on lg.package=pk.name
+    left outer join aoserv1.linux_groups lg on lsg.name=lg.name
+    left outer join aoserv1.packages pk on lg.package=pk.name
   ;
   insert into httpd_binds select net_bind, httpd_server + 14000000 from aoserv1.httpd_binds;
   insert into httpd_jboss_sites select
@@ -828,7 +831,7 @@ cat <<EOF
     end
   from
     aoserv1.ip_addresses ia
-    inner join aoserv1.packages pk on ia.package=pk.name
+    left outer join aoserv1.packages pk on ia.package=pk.name
   where
     ia.ip_address!='0.0.0.0'
   ;
@@ -846,7 +849,7 @@ cat <<EOF
     now()
   from
     aoserv1.dns_zones dz
-    inner join aoserv1.packages pk on dz.package=pk.name
+    left outer join aoserv1.packages pk on dz.package=pk.name
   order by
     dz.zone
   ;
@@ -862,7 +865,7 @@ cat <<EOF
     dz.ttl
   from
     aoserv1.dns_zones dz
-    inner join aoserv1.packages pk on dz.package=pk.name
+    left outer join aoserv1.packages pk on dz.package=pk.name
   order by
     dz.zone
   ;
@@ -876,8 +879,8 @@ cat <<EOF
     now()
   from
     aoserv1.dns_records dr
-    inner join aoserv1.dns_zones dz on dr.zone=dz.zone
-    inner join aoserv1.packages pk on dz.package=pk.name
+    left outer join aoserv1.dns_zones dz on dr.zone=dz.zone
+    left outer join aoserv1.packages pk on dz.package=pk.name
   ;
   insert into dns_records select
     dr.pkey+1000000,
@@ -898,12 +901,12 @@ cat <<EOF
       else null
     end,
     case when dr.type in ('TXT', 'SPF') then dr.destination else null end,
-    dr.dhcp_address,
+    dr.dhcp_address+2000000,
     dr.ttl
   from
     aoserv1.dns_records dr
-    inner join aoserv1.dns_zones dz on dr.zone=dz.zone
-    inner join aoserv1.packages pk on dz.package=pk.name
+    left outer join aoserv1.dns_zones dz on dr.zone=dz.zone
+    left outer join aoserv1.packages pk on dz.package=pk.name
   ;
   update dns_zones set zone=substring(zone from 1 for length(zone)-1) where zone like '%.';
   update dns_zones set hostmaster=substring(hostmaster from 1 for length(hostmaster)-1) where hostmaster like '%.';
@@ -932,10 +935,10 @@ cat <<EOF
     lga.is_primary
   from
     aoserv1.linux_group_accounts lga
-    inner join aoserv1.linux_accounts la on lga.username=la.username
-    inner join aoserv1.linux_server_accounts lsa on la.username=lsa.username
-    inner join aoserv1.linux_groups lg on lga.group_name=lg.name
-    inner join aoserv1.linux_server_groups lsg on lg.name=lsg.name
+    left outer join aoserv1.linux_accounts la on lga.username=la.username
+    left outer join aoserv1.linux_server_accounts lsa on la.username=lsa.username
+    left outer join aoserv1.linux_groups lg on lga.group_name=lg.name
+    left outer join aoserv1.linux_server_groups lsg on lg.name=lsg.name
   where
     lsa.ao_server=lsg.ao_server
   ;
@@ -949,7 +952,7 @@ cat <<EOF
     cr.mode
   from
     aoserv1.cvs_repositories cr
-    inner join aoserv1.linux_server_accounts lsa on cr.linux_server_account=lsa.pkey
+    left outer join aoserv1.linux_server_accounts lsa on cr.linux_server_account=lsa.pkey
     left outer join linux_account_groups lag on
       cr.linux_server_account + 5000000 = lag.linux_account
       and cr.linux_server_group + 4000000 = lag.linux_group
@@ -969,7 +972,7 @@ cat <<EOF
     hs.timeout
   from
     aoserv1.httpd_servers hs
-    inner join aoserv1.packages pk on hs.package=pk.pkey
+    left outer join aoserv1.packages pk on hs.package=pk.pkey
     left outer join linux_account_groups lag on
       hs.linux_server_account + 5000000 = lag.linux_account
       and hs.linux_server_group + 4000000 = lag.linux_group
@@ -989,8 +992,8 @@ cat <<EOF
     hs.awstats_skip_files
   from
     aoserv1.httpd_jboss_sites hjs
-    inner join aoserv1.httpd_sites hs on hjs.tomcat_site=hs.pkey
-    inner join aoserv1.packages pk on hs.package=pk.name
+    left outer join aoserv1.httpd_sites hs on hjs.tomcat_site=hs.pkey
+    left outer join aoserv1.packages pk on hs.package=pk.name
     left outer join aoserv1.linux_server_accounts lsa on hs.linux_account=lsa.username and hs.ao_server=lsa.ao_server
     left outer join aoserv1.linux_server_groups lsg on hs.linux_group=lsg.name and hs.ao_server=lsg.ao_server
     left outer join linux_account_groups lag on
@@ -1012,8 +1015,8 @@ cat <<EOF
     hs.awstats_skip_files
   from
     aoserv1.httpd_static_sites hss
-    inner join aoserv1.httpd_sites hs on hss.httpd_site=hs.pkey
-    inner join aoserv1.packages pk on hs.package=pk.name
+    left outer join aoserv1.httpd_sites hs on hss.httpd_site=hs.pkey
+    left outer join aoserv1.packages pk on hs.package=pk.name
     left outer join aoserv1.linux_server_accounts lsa on hs.linux_account=lsa.username and hs.ao_server=lsa.ao_server
     left outer join aoserv1.linux_server_groups lsg on hs.linux_group=lsg.name and hs.ao_server=lsg.ao_server
     left outer join linux_account_groups lag on
@@ -1035,8 +1038,8 @@ cat <<EOF
     hs.awstats_skip_files
   from
     aoserv1.httpd_tomcat_std_sites htss
-    inner join aoserv1.httpd_sites hs on htss.tomcat_site=hs.pkey
-    inner join aoserv1.packages pk on hs.package=pk.name
+    left outer join aoserv1.httpd_sites hs on htss.tomcat_site=hs.pkey
+    left outer join aoserv1.packages pk on hs.package=pk.name
     left outer join aoserv1.linux_server_accounts lsa on hs.linux_account=lsa.username and hs.ao_server=lsa.ao_server
     left outer join aoserv1.linux_server_groups lsg on hs.linux_group=lsg.name and hs.ao_server=lsg.ao_server
     left outer join linux_account_groups lag on
@@ -1058,8 +1061,8 @@ cat <<EOF
     hs.awstats_skip_files
   from
     aoserv1.httpd_tomcat_shared_sites htss
-    inner join aoserv1.httpd_sites hs on htss.tomcat_site=hs.pkey
-    inner join aoserv1.packages pk on hs.package=pk.name
+    left outer join aoserv1.httpd_sites hs on htss.tomcat_site=hs.pkey
+    left outer join aoserv1.packages pk on hs.package=pk.name
     left outer join aoserv1.linux_server_accounts lsa on hs.linux_account=lsa.username and hs.ao_server=lsa.ao_server
     left outer join aoserv1.linux_server_groups lsg on hs.linux_group=lsg.name and hs.ao_server=lsg.ao_server
     left outer join linux_account_groups lag on
@@ -1092,9 +1095,9 @@ cat <<EOF
     lsa.predisable_password
   from
     aoserv1.linux_server_accounts lsa
-    inner join aoserv1.linux_accounts la on lsa.username=la.username
-    inner join aoserv1.usernames un on la.username=un.username
-    inner join aoserv1.packages pk on un.package=pk.name
+    left outer join aoserv1.linux_accounts la on lsa.username=la.username
+    left outer join aoserv1.usernames un on la.username=un.username
+    left outer join aoserv1.packages pk on un.package=pk.name
   ;
 EOF
   cat "${DIR}/aoindustries/linux_group_types-data1.sql"
@@ -1112,8 +1115,8 @@ cat <<EOF
     lsg.gid
   from
     aoserv1.linux_server_groups lsg
-    inner join aoserv1.linux_groups lg on lsg.name=lg.name
-    inner join aoserv1.packages pk on lg.package=pk.name
+    left outer join aoserv1.linux_groups lg on lsg.name=lg.name
+    left outer join aoserv1.packages pk on lg.package=pk.name
   ;
   insert into majordomo_lists select
     email_list,
@@ -1155,8 +1158,8 @@ cat <<EOF
     md.mysql_server + 8000000
   from
     aoserv1.mysql_databases md
-    inner join aoserv1.packages pk on md.package=pk.name
-    inner join aoserv1.mysql_servers ms on md.mysql_server=ms.pkey
+    left outer join aoserv1.packages pk on md.package=pk.name
+    left outer join aoserv1.mysql_servers ms on md.mysql_server=ms.pkey
   ;
   insert into mysql_db_users select
     mdu.pkey,
@@ -1184,7 +1187,7 @@ cat <<EOF
     mdu.trigger_priv
   from
     aoserv1.mysql_db_users mdu
-    inner join aoserv1.mysql_server_users msu on mdu.mysql_server_user=msu.pkey
+    left outer join aoserv1.mysql_server_users msu on mdu.mysql_server_user=msu.pkey
   ;
   select setval('mysql_db_users_pkey_seq', (select coalesce(max(pkey)+1, 1) from mysql_db_users), false);
   insert into mysql_servers select
@@ -1198,7 +1201,7 @@ cat <<EOF
     ms.net_bind
   from
     aoserv1.mysql_servers ms
-    inner join aoserv1.packages pk on ms.package=pk.name
+    left outer join aoserv1.packages pk on ms.package=pk.name
   ;
   insert into mysql_users select
     msu.pkey + 10000000,
@@ -1243,17 +1246,17 @@ cat <<EOF
     msu.max_user_connections
   from
     aoserv1.mysql_server_users msu
-    inner join aoserv1.mysql_users mu on msu.username=mu.username
-    inner join aoserv1.usernames un on mu.username=un.username
-    inner join aoserv1.packages pk on un.package=pk.name
-    inner join aoserv1.mysql_servers ms on msu.mysql_server=ms.pkey
+    left outer join aoserv1.mysql_users mu on msu.username=mu.username
+    left outer join aoserv1.usernames un on mu.username=un.username
+    left outer join aoserv1.packages pk on un.package=pk.name
+    left outer join aoserv1.mysql_servers ms on msu.mysql_server=ms.pkey
   ;
   insert into net_binds select
     nb.pkey,
     pk.accounting,
     nb.server,
-    bs.pkey,
-    case when ia.ip_address='0.0.0.0' then null else 2000000+nb.ip_address end,
+    bs.pkey as business_server,
+    case when ia.ip_address='0.0.0.0' then null else 2000000+nb.ip_address end as ip_address,
     nb.port,
     nb.net_protocol,
     nb.app_protocol,
@@ -1262,9 +1265,9 @@ cat <<EOF
     nb.monitoring_parameters
   from
     aoserv1.net_binds nb
-    inner join aoserv1.ip_addresses ia on nb.ip_address=ia.pkey
-    inner join aoserv1.packages pk on nb.package=pk.name
-    inner join aoserv1.business_servers bs on pk.accounting=bs.accounting and nb.server=bs.server
+    left outer join aoserv1.ip_addresses ia on nb.ip_address=ia.pkey
+    left outer join aoserv1.packages pk on nb.package=pk.name
+    left outer join aoserv1.business_servers bs on pk.accounting=bs.accounting and nb.server=bs.server
   ;
   select setval('net_binds_pkey_seq', (select coalesce(max(pkey)+1, 1) from net_binds), false);
   insert into net_device_ids select * from aoserv1.net_device_ids;
@@ -1342,10 +1345,10 @@ cat <<EOF
     pd.enable_postgis
   from
     aoserv1.postgres_databases pd
-    inner join aoserv1.postgres_server_users psu on pd.datdba=psu.pkey
-    inner join aoserv1.usernames un on psu.username=un.username
-    inner join aoserv1.packages pk on un.package=pk.name
-    inner join aoserv1.postgres_servers ps on pd.postgres_server=ps.pkey
+    left outer join aoserv1.postgres_server_users psu on pd.datdba=psu.pkey
+    left outer join aoserv1.usernames un on psu.username=un.username
+    left outer join aoserv1.packages pk on un.package=pk.name
+    left outer join aoserv1.postgres_servers ps on pd.postgres_server=ps.pkey
   ;
 EOF
   cat "${DIR}/aoindustries/postgres_encodings-data1.sql"
@@ -1364,8 +1367,8 @@ cat <<EOF
     ps.fsync
   from
     aoserv1.postgres_servers ps
-    inner join aoserv1.net_binds nb on ps.net_bind=nb.pkey
-    inner join aoserv1.packages pk on nb.package=pk.name
+    left outer join aoserv1.net_binds nb on ps.net_bind=nb.pkey
+    left outer join aoserv1.packages pk on nb.package=pk.name
   ;
   insert into postgres_users select
     psu.pkey + 13000000,
@@ -1381,10 +1384,10 @@ cat <<EOF
     psu.predisable_password
   from
     aoserv1.postgres_server_users psu
-    inner join aoserv1.postgres_users pu on psu.username=pu.username
-    inner join aoserv1.usernames un on pu.username=un.username
-    inner join aoserv1.packages pk on un.package=pk.name
-    inner join aoserv1.postgres_servers ps on psu.postgres_server=ps.pkey
+    left outer join aoserv1.postgres_users pu on psu.username=pu.username
+    left outer join aoserv1.usernames un on pu.username=un.username
+    left outer join aoserv1.packages pk on un.package=pk.name
+    left outer join aoserv1.postgres_servers ps on psu.postgres_server=ps.pkey
   ;
   insert into postgres_versions select * from aoserv1.postgres_versions;
   insert into private_ftp_servers select
@@ -1401,9 +1404,9 @@ cat <<EOF
     pfs.allow_anonymous
   from
     aoserv1.private_ftp_servers pfs
-    inner join aoserv1.linux_server_accounts lsa on pfs.linux_server_account=lsa.pkey
-    inner join aoserv1.usernames un on lsa.username=un.username
-    inner join aoserv1.packages pk on un.package=pk.name
+    left outer join aoserv1.linux_server_accounts lsa on pfs.linux_server_account=lsa.pkey
+    left outer join aoserv1.usernames un on lsa.username=un.username
+    left outer join aoserv1.packages pk on un.package=pk.name
     left outer join linux_account_groups lag on lsa.pkey + 5000000 = lag.linux_account and lsa.ao_server=lag.ao_server and lag.is_primary
   ;
   insert into processor_types select * from aoserv1.processor_types;
@@ -1419,7 +1422,7 @@ cat <<EOF
     ia.created
   from
     aoserv1.ip_addresses ia
-    inner join aoserv1.packages pk on ia.package=pk.name
+    left outer join aoserv1.packages pk on ia.package=pk.name
   where
     ia.ip_address!='0.0.0.0'
   ;
@@ -1437,8 +1440,8 @@ cat <<EOF
     lsg.created
   from
     aoserv1.linux_server_groups lsg
-    inner join aoserv1.linux_groups lg on lsg.name=lg.name
-    inner join aoserv1.packages pk on lg.package=pk.name
+    left outer join aoserv1.linux_groups lg on lsg.name=lg.name
+    left outer join aoserv1.packages pk on lg.package=pk.name
   ;
   insert into resources select
     lsa.pkey + 5000000,
@@ -1456,9 +1459,9 @@ cat <<EOF
     lsa.created
   from
     aoserv1.linux_server_accounts lsa
-    inner join aoserv1.linux_accounts la on lsa.username=la.username
-    inner join aoserv1.usernames un on la.username=un.username
-    inner join aoserv1.packages pk on un.package=pk.name
+    left outer join aoserv1.linux_accounts la on lsa.username=la.username
+    left outer join aoserv1.usernames un on la.username=un.username
+    left outer join aoserv1.packages pk on un.package=pk.name
   ;
   insert into resources select
     cr.pkey + 6000000,
@@ -1470,10 +1473,10 @@ cat <<EOF
     cr.created
   from
     aoserv1.cvs_repositories cr
-    inner join aoserv1.linux_server_accounts lsa on cr.linux_server_account=lsa.pkey
-    inner join aoserv1.linux_accounts la on lsa.username=la.username
-    inner join aoserv1.usernames un on la.username=un.username
-    inner join aoserv1.packages pk on un.package=pk.name
+    left outer join aoserv1.linux_server_accounts lsa on cr.linux_server_account=lsa.pkey
+    left outer join aoserv1.linux_accounts la on lsa.username=la.username
+    left outer join aoserv1.usernames un on la.username=un.username
+    left outer join aoserv1.packages pk on un.package=pk.name
   ;
   insert into resources select
     pfs.net_bind + 7000000,
@@ -1485,9 +1488,9 @@ cat <<EOF
     pfs.created
   from
     aoserv1.private_ftp_servers pfs
-    inner join aoserv1.linux_server_accounts lsa on pfs.linux_server_account=lsa.pkey
-    inner join aoserv1.usernames un on lsa.username=un.username
-    inner join aoserv1.packages pk on un.package=pk.name
+    left outer join aoserv1.linux_server_accounts lsa on pfs.linux_server_account=lsa.pkey
+    left outer join aoserv1.usernames un on lsa.username=un.username
+    left outer join aoserv1.packages pk on un.package=pk.name
   ;
   insert into resources select
     ms.pkey + 8000000,
@@ -1499,7 +1502,7 @@ cat <<EOF
     now()
   from
     aoserv1.mysql_servers ms
-    inner join aoserv1.packages pk on ms.package=pk.name
+    left outer join aoserv1.packages pk on ms.package=pk.name
   ;
   insert into resources select
     md.pkey + 9000000,
@@ -1511,7 +1514,7 @@ cat <<EOF
     now()
   from
     aoserv1.mysql_databases md
-    inner join aoserv1.packages pk on md.package=pk.name
+    left outer join aoserv1.packages pk on md.package=pk.name
   ;
   insert into resources select
     msu.pkey + 10000000,
@@ -1523,8 +1526,8 @@ cat <<EOF
     now()
   from
     aoserv1.mysql_server_users msu
-    inner join aoserv1.usernames un on msu.username=un.username
-    inner join aoserv1.packages pk on un.package=pk.name
+    left outer join aoserv1.usernames un on msu.username=un.username
+    left outer join aoserv1.packages pk on un.package=pk.name
   ;
   insert into resources select
     ps.pkey + 11000000,
@@ -1536,8 +1539,8 @@ cat <<EOF
     now()
   from
     aoserv1.postgres_servers ps
-    inner join aoserv1.net_binds nb on ps.net_bind=nb.pkey
-    inner join aoserv1.packages pk on nb.package=pk.name
+    left outer join aoserv1.net_binds nb on ps.net_bind=nb.pkey
+    left outer join aoserv1.packages pk on nb.package=pk.name
   ;
   insert into resources select
     pd.pkey + 12000000,
@@ -1549,9 +1552,9 @@ cat <<EOF
     now()
   from
     aoserv1.postgres_databases pd
-    inner join aoserv1.postgres_server_users psu on pd.datdba=psu.pkey
-    inner join aoserv1.usernames un on psu.username=un.username
-    inner join aoserv1.packages pk on un.package=pk.name
+    left outer join aoserv1.postgres_server_users psu on pd.datdba=psu.pkey
+    left outer join aoserv1.usernames un on psu.username=un.username
+    left outer join aoserv1.packages pk on un.package=pk.name
   ;
   insert into resources select
     psu.pkey + 13000000,
@@ -1563,8 +1566,8 @@ cat <<EOF
     now()
   from
     aoserv1.postgres_server_users psu
-    inner join aoserv1.usernames un on psu.username=un.username
-    inner join aoserv1.packages pk on un.package=pk.name
+    left outer join aoserv1.usernames un on psu.username=un.username
+    left outer join aoserv1.packages pk on un.package=pk.name
   ;
   insert into resources select
     hs.pkey + 14000000,
@@ -1576,7 +1579,7 @@ cat <<EOF
     now()
   from
     aoserv1.httpd_servers hs
-    inner join aoserv1.packages pk on hs.package=pk.pkey
+    left outer join aoserv1.packages pk on hs.package=pk.pkey
   ;
   insert into resources select
     hs.pkey + 15000000,
@@ -1588,8 +1591,8 @@ cat <<EOF
     now()
   from
     aoserv1.httpd_jboss_sites hjs
-    inner join aoserv1.httpd_sites hs on hjs.tomcat_site=hs.pkey
-    inner join aoserv1.packages pk on hs.package=pk.name
+    left outer join aoserv1.httpd_sites hs on hjs.tomcat_site=hs.pkey
+    left outer join aoserv1.packages pk on hs.package=pk.name
   ;
   insert into resources select
     hs.pkey + 15000000,
@@ -1601,8 +1604,8 @@ cat <<EOF
     now()
   from
     aoserv1.httpd_static_sites hss
-    inner join aoserv1.httpd_sites hs on hss.httpd_site=hs.pkey
-    inner join aoserv1.packages pk on hs.package=pk.name
+    left outer join aoserv1.httpd_sites hs on hss.httpd_site=hs.pkey
+    left outer join aoserv1.packages pk on hs.package=pk.name
   ;
   insert into resources select
     hs.pkey + 15000000,
@@ -1614,8 +1617,8 @@ cat <<EOF
     now()
   from
     aoserv1.httpd_tomcat_std_sites htss
-    inner join aoserv1.httpd_sites hs on htss.tomcat_site=hs.pkey
-    inner join aoserv1.packages pk on hs.package=pk.name
+    left outer join aoserv1.httpd_sites hs on htss.tomcat_site=hs.pkey
+    left outer join aoserv1.packages pk on hs.package=pk.name
   ;
   insert into resources select
     hs.pkey + 15000000,
@@ -1627,8 +1630,8 @@ cat <<EOF
     now()
   from
     aoserv1.httpd_tomcat_shared_sites htss
-    inner join aoserv1.httpd_sites hs on htss.tomcat_site=hs.pkey
-    inner join aoserv1.packages pk on hs.package=pk.name
+    left outer join aoserv1.httpd_sites hs on htss.tomcat_site=hs.pkey
+    left outer join aoserv1.packages pk on hs.package=pk.name
   ;
 
   insert into resources select
@@ -1651,7 +1654,7 @@ cat <<EOF
     r.total_rack_units
   from
     aoserv1.racks r
-    inner join server_farms sf on r.farm=sf.name
+    left outer join server_farms sf on r.farm=sf.name
   ;
 
   insert into server_resources select
@@ -1667,7 +1670,7 @@ cat <<EOF
     end
   from
     aoserv1.ip_addresses ia
-    inner join aoserv1.packages pk on ia.package=pk.name
+    left outer join aoserv1.packages pk on ia.package=pk.name
   where
     ia.ip_address!='0.0.0.0'
   ;
@@ -1686,8 +1689,8 @@ cat <<EOF
     ps.supports_hvm
   from
     aoserv1.physical_servers ps
-    inner join servers se on ps.server=se.resource
-    inner join racks r on (ps.rack + 18000000) = r.resource
+    left outer join servers se on ps.server=se.resource
+    left outer join racks r on (ps.rack + 18000000) = r.resource
   ;
 EOF
   cat "${DIR}/aoindustries/shells-data1.sql"
@@ -1719,8 +1722,8 @@ cat <<EOF
     pk.accounting
   from
     aoserv1.ticket_assignments ta
-    inner join aoserv1.usernames un on ta.administrator=un.username
-    inner join aoserv1.packages pk on un.package=pk.name
+    left outer join aoserv1.usernames un on ta.administrator=un.username
+    left outer join aoserv1.packages pk on un.package=pk.name
   ;
   select setval('ticket_assignments_pkey_seq', (select coalesce(max(pkey)+1, 1) from ticket_assignments), false);
   insert into ticket_brand_categories select * from aoserv1.ticket_brand_categories;
@@ -1754,7 +1757,7 @@ cat <<EOF
     ti.internal_notes
   from
     aoserv1.tickets ti
-    inner join aoserv1.resellers re on ti.reseller=re.accounting
+    left outer join aoserv1.resellers re on ti.reseller=re.accounting
   ;
   insert into time_zones select * from aoserv1.time_zones;
   insert into transaction_types select * from aoserv1.transaction_types;
@@ -1785,7 +1788,7 @@ cat <<EOF
     un.disable_log
   from
     aoserv1.usernames un
-    inner join aoserv1.packages pk on un.package=pk.name
+    left outer join aoserv1.packages pk on un.package=pk.name
   ;
   insert into virtual_disks select * from aoserv1.virtual_disks;
   select setval('virtual_disks_pkey_seq', (select coalesce(max(pkey)+1, 1) from virtual_disks), false);
@@ -1810,8 +1813,8 @@ cat <<EOF
     vs.vnc_password
   from
     aoserv1.virtual_servers vs
-    inner join aoserv1.servers se on vs.server=se.pkey
-    inner join aoserv1.packages pk on se.package=pk.pkey
+    left outer join aoserv1.servers se on vs.server=se.pkey
+    left outer join aoserv1.packages pk on se.package=pk.pkey
   ;
   insert into whois_history select * from aoserv1.whois_history;
   select setval('whois_history_pkey_seq', (select coalesce(max(pkey)+1, 1) from whois_history), false);
@@ -1822,4 +1825,4 @@ EOF
   "${DIR}/generate_sql-index" "aoindustries"
   "${DIR}/generate_sql-vacuum" "aoindustries"
   "${DIR}/generate_sql-reference" "aoindustries"
-) | /ao/bin/ssh aoadmin@192.168.1.129 "psql -p 5433 aoindustries" 2>&1 | grep -i error
+) | /ao/bin/ssh aoadmin@192.168.1.129 "psql -p 5433 aoindustries" 2>&1 | grep -B 10 -i error

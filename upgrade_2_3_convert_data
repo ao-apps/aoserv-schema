@@ -294,10 +294,27 @@ cat <<EOF
   select setval('backup_partitions_pkey_seq', (select coalesce(max(pkey)+1, 1) from backup_partitions), false);
 EOF
   cat "${DIR}/aoindustries/backup_retentions-data1.sql"
-  echo "insert into bank_accounts select * from aoserv1.bank_accounts;"
+cat <<EOF
+  insert into bank_accounts select
+    "name",
+    display,
+    bank
+  from aoserv1.bank_accounts;
+EOF
   cat "${DIR}/aoindustries/bank_transaction_types-data1.sql"
 cat <<EOF
-  insert into bank_transactions select * from aoserv1.bank_transactions;
+  insert into bank_transactions select
+    "time"::date,
+    transid,
+    bank_account,
+    processor,
+    administrator,
+    "type",
+    expense_code,
+    description,
+    check_no,
+    amount
+  from aoserv1.bank_transactions;
   select setval('bank_transactions_transid_seq', (select coalesce(max(transid)+1, 1) from bank_transactions), false);
   insert into banks select * from aoserv1.banks;
   insert into brands select
@@ -1303,6 +1320,7 @@ cat <<EOF
       when resource='ip' then 'ip_address'
       when resource='user' then 'shell_account'
       when resource='email' then 'email_inbox'
+      when resource='site' then 'httpd_site'
       else resource
     end,
     soft_limit,
@@ -1311,8 +1329,6 @@ cat <<EOF
     additional_transaction_type
   from
     aoserv1.package_definition_limits
-  where
-    resource!='site'
   ;
   select setval('package_definition_limits_pkey_seq', (select coalesce(max(pkey)+1, 1) from package_definition_limits), false);
   insert into package_definitions select

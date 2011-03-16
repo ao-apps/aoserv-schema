@@ -182,6 +182,7 @@ insert into resource_types values('ftponly_account');           -- + 5000000
 insert into resource_types values('system_account');            -- + 5000000
 insert into resource_types values('httpd_server');              -- +14000000
 insert into resource_types values('httpd_shared_tomcat');       -- +16000000 (TODO)
+insert into resource_types values('httpd_site');                -- +15000000
 insert into resource_types values('httpd_jboss_site');          -- +15000000
 insert into resource_types values('httpd_static_site');         -- +15000000
 insert into resource_types values('httpd_tomcat_shared_site');  -- +15000000

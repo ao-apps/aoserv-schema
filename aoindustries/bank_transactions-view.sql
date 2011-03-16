@@ -1,7 +1,7 @@
 create view bank_summary as
 select
   bt.expense_code,
-  substring(bt."time" from 1 for 7) as "month",
+  substring(bt."date" from 1 for 7) as "month",
   sum(bt.amount)
 from
   bank_transactions bt,
@@ -13,7 +13,7 @@ grant all on bank_summary to aoadmin;
 
 create view bank_summary_monthly as
 select
-  substring(bt."time" from 1 for 7) as "month",
+  substring(bt."date" from 1 for 7) as "month",
   bt.expense_code,
   sum(bt.amount)
 from
@@ -39,13 +39,13 @@ corporate_profit.corporate_profit
 from
 (
   select distinct
-    substring("time" from 1 for 7) as "month"
+    substring("date" from 1 for 7) as "month"
   from
     bank_transactions
 ) as months
 left outer join (
   select
-    substring("time" from 1 for 7) as "month",
+    substring("date" from 1 for 7) as "month",
     sum(amount) as total_earnings
   from
     bank_transactions
@@ -56,7 +56,7 @@ left outer join (
 ) as total_earnings on months."month"=total_earnings."month"
 left outer join (
   select
-    substring("time" from 1 for 7) as "month",
+    substring("date" from 1 for 7) as "month",
     -sum(amount) as payroll
   from
     bank_transactions
@@ -68,7 +68,7 @@ left outer join (
 ) as payroll on months.month=payroll."month"
 left outer join (
   select
-    substring("time" from 1 for 7) as "month",
+    substring("date" from 1 for 7) as "month",
     -sum(amount) as hardware
   from
     bank_transactions
@@ -80,7 +80,7 @@ left outer join (
 ) as hardware on months."month"=hardware."month"
 left outer join (
   select
-    substring("time" from 1 for 7) as "month",
+    substring("date" from 1 for 7) as "month",
     -sum(amount) as other_expenses
   from
     bank_transactions
@@ -92,7 +92,7 @@ left outer join (
 ) as other_expenses on months."month"=other_expenses."month"
 left outer join (
   select
-    substring("time" from 1 for 7) as "month",
+    substring("date" from 1 for 7) as "month",
     -sum(amount) as total_losses
   from
     bank_transactions
@@ -103,7 +103,7 @@ left outer join (
 ) as total_losses on months."month"=total_losses."month"
 left outer join (
   select
-    substring("time" from 1 for 7) as "month",
+    substring("date" from 1 for 7) as "month",
     sum(amount) as corporate_profit
   from
     bank_transactions
@@ -169,7 +169,7 @@ grant all on earnings_and_losses to aoadmin;
 
 create view bank_monthly_detail as
 select
-  "time"::date as "date",
+  "date",
   administrator,
   "type",
   expense_code,
@@ -178,13 +178,13 @@ select
 from
   bank_transactions
 order by
-  "time"
+  "date"
 ;
 grant all on bank_monthly_detail to aoadmin;
 
 create view salary_report as
 select
-  substring(bt."time" from 1 for 7) as "month",
+  substring(bt."date" from 1 for 7) as "month",
   bt.expense_code as "type",
   ba.full_name,
   -sum(bt.amount) as total
@@ -232,7 +232,7 @@ where
     and "type"!='service_fee'
   )
 order by
-  "time"::date,
+  "date",
   transid
 ;
 grant all on bank_transactions_verify to aoadmin;

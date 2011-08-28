@@ -7,3 +7,4 @@ insert into httpd_tomcat_versions values(3233, '/usr/apache/jakarta/tomcat/3.2',
 insert into httpd_tomcat_versions values(3234, '/usr/apache/jakarta/tomcat/4.1', true);
 insert into httpd_tomcat_versions values(3235, '/usr/apache/jakarta/tomcat/5.5', true);
 insert into httpd_tomcat_versions values(3228, '/opt/apache-tomcat-5.5', true);
+insert into httpd_tomcat_versions values(3326, '/opt/apache-tomcat-6.0.32', true);

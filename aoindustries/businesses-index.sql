@@ -1,3 +1,6 @@
+create unique index businesses_accounting_upper_uni on businessess(
+  upper(accounting)
+);
 create index businesses_parent_ind on businesses (
   parent
 );

@@ -14,7 +14,7 @@ create table failover_file_replications (
   connect_address text,
   connect_from text,
   enabled bool not null,
-  quota_gid integer check (quota_gid is null or quota_gid between 500 and 65535),
+  quota_gid integer,
   unique(server, backup_partition),
   unique(backup_partition, quota_gid),
   -- Failover mirrors (retention=1) may not be on a quota-enabled partition

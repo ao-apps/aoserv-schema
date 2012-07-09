@@ -3290,7 +3290,7 @@ insert into aosh_commands values(
 insert into aosh_commands values(
   'create_virtual_server',
   'virtual_servers',
-  'calls "xm reboot" on the current primary physical server',
+  'calls "xm create" on the current primary physical server',
   '<i>virtual_server</i>',
   '1.64',
   null

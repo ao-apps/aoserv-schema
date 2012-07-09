@@ -931,4 +931,16 @@ insert into aoserv_protocols values(
   '2012-06-06',
   'added physical_servers.ups_type'
 );
+insert into aoserv_protocols values(
+  '1.64',
+  '2012-07-09',
+  'added create_virtual_server command
+added reboot_virtual_server command
+added shutdown_virtual_server command
+added destroy_virtual_server command
+added pause_virtual_server command
+added unpause_virtual_server command
+added get_virtual_server_status command
+added business_servers.can_control_virtual_server'
+);
 commit;

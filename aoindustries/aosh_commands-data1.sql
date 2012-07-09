@@ -3287,4 +3287,60 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
+insert into aosh_commands values(
+  'create_virtual_server',
+  'virtual_servers',
+  'calls "xm reboot" on the current primary physical server',
+  '<i>virtual_server</i>',
+  '1.64',
+  null
+);
+insert into aosh_commands values(
+  'reboot_virtual_server',
+  'virtual_servers',
+  'calls "xm reboot" on the current primary physical server',
+  '<i>virtual_server</i>',
+  '1.64',
+  null
+);
+insert into aosh_commands values(
+  'shutdown_virtual_server',
+  'virtual_servers',
+  'calls "xm shutdown" on the current primary physical server',
+  '<i>virtual_server</i>',
+  '1.64',
+  null
+);
+insert into aosh_commands values(
+  'destroy_virtual_server',
+  'virtual_servers',
+  'calls "xm destroy" on the current primary physical server',
+  '<i>virtual_server</i>',
+  '1.64',
+  null
+);
+insert into aosh_commands values(
+  'pause_virtual_server',
+  'virtual_servers',
+  'calls "xm pause" on the current primary physical server',
+  '<i>virtual_server</i>',
+  '1.64',
+  null
+);
+insert into aosh_commands values(
+  'unpause_virtual_server',
+  'virtual_servers',
+  'calls "xm unpause" on the current primary physical server',
+  '<i>virtual_server</i>',
+  '1.64',
+  null
+);
+insert into aosh_commands values(
+  'get_virtual_server_status',
+  'virtual_servers',
+  'calls "xm list" to get the current state on the current primary physical server',
+  '<i>virtual_server</i>',
+  '1.64',
+  null
+);
 commit;

@@ -62,6 +62,11 @@ insert into aoserv_permissions values(
     'get_mysql_table_status',
     (select count(*) from aoserv_permissions)
 );
+-- mysql_server_users
+insert into aoserv_permissions values(
+    'set_mysql_server_user_password',
+    (select count(*) from aoserv_permissions)
+);
 -- mysql_servers
 insert into aoserv_permissions values(
     'get_mysql_master_status',
@@ -71,19 +76,9 @@ insert into aoserv_permissions values(
     'get_mysql_slave_status',
     (select count(*) from aoserv_permissions)
 );
--- mysql_users
-insert into aoserv_permissions values(
-    'set_mysql_user_password',
-    (select count(*) from aoserv_permissions)
-);
 -- postgres_server_users
 insert into aoserv_permissions values(
     'set_postgres_server_user_password',
-    (select count(*) from aoserv_permissions)
-);
--- ticket_actions
-insert into aoserv_permissions values(
-    'add_ticket_annotation',
     (select count(*) from aoserv_permissions)
 );
 -- tickets
@@ -95,20 +90,15 @@ insert into aoserv_permissions values(
     'edit_ticket',
     (select count(*) from aoserv_permissions)
 );
-insert into aoserv_permissions values(
-    'get_ticket_details',
-    (select count(*) from aoserv_permissions)
-);
--- transactions
-insert into aoserv_permissions values(
-    'add_transaction',
-    (select count(*) from aoserv_permissions)
-);
-insert into aoserv_permissions values(
-    'get_transaction_description',
-    (select count(*) from aoserv_permissions)
-);
 -- virtual_servers
+insert into aoserv_permissions values(
+    'control_virtual_server',
+    (select count(*) from aoserv_permissions)
+);
+insert into aoserv_permissions values(
+    'get_virtual_server_status',
+    (select count(*) from aoserv_permissions)
+);
 insert into aoserv_permissions values(
     'vnc_console',
     (select count(*) from aoserv_permissions)

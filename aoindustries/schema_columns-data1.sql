@@ -365,6 +365,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_servers', 'can_control_xfs', 10, 'boolean', false, false, false, '', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_servers', 'can_control_xvfb', 11, 'boolean', false, false, false, '', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_servers', 'can_vnc_console', 12, 'boolean', false, false, false, '', '1.51', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_servers', 'can_control_virtual_server', 13, 'boolean', false, false, false, '', '1.64', null;
 commit;
 begin;
 \echo client_jvm_profile

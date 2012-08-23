@@ -1,35 +1,25 @@
 create table businesses (
-  accounting text primary key,
+  accounting text
+    constraint businesses_pkey primary key,
   contract_version text,
-  created timestamp default now() not null,
+  created timestamp
+    default now()
+    not null,
   canceled timestamp,
   cancel_reason text,
-  parent text check (
-    case
-        when accounting='AOINDUSTRIES' then parent is null -- switch to resourceId=1
-        else parent is not null
-    end
-  ),
-  can_add_backup_server bool not null,
-  can_add_businesses bool not null,
-  can_see_prices bool not null,
+  parent text,
+  can_add_backup_server bool
+    not null,
+  can_add_businesses bool
+    not null,
+  can_see_prices bool
+    not null,
   disable_log integer,
   do_not_disable_reason text,
-  auto_enable bool not null,
-  bill_parent bool not null,
-  package_definition integer not null,
-  created_by text check (
-    case
-        when accounting='AOINDUSTRIES' then created_by is null -- switch to resourceId=1
-        else created_by is not null
-    end
-  ),
-  email_in_burst integer,
-  email_in_rate float4,
-  email_out_burst integer,
-  email_out_rate float4,
-  email_relay_burst integer,
-  email_relay_rate float4
+  auto_enable bool
+    not null,
+  bill_parent bool
+    not null
 );
 grant all on businesses to aoadmin;
 grant select, insert, update, delete on businesses to aoserv_app;
@@ -44,12 +34,18 @@ grant select, insert, update, delete on businesses to aoserv_app;
  * $2  the accounting code of the business or parent
  *
  *********************************************************************/
-/*
-create or replace function is_business_or_parent (text,text) returns bool as 'select false;' language 'sql' with(isstrict);
+create or replace function is_business_or_parent (text,text)
+  returns bool
+  as 'select false;'
+  language 'sql'
+  stable
+  with(isstrict)
+;
 create or replace function is_business_or_parent_recurse (text,text)
   returns bool
   as 'select is_business_or_parent( $1 , $2 );'
   language 'sql'
+  stable
   with(isstrict)
 ;
 create or replace function is_business_or_parent (text,text)
@@ -69,6 +65,6 @@ create or replace function is_business_or_parent (text,text)
     ;
   '
   language 'sql'
+  stable
   with(isstrict)
 ;
-*/

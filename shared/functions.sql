@@ -15,74 +15,80 @@
 create or replace function pos_period1 (text)
   returns integer
   as '
-    select position(\'.\' in $1)
+    select position(''.'' in $1)
   '
   language 'sql'
+  immutable
 ;
 create or replace function pos_period2 (text)
   returns integer
   as '
     select case when
-      position(\'.\' in substring($1 from pos_period1($1)+1))=0
+      position(''.'' in substring($1 from pos_period1($1)+1))=0
     then
       0
     else
-      pos_period1($1)+position(\'.\' in substring($1 from pos_period1($1)+1))
+      pos_period1($1)+position(''.'' in substring($1 from pos_period1($1)+1))
     end
   '
   language 'sql'
+  immutable
 ;
 create or replace function pos_period3 (text)
   returns integer
   as '
     select case when
-      position(\'.\' in substring($1 from pos_period2($1)+1))=0
+      position(''.'' in substring($1 from pos_period2($1)+1))=0
     then
       0
     else
-      pos_period2($1)+position(\'.\' in substring($1 from pos_period2($1)+1))
+      pos_period2($1)+position(''.'' in substring($1 from pos_period2($1)+1))
     end
   '
   language 'sql'
+  immutable
 ;
 create or replace function pos_period4 (text)
   returns integer
   as '
     select case when
-      position(\'.\' in substring($1 from pos_period3($1)+1))=0
+      position(''.'' in substring($1 from pos_period3($1)+1))=0
     then
       0
     else
-      pos_period3($1)+position(\'.\' in substring($1 from pos_period3($1)+1))
+      pos_period3($1)+position(''.'' in substring($1 from pos_period3($1)+1))
     end
   '
   language 'sql'
+  immutable
 ;
 create or replace function pos_period5 (text)
   returns integer
   as '
     select case when
-      position(\'.\' in substring($1 from pos_period4($1)+1))=0
+      position(''.'' in substring($1 from pos_period4($1)+1))=0
     then
       0
     else
-      pos_period4($1)+position(\'.\' in substring($1 from pos_period4($1)+1))
+      pos_period4($1)+position(''.'' in substring($1 from pos_period4($1)+1))
     end
   '
   language 'sql'
+  immutable
 ;
 create or replace function pos_period6 (text)
   returns integer
   as '
     select case when
-      position(\'.\' in substring($1 from pos_period5($1)+1))=0
+      position(''.'' in substring($1 from pos_period5($1)+1))=0
     then
       0
     else
-      pos_period5($1)+position(\'.\' in substring($1 from pos_period5($1)+1))
+      pos_period5($1)+position(''.'' in substring($1 from pos_period5($1)+1))
     end
   '
   language 'sql'
+  immutable
 ;
 create or replace function reverse_hostname (text)
   returns text
@@ -97,55 +103,55 @@ create or replace function reverse_hostname (text)
           pos_period2($1)=0
         then
           substring($1 from pos_period1($1)+1)
-          || \'.\'
+          || ''.''
           || substring($1 from 1 for pos_period1($1)-1)
         else
           case when
             pos_period3($1)=0
           then
             substring($1 from pos_period2($1)+1)
-            || \'.\'
+            || ''.''
             || substring($1 from pos_period1($1)+1 for pos_period2($1)-pos_period1($1)-1)
-            || \'.\'
+            || ''.''
             || substring($1 from 1 for pos_period1($1)-1)
           else
             case when
               pos_period4($1)=0
             then
               substring($1 from pos_period3($1)+1)
-              || \'.\'
+              || ''.''
               || substring($1 from pos_period2($1)+1 for pos_period3($1)-pos_period2($1)-1)
-              || \'.\'
+              || ''.''
               || substring($1 from pos_period1($1)+1 for pos_period2($1)-pos_period1($1)-1)
-              || \'.\'
+              || ''.''
               || substring($1 from 1 for pos_period1($1)-1)
             else
               case when
                 pos_period5($1)=0
               then
                 substring($1 from pos_period4($1)+1)
-                || \'.\'
+                || ''.''
                 || substring($1 from pos_period3($1)+1 for pos_period4($1)-pos_period3($1)-1)
-                || \'.\'
+                || ''.''
                 || substring($1 from pos_period2($1)+1 for pos_period3($1)-pos_period2($1)-1)
-                || \'.\'
+                || ''.''
                 || substring($1 from pos_period1($1)+1 for pos_period2($1)-pos_period1($1)-1)
-                || \'.\'
+                || ''.''
                 || substring($1 from 1 for pos_period1($1)-1)
               else
                 case when
                   pos_period6($1)=0
                 then
                   substring($1 from pos_period5($1)+1)
-                  || \'.\'
+                  || ''.''
                   || substring($1 from pos_period4($1)+1 for pos_period5($1)-pos_period4($1)-1)
-                  || \'.\'
+                  || ''.''
                   || substring($1 from pos_period3($1)+1 for pos_period4($1)-pos_period3($1)-1)
-                  || \'.\'
+                  || ''.''
                   || substring($1 from pos_period2($1)+1 for pos_period3($1)-pos_period2($1)-1)
-                  || \'.\'
+                  || ''.''
                   || substring($1 from pos_period1($1)+1 for pos_period2($1)-pos_period1($1)-1)
-                  || \'.\'
+                  || ''.''
                   || substring($1 from 1 for pos_period1($1)-1)
                 else
                   $1
@@ -157,6 +163,7 @@ create or replace function reverse_hostname (text)
       end
   '
   language 'sql'
+  immutable
 ;
 
 
@@ -172,16 +179,18 @@ create or replace function reverse_hostname (text)
 create or replace function ip_octet1 (text)
   returns text
   as '
-    select substring($1 from 1 for position(\'.\' in $1)-1)
+    select substring($1 from 1 for position(''.'' in $1)-1)
   '
   language 'sql'
+  immutable
 ;
 create or replace function ip_octet2 (text)
   returns text
   as '
-    select substring(substring($1 from position(\'.\' in $1)+1) from 1 for position(\'.\' in substring($1 from position(\'.\' in $1)+1))-1)
+    select substring(substring($1 from position(''.'' in $1)+1) from 1 for position(''.'' in substring($1 from position(''.'' in $1)+1))-1)
   '
   language 'sql'
+  immutable
 ;
 create or replace function ip_octet3 (text)
   returns text
@@ -191,7 +200,7 @@ create or replace function ip_octet3 (text)
         length(ip_octet1($1))+1+length(ip_octet2($1))+2
       for
         position(
-          \'.\' in
+          ''.'' in
           substring(
             $1 from
               length(ip_octet1($1))+1+length(ip_octet2($1))+2
@@ -200,6 +209,7 @@ create or replace function ip_octet3 (text)
     )
   '
   language 'sql'
+  immutable
 ;
 create or replace function ip_octet4 (text)
   returns text
@@ -210,20 +220,22 @@ create or replace function ip_octet4 (text)
     )
   '
   language 'sql'
+  immutable
 ;
 create or replace function pad_ip_address (text)
   returns text
   as '
     select
-      repeat(\'0\', 3-length(ip_octet1($1))) || ip_octet1($1)
-      || \'.\'
-      || repeat(\'0\', 3-length(ip_octet2($1))) || ip_octet2($1)
-      || \'.\'
-      || repeat(\'0\', 3-length(ip_octet3($1))) || ip_octet3($1)
-      || \'.\'
-      || repeat(\'0\', 3-length(ip_octet4($1))) || ip_octet4($1)
+      repeat(''0'', 3-length(ip_octet1($1))) || ip_octet1($1)
+      || ''.''
+      || repeat(''0'', 3-length(ip_octet2($1))) || ip_octet2($1)
+      || ''.''
+      || repeat(''0'', 3-length(ip_octet3($1))) || ip_octet3($1)
+      || ''.''
+      || repeat(''0'', 3-length(ip_octet4($1))) || ip_octet4($1)
   '
   language 'sql'
+  immutable
 ;
 
 create or replace function hexchar_to_int8 (text)
@@ -231,17 +243,18 @@ create or replace function hexchar_to_int8 (text)
   as '
     select
       case
-        when $1 in (\'0\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\') then $1::int8
-        when $1 in (\'a\', \'A\') then 10::int8
-        when $1 in (\'b\', \'B\') then 11::int8
-        when $1 in (\'c\', \'C\') then 12::int8
-        when $1 in (\'d\', \'D\') then 13::int8
-        when $1 in (\'e\', \'E\') then 14::int8
-        when $1 in (\'f\', \'F\') then 15::int8
+        when $1 in (''0'', ''1'', ''2'', ''3'', ''4'', ''5'', ''6'', ''7'', ''8'', ''9'') then $1::int8
+        when $1 in (''a'', ''A'') then 10::int8
+        when $1 in (''b'', ''B'') then 11::int8
+        when $1 in (''c'', ''C'') then 12::int8
+        when $1 in (''d'', ''D'') then 13::int8
+        when $1 in (''e'', ''E'') then 14::int8
+        when $1 in (''f'', ''F'') then 15::int8
       end
     ;
   '
   language 'sql'
+  immutable
   with(isstrict)
 ;
 
@@ -268,5 +281,6 @@ create or replace function hex_to_int8 (text)
     ;
   '
   language 'sql'
+  immutable
   with(isstrict)
 ;

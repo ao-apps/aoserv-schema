@@ -42,7 +42,8 @@ create or replace function get_assets_by_pkey (integer)
       or as2.contained_by= $1
       or as3.contained_by= $1
     '
-  language 'sql';
+  language 'sql'
+  stable
 ;
 
 
@@ -62,5 +63,6 @@ create or replace function get_assets_by_label (text)
       or as3.label= $1
       or as4.label= $1
     '
-  language 'sql';
+  language 'sql'
+  stable
 ;

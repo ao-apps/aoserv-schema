@@ -943,4 +943,21 @@ added unpause_virtual_server command
 added get_virtual_server_status command
 added business_servers.can_control_virtual_server'
 );
+insert into aoserv_protocols values(
+  '1.65',
+  '2012-08-13',
+  'added ip_reputation_sets table
+added ip_reputation_set_hosts table
+added ip_reputation_set_networks table
+added master_users.is_router'
+);
+insert into aoserv_protocols values(
+  '1.66',
+  '2012-08-30',
+  'renamed ip_reputation_set_hosts.set_fkey to set
+renamed ip_reputation_set_networks.set_fkey to set
+added ip_reputation_limiters table
+added ip_reputation_limiter_limits table
+added ip_reputation_limiter_sets table'
+);
 commit;

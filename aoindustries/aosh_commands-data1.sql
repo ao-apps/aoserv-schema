@@ -1736,6 +1736,14 @@ insert into aosh_commands values(
   null
 );
 insert into aosh_commands values(
+  'add_ip_reputation',
+  'ip_reputation_sets',
+  'adds reputation for a host and its network',
+  '<i>identifier</i> <i>ip_address</i> {<b>uncertain</b>|<b>definite</b>} {<b>good</b>|<b>bad</b>} <i>score</i>',
+  '1.65',
+  null
+);
+insert into aosh_commands values(
   'add_linux_acc_address',
   'linux_acc_addresses',
   'attaches an email address to a Linux account',

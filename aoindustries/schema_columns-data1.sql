@@ -1173,6 +1173,73 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addres
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'netmask', 13, 'string', false, false, false, 'the netmask of the local network', '1.38', null;
 commit;
 begin;
+\echo ip_reputation_limiter_limits
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_limiter_limits', 'pkey',                 0, 'pkey',   false, true,  false, 'a generated, unique key',       '1.66', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_limiter_limits', 'limiter',              1, 'fkey',   false, false, false, 'the identifier of the limiter', '1.66', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_limiter_limits', 'class',                2, 'string', false, false, false, 'the reputation class',          '1.66', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_limiter_limits', 'syn_per_ip_burst',     3, 'short',  false, false, false, '',                              '1.66', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_limiter_limits', 'syn_per_ip_rate',      4, 'short',  false, false, false, '',                              '1.66', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_limiter_limits', 'syn_per_ip_unit',      5, 'string', false, false, false, '',                              '1.66', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_limiter_limits', 'syn_per_ip_size',      6, 'short',  false, false, false, '',                              '1.66', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_limiter_limits', 'syn_burst',            7, 'short',  false, false, false, '',                              '1.66', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_limiter_limits', 'syn_rate',             8, 'short',  false, false, false, '',                              '1.66', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_limiter_limits', 'syn_unit',             9, 'string', false, false, false, '',                              '1.66', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_limiter_limits', 'packet_per_ip_burst', 10, 'short',  false, false, false, '',                              '1.66', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_limiter_limits', 'packet_per_ip_rate',  11, 'short',  false, false, false, '',                              '1.66', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_limiter_limits', 'packet_per_ip_unit',  12, 'string', false, false, false, '',                              '1.66', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_limiter_limits', 'packet_per_ip_size',  13, 'short',  false, false, false, '',                              '1.66', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_limiter_limits', 'packet_burst',        14, 'short',  false, false, false, '',                              '1.66', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_limiter_limits', 'packet_rate',         15, 'short',  false, false, false, '',                              '1.66', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_limiter_limits', 'packet_unit',         16, 'string', false, false, false, '',                              '1.66', null;
+commit;
+begin;
+\echo ip_reputation_limiter_sets
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_limiter_sets', 'pkey',       0, 'pkey',  false, true,  false, 'a generated, unique key',       '1.66', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_limiter_sets', 'limiter',    1, 'fkey',  false, false, false, 'the identifier of the limiter', '1.66', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_limiter_sets', 'set',        2, 'fkey',  false, false, false, 'the identifier of the set',     '1.66', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_limiter_sets', 'sort_order', 3, 'short', false, false, false, 'the per-limiter ordering',      '1.66', null;
+commit;
+begin;
+\echo ip_reputation_limiters
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_limiters', 'pkey',                 0, 'pkey',        false, true,  false, 'a generated, unique key',                            '1.66', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_limiters', 'net_device',           1, 'fkey',        false, false, false, 'the identifier of the net_device that is protected', '1.66', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_limiters', 'identifier',           2, 'string',      false, false, false, 'the per-net_device unique identifier',               '1.66', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_limiters', 'description',          3, 'string',      true,  false, false, 'an optional description of the limiter',             '1.66', null;
+commit;
+begin;
+\echo ip_reputation_set_hosts
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_hosts', 'pkey',            0, 'long',  false, true,  false, 'a generated, unique key',                          '1.65', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_hosts', 'set_fkey',        1, 'fkey',  false, false, false, 'the IP Reputation Set',                            '1.65', '1.65';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_hosts', 'set',             2, 'fkey',  false, false, false, 'the IP Reputation Set',                            '1.66', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_hosts', 'host',            3, 'int',   false, false, false, 'the per-set unique 32-bit IP address, big-endian', '1.65', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_hosts', 'good_reputation', 4, 'short', false, false, false, 'the current good reputation',                      '1.65', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_hosts', 'bad_reputation',  5, 'short', false, false, false, 'the current bad repuation',                        '1.65', null;
+commit;
+begin;
+\echo ip_reputation_set_networks
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_networks', 'pkey',     0, 'long',  false, true,  false, 'a generated, unique key',                                                      '1.65', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_networks', 'set_fkey', 1, 'fkey',  false, false, false, 'the IP Reputation Set',                                                        '1.65', '1.65';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_networks', 'set',      2, 'fkey',  false, false, false, 'the IP Reputation Set',                                                        '1.66', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_networks', 'network',  3, 'int',   false, false, false, 'the per-set unique 32-bit network address, big-endian with network bits zero', '1.65', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_networks', 'counter',  4, 'int',   false, false, false, 'the reputation counter',                                                       '1.65', null;
+commit;
+begin;
+\echo ip_reputation_sets
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_sets', 'pkey',                     0,  'pkey',        false, true,  false, 'a generated, unique key',                              '1.65', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_sets', 'accounting',               1,  'accounting',  false, false, false, 'the accounting code of the business',                  '1.65', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_sets', 'identifier',               2,  'string',      false, true,  false, 'a globally unique identifier',                         '1.65', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_sets', 'allow_subaccount_use',     3,  'boolean',     false, false, false, 'allows subaccounts to use the set',                    '1.65', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_sets', 'max_hosts',                4,  'int',         false, false, false, 'the maximum number of individual hosts tracked',       '1.65', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_sets', 'max_uncertain_reputation', 5,  'short',       false, false, false, 'the maximum reputation from uncertain sources',        '1.65', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_sets', 'max_definite_reputation',  6,  'short',       false, false, false, 'the maximum reputation from definite sources',         '1.65', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_sets', 'network_prefix',           7,  'short',       false, false, false, 'the network size, for example 24 for a /24 (class C)', '1.65', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_sets', 'max_network_reputation',   8,  'short',       false, false, false, 'the maximum reputation for a network',                 '1.65', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_sets', 'host_decay_interval',      9,  'int',         false, false, false, 'the number of seconds between each host decay',        '1.65', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_sets', 'last_host_decay',          10, 'time',        false, false, false, 'the time the hosts were last decayed',                 '1.65', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_sets', 'network_decay_interval',   11, 'int',         false, false, false, 'the number of seconds between each network decay',     '1.65', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_sets', 'last_network_decay',       12, 'time',        false, false, false, 'the time the networks were last decayed',              '1.65', null;
+commit;
+begin;
 \echo languages
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'languages', 'code', 0, 'string', false, true, true, 'the language code', '1.44', null;
 commit;
@@ -1367,6 +1434,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_us
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_users', 'is_ticket_admin', 6, 'boolean', false, false, false, 'if they can access ticket admin stuff', '1.0a100', '1.43';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_users', 'is_dns_admin', 7, 'boolean', false, false, false, 'if they can access all DNS stuff', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_users', 'can_switch_users', 8, 'boolean', false, false, false, '', '1.0a100', '1.0a117';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_users', 'is_router',        9, 'boolean', false, false, false, 'if they read all router stuff', '1.65', null;
 commit;
 begin;
 \echo merchant_accounts

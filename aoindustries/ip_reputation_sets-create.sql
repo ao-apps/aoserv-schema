@@ -190,5 +190,37 @@ INSERT INTO ip_reputation_sets VALUES (
     3600,
     '2012-10-08 19:13:17.79102-05'
 );
-SELECT setval('ip_reputation_sets_pkey_seq', 7, false);
+-- LOSTHOPERSPS
+INSERT INTO ip_reputation_sets VALUES (
+    7,
+    'LOSTHOPERSPS',
+    'losthopersps',
+    false,
+    1000000,
+    127,
+    1023,
+    24,
+    15,
+    3600,
+    '2012-10-08 22:07:20.030039-05',
+    3600,
+    '2012-10-08 22:07:20.030039-05'
+);
+-- GTAPOLICEMODS
+INSERT INTO ip_reputation_sets VALUES (
+    8,
+    'GTAPOLICEMODS',
+    'gtapolicemods',
+    false,
+    1000000,
+    127,
+    1023,
+    24,
+    15,
+    3600,
+    '2012-10-09 00:12:35.149496-05',
+    3600,
+    '2012-10-09 00:12:35.149496-05'
+);
+SELECT setval('ip_reputation_sets_pkey_seq', 9, false);
 COMMIT;

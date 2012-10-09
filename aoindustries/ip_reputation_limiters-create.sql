@@ -65,5 +65,19 @@ insert into ip_reputation_limiters values (
     'Default',
     null
 );
-select setval('ip_reputation_limiters_pkey_seq', 6, false);
+-- LOSTHOPERSPS
+insert into ip_reputation_limiters values (
+    6,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='server.losthopersps.com') and device_id='eth0'),
+    'Default',
+    null
+);
+-- GTAPOLICEMODS
+insert into ip_reputation_limiters values (
+    7,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='server.gtapolicemods.com') and device_id='eth0'),
+    'Default',
+    null
+);
+select setval('ip_reputation_limiters_pkey_seq', 8, false);
 commit;

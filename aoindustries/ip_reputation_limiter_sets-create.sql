@@ -85,5 +85,31 @@ insert into ip_reputation_limiter_sets values (
     (select pkey from ip_reputation_sets where identifier='global'),
     2
 );
-select setval('ip_reputation_limiter_sets_pkey_seq', 11, false);
+-- LOSTHOPERSPS
+insert into ip_reputation_limiter_sets values (
+    11,
+    6,
+    (select pkey from ip_reputation_sets where identifier='losthopersps'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    12,
+    6,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+-- GTAPOLICEMODS
+insert into ip_reputation_limiter_sets values (
+    13,
+    7,
+    (select pkey from ip_reputation_sets where identifier='gtapolicemods'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    14,
+    7,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+select setval('ip_reputation_limiter_sets_pkey_seq', 15, false);
 commit;

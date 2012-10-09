@@ -29,10 +29,41 @@ grant all on ip_reputation_limiters to aoadmin;
 grant select on ip_reputation_limiters to aoserv_app;
 
 -- Initial Data
+begin;
+-- XLITE667
 insert into ip_reputation_limiters values (
     1,
     (select pkey from net_devices where server=(select pkey from servers where package=308 and name='xlite667.com') and device_id='eth0'),
     'Default',
     null
 );
-select setval('ip_reputation_limiters_pkey_seq', 2, false);
+-- EMORTALZ
+insert into ip_reputation_limiters values (
+    2,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='emortalz') and device_id='eth0'),
+    'Default',
+    null
+);
+-- PROJECT_LA
+insert into ip_reputation_limiters values (
+    3,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='pla.project-la.com') and device_id='eth0'),
+    'Default',
+    null
+);
+-- RUNEREBE
+insert into ip_reputation_limiters values (
+    4,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='319543.runerebe.com') and device_id='eth0'),
+    'Default',
+    null
+);
+-- WEBLARA
+insert into ip_reputation_limiters values (
+    5,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='weblara.com') and device_id='eth0'),
+    'Default',
+    null
+);
+select setval('ip_reputation_limiters_pkey_seq', 6, false);
+commit;

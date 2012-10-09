@@ -93,3 +93,102 @@ create table ip_reputation_sets (
 );
 grant all on ip_reputation_sets to aoadmin;
 grant select, update on ip_reputation_sets to aoserv_app;
+
+BEGIN;
+INSERT INTO ip_reputation_sets VALUES (
+    1,
+    'AOINDUSTRIES',
+    'global',
+    true,
+    1000000,
+    127,
+    1023,
+    24,
+    15,
+    3600,
+    '2012-08-13 05:45:38.629683-05',
+    3600,
+    '2012-08-13 05:45:38.629683-05'
+);
+-- XLITE667
+INSERT INTO ip_reputation_sets VALUES (
+    2,
+    'XLITE667',
+    'xlite_users_43594',
+    false,
+    1000000,
+    127,
+    1023,
+    24,
+    15,
+    3600,
+    '2012-08-13 05:47:37.638487-05',
+    3600,
+    '2012-08-13 05:47:37.638487-05'
+);
+-- EMORTALZ
+INSERT INTO ip_reputation_sets VALUES (
+    3,
+    'EMORTALZ',
+    'emortalz',
+    false,
+    1000000,
+    127,
+    1023,
+    24,
+    15,
+    3600,
+    '2012-10-08 19:11:22.781276-05',
+    3600,
+    '2012-10-08 19:11:22.781276-05'
+);
+-- PROJECT_LA
+INSERT INTO ip_reputation_sets VALUES (
+    4,
+    'PROJECT_LA',
+    'pla',
+    false,
+    1000000,
+    127,
+    1023,
+    24,
+    15,
+    3600,
+    '2012-10-08 19:12:02.405987-05',
+    3600,
+    '2012-10-08 19:12:02.405987-05'
+);
+-- RUNEREBE
+INSERT INTO ip_reputation_sets VALUES (
+    5,
+    'RUNEREBE',
+    'runerebe',
+    false,
+    1000000,
+    127,
+    1023,
+    24,
+    15,
+    3600,
+    '2012-10-08 19:12:46.554972-05',
+    3600,
+    '2012-10-08 19:12:46.554972-05'
+);
+-- WEBLARA
+INSERT INTO ip_reputation_sets VALUES (
+    6,
+    'WEBLARA',
+    'weblara',
+    false,
+    1000000,
+    127,
+    1023,
+    24,
+    15,
+    3600,
+    '2012-10-08 19:13:17.79102-05',
+    3600,
+    '2012-10-08 19:13:17.79102-05'
+);
+SELECT setval('ip_reputation_sets_pkey_seq', 7, false);
+COMMIT;

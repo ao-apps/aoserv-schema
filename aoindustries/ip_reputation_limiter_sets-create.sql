@@ -19,6 +19,8 @@ grant all on ip_reputation_limiter_sets to aoadmin;
 grant select on ip_reputation_limiter_sets to aoserv_app;
 
 -- Initial Data
+begin;
+-- XLITE667
 insert into ip_reputation_limiter_sets values (
     1,
     1,
@@ -31,4 +33,57 @@ insert into ip_reputation_limiter_sets values (
     (select pkey from ip_reputation_sets where identifier='global'),
     2
 );
-select setval('ip_reputation_limiter_sets_pkey_seq', 3, false);
+-- EMORTALZ
+insert into ip_reputation_limiter_sets values (
+    3,
+    2,
+    (select pkey from ip_reputation_sets where identifier='emortalz'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    4,
+    2,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+-- PROJECT_LA
+insert into ip_reputation_limiter_sets values (
+    5,
+    3,
+    (select pkey from ip_reputation_sets where identifier='pla'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    6,
+    3,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+-- RUNEREBE
+insert into ip_reputation_limiter_sets values (
+    7,
+    4,
+    (select pkey from ip_reputation_sets where identifier='runerebe'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    8,
+    4,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+-- WEBLARA
+insert into ip_reputation_limiter_sets values (
+    9,
+    5,
+    (select pkey from ip_reputation_sets where identifier='weblara'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    10,
+    5,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+select setval('ip_reputation_limiter_sets_pkey_seq', 11, false);
+commit;

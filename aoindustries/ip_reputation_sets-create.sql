@@ -126,6 +126,31 @@ INSERT INTO ip_reputation_sets VALUES (
     3600,
     '2012-08-13 05:47:37.638487-05'
 );
+INSERT INTO usernames VALUES ('xlite_ipreputation', 'XLITE667', null);
+INSERT INTO business_administrators VALUES (
+    'xlite_ipreputation',
+    '9Knpnj2HM4JcW+XkMXcSWBcL1l8=',
+    'IP Reputation Source',
+    null,
+    null,
+    false,
+    true,
+    '2012-08-17 05:44:46.372192',
+    '(205)454-2556',
+    null,
+    null,
+    null,
+    'support@lnxhosting.ca',
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    false,
+    null
+);
 -- EMORTALZ
 INSERT INTO ip_reputation_sets VALUES (
     3,
@@ -141,6 +166,31 @@ INSERT INTO ip_reputation_sets VALUES (
     '2012-10-08 19:11:22.781276-05',
     3600,
     '2012-10-08 19:11:22.781276-05'
+);
+INSERT INTO usernames VALUES ('emortalz_ipreputation', 'EMORTALZ', null);
+INSERT INTO business_administrators VALUES (
+    'emortalz_ipreputation',
+    '3P046fBA7XbUyPwQnLXavb66OkE=', -- 95ShelshBrin
+    'IP Reputation Source',
+    null,
+    null,
+    false,
+    true,
+    '2012-10-09 01:04:23.828338-05',
+    '(205)454-2556',
+    null,
+    null,
+    null,
+    'support@lnxhosting.ca',
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    false,
+    null
 );
 -- PROJECT_LA
 INSERT INTO ip_reputation_sets VALUES (
@@ -158,6 +208,31 @@ INSERT INTO ip_reputation_sets VALUES (
     3600,
     '2012-10-08 19:12:02.405987-05'
 );
+INSERT INTO usernames VALUES ('pla_ipreputation', 'PROJECT_LA', null);
+INSERT INTO business_administrators VALUES (
+    'pla_ipreputation',
+    'nBtCz/A4hzfMroXSRvIR3j7sI8k=', -- Clerd7Ejar4
+    'IP Reputation Source',
+    null,
+    null,
+    false,
+    true,
+    '2012-10-09 01:05:05.634743-05',
+    '(205)454-2556',
+    null,
+    null,
+    null,
+    'support@lnxhosting.ca',
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    false,
+    null
+);
 -- RUNEREBE
 INSERT INTO ip_reputation_sets VALUES (
     5,
@@ -173,6 +248,31 @@ INSERT INTO ip_reputation_sets VALUES (
     '2012-10-08 19:12:46.554972-05',
     3600,
     '2012-10-08 19:12:46.554972-05'
+);
+INSERT INTO usernames VALUES ('runerebe_ipreputation', 'RUNEREBE', null);
+INSERT INTO business_administrators VALUES (
+    'runerebe_ipreputation',
+    'r3Qcv7WrPdlaEy7B9xK6JwOWrpg=', -- HonarUslah83
+    'IP Reputation Source',
+    null,
+    null,
+    false,
+    true,
+    '2012-10-09 01:06:01.827199-05',
+    '(205)454-2556',
+    null,
+    null,
+    null,
+    'support@lnxhosting.ca',
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    false,
+    null
 );
 -- WEBLARA
 INSERT INTO ip_reputation_sets VALUES (
@@ -190,6 +290,31 @@ INSERT INTO ip_reputation_sets VALUES (
     3600,
     '2012-10-08 19:13:17.79102-05'
 );
+INSERT INTO usernames VALUES ('weblara_reputation', 'WEBLARA', null);
+INSERT INTO business_administrators VALUES (
+    'weblara_ipreputation',
+    'vZs0tdZY1bcc+sbPqsOf7SrqBZc=', -- Dwex8Oloh7
+    'IP Reputation Source',
+    null,
+    null,
+    false,
+    true,
+    '2012-10-09 01:07:33.439727-05',
+    '(205)454-2556',
+    null,
+    null,
+    null,
+    'support@lnxhosting.ca',
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    false,
+    null
+);
 -- LOSTHOPERSPS
 INSERT INTO ip_reputation_sets VALUES (
     7,
@@ -206,6 +331,31 @@ INSERT INTO ip_reputation_sets VALUES (
     3600,
     '2012-10-08 22:07:20.030039-05'
 );
+INSERT INTO usernames VALUES ('losthopersps_ipreputation', 'LOSTHOPERSPS', null);
+INSERT INTO business_administrators VALUES (
+    'losthopersps_ipreputation',
+    'FuMGKMko4XiRnW+E5YOPTtOIq48=', -- 7Gworvyo4Ajo
+    'IP Reputation Source',
+    null,
+    null,
+    false,
+    true,
+    '2012-10-09 01:08:15.662196-05',
+    '(205)454-2556',
+    null,
+    null,
+    null,
+    'support@lnxhosting.ca',
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    false,
+    null
+);
 -- GTAPOLICEMODS
 INSERT INTO ip_reputation_sets VALUES (
     8,
@@ -221,6 +371,31 @@ INSERT INTO ip_reputation_sets VALUES (
     '2012-10-09 00:12:35.149496-05',
     3600,
     '2012-10-09 00:12:35.149496-05'
+);
+INSERT INTO usernames VALUES ('gtapolicemods_reputation', 'GTAPOLICEMODS', null);
+INSERT INTO business_administrators VALUES (
+    'gtapolicemods_ipreputation',
+    'phJUN8xiPPc/nwPl+wEu2gQPVcA=', -- 2Swuss2Siveor
+    'IP Reputation Source',
+    null,
+    null,
+    false,
+    true,
+    '2012-10-09 01:09:33.587995-05',
+    '(205)454-2556',
+    null,
+    null,
+    null,
+    'support@lnxhosting.ca',
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    false,
+    null
 );
 SELECT setval('ip_reputation_sets_pkey_seq', 9, false);
 COMMIT;

@@ -2,13 +2,22 @@ create sequence ip_reputation_sets_pkey_seq cycle;
 grant all on ip_reputation_sets_pkey_seq to aoadmin;
 --grant select, update on ip_reputation_sets_pkey_seq to aoserv_app;
 
+-- TODO: Move this to ipsets function since it is more general.
+--
 -- ipset has maximum name length of 31, and we prefix four characters, leaving 27 characters max.
 --   Prefixes:
+--     IpReputationSets:
 --       character 0: 'R': Reputation
 --       character 1: 'G': Good,      'B': Bad
 --       character 2: 'U': Uncertain, 'D': Definite, 'N': Network
---       character 3: '_': Separator
+--       character 3: '_': Separator, 'N': New list (for loading while old copy active)
+--     IpSets:
+--       character 0: 'I': IP Set
+--       character 1: 'H': Hosts, 'N': Networks, 'U': Union (rules should normally use the union)
+--       character 2: '_': Reserved
+--       character 3: '_': Separator, 'N': New list (for loading while old copy active)
 -- length("identifier")>=1 and length("identifier")<=27
+
 -- Be safe by only allowing specific characters, even though ipset probably allows many more, we'll be shell-safe.
 CREATE OR REPLACE FUNCTION isValidIpReputationIdentifier(identifier text)
     RETURNS boolean
@@ -24,8 +33,8 @@ CREATE OR REPLACE FUNCTION isValidIpReputationIdentifier(identifier text)
                 RAISE EXCEPTION 'Identifiers may only start with a-z, A-Z, 0-9, or _: ''%''', identifier;
             END IF;
 
-            IF identifier !~ E'^.[a-zA-Z0-9_-]*$' THEN
-                RAISE EXCEPTION 'Identifiers may only contain a-z, A-Z, 0-9, _, or -: ''%''', identifier;
+            IF identifier !~ E'^.[a-zA-Z0-9_\.-]*$' THEN
+                RAISE EXCEPTION 'Identifiers may only contain a-z, A-Z, 0-9, ''.'', _, or -: ''%''', identifier;
             END IF;
 
             -- All is OK
@@ -36,6 +45,7 @@ CREATE OR REPLACE FUNCTION isValidIpReputationIdentifier(identifier text)
     IMMUTABLE
 ;
 
+-- TODO: Track the last time new reputation data was added, and monitor for failed reputation sources.
 create table ip_reputation_sets (
   pkey integer
     default nextval('ip_reputation_sets_pkey_seq')
@@ -89,6 +99,9 @@ create table ip_reputation_sets (
     check (network_decay_interval>=60),
   last_network_decay timestamp with time zone
     not null
+    default now(),
+  last_reputation_added timestamp with time zone -- TODO: Monitor when no new reputation for a certain amount of time
+    not null
     default now()
 );
 grant all on ip_reputation_sets to aoadmin;
@@ -108,7 +121,8 @@ INSERT INTO ip_reputation_sets VALUES (
     3600,
     '2012-08-13 05:45:38.629683-05',
     3600,
-    '2012-08-13 05:45:38.629683-05'
+    '2012-08-13 05:45:38.629683-05',
+    '2012-08-13 05:45:38.629683-05',
 );
 -- XLITE667
 INSERT INTO ip_reputation_sets VALUES (
@@ -124,6 +138,7 @@ INSERT INTO ip_reputation_sets VALUES (
     3600,
     '2012-08-13 05:47:37.638487-05',
     3600,
+    '2012-08-13 05:47:37.638487-05',
     '2012-08-13 05:47:37.638487-05'
 );
 INSERT INTO usernames VALUES ('xlite_ipreputation', 'XLITE667', null);
@@ -165,6 +180,7 @@ INSERT INTO ip_reputation_sets VALUES (
     3600,
     '2012-10-08 19:11:22.781276-05',
     3600,
+    '2012-10-08 19:11:22.781276-05',
     '2012-10-08 19:11:22.781276-05'
 );
 INSERT INTO usernames VALUES ('emortalz_ipreputation', 'EMORTALZ', null);
@@ -206,6 +222,7 @@ INSERT INTO ip_reputation_sets VALUES (
     3600,
     '2012-10-08 19:12:02.405987-05',
     3600,
+    '2012-10-08 19:12:02.405987-05',
     '2012-10-08 19:12:02.405987-05'
 );
 INSERT INTO usernames VALUES ('pla_ipreputation', 'PROJECT_LA', null);
@@ -247,6 +264,7 @@ INSERT INTO ip_reputation_sets VALUES (
     3600,
     '2012-10-08 19:12:46.554972-05',
     3600,
+    '2012-10-08 19:12:46.554972-05',
     '2012-10-08 19:12:46.554972-05'
 );
 INSERT INTO usernames VALUES ('runerebe_ipreputation', 'RUNEREBE', null);
@@ -288,9 +306,10 @@ INSERT INTO ip_reputation_sets VALUES (
     3600,
     '2012-10-08 19:13:17.79102-05',
     3600,
+    '2012-10-08 19:13:17.79102-05',
     '2012-10-08 19:13:17.79102-05'
 );
-INSERT INTO usernames VALUES ('weblara_reputation', 'WEBLARA', null);
+INSERT INTO usernames VALUES ('weblara_ipreputation', 'WEBLARA', null);
 INSERT INTO business_administrators VALUES (
     'weblara_ipreputation',
     'vZs0tdZY1bcc+sbPqsOf7SrqBZc=', -- Dwex8Oloh7
@@ -329,6 +348,7 @@ INSERT INTO ip_reputation_sets VALUES (
     3600,
     '2012-10-08 22:07:20.030039-05',
     3600,
+    '2012-10-08 22:07:20.030039-05',
     '2012-10-08 22:07:20.030039-05'
 );
 INSERT INTO usernames VALUES ('losthopersps_ipreputation', 'LOSTHOPERSPS', null);
@@ -370,9 +390,10 @@ INSERT INTO ip_reputation_sets VALUES (
     3600,
     '2012-10-09 00:12:35.149496-05',
     3600,
+    '2012-10-09 00:12:35.149496-05',
     '2012-10-09 00:12:35.149496-05'
 );
-INSERT INTO usernames VALUES ('gtapolicemods_reputation', 'GTAPOLICEMODS', null);
+INSERT INTO usernames VALUES ('gtapolicemods_ipreputation', 'GTAPOLICEMODS', null);
 INSERT INTO business_administrators VALUES (
     'gtapolicemods_ipreputation',
     'phJUN8xiPPc/nwPl+wEu2gQPVcA=', -- 2Swuss2Siveor
@@ -397,5 +418,47 @@ INSERT INTO business_administrators VALUES (
     false,
     null
 );
-SELECT setval('ip_reputation_sets_pkey_seq', 9, false);
+-- SERVER9803
+INSERT INTO ip_reputation_sets VALUES (
+    9,
+    'SERVER9803',
+    'server9803',
+    false,
+    1000000,
+    127,
+    1023,
+    24,
+    15,
+    3600,
+    '2012-12-13 14:06:00.037015-06',
+    3600,
+    '2012-12-13 14:06:00.037015-06',
+    '2012-12-13 14:06:00.037015-06'
+);
+INSERT INTO usernames VALUES ('server9803_ipreputation', 'SERVER9803', null);
+INSERT INTO business_administrators VALUES (
+    'server9803_ipreputation',
+    '/JyltqZ7EK/26', -- Cuxio7Igrio2
+    'IP Reputation Source',
+    null,
+    null,
+    false,
+    true,
+    '2012-12-13 14:06:00.037015-06',
+    '(205)454-2556',
+    null,
+    null,
+    null,
+    'support@lnxhosting.ca',
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    false,
+    null
+);
+SELECT setval('ip_reputation_sets_pkey_seq', 10, false);
 COMMIT;

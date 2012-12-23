@@ -960,4 +960,15 @@ added ip_reputation_limiters table
 added ip_reputation_limiter_limits table
 added ip_reputation_limiter_sets table'
 );
+insert into aoserv_protocols values(
+  '1.67',
+  '2012-10-18',
+  'added gm and bm classes to ip_reputation_limiter_limits
+added ip_reputation_sets.last_reputation_added
+changed ip_reputation_set_hosts.host to ip_address type
+changed ip_reputation_set_networks.network to ip_address type'
+);
+-- TODO added ip_sets table
+-- TODO added ip_set_entries table
+-- TODO added ip_reputation_limiter_manual_sets table
 commit;

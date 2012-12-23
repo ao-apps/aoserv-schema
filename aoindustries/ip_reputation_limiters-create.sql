@@ -51,6 +51,30 @@ insert into ip_reputation_limiters values (
     'Default',
     null
 );
+insert into ip_reputation_limiters values (
+    8,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='pla.project-la.com') and device_id='eth0'),
+    'SA-MP',
+    null
+);
+insert into ip_reputation_limiters values (
+    9,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='pla.project-la.com') and device_id='eth0'),
+    'TeamSpeak',
+    null
+);
+insert into ip_reputation_limiters values (
+    15,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='pla.project-la.com') and device_id='eth0'),
+    'HTTP',
+    null
+);
+insert into ip_reputation_limiters values (
+    16,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='pla.project-la.com') and device_id='eth0'),
+    'nameservers',
+    null
+);
 -- RUNEREBE
 insert into ip_reputation_limiters values (
     4,
@@ -63,6 +87,18 @@ insert into ip_reputation_limiters values (
     5,
     (select pkey from net_devices where server=(select pkey from servers where package=308 and name='weblara.com') and device_id='eth0'),
     'Default',
+    null
+);
+insert into ip_reputation_limiters values (
+    11,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='weblara.com') and device_id='eth0'),
+    'theforgottenserver',
+    null
+);
+insert into ip_reputation_limiters values (
+    13,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='weblara.com') and device_id='eth0'),
+    'HTTP',
     null
 );
 -- LOSTHOPERSPS
@@ -79,5 +115,24 @@ insert into ip_reputation_limiters values (
     'Default',
     null
 );
-select setval('ip_reputation_limiters_pkey_seq', 8, false);
+-- SERVER9803
+insert into ip_reputation_limiters values (
+    10,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='server9803') and device_id='eth0'),
+    'Default',
+    null
+);
+insert into ip_reputation_limiters values (
+    12,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='server9803') and device_id='eth0'),
+    'theforgottenserver',
+    null
+);
+insert into ip_reputation_limiters values (
+    14,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='server9803') and device_id='eth0'),
+    'HTTP',
+    null
+);
+select setval('ip_reputation_limiters_pkey_seq', 17, false);
 commit;

@@ -59,6 +59,54 @@ insert into ip_reputation_limiter_sets values (
     (select pkey from ip_reputation_sets where identifier='global'),
     2
 );
+insert into ip_reputation_limiter_sets values (
+    23,
+    8,
+    (select pkey from ip_reputation_sets where identifier='pla'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    24,
+    8,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+insert into ip_reputation_limiter_sets values (
+    25,
+    9,
+    (select pkey from ip_reputation_sets where identifier='pla'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    26,
+    9,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+insert into ip_reputation_limiter_sets values (
+    27,
+    15,
+    (select pkey from ip_reputation_sets where identifier='pla'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    28,
+    15,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+insert into ip_reputation_limiter_sets values (
+    29,
+    16,
+    (select pkey from ip_reputation_sets where identifier='pla'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    30,
+    16,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
 -- RUNEREBE
 insert into ip_reputation_limiter_sets values (
     7,
@@ -82,6 +130,30 @@ insert into ip_reputation_limiter_sets values (
 insert into ip_reputation_limiter_sets values (
     10,
     5,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+insert into ip_reputation_limiter_sets values (
+    17,
+    11,
+    (select pkey from ip_reputation_sets where identifier='weblara'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    18,
+    11,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+insert into ip_reputation_limiter_sets values (
+    21,
+    13,
+    (select pkey from ip_reputation_sets where identifier='weblara'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    22,
+    13,
     (select pkey from ip_reputation_sets where identifier='global'),
     2
 );
@@ -111,5 +183,42 @@ insert into ip_reputation_limiter_sets values (
     (select pkey from ip_reputation_sets where identifier='global'),
     2
 );
-select setval('ip_reputation_limiter_sets_pkey_seq', 15, false);
+-- SERVER9803
+insert into ip_reputation_limiter_sets values (
+    15,
+    10,
+    (select pkey from ip_reputation_sets where identifier='server9803'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    16,
+    10,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+insert into ip_reputation_limiter_sets values (
+    19,
+    12,
+    (select pkey from ip_reputation_sets where identifier='server9803'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    20,
+    12,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+insert into ip_reputation_limiter_sets values (
+    21,
+    14,
+    (select pkey from ip_reputation_sets where identifier='server9803'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    22,
+    14,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+select setval('ip_reputation_limiter_sets_pkey_seq', 31, false);
 commit;

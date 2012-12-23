@@ -1208,20 +1208,22 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputa
 commit;
 begin;
 \echo ip_reputation_set_hosts
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_hosts', 'pkey',            0, 'long',  false, true,  false, 'a generated, unique key',                          '1.65', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_hosts', 'set_fkey',        1, 'fkey',  false, false, false, 'the IP Reputation Set',                            '1.65', '1.65';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_hosts', 'set',             2, 'fkey',  false, false, false, 'the IP Reputation Set',                            '1.66', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_hosts', 'host',            3, 'int',   false, false, false, 'the per-set unique 32-bit IP address, big-endian', '1.65', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_hosts', 'good_reputation', 4, 'short', false, false, false, 'the current good reputation',                      '1.65', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_hosts', 'bad_reputation',  5, 'short', false, false, false, 'the current bad repuation',                        '1.65', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_hosts', 'pkey',            0, 'long',       false, true,  false, 'a generated, unique key',                          '1.65', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_hosts', 'set_fkey',        1, 'fkey',       false, false, false, 'the IP Reputation Set',                            '1.65', '1.65';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_hosts', 'set',             2, 'fkey',       false, false, false, 'the IP Reputation Set',                            '1.66', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_hosts', 'host',            3, 'int',        false, false, false, 'the per-set unique 32-bit IP address, big-endian', '1.65', '1.66';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_hosts', 'host',            4, 'ip_address', false, false, false, 'the per-set unique IPv4 address',                  '1.67', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_hosts', 'good_reputation', 5, 'short',      false, false, false, 'the current good reputation',                      '1.65', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_hosts', 'bad_reputation',  6, 'short',      false, false, false, 'the current bad repuation',                        '1.65', null;
 commit;
 begin;
 \echo ip_reputation_set_networks
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_networks', 'pkey',     0, 'long',  false, true,  false, 'a generated, unique key',                                                      '1.65', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_networks', 'set_fkey', 1, 'fkey',  false, false, false, 'the IP Reputation Set',                                                        '1.65', '1.65';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_networks', 'set',      2, 'fkey',  false, false, false, 'the IP Reputation Set',                                                        '1.66', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_networks', 'network',  3, 'int',   false, false, false, 'the per-set unique 32-bit network address, big-endian with network bits zero', '1.65', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_networks', 'counter',  4, 'int',   false, false, false, 'the reputation counter',                                                       '1.65', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_networks', 'pkey',     0, 'long',       false, true,  false, 'a generated, unique key',                                                      '1.65', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_networks', 'set_fkey', 1, 'fkey',       false, false, false, 'the IP Reputation Set',                                                        '1.65', '1.65';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_networks', 'set',      2, 'fkey',       false, false, false, 'the IP Reputation Set',                                                        '1.66', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_networks', 'network',  3, 'int',        false, false, false, 'the per-set unique 32-bit network address, big-endian with network bits zero', '1.65', '1.66';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_networks', 'network',  4, 'ip_address', false, false, false, 'the per-set unique IPv4 network address, with network bits zero',              '1.67', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_set_networks', 'counter',  5, 'int',        false, false, false, 'the reputation counter',                                                       '1.65', null;
 commit;
 begin;
 \echo ip_reputation_sets
@@ -1238,6 +1240,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputa
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_sets', 'last_host_decay',          10, 'time',        false, false, false, 'the time the hosts were last decayed',                 '1.65', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_sets', 'network_decay_interval',   11, 'int',         false, false, false, 'the number of seconds between each network decay',     '1.65', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_sets', 'last_network_decay',       12, 'time',        false, false, false, 'the time the networks were last decayed',              '1.65', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_reputation_sets', 'last_reputation_added',    13, 'time',        false, false, false, 'the time reputation was last added',                   '1.67', null;
 commit;
 begin;
 \echo languages

@@ -8,7 +8,7 @@ create table spam_email_messages (
     constraint spam_email_messages_pkey primary key,
   email_relay integer
     not null,
-  time timestamp
+  time timestamp with time zone
     not null
     default now(),
   message text

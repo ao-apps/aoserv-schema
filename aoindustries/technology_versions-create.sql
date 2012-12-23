@@ -10,7 +10,7 @@ create table technology_versions (
     not null,
   version text
     not null,
-  updated timestamp
+  updated timestamp with time zone
     default now()
     not null,
   owner text

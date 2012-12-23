@@ -6,7 +6,7 @@ create table notice_log (
   pkey integer
     default nextval('notice_log_pkey_seq')
     constraint notice_log_pkey primary key,  
-  create_time timestamp
+  create_time timestamp with time zone
     default now()
     not null,
   accounting text

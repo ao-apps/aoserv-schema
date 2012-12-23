@@ -6,7 +6,7 @@ create table whois_history (
   pkey integer
     default nextval('whois_history_pkey_seq')
     constraint whois_history_pkey primary key,  
-  "time" timestamp
+  time timestamp with time zone
     default now()
     not null,
   accounting text

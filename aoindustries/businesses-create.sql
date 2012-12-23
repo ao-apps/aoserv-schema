@@ -2,10 +2,10 @@ create table businesses (
   accounting text
     constraint businesses_pkey primary key,
   contract_version text,
-  created timestamp
+  created timestamp with time zone
     default now()
     not null,
-  canceled timestamp,
+  canceled timestamp with time zone,
   cancel_reason text,
   parent text,
   can_add_backup_server bool

@@ -1,7 +1,6 @@
 create table ao_servers (
   server integer
     constraint ao_servers_pkey primary key,
-    -- TODO: Super key of server to make sure resource_type is either 'virtual_server' or 'physical_server'
   hostname text not null unique
     check(
       hostname=lower(hostname) -- Must be all lowercase
@@ -17,7 +16,7 @@ create table ao_servers (
     not null
     constraint distro_hour_chk
       check (distro_hour>=0 and distro_hour<=23),
-  last_distro_time timestamp,
+  last_distro_time timestamp with time zone,
   failover_server integer,
   daemon_device_id text
     not null,
@@ -33,4 +32,4 @@ create table ao_servers (
   monitoring_load_critical float4 check (monitoring_load_critical is null or monitoring_load_high is not null and monitoring_load_critical>monitoring_load_high)
 );
 grant all on ao_servers to aoadmin;
-grant select on ao_servers to aoserv_app;
+grant select, update on ao_servers to aoserv_app;

@@ -7,7 +7,7 @@ create table signup_requests (
     default nextval('signup_requests_pkey_seq')
     constraint signup_requests_pkey primary key,
   brand text not null,
-  time timestamp not null default now(),
+  time timestamp with time zone not null default now(),
   ip_address text not null,
   package_definition integer not null,
   business_name text not null,
@@ -44,7 +44,7 @@ create table signup_requests (
   -- The recipient for the encrypted content
   encryption_recipient integer not null,
   completed_by text,
-  completed_time timestamp
+  completed_time timestamp with time zone
 );
 grant all on signup_requests to aoadmin;
 grant select, insert, update, delete on signup_requests to aoserv_app;

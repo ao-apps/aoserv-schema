@@ -13,7 +13,7 @@ create table packages (
     not null,
   package_definition integer
     not null,
-  created timestamp
+  created timestamp with time zone
     not null
     default now(),
   created_by text

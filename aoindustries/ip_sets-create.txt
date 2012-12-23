@@ -1,0 +1,62 @@
+create sequence ip_sets_pkey_seq cycle;
+grant all on ip_sets_pkey_seq to aoadmin;
+--grant select, update on ip_sets_pkey_seq to aoserv_app;
+
+create table ip_sets (
+  pkey integer
+    default nextval('ip_sets_pkey_seq')
+    constraint ip_sets_pkey primary key,
+  accounting text
+    not null,
+  identifier text
+    not null
+    check (
+        isValidIpReputationIdentifier(identifier)
+    )
+    unique,
+  description text not null,
+  -- Allows a subaccount to use the set.  They cannot query the specific set members, however.
+  allow_subaccount_use boolean
+    not null
+);
+grant all on ip_sets to aoadmin;
+grant select on ip_sets to aoserv_app;
+
+BEGIN;
+INSERT INTO ip_sets VALUES (
+    1,
+    'AOINDUSTRIES',
+    'admins',
+    'Service Provider Administrators',
+    true
+);
+INSERT INTO ip_sets VALUES (
+    2,
+    'AOINDUSTRIES',
+    'nameservers',
+    'Service Provider Name Servers',
+    true
+);
+INSERT INTO ip_sets VALUES (
+    3,
+    'AOINDUSTRIES',
+    'master',
+    'Service Provider Master Servers',
+    true
+);
+INSERT INTO ip_sets VALUES (
+    4,
+    'AOINDUSTRIES',
+    'monitoring',
+    'Service Provider Monitoring Servers',
+    true
+);
+INSERT INTO ip_sets VALUES (
+    5,
+    'AOINDUSTRIES',
+    'javatator',
+    'Javatator Database Administration Web Interface',
+    false
+);
+SELECT setval('ip_sets_pkey_seq', 6, false);
+COMMIT;

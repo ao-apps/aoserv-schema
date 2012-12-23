@@ -1,0 +1,29 @@
+-- Tracks the entries for ip sets
+create sequence ip_set_entries_pkey_seq cycle;
+grant all on ip_set_entries_pkey_seq to aoadmin;
+grant select, update on ip_set_entries_pkey_seq to aoserv_app;
+
+create table ip_set_entries (
+  pkey int8
+    default nextval('ip_set_entries_pkey_seq')
+    constraint ip_set_entries_pkey primary key,
+  "set" integer
+    not null,
+  entry integer -- The big-endian 32-bit IP address/network.
+    not null,
+  "prefix" smallint
+    not null
+    check ("prefix">=1 and "prefix"<=32),
+  created timestamp with time zone
+    not null,
+  created_by text
+    not null,
+  expiration timestamp with time zone, -- TODO: Write daemon component to remove from ipset once expired
+  description text not null,
+  check (
+    expiration is null or expiration>=created
+  ),
+  unique("set", entry, "prefix")
+);
+grant all on ip_set_entries to aoadmin;
+grant select, insert on ip_set_entries to aoserv_app;

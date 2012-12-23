@@ -1,0 +1,3 @@
+create index ip_sets_accounting_idx on ip_sets (
+  accounting
+);

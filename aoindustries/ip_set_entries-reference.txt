@@ -1,0 +1,14 @@
+alter table ip_set_entries
+  add constraint set_fkey
+  foreign key ("set")
+  references ip_sets (pkey)
+  on delete restrict
+  on update cascade
+;
+alter table ip_set_entries
+  add constraint created_fkey
+  foreign key (created_by)
+  references business_administrators (username)
+  on delete restrict
+  on update cascade
+;

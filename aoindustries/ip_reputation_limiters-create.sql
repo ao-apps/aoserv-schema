@@ -82,6 +82,24 @@ insert into ip_reputation_limiters values (
     'Default',
     null
 );
+insert into ip_reputation_limiters values (
+    22,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='319543.runerebe.com') and device_id='eth0'),
+    'RDP',
+    null
+);
+insert into ip_reputation_limiters values (
+    23,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='319543.runerebe.com') and device_id='eth0'),
+    'RSPS',
+    null
+);
+insert into ip_reputation_limiters values (
+    24,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='319543.runerebe.com') and device_id='eth0'),
+    'Minecraft',
+    null
+);
 -- WEBLARA
 insert into ip_reputation_limiters values (
     5,
@@ -134,5 +152,111 @@ insert into ip_reputation_limiters values (
     'HTTP',
     null
 );
-select setval('ip_reputation_limiters_pkey_seq', 17, false);
+-- GATEWAYNS_COM_2
+insert into ip_reputation_limiters values (
+    17,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='gatewayns.com') and device_id='eth0'),
+    'Default',
+    null
+);
+insert into ip_reputation_limiters values (
+    18,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='gatewayns.com') and device_id='eth0'),
+    'DNS',
+    null
+);
+insert into ip_reputation_limiters values (
+    19,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='gatewayns.com') and device_id='eth0'),
+    'HTTP',
+    null
+);
+insert into ip_reputation_limiters values (
+    20,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='gatewayns.com') and device_id='eth0'),
+    'SSH',
+    null
+);
+insert into ip_reputation_limiters values (
+    21,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='gatewayns.com') and device_id='eth0'),
+    'SOCKS',
+    null
+);
+-- MCRP
+insert into ip_reputation_limiters values (
+    25,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='mcrp') and device_id='eth0'),
+    'Default',
+    null
+);
+insert into ip_reputation_limiters values (
+    26,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='mcrp') and device_id='eth0'),
+    'SA-MP',
+    null
+);
+insert into ip_reputation_limiters values (
+    27,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='mcrp') and device_id='eth0'),
+    'TeamSpeak',
+    null
+);
+insert into ip_reputation_limiters values (
+    28,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='mcrp') and device_id='eth0'),
+    'HTTP',
+    null
+);
+-- NAPIHOST_COM
+insert into ip_reputation_limiters values (
+    29,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='napihost.com') and device_id='eth0'),
+    'Default',
+    null
+);
+insert into ip_reputation_limiters values (
+    30,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='napihost.com') and device_id='eth0'),
+    'Camfrog',
+    null
+);
+-- WEB_MCRP
+insert into ip_reputation_limiters values (
+    31,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='web.mcrp') and device_id='eth0'),
+    'Default',
+    null
+);
+insert into ip_reputation_limiters values (
+    32,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='web.mcrp') and device_id='eth0'),
+    'SSH',
+    null
+);
+insert into ip_reputation_limiters values (
+    33,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='web.mcrp') and device_id='eth0'),
+    'HTTP',
+    null
+);
+insert into ip_reputation_limiters values (
+    34,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='web.mcrp') and device_id='eth0'),
+    'SMTP',
+    null
+);
+insert into ip_reputation_limiters values (
+    35,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='web.mcrp') and device_id='eth0'),
+    'Mail',
+    null
+);
+insert into ip_reputation_limiters values (
+    36,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='web.mcrp') and device_id='eth0'),
+    'nameservers',
+    null
+);
+select setval('ip_reputation_limiters_pkey_seq', 37, false);
 commit;

@@ -120,6 +120,42 @@ insert into ip_reputation_limiter_sets values (
     (select pkey from ip_reputation_sets where identifier='global'),
     2
 );
+insert into ip_reputation_limiter_sets values (
+    41,
+    22,
+    (select pkey from ip_reputation_sets where identifier='runerebe'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    42,
+    22,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+insert into ip_reputation_limiter_sets values (
+    43,
+    23,
+    (select pkey from ip_reputation_sets where identifier='runerebe'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    44,
+    23,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+insert into ip_reputation_limiter_sets values (
+    45,
+    24,
+    (select pkey from ip_reputation_sets where identifier='runerebe'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    46,
+    24,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
 -- WEBLARA
 insert into ip_reputation_limiter_sets values (
     9,
@@ -220,5 +256,213 @@ insert into ip_reputation_limiter_sets values (
     (select pkey from ip_reputation_sets where identifier='global'),
     2
 );
-select setval('ip_reputation_limiter_sets_pkey_seq', 31, false);
+-- GATEWAYNS_COM_2
+insert into ip_reputation_limiter_sets values (
+    31,
+    17,
+    (select pkey from ip_reputation_sets where identifier='gatewayns'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    32,
+    17,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+insert into ip_reputation_limiter_sets values (
+    33,
+    18,
+    (select pkey from ip_reputation_sets where identifier='gatewayns'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    34,
+    18,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+insert into ip_reputation_limiter_sets values (
+    35,
+    19,
+    (select pkey from ip_reputation_sets where identifier='gatewayns'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    36,
+    19,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+insert into ip_reputation_limiter_sets values (
+    37,
+    20,
+    (select pkey from ip_reputation_sets where identifier='gatewayns'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    38,
+    20,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+insert into ip_reputation_limiter_sets values (
+    39,
+    21,
+    (select pkey from ip_reputation_sets where identifier='gatewayns'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    40,
+    21,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+-- MCRP
+insert into ip_reputation_limiter_sets values (
+    47,
+    25,
+    (select pkey from ip_reputation_sets where identifier='mcrp'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    48,
+    25,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+insert into ip_reputation_limiter_sets values (
+    49,
+    26,
+    (select pkey from ip_reputation_sets where identifier='mcrp'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    50,
+    26,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+insert into ip_reputation_limiter_sets values (
+    51,
+    27,
+    (select pkey from ip_reputation_sets where identifier='mcrp'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    52,
+    27,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+insert into ip_reputation_limiter_sets values (
+    53,
+    28,
+    (select pkey from ip_reputation_sets where identifier='mcrp'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    54,
+    28,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+-- NAPIHOST_COM
+insert into ip_reputation_limiter_sets values (
+    55,
+    29,
+    (select pkey from ip_reputation_sets where identifier='napihost'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    56,
+    29,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+insert into ip_reputation_limiter_sets values (
+    57,
+    30,
+    (select pkey from ip_reputation_sets where identifier='napihost'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    58,
+    30,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+-- WEB_MCRP
+insert into ip_reputation_limiter_sets values (
+    59,
+    31,
+    (select pkey from ip_reputation_sets where identifier='web_mcrp'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    60,
+    31,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+insert into ip_reputation_limiter_sets values (
+    61,
+    32,
+    (select pkey from ip_reputation_sets where identifier='web_mcrp'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    62,
+    32,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+insert into ip_reputation_limiter_sets values (
+    63,
+    33,
+    (select pkey from ip_reputation_sets where identifier='web_mcrp'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    64,
+    33,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+insert into ip_reputation_limiter_sets values (
+    65,
+    34,
+    (select pkey from ip_reputation_sets where identifier='web_mcrp'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    66,
+    34,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+insert into ip_reputation_limiter_sets values (
+    67,
+    35,
+    (select pkey from ip_reputation_sets where identifier='web_mcrp'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    68,
+    35,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+insert into ip_reputation_limiter_sets values (
+    69,
+    36,
+    (select pkey from ip_reputation_sets where identifier='web_mcrp'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    70,
+    36,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+select setval('ip_reputation_limiter_sets_pkey_seq', 71, false);
 commit;

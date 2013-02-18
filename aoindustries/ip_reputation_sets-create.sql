@@ -460,5 +460,173 @@ INSERT INTO business_administrators VALUES (
     false,
     null
 );
-SELECT setval('ip_reputation_sets_pkey_seq', 10, false);
+-- GATEWAYNS_COM_2
+INSERT INTO ip_reputation_sets VALUES (
+    10,
+    'GATEWAYNS_COM_2',
+    'gatewayns',
+    false,
+    1000000,
+    127,
+    1023,
+    24,
+    15,
+    3600,
+    '2013-01-17 15:47:52.959342-06',
+    3600,
+    '2013-01-17 15:47:52.959342-06',
+    '2013-01-17 15:47:52.959342-06'
+);
+INSERT INTO usernames VALUES ('gatewayns_ipreputation', 'GATEWAYNS_COM_2', null);
+INSERT INTO business_administrators VALUES (
+    'gatewayns_ipreputation',
+    'DY.7ZiblIt/ok', -- Ceg37Oskarth
+    'IP Reputation Source',
+    null,
+    null,
+    false,
+    true,
+    '2013-01-17 15:49:09.230783-06',
+    '(205)454-2556',
+    null,
+    null,
+    null,
+    'support@lnxhosting.ca',
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    false,
+    null
+);
+-- MCRP
+INSERT INTO ip_reputation_sets VALUES (
+    11,
+    'MCRP',
+    'mcrp',
+    false,
+    1000000,
+    127,
+    1023,
+    24,
+    15,
+    3600,
+    '2013-02-09 14:43:49.508057-06',
+    3600,
+    '2013-02-09 14:43:49.508057-06',
+    '2013-02-09 14:43:49.508057-06'
+);
+INSERT INTO usernames VALUES ('mcrp_ipreputation', 'MCRP', null);
+INSERT INTO business_administrators VALUES (
+    'mcrp_ipreputation',
+    'E5hAHvDg8bvFQK82CWSa7O32044=', -- 4ChirthScrilk3
+    'IP Reputation Source',
+    null,
+    null,
+    false,
+    true,
+    '2013-02-09 14:44:36.312202-06',
+    '(205)454-2556',
+    null,
+    null,
+    null,
+    'support@aoindustries.com',
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    false,
+    null
+);
+-- NAPIHOST_COM
+INSERT INTO ip_reputation_sets VALUES (
+    12,
+    'NAPIHOST_COM',
+    'napihost',
+    false,
+    1000000,
+    127,
+    1023,
+    24,
+    15,
+    3600,
+    '2013-02-10 17:14:49.552482-06',
+    3600,
+    '2013-02-10 17:14:49.552482-06',
+    '2013-02-10 17:14:49.552482-06'
+);
+INSERT INTO usernames VALUES ('napihost_ipreputation', 'NAPIHOST_COM', null);
+INSERT INTO business_administrators VALUES (
+    'napihost_ipreputation',
+    'AwT6AxtZ0GV5V9XAZskauog9gGA=', -- Splifar98Orchya
+    'IP Reputation Source',
+    null,
+    null,
+    false,
+    true,
+    '2013-02-10 17:18:12.568276-06',
+    '(205)454-2556',
+    null,
+    null,
+    null,
+    'support@aoindustries.com',
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    false,
+    null
+);
+-- WEB_MCRP
+INSERT INTO ip_reputation_sets VALUES (
+    13,
+    'WEB_MCRP',
+    'web_mcrp',
+    false,
+    1000000,
+    127,
+    1023,
+    24,
+    15,
+    3600,
+    '2013-02-13 17:19:01.883687-06',
+    3600,
+    '2013-02-13 17:19:01.883687-06',
+    '2013-02-13 17:19:01.883687-06'
+);
+INSERT INTO usernames VALUES ('web_mcrp_ipreputation', 'WEB_MCRP', null);
+INSERT INTO business_administrators VALUES (
+    'web_mcrp_ipreputation',
+    '25hTwYzQJrCSGnahmhxV44Xu63c=', -- 9Caphoy4Cralp
+    'IP Reputation Source',
+    null,
+    null,
+    false,
+    true,
+    '2013-02-13 17:20:08.032276-06',
+    '(205)454-2556',
+    null,
+    null,
+    null,
+    'support@aoindustries.com',
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    false,
+    null
+);
+SELECT setval('ip_reputation_sets_pkey_seq', 14, false);
 COMMIT;

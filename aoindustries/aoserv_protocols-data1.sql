@@ -968,6 +968,11 @@ added ip_reputation_sets.last_reputation_added
 changed ip_reputation_set_hosts.host to ip_address type
 changed ip_reputation_set_networks.network to ip_address type'
 );
+insert into aoserv_protocols values(
+  '1.68',
+  '2013-03-18',
+  'added httpd_servers.max_concurrency'
+);
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table

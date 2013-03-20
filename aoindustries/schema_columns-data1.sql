@@ -931,6 +931,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_ser
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_servers', 'is_shared', 12, 'boolean', false, false, false, 'indicates that any user on the server may use this httpd instance', '1.0a102', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_servers', 'use_mod_perl', 13, 'boolean', false, false, false, '', '1.0a103', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_servers', 'timeout', 14, 'int', false, false, false, 'the timeout setting in seconds', '1.0a130', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_servers', 'max_concurrency', 15, 'int', false, false, false, 'the maximum number of processes/threads for this server instance', '1.68', null;
 commit;
 begin;
 \echo httpd_shared_tomcats

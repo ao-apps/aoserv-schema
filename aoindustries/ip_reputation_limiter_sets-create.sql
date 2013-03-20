@@ -464,5 +464,78 @@ insert into ip_reputation_limiter_sets values (
     (select pkey from ip_reputation_sets where identifier='global'),
     2
 );
-select setval('ip_reputation_limiter_sets_pkey_seq', 71, false);
+-- VHF
+insert into ip_reputation_limiter_sets values (
+    71,
+    37,
+    (select pkey from ip_reputation_sets where identifier='vhf'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    72,
+    37,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+insert into ip_reputation_limiter_sets values (
+    73,
+    38,
+    (select pkey from ip_reputation_sets where identifier='vhf'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    74,
+    38,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+insert into ip_reputation_limiter_sets values (
+    75,
+    39,
+    (select pkey from ip_reputation_sets where identifier='vhf'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    76,
+    39,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+insert into ip_reputation_limiter_sets values (
+    77,
+    40,
+    (select pkey from ip_reputation_sets where identifier='vhf'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    78,
+    40,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+insert into ip_reputation_limiter_sets values (
+    79,
+    41,
+    (select pkey from ip_reputation_sets where identifier='vhf'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    80,
+    41,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+insert into ip_reputation_limiter_sets values (
+    81,
+    42,
+    (select pkey from ip_reputation_sets where identifier='vhf'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    82,
+    42,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+select setval('ip_reputation_limiter_sets_pkey_seq', 83, false);
 commit;

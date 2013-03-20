@@ -628,5 +628,47 @@ INSERT INTO business_administrators VALUES (
     false,
     null
 );
-SELECT setval('ip_reputation_sets_pkey_seq', 14, false);
+-- VHF
+INSERT INTO ip_reputation_sets VALUES (
+    14,
+    'VHF',
+    'vhf',
+    false,
+    1000000,
+    127,
+    1023,
+    24,
+    15,
+    3600,
+    '2013-02-17 19:33:54.40538-06',
+    3600,
+    '2013-02-17 19:33:54.40538-06',
+    '2013-02-17 19:33:54.40538-06'
+);
+INSERT INTO usernames VALUES ('vhf_ipreputation', 'VHF', null);
+INSERT INTO business_administrators VALUES (
+    'vhf_ipreputation',
+    'osg3q3B+NNQTRRTNibeCApLzL/g=', -- 2UthreyUsnirf7
+    'IP Reputation Source',
+    null,
+    null,
+    false,
+    true,
+    '2013-02-17 19:35:03.22937-06',
+    '(205)454-2556',
+    null,
+    null,
+    null,
+    'support@aoindustries.com',
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    false,
+    null
+);
+SELECT setval('ip_reputation_sets_pkey_seq', 15, false);
 COMMIT;

@@ -258,5 +258,42 @@ insert into ip_reputation_limiters values (
     'nameservers',
     null
 );
-select setval('ip_reputation_limiters_pkey_seq', 37, false);
+-- VHF
+insert into ip_reputation_limiters values (
+    37,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='vhf') and device_id='eth0'),
+    'Default',
+    null
+);
+insert into ip_reputation_limiters values (
+    38,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='vhf') and device_id='eth0'),
+    'SSH',
+    null
+);
+insert into ip_reputation_limiters values (
+    39,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='vhf') and device_id='eth0'),
+    'HTTP',
+    null
+);
+insert into ip_reputation_limiters values (
+    40,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='vhf') and device_id='eth0'),
+    'SMTP',
+    null
+);
+insert into ip_reputation_limiters values (
+    41,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='vhf') and device_id='eth0'),
+    'Mail',
+    null
+);
+insert into ip_reputation_limiters values (
+    42,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='vhf') and device_id='eth0'),
+    'nameservers',
+    null
+);
+select setval('ip_reputation_limiters_pkey_seq', 43, false);
 commit;

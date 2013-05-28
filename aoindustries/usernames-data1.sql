@@ -1,4 +1,4 @@
-COPY usernames (username, accounting, disable_log) FROM stdin;
+COPY usernames (username, package, disable_log) FROM stdin;
 adm	AOINDUSTRIES	\N
 aoadmin	AOINDUSTRIES	\N
 avahi	AOINDUSTRIES	\N
@@ -21,7 +21,10 @@ rpc	AOINDUSTRIES	\N
 xfs	AOINDUSTRIES	\N
 mysql	AOINDUSTRIES	\N
 named	AOINDUSTRIES	\N
+nscd	AOINDUSTRIES	\N
 postgres	AOINDUSTRIES	\N
+ident	AOINDUSTRIES	\N
+pvm	AOINDUSTRIES	\N
 interbase	AOINDUSTRIES	\N
 apache	AOINDUSTRIES	\N
 xvfb	AOINDUSTRIES	\N
@@ -42,4 +45,6 @@ pcap	AOINDUSTRIES	\N
 distcache	AOINDUSTRIES	\N
 nfsnobody	AOINDUSTRIES	\N
 rpcuser	AOINDUSTRIES	\N
+nginx	AOINDUSTRIES	\N
+memcached	AOINDUSTRIES	\N
 \.

@@ -537,5 +537,42 @@ insert into ip_reputation_limiter_sets values (
     (select pkey from ip_reputation_sets where identifier='global'),
     2
 );
-select setval('ip_reputation_limiter_sets_pkey_seq', 83, false);
+-- LB3_CK101_COM
+insert into ip_reputation_limiter_sets values (
+    83,
+    43,
+    (select pkey from ip_reputation_sets where identifier='ck101'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    84,
+    43,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+insert into ip_reputation_limiter_sets values (
+    85,
+    44,
+    (select pkey from ip_reputation_sets where identifier='ck101'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    86,
+    44,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+insert into ip_reputation_limiter_sets values (
+    87,
+    45,
+    (select pkey from ip_reputation_sets where identifier='ck101'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    88,
+    45,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+select setval('ip_reputation_limiter_sets_pkey_seq', 89, false);
 commit;

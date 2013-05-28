@@ -236,3 +236,27 @@ order by
   transid
 ;
 grant all on bank_transactions_verify to aoadmin;
+
+
+create view expense_trends as
+select
+  expense_code,
+  year,
+  sum,
+  repeat('*', -sum::integer/1000)
+from
+  (
+    select
+      expense_code,
+      substring(month from 1 for 4) as year,
+      sum(sum)
+    from
+      bank_summary
+    group by
+      expense_code,
+      year
+  ) as years
+order by
+  expense_code,
+  year
+;

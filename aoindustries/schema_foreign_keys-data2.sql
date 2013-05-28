@@ -117,7 +117,8 @@ commit;
 begin;
 \echo business_administrators
 select add_schema_foreign_key('business_administrators', 'username', 'usernames', 'username', '1.0a100', null);
-select add_schema_foreign_key('business_administrators', 'country', 'country_codes', 'code', '1.0a100', null);
+select add_schema_foreign_key('business_administrators', 'country', 'country_codes', 'code', '1.0a100', '1.68');
+select add_schema_foreign_key('business_administrators', 'country', 'country_codes', 'code', '1.69', null);
 select add_schema_foreign_key('business_administrators', 'disable_log', 'disable_log', 'pkey', '1.0a100', null);
 commit;
 begin;
@@ -128,7 +129,8 @@ commit;
 begin;
 \echo business_profiles
 select add_schema_foreign_key('business_profiles', 'accounting', 'businesses', 'accounting', '1.0a100', null);
-select add_schema_foreign_key('business_profiles', 'country', 'country_codes', 'code', '1.0a100', null);
+select add_schema_foreign_key('business_profiles', 'country', 'country_codes', 'code', '1.0a100', '1.68');
+select add_schema_foreign_key('business_profiles', 'country', 'country_codes', 'code', '1.69', null);
 commit;
 begin;
 \echo businesses
@@ -147,10 +149,23 @@ select add_schema_foreign_key('credit_card_processors', 'encryption_from', 'encr
 select add_schema_foreign_key('credit_card_processors', 'encryption_recipient', 'encryption_keys', 'pkey', '1.31', null);
 commit;
 begin;
+\echo credit_card_transactions
+select add_schema_foreign_key('credit_card_transactions', 'accounting', 'businesses', 'accounting', '1.69', null);
+select add_schema_foreign_key('credit_card_transactions', 'authorization_username', 'business_administrators', 'username', '1.69', null);
+select add_schema_foreign_key('credit_card_transactions', 'capture_username', 'business_administrators', 'username', '1.69', null);
+select add_schema_foreign_key('credit_card_transactions', 'credit_card_accounting', 'businesses', 'accounting', '1.69', null);
+select add_schema_foreign_key('credit_card_transactions', 'credit_card_country_code', 'country_codes', 'code', '1.69', null);
+select add_schema_foreign_key('credit_card_transactions', 'credit_card_created_by', 'business_administrators', 'username', '1.69', null);
+select add_schema_foreign_key('credit_card_transactions', 'processor_id', 'credit_card_processors', 'provider_id', '1.69', null);
+select add_schema_foreign_key('credit_card_transactions', 'shipping_country_code', 'country_codes', 'code', '1.69', null);
+select add_schema_foreign_key('credit_card_transactions', 'void_username', 'business_administrators', 'username', '1.69', null);
+commit;
+begin;
 \echo credit_cards
 select add_schema_foreign_key('credit_cards', 'accounting', 'businesses', 'accounting', '1.0a100', null);
 select add_schema_foreign_key('credit_cards', 'processor_id', 'credit_card_processors', 'provider_id', '1.29', null);
-select add_schema_foreign_key('credit_cards', 'country_code', 'country_codes', 'code', '1.29', null);
+select add_schema_foreign_key('credit_cards', 'country_code', 'country_codes', 'code', '1.29', '1.68');
+select add_schema_foreign_key('credit_cards', 'country_code', 'country_codes', 'code', '1.69', null);
 select add_schema_foreign_key('credit_cards', 'created_by', 'business_administrators', 'username', '1.0a100', null);
 select add_schema_foreign_key('credit_cards', 'encryption_card_number_from', 'encryption_keys', 'pkey', '1.31', null);
 select add_schema_foreign_key('credit_cards', 'encryption_card_number_recipient', 'encryption_keys', 'pkey', '1.31', null);
@@ -168,7 +183,8 @@ commit;
 begin;
 \echo daemon_profile
 select add_schema_foreign_key('daemon_profile', 'server', 'servers', 'hostname', '1.0a100', '1.30');
-select add_schema_foreign_key('daemon_profile', 'ao_server', 'ao_servers', 'hostname', '1.31', null);
+select add_schema_foreign_key('daemon_profile', 'ao_server', 'ao_servers', 'hostname', '1.31', '1.68');
+select add_schema_foreign_key('daemon_profile', 'ao_server', 'ao_servers', 'hostname', '1.69', null);
 commit;
 begin;
 \echo disable_log
@@ -186,7 +202,8 @@ begin;
 \echo dns_records
 select add_schema_foreign_key('dns_records', 'zone', 'dns_zones', 'zone', '1.0a100', null);
 select add_schema_foreign_key('dns_records', 'type', 'dns_types', 'type', '1.0a100', null);
-select add_schema_foreign_key('dns_records', 'dhcp_address', 'ip_addresses', 'pkey', '1.0a100', null);
+select add_schema_foreign_key('dns_records', 'dhcp_address', 'ip_addresses', 'pkey', '1.0a100', '1.68');
+select add_schema_foreign_key('dns_records', 'dhcp_address', 'ip_addresses', 'pkey', '1.69', null);
 commit;
 begin;
 \echo dns_zones
@@ -266,7 +283,8 @@ select add_schema_foreign_key('failover_file_replications', 'server', 'servers',
 select add_schema_foreign_key('failover_file_replications', 'to_server', 'ao_servers', 'server', '1.0a100', '1.30');
 select add_schema_foreign_key('failover_file_replications', 'backup_partition', 'backup_partitions', 'pkey', '1.31', null);
 select add_schema_foreign_key('failover_file_replications', 'retention', 'backup_retentions', 'days', '1.13', null);
-select add_schema_foreign_key('failover_file_replications', 'quota_gid', 'linux_ids', 'id', '1.31', null);
+select add_schema_foreign_key('failover_file_replications', 'quota_gid', 'linux_ids', 'id', '1.31', '1.68');
+select add_schema_foreign_key('failover_file_replications', 'quota_gid', 'linux_ids', 'id', '1.69', null);
 commit;
 begin;
 \echo failover_file_schedule
@@ -531,7 +549,8 @@ begin;
 \echo linux_server_accounts
 select add_schema_foreign_key('linux_server_accounts', 'username', 'linux_accounts', 'username', '1.0a100', null);
 select add_schema_foreign_key('linux_server_accounts', 'ao_server', 'ao_servers', 'server', '1.0a100', null);
-select add_schema_foreign_key('linux_server_accounts', 'uid', 'linux_ids', 'id', '1.0a100', null);
+select add_schema_foreign_key('linux_server_accounts', 'uid', 'linux_ids', 'id', '1.0a100', '1.68');
+select add_schema_foreign_key('linux_server_accounts', 'uid', 'linux_ids', 'id', '1.69', null);
 select add_schema_foreign_key('linux_server_accounts', 'cron_backup_level', 'backup_levels', 'level', '1.0a100', '1.30');
 select add_schema_foreign_key('linux_server_accounts', 'cron_backup_retention', 'backup_retentions', 'days', '1.0a100', '1.30');
 select add_schema_foreign_key('linux_server_accounts', 'home_backup_level', 'backup_levels', 'level', '1.0a100', '1.30');
@@ -546,7 +565,8 @@ begin;
 \echo linux_server_groups
 select add_schema_foreign_key('linux_server_groups', 'name', 'linux_groups', 'name', '1.0a100', null);
 select add_schema_foreign_key('linux_server_groups', 'ao_server', 'ao_servers', 'server', '1.0a100', null);
-select add_schema_foreign_key('linux_server_groups', 'gid', 'linux_ids', 'id', '1.0a100', null);
+select add_schema_foreign_key('linux_server_groups', 'gid', 'linux_ids', 'id', '1.0a100', '1.68');
+select add_schema_foreign_key('linux_server_groups', 'gid', 'linux_ids', 'id', '1.69', null);
 commit;
 begin;
 \echo majordomo_lists
@@ -655,7 +675,8 @@ select add_schema_foreign_key('net_binds', 'package', 'packages', 'name', '1.0a1
 select add_schema_foreign_key('net_binds', 'ao_server', 'ao_servers', 'server', '1.0a100', '1.32');
 select add_schema_foreign_key('net_binds', 'server', 'servers', 'pkey', '1.33', null);
 select add_schema_foreign_key('net_binds', 'ip_address', 'ip_addresses', 'pkey', '1.0a100', null);
-select add_schema_foreign_key('net_binds', 'port', 'net_ports', 'port', '1.0a100', null);
+select add_schema_foreign_key('net_binds', 'port', 'net_ports', 'port', '1.0a100', '1.68');
+select add_schema_foreign_key('net_binds', 'port', 'net_ports', 'port', '1.69', null);
 select add_schema_foreign_key('net_binds', 'net_protocol', 'net_protocols', 'protocol', '1.0a100', null);
 select add_schema_foreign_key('net_binds', 'app_protocol', 'protocols', 'protocol', '1.0a100', null);
 select add_schema_foreign_key('net_binds', 'monitor_delay', 'net_monitoring_times', 'time', '1.0a100', '1.0a103');
@@ -677,14 +698,17 @@ select add_schema_foreign_key('net_devices', 'device_id', 'net_device_ids', 'nam
 commit;
 begin;
 \echo net_tcp_redirects
-select add_schema_foreign_key('net_tcp_redirects', 'net_bind', 'net_binds', 'pkey', '1.0a111', null);
-select add_schema_foreign_key('net_tcp_redirects', 'destination_port', 'net_ports', 'port', '1.0a111', null);
+select add_schema_foreign_key('net_tcp_redirects', 'net_bind', 'net_binds', 'pkey', '1.0a111', '1.68');
+select add_schema_foreign_key('net_tcp_redirects', 'net_bind', 'net_binds', 'pkey', '1.69', null);
+select add_schema_foreign_key('net_tcp_redirects', 'destination_port', 'net_ports', 'port', '1.0a111', '1.68');
+select add_schema_foreign_key('net_tcp_redirects', 'destination_port', 'net_ports', 'port', '1.69', null);
 commit;
 begin;
 \echo notice_log
 select add_schema_foreign_key('notice_log', 'accounting', 'businesses', 'accounting', '1.0a100', null);
 select add_schema_foreign_key('notice_log', 'notice_type', 'notice_types', 'type', '1.0a100', null);
-select add_schema_foreign_key('notice_log', 'transid', 'transactions', 'transid', '1.0a100', null);
+select add_schema_foreign_key('notice_log', 'transid', 'transactions', 'transid', '1.0a100', '1.68');
+select add_schema_foreign_key('notice_log', 'transid', 'transactions', 'transid', '1.69', null);
 commit;
 begin;
 \echo operating_system_versions
@@ -742,7 +766,8 @@ commit;
 begin;
 \echo postgres_server_users
 select add_schema_foreign_key('postgres_server_users', 'username', 'postgres_users', 'username', '1.0a100', null);
-select add_schema_foreign_key('postgres_server_users', 'postgres_server', 'postgres_servers', 'pkey', '1.0a100', null);
+select add_schema_foreign_key('postgres_server_users', 'postgres_server', 'postgres_servers', 'pkey', '1.0a100', '1.68');
+select add_schema_foreign_key('postgres_server_users', 'postgres_server', 'postgres_servers', 'pkey', '1.69', null);
 select add_schema_foreign_key('postgres_server_users', 'usesysid', 'linux_ids', 'id', '1.0a100', '1.0a130');
 select add_schema_foreign_key('postgres_server_users', 'disable_log', 'disable_log', 'pkey', '1.0a100', null);
 commit;
@@ -768,12 +793,14 @@ begin;
 \echo private_ftp_servers
 select add_schema_foreign_key('private_ftp_servers', 'ip_address', 'ip_addresses', 'pkey', '1.0a100', '1.0a112');
 select add_schema_foreign_key('private_ftp_servers', 'net_bind', 'net_binds', 'pkey', '1.0a113', null);
-select add_schema_foreign_key('private_ftp_servers', 'linux_server_account', 'linux_server_accounts', 'pkey', '1.0a100', null);
+select add_schema_foreign_key('private_ftp_servers', 'linux_server_account', 'linux_server_accounts', 'pkey', '1.0a100', '1.68');
+select add_schema_foreign_key('private_ftp_servers', 'linux_server_account', 'linux_server_accounts', 'pkey', '1.69', null);
 select add_schema_foreign_key('private_ftp_servers', 'linux_server_group', 'linux_server_groups', 'pkey', '1.0a100', '1.38');
 commit;
 begin;
 \echo protocols
-select add_schema_foreign_key('protocols', 'port', 'net_ports', 'port', '1.0a100', null);
+select add_schema_foreign_key('protocols', 'port', 'net_ports', 'port', '1.0a100', '1.68');
+select add_schema_foreign_key('protocols', 'port', 'net_ports', 'port', '1.69', null);
 select add_schema_foreign_key('protocols', 'net_protocol', 'net_protocols', 'protocol', '1.0a105', null);
 commit;
 begin;
@@ -803,6 +830,11 @@ begin;
 \echo schema_tables
 select add_schema_foreign_key('schema_tables', 'since_version', 'aoserv_protocols', 'version', '1.0a101', null);
 select add_schema_foreign_key('schema_tables', 'last_version', 'aoserv_protocols', 'version', '1.0a104', null);
+commit;
+begin;
+\echo schema_types
+select add_schema_foreign_key('schema_types', 'since_version', 'aoserv_protocols', 'version', '1.69', null);
+select add_schema_foreign_key('schema_types', 'last_version', 'aoserv_protocols', 'version', '1.69', null);
 commit;
 begin;
 \echo sendmail_smtp_stats
@@ -842,8 +874,10 @@ begin;
 select add_schema_foreign_key('signup_requests', 'accounting', 'businesses', 'accounting', '1.23', '1.43');
 select add_schema_foreign_key('signup_requests', 'brand', 'brands', 'accounting', '1.44', null);
 select add_schema_foreign_key('signup_requests', 'package_definition', 'package_definitions', 'pkey', '1.23', null);
-select add_schema_foreign_key('signup_requests', 'business_country', 'country_codes', 'code', '1.23', null);
-select add_schema_foreign_key('signup_requests', 'ba_country', 'country_codes', 'code', '1.23', null);
+select add_schema_foreign_key('signup_requests', 'business_country', 'country_codes', 'code', '1.23', '1.68');
+select add_schema_foreign_key('signup_requests', 'business_country', 'country_codes', 'code', '1.69', null);
+select add_schema_foreign_key('signup_requests', 'ba_country', 'country_codes', 'code', '1.23', '1.68');
+select add_schema_foreign_key('signup_requests', 'ba_country', 'country_codes', 'code', '1.69', null);
 select add_schema_foreign_key('signup_requests', 'encryption_from', 'encryption_keys', 'pkey', '1.31', null);
 select add_schema_foreign_key('signup_requests', 'encryption_key', 'encryption_keys', 'pkey', '1.23', '1.30');
 select add_schema_foreign_key('signup_requests', 'encryption_recipient', 'encryption_keys', 'pkey', '1.31', null);
@@ -949,8 +983,10 @@ begin;
 select add_schema_foreign_key('ticket_actions', 'ticket', 'tickets', 'pkey', '1.44', null);
 select add_schema_foreign_key('ticket_actions', 'administrator', 'business_administrators', 'username', '1.44', null);
 select add_schema_foreign_key('ticket_actions', 'action_type', 'ticket_action_types', 'type', '1.44', null);
-select add_schema_foreign_key('ticket_actions', 'old_accounting', 'businesses', 'accounting', '1.44', null);
-select add_schema_foreign_key('ticket_actions', 'new_accounting', 'businesses', 'accounting', '1.44', null);
+select add_schema_foreign_key('ticket_actions', 'old_accounting', 'businesses', 'accounting', '1.44', '1.68');
+select add_schema_foreign_key('ticket_actions', 'old_accounting', 'businesses', 'accounting', '1.69', null);
+select add_schema_foreign_key('ticket_actions', 'new_accounting', 'businesses', 'accounting', '1.44', '1.68');
+select add_schema_foreign_key('ticket_actions', 'new_accounting', 'businesses', 'accounting', '1.69', null);
 select add_schema_foreign_key('ticket_actions', 'old_priority', 'ticket_priorities', 'priority', '1.44', null);
 select add_schema_foreign_key('ticket_actions', 'new_priority', 'ticket_priorities', 'priority', '1.44', null);
 select add_schema_foreign_key('ticket_actions', 'old_type', 'ticket_types', 'type', '1.49', null);

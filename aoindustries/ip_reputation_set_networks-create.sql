@@ -10,7 +10,8 @@ create table ip_reputation_set_networks (
   "set" integer
     not null,
   network integer -- The big-endian 32-bit IP address, with zeroes in network range lower bits.
-    not null,
+    not null
+    check (network!=0),
   counter integer
     not null
     check (counter>0), -- Will be deleted once decays back to zero

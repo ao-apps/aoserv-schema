@@ -34,13 +34,14 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_server
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'is_mysql', 9, 'boolean', false, false, false, 'if is a MySQL server', '1.0a100', '1.3';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'is_router', 10, 'boolean', false, false, false, 'if is a router for networking', '1.0a100', '1.30';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'iptables_name', 11, 'string', false, true, false, 'a unique name for use as a iptables ruleset name', '1.0a100', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'hostname', 12, 'hostname', false, true, false, 'the unique hostname of the server', '1.31', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'daemon_bind', 13, 'fkey', true, false, false, 'the network bind info for the AOServ Daemon', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'hostname', 12, 'hostname', false, true, false, 'the unique hostname of the server', '1.31', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'hostname', 13, 'domain_name', false, true, false, 'the unique hostname of the server', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'daemon_bind', 14, 'fkey', true, false, false, 'the network bind info for the AOServ Daemon', '1.0a100', null;
 insert into schema_columns select
     nextval('schema_columns_pkey_seq'),
     'ao_servers',
     'daemon_key',
-    14,
+    15,
     'string',
     false,
     false,
@@ -49,33 +50,49 @@ insert into schema_columns select
 this info MUST be filtered because it grants
 complete control over the server.',
     '1.0a100',
+    '1.68'
+;
+insert into schema_columns select
+    nextval('schema_columns_pkey_seq'),
+    'ao_servers',
+    'daemon_key',
+    16,
+    'hashed_password',
+    false,
+    false,
+    false,
+'the hashed key used to connect to this server,
+this info MUST be filtered because it grants
+complete control over the server.',
+    '1.69',
     null
 ;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'pool_size', 15, 'int', false, false, false, 'the recommended connection pool size for the AOServ Master', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'distro_hour', 16, 'int', false, false, false, 'the hour the distribution will occur, in server time zone', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'last_distro_time', 17, 'time', true, false, false, 'the time the last distro check was started', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'failover_server', 18, 'fkey', true, false, false, 'the server that is currently running this server', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'server_report_delay', 19, 'int', false, false, false, 'the number of milliseconds between system resource polls', '1.0a100', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'server_report_interval', 20, 'int', false, false, false, 'the number of polls between database update', '1.0a100', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'is_qmail', 21, 'boolean', false, false, false, 'indicates that this server runs qmail, not sendmail', '1.0a100', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'daemon_device_id', 22, 'string', false, false, false, 'the device name the master connects to', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'xeroscape_name', 23, 'string', true, true, false, '', '1.0a100', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'value', 24, 'decimal_2', false, false, false, '', '1.0a100', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'monitoring_enabled', 25, 'boolean', false, false, false, 'indicates that this server should be monitored', '1.0a100', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'emailmon_password', 26, 'string', false, false, false, 'the password used for email monitoring', '1.0a104', '1.0a107';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'emailmon_password', 27, 'string', true, false, false, 'the password used for email monitoring', '1.0a108', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'ftpmon_password', 28, 'string', false, false, false, 'the password used for FTP monitoring', '1.0a104', '1.0a107';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'ftpmon_password', 29, 'string', true, false, false, 'the password used for FTP monitoring', '1.0a108', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'daemon_connect_bind', 30, 'fkey', true, false, false, 'the bind to connect to', '1.0a119', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'time_zone', 31, 'string', true, false, false, 'the time zone setting for the server', '1.2', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'jilter_bind', 32, 'fkey', true, false, false, 'the bind that sendmail uses to connect to jilter', '1.7', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'restrict_outbound_email', 33, 'boolean', false, false, false, 'controls if outbound email may only come from address hosted on this machine', '1.8', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'daemon_connect_address', 34, 'string', true, false, false, 'provides a specific address to use for connecting to AOServDaemon', '1.11', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'failover_batch_size', 35, 'int', false, false, false, 'the batch size used for failover replications coming from this server', '1.12', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'monitoring_load_low', 36, 'float', true, false, false, 'the 5-minute load average that will trigger a low-level alert', '1.35', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'monitoring_load_medium', 37, 'float', true, false, false, 'the 5-minute load average that will trigger a medium-level alert', '1.35', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'monitoring_load_high', 38, 'float', true, false, false, 'the 5-minute load average that will trigger a high-level alert', '1.35', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'monitoring_load_critical', 39, 'float', true, false, false, 'the 5-minute load average that will trigger a critical-level alert', '1.35', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'pool_size', 17, 'int', false, false, false, 'the recommended connection pool size for the AOServ Master', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'distro_hour', 18, 'int', false, false, false, 'the hour the distribution will occur, in server time zone', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'last_distro_time', 19, 'time', true, false, false, 'the time the last distro check was started', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'failover_server', 20, 'fkey', true, false, false, 'the server that is currently running this server', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'server_report_delay', 21, 'int', false, false, false, 'the number of milliseconds between system resource polls', '1.0a100', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'server_report_interval', 22, 'int', false, false, false, 'the number of polls between database update', '1.0a100', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'is_qmail', 23, 'boolean', false, false, false, 'indicates that this server runs qmail, not sendmail', '1.0a100', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'daemon_device_id', 24, 'string', false, false, false, 'the device name the master connects to', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'xeroscape_name', 25, 'string', true, true, false, '', '1.0a100', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'value', 26, 'decimal_2', false, false, false, '', '1.0a100', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'monitoring_enabled', 27, 'boolean', false, false, false, 'indicates that this server should be monitored', '1.0a100', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'emailmon_password', 28, 'string', false, false, false, 'the password used for email monitoring', '1.0a104', '1.0a107';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'emailmon_password', 29, 'string', true, false, false, 'the password used for email monitoring', '1.0a108', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'ftpmon_password', 30, 'string', false, false, false, 'the password used for FTP monitoring', '1.0a104', '1.0a107';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'ftpmon_password', 311, 'string', true, false, false, 'the password used for FTP monitoring', '1.0a108', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'daemon_connect_bind', 32, 'fkey', true, false, false, 'the bind to connect to', '1.0a119', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'time_zone', 33, 'string', true, false, false, 'the time zone setting for the server', '1.2', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'jilter_bind', 34, 'fkey', true, false, false, 'the bind that sendmail uses to connect to jilter', '1.7', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'restrict_outbound_email', 35, 'boolean', false, false, false, 'controls if outbound email may only come from address hosted on this machine', '1.8', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'daemon_connect_address', 36, 'string', true, false, false, 'provides a specific address to use for connecting to AOServDaemon', '1.11', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'daemon_connect_address', 37, 'hostname', true, false, false, 'provides a specific hostname or address to use for connecting to AOServDaemon', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'failover_batch_size', 38, 'int', false, false, false, 'the batch size used for failover replications coming from this server', '1.12', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'monitoring_load_low', 39, 'float', true, false, false, 'the 5-minute load average that will trigger a low-level alert', '1.35', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'monitoring_load_medium', 40, 'float', true, false, false, 'the 5-minute load average that will trigger a medium-level alert', '1.35', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'monitoring_load_high', 41, 'float', true, false, false, 'the 5-minute load average that will trigger a high-level alert', '1.35', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'monitoring_load_critical', 42, 'float', true, false, false, 'the 5-minute load average that will trigger a critical-level alert', '1.35', null;
 commit;
 begin;
 \echo aoserv_permissions
@@ -164,17 +181,18 @@ commit;
 begin;
 \echo bank_transactions
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'bank_transactions', 'time', 0, 'time', false, false, false, 'the time the transaction occured', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'bank_transactions', 'transid', 1, 'int', false, true, false, 'a unique identifier for the transaction', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'bank_transactions', 'bank_account', 2, 'string', false, false, false, 'the account the transaction is for', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'bank_transactions', 'merchant_account', 3, 'string', true, false, false, 'the merchant account the transaction is for', '1.0a100', '1.28';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'bank_transactions', 'processor', 4, 'string', true, false, false, 'the credit card processor used by this transaction', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'bank_transactions', 'administrator', 5, 'username', false, false, false, 'the business_administrator who made this transaction', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'bank_transactions', 'type', 6, 'string', false, false, false, 'the type of transaction', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'bank_transactions', 'expense_code', 7, 'string', true, false, false, 'the category in which this expense belongs', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'bank_transactions', 'description', 8, 'string', false, false, false, 'a description of the transaction', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'bank_transactions', 'check_no', 9, 'string', true, false, false, 'the check number (if available)', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'bank_transactions', 'amount', 10, 'decimal_2', false, false, false, 'the amount (negative for withdrawal)', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'bank_transactions', 'confirmed', 11, 'boolean', false, false, false, 'the confirmation status with bank', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'bank_transactions', 'transid', 1, 'int', false, true, false, 'a unique identifier for the transaction', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'bank_transactions', 'transid', 2, 'pkey', false, true, false, 'a unique identifier for the transaction', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'bank_transactions', 'bank_account', 3, 'string', false, false, false, 'the account the transaction is for', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'bank_transactions', 'merchant_account', 4, 'string', true, false, false, 'the merchant account the transaction is for', '1.0a100', '1.28';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'bank_transactions', 'processor', 5, 'string', true, false, false, 'the credit card processor used by this transaction', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'bank_transactions', 'administrator', 6, 'username', false, false, false, 'the business_administrator who made this transaction', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'bank_transactions', 'type', 7, 'string', false, false, false, 'the type of transaction', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'bank_transactions', 'expense_code', 8, 'string', true, false, false, 'the category in which this expense belongs', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'bank_transactions', 'description', 9, 'string', false, false, false, 'a description of the transaction', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'bank_transactions', 'check_no', 10, 'string', true, false, false, 'the check number (if available)', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'bank_transactions', 'amount', 11, 'decimal_2', false, false, false, 'the amount (negative for withdrawal)', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'bank_transactions', 'confirmed', 12, 'boolean', false, false, false, 'the confirmation status with bank', '1.0a100', null;
 commit;
 begin;
 \echo banks
@@ -188,69 +206,84 @@ commit;
 begin;
 \echo brands
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'accounting', 0, 'accounting', false, true, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'nameserver1', 1, 'hostname', false, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'nameserver2', 2, 'hostname', false, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'nameserver3', 3, 'hostname', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'nameserver4', 4, 'hostname', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'smtp_linux_server_account', 5, 'fkey', false, true, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'smtp_host', 6, 'hostname', true, false, false, '', '1.46', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'smtp_password', 7, 'string', false, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'imap_linux_server_account', 8, 'fkey', false, true, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'imap_host', 9, 'hostname', true, false, false, '', '1.46', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'imap_password', 10, 'string', false, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'support_email_address', 11, 'fkey', false, true, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'support_email_display', 12, 'string', false, true, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'signup_email_address', 13, 'fkey', false, true, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'signup_email_display', 14, 'string', false, true, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'ticket_encryption_from', 15, 'fkey', false, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'ticket_encryption_recipient', 16, 'fkey', false, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'signup_encryption_from', 17, 'fkey', false, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'signup_encryption_recipient', 18, 'fkey', false, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'support_toll_free', 19, 'string', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'support_day_phone', 20, 'string', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'support_emergency_phone1', 21, 'string', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'support_emergency_phone2', 22, 'string', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'support_fax', 23, 'string', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'support_mailing_address1', 24, 'string', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'support_mailing_address2', 25, 'string', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'support_mailing_address3', 26, 'string', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'support_mailing_address4', 27, 'string', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'english_enabled', 28, 'boolean', false, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'japanese_enabled', 29, 'boolean', false, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'aoweb_struts_http_url_base', 30, 'string', false, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'aoweb_struts_https_url_base', 31, 'string', false, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'aoweb_struts_google_verify_content', 32, 'string', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'aoweb_struts_noindex', 33, 'boolean', false, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'aoweb_struts_google_analytics_new_tracking_code', 34, 'string', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'aoweb_struts_signup_admin_address', 35, 'string', false, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'aoweb_struts_vnc_bind', 36, 'fkey', false, true, false, '', '1.52', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'aoweb_struts_keystore_type', 37, 'string', false, false, false, '', '1.53', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'aoweb_struts_keystore_password', 38, 'string', false, false, false, '', '1.53', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'nameserver1', 1, 'hostname', false, false, false, '', '1.44', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'nameserver1', 2, 'domain_name', false, false, false, '', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'nameserver2', 3, 'hostname', false, false, false, '', '1.44', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'nameserver2', 4, 'domain_name', false, false, false, '', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'nameserver3', 5, 'hostname', true, false, false, '', '1.44', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'nameserver3', 6, 'domain_name', true, false, false, '', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'nameserver4', 7, 'hostname', true, false, false, '', '1.44', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'nameserver4', 8, 'domain_name', true, false, false, '', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'smtp_linux_server_account', 9, 'fkey', false, true, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'smtp_host', 10, 'hostname', true, false, false, '', '1.46', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'smtp_password', 11, 'string', false, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'imap_linux_server_account', 12, 'fkey', false, true, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'imap_host', 13, 'hostname', true, false, false, '', '1.46', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'imap_password', 14, 'string', false, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'support_email_address', 15, 'fkey', false, true, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'support_email_display', 16, 'string', false, true, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'signup_email_address', 17, 'fkey', false, true, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'signup_email_display', 18, 'string', false, true, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'ticket_encryption_from', 19, 'fkey', false, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'ticket_encryption_recipient', 20, 'fkey', false, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'signup_encryption_from', 21, 'fkey', false, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'signup_encryption_recipient', 22, 'fkey', false, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'support_toll_free', 23, 'string', true, false, false, '', '1.44', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'support_toll_free', 24, 'phone', true, false, false, '', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'support_day_phone', 25, 'string', true, false, false, '', '1.44', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'support_day_phone', 26, 'phone', true, false, false, '', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'support_emergency_phone1', 27, 'string', true, false, false, '', '1.44', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'support_emergency_phone1', 28, 'phone', true, false, false, '', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'support_emergency_phone2', 29, 'string', true, false, false, '', '1.44', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'support_emergency_phone2', 30, 'phone', true, false, false, '', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'support_fax', 31, 'string', true, false, false, '', '1.44', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'support_fax', 32, 'phone', true, false, false, '', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'support_mailing_address1', 33, 'string', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'support_mailing_address2', 34, 'string', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'support_mailing_address3', 35, 'string', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'support_mailing_address4', 36, 'string', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'english_enabled', 37, 'boolean', false, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'japanese_enabled', 38, 'boolean', false, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'aoweb_struts_http_url_base', 39, 'string', false, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'aoweb_struts_https_url_base', 40, 'string', false, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'aoweb_struts_google_verify_content', 41, 'string', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'aoweb_struts_noindex', 42, 'boolean', false, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'aoweb_struts_google_analytics_new_tracking_code', 43, 'string', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'aoweb_struts_signup_admin_address', 44, 'string', false, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'aoweb_struts_vnc_bind', 45, 'fkey', false, true, false, '', '1.52', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'aoweb_struts_keystore_type', 46, 'string', false, false, false, '', '1.53', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'brands', 'aoweb_struts_keystore_password', 47, 'string', false, false, false, '', '1.53', null;
 commit;
 begin;
 \echo business_administrators
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'username', 0, 'username', false, true, false, 'the unique identifier for this admin', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'password', 1, 'string', false, false, false, 'the encrypted password for this admin', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'name', 2, 'string', false, false, false, 'the name of this admin', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'title', 3, 'string', true, false, false, 'the admins title within their organization', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'birthday', 4, 'time', true, false, false, 'the admins birthday', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'is_preferred', 5, 'boolean', false, false, false, 'if true, customers is preferred', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'private', 6, 'boolean', false, false, false, 'indicates if the admin should not be listed in publicly available lists', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'created', 7, 'time', false, false, false, 'the time the admin entry was created', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'work_phone', 8, 'phone', false, false, false, 'the work phone number (if different than business)', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'home_phone', 9, 'phone', true, false, false, 'the home phone number', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'cell_phone', 10, 'phone', true, false, false, 'the cellular phone number', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'fax', 11, 'phone', true, false, false, 'the fax number (if different than business)', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'email', 12, 'email', false, false, false, 'the email address', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'address1', 13, 'string', true, false, false, 'the street address (if different than business)', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'address2', 14, 'string', true, false, false, 'the street address (if different than business)', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'city', 15, 'city', true, false, false, 'the city (if different than business)', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'state', 16, 'state', true, false, false, 'the state (if different than business)', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'country', 17, 'country', true, false, false, 'the country (if different than business)', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'zip', 18, 'zip', true, false, false, 'the zip code (if different than business)', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'disable_log', 19, 'fkey', true, false, false, 'indicates that this account is disabled', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'can_switch_users', 20, 'boolean', false, false, false, 'allows this person to switch users to any subaccounts', '1.0a118', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'support_code', 21, 'string', true, true, false, 'used to authenticate for email-based supprt', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'password', 1, 'string', false, false, false, 'the encrypted password for this admin', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'password', 2, 'hashed_password', true, false, false, 'the encrypted password for this admin', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'name', 3, 'string', false, false, false, 'the name of this admin', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'title', 4, 'string', true, false, false, 'the admins title within their organization', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'birthday', 5, 'time', true, false, false, 'the admins birthday', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'birthday', 6, 'date', true, false, false, 'the admins birthday', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'is_preferred', 7, 'boolean', false, false, false, 'if true, customers is preferred', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'private', 8, 'boolean', false, false, false, 'indicates if the admin should not be listed in publicly available lists', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'created', 9, 'time', false, false, false, 'the time the admin entry was created', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'work_phone', 10, 'phone', false, false, false, 'the work phone number (if different than business)', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'home_phone', 11, 'phone', true, false, false, 'the home phone number', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'cell_phone', 12, 'phone', true, false, false, 'the cellular phone number', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'fax', 13, 'phone', true, false, false, 'the fax number (if different than business)', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'email', 14, 'email', false, false, false, 'the email address', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'address1', 15, 'string', true, false, false, 'the street address (if different than business)', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'address2', 16, 'string', true, false, false, 'the street address (if different than business)', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'city', 17, 'city', true, false, false, 'the city (if different than business)', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'city', 18, 'string', true, false, false, 'the city (if different than business)', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'state',            19, 'state', true, false, false, 'the state (if different than business)', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'state',            20, 'string', true, false, false, 'the state (if different than business)', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'country',          21, 'country', true, false, false, 'the country (if different than business)', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'country',          22, 'string', true, false, false, 'the country (if different than business)', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'zip',              23, 'zip', true, false, false, 'the zip code (if different than business)', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'zip',              24, 'string', true, false, false, 'the zip code (if different than business)', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'disable_log',      25, 'fkey', true, false, false, 'indicates that this account is disabled', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'can_switch_users', 26, 'boolean', false, false, false, 'allows this person to switch users to any subaccounts', '1.0a118', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_administrators', 'support_code',     27, 'string', true, true, false, 'used to authenticate for email-based supprt', '1.44', null;
 commit;
 begin;
 \echo business_administrator_permissions
@@ -282,16 +315,20 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_profiles', 'fax', 6, 'phone', true, false, false, 'the fax number', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_profiles', 'address1', 7, 'string', false, false, false, 'the street address of the business', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_profiles', 'address2', 8, 'string', true, false, false, 'the street address of the business', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_profiles', 'city', 9, 'city', false, false, false, 'the city', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_profiles', 'state', 10, 'state', true, false, false, 'the state or providence', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_profiles', 'country', 11, 'country', false, false, false, 'the two-character country code', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_profiles', 'zip', 12, 'zip', true, false, false, 'the zip code', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_profiles', 'send_invoice', 13, 'boolean', false, false, false, 'indicates to send a monthly invoice via regular mail', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_profiles', 'created', 14, 'time', false, false, false, 'the time this entry was created', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_profiles', 'billing_contact', 15, 'string', false, false, false, 'the name to contact for billing information', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_profiles', 'billing_email', 16, 'string', false, false, false, 'the email address to notify for billing', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_profiles', 'technical_contact', 17, 'string', false, false, false, 'the name to contact for technical information', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_profiles', 'technical_email', 18, 'string', false, false, false, 'the email address to notify for technical', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_profiles', 'city',               9, 'city', false, false, false, 'the city', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_profiles', 'city',              10, 'string', false, false, false, 'the city', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_profiles', 'state',             11, 'state', true, false, false, 'the state or providence', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_profiles', 'state',             12, 'string', true, false, false, 'the state or providence', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_profiles', 'country',           13, 'country', false, false, false, 'the two-character country code', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_profiles', 'country',           14, 'string', false, false, false, 'the two-character country code', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_profiles', 'zip',               15, 'zip', true, false, false, 'the zip code', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_profiles', 'zip',               16, 'string', true, false, false, 'the zip code', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_profiles', 'send_invoice',      17, 'boolean', false, false, false, 'indicates to send a monthly invoice via regular mail', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_profiles', 'created',           18, 'time', false, false, false, 'the time this entry was created', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_profiles', 'billing_contact',   19, 'string', false, false, false, 'the name to contact for billing information', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_profiles', 'billing_email',     20, 'string', false, false, false, 'the email address to notify for billing', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_profiles', 'technical_contact', 21, 'string', false, false, false, 'the name to contact for technical information', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_profiles', 'technical_email',   22, 'string', false, false, false, 'the email address to notify for technical', '1.0a100', null;
 commit;
 begin;
 \echo businesses
@@ -380,10 +417,11 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'client_jv
 commit;
 begin;
 \echo country_codes
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'country_codes', 'code', 0, 'country', false, true, true, 'the two-character code for the country', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'country_codes', 'name', 1, 'string', false, false, true, 'the name of the country', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'country_codes', 'charge_com_supported', 2, 'boolean', false, false, true, 'if the country is supported by Charge.Com', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'country_codes', 'charge_com_name', 3, 'string', true, false, true, 'the Charge.Com specific name', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'country_codes', 'code', 0, 'country', false, true, true, 'the two-character code for the country', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'country_codes', 'code', 1, 'string', false, true, true, 'the two-character code for the country', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'country_codes', 'name', 2, 'string', false, false, true, 'the name of the country', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'country_codes', 'charge_com_supported', 3, 'boolean', false, false, true, 'if the country is supported by Charge.Com', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'country_codes', 'charge_com_name', 4, 'string', true, false, true, 'the Charge.Com specific name', '1.0a100', null;
 commit;
 begin;
 \echo credit_card_processors
@@ -423,72 +461,80 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_ca
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'shipping_last_name', 18, 'string', true, false, false, 'the shipping last name', '1.29', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'shipping_company_name', 19, 'string', true, false, false, 'the shipping company name', '1.29', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'shipping_street_address1', 20, 'string', true, false, false, 'the shipping address line 1', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'shipping_street_address2', 21, 'string', true, false, false, 'the shipping address line 2', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'shipping_city', 22, 'city', true, false, false, 'the shipping city', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'shipping_state', 23, 'state', true, false, false, 'the shipping state', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'shipping_postal_code', 24, 'zip', true, false, false, 'the shipping postal code', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'shipping_country_code', 25, 'country', true, false, false, 'the shipping two-digit ISO 3166-1 alpha-2 country code', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'email_customer', 26, 'boolean', false, false, false, 'the flag indicating the API should generate an email to the customer', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'merchant_email', 27, 'email', true, false, false, 'the email address of the merchant', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'invoice_number', 28, 'string', true, false, false, 'the merchant-provided invoice number', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'purchase_order_number', 29, 'string', true, false, false, 'the merchant-provided purchase order number', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'description', 30, 'string', true, false, false, 'the merchant-provided description of this transaction', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_created_by', 31, 'username', false, false, false, 'the business administrator account that provided this credit card', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_principal_name', 32, 'string', true, false, false, 'the application-provided principal who provided this credit card', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_accounting', 33, 'accounting', false, false, false, 'the accounting code of the business that provided this credit card', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_group_name', 34, 'string', true, false, false, 'any application-specific grouping', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_provider_unique_id', 35, 'string', true, false, false, 'the unique ID provided by the merchant services provider storage mechanism', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_masked_card_number', 36, 'string', false, false, false, 'the masked card number', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_first_name', 37, 'string', false, false, false, 'the first name of the card holder', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_last_name', 38, 'string', false, false, false, 'the last name of the card holder', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_company_name', 39, 'string', true, false, false, 'the company name for the credit card', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_email', 40, 'email', true, false, false, 'the email address of the card holder', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_phone', 41, 'phone', true, false, false, 'the phone number of the card holder', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_fax', 42, 'phone', true, false, false, 'the fax number of the card holder', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_customer_tax_id', 43, 'string', true, false, false, 'the tax ID of the card holder', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_street_address1', 44, 'string', false, false, false, 'the street address of the card holder (line 1)', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_street_address2', 45, 'string', true, false, false, 'the street address of the card holder (line 2)', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_city', 46, 'city', false, false, false, 'the city of the card holder', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_state', 47, 'state', true, false, false, 'the state/province/prefecture of the card holder', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_postal_code', 48, 'zip', true, false, false, 'the postal code of the card holder', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_country_code', 49, 'country', false, false, false, 'the two-digit ISO 3166-1 alpha-2 country code of the card holder', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_comments', 50, 'string', true, false, false, 'any comments associated with the credit card', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_time', 51, 'time', false, false, false, 'the time the authorization was attempted', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_username', 52, 'username', false, false, false, 'the username of the business_administrator account that processed the transaction', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_principal_name', 53, 'string', true, false, false, 'an application-provided identity of the user who initiated the transaction', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_communication_result', 54, 'string', true, false, false, 'the authorization communication result', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_provider_error_code', 55, 'string', true, false, false, 'the provider-specific error code', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_error_code', 56, 'string', true, false, false, 'the provider-neutral error code', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_provider_error_message', 57, 'string', true, false, false, 'the provider-specific error message', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_provider_unique_id', 58, 'string', true, false, false, 'the per-provider unique ID', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_provider_approval_result', 59, 'string', true, false, false, 'the provider-specific approval result', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_approval_result', 60, 'string', true, false, false, 'the provider-neutral approval result', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_provider_decline_reason', 61, 'string', true, false, false, 'the provider-specific decline reason', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_decline_reason', 62, 'string', true, false, false, 'the provider-neutral decline reason', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_provider_review_reason', 63, 'string', true, false, false, 'the provider-specific review reason', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_review_reason', 64, 'string', true, false, false, 'the provider-neutral review reason', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_provider_cvv_result', 65, 'string', true, false, false, 'the provider-specific CVV result', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_cvv_result', 66, 'string', true, false, false, 'the provider-neutral CVV result', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_provider_avs_result', 67, 'string', true, false, false, 'the provider-specific AVS result', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_avs_result', 68, 'string', true, false, false, 'the provider-neutral AVS result', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_approval_code', 69, 'string', true, false, false, 'the approval code', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'capture_time', 70, 'time', true, false, false, 'the time the capture was attempted', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'capture_username', 71, 'username', true, false, false, 'the username of the business_administrator account that processed the capture', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'capture_principal_name', 72, 'string', true, false, false, 'an application-provided identity of the user who initiated the capture', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'capture_communication_result', 73, 'string', true, false, false, 'the capture communication result', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'capture_provider_error_code', 74, 'string', true, false, false, 'the provider-specific error code', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'capture_error_code', 75, 'string', true, false, false, 'the provider-neutral error code', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'capture_provider_error_message', 76, 'string', true, false, false, 'the provider-specific error message', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'capture_provider_unique_id', 77, 'string', true, false, false, 'the per-provider unique ID', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'void_time', 78, 'time', true, false, false, 'the time the void was attempted', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'void_username', 79, 'username', true, false, false, 'the username of the business_administrator account that processed the void', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'void_principal_name', 80, 'string', true, false, false, 'an application-provided identity of the user who initiated the void', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'void_communication_result', 81, 'string', true, false, false, 'the void communication result', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'void_provider_error_code', 82, 'string', true, false, false, 'the provider-specific error code', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'void_error_code', 83, 'string', true, false, false, 'the provider-neutral error code', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'void_provider_error_message', 84, 'string', true, false, false, 'the provider-specific error message', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'void_provider_unique_id', 85, 'string', true, false, false, 'the per-provider unique ID', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'status', 86, 'string', false, false, false, 'the status of the transaction', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'shipping_street_address2',               21, 'string', true, false, false, 'the shipping address line 2', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'shipping_city',                          22, 'city', true, false, false, 'the shipping city', '1.29', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'shipping_city',                          23, 'string', true, false, false, 'the shipping city', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'shipping_state',                         24, 'state', true, false, false, 'the shipping state', '1.29', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'shipping_state',                         25, 'string', true, false, false, 'the shipping state', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'shipping_postal_code',                   26, 'zip', true, false, false, 'the shipping postal code', '1.29', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'shipping_postal_code',                   27, 'string', true, false, false, 'the shipping postal code', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'shipping_country_code',                  28, 'country', true, false, false, 'the shipping two-digit ISO 3166-1 alpha-2 country code', '1.29', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'shipping_country_code',                  29, 'string', true, false, false, 'the shipping two-digit ISO 3166-1 alpha-2 country code', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'email_customer',                         30, 'boolean', false, false, false, 'the flag indicating the API should generate an email to the customer', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'merchant_email',                         31, 'email', true, false, false, 'the email address of the merchant', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'invoice_number',                         32, 'string', true, false, false, 'the merchant-provided invoice number', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'purchase_order_number',                  33, 'string', true, false, false, 'the merchant-provided purchase order number', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'description',                            34, 'string', true, false, false, 'the merchant-provided description of this transaction', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_created_by',                 35, 'username', false, false, false, 'the business administrator account that provided this credit card', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_principal_name',             36, 'string', true, false, false, 'the application-provided principal who provided this credit card', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_accounting',                 37, 'accounting', false, false, false, 'the accounting code of the business that provided this credit card', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_group_name',                 38, 'string', true, false, false, 'any application-specific grouping', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_provider_unique_id',         39, 'string', true, false, false, 'the unique ID provided by the merchant services provider storage mechanism', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_masked_card_number',         40, 'string', false, false, false, 'the masked card number', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_first_name',                 41, 'string', false, false, false, 'the first name of the card holder', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_last_name',                  42, 'string', false, false, false, 'the last name of the card holder', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_company_name',               43, 'string', true, false, false, 'the company name for the credit card', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_email',                      44, 'email', true, false, false, 'the email address of the card holder', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_phone',                      45, 'phone', true, false, false, 'the phone number of the card holder', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_fax',                        46, 'phone', true, false, false, 'the fax number of the card holder', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_customer_tax_id',            47, 'string', true, false, false, 'the tax ID of the card holder', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_street_address1',            48, 'string', false, false, false, 'the street address of the card holder (line 1)', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_street_address2',            49, 'string', true, false, false, 'the street address of the card holder (line 2)', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_city',                       50, 'city', false, false, false, 'the city of the card holder', '1.29', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_city',                       51, 'string', false, false, false, 'the city of the card holder', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_state',                      52, 'state', true, false, false, 'the state/province/prefecture of the card holder', '1.29', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_state',                      53, 'string', true, false, false, 'the state/province/prefecture of the card holder', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_postal_code',                54, 'zip', true, false, false, 'the postal code of the card holder', '1.29', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_postal_code',                55, 'string', true, false, false, 'the postal code of the card holder', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_country_code',               56, 'country', false, false, false, 'the two-digit ISO 3166-1 alpha-2 country code of the card holder', '1.29', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_country_code',               57, 'string', false, false, false, 'the two-digit ISO 3166-1 alpha-2 country code of the card holder', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'credit_card_comments',                   58, 'string', true, false, false, 'any comments associated with the credit card', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_time',                     59, 'time', false, false, false, 'the time the authorization was attempted', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_username',                 60, 'username', false, false, false, 'the username of the business_administrator account that processed the transaction', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_principal_name',           61, 'string', true, false, false, 'an application-provided identity of the user who initiated the transaction', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_communication_result',     62, 'string', true, false, false, 'the authorization communication result', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_provider_error_code',      63, 'string', true, false, false, 'the provider-specific error code', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_error_code',               64, 'string', true, false, false, 'the provider-neutral error code', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_provider_error_message',   65, 'string', true, false, false, 'the provider-specific error message', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_provider_unique_id',       66, 'string', true, false, false, 'the per-provider unique ID', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_provider_approval_result', 67, 'string', true, false, false, 'the provider-specific approval result', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_approval_result',          68, 'string', true, false, false, 'the provider-neutral approval result', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_provider_decline_reason',  69, 'string', true, false, false, 'the provider-specific decline reason', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_decline_reason',           70, 'string', true, false, false, 'the provider-neutral decline reason', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_provider_review_reason',   71, 'string', true, false, false, 'the provider-specific review reason', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_review_reason',            72, 'string', true, false, false, 'the provider-neutral review reason', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_provider_cvv_result',      73, 'string', true, false, false, 'the provider-specific CVV result', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_cvv_result',               74, 'string', true, false, false, 'the provider-neutral CVV result', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_provider_avs_result',      75, 'string', true, false, false, 'the provider-specific AVS result', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_avs_result',               76, 'string', true, false, false, 'the provider-neutral AVS result', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'authorization_approval_code',            77, 'string', true, false, false, 'the approval code', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'capture_time',                           78, 'time', true, false, false, 'the time the capture was attempted', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'capture_username',                       79, 'username', true, false, false, 'the username of the business_administrator account that processed the capture', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'capture_principal_name',                 80, 'string', true, false, false, 'an application-provided identity of the user who initiated the capture', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'capture_communication_result',           81, 'string', true, false, false, 'the capture communication result', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'capture_provider_error_code',            82, 'string', true, false, false, 'the provider-specific error code', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'capture_error_code',                     83, 'string', true, false, false, 'the provider-neutral error code', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'capture_provider_error_message',         84, 'string', true, false, false, 'the provider-specific error message', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'capture_provider_unique_id',             85, 'string', true, false, false, 'the per-provider unique ID', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'void_time',                              86, 'time', true, false, false, 'the time the void was attempted', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'void_username',                          87, 'username', true, false, false, 'the username of the business_administrator account that processed the void', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'void_principal_name',                    88, 'string', true, false, false, 'an application-provided identity of the user who initiated the void', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'void_communication_result',              89, 'string', true, false, false, 'the void communication result', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'void_provider_error_code',               90, 'string', true, false, false, 'the provider-specific error code', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'void_error_code',                        91, 'string', true, false, false, 'the provider-neutral error code', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'void_provider_error_message',            92, 'string', true, false, false, 'the provider-specific error message', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'void_provider_unique_id',                93, 'string', true, false, false, 'the per-provider unique ID', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_card_transactions', 'status',                                 94, 'string', false, false, false, 'the status of the transaction', '1.29', null;
 commit;
 begin;
 \echo credit_cards
@@ -512,28 +558,32 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_ca
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'street_address', 17, 'string', false, false, false, 'the encrypted card holders street address', '1.0a100', '1.28';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'street_address1', 18, 'string', false, false, false, 'the first line of the street address', '1.29', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'street_address2', 19, 'string', true, false, false, 'the second line of the street address', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'city', 20, 'city', false, false, false, 'the encrypted card holders city', '1.0a100', '1.28';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'city', 21, 'city', false, false, false, 'the card holders city', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'state', 22, 'state', true, false, false, 'the encrypted card holders state, null indicates out of country', '1.0a100', '1.28';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'state', 23, 'state', true, false, false, 'the card holders state', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'zip', 24, 'zip', true, false, false, 'the encrypted card holders zip code', '1.0a100', '1.28';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'postal_code', 25, 'zip', true, false, false, 'the card holders postal code', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'country_code', 26, 'country', false, false, false, 'the two-character country code', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'created', 27, 'time', false, false, false, 'the time the card was added to the database', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'created_by', 28, 'username', false, false, false, 'the business_administrator who added the card to the database', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'principal_name', 29, 'string', true, false, false, 'the application-provided principal name of the person added the card to the database', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'use_monthly', 30, 'boolean', false, false, false, 'if <code>true</code> the card will be used monthly', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'active', 31, 'boolean', false, false, false, 'if <code>true</code> the card is currently active', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'deactivated_on', 32, 'time', true, false, false, 'the time the card was deactivated', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'deactivate_reason', 33, 'string', true, false, false, 'the reason the card was deactivated', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'priority', 34, 'int', false, false, false, 'the priority of the card, lower is used first', '1.0a100', '1.28';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'description', 35, 'string', true, false, false, 'any comment or description', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'encrypted_card_number', 36, 'string', true, false, false, 'the card number stored encrypted', '1.31', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'encryption_card_number_from', 37, 'fkey', true, false, false, 'the from that was used for card number encryption', '1.31', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'encryption_card_number_recipient', 38, 'fkey', true, false, false, 'the recipient that was used for card number encryption', '1.31', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'encrypted_expiration', 39, 'string', true, false, false, 'the expiration stored encrypted', '1.31', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'encryption_expiration_from', 40, 'fkey', true, false, false, 'the from that was used for expiration encryption', '1.31', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'encryption_expiration_recipient', 41, 'fkey', true, false, false, 'the recipient that was used for expiration encryption', '1.31', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'city',            20, 'city', false, false, false, 'the encrypted card holders city', '1.0a100', '1.28';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'city',            21, 'city', false, false, false, 'the card holders city', '1.29', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'city',            22, 'string', false, false, false, 'the card holders city', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'state',           23, 'state', true, false, false, 'the encrypted card holders state, null indicates out of country', '1.0a100', '1.28';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'state',           24, 'state', true, false, false, 'the card holders state', '1.29', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'state',           25, 'string', true, false, false, 'the card holders state', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'zip',             26, 'zip', true, false, false, 'the encrypted card holders zip code', '1.0a100', '1.28';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'postal_code',     27, 'zip', true, false, false, 'the card holders postal code', '1.29', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'postal_code',     28, 'string', true, false, false, 'the card holders postal code', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'country_code',    29, 'country', false, false, false, 'the two-character country code', '1.29', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'country_code',    30, 'string', false, false, false, 'the two-character country code', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'created',         31, 'time', false, false, false, 'the time the card was added to the database', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'created_by',      32, 'username', false, false, false, 'the business_administrator who added the card to the database', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'principal_name',  33, 'string', true, false, false, 'the application-provided principal name of the person added the card to the database', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'use_monthly',     34, 'boolean', false, false, false, 'if <code>true</code> the card will be used monthly', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'active',          35, 'boolean', false, false, false, 'if <code>true</code> the card is currently active', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'deactivated_on',                   36, 'time', true, false, false, 'the time the card was deactivated', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'deactivate_reason',                37, 'string', true, false, false, 'the reason the card was deactivated', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'priority',                         38, 'int', false, false, false, 'the priority of the card, lower is used first', '1.0a100', '1.28';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'description',                      39, 'string', true, false, false, 'any comment or description', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'encrypted_card_number',            40, 'string', true, false, false, 'the card number stored encrypted', '1.31', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'encryption_card_number_from',      41, 'fkey', true, false, false, 'the from that was used for card number encryption', '1.31', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'encryption_card_number_recipient', 42, 'fkey', true, false, false, 'the recipient that was used for card number encryption', '1.31', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'encrypted_expiration',             43, 'string', true, false, false, 'the expiration stored encrypted', '1.31', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'encryption_expiration_from',       44, 'fkey', true, false, false, 'the from that was used for expiration encryption', '1.31', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'credit_cards', 'encryption_expiration_recipient',  45, 'fkey', true, false, false, 'the recipient that was used for expiration encryption', '1.31', null;
 commit;
 begin;
 \echo cvs_repositories
@@ -550,15 +600,16 @@ commit;
 begin;
 \echo daemon_profile
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'server', 0, 'hostname', false, false, false, '', '1.0a100', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'ao_server', 1, 'hostname', false, false, false, '', '1.31', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'level', 2, 'int', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'classname', 3, 'string', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'method_name', 4, 'string', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'parameter', 5, 'string', true, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'use_count', 6, 'long', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'total_time', 7, 'interval', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'min_time', 8, 'interval', true, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'max_time', 9, 'interval', true, false, false, '', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'ao_server', 1, 'hostname', false, false, false, '', '1.31', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'ao_server', 2, 'domain_name', false, false, false, '', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'level', 3, 'int', false, false, false, '', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'classname', 4, 'string', false, false, false, '', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'method_name', 5, 'string', false, false, false, '', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'parameter', 6, 'string', true, false, false, '', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'use_count', 7, 'long', false, false, false, '', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'total_time', 8, 'interval', false, false, false, '', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'min_time', 9, 'interval', true, false, false, '', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'max_time', 10, 'interval', true, false, false, '', '1.0a100', null;
 commit;
 begin;
 \echo disable_log
@@ -603,17 +654,20 @@ begin;
 \echo dns_records
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'pkey', 0, 'pkey', false, true, false, 'a generated pkey', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'zone', 1, 'zone', false, false, false, 'the zone as found in dns_zones', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'domain', 2, 'hostname', false, false, false, 'the first column in the zone files', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'type', 3, 'string', false, false, false, 'the type as found in dns_types', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'mx_priority', 4, 'int', true, false, false, 'the priority for the MX entries', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'destination', 5, 'string', false, false, false, 'the destination, either IP addredd or hostname depending on the type of record', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'dhcp_address', 6, 'int', true, false, false, 'the pkey of the IP address whos changes are followed', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'ttl', 7, 'int', true, false, false, '', '1.0a127', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'domain', 2, 'hostname', false, false, false, 'the first column in the zone files', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'domain', 3, 'string', false, false, false, 'the first column in the zone files', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'type', 4, 'string', false, false, false, 'the type as found in dns_types', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'mx_priority', 5, 'int', true, false, false, 'the priority for the MX entries', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'destination', 6, 'string', false, false, false, 'the destination, either IP addredd or hostname depending on the type of record', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'dhcp_address', 7, 'int', true, false, false, 'the pkey of the IP address whos changes are followed', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'dhcp_address', 8, 'fkey', true, false, false, 'the pkey of the IP address whos changes are followed', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'ttl', 9, 'int', true, false, false, '', '1.0a127', null;
 commit;
 begin;
 \echo dns_tlds
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_tlds', 'domain', 0, 'hostname', false, true, true, 'the domain', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_tlds', 'description', 1, 'string', false, false, true, '', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_tlds', 'domain', 0, 'hostname', false, true, true, 'the domain', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_tlds', 'domain', 1, 'domain_name', false, true, true, 'the domain', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_tlds', 'description', 2, 'string', false, false, true, '', '1.0a100', null;
 commit;
 begin;
 \echo dns_types
@@ -660,9 +714,10 @@ commit;
 begin;
 \echo email_domains
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_domains', 'pkey', 0, 'pkey', false, true, false, 'a generated unique key', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_domains', 'domain', 1, 'hostname', false, false, false, 'the domain that is hosted in the email', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_domains', 'ao_server', 2, 'fkey', false, false, false, 'the pkey of the server that is hosting the email', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_domains', 'package', 3, 'package', false, false, false, 'the owner of the domain', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_domains', 'domain', 1, 'hostname', false, false, false, 'the domain that is hosted in the email', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_domains', 'domain', 2, 'domain_name', false, false, false, 'the domain that is hosted in the email', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_domains', 'ao_server', 3, 'fkey', false, false, false, 'the pkey of the server that is hosting the email', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_domains', 'package', 4, 'package', false, false, false, 'the owner of the domain', '1.0a100', null;
 commit;
 begin;
 \echo email_forwarding
@@ -713,13 +768,14 @@ begin;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_relays', 'pkey', 0, 'pkey', false, true, false, 'a generated unique key', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_relays', 'package', 1, 'package', false, false, false, 'the package that owns this entry', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_relays', 'ao_server', 2, 'fkey', true, false, false, 'the pkey of the server that the rule applies to', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_relays', 'host', 3, 'string', false, false, false, 'the hostname or IP the rule applies to', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_relays', 'type', 4, 'string', false, false, false, 'the type of entry', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_relays', 'created', 5, 'time', false, false, false, 'the time the entry was created', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_relays', 'last_refreshed', 6, 'time', false, false, false, 'the time the entry was last updated', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_relays', 'refresh_count', 7, 'int', false, false, false, 'the number of times the entry has been updated', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_relays', 'expiration', 8, 'time', true, false, false, 'the expiration time of the entry, or null if non-expiring', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_relays', 'disable_log', 9, 'fkey', true, false, false, 'indicates that the rule is disabled', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_relays', 'host', 3, 'string', false, false, false, 'the hostname or IP the rule applies to', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_relays', 'host', 4, 'hostname', false, false, false, 'the hostname or IP the rule applies to', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_relays', 'type', 5, 'string', false, false, false, 'the type of entry', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_relays', 'created', 6, 'time', false, false, false, 'the time the entry was created', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_relays', 'last_refreshed', 8, 'time', false, false, false, 'the time the entry was last updated', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_relays', 'refresh_count', 9, 'int', false, false, false, 'the number of times the entry has been updated', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_relays', 'expiration', 10, 'time', true, false, false, 'the expiration time of the entry, or null if non-expiring', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_relays', 'disable_log', 11, 'fkey', true, false, false, 'indicates that the rule is disabled', '1.0a100', null;
 commit;
 begin;
 \echo email_smtp_smart_hosts
@@ -733,9 +789,10 @@ begin;
 \echo email_smtp_smart_host_domains
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_smart_host_domains', 'pkey', 0, 'pkey', false, true, false, 'a generated unique key', '1.57', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_smart_host_domains', 'smart_host', 1, 'fkey', false, false, false, 'the Smart Host that is being configured', '1.57', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_smart_host_domains', 'domain', 2, 'hostname', false, false, false, 'the specific domain that is being configured', '1.57', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_smart_host_domains', 'domain_out_burst', 3, 'int', true, false, false, 'the domain-specific email burst limit, null means unlimited', '1.57', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_smart_host_domains', 'domain_out_rate', 4, 'float', true, false, false, 'the domain-specific email rate, null means unlimited', '1.57', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_smart_host_domains', 'domain', 2, 'hostname', false, false, false, 'the specific domain that is being configured', '1.57', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_smart_host_domains', 'domain', 3, 'domain_name', false, false, false, 'the specific domain that is being configured', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_smart_host_domains', 'domain_out_burst', 4, 'int', true, false, false, 'the domain-specific email burst limit, null means unlimited', '1.57', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_smart_host_domains', 'domain_out_rate', 5, 'float', true, false, false, 'the domain-specific email rate, null means unlimited', '1.57', null;
 commit;
 begin;
 \echo email_sa_integration_modes
@@ -782,12 +839,15 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'last_start_time', 7, 'time', true, false, false, 'the last time the replication was started or null if never ran', '1.0a100', '1.30';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'use_compression', 8, 'boolean', false, false, false, 'when compression is enabled, chunk mode is used on mirroring, resulting in more CPU and disk, but less bandwidth', '1.9', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'retention', 9, 'short', false, false, false, 'the number of days backups will be kept', '1.13', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'connect_address', 10, 'string', true, false, false, 'an address that overrides regular AOServ connections for failovers', '1.14', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'connect_from', 11, 'string', true, false, false, 'an address that overrides regular AOServ connection source addresses for failovers', '1.22', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'enabled', 12, 'boolean', false, false, false, 'the enabled flag for failovers', '1.15', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'to_path', 13, 'string', false, false, false, 'the destination path for the replication', '1.17','1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'chunk_always', 14, 'boolean', false, false, false, 'when true chunking will always be performed (mtime+length will not be considered a sufficient match)', '1.17', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'quota_gid', 15, 'int', true, false, false, 'the gid used on the backup_partition for quota reports, required if backup_partitions quotas are enabled, not allowed otherwise', '1.31', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'connect_address', 10, 'string', true, false, false, 'an address that overrides regular AOServ connections for failovers', '1.14', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'connect_address', 11, 'string', true, false, false, 'an address or hostname that overrides regular AOServ connections for failovers', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'connect_from', 12, 'string', true, false, false, 'an address that overrides regular AOServ connection source addresses for failovers', '1.22', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'connect_from', 13, 'ip_address', true, false, false, 'an address that overrides regular AOServ connection source addresses for failovers', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'enabled', 14, 'boolean', false, false, false, 'the enabled flag for failovers', '1.15', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'to_path', 15, 'string', false, false, false, 'the destination path for the replication', '1.17','1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'chunk_always', 16, 'boolean', false, false, false, 'when true chunking will always be performed (mtime+length will not be considered a sufficient match)', '1.17', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'quota_gid', 17, 'int', true, false, false, 'the gid used on the backup_partition for quota reports, required if backup_partitions quotas are enabled, not allowed otherwise', '1.31', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'quota_gid', 18, 'fkey', true, false, false, 'the gid used on the backup_partition for quota reports, required if backup_partitions quotas are enabled, not allowed otherwise', '1.69', null;
 commit;
 begin;
 \echo failover_file_schedule
@@ -984,12 +1044,13 @@ begin;
 \echo httpd_site_urls
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_urls', 'pkey', 0, 'pkey', false, true, false, 'a generated primary key', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_urls', 'httpd_site_bind', 1, 'fkey', false, false, false, 'the site that is being referenced', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_urls', 'hostname', 2, 'hostname', false, false, false, 'the hostname that this site responds to', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_urls', 'hostname', 2, 'hostname', false, false, false, 'the hostname that this site responds to', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_urls', 'hostname', 3, 'domain_name', false, false, false, 'the hostname that this site responds to', '1.69', null;
 insert into schema_columns select
     nextval('schema_columns_pkey_seq'),
     'httpd_site_urls',
     'is_primary',
-    3,
+    4,
     'boolean',
     false,
     false,
@@ -1162,16 +1223,17 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addres
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'ip_address', 1, 'ip_address', false, false, false, 'the IP address', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'net_device', 2, 'fkey', true, false, false, 'the network_device that this IP address is routed through.  May only be null for 0.0.0.0', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'is_alias', 3, 'boolean', false, false, false, 'indicates that the IP address is using IP aliasing on the network device', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'hostname', 4, 'hostname', false, false, false, 'the reverse mapping for the hostname', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'package', 5, 'package', false, false, false, 'the packages that the IP address is part of', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'price', 6, 'decimal_2', true, false, false, '', '1.0a100', '1.0a122';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'created', 7, 'time', false, false, false, 'the time the IP address was added', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'available', 8, 'boolean', false, false, false, 'a flag if the IP address is available', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'is_overflow', 9, 'boolean', false, false, false, 'indicates that the IP address is shared by different accounts', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'is_dhcp', 10, 'boolean', false, false, false, 'the IP address is obtained via DHCP', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'ping_monitor_enabled', 11, 'boolean', false, false, false, 'if ping (ICMP ECHO) is available for monitoring, defaults to true', '1.30', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'external_ip_address', 12, 'ip_address', true, false, false, 'the external IP address, if different than ip_address', '1.34', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'netmask', 13, 'string', false, false, false, 'the netmask of the local network', '1.38', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'hostname', 4, 'hostname', false, false, false, 'the reverse mapping for the hostname', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'hostname', 5, 'domain_name', true, false, false, 'the reverse mapping for the hostname, null only allowed for the "0.0.0.0"" or "::" IP addresses', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'package', 6, 'package', false, false, false, 'the packages that the IP address is part of', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'price', 7, 'decimal_2', true, false, false, '', '1.0a100', '1.0a122';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'created', 8, 'time', false, false, false, 'the time the IP address was added', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'available', 9, 'boolean', false, false, false, 'a flag if the IP address is available', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'is_overflow', 10, 'boolean', false, false, false, 'indicates that the IP address is shared by different accounts', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'is_dhcp', 11, 'boolean', false, false, false, 'the IP address is obtained via DHCP', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'ping_monitor_enabled', 12, 'boolean', false, false, false, 'if ping (ICMP ECHO) is available for monitoring, defaults to true', '1.30', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'external_ip_address', 13, 'ip_address', true, false, false, 'the external IP address, if different than ip_address', '1.34', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'netmask', 14, 'string', false, false, false, 'the netmask of the local network', '1.38', null;
 commit;
 begin;
 \echo ip_reputation_limiter_limits
@@ -1269,14 +1331,18 @@ commit;
 begin;
 \echo linux_accounts
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'username', 0, 'username', false, true, false, 'the unique username', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'name', 1, 'string', false, false, false, 'the full name of the user', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'office_location', 2, 'string', true, false, false, 'the location of the user', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'office_phone', 3, 'phone', true, false, false, 'the work phone number of the user', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'home_phone', 4, 'phone', true, false, false, 'the home phone number of the user', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'type', 5, 'string', false, false, false, 'the type of account', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'shell', 6, 'path', false, false, false, 'the users shell preference', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'created', 7, 'time', false, false, false, 'the time the account was created', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'disable_log', 8, 'fkey', true, false, false, 'indicates that this account is disabled', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'name', 1, 'string', false, false, false, 'the full name of the user', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'name', 2, 'gecos', false, false, false, 'the full name of the user', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'office_location', 3, 'string', true, false, false, 'the location of the user', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'office_location', 4, 'gecos', true, false, false, 'the location of the user', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'office_phone', 5, 'phone', true, false, false, 'the work phone number of the user', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'office_phone', 6, 'gecos', true, false, false, 'the work phone number of the user', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'home_phone', 7, 'phone', true, false, false, 'the home phone number of the user', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'home_phone', 8, 'gecos', true, false, false, 'the home phone number of the user', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'type', 9, 'string', false, false, false, 'the type of account', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'shell', 10, 'path', false, false, false, 'the users shell preference', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'created', 11, 'time', false, false, false, 'the time the account was created', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'disable_log', 12, 'fkey', true, false, false, 'indicates that this account is disabled', '1.0a100', null;
 commit;
 begin;
 \echo linux_group_accounts
@@ -1298,43 +1364,48 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_gro
 commit;
 begin;
 \echo linux_ids
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_ids', 'id', 0, 'int', false, true, true, 'the id', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_ids', 'is_system', 1, 'boolean', false, false, true, 'true if reserved for system use', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_ids', 'id', 0, 'int', false, true, true, 'the id', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_ids', 'id', 1, 'pkey', false, true, true, 'the id', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_ids', 'is_system', 2, 'boolean', false, false, true, 'true if reserved for system use', '1.0a100', null;
 commit;
 begin;
 \echo linux_server_accounts
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'pkey', 0, 'pkey', false, true, false, 'the generated primary key', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'username', 1, 'username', false, false, false, 'the name of the user', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'ao_server', 2, 'fkey', false, false, false, 'the pkey of the server the username is on', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'uid', 3, 'int', false, false, false, 'the uid of the user on the machine', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'home', 4, 'path', false, false, false, 'the home directory of the user on this machine', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'cron_backup_level', 5, 'short', false, false, false, 'the level of backup for cron table', '1.0a100', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'cron_backup_retention', 6, 'short', false, false, false, 'the number of days backup files will be kept', '1.0a100', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'home_backup_level', 7, 'short', false, false, false, 'the level of backup for home directory', '1.0a100', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'home_backup_retention', 8, 'short', false, false, false, 'the number of days backup files will be kept', '1.0a100', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'inbox_backup_level', 9, 'short', false, false, false, 'the level of backup for email inbox', '1.0a100', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'inbox_backup_retention', 10, 'short', false, false, false, 'the number of days backup files will be kept', '1.0a100', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'autoresponder_from', 11, 'fkey', true, false, false, 'the pkey of the email address used for the autoresponder', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'autoresponder_subject', 12, 'string', true, false, false, 'the subject of autoresponder messages', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'autoresponder_path', 13, 'string', true, false, false, 'the full path of the autoresponder text file', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'is_autoresponder_enabled', 14, 'boolean', false, false, false, 'flags if the autoresponder is enabled', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'disable_log', 15, 'fkey', true, false, false, 'indicates the account is disabled', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'predisable_password', 16, 'string', true, false, false, 'stores the password that was used before the account was disabled', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'created', 17, 'date', false, false, false, 'the time this account was added', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'use_inbox', 18, 'boolean', false, false, false, 'email for this account will be stored in the inbox, otherwise it is just deleted', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'trash_email_retention', 19, 'int', true, false, false, 'the number of days before messages in the Trash folder are automatically removed.', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'junk_email_retention', 20, 'int', true, false, false, 'the number of days before messages in the Junk folder are automatically removed.', '1.0a120', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'sa_integration_mode', 21, 'string', false, false, false, 'the integration mode for SpamAssassin', '1.0a120', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'sa_required_score', 22, 'float', false, false, false, 'the minimum SpamAssassin score considered Junk', '1.0a124', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'sa_discard_score', 23, 'int', true, false, false, 'the minimum SpamAssassin score that will be discarded instead of tagged or placed in the Junk folder', '1.40', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'uid', 3, 'int', false, false, false, 'the uid of the user on the machine', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'uid', 4, 'fkey', false, false, false, 'the uid of the user on the machine', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'home', 5, 'path', false, false, false, 'the home directory of the user on this machine', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'cron_backup_level', 6, 'short', false, false, false, 'the level of backup for cron table', '1.0a100', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'cron_backup_retention', 7, 'short', false, false, false, 'the number of days backup files will be kept', '1.0a100', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'home_backup_level', 8, 'short', false, false, false, 'the level of backup for home directory', '1.0a100', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'home_backup_retention', 9, 'short', false, false, false, 'the number of days backup files will be kept', '1.0a100', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'inbox_backup_level', 10, 'short', false, false, false, 'the level of backup for email inbox', '1.0a100', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'inbox_backup_retention', 11, 'short', false, false, false, 'the number of days backup files will be kept', '1.0a100', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'autoresponder_from', 12, 'fkey', true, false, false, 'the pkey of the email address used for the autoresponder', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'autoresponder_subject', 13, 'string', true, false, false, 'the subject of autoresponder messages', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'autoresponder_path', 14, 'string', true, false, false, 'the full path of the autoresponder text file', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'is_autoresponder_enabled', 15, 'boolean', false, false, false, 'flags if the autoresponder is enabled', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'disable_log', 16, 'fkey', true, false, false, 'indicates the account is disabled', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'predisable_password', 17, 'string', true, false, false, 'stores the password that was used before the account was disabled', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'created', 18, 'date', false, false, false, 'the time this account was added', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'created', 19, 'time', false, false, false, 'the time this account was added', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'use_inbox', 20, 'boolean', false, false, false, 'email for this account will be stored in the inbox, otherwise it is just deleted', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'trash_email_retention', 21, 'int', true, false, false, 'the number of days before messages in the Trash folder are automatically removed.', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'junk_email_retention', 22, 'int', true, false, false, 'the number of days before messages in the Junk folder are automatically removed.', '1.0a120', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'sa_integration_mode', 23, 'string', false, false, false, 'the integration mode for SpamAssassin', '1.0a120', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'sa_required_score', 24, 'float', false, false, false, 'the minimum SpamAssassin score considered Junk', '1.0a124', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'sa_discard_score', 25, 'int', true, false, false, 'the minimum SpamAssassin score that will be discarded instead of tagged or placed in the Junk folder', '1.40', null;
 commit;
 begin;
 \echo linux_server_groups
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_groups', 'pkey', 0, 'pkey', false, true, false, 'a unique key', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_groups', 'name', 1, 'string', false, false, false, 'the group name', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_groups', 'ao_server', 2, 'fkey', false, false, false, 'the pkey of the ao_server the group is on', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_groups', 'gid', 3, 'int', false, false, false, 'the gid on that machine', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_groups', 'created', 4, 'date', false, false, false, 'the time the group was added', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_groups', 'gid', 3, 'int', false, false, false, 'the gid on that machine', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_groups', 'gid', 4, 'fkey', false, false, false, 'the gid on that machine', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_groups', 'created', 5, 'date', false, false, false, 'the time the group was added', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_groups', 'created', 6, 'time', false, false, false, 'the time the group was added', '1.69', null;
 commit;
 begin;
 \echo majordomo_lists
@@ -1543,14 +1614,30 @@ if this is not null, all access is restricted to these
 hosts, otherwise the entries in mysql_db_users and
 mysql_hosts are used.',
     '1.0a100',
+    '1.68'
+;
+insert into schema_columns select
+    nextval('schema_columns_pkey_seq'),
+    'mysql_server_users',
+    'host',
+    5,
+    'string',
+    false,
+    false,
+    false,
+'the host this user is allowed to connect from,
+if this is not null, all access is restricted to these
+hosts, otherwise the entries in mysql_db_users and
+mysql_hosts are used.',
+    '1.69',
     null
 ;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'disable_log', 5, 'fkey', true, false, false, 'indicates that this account is disabled', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'predisable_password', 6, 'string', true, false, false, 'the password used before the account was disabled', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'max_questions', 7, 'int', false, false, false, 'the maximum number of questions to this database server, 0 means unlimited', '1.4', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'max_updates', 8, 'int', false, false, false, 'the maximum number of updates to this database server, 0 means unlimited', '1.4', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'max_connections', 9, 'int', false, false, false, 'the maximum number of connections to this database server, 0 means unlimited', '1.0a111', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'max_user_connections', 10, 'int', false, false, false, 'the maximum number of user connections to this database server, 0 means unlimited', '1.4', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'disable_log', 6, 'fkey', true, false, false, 'indicates that this account is disabled', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'predisable_password', 7, 'string', true, false, false, 'the password used before the account was disabled', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'max_questions', 8, 'int', false, false, false, 'the maximum number of questions to this database server, 0 means unlimited', '1.4', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'max_updates', 9, 'int', false, false, false, 'the maximum number of updates to this database server, 0 means unlimited', '1.4', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'max_connections', 10, 'int', false, false, false, 'the maximum number of connections to this database server, 0 means unlimited', '1.0a111', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'max_user_connections', 11, 'int', false, false, false, 'the maximum number of user connections to this database server, 0 means unlimited', '1.4', null;
 commit;
 begin;
 \echo mysql_servers
@@ -1602,16 +1689,17 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'ao_server', 2, 'fkey', false, false, false, 'the pkey of the server that this port is bound on', '1.0a100', '1.32';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'server', 3, 'fkey', false, false, false, 'the pkey of the server that this port is bound on', '1.33', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'ip_address', 4, 'fkey', false, false, false, 'the pkey of the IP address that is bound to', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'port', 5, 'int', false, false, false, 'the port number that is bound', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'net_protocol', 6, 'string', false, false, false, 'the network protocol (<code>net_protocols</code>)', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'app_protocol', 7, 'string', false, false, false, 'the application protocol (<code>protocols</code>)', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'open_firewall', 8, 'boolean', false, false, false, 'flags if the firewall should be opened for this port', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitor_delay', 9, 'int', true, false, false, '', '1.0a100', '1.0a103';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitor_parameter', 10, 'string', true, false, false, '', '1.0a100', '1.0a103';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitor_contact', 11, 'string', true, false, false, '', '1.0a100', '1.0a103';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitor_info', 12, 'string', true, false, false, '', '1.0a100', '1.0a103';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitoring_enabled', 13, 'boolean', false, false, false, 'turns on monitoring of the port', '1.0a104', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitoring_parameters', 14, 'string', true, false, false, 'the URL-encoded name=value pairs of monitoring parameters', '1.58', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'port', 5, 'int', false, false, false, 'the port number that is bound', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'port', 6, 'fkey', false, false, false, 'the port number that is bound', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'net_protocol', 7, 'string', false, false, false, 'the network protocol (<code>net_protocols</code>)', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'app_protocol', 8, 'string', false, false, false, 'the application protocol (<code>protocols</code>)', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'open_firewall', 9, 'boolean', false, false, false, 'flags if the firewall should be opened for this port', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitor_delay', 10, 'int', true, false, false, '', '1.0a100', '1.0a103';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitor_parameter', 11, 'string', true, false, false, '', '1.0a100', '1.0a103';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitor_contact', 12, 'string', true, false, false, '', '1.0a100', '1.0a103';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitor_info', 13, 'string', true, false, false, '', '1.0a100', '1.0a103';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitoring_enabled', 14, 'boolean', false, false, false, 'turns on monitoring of the port', '1.0a104', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitoring_parameters', 15, 'string', true, false, false, 'the URL-encoded name=value pairs of monitoring parameters', '1.58', null;
 commit;
 begin;
 \echo net_device_host_routes
@@ -1657,8 +1745,9 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_monit
 commit;
 begin;
 \echo net_ports
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_ports', 'port', 0, 'int', false, true, true, 'the unique port number', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_ports', 'is_user', 1, 'boolean', false, false, true, 'true if user processes may listen on the port', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_ports', 'port', 0, 'int', false, true, true, 'the unique port number', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_ports', 'port', 1, 'pkey', false, true, true, 'the unique port number', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_ports', 'is_user', 2, 'boolean', false, false, true, 'true if user processes may listen on the port', '1.0a100', null;
 commit;
 begin;
 \echo net_protocols
@@ -1666,11 +1755,13 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_proto
 commit;
 begin;
 \echo net_tcp_redirects
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_tcp_redirects', 'net_bind', 0, 'int', false, true, false, 'the pkey as found in net_binds', '1.0a111', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_tcp_redirects', 'cps', 1, 'int', false, false, false, 'the maximum number of connections per second before the redirect is temporarily disabled', '1.0a111', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_tcp_redirects', 'cps_overload_sleep_time', 2, 'int', false, false, false, 'the number of seconds the service will be disabled', '1.0a111', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_tcp_redirects', 'destination_host', 3, 'hostname', false, false, false, 'the destination IP address or hostname, please note that hostnames are only resolved once on xinetd startup', '1.0a111', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_tcp_redirects', 'destination_port', 4, 'int', false, false, false, 'the remote port to connect to', '1.0a111', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_tcp_redirects', 'net_bind', 0, 'int', false, true, false, 'the pkey as found in net_binds', '1.0a111', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_tcp_redirects', 'net_bind', 1, 'fkey', false, true, false, 'the pkey as found in net_binds', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_tcp_redirects', 'cps', 2, 'int', false, false, false, 'the maximum number of connections per second before the redirect is temporarily disabled', '1.0a111', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_tcp_redirects', 'cps_overload_sleep_time', 3, 'int', false, false, false, 'the number of seconds the service will be disabled', '1.0a111', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_tcp_redirects', 'destination_host', 4, 'hostname', false, false, false, 'the destination IP address or hostname, please note that hostnames are only resolved once on xinetd startup', '1.0a111', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_tcp_redirects', 'destination_port', 5, 'int', false, false, false, 'the remote port to connect to', '1.0a111', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_tcp_redirects', 'destination_port', 6, 'fkey', false, false, false, 'the remote port to connect to', '1.69', null;
 commit;
 begin;
 \echo notice_logs
@@ -1681,7 +1772,8 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'notice_lo
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'notice_log', 'billing_email', 4, 'email', false, false, false, '', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'notice_log', 'balance', 5, 'decimal_2', false, false, false, '', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'notice_log', 'notice_type', 6, 'string', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'notice_log', 'transid', 7, 'int', true, false, false, '', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'notice_log', 'transid', 7, 'int', true, false, false, '', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'notice_log', 'transid', 8, 'fkey', true, false, false, '', '1.69', null;
 commit;
 begin;
 \echo notice_types
@@ -1848,10 +1940,11 @@ begin;
 \echo postgres_server_users
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_server_users', 'pkey', 0, 'pkey', false, true, false, 'a unique, generated number', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_server_users', 'username', 1, 'username', false, false, false, 'the username as found in postgres_users', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_server_users', 'postgres_server', 2, 'pkey', false, false, false, 'the pkey of the PostgreSQL server', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_server_users', 'usesysid', 3, 'int', false, false, false, 'the PostgreSQL usesysid as found in pg_users', '1.0a100', '1.0a130';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_server_users', 'disable_log', 4, 'fkey', true, false, false, 'indicates that this account is disabled', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_server_users', 'predisable_password', 5, 'string', true, false, false, 'the password that was on the account before it was disabled', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_server_users', 'postgres_server', 2, 'pkey', false, false, false, 'the pkey of the PostgreSQL server', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_server_users', 'postgres_server', 3, 'fkey', false, false, false, 'the pkey of the PostgreSQL server', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_server_users', 'usesysid', 4, 'int', false, false, false, 'the PostgreSQL usesysid as found in pg_users', '1.0a100', '1.0a130';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_server_users', 'disable_log', 5, 'fkey', true, false, false, 'indicates that this account is disabled', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_server_users', 'predisable_password', 6, 'string', true, false, false, 'the password that was on the account before it was disabled', '1.0a100', null;
 commit;
 begin;
 \echo postgres_users
@@ -1875,13 +1968,15 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_f
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'net_bind', 1, 'fkey', false, true, false, 'the root directory', '1.0a113', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'root', 2, 'path', false, false, false, 'the file transfers are logged to', '1.0a100', '1.38';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'logfile', 3, 'path', false, false, false, 'the file transfers are logged to', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'hostname', 4, 'hostname', false, false, false, 'the hostname the server reports', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'email', 5, 'email', false, false, false, 'the email address the server reports', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'price', 6, 'decimal_2', true, false, false, '', '1.0a100', '1.0a122';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'created', 7, 'time', false, false, false, 'the time the server was added', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'linux_server_account', 8, 'int', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'linux_server_group', 9, 'int', false, false, false, '', '1.0a100', '1.38';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'allow_anonymous', 10, 'boolean', false, false, false, 'enabled or disabled anonymous access to the server', '1.0a113', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'hostname', 4, 'hostname', false, false, false, 'the hostname the server reports', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'hostname', 5, 'domain_name', false, false, false, 'the hostname the server reports', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'email', 6, 'email', false, false, false, 'the email address the server reports', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'price', 7, 'decimal_2', true, false, false, '', '1.0a100', '1.0a122';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'created', 8, 'time', false, false, false, 'the time the server was added', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'linux_server_account', 9, 'int', false, false, false, '', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'linux_server_account', 10, 'fkey', false, false, false, '', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'linux_server_group', 11, 'int', false, false, false, '', '1.0a100', '1.38';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'private_ftp_servers', 'allow_anonymous', 12, 'boolean', false, false, false, 'enabled or disabled anonymous access to the server', '1.0a113', null;
 commit;
 begin;
 \echo processor_types
@@ -1891,10 +1986,11 @@ commit;
 begin;
 \echo protocols
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'protocol', 0, 'string', false, true, true, 'the unique name of the protocol', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'port', 1, 'int', false, false, true, 'the default port of the protocol', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'name', 2, 'string', false, false, true, 'the name of the service', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'is_user_service', 3, 'boolean', false, false, true, 'indicates that a user may add and remove this service', '1.0a105', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'net_protocol', 4, 'string', false, false, true, 'the default network protocol for this protocol', '1.0a105', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'port', 1, 'int', false, false, true, 'the default port of the protocol', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'port', 2, 'fkey', false, false, true, 'the default port of the protocol', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'name', 3, 'string', false, false, true, 'the name of the service', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'is_user_service', 4, 'boolean', false, false, true, 'indicates that a user may add and remove this service', '1.0a105', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'net_protocol', 5, 'string', false, false, true, 'the default network protocol for this protocol', '1.0a105', null;
 commit;
 begin;
 \echo racks
@@ -1972,6 +2068,8 @@ begin;
 \echo schema_types
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'schema_types', 'type', 0, 'string', false, true, true, 'the unique name', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'schema_types', 'num', 1, 'int', false, true, true, 'the unique number', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'schema_types', 'since_version', 2, 'string', false, false, true, 'the first aoserv_protocol version this type was in', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'schema_types', 'last_version', 3, 'string', true, false, true, 'the last version containing this type', '1.69', null;
 commit;
 begin;
 \echo sendmail_smtp_stats
@@ -2055,38 +2153,52 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_re
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ip_address', 4, 'ip_address', false, false, false, 'the IP address of the user who signed-up', '1.23', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'package_definition', 5, 'fkey', false, false, false, 'the pkey of the Package Definition requested', '1.23', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'business_name', 6, 'string', false, false, false, 'the name of the business', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'business_phone', 7, 'string', false, false, false, 'the phone number of the business', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'business_fax', 8, 'string', true, false, false, 'the fax number of the business', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'business_address1', 9, 'string', false, false, false, 'the street address of the business', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'business_address2', 10, 'string', true, false, false, 'the street address of the business', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'business_city', 11, 'city', false, false, false, 'the city  of the business', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'business_state', 12, 'state', true, false, false, 'the state or providence of the business', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'business_country', 13, 'country', false, false, false, 'the two-character country code of the business', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'business_zip', 14, 'zip', true, false, false, 'the zip code of the business', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_name', 15, 'string', false, false, false, 'the administrator\'s name', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_title', 16, 'string', true, false, false, 'the administrator\'s title', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_work_phone', 17, 'string', false, false, false, 'the administrator\'s work phone', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_cell_phone', 18, 'string', true, false, false, 'the administrator\'s cell phone', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_home_phone', 19, 'string', true, false, false, 'the administrator\'s home phone', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_fax', 20, 'string', true, false, false, 'the administrator\'s fax number', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_email', 21, 'email', false, false, false, 'the administrator\'s email address', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_address1', 22, 'string', true, false, false, 'the street address of the administrator', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_address2', 23, 'string', true, false, false, 'the street address of the administrator', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_city', 24, 'city', true, false, false, 'the city of the administrator', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_state', 25, 'state', true, false, false, 'the state or providence of the administrator', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_country', 26, 'country', true, false, false, 'the two-character country code of the administrator', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_zip', 27, 'zip', true, false, false, 'the zip code of the administrator', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_username', 28, 'username', false, false, false, 'the username of the administrator', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'billing_contact', 29, 'string', false, false, false, 'the name of the billing contact', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'billing_email', 30, 'email', false, false, false, 'the email address of the billing contact', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'billing_use_monthly', 31, 'boolean', false, false, false, 'if true, the credit_card will be used every month automatically', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'billing_pay_one_year', 32, 'boolean', false, false, false, 'if true, one-year in advance will be charged to the credit_card and they will receive a credit for a free month', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'encrypted_data', 33, 'string', false, false, false, 'the credit card details and password are stored encrypted', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'encryption_from', 34, 'fkey', false, false, false, 'the from that was used for encryption', '1.31', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'encryption_key', 35, 'fkey', false, false, false, 'the recipient that was used for encryption', '1.23', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'encryption_recipient', 36, 'fkey', false, false, false, 'the recipient that was used for encryption', '1.31', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'completed_by', 37, 'username', true, false, false, 'the username of the person who completed this sign-up request', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'completed_time', 38, 'time', true, false, false, 'the time this request was completed', '1.23', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'business_phone', 7, 'string', false, false, false, 'the phone number of the business', '1.23', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'business_phone', 8, 'phone', false, false, false, 'the phone number of the business', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'business_fax', 9, 'string', true, false, false, 'the fax number of the business', '1.23', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'business_fax', 10, 'phone', true, false, false, 'the fax number of the business', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'business_address1', 11, 'string', false, false, false, 'the street address of the business', '1.23', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'business_address2', 12, 'string', true, false, false, 'the street address of the business', '1.23', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'business_city',     13, 'city', false, false, false, 'the city  of the business', '1.23', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'business_city',     14, 'string', false, false, false, 'the city  of the business', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'business_state',    15, 'state', true, false, false, 'the state or providence of the business', '1.23', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'business_state',    16, 'string', true, false, false, 'the state or providence of the business', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'business_country',  17, 'country', false, false, false, 'the two-character country code of the business', '1.23', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'business_country',  18, 'string', false, false, false, 'the two-character country code of the business', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'business_zip',      19, 'zip', true, false, false, 'the zip code of the business', '1.23', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'business_zip',      20, 'string', true, false, false, 'the zip code of the business', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_name',           21, 'string', false, false, false, 'the administrator\'s name', '1.23', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_title',          22, 'string', true, false, false, 'the administrator\'s title', '1.23', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_work_phone',     23, 'string', false, false, false, 'the administrator\'s work phone', '1.23', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_work_phone',     24, 'string', false, false, false, 'the administrator\'s work phone', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_cell_phone',     25, 'string', true, false, false, 'the administrator\'s cell phone', '1.23', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_cell_phone',     26, 'string', true, false, false, 'the administrator\'s cell phone', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_home_phone',     27, 'string', true, false, false, 'the administrator\'s home phone', '1.23', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_home_phone',     28, 'string', true, false, false, 'the administrator\'s home phone', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_fax',            29, 'string', true, false, false, 'the administrator\'s fax number', '1.23', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_fax',            30, 'string', true, false, false, 'the administrator\'s fax number', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_email',          31, 'email', false, false, false, 'the administrator\'s email address', '1.23', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_address1',       32, 'string', true, false, false, 'the street address of the administrator', '1.23', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_address2',       33, 'string', true, false, false, 'the street address of the administrator', '1.23', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_city',           34, 'city', true, false, false, 'the city of the administrator', '1.23', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_city',           35, 'string', true, false, false, 'the city of the administrator', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_state',          36, 'state', true, false, false, 'the state or providence of the administrator', '1.23', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_state',          37, 'string', true, false, false, 'the state or providence of the administrator', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_country',        38, 'country', true, false, false, 'the two-character country code of the administrator', '1.23', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_country',        39, 'string', true, false, false, 'the two-character country code of the administrator', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_zip',            40, 'zip', true, false, false, 'the zip code of the administrator', '1.23', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_zip',            41, 'string', true, false, false, 'the zip code of the administrator', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_username',       42, 'username', false, false, false, 'the username of the administrator', '1.23', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'billing_contact',   43, 'string', false, false, false, 'the name of the billing contact', '1.23', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'billing_email',        44, 'email', false, false, false, 'the email address of the billing contact', '1.23', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'billing_use_monthly',  45, 'boolean', false, false, false, 'if true, the credit_card will be used every month automatically', '1.23', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'billing_pay_one_year', 46, 'boolean', false, false, false, 'if true, one-year in advance will be charged to the credit_card and they will receive a credit for a free month', '1.23', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'encrypted_data',       47, 'string', false, false, false, 'the credit card details and password are stored encrypted', '1.23', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'encryption_from',      48, 'fkey', false, false, false, 'the from that was used for encryption', '1.31', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'encryption_key',       49, 'fkey', false, false, false, 'the recipient that was used for encryption', '1.23', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'encryption_recipient', 50, 'fkey', false, false, false, 'the recipient that was used for encryption', '1.31', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'completed_by',         51, 'username', true, false, false, 'the username of the person who completed this sign-up request', '1.23', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'completed_time',       52, 'time', true, false, false, 'the time this request was completed', '1.23', null;
 commit;
 begin;
 \echo spam_email_messages
@@ -2671,29 +2783,31 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_ac
 commit;
 begin;
 \echo ticket_actions
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'pkey', 0, 'pkey', false, true, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'ticket', 1, 'fkey', false, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'administrator', 2, 'username', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'time', 3, 'time', false, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'action_type', 4, 'string', false, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'old_accounting', 5, 'string', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'new_accounting', 6, 'string', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'old_priority', 7, 'string', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'new_priority', 8, 'string', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'old_type', 9, 'string', true, false, false, '', '1.49', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'new_type', 10, 'string', true, false, false, '', '1.49', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'old_status', 11, 'string', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'new_status', 12, 'string', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'old_assigned_to', 13, 'string', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'new_assigned_to', 14, 'string', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'old_category', 15, 'fkey', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'new_category', 16, 'fkey', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'old_value', 17, 'string', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'new_value', 18, 'string', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'from_address', 19, 'email', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'summary', 20, 'string', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'details', 21, 'string', true, false, false, '', '1.44', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'raw_email', 22, 'string', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'pkey',             0, 'pkey', false, true, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'ticket',           1, 'fkey', false, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'administrator',    2, 'username', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'time',             3, 'time', false, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'action_type',      4, 'string', false, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'old_accounting',   5, 'string', true, false, false, '', '1.44', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'old_accounting',   6, 'accounting', true, false, false, '', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'new_accounting',   7, 'string', true, false, false, '', '1.44', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'new_accounting',   8, 'accounting', true, false, false, '', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'old_priority',     9, 'string', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'new_priority',    10, 'string', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'old_type',        11, 'string', true, false, false, '', '1.49', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'new_type',        12, 'string', true, false, false, '', '1.49', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'old_status',      13, 'string', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'new_status',      14, 'string', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'old_assigned_to', 15, 'string', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'new_assigned_to', 16, 'string', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'old_category',    17, 'fkey', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'new_category',    18, 'fkey', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'old_value',       19, 'string', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'new_value',       20, 'string', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'from_address',    21, 'email', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'summary',         22, 'string', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'details',         23, 'string', true, false, false, '', '1.44', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'raw_email',       24, 'string', true, false, false, '', '1.44', null;
 commit;
 begin;
 \echo ticket_assignments
@@ -2757,9 +2871,11 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'tickets',
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'tickets', 'admin_priority', 21, 'string', true, false, false, '', '1.10', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'tickets', 'technology', 22, 'string', true, false, false, '', '1.0a100', '1.43';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'tickets', 'status', 23, 'string', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'tickets', 'assigned_to', 24, 'string', true, false, false, '', '1.0a125', '1.43';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'tickets', 'contact_emails', 25, 'string', false, false, false, '', '1.0a125', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'tickets', 'contact_phone_numbers', 26, 'string', false, false, false, '', '1.0a125', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'tickets', 'status_timeout', 24, 'time', true, false, false, '', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'tickets', 'assigned_to', 25, 'string', true, false, false, '', '1.0a125', '1.43';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'tickets', 'contact_emails', 26, 'string', false, false, false, '', '1.0a125', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'tickets', 'contact_phone_numbers', 27, 'string', false, false, false, '', '1.0a125', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'tickets', 'internal_notes', 28, 'string', false, false, false, '', '1.69', null;
 commit;
 begin;
 \echo time_zones
@@ -2776,19 +2892,20 @@ commit;
 begin;
 \echo transactions
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'time', 0, 'time', false, false, false, 'the time the transaction occured', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'transid', 1, 'int', false, true, false, 'the unique identifier for this transaction', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'accounting', 2, 'accounting', false, false, false, 'the identifier for the business (see businesses)', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'source_accounting', 3, 'accounting', false, false, false, 'the source of the charge to this account', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'username', 4, 'username', false, false, false, 'the identifier for the admin involved in the transaction (see business_administrators)', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'type', 5, 'string', false, false, false, 'the type of transaction', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'description', 6, 'string', false, false, false, 'description of the transaction', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'quantity', 7, 'decimal_3', false, false, false, 'the number of times to charge the account', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'rate', 8, 'decimal_2', false, false, false, 'the amount per unit of quantity', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'transid', 1, 'int', false, true, false, 'the unique identifier for this transaction', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'transid', 2, 'pkey', false, true, false, 'the unique identifier for this transaction', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'accounting', 3, 'accounting', false, false, false, 'the identifier for the business (see businesses)', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'source_accounting', 4, 'accounting', false, false, false, 'the source of the charge to this account', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'username', 5, 'username', false, false, false, 'the identifier for the admin involved in the transaction (see business_administrators)', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'type', 6, 'string', false, false, false, 'the type of transaction', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'description', 7, 'string', false, false, false, 'description of the transaction', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'quantity', 8, 'decimal_3', false, false, false, 'the number of times to charge the account', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'rate', 9, 'decimal_2', false, false, false, 'the amount per unit of quantity', '1.0a100', null;
 insert into schema_columns select
     nextval('schema_columns_pkey_seq'),
     'transactions',
     'payment_type',
-    9,
+    10,
     'string',
     true,
     false,
@@ -2803,17 +2920,17 @@ discover - discover card, last four in payment_info',
     '1.0a100',
     null
 ;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'payment_info', 10, 'string', true, false, false, 'the payment info, such as last four of credit card number of check number', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'merchant_account', 11, 'string', true, false, false, 'the merchant account that the payment was processed through', '1.0a100', '1.28';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'processor', 12, 'string', true, false, false, 'the credit card processor that handled the payment', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'credit_card_transaction', 13, 'fkey', true, false, false, 'the credit card transaction for this transaction', '1.29', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'apr_num', 14, 'int', true, false, false, 'the approval number for given transaction', '1.0a100', '1.0a127';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'apr_num', 15, 'string', true, false, false, 'the approval number for given transaction', '1.0a128', '1.28';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'payment_info', 11, 'string', true, false, false, 'the payment info, such as last four of credit card number of check number', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'merchant_account', 12, 'string', true, false, false, 'the merchant account that the payment was processed through', '1.0a100', '1.28';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'processor', 13, 'string', true, false, false, 'the credit card processor that handled the payment', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'credit_card_transaction', 14, 'fkey', true, false, false, 'the credit card transaction for this transaction', '1.29', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'apr_num', 15, 'int', true, false, false, 'the approval number for given transaction', '1.0a100', '1.0a127';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'transactions', 'apr_num', 16, 'string', true, false, false, 'the approval number for given transaction', '1.0a128', '1.28';
 insert into schema_columns select
     nextval('schema_columns_pkey_seq'),
     'transactions',
     'payment_confirmed',
-    16,
+    17,
     'string',
     false,
     false,

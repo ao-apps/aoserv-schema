@@ -670,5 +670,47 @@ INSERT INTO business_administrators VALUES (
     false,
     null
 );
-SELECT setval('ip_reputation_sets_pkey_seq', 15, false);
+-- LB3_CK101_COM
+INSERT INTO ip_reputation_sets VALUES (
+    15,
+    'LB3_CK101_COM',
+    'ck101',
+    false,
+    1000000,
+    127,
+    1023,
+    24,
+    15,
+    3600,
+    '2013-04-10 05:11:55.219715-05',
+    3600,
+    '2013-04-10 05:11:55.219715-05',
+    '2013-04-10 05:11:55.219715-05'
+);
+INSERT INTO usernames VALUES ('ck101_ipreputation', 'LB3_CK101_COM', null);
+INSERT INTO business_administrators VALUES (
+    'ck101_ipreputation',
+    '1lFAa9daKmvAmpuxqt8onMmEOkE=', -- CavyDrilt59
+    'IP Reputation Source',
+    null,
+    null,
+    false,
+    true,
+    '2013-04-10 05:13:30.132862-05',
+    '(205)454-2556',
+    null,
+    null,
+    null,
+    'support@aoindustries.com',
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    false,
+    null
+);
+SELECT setval('ip_reputation_sets_pkey_seq', 16, false);
 COMMIT;

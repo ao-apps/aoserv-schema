@@ -9,7 +9,7 @@ create table business_administrators (
     constraint name_chk
       check (length(name)>0),
   title text,
-  birthday varchar(32),
+  birthday date,
   is_preferred bool
     default false
     not null,

@@ -973,6 +973,122 @@ insert into aoserv_protocols values(
   '2013-03-18',
   'added httpd_servers.max_concurrency'
 );
+insert into aoserv_protocols values(
+  '1.69',
+  '2013-03-21',
+  'changed business_administrators.birthday to date type
+changed linux_server_accounts.created to time type
+changed linux_server_groups.created to time type
+added tickets.status_timeout
+added tickets.internal_notes
+added domain_label to schema_types
+added domain_labels to schema_types
+added domain_name to schema_types
+added gecos to schema_types
+added group_id to schema_types
+added hashed_password to schema_types
+added linux_id to schema_types
+added mac_address to schema_types
+added money to schema_types
+added mysql_database_name to schema_types
+added mysql_server_name to schema_types
+added mysql_table_name to schema_types
+added mysql_username to schema_types
+added net_port to schema_types
+added postgres_database_name to schema_types
+added postgres_server_name to schema_types
+added postgres_username to schema_types
+changed ao_servers.daemon_connect_address to hostname type
+changed failover_file_replications.connect_address to hostname type
+changed failover_file_log.connect_from to ip_address type
+added AAAA to dns_types
+changed mysql_server_users.host to string type
+changed ao_servers.daemon_key to hashed_password type
+changed business_administrators.password to hashed_password type
+changed ao_servers.hostname to domain_name type
+changed brands.nameserver1 to domain_name type
+changed brands.nameserver2 to domain_name type
+changed brands.nameserver3 to domain_name type
+changed brands.nameserver4 to domain_name type
+changed daemon_profile.ao_server to domain_name type
+changed dns_records.domain to string type
+changed dns_tlds.domain to domain_name type
+changed email_domains.domain to domain_name type
+changed email_smtp_smart_host_domains.domain to domain_name type
+changed httpd_site_urls.hostname to domain_name type
+changed ip_addresses.hostname to domain_name type and made nullable
+changed email_smtp_relays.host to hostname type
+changed private_ftp_servers.hostname to domain_name type
+changed bank_transactions.transid to pkey type
+changed net_tcp_redirects.net_bind to fkey type
+changed private_ftp_servers.linux_server_account to fkey type
+changed dns_records.dhcp_address to fkey type
+changed linux_server_accounts.uid to fkey type
+changed linux_server_groups.gid to fkey type
+changed linux_ids.id to pkey type
+changed failover_file_replications.quota_gid to fkey type
+changed transactions.transid to pkey type
+changed notice_log.transid to fkey type
+changed net_ports.port to pkey type
+changed net_binds.port to fkey type
+changed net_tcp_redirects.destination_port to fkey type
+changed protocols.port to fkey type
+changed postgres_server_users.postgres_server to fkey type
+changed brands.support_toll_free to phone type
+changed brands.support_day_phone to phone type
+changed brands.support_emergency_phone1 to phone type
+changed brands.support_emergency_phone2 to phone type
+changed brands.support_fax to phone type
+changed signup_requests.business_phone to phone type
+changed signup_requests.business_fax to phone type
+changed signup_requests.ba_work_phone to phone type
+changed signup_requests.ba_cell_phone to phone type
+changed signup_requests.ba_home_phone to phone type
+changed signup_requests.ba_fax to phone type
+changed linux_accounts.name to gecos type
+changed linux_accounts.office_location to gecos type
+changed linux_accounts.office_phone to gecos type
+changed linux_accounts.home_phone to gecos type
+added schema_types.since_version
+added schema_types.last_version
+removed byte from schema_types
+changed business_administrators.city to string type
+changed business_profiles.city to string type
+changed credit_card_transactions.shipping_city to string type
+changed credit_card_transactions.credit_card_city to string type
+changed credit_cards.city to string type
+changed signup_requests.business_city to string type
+changed signup_requests.ba_city to string type
+removed city from schema_types
+changed business_administrators.country to string type
+changed business_profiles.country to string type
+changed country_codes.code to string type
+changed credit_card_transactions.shipping_country_code to string type
+changed credit_card_transactions.credit_card_country_code to string type
+changed credit_cards.country_code to string type
+changed signup_requests.business_country to string type
+changed signup_requests.ba_country to string type
+removed country from schema_types
+removed octal_int from schema_types
+changed business_administrators.state to string type
+changed business_profiles.state to string type
+changed credit_card_transactions.shipping_state to string type
+changed credit_card_transactions.credit_card_state to string type
+changed credit_cards.state to string type
+changed signup_requests.business_state to string type
+changed signup_requests.ba_state to string type
+removed state from schema_types
+changed business_administrators.zip to string type
+changed business_profiles.zip to string type
+changed credit_card_transactions.shipping_postal_code to string type
+changed credit_card_transactions.credit_card_postal_code to string type
+changed credit_cards.postal_code to string type
+changed signup_requests.business_zip to string type
+changed signup_requests.ba_zip to string type
+removed zip from schema_types,
+changed ticket_actions.old_accounting to accounting type
+changed ticket_actions.new_accounting to accounting type'
+);
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table

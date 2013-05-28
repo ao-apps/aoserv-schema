@@ -6587,5 +6587,462 @@ insert into ip_reputation_limiter_limits values (
     10000,    -- packet_rate
     'second'  -- packet_unit
 );
-select setval('ip_reputation_limiter_limits_pkey_seq', 361, false);
+-- LB3_CK101_COM
+insert into ip_reputation_limiter_limits values (
+    361,
+    43,
+    'gm',     -- Manual Good
+    20,       -- syn_per_ip_burst
+    10,       -- syn_per_ip_rate
+    'second', -- syn_per_ip_unit
+    1000,     -- syn_per_ip_size
+    100,      -- syn_burst
+    100,      -- syn_rate
+    'second', -- syn_unit
+    2000,     -- packet_per_ip_burst
+    1000,     -- packet_per_ip_rate
+    'second', -- packet_per_ip_unit
+    10000,    -- packet_per_ip_size
+    10000,    -- packet_burst
+    10000,    -- packet_rate
+    'second'  -- packet_unit
+);
+insert into ip_reputation_limiter_limits values (
+    362,
+    43,
+    'bm',     -- Manual Bad
+    0,        -- syn_per_ip_burst
+    0,        -- syn_per_ip_rate
+    'second', -- syn_per_ip_unit
+    0,        -- syn_per_ip_size
+    0,        -- syn_burst
+    0,        -- syn_rate
+    'second', -- syn_unit
+    0,        -- packet_per_ip_burst
+    0,        -- packet_per_ip_rate
+    'second', -- packet_per_ip_unit
+    0,        -- packet_per_ip_size
+    0,        -- packet_burst
+    0,        -- packet_rate
+    'second'  -- packet_unit
+);
+insert into ip_reputation_limiter_limits values (
+    363,
+    43,
+    'bd',     -- Definite Bad
+    0,        -- syn_per_ip_burst
+    0,        -- syn_per_ip_rate
+    'second', -- syn_per_ip_unit
+    0,        -- syn_per_ip_size
+    0,        -- syn_burst
+    0,        -- syn_rate
+    'second', -- syn_unit
+    0,        -- packet_per_ip_burst
+    0,        -- packet_per_ip_rate
+    'second', -- packet_per_ip_unit
+    0,        -- packet_per_ip_size
+    0,        -- packet_burst
+    0,        -- packet_rate
+    'second'  -- packet_unit
+);
+insert into ip_reputation_limiter_limits values (
+    364,
+    43,
+    'bu',     -- Uncertain Bad
+    2,        -- syn_per_ip_burst
+    1,        -- syn_per_ip_rate
+    'second', -- syn_per_ip_unit
+    100,      -- syn_per_ip_size
+    10,       -- syn_burst
+    10,       -- syn_rate
+    'second', -- syn_unit
+    200,      -- packet_per_ip_burst
+    100,      -- packet_per_ip_rate
+    'second', -- packet_per_ip_unit
+    1000,     -- packet_per_ip_size
+    1000,     -- packet_burst
+    1000,     -- packet_rate
+    'second'  -- packet_unit
+);
+insert into ip_reputation_limiter_limits values (
+    365,
+    43,
+    'gu',     -- Uncertain Good
+    20,       -- syn_per_ip_burst
+    10,       -- syn_per_ip_rate
+    'second', -- syn_per_ip_unit
+    1000,     -- syn_per_ip_size
+    100,      -- syn_burst
+    100,      -- syn_rate
+    'second', -- syn_unit
+    2000,     -- packet_per_ip_burst
+    1000,     -- packet_per_ip_rate
+    'second', -- packet_per_ip_unit
+    10000,    -- packet_per_ip_size
+    10000,    -- packet_burst
+    10000,    -- packet_rate
+    'second'  -- packet_unit
+);
+insert into ip_reputation_limiter_limits values (
+    366,
+    43,
+    'gd',     -- Definite Good
+    20,       -- syn_per_ip_burst
+    10,       -- syn_per_ip_rate
+    'second', -- syn_per_ip_unit
+    1000,     -- syn_per_ip_size
+    100,      -- syn_burst
+    100,      -- syn_rate
+    'second', -- syn_unit
+    2000,     -- packet_per_ip_burst
+    1000,     -- packet_per_ip_rate
+    'second', -- packet_per_ip_unit
+    10000,    -- packet_per_ip_size
+    10000,    -- packet_burst
+    10000,    -- packet_rate
+    'second'  -- packet_unit
+);
+insert into ip_reputation_limiter_limits values (
+    367,
+    43,
+    'gn',     -- Network Good
+    20,       -- syn_per_ip_burst
+    10,       -- syn_per_ip_rate
+    'second', -- syn_per_ip_unit
+    1000,     -- syn_per_ip_size
+    100,      -- syn_burst
+    100,      -- syn_rate
+    'second', -- syn_unit
+    2000,     -- packet_per_ip_burst
+    1000,     -- packet_per_ip_rate
+    'second', -- packet_per_ip_unit
+    10000,    -- packet_per_ip_size
+    10000,    -- packet_burst
+    10000,    -- packet_rate
+    'second'  -- packet_unit
+);
+insert into ip_reputation_limiter_limits values (
+    368,
+    43,
+    'uu',     -- Unknown
+    20,       -- syn_per_ip_burst
+    10,       -- syn_per_ip_rate
+    'second', -- syn_per_ip_unit
+    1000,     -- syn_per_ip_size
+    100,      -- syn_burst
+    100,      -- syn_rate
+    'second', -- syn_unit
+    2000,     -- packet_per_ip_burst
+    1000,     -- packet_per_ip_rate
+    'second', -- packet_per_ip_unit
+    10000,    -- packet_per_ip_size
+    10000,    -- packet_burst
+    10000,    -- packet_rate
+    'second'  -- packet_unit
+);
+insert into ip_reputation_limiter_limits values (
+    369,
+    44,
+    'gm',     -- Manual Good
+    20,       -- syn_per_ip_burst
+    10,       -- syn_per_ip_rate
+    'second', -- syn_per_ip_unit
+    1000,     -- syn_per_ip_size
+    100,      -- syn_burst
+    100,      -- syn_rate
+    'second', -- syn_unit
+    2000,     -- packet_per_ip_burst
+    1000,     -- packet_per_ip_rate
+    'second', -- packet_per_ip_unit
+    10000,    -- packet_per_ip_size
+    10000,    -- packet_burst
+    10000,    -- packet_rate
+    'second'  -- packet_unit
+);
+insert into ip_reputation_limiter_limits values (
+    370,
+    44,
+    'bm',     -- Manual Bad
+    0,        -- syn_per_ip_burst
+    0,        -- syn_per_ip_rate
+    'second', -- syn_per_ip_unit
+    0,        -- syn_per_ip_size
+    0,        -- syn_burst
+    0,        -- syn_rate
+    'second', -- syn_unit
+    0,        -- packet_per_ip_burst
+    0,        -- packet_per_ip_rate
+    'second', -- packet_per_ip_unit
+    0,        -- packet_per_ip_size
+    0,        -- packet_burst
+    0,        -- packet_rate
+    'second'  -- packet_unit
+);
+insert into ip_reputation_limiter_limits values (
+    371,
+    44,
+    'bd',     -- Definite Bad
+    0,        -- syn_per_ip_burst
+    0,        -- syn_per_ip_rate
+    'second', -- syn_per_ip_unit
+    0,        -- syn_per_ip_size
+    0,        -- syn_burst
+    0,        -- syn_rate
+    'second', -- syn_unit
+    0,        -- packet_per_ip_burst
+    0,        -- packet_per_ip_rate
+    'second', -- packet_per_ip_unit
+    0,        -- packet_per_ip_size
+    0,        -- packet_burst
+    0,        -- packet_rate
+    'second'  -- packet_unit
+);
+insert into ip_reputation_limiter_limits values (
+    372,
+    44,
+    'bu',     -- Uncertain Bad
+    2,        -- syn_per_ip_burst
+    1,        -- syn_per_ip_rate
+    'second', -- syn_per_ip_unit
+    100,      -- syn_per_ip_size
+    10,       -- syn_burst
+    10,       -- syn_rate
+    'second', -- syn_unit
+    200,      -- packet_per_ip_burst
+    100,      -- packet_per_ip_rate
+    'second', -- packet_per_ip_unit
+    1000,     -- packet_per_ip_size
+    1000,     -- packet_burst
+    1000,     -- packet_rate
+    'second'  -- packet_unit
+);
+insert into ip_reputation_limiter_limits values (
+    373,
+    44,
+    'gu',     -- Uncertain Good
+    20,       -- syn_per_ip_burst
+    10,       -- syn_per_ip_rate
+    'second', -- syn_per_ip_unit
+    1000,     -- syn_per_ip_size
+    100,      -- syn_burst
+    100,      -- syn_rate
+    'second', -- syn_unit
+    2000,     -- packet_per_ip_burst
+    1000,     -- packet_per_ip_rate
+    'second', -- packet_per_ip_unit
+    10000,    -- packet_per_ip_size
+    10000,    -- packet_burst
+    10000,    -- packet_rate
+    'second'  -- packet_unit
+);
+insert into ip_reputation_limiter_limits values (
+    374,
+    44,
+    'gd',     -- Definite Good
+    20,       -- syn_per_ip_burst
+    10,       -- syn_per_ip_rate
+    'second', -- syn_per_ip_unit
+    1000,     -- syn_per_ip_size
+    100,      -- syn_burst
+    100,      -- syn_rate
+    'second', -- syn_unit
+    2000,     -- packet_per_ip_burst
+    1000,     -- packet_per_ip_rate
+    'second', -- packet_per_ip_unit
+    10000,    -- packet_per_ip_size
+    10000,    -- packet_burst
+    10000,    -- packet_rate
+    'second'  -- packet_unit
+);
+insert into ip_reputation_limiter_limits values (
+    375,
+    44,
+    'gn',     -- Network Good
+    20,       -- syn_per_ip_burst
+    10,       -- syn_per_ip_rate
+    'second', -- syn_per_ip_unit
+    1000,     -- syn_per_ip_size
+    100,      -- syn_burst
+    100,      -- syn_rate
+    'second', -- syn_unit
+    2000,     -- packet_per_ip_burst
+    1000,     -- packet_per_ip_rate
+    'second', -- packet_per_ip_unit
+    10000,    -- packet_per_ip_size
+    10000,    -- packet_burst
+    10000,    -- packet_rate
+    'second'  -- packet_unit
+);
+insert into ip_reputation_limiter_limits values (
+    376,
+    44,
+    'uu',     -- Unknown
+    20,       -- syn_per_ip_burst
+    10,       -- syn_per_ip_rate
+    'second', -- syn_per_ip_unit
+    1000,     -- syn_per_ip_size
+    100,      -- syn_burst
+    100,      -- syn_rate
+    'second', -- syn_unit
+    2000,     -- packet_per_ip_burst
+    1000,     -- packet_per_ip_rate
+    'second', -- packet_per_ip_unit
+    10000,    -- packet_per_ip_size
+    10000,    -- packet_burst
+    10000,    -- packet_rate
+    'second'  -- packet_unit
+);
+insert into ip_reputation_limiter_limits values (
+    377,
+    45,
+    'gm',     -- Manual Good
+    2000,     -- syn_per_ip_burst
+    1000,     -- syn_per_ip_rate
+    'second', -- syn_per_ip_unit
+    10000,    -- syn_per_ip_size
+    10000,    -- syn_burst
+    10000,    -- syn_rate
+    'second', -- syn_unit
+    2000,     -- packet_per_ip_burst
+    1000,     -- packet_per_ip_rate
+    'second', -- packet_per_ip_unit
+    10000,    -- packet_per_ip_size
+    10000,    -- packet_burst
+    10000,    -- packet_rate
+    'second'  -- packet_unit
+);
+insert into ip_reputation_limiter_limits values (
+    378,
+    45,
+    'bm',     -- Manual Bad
+    0,        -- syn_per_ip_burst
+    0,        -- syn_per_ip_rate
+    'second', -- syn_per_ip_unit
+    0,        -- syn_per_ip_size
+    0,        -- syn_burst
+    0,        -- syn_rate
+    'second', -- syn_unit
+    0,        -- packet_per_ip_burst
+    0,        -- packet_per_ip_rate
+    'second', -- packet_per_ip_unit
+    0,        -- packet_per_ip_size
+    0,        -- packet_burst
+    0,        -- packet_rate
+    'second'  -- packet_unit
+);
+insert into ip_reputation_limiter_limits values (
+    379,
+    45,
+    'bd',     -- Definite Bad
+    0,        -- syn_per_ip_burst
+    0,        -- syn_per_ip_rate
+    'second', -- syn_per_ip_unit
+    0,        -- syn_per_ip_size
+    0,        -- syn_burst
+    0,        -- syn_rate
+    'second', -- syn_unit
+    0,        -- packet_per_ip_burst
+    0,        -- packet_per_ip_rate
+    'second', -- packet_per_ip_unit
+    0,        -- packet_per_ip_size
+    0,        -- packet_burst
+    0,        -- packet_rate
+    'second'  -- packet_unit
+);
+insert into ip_reputation_limiter_limits values (
+    380,
+    45,
+    'bu',     -- Uncertain Bad
+    20,       -- syn_per_ip_burst
+    10,       -- syn_per_ip_rate
+    'second', -- syn_per_ip_unit
+    10000,    -- syn_per_ip_size
+    100,      -- syn_burst
+    10,       -- syn_rate
+    'second', -- syn_unit
+    200,      -- packet_per_ip_burst
+    100,      -- packet_per_ip_rate
+    'second', -- packet_per_ip_unit
+    10000,    -- packet_per_ip_size
+    200,      -- packet_burst
+    100,      -- packet_rate
+    'second'  -- packet_unit
+);
+insert into ip_reputation_limiter_limits values (
+    381,
+    45,
+    'gu',     -- Uncertain Good
+    20,       -- syn_per_ip_burst
+    10,       -- syn_per_ip_rate
+    'second', -- syn_per_ip_unit
+    1000,     -- syn_per_ip_size
+    10000,    -- syn_burst
+    10000,    -- syn_rate
+    'second', -- syn_unit
+    2000,     -- packet_per_ip_burst
+    1000,     -- packet_per_ip_rate
+    'second', -- packet_per_ip_unit
+    10000,    -- packet_per_ip_size
+    10000,    -- packet_burst
+    10000,    -- packet_rate
+    'second'  -- packet_unit
+);
+insert into ip_reputation_limiter_limits values (
+    382,
+    45,
+    'gd',     -- Definite Good
+    2000,     -- syn_per_ip_burst
+    1000,     -- syn_per_ip_rate
+    'second', -- syn_per_ip_unit
+    10000,    -- syn_per_ip_size
+    10000,    -- syn_burst
+    10000,    -- syn_rate
+    'second', -- syn_unit
+    2000,     -- packet_per_ip_burst
+    1000,     -- packet_per_ip_rate
+    'second', -- packet_per_ip_unit
+    10000,    -- packet_per_ip_size
+    10000,    -- packet_burst
+    10000,    -- packet_rate
+    'second'  -- packet_unit
+);
+insert into ip_reputation_limiter_limits values (
+    383,
+    45,
+    'gn',     -- Network Good
+    2000,       -- syn_per_ip_burst
+    1000,       -- syn_per_ip_rate
+    'second', -- syn_per_ip_unit
+    10000,     -- syn_per_ip_size
+    10000,    -- syn_burst
+    10000,    -- syn_rate
+    'second', -- syn_unit
+    2000,     -- packet_per_ip_burst
+    1000,     -- packet_per_ip_rate
+    'second', -- packet_per_ip_unit
+    10000,    -- packet_per_ip_size
+    10000,    -- packet_burst
+    10000,    -- packet_rate
+    'second'  -- packet_unit
+);
+insert into ip_reputation_limiter_limits values (
+    384,
+    45,
+    'uu',     -- Unknown
+    2000,     -- syn_per_ip_burst
+    1000,     -- syn_per_ip_rate
+    'second', -- syn_per_ip_unit
+    10000,    -- syn_per_ip_size
+    10000,    -- syn_burst
+    10000,    -- syn_rate
+    'second', -- syn_unit
+    2000,     -- packet_per_ip_burst
+    1000,     -- packet_per_ip_rate
+    'second', -- packet_per_ip_unit
+    10000,    -- packet_per_ip_size
+    10000,    -- packet_burst
+    10000,    -- packet_rate
+    'second'  -- packet_unit
+);
+select setval('ip_reputation_limiter_limits_pkey_seq', 385, false);
 commit;

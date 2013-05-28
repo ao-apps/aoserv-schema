@@ -295,5 +295,24 @@ insert into ip_reputation_limiters values (
     'nameservers',
     null
 );
-select setval('ip_reputation_limiters_pkey_seq', 43, false);
+-- LB3_CK101_COM
+insert into ip_reputation_limiters values (
+    43,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='lb3.ck101.com') and device_id='eth0'),
+    'Default',
+    null
+);
+insert into ip_reputation_limiters values (
+    44,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='lb3.ck101.com') and device_id='eth0'),
+    'SSH',
+    null
+);
+insert into ip_reputation_limiters values (
+    45,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='lb3.ck101.com') and device_id='eth0'),
+    'HTTP',
+    null
+);
+select setval('ip_reputation_limiters_pkey_seq', 46, false);
 commit;

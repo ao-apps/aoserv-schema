@@ -11,8 +11,7 @@ create table ip_addresses (
   net_device int,
   is_alias bool
     not null,
-  hostname text
-    not null,
+  hostname text,
   package text
     not null,
   created timestamp with time zone
@@ -27,7 +26,12 @@ create table ip_addresses (
   external_ip_address text,
   netmask text
     not null,
-  unique(ip_address, net_device)
+  unique(ip_address, net_device),
+  check (
+    -- Only the unspecified IP addresses may have a null hostname
+    (ip_address='0.0.0.0')
+    =(hostname is null)
+  )
 );
 grant all on ip_addresses to aoadmin;
 grant select, update on ip_addresses to aoserv_app;

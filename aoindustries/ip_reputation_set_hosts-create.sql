@@ -10,7 +10,8 @@ create table ip_reputation_set_hosts (
   "set" integer
     not null,
   "host" integer -- The big-endian 32-bit IP address.
-    not null,
+    not null
+    check ("host"!=0),
   good_reputation smallint
     not null
     check (

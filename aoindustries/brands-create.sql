@@ -7,10 +7,10 @@ create table brands (
   nameserver4 text,
   check (nameserver4 is null or nameserver3 is not null), -- Must fill in order
   -- Email settings
-  smtp_email_inbox integer not null,
+  smtp_linux_server_account integer not null,
   smtp_host text,
   smtp_password text not null,
-  imap_email_inbox integer not null,
+  imap_linux_server_account integer not null,
   imap_host text,
   imap_password text not null,
   support_email_address integer not null,

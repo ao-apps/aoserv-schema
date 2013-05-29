@@ -3,10 +3,16 @@ grant all on net_devices_pkey_seq to aoadmin;
 grant select, update on net_devices_pkey_seq to aoserv_app;
 
 create table net_devices (
-  pkey integer default nextval('net_devices_pkey_seq') primary key,
-  server integer not null,
-  device_id text not null,
-  description text not null,
+  pkey integer
+    default nextval('net_devices_pkey_seq')
+    constraint net_devices_pkey primary key,
+  server integer
+    not null,
+  device_id text
+    not null,
+  description text
+    not null,
+  delete_route text,
   gateway text,
   network text,
   broadcast text,

@@ -1,6 +1,5 @@
 create table virtual_servers (
-  resource integer primary key,
-  resource_type text not null check (resource_type='virtual_server'), -- Used as hidden constant type reference constraint
+  server integer primary key,
   primary_ram integer
     not null
     check (primary_ram>0),

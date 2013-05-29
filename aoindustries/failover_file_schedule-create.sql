@@ -3,11 +3,21 @@ grant all on failover_file_schedule_pkey_seq to aoadmin;
 grant select, update on failover_file_schedule_pkey_seq to aoserv_app;
 
 create table failover_file_schedule (
-  pkey integer default nextval('failover_file_schedule_pkey_seq') primary key,
-  replication integer not null,
-  hour smallint not null check (hour between 0 and 23),
-  minute smallint not null check (minute between 0 and 59),
-  enabled bool not null,
+  pkey integer
+    default nextval('failover_file_schedule_pkey_seq')
+    constraint failover_file_schedule_pkey primary key,
+  replication integer
+    not null,
+  hour smallint
+    not null
+    constraint hour_chk
+      check (hour>=0 and hour<=23),
+  minute smallint
+    not null
+    constraint minute_chk
+      check (minute>=0 and minute<=59),
+  enabled bool
+    not null,
   unique(replication, hour, minute)
 );
 grant all on failover_file_schedule to aoadmin;

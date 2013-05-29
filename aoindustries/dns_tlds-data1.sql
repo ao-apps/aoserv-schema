@@ -1,273 +1,271 @@
-begin;
-insert into dns_tlds values('ac');
-insert into dns_tlds values('ad');
-insert into dns_tlds values('ae');
-insert into dns_tlds values('af');
-insert into dns_tlds values('ag');
-insert into dns_tlds values('ai');
-insert into dns_tlds values('al');
-insert into dns_tlds values('am');
-insert into dns_tlds values('an');
-insert into dns_tlds values('ao');
-insert into dns_tlds values('aq');
-insert into dns_tlds values('com.ar');
-insert into dns_tlds values('as');
-insert into dns_tlds values('at');
-insert into dns_tlds values('com.au');
-insert into dns_tlds values('aw');
-insert into dns_tlds values('az');
-insert into dns_tlds values('ba');
-insert into dns_tlds values('bb');
-insert into dns_tlds values('bd');
-insert into dns_tlds values('be');
-insert into dns_tlds values('bf');
-insert into dns_tlds values('bg');
-insert into dns_tlds values('bh');
-insert into dns_tlds values('bi');
-insert into dns_tlds values('biz');
-insert into dns_tlds values('bj');
-insert into dns_tlds values('bm');
-insert into dns_tlds values('bn');
-insert into dns_tlds values('bo');
-insert into dns_tlds values('com.br');
-insert into dns_tlds values('bs');
-insert into dns_tlds values('bt');
-insert into dns_tlds values('bv');
-insert into dns_tlds values('bw');
-insert into dns_tlds values('by');
-insert into dns_tlds values('bz');
-insert into dns_tlds values('ca');
-insert into dns_tlds values('on.ca');
-insert into dns_tlds values('sk.ca');
-insert into dns_tlds values('yorkton.sk.ca');
-insert into dns_tlds values('cc');
-insert into dns_tlds values('cd');
-insert into dns_tlds values('cf');
-insert into dns_tlds values('cg');
-insert into dns_tlds values('ch');
-insert into dns_tlds values('ci');
-insert into dns_tlds values('ck');
-insert into dns_tlds values('cl');
-insert into dns_tlds values('cm');
-insert into dns_tlds values('cn');
-insert into dns_tlds values('co');
-insert into dns_tlds values('com');
-insert into dns_tlds values('eu.com');
-insert into dns_tlds values('cr');
-insert into dns_tlds values('cu');
-insert into dns_tlds values('cv');
-insert into dns_tlds values('cx');
-insert into dns_tlds values('com.cy');
-insert into dns_tlds values('cz');
-insert into dns_tlds values('de');
-insert into dns_tlds values('dj');
-insert into dns_tlds values('dk');
-insert into dns_tlds values('dm');
-insert into dns_tlds values('do');
-insert into dns_tlds values('dz');
-insert into dns_tlds values('ec');
-insert into dns_tlds values('edu');
-insert into dns_tlds values('ee');
-insert into dns_tlds values('eg');
-insert into dns_tlds values('eh');
-insert into dns_tlds values('er');
-insert into dns_tlds values('es');
-insert into dns_tlds values('et');
-insert into dns_tlds values('fi');
-insert into dns_tlds values('fj');
-insert into dns_tlds values('fk');
-insert into dns_tlds values('fm');
-insert into dns_tlds values('fo');
-insert into dns_tlds values('fr');
-insert into dns_tlds values('ga');
-insert into dns_tlds values('gd');
-insert into dns_tlds values('ge');
-insert into dns_tlds values('gf');
-insert into dns_tlds values('gg');
-insert into dns_tlds values('gh');
-insert into dns_tlds values('gi');
-insert into dns_tlds values('gl');
-insert into dns_tlds values('gm');
-insert into dns_tlds values('gn');
-insert into dns_tlds values('gov');
-insert into dns_tlds values('gp');
-insert into dns_tlds values('gq');
-insert into dns_tlds values('com.gr');
-insert into dns_tlds values('net.gr');
-insert into dns_tlds values('gs');
-insert into dns_tlds values('gt');
-insert into dns_tlds values('gu');
-insert into dns_tlds values('gw');
-insert into dns_tlds values('gy');
-insert into dns_tlds values('hk');
-insert into dns_tlds values('hm');
-insert into dns_tlds values('hn');
-insert into dns_tlds values('hr');
-insert into dns_tlds values('ht');
-insert into dns_tlds values('hu');
-insert into dns_tlds values('id');
-insert into dns_tlds values('ie');
-insert into dns_tlds values('il');
-insert into dns_tlds values('im');
-insert into dns_tlds values('in');
-insert into dns_tlds values('info');
-insert into dns_tlds values('int');
-insert into dns_tlds values('io');
-insert into dns_tlds values('iq');
-insert into dns_tlds values('ir');
-insert into dns_tlds values('is');
-insert into dns_tlds values('it');
-insert into dns_tlds values('je');
-insert into dns_tlds values('jm');
-insert into dns_tlds values('jo');
-insert into dns_tlds values('jp');
-insert into dns_tlds values('ke');
-insert into dns_tlds values('kg');
-insert into dns_tlds values('kh');
-insert into dns_tlds values('ki');
-insert into dns_tlds values('km');
-insert into dns_tlds values('kn');
-insert into dns_tlds values('kp');
-insert into dns_tlds values('kr');
-insert into dns_tlds values('kw');
-insert into dns_tlds values('ky');
-insert into dns_tlds values('kz');
-insert into dns_tlds values('la');
-insert into dns_tlds values('lb');
-insert into dns_tlds values('lc');
-insert into dns_tlds values('li');
-insert into dns_tlds values('lk');
-insert into dns_tlds values('lr');
-insert into dns_tlds values('ls');
-insert into dns_tlds values('lt');
-insert into dns_tlds values('lu');
-insert into dns_tlds values('lv');
-insert into dns_tlds values('ly');
-insert into dns_tlds values('ma');
-insert into dns_tlds values('mc');
-insert into dns_tlds values('md');
-insert into dns_tlds values('me');
-insert into dns_tlds values('mg');
-insert into dns_tlds values('mh');
-insert into dns_tlds values('mil');
-insert into dns_tlds values('mk');
-insert into dns_tlds values('ml');
-insert into dns_tlds values('mm');
-insert into dns_tlds values('mn');
-insert into dns_tlds values('mo');
-insert into dns_tlds values('mobi');
-insert into dns_tlds values('mp');
-insert into dns_tlds values('mq');
-insert into dns_tlds values('mr');
-insert into dns_tlds values('ms');
-insert into dns_tlds values('mt');
-insert into dns_tlds values('mu');
-insert into dns_tlds values('mv');
-insert into dns_tlds values('mw');
-insert into dns_tlds values('mx');
-insert into dns_tlds values('com.mx');
-insert into dns_tlds values('edu.mx');
-insert into dns_tlds values('my');
-insert into dns_tlds values('mz');
-insert into dns_tlds values('na');
-insert into dns_tlds values('name');
-insert into dns_tlds values('nc');
-insert into dns_tlds values('ne');
-insert into dns_tlds values('net');
-insert into dns_tlds values('nf');
-insert into dns_tlds values('ng');
-insert into dns_tlds values('ni');
-insert into dns_tlds values('nl');
-insert into dns_tlds values('no');
-insert into dns_tlds values('np');
-insert into dns_tlds values('nr');
-insert into dns_tlds values('nu');
-insert into dns_tlds values('co.nz');
-insert into dns_tlds values('om');
-insert into dns_tlds values('org');
-insert into dns_tlds values('pa');
-insert into dns_tlds values('pe');
-insert into dns_tlds values('pf');
-insert into dns_tlds values('pg');
-insert into dns_tlds values('ph');
-insert into dns_tlds values('pk');
-insert into dns_tlds values('pl');
-insert into dns_tlds values('info.pl');
-insert into dns_tlds values('pm');
-insert into dns_tlds values('pn');
-insert into dns_tlds values('pr');
-insert into dns_tlds values('cpa.pro');
-insert into dns_tlds values('law.pro');
-insert into dns_tlds values('med.pro');
-insert into dns_tlds values('ps');
-insert into dns_tlds values('pt');
-insert into dns_tlds values('com.pt');
-insert into dns_tlds values('pw');
-insert into dns_tlds values('py');
-insert into dns_tlds values('qa');
-insert into dns_tlds values('re');
-insert into dns_tlds values('ro');
-insert into dns_tlds values('ru');
-insert into dns_tlds values('rw');
-insert into dns_tlds values('sa');
-insert into dns_tlds values('sb');
-insert into dns_tlds values('sc');
-insert into dns_tlds values('sd');
-insert into dns_tlds values('se');
-insert into dns_tlds values('sg');
-insert into dns_tlds values('sh');
-insert into dns_tlds values('si');
-insert into dns_tlds values('sj');
-insert into dns_tlds values('sk');
-insert into dns_tlds values('sl');
-insert into dns_tlds values('sm');
-insert into dns_tlds values('sn');
-insert into dns_tlds values('so');
-insert into dns_tlds values('sr');
-insert into dns_tlds values('st');
-insert into dns_tlds values('sv');
-insert into dns_tlds values('sy');
-insert into dns_tlds values('sz');
-insert into dns_tlds values('tc');
-insert into dns_tlds values('td');
-insert into dns_tlds values('tf');
-insert into dns_tlds values('tg');
-insert into dns_tlds values('th');
-insert into dns_tlds values('tj');
-insert into dns_tlds values('tk');
-insert into dns_tlds values('tm');
-insert into dns_tlds values('tn');
-insert into dns_tlds values('to');
-insert into dns_tlds values('tp');
-insert into dns_tlds values('tr');
-insert into dns_tlds values('tt');
-insert into dns_tlds values('tv');
-insert into dns_tlds values('tw');
-insert into dns_tlds values('tz');
-insert into dns_tlds values('ua');
-insert into dns_tlds values('ug');
-insert into dns_tlds values('co.uk');
-insert into dns_tlds values('org.uk');
-insert into dns_tlds values('sch.uk');
-insert into dns_tlds values('um');
-insert into dns_tlds values('us');
-insert into dns_tlds values('atlanta.ga.us');
-insert into dns_tlds values('uy');
-insert into dns_tlds values('uz');
-insert into dns_tlds values('va');
-insert into dns_tlds values('vc');
-insert into dns_tlds values('com.ve');
-insert into dns_tlds values('net.ve');
-insert into dns_tlds values('vg');
-insert into dns_tlds values('vi');
-insert into dns_tlds values('vn');
-insert into dns_tlds values('vu');
-insert into dns_tlds values('wf');
-insert into dns_tlds values('ws');
-insert into dns_tlds values('ye');
-insert into dns_tlds values('yt');
-insert into dns_tlds values('yu');
-insert into dns_tlds values('co.za');
-insert into dns_tlds values('zm');
-insert into dns_tlds values('zw');
-commit;
+COPY "dns_tlds" FROM stdin;
+com	Commerce
+lu	Luxembourg
+org	Organization
+edu	Education
+int	Internet
+mil	Military
+gov	Government
+ac	Ascension Island
+ad	Andorra
+ae	United Arab Emirates
+af	Afghanistan
+ag	Antigua and Barbuda
+ai	Anguilla
+al	Albania
+am	Armenia
+an	Netherlands Antilles
+ao	Angola
+aq	Antartica
+as	American Samoa
+at	Austria
+net.gr	Greece, Network
+aw	Aruba
+az	Azerbaijan
+ba	Bosnia and Herzegovina
+bb	Barbados
+bd	Bangladesh
+be	Belgium
+bf	Burkina Faso
+bg	Bulgaria
+bh	Bahrain
+bi	Burundi
+bj	Benin
+bm	Bermuda
+bn	Brunei Darussalam
+bo	Bolivia
+bs	Bahamas
+bt	Bhutan
+bv	Bouvet Island
+bw	Botswana
+by	Belarus
+bz	Belize
+ca	Canada
+cc	Cocos (Keeling) Islands
+cd	Congo, Democratic Republic of the
+cf	Central African Republic
+cg	Congo, Republic of
+ch	Switzerland
+ci	Cote d'Ivoire
+ck	Cook Islands
+cl	Chile
+cm	Cameroon
+cn	China
+co	Colombia
+cr	Costa Rica
+cu	Cuba
+cv	Cap Verde
+cx	Christmas Island
+ly	Libyan Arab Jamahiriya
+cz	Czech Republic
+de	Germany
+dj	Djibouti
+dk	Denmark
+dm	Dominica
+do	Dominican Republic
+dz	Algeria
+ec	Ecuador
+ee	Estonia
+eg	Egypt
+eh	Western Sahara
+er	Eritrea
+es	Spain
+et	Ethiopia
+fi	Finland
+fj	Fiji
+fk	Falkland Islands (Malvina)
+fm	Micronesia, Federal State of
+fo	Faroe Islands
+fr	France
+ga	Gabon
+gd	Grenada
+ge	Georgia
+gf	French Guiana
+gg	Guernsey
+gh	Ghana
+gi	Gibraltar
+gl	Greenland
+gm	Gambia
+gn	Guinea
+gp	Guadeloupe
+gq	Equatorial Guinea
+gs	South Georgia and the South Sandwich Islands
+gt	Guatemala
+gu	Guam
+gw	Guinea-Bissau
+gy	Guyana
+hk	Hong Kong
+hm	Heard and McDonald Islands
+hn	Honduras
+hr	Croatia/Hrvatska
+ht	Haiti
+hu	Hungary
+id	Indonesia
+ie	Ireland
+il	Israel
+im	Isle of Man
+in	India
+io	British Indian Ocean Territory
+iq	Iraq
+ir	Iran (Islamic Republic of)
+is	Iceland
+it	Italy
+je	Jersey
+jm	Jamaica
+jo	Jordan
+jp	Japan
+ke	Kenya
+kg	Kyrgyzstan
+kh	Cambodia
+ki	Kiribati
+km	Comoros
+kn	Saint Kitts and Nevis
+kp	Korea, Democratic People's Republic
+kr	Korea, Republic of
+kw	Kuwait
+ky	Cayman Islands
+kz	Kazakhstan
+la	Lao People's Democratic Republic
+lb	Lebanon
+lc	Saint Lucia
+li	Liechtenstein
+lk	Sri Lanka
+lr	Liberia
+ls	Lesotho
+lt	Lithuania
+lv	Latvia
+sch.uk	School, United Kingdom
+ma	Morocco
+mc	Monaco
+md	Moldova, Republic of
+mg	Madagascar
+mh	Marshall Islands
+mk	Macedonia, Former Yugoslav Republic
+ml	Mali
+mm	Myanmar
+mn	Mongolia
+mo	Macau
+mp	Northern Mariana Islands
+mq	Martinique
+mr	Mauritania
+ms	Montserrat
+mt	Malta
+mu	Mauritius
+mv	Maldives
+mw	Malawi
+mx	Mexico
+my	Malaysia
+mz	Mozambique
+na	Namibia
+nc	New Caledonia
+ne	Niger
+nf	Norfolk Island
+ng	Nigeria
+ni	Nicaragua
+nl	Netherlands
+no	Norway
+np	Nepal
+nr	Nauru
+nu	Niue
+om	Oman
+pa	Panama
+pe	Peru
+pf	French Polynesia
+pg	Papua New Guinea
+ph	Philippines
+pk	Pakistan
+pl	Poland
+pm	St. Pierre and Miquelon
+pn	Pitcairn Island
+pr	Puerto Rico
+ps	Palestinian Territories
+pt	Portugal
+pw	Palau
+py	Paraguay
+qa	Qatar
+re	Reunion Island
+ro	Romania
+ru	Russian Federation
+rw	Rwanda
+sa	Saudi Arabia
+sb	Solomon Islands
+sc	Seychelles
+sd	Sudan
+se	Sweden
+sg	Singapore
+sh	St. Helena
+si	Slovenia
+sj	Svalbard and Jan Mayen Islands
+sk	Slovak Republic
+sl	Sierra Leone
+sm	San Marino
+sn	Senegal
+so	Somalia
+sr	Suriname
+st	Sao Tome and Principe
+sv	El Salvador
+sy	Syrian Arab Republic
+sz	Swaziland
+tc	Turks and Caicos Islands
+td	Chad
+tf	French Southern Territories
+tg	Togo
+th	Thailand
+tj	Tajikistan
+tk	Tokelau
+tm	Turkmenistan
+tn	Tunisia
+to	Tonga
+tp	East Timor
+tr	Turkey
+tt	Trinidad and Tobago
+tv	Tuvalu
+tw	Taiwan
+tz	Tanzania
+ua	Ukraine
+ug	Uganda
+um	US Minor Outlying Islands
+uy	Uruguay
+uz	Uzbekistan
+va	Holy See (City Vatican State)
+vc	Saint Vincent and the Grenadines
+eu.com	European Commerce
+vg	Virgin Islands (British)
+vi	Virgin Islands (USA)
+vn	Vietnam
+vu	Vanuatu
+wf	Wallis and Futuna Islands
+ws	Western Samoa
+ye	Yemen
+yt	Mayotte
+yu	Yugoslavia
+zm	Zambia
+zw	Zimbabwe
+atlanta.ga.us	Atlanta, GA, United States
+biz	Business
+info	Information
+name	Name
+med.pro	Medical Professional
+law.pro	Law Professional
+cpa.pro	CPA Professional
+org.uk	Organisation, United Kingdom
+co.za	Commerce, South Africa
+com.ar	Commerce, Argentina
+co.uk	Commerce, United Kingdom
+com.br	Commerce, Brazil
+co.nz	Commerce, New Zealand
+net	Network
+us	United States
+com.ve	Commerce, Venezuela
+com.pt	Commerce, Portugal
+com.au	Australia, Commerce
+com.gr	Greece, Commerce
+com.cy	Cyprus, Commerce
+info.pl	Poland, Information
+net.ve	Venezuela, Network
+com.mx	Commerce, Mexico
+on.ca	Canada, Ontario
+sk.ca	Canada, Saskatchewan
+yorkton.sk.ca	Canada, Saskatchewan, Yorkton
+edu.mx	Education, Mexico
+\.

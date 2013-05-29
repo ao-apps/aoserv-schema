@@ -1,7 +1,7 @@
 alter table server_farms
-  add constraint resource_fkey
-  foreign key (resource_type, resource)
-  references resources (resource_type, pkey)
+  add constraint owner_fkey
+  foreign key (owner)
+  references packages (pkey)
   on delete restrict
   on update cascade
 ;

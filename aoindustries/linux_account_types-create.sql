@@ -1,5 +1,10 @@
 create table linux_account_types (
-  resource_type text primary key
+  name text
+    constraint linux_account_types_pkey primary key,
+  description text
+    not null,
+  is_email bool
+    not null
 );
 grant all on linux_account_types to aoadmin;
-grant select on linux_account_types to aoserv_app;
+grant select, update on linux_account_types to aoserv_app;

@@ -7,7 +7,3 @@ create index business_administrators_disable_log_idx on business_administrators 
 create unique index business_administrators_support_code_uni on business_administrators(
   support_code
 );
-create unique index business_administrators_accounting_super on business_administrators (
-  accounting,
-  username
-);

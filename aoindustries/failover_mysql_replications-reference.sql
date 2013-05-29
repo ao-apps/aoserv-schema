@@ -15,7 +15,7 @@ alter table failover_mysql_replications
 alter table failover_mysql_replications
   add constraint mysql_server_fkey
   foreign key (mysql_server)
-  references mysql_servers (ao_server_resource)
+  references mysql_servers (pkey)
   on delete restrict
   on update cascade
 ;

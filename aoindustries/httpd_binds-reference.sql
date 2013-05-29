@@ -8,7 +8,7 @@ alter table httpd_binds
 alter table httpd_binds
   add constraint httpd_server_fkey
   foreign key (httpd_server)
-  references httpd_servers (ao_server_resource)
+  references httpd_servers (pkey)
   on delete restrict
   on update cascade
 ;

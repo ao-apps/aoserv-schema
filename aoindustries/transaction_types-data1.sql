@@ -11,7 +11,7 @@ ip	f
 javavm	f
 managed	f
 payment	t
-email	f
+pop	f
 site	f
 sysadmin	f
 user	f

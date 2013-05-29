@@ -1,7 +1,7 @@
 alter table email_attachment_blocks
-  add constraint email_inbox_fkey
-  foreign key (email_inbox)
-  references email_inboxes (linux_account)
+  add constraint linux_server_account_fkey
+  foreign key (linux_server_account)
+  references linux_server_accounts (pkey)
   on delete restrict
   on update cascade
 ;

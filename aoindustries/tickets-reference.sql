@@ -7,8 +7,8 @@ alter table tickets
 ;
 alter table tickets
   add constraint reseller_fkey
-  foreign key (ticket_auto_escalate, reseller)
-  references resellers (ticket_auto_escalate, accounting)
+  foreign key (reseller)
+  references resellers (accounting)
   on update cascade
   on delete restrict
 ;
@@ -64,7 +64,7 @@ alter table tickets
 alter table tickets
   add constraint status_fkey
   foreign key (status)
-  references ticket_statuses (status)
+  references ticket_stati (status)
   on update cascade
   on delete restrict
 ;

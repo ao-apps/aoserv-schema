@@ -6,16 +6,16 @@ alter table monthly_charges
   on update cascade
 ;
 alter table monthly_charges
-  add constraint source_accounting_fkey
-  foreign key (source_accounting)
-  references businesses (accounting)
+  add constraint package_fkey
+  foreign key (package)
+  references packages (name)
   on delete restrict
   on update cascade
 ;
 alter table monthly_charges
   add constraint type_fkey
   foreign key (type)
-  references transaction_types ("name")
+  references transaction_types (name)
   on delete restrict
   on update cascade
 ;

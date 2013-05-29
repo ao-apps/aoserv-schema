@@ -1,21 +1,28 @@
 alter table net_binds
-  add constraint accounting_fkey
-  foreign key (accounting, business_server)
-  references business_servers (accounting, pkey)
+  add constraint package_fkey
+  foreign key (package)
+  references packages (name)
   on delete restrict
   on update cascade
 ;
 alter table net_binds
   add constraint server_fkey
-  foreign key (server, business_server)
-  references business_servers (server, pkey)
+  foreign key (server)
+  references servers (pkey)
   on delete restrict
   on update cascade
 ;
 alter table net_binds
   add constraint ip_address_fkey
-  foreign key (server, ip_address)
-  references ip_addresses (server, server_resource)
+  foreign key (ip_address)
+  references ip_addresses (pkey)
+  on delete restrict
+  on update cascade
+;
+alter table net_binds
+  add constraint port_fkey
+  foreign key (port)
+  references net_ports (port)
   on delete restrict
   on update cascade
 ;

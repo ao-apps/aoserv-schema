@@ -6,9 +6,9 @@ alter table email_domains
   on update cascade
 ;
 alter table email_domains
-  add constraint accounting_fkey
-  foreign key (accounting)
-  references businesses (accounting)
+  add constraint package_fkey
+  foreign key (package)
+  references packages (name)
   on delete restrict
   on update cascade
 ;

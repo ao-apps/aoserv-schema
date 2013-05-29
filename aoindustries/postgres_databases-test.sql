@@ -1,15 +1,11 @@
-begin;
 -- 8.1
 insert into
     postgres_databases
 values(
-    26,
-    'postgresql_database',
-    'AOINDUSTRIES',
-    2,
+    9,
     'template0',
-    10,
-    11,
+    1,
+    16,
     (
         select
             pkey
@@ -35,13 +31,10 @@ values(
 insert into
     postgres_databases
 values(
-    27,
-    'postgresql_database',
-    'AOINDUSTRIES',
-    2,
+    10,
     'template1',
-    10,
-    11,
+    1,
+    16,
     (
         select
             pkey
@@ -67,77 +60,10 @@ values(
 insert into
     postgres_databases
 values(
-    28,
-    'postgresql_database',
-    'AOINDUSTRIES',
-    2,
-    'aoindustries',
-    10,
-    12,
-    (
-        select
-            pkey
-        from
-            postgres_encodings
-        where
-            encoding='SQL_ASCII'
-            and postgres_version=(
-                select
-                    pkey
-                from
-                    technology_versions
-                where
-                    name='postgresql'
-                    and version like '8.1.%'
-                    and operating_system_version=(select pkey from operating_system_versions where operating_system='centos' and version_number='5')
-            )
-    ),
-    false,
-    true,
-    false
-);
-insert into
-    postgres_databases
-values(
-    29,
-    'postgresql_database',
-    'AOINDUSTRIES',
-    2,
-    'aoweb',
-    10,
-    12,
-    (
-        select
-            pkey
-        from
-            postgres_encodings
-        where
-            encoding='UTF8'
-            and postgres_version=(
-                select
-                    pkey
-                from
-                    technology_versions
-                where
-                    name='postgresql'
-                    and version like '8.1.%'
-                    and operating_system_version=(select pkey from operating_system_versions where operating_system='centos' and version_number='5')
-            )
-    ),
-    false,
-    true,
-    false
-);
-insert into
-    postgres_databases
-values(
-    30,
-    'postgresql_database',
-    'AOINDUSTRIES',
-    2,
-    'aoserv',
-    10,
     11,
+    'aoindustries',
+    1,
+    17,
     (
         select
             pkey
@@ -163,13 +89,10 @@ values(
 insert into
     postgres_databases
 values(
-    31,
-    'postgresql_database',
-    'AOINDUSTRIES',
-    2,
-    'edrugstore',
-    10,
-    16,
+    13,
+    'aoweb',
+    1,
+    17,
     (
         select
             pkey
@@ -195,12 +118,9 @@ values(
 insert into
     postgres_databases
 values(
-    32,
-    'postgresql_database',
-    'AOINDUSTRIES',
-    2,
-    'edrugstore_sessions',
-    10,
+    14,
+    'aoserv',
+    1,
     16,
     (
         select
@@ -227,13 +147,39 @@ values(
 insert into
     postgres_databases
 values(
-    33,
-    'postgresql_database',
-    'AOINDUSTRIES',
-    2,
-    'danshome',
-    10,
-    22,
+    17,
+    'edrugstore',
+    1,
+    27,
+    (
+        select
+            pkey
+        from
+            postgres_encodings
+        where
+            encoding='UTF8'
+            and postgres_version=(
+                select
+                    pkey
+                from
+                    technology_versions
+                where
+                    name='postgresql'
+                    and version like '8.1.%'
+                    and operating_system_version=(select pkey from operating_system_versions where operating_system='centos' and version_number='5')
+            )
+    ),
+    false,
+    true,
+    false
+);
+insert into
+    postgres_databases
+values(
+    18,
+    'edrugstore_sessions',
+    1,
+    27,
     (
         select
             pkey
@@ -256,4 +202,33 @@ values(
     true,
     false
 );
-commit;
+insert into
+    postgres_databases
+values(
+    16,
+    'danshome',
+    1,
+    24,
+    (
+        select
+            pkey
+        from
+            postgres_encodings
+        where
+            encoding='SQL_ASCII'
+            and postgres_version=(
+                select
+                    pkey
+                from
+                    technology_versions
+                where
+                    name='postgresql'
+                    and version like '8.1.%'
+                    and operating_system_version=(select pkey from operating_system_versions where operating_system='centos' and version_number='5')
+            )
+    ),
+    false,
+    true,
+    false
+);
+SELECT setval ('"postgres_databases_pkey_seq"', 17, true);

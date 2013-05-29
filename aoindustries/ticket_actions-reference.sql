@@ -1,7 +1,7 @@
 alter table ticket_actions
   add constraint ticket_fkey
   foreign key (ticket)
-  references tickets (ticket_id)
+  references tickets (pkey)
   on update cascade
   on delete restrict
 ;
@@ -64,14 +64,14 @@ alter table ticket_actions
 alter table ticket_actions
   add constraint old_status_fkey
   foreign key (old_status)
-  references ticket_statuses (status)
+  references ticket_stati (status)
   on update cascade
   on delete restrict
 ;
 alter table ticket_actions
   add constraint new_status_fkey
   foreign key (new_status)
-  references ticket_statuses (status)
+  references ticket_stati (status)
   on update cascade
   on delete restrict
 ;

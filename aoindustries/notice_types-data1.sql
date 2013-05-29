@@ -1,7 +1,7 @@
-begin;
-insert into notice_types values('nonpay');
-insert into notice_types values('badcard');
-insert into notice_types values('disable_warning');
-insert into notice_types values('disabled');
-insert into notice_types values('enabled');
-commit;
+COPY "notice_types" FROM stdin;
+nonpay	Late or non-payment notification
+badcard	Credit card was declined during transaction attempt
+disable_warning	Warned that account will be disabled soon
+disabled	Notifying that account has been disabled
+enabled	Notifying that account has been enabled
+\.

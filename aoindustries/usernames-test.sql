@@ -18,7 +18,7 @@ test15	AOINDUSTRIES	\N
 privatecart_app	AOINDUSTRIES	\N
 dan	AOINDUSTRIES	\N
 test_svr	AOINDUSTRIES	\N
-testimap	TEST	\N
+testimap	AOINDUSTRIES	\N
 epharmaprod_app	AOINDUSTRIES	\N
 affiliates_app	AOINDUSTRIES	\N
 testuser	TEST	\N

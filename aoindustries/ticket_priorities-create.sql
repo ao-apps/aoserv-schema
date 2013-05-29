@@ -1,5 +1,6 @@
 create table ticket_priorities (
-  priority text primary key
+  priority     text       not null
+                          constraint ticket_priorities_pkey primary key
 );
 grant all on ticket_priorities to aoadmin;
-grant select on ticket_priorities to aoserv_app;
+grant select, update on ticket_priorities to aoserv_app;

@@ -1,14 +1,14 @@
 alter table ao_servers
   add constraint server_fkey
   foreign key (server)
-  references servers (resource)
+  references servers (pkey)
   on delete restrict
   on update cascade
 ;
 alter table ao_servers
   add constraint daemon_bind_fkey
-  foreign key (server, daemon_bind)
-  references net_binds (server, pkey)
+  foreign key (daemon_bind)
+  references net_binds (pkey)
   on delete restrict
   on update cascade
 ;
@@ -22,7 +22,7 @@ alter table ao_servers
 alter table ao_servers
   add constraint daemon_device_id_fkey
   foreign key (daemon_device_id)
-  references net_device_ids ("name")
+  references net_device_ids (name)
   on delete restrict
   on update cascade
 ;
@@ -36,14 +36,14 @@ alter table ao_servers
 alter table ao_servers
   add constraint time_zone_fkey
   foreign key (time_zone)
-  references time_zones ("name")
+  references time_zones (name)
   on delete restrict
   on update cascade
 ;
 alter table ao_servers
   add constraint jilter_bind_fkey
-  foreign key (server, jilter_bind)
-  references net_binds (server, pkey)
+  foreign key (jilter_bind)
+  references net_binds (pkey)
   on delete restrict
   on update cascade
 ;

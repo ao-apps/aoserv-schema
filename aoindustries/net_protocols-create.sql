@@ -1,5 +1,6 @@
 create table net_protocols (
-  protocol text primary key
+  protocol text
+    constraint net_protocols_pkey primary key
 );
 grant all on net_protocols to aoadmin;
-grant select on net_protocols to aoserv_app;
+grant select, update on net_protocols to aoserv_app;

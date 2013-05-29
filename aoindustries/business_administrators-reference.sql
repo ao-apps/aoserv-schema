@@ -1,7 +1,7 @@
 alter table business_administrators
   add constraint username_fkey
-  foreign key (accounting, username)
-  references usernames (accounting, username)
+  foreign key (username)
+  references usernames (username)
   on delete restrict
   on update cascade
 ;

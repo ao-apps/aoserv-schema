@@ -1089,6 +1089,12 @@ removed zip from schema_types,
 changed ticket_actions.old_accounting to accounting type
 changed ticket_actions.new_accounting to accounting type'
 );
+insert into aoserv_protocols values(
+  '1.70',
+  '2013-05-31',
+  'added net_devices.monitoring_enabled
+added distro_report_types table'
+);
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table

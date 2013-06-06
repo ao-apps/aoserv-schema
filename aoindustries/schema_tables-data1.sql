@@ -300,7 +300,7 @@ insert into schema_tables values(
     'distro_file_types',
     (select count(*) from schema_tables),
     'Distro File Types',
-    false,
+    true,
     'The distro_file_types stores all of the possible file types.',
     '1.0a100',
     null
@@ -312,6 +312,15 @@ insert into schema_tables values(
     false,
     'The distro_files stores all of the file attributes in the templates.',
     '1.0a100',
+    null
+);
+insert into schema_tables values(
+    'distro_report_types',
+    (select count(*) from schema_tables),
+    'Distro Report Types',
+    true,
+    'The distro_report_types stores all of the possible report types.',
+    '1.70',
     null
 );
 insert into schema_tables values(

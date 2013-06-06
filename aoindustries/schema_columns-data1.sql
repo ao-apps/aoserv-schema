@@ -626,8 +626,8 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'disk_type
 commit;
 begin;
 \echo distro_file_types
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_file_types', 'type', 0, 'string', false, true, false, 'the unique name of the type', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_file_types', 'description', 1, 'string', false, false, false, 'a description of the type of file', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_file_types', 'type', 0, 'string', false, true, true, 'the unique name of the type', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_file_types', 'description', 1, 'string', false, false, true, 'a description of the type of file', '1.0a100', null;
 commit;
 begin;
 \echo distro_files
@@ -645,6 +645,11 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_fi
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'file_md5_hi', 11, 'long', true, false, false, 'the md5 hash if is a regular file', '1.0a105', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'file_md5_lo', 12, 'long', true, false, false, 'the md5 hash if is a regular file', '1.0a105', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'symlink_target', 13, 'string', true, false, false, 'the target if is a symbolic link', '1.0a100', null;
+commit;
+begin;
+\echo distro_report_types
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_report_types', 'name', 0, 'string', false, true, true, 'the unique name of the type', '1.70', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_report_types', 'display', 1, 'string', false, false, true, 'a display value of the type of report', '1.70', null;
 commit;
 begin;
 \echo dns_forbidden_zones
@@ -1737,6 +1742,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devic
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'monitoring_bit_rate_medium', 14, 'long', true, false, false, 'the 5-minute average that will trigger a medium-level alert', '1.35', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'monitoring_bit_rate_high', 15, 'long', true, false, false, 'the 5-minute average that will trigger a high-level alert', '1.35', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'monitoring_bit_rate_critical', 16, 'long', true, false, false, 'the 5-minute average that will trigger a critical-level alert', '1.35', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'monitoring_enabled', 17, 'boolean', false, false, false, 'indicates that this device should be monitored', '1.70', null;
 commit;
 begin;
 \echo net_monitoring_times

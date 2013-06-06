@@ -1,0 +1,16 @@
+begin;
+insert into distro_report_types values('BD', 'Big Directory');
+insert into distro_report_types values('EX', 'Extra');
+insert into distro_report_types values('GR', 'Group Mismatch');
+insert into distro_report_types values('HI', 'Hidden');
+insert into distro_report_types values('LN', 'Length');
+insert into distro_report_types values('M5', 'MD5');
+insert into distro_report_types values('MI', 'Missing');
+insert into distro_report_types values('OW', 'Owner Mismatch');
+insert into distro_report_types values('NO', 'No Owner');
+insert into distro_report_types values('NG', 'No Group');
+insert into distro_report_types values('PR', 'Permissions');
+insert into distro_report_types values('SU', 'SetUID');
+insert into distro_report_types values('SY', 'Symlink');
+insert into distro_report_types values('TY', 'Type');
+commit;

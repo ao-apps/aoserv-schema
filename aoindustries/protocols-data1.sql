@@ -7,7 +7,6 @@ HTTP	80	Hypertext Transfer Protocol	f	tcp
 auth	113	Identity service	f	tcp
 HTTPS	443	Secure Hypertext Transfer Protocol	f	tcp
 shell	514	Remote Shell	f	tcp
-InterBase	3050	InterBase	f	tcp
 MySQL	3306	MySQL	f	tcp
 PostgreSQL	5432	PostgreSQL	f	tcp
 Xvfb	6000	X Virtual Frame Buffer	f	tcp
@@ -38,7 +37,6 @@ POP3	110	Post Office Protocol Version 3	t	tcp
 IMAP2	143	IMAP Version 2	t	tcp
 SIMAP	993	Secure IMAP	t	tcp
 SPOP3	995	Secure Post Office Protocol Version 3	t	tcp
-InterServer	3060	InterBase JDBC server	t	tcp
 cvspserver	2401	CVS pserver	t	tcp
 FTP-DATA	20	File Transfer Protocol Data	t	tcp
 rtmp	1	Routing Table Maintenance Protocol	f	raw

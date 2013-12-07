@@ -763,7 +763,7 @@ insert into aosh_commands values(
   'remove_email_forwarding',
   'email_forwarding',
   'detaches a forwarding address from an email address',
-  '<i>from_address</i> <i>ao_server</i> s<i>to_address</i>',
+  '<i>from_address</i> <i>ao_server</i> <i>to_address</i>',
   '1.0a100',
   null
 );

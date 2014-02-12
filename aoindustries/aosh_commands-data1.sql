@@ -3296,6 +3296,14 @@ insert into aosh_commands values(
   null
 );
 insert into aosh_commands values(
+  'verify_virtual_disk',
+  'virtual_disks',
+  'begins a verification of the redundancy of the virtual disk',
+  '<i>virtual_server</i> <i>device</i>',
+  '1.71',
+  null
+);
+insert into aosh_commands values(
   'create_virtual_server',
   'virtual_servers',
   'calls "xm create" on the current primary physical server',

@@ -1095,6 +1095,11 @@ insert into aoserv_protocols values(
   'added net_devices.monitoring_enabled
 added distro_report_types table'
 );
+insert into aoserv_protocols values(
+  '1.71',
+  '2014-02-11',
+  'added verify_virtual_disk command'
+);
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table

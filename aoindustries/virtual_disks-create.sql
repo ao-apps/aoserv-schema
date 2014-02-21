@@ -24,6 +24,12 @@ create table virtual_disks (
   weight_target smallint
     not null
     check (weight_target in (1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024)),
+  verify_day_of_week int
+    not null
+    default 7, -- Calendar.SATURDAY
+  verify_hour_of_day int
+    not null
+    default 1, -- 1:00 AM
   unique(virtual_server, device)
 );
 grant all on virtual_disks to aoadmin;

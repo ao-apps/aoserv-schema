@@ -657,16 +657,19 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_forbi
 commit;
 begin;
 \echo dns_records
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'pkey', 0, 'pkey', false, true, false, 'a generated pkey', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'zone', 1, 'zone', false, false, false, 'the zone as found in dns_zones', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'domain', 2, 'hostname', false, false, false, 'the first column in the zone files', '1.0a100', '1.68';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'domain', 3, 'string', false, false, false, 'the first column in the zone files', '1.69', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'type', 4, 'string', false, false, false, 'the type as found in dns_types', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'mx_priority', 5, 'int', true, false, false, 'the priority for the MX entries', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'destination', 6, 'string', false, false, false, 'the destination, either IP addredd or hostname depending on the type of record', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'dhcp_address', 7, 'int', true, false, false, 'the pkey of the IP address whos changes are followed', '1.0a100', '1.68';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'dhcp_address', 8, 'fkey', true, false, false, 'the pkey of the IP address whos changes are followed', '1.69', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'ttl', 9, 'int', true, false, false, '', '1.0a127', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'pkey',          0, 'pkey',     false, true,  false, 'a generated pkey', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'zone',          1, 'zone',     false, false, false, 'the zone as found in dns_zones', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'domain',        2, 'hostname', false, false, false, 'the first column in the zone files', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'domain',        3, 'string',   false, false, false, 'the first column in the zone files', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'type',          4, 'string',   false, false, false, 'the type as found in dns_types', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'mx_priority',   5, 'int',      true,  false, false, 'the priority for the MX entries', '1.0a100', '1.71';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'priority',      6, 'int',      true,  false, false, 'the priority for the entry', '1.72', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'weight',        7, 'int',      true,  false, false, 'the relative weight for records with the same priority', '1.72', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'port',          8, 'int',      true,  false, false, 'the TCP or UDP port on which the service is to be found', '1.72', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'destination',   9, 'string',   false, false, false, 'the destination, either IP addredd or hostname depending on the type of record', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'dhcp_address', 10, 'int',      true,  false, false, 'the pkey of the IP address whos changes are followed', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'dhcp_address', 11, 'fkey',     true,  false, false, 'the pkey of the IP address whos changes are followed', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_records', 'ttl',          12, 'int',      true,  false, false, 'the time to live field', '1.0a127', null;
 commit;
 begin;
 \echo dns_tlds
@@ -676,10 +679,13 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_tlds'
 commit;
 begin;
 \echo dns_types
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_types', 'type', 0, 'string', false, true, true, 'the type', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_types', 'description', 1, 'string', false, false, true, 'the description of the type', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_types', 'is_mx', 2, 'boolean', false, false, true, 'flags which types use the MX weight', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_types', 'param_ip', 3, 'boolean', false, false, true, 'flags if the parameter is a IP or a hostname', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_types', 'type',         0, 'string',  false, true,  true, 'the type', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_types', 'description',  1, 'string',  false, false, true, 'the description of the type', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_types', 'is_mx',        2, 'boolean', false, false, true, 'flags which types use the MX weight', '1.0a100', '1.71';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_types', 'has_priority', 3, 'boolean', false, false, true, 'flags which types have a priority', '1.72', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_types', 'has_weight',   4, 'boolean', false, false, true, 'flags which types have a weight', '1.72', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_types', 'has_port',     5, 'boolean', false, false, true, 'flags which types have a port', '1.72', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_types', 'param_ip',     6, 'boolean', false, false, true, 'flags if the parameter is a IP or a hostname', '1.0a100', null;
 commit;
 begin;
 \echo dns_zones
@@ -2981,6 +2987,8 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_d
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_disks', 'secondary_weight', 17, 'short', false, false, false, 'the amount of secondary disk I/O allocated to this virtual device on a scale of 1-1024', '1.36', '1.40';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_disks', 'primary_physical_volumes_locked', 18, 'boolean', false, false, false, 'indicates this device is locked and should not be moved by automated means', '1.36', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_disks', 'secondary_physical_volumes_locked', 19, 'boolean', false, false, false, 'indicates this device is locked and should not be moved by automated means', '1.36', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_disks', 'verify_day_of_week', 20, 'int', false, false, false, 'the day of the week verification will begin', '1.72', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'virtual_disks', 'verify_hour_of_day', 21, 'int', false, false, false, 'the hour of day verification will begin', '1.72', null;
 commit;
 begin;
 \echo virtual_servers

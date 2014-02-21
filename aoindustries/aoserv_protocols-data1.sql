@@ -1100,6 +1100,20 @@ insert into aoserv_protocols values(
   '2014-02-11',
   'added verify_virtual_disk command'
 );
+insert into aoserv_protocols values(
+  '1.72',
+  '2014-02-20',
+  'renamed dns_records.mx_priority to priority
+added dns_records.weight column
+added dns_records.port column
+updated AOSH command add_dns_record
+renamed dns_types.is_mx to has_priority
+added dns_types.has_weight column
+added dns_types.has_port column
+added SRV to dns_types
+added virtual_disks.verify_day_of_week column
+added virtual_disks.verify_hour_of_day column'
+);
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table

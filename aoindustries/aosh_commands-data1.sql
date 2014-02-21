@@ -629,6 +629,14 @@ insert into aosh_commands values(
   'adds a record to a name server zone',
   '<i>zone</i> {<b>@</b>|<i>hostname</i>} <i>type</i> {""|<i>mx_priority</i>} {<i>hostname</i>|<i>ip_address</i>} {""|<i>ttl</i>}',
   '1.0a127',
+  '1.71'
+);
+insert into aosh_commands values(
+  'add_dns_record',
+  'dns_records',
+  'adds a record to a name server zone',
+  '<i>zone</i> {<b>@</b>|<i>hostname</i>} <i>type</i> {""|<i>priority</i>} {""|<i>weight</i>} {""|<i>port</i>} {<i>hostname</i>|<i>ip_address</i>} {""|<i>ttl</i>}',
+  '1.72',
   null
 );
 insert into aosh_commands values(

@@ -314,5 +314,24 @@ insert into ip_reputation_limiters values (
     'HTTP',
     null
 );
-select setval('ip_reputation_limiters_pkey_seq', 46, false);
+-- CHANGEME_COM
+insert into ip_reputation_limiters values (
+    46,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='www1.fc.changeme.com') and device_id='eth0'),
+    'Default',
+    null
+);
+insert into ip_reputation_limiters values (
+    47,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='www1.fc.changeme.com') and device_id='eth0'),
+    'SA-MP',
+    null
+);
+insert into ip_reputation_limiters values (
+    48,
+    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='www1.fc.changeme.com') and device_id='eth0'),
+    'TeamSpeak',
+    null
+);
+select setval('ip_reputation_limiters_pkey_seq', 49, false);
 commit;

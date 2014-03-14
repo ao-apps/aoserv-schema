@@ -712,5 +712,47 @@ INSERT INTO business_administrators VALUES (
     false,
     null
 );
-SELECT setval('ip_reputation_sets_pkey_seq', 16, false);
+-- CHANGEME_COM
+INSERT INTO ip_reputation_sets VALUES (
+    16,
+    'CHANGEME_COM',
+    'changeme',
+    false,
+    1000000,
+    127,
+    1023,
+    24,
+    15,
+    3600,
+    '2014-03-14 02:44:30.853719-05',
+    3600,
+    '2014-03-14 02:44:30.853719-05',
+    '2014-03-14 02:44:30.853719-05'
+);
+INSERT INTO usernames VALUES ('changeme_ipreputation', 'CHANGEME_COM', null);
+INSERT INTO business_administrators VALUES (
+    'changeme_ipreputation',
+    'aqDRzNnooeETghd5N6vt7duBZeo=', -- Shok86Unkave
+    'IP Reputation Source',
+    null,
+    null,
+    false,
+    true,
+    '2014-03-14 02:50:26.671396-05',
+    '(205)454-2556',
+    null,
+    null,
+    null,
+    'support@aoindustries.com',
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    false,
+    null
+);
+SELECT setval('ip_reputation_sets_pkey_seq', 17, false);
 COMMIT;

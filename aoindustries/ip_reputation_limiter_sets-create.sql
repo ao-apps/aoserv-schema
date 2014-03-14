@@ -574,5 +574,42 @@ insert into ip_reputation_limiter_sets values (
     (select pkey from ip_reputation_sets where identifier='global'),
     2
 );
-select setval('ip_reputation_limiter_sets_pkey_seq', 89, false);
+-- CHANGEME_COM
+insert into ip_reputation_limiter_sets values (
+    89,
+    46,
+    (select pkey from ip_reputation_sets where identifier='changeme'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    90,
+    46,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+insert into ip_reputation_limiter_sets values (
+    91,
+    47,
+    (select pkey from ip_reputation_sets where identifier='changeme'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    92,
+    47,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+insert into ip_reputation_limiter_sets values (
+    93,
+    48,
+    (select pkey from ip_reputation_sets where identifier='changeme'),
+    1
+);
+insert into ip_reputation_limiter_sets values (
+    94,
+    48,
+    (select pkey from ip_reputation_sets where identifier='global'),
+    2
+);
+select setval('ip_reputation_limiter_sets_pkey_seq', 95, false);
 commit;

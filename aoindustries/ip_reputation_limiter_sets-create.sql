@@ -599,17 +599,5 @@ insert into ip_reputation_limiter_sets values (
     (select pkey from ip_reputation_sets where identifier='global'),
     2
 );
-insert into ip_reputation_limiter_sets values (
-    93,
-    48,
-    (select pkey from ip_reputation_sets where identifier='changeme'),
-    1
-);
-insert into ip_reputation_limiter_sets values (
-    94,
-    48,
-    (select pkey from ip_reputation_sets where identifier='global'),
-    2
-);
-select setval('ip_reputation_limiter_sets_pkey_seq', 95, false);
+select setval('ip_reputation_limiter_sets_pkey_seq', 93, false);
 commit;

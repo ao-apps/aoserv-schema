@@ -327,11 +327,5 @@ insert into ip_reputation_limiters values (
     'SA-MP',
     null
 );
-insert into ip_reputation_limiters values (
-    48,
-    (select pkey from net_devices where server=(select pkey from servers where package=308 and name='www1.fc.changeme.com') and device_id='eth0'),
-    'TeamSpeak',
-    null
-);
-select setval('ip_reputation_limiters_pkey_seq', 49, false);
+select setval('ip_reputation_limiters_pkey_seq', 48, false);
 commit;

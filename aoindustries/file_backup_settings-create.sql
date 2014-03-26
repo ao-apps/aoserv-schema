@@ -14,7 +14,10 @@ create table file_backup_settings (
     not null,
   required boolean
     not null,
-  unique(replication, "path")
+  unique(replication, "path"),
+  check (
+    backup_enabled or not required
+  )
 );
 grant all on file_backup_settings to aoadmin;
 grant select, insert, update, delete on file_backup_settings to aoserv_app;

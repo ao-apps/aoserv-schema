@@ -18,6 +18,12 @@ create table master_users (
     not null,
   is_dns_admin bool
     default false
+    not null,
+  is_router bool
+    default false
+    not null,
+  is_cluster_admin bool
+    default false
     not null
 );
 grant all on master_users to aoadmin;

@@ -3360,6 +3360,22 @@ insert into aosh_commands values(
   null
 );
 insert into aosh_commands values(
+  'get_primary_physical_server',
+  'virtual_servers',
+  'gets the physical server that is currently the primary node for this virtual server',
+  '<i>virtual_server</i>',
+  '1.73',
+  null
+);
+insert into aosh_commands values(
+  'get_secondary_physical_server',
+  'virtual_servers',
+  'gets the physical server that is currently the secondary node for this virtual server',
+  '<i>virtual_server</i>',
+  '1.73',
+  null
+);
+insert into aosh_commands values(
   'get_virtual_server_status',
   'virtual_servers',
   'calls "xm list" to get the current state on the current primary physical server',

@@ -1114,6 +1114,12 @@ added SRV to dns_types
 added virtual_disks.verify_day_of_week column
 added virtual_disks.verify_hour_of_day column'
 );
+insert into aoserv_protocols values(
+  '1.73',
+  '2014-04-01',
+  'added get_primary_physical_server command
+added get_secondary_physical_server command'
+);
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table

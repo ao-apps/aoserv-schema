@@ -9,7 +9,8 @@ create table technology_versions (
   name text
     not null,
   version text
-    not null,
+    not null
+    check (version!='' and version=trim(version)),
   updated timestamp with time zone
     default now()
     not null,

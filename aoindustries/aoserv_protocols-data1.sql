@@ -1120,6 +1120,12 @@ insert into aoserv_protocols values(
   'added get_primary_physical_server command
 added get_secondary_physical_server command'
 );
+insert into aoserv_protocols values(
+  '1.74',
+  '2014-04-23',
+  'added failover_mysql_replications.max_alert_level column
+added mysql_databases.max_check_table_alert_level column'
+);
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table

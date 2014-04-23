@@ -879,6 +879,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_mysql_replications', 'monitoring_seconds_behind_medium', 6, 'int', true, false, false, 'the seconds behind where will trigger medium alert level', '1.56', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_mysql_replications', 'monitoring_seconds_behind_high', 7, 'int', true, false, false, 'the seconds behind where will trigger high alert level', '1.56', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_mysql_replications', 'monitoring_seconds_behind_critical', 8, 'int', true, false, false, 'the seconds behind where will trigger critical alert level', '1.56', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_mysql_replications', 'max_alert_level', 9, 'string', false, false, false, 'the maximum alert level for all monitoring of this slave', '1.74', null;
 commit;
 begin;
 \echo file_backups
@@ -1569,6 +1570,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_dat
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_databases', 'package', 4, 'package', false, false, false, 'the package that this database is part of', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_databases', 'backup_level', 5, 'short', false, false, false, 'the number of backup copies to keep', '1.0a100', '1.30';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_databases', 'backup_retention', 6, 'short', false, false, false, 'the number of days backups will be kept', '1.0a100', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_databases', 'max_check_table_alert_level', 7, 'string', false, false, false, 'the maximum alert level created for the check table monitoring of this database', '1.74', null;
 commit;
 begin;
 \echo mysql_db_users

@@ -26,6 +26,7 @@ create table ip_addresses (
   external_ip_address text,
   netmask text
     not null,
+  check_blacklists_over_smtp boolean not null default true,
   unique(ip_address, net_device),
   check (
     -- Only the unspecified IP addresses may have a null hostname

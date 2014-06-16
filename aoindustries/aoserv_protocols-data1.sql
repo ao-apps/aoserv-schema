@@ -1126,6 +1126,11 @@ insert into aoserv_protocols values(
   'added failover_mysql_replications.max_alert_level column
 added mysql_databases.max_check_table_alert_level column'
 );
+insert into aoserv_protocols values(
+  '1.75',
+  '2014-06-16',
+  'added ip_addresses.check_blacklists_over_smtp column'
+);
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table

@@ -1231,21 +1231,22 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'interbase
 commit;
 begin;
 \echo ip_addresses
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'pkey', 0, 'pkey', false, true, false, 'a generated, unique key', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'ip_address', 1, 'ip_address', false, false, false, 'the IP address', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'net_device', 2, 'fkey', true, false, false, 'the network_device that this IP address is routed through.  May only be null for 0.0.0.0', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'is_alias', 3, 'boolean', false, false, false, 'indicates that the IP address is using IP aliasing on the network device', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'hostname', 4, 'hostname', false, false, false, 'the reverse mapping for the hostname', '1.0a100', '1.68';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'hostname', 5, 'domain_name', true, false, false, 'the reverse mapping for the hostname, null only allowed for the "0.0.0.0"" or "::" IP addresses', '1.69', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'package', 6, 'package', false, false, false, 'the packages that the IP address is part of', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'price', 7, 'decimal_2', true, false, false, '', '1.0a100', '1.0a122';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'created', 8, 'time', false, false, false, 'the time the IP address was added', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'available', 9, 'boolean', false, false, false, 'a flag if the IP address is available', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'is_overflow', 10, 'boolean', false, false, false, 'indicates that the IP address is shared by different accounts', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'is_dhcp', 11, 'boolean', false, false, false, 'the IP address is obtained via DHCP', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'ping_monitor_enabled', 12, 'boolean', false, false, false, 'if ping (ICMP ECHO) is available for monitoring, defaults to true', '1.30', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'external_ip_address', 13, 'ip_address', true, false, false, 'the external IP address, if different than ip_address', '1.34', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'netmask', 14, 'string', false, false, false, 'the netmask of the local network', '1.38', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'pkey',                        0, 'pkey',       false,  true, false, 'a generated, unique key', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'ip_address',                  1, 'ip_address', false, false, false, 'the IP address', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'net_device',                  2, 'fkey',        true, false, false, 'the network_device that this IP address is routed through.  May only be null for 0.0.0.0', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'is_alias',                    3, 'boolean',    false, false, false, 'indicates that the IP address is using IP aliasing on the network device', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'hostname',                    4, 'hostname',   false, false, false, 'the reverse mapping for the hostname', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'hostname',                    5, 'domain_name', true, false, false, 'the reverse mapping for the hostname, null only allowed for the "0.0.0.0"" or "::" IP addresses', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'package',                     6, 'package',    false, false, false, 'the packages that the IP address is part of', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'price',                       7, 'decimal_2',   true, false, false, '', '1.0a100', '1.0a122';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'created',                     8, 'time',       false, false, false, 'the time the IP address was added', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'available',                   9, 'boolean',    false, false, false, 'a flag if the IP address is available', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'is_overflow',                10, 'boolean',    false, false, false, 'indicates that the IP address is shared by different accounts', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'is_dhcp',                    11, 'boolean',    false, false, false, 'the IP address is obtained via DHCP', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'ping_monitor_enabled',       12, 'boolean',    false, false, false, 'if ping (ICMP ECHO) is available for monitoring, defaults to true', '1.30', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'external_ip_address',        13, 'ip_address',  true, false, false, 'the external IP address, if different than ip_address', '1.34', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'netmask',                    14, 'string',     false, false, false, 'the netmask of the local network', '1.38', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'check_blacklists_over_smtp', 15, 'boolean',    false, false, false, 'allows determining some types of blacklists over SMTP protocol', '1.75', null;
 commit;
 begin;
 \echo ip_reputation_limiter_limits

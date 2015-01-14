@@ -203,6 +203,7 @@ group by
 ;
 grant all on salary_report to aoadmin;
 
+-- Note: Refund transactions must have money with opposite the normal sign
 create view bank_transactions_verify as
 select
   *
@@ -211,10 +212,10 @@ from
 where
   amount=0
   or (
-    amount<0
+    case when type='refund' then amount>0 else amount<0 end
     and expense_code is null
   ) or (
-    amount>0
+    case when type='refund' then amount<0 else amount>0 end
     and expense_code is not null
   ) or (
     (

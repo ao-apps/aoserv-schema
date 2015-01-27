@@ -24,6 +24,6 @@ other	f
 shipping	f
 purchase	f
 referral	t
-refund	f
+refund	t
 reseller	f
 \.

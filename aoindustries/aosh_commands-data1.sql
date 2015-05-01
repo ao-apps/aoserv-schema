@@ -645,6 +645,14 @@ insert into aosh_commands values(
   'removes a record from a name server zone',
   '<i>pkey</i>',
   '1.0a100',
+  '1.74'
+);
+insert into aosh_commands values(
+  'remove_dns_record',
+  'dns_records',
+  'removes a record from a name server zone',
+  '{<i>pkey</i>|<i>zone</i> {<b>@</b>|<i>hostname</i>} <i>type</i> {<i>hostname</i>|<i>ip_address</i>}}',
+  '1.75',
   null
 );
 insert into aosh_commands values(

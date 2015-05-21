@@ -1132,6 +1132,11 @@ insert into aoserv_protocols values(
   'added ip_addresses.check_blacklists_over_smtp column
 added alternate syntax in AOSH for remove_dns_record command'
 );
+insert into aoserv_protocols values(
+  '1.76',
+  '2015-05-21',
+  'added get_failover_file_replication_activity command'
+);
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table

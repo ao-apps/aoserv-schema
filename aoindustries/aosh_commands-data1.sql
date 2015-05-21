@@ -952,6 +952,14 @@ insert into aosh_commands values(
   null
 );
 insert into aosh_commands values(
+  'get_failover_file_replication_activity',
+  'failover_file_replications',
+  'gets the most recently reported replication activity',
+  '<i>from_server</i> <i>to_server</i> <i>path</i>',
+  '1.76',
+  null
+);
+insert into aosh_commands values(
   'add_file_backup_device',
   'file_backup_devices',
   'creates a new FileBackupDevice',

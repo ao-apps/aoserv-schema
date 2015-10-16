@@ -1137,6 +1137,14 @@ insert into aoserv_protocols values(
   '2015-05-21',
   'added get_failover_file_replication_activity command'
 );
+insert into aoserv_protocols values(
+  '1.77',
+  '2015-10-16',
+  'removed client_jvm_profile pseudo-table
+removed daemon_profile pseudo-table
+removed master_server_profile pseudo-table
+removed master_history pseudo-table'
+);
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table

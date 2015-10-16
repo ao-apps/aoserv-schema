@@ -184,7 +184,7 @@ begin;
 \echo daemon_profile
 select add_schema_foreign_key('daemon_profile', 'server', 'servers', 'hostname', '1.0a100', '1.30');
 select add_schema_foreign_key('daemon_profile', 'ao_server', 'ao_servers', 'hostname', '1.31', '1.68');
-select add_schema_foreign_key('daemon_profile', 'ao_server', 'ao_servers', 'hostname', '1.69', null);
+select add_schema_foreign_key('daemon_profile', 'ao_server', 'ao_servers', 'hostname', '1.69', '1.76');
 commit;
 begin;
 \echo disable_log

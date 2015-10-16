@@ -222,7 +222,7 @@ insert into schema_tables values(
     false,
     '',
     '1.0a100',
-    null
+    '1.76'
 );
 insert into schema_tables values(
     'country_codes',
@@ -276,7 +276,7 @@ insert into schema_tables values(
     false,
     '',
     '1.0a100',
-    null
+    '1.76'
 );
 insert into schema_tables values(
     'disable_log',
@@ -1060,7 +1060,7 @@ insert into schema_tables values(
     false,
     '',
     '1.0a100',
-    null
+    '1.76'
 );
 insert into schema_tables values(
     'master_hosts',
@@ -1087,7 +1087,7 @@ insert into schema_tables values(
     false,
     '',
     '1.0a100',
-    null
+    '1.76'
 );
 insert into schema_tables values(
     'master_server_stats',

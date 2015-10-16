@@ -46,7 +46,7 @@ insert into schema_columns select
     false,
     false,
     false,
-'the crypt\'ed key used to connect to this server,
+'the crypt''ed key used to connect to this server,
 this info MUST be filtered because it grants
 complete control over the server.',
     '1.0a100',
@@ -406,14 +406,14 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'business_
 commit;
 begin;
 \echo client_jvm_profile
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'client_jvm_profile', 'level', 0, 'int', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'client_jvm_profile', 'classname', 1, 'string', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'client_jvm_profile', 'method_name', 2, 'string', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'client_jvm_profile', 'parameter', 3, 'string', true, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'client_jvm_profile', 'use_count', 4, 'long', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'client_jvm_profile', 'total_time', 5, 'interval', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'client_jvm_profile', 'min_time', 6, 'interval', true, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'client_jvm_profile', 'max_time', 7, 'interval', true, false, false, '', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'client_jvm_profile', 'level', 0, 'int', false, false, false, '', '1.0a100', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'client_jvm_profile', 'classname', 1, 'string', false, false, false, '', '1.0a100', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'client_jvm_profile', 'method_name', 2, 'string', false, false, false, '', '1.0a100', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'client_jvm_profile', 'parameter', 3, 'string', true, false, false, '', '1.0a100', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'client_jvm_profile', 'use_count', 4, 'long', false, false, false, '', '1.0a100', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'client_jvm_profile', 'total_time', 5, 'interval', false, false, false, '', '1.0a100', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'client_jvm_profile', 'min_time', 6, 'interval', true, false, false, '', '1.0a100', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'client_jvm_profile', 'max_time', 7, 'interval', true, false, false, '', '1.0a100', '1.76';
 commit;
 begin;
 \echo country_codes
@@ -601,15 +601,15 @@ begin;
 \echo daemon_profile
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'server', 0, 'hostname', false, false, false, '', '1.0a100', '1.30';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'ao_server', 1, 'hostname', false, false, false, '', '1.31', '1.68';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'ao_server', 2, 'domain_name', false, false, false, '', '1.69', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'level', 3, 'int', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'classname', 4, 'string', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'method_name', 5, 'string', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'parameter', 6, 'string', true, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'use_count', 7, 'long', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'total_time', 8, 'interval', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'min_time', 9, 'interval', true, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'max_time', 10, 'interval', true, false, false, '', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'ao_server', 2, 'domain_name', false, false, false, '', '1.69', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'level', 3, 'int', false, false, false, '', '1.0a100', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'classname', 4, 'string', false, false, false, '', '1.0a100', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'method_name', 5, 'string', false, false, false, '', '1.0a100', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'parameter', 6, 'string', true, false, false, '', '1.0a100', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'use_count', 7, 'long', false, false, false, '', '1.0a100', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'total_time', 8, 'interval', false, false, false, '', '1.0a100', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'min_time', 9, 'interval', true, false, false, '', '1.0a100', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'max_time', 10, 'interval', true, false, false, '', '1.0a100', '1.76';
 commit;
 begin;
 \echo disable_log
@@ -1362,7 +1362,7 @@ begin;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_group_accounts', 'pkey', 0, 'pkey', false, true, false, 'a generated unique number', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_group_accounts', 'group_name', 1, 'string', false, false, false, 'the linux group name', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_group_accounts', 'username', 2, 'username', false, false, false, 'the linux account that is an alternate member', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_group_accounts', 'is_primary', 3, 'boolean', false, false, false, 'flag showing that this group is the user\'s primary group', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_group_accounts', 'is_primary', 3, 'boolean', false, false, false, 'flag showing that this group is the user''s primary group', '1.0a100', null;
 commit;
 begin;
 \echo linux_group_types
@@ -1451,17 +1451,17 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'majordomo
 commit;
 begin;
 \echo master_history
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_history', 'command_id', 0, 'long', false, true, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_history', 'process_id', 1, 'long', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_history', 'connector_id', 2, 'long', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_history', 'authenticated_user', 3, 'username', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_history', 'effective_user', 4, 'username', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_history', 'host', 5, 'ip_address', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_history', 'protocol', 6, 'string', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_history', 'is_secure', 7, 'boolean', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_history', 'start_time', 8, 'time', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_history', 'end_time', 9, 'time', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_history', 'command', 10, 'string', true, false, false, '', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_history', 'command_id', 0, 'long', false, true, false, '', '1.0a100', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_history', 'process_id', 1, 'long', false, false, false, '', '1.0a100', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_history', 'connector_id', 2, 'long', false, false, false, '', '1.0a100', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_history', 'authenticated_user', 3, 'username', false, false, false, '', '1.0a100', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_history', 'effective_user', 4, 'username', false, false, false, '', '1.0a100', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_history', 'host', 5, 'ip_address', false, false, false, '', '1.0a100', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_history', 'protocol', 6, 'string', false, false, false, '', '1.0a100', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_history', 'is_secure', 7, 'boolean', false, false, false, '', '1.0a100', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_history', 'start_time', 8, 'time', false, false, false, '', '1.0a100', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_history', 'end_time', 9, 'time', false, false, false, '', '1.0a100', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_history', 'command', 10, 'string', true, false, false, '', '1.0a100', '1.76';
 commit;
 begin;
 \echo master_hosts
@@ -1490,14 +1490,14 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_pr
 commit;
 begin;
 \echo master_server_profile
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_server_profile', 'level', 0, 'int', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_server_profile', 'classname', 1, 'string', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_server_profile', 'method_name', 2, 'string', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_server_profile', 'parameter', 3, 'string', true, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_server_profile', 'use_count', 4, 'long', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_server_profile', 'total_time', 5, 'interval', false, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_server_profile', 'min_time', 6, 'interval', true, false, false, '', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_server_profile', 'max_time', 7, 'interval', true, false, false, '', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_server_profile', 'level', 0, 'int', false, false, false, '', '1.0a100', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_server_profile', 'classname', 1, 'string', false, false, false, '', '1.0a100', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_server_profile', 'method_name', 2, 'string', false, false, false, '', '1.0a100', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_server_profile', 'parameter', 3, 'string', true, false, false, '', '1.0a100', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_server_profile', 'use_count', 4, 'long', false, false, false, '', '1.0a100', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_server_profile', 'total_time', 5, 'interval', false, false, false, '', '1.0a100', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_server_profile', 'min_time', 6, 'interval', true, false, false, '', '1.0a100', '1.76';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_server_profile', 'max_time', 7, 'interval', true, false, false, '', '1.0a100', '1.76';
 commit;
 begin;
 \echo master_server_stats
@@ -2183,17 +2183,17 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_re
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'business_country',  18, 'string', false, false, false, 'the two-character country code of the business', '1.69', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'business_zip',      19, 'zip', true, false, false, 'the zip code of the business', '1.23', '1.68';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'business_zip',      20, 'string', true, false, false, 'the zip code of the business', '1.69', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_name',           21, 'string', false, false, false, 'the administrator\'s name', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_title',          22, 'string', true, false, false, 'the administrator\'s title', '1.23', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_work_phone',     23, 'string', false, false, false, 'the administrator\'s work phone', '1.23', '1.68';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_work_phone',     24, 'string', false, false, false, 'the administrator\'s work phone', '1.69', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_cell_phone',     25, 'string', true, false, false, 'the administrator\'s cell phone', '1.23', '1.68';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_cell_phone',     26, 'string', true, false, false, 'the administrator\'s cell phone', '1.69', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_home_phone',     27, 'string', true, false, false, 'the administrator\'s home phone', '1.23', '1.68';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_home_phone',     28, 'string', true, false, false, 'the administrator\'s home phone', '1.69', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_fax',            29, 'string', true, false, false, 'the administrator\'s fax number', '1.23', '1.68';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_fax',            30, 'string', true, false, false, 'the administrator\'s fax number', '1.69', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_email',          31, 'email', false, false, false, 'the administrator\'s email address', '1.23', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_name',           21, 'string', false, false, false, 'the administrator''s name', '1.23', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_title',          22, 'string', true, false, false, 'the administrator''s title', '1.23', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_work_phone',     23, 'string', false, false, false, 'the administrator''s work phone', '1.23', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_work_phone',     24, 'string', false, false, false, 'the administrator''s work phone', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_cell_phone',     25, 'string', true, false, false, 'the administrator''s cell phone', '1.23', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_cell_phone',     26, 'string', true, false, false, 'the administrator''s cell phone', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_home_phone',     27, 'string', true, false, false, 'the administrator''s home phone', '1.23', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_home_phone',     28, 'string', true, false, false, 'the administrator''s home phone', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_fax',            29, 'string', true, false, false, 'the administrator''s fax number', '1.23', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_fax',            30, 'string', true, false, false, 'the administrator''s fax number', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_email',          31, 'email', false, false, false, 'the administrator''s email address', '1.23', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_address1',       32, 'string', true, false, false, 'the street address of the administrator', '1.23', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_address2',       33, 'string', true, false, false, 'the street address of the administrator', '1.23', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'signup_requests', 'ba_city',           34, 'city', true, false, false, 'the city of the administrator', '1.23', '1.68';
@@ -2951,9 +2951,9 @@ insert into schema_columns select
     false,
     false,
     false,
-    '\'Y\' if the payment is confirmed<br>
-\'W\' if waiting confirmation<br>
-\'N\' if confirmation failed',
+    '''Y'' if the payment is confirmed<br>
+''W'' if waiting confirmation<br>
+''N'' if confirmation failed',
     '1.0a100',
     null
 ;

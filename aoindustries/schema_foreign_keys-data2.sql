@@ -409,6 +409,7 @@ select add_schema_foreign_key('httpd_sites', 'ftp_backup_retention', 'backup_ret
 select add_schema_foreign_key('httpd_sites', 'log_backup_level', 'backup_levels', 'level', '1.0a100', '1.30');
 select add_schema_foreign_key('httpd_sites', 'log_backup_retention', 'backup_retentions', 'days', '1.0a100', '1.30');
 select add_schema_foreign_key('httpd_sites', 'disable_log', 'disable_log', 'pkey', '1.0a100', null);
+select add_schema_foreign_key('httpd_sites', 'php_version', 'technology_versions', 'pkey', '1.78', null);
 commit;
 begin;
 \echo httpd_static_sites

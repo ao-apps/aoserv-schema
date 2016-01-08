@@ -26,6 +26,7 @@ create table httpd_sites (
   is_manual bool
     not null,
   awstats_skip_files text,
+  php_version integer,
   unique(ao_server, site_name)
 );
 grant all on httpd_sites to aoadmin;

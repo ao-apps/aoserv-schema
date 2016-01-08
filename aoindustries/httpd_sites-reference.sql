@@ -8,7 +8,7 @@ alter table httpd_sites
 alter table httpd_sites
   add constraint package_fkey
   foreign key (package)
-  references packages (name)
+  references packages ("name")
   on delete restrict
   on update cascade
 ;
@@ -22,7 +22,7 @@ alter table httpd_sites
 alter table httpd_sites
   add constraint linux_group_fkey
   foreign key (linux_group)
-  references linux_groups (name)
+  references linux_groups ("name")
   on delete restrict
   on update cascade
 ;
@@ -30,6 +30,13 @@ alter table httpd_sites
   add constraint disable_log_fkey
   foreign key (disable_log)
   references disable_log (pkey)
+  on delete restrict
+  on update cascade
+;
+alter table httpd_sites
+  add constraint php_version_fkey
+  foreign key (php_version)
+  references technology_versions (pkey)
   on delete restrict
   on update cascade
 ;

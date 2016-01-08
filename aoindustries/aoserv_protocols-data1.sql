@@ -1145,6 +1145,13 @@ removed daemon_profile pseudo-table
 removed master_server_profile pseudo-table
 removed master_history pseudo-table'
 );
+insert into aoserv_protocols values(
+  '1.78',
+  '2016-01-07',
+  'added technology_versions.disable_time column
+added technology_versions.disable_reason column
+added httpd_sites.php_version table'
+);
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table

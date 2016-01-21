@@ -27,6 +27,11 @@ create table httpd_sites (
     not null,
   awstats_skip_files text,
   php_version integer,
+  enable_cgi boolean not null,
+  check (
+    -- CGI required for per-site PHP
+    enable_cgi or php_version is null
+  )
   unique(ao_server, site_name)
 );
 grant all on httpd_sites to aoadmin;

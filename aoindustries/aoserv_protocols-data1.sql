@@ -1150,7 +1150,12 @@ insert into aoserv_protocols values(
   '2016-01-07',
   'added technology_versions.disable_time column
 added technology_versions.disable_reason column
-added httpd_sites.php_version table'
+added httpd_sites.php_version column'
+);
+insert into aoserv_protocols values(
+  '1.79',
+  '2016-01-09',
+  'added httpd_sites.enable_cgi column'
 );
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table

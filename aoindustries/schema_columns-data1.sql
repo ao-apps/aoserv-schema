@@ -1097,6 +1097,8 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sit
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'disable_log', 17, 'fkey', true, false, false, 'indicates that the site is disabled', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'is_manual', 18, 'boolean', false, false, false, 'configuration of this server is performed manually', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'awstats_skip_files', 19, 'string', true, false, false, 'the SkipFiles setting for AWStats', '1.0a129', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'php_version', 20, 'fkey', true, false, false, 'the active version of PHP, if any', '1.78', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'enable_cgi', 21, 'boolean', false, false, false, 'CGI is enabled on this website', '1.79', null;
 commit;
 begin;
 \echo httpd_static_sites
@@ -2790,7 +2792,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'technolog
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'technology_versions', 'version', 2, 'string', false, false, true, 'the version number of the package in #.##.##-## format', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'technology_versions', 'updated', 3, 'time', false, false, true, 'the time this package was last updated', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'technology_versions', 'owner', 4, 'username', false, false, false, 'the business_administrator who is responsible for maintaining this package', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'technology_versions', 'operating_system_version', 5, 'fkey', true, false, false, 'the version of the OS that this packages is installed', '1.0a108', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'technology_versions', 'operating_system_version', 5, 'fkey', true, false, true, 'the version of the OS that this packages is installed', '1.0a108', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'technology_versions', 'disable_time', 6, 'time', true, false, true, 'the time this version is no longer supported', '1.78', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'technology_versions', 'disable_reason', 7, 'string', true, false, true, 'the reason this version is no longer supported', '1.78', null;
 commit;

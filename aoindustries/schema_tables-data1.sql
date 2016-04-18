@@ -1004,7 +1004,7 @@ insert into schema_tables values(
     (select count(*) from schema_tables),
     'Linux IDs',
     true,
-    'The linux_ids is a table of all the GID and UID values that are acceptable for a linux_server_group or linux_server_account.  0-499 are flagged as system and 500-65533 are user.',
+    'The linux_ids is a table of all the GID and UID values that are acceptable for a linux_server_group or linux_server_account.  0-999 are flagged as system and 1000-65533 are user.',
     '1.0a100',
     null
 );

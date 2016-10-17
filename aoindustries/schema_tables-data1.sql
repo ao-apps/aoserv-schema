@@ -40,7 +40,7 @@ insert into schema_tables values(
     (select count(*) from schema_tables),
     'AOServ Permissions',
     true,
-    '<code>aoserv_permissions</code> lists all of the possible permissions in the AOServ system.',
+    '<code>aoserv_permissions</code> lists all of the possible permissions in the AOServ Platform.',
     '1.21',
     null
 );

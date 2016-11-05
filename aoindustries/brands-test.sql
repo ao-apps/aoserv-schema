@@ -42,7 +42,7 @@ insert into brands values(
   'https://localhost:11257/aoweb/', -- aoweb_struts_https_url_base
   'LkZ4Gi54ofbw9ghm320JHKcrYlGf4SzIzMa7geNmcbM=', -- aoweb_struts_google_verify_content
   false, -- aoweb_struts_noindex
-  'UA-8801760-3', -- aoweb_struts_google_analytics_new_tracking_code
+  'UA-86871646-1', -- aoweb_struts_google_analytics_new_tracking_code
   'support@aoindustries.com', -- aoweb_struts_signup_admin_address
   4, -- aoweb_struts_vnc_bind
   'PKCS12', -- aoweb_struts_keystore_type

@@ -1157,6 +1157,13 @@ insert into aoserv_protocols values(
   '2016-01-09',
   'added httpd_sites.enable_cgi column'
 );
+insert into aoserv_protocols values(
+  '1.80',
+  '2016-11-29',
+  'added ao_servers.uid_min column
+added ao_servers.gid_min column
+removed linux_ids.is_system column'
+);
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table

@@ -29,7 +29,9 @@ create table ao_servers (
   monitoring_load_low float4,
   monitoring_load_medium float4 check (monitoring_load_medium is null or monitoring_load_low is not null and monitoring_load_medium>monitoring_load_low),
   monitoring_load_high float4 check (monitoring_load_high is null or monitoring_load_medium is not null and monitoring_load_high>monitoring_load_medium),
-  monitoring_load_critical float4 check (monitoring_load_critical is null or monitoring_load_high is not null and monitoring_load_critical>monitoring_load_high)
+  monitoring_load_critical float4 check (monitoring_load_critical is null or monitoring_load_high is not null and monitoring_load_critical>monitoring_load_high),
+  uid_min integer not null check (uid_min >= 500 and uid_min < 60000) default 1000,
+  gid_min integer not null check (gid_min >= 500 and gid_min < 60000) default 1000
 );
 grant all on ao_servers to aoadmin;
 grant select, update on ao_servers to aoserv_app;

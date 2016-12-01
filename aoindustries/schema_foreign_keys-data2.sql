@@ -64,6 +64,8 @@ select add_schema_foreign_key('ao_servers', 'daemon_device_id', 'net_device_ids'
 select add_schema_foreign_key('ao_servers', 'daemon_connect_bind', 'net_binds', 'pkey', '1.0a119', null);
 select add_schema_foreign_key('ao_servers', 'time_zone', 'time_zones', 'name', '1.2', null);
 select add_schema_foreign_key('ao_servers', 'jilter_bind', 'net_binds', 'pkey', '1.7', null);
+select add_schema_foreign_key('ao_servers', 'uid_min', 'linux_ids', 'id', '1.80', null);
+select add_schema_foreign_key('ao_servers', 'gid_min', 'linux_ids', 'id', '1.80', null);
 commit;
 begin;
 \echo aosh_commands

@@ -93,6 +93,8 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_server
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'monitoring_load_medium', 40, 'float', true, false, false, 'the 5-minute load average that will trigger a medium-level alert', '1.35', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'monitoring_load_high', 41, 'float', true, false, false, 'the 5-minute load average that will trigger a high-level alert', '1.35', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'monitoring_load_critical', 42, 'float', true, false, false, 'the 5-minute load average that will trigger a critical-level alert', '1.35', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'uid_min', 43, 'fkey', false, false, false, 'the min value for automatic uid selection in useradd', '1.80', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'gid_min', 44, 'fkey', false, false, false, 'the min value for automatic gid selection in groupadd', '1.80', null;
 commit;
 begin;
 \echo aoserv_permissions
@@ -1381,7 +1383,7 @@ begin;
 \echo linux_ids
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_ids', 'id', 0, 'int', false, true, true, 'the id', '1.0a100', '1.68';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_ids', 'id', 1, 'pkey', false, true, true, 'the id', '1.69', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_ids', 'is_system', 2, 'boolean', false, false, true, 'true if reserved for system use', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_ids', 'is_system', 2, 'boolean', false, false, true, 'true if reserved for system use', '1.0a100', '1.79';
 commit;
 begin;
 \echo linux_server_accounts

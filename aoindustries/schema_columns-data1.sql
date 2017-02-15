@@ -644,9 +644,13 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_fi
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'linux_group', 8, 'string', false, false, false, 'the group of the file', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'size', 9, 'long', true, false, false, 'the length of the file', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'file_md5', 10, 'string', true, false, false, 'the md5 hash if is a regular file', '1.0a100', '1.0a104';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'file_md5_hi', 11, 'long', true, false, false, 'the md5 hash if is a regular file', '1.0a105', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'file_md5_lo', 12, 'long', true, false, false, 'the md5 hash if is a regular file', '1.0a105', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'symlink_target', 13, 'string', true, false, false, 'the target if is a symbolic link', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'file_md5_hi', 11, 'long', true, false, false, 'the md5 hash if is a regular file', '1.0a105', '1.79';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'file_md5_lo', 12, 'long', true, false, false, 'the md5 hash if is a regular file', '1.0a105', '1.79';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'file_sha256_0', 13, 'long', true, false, false, 'the first 64 bits of SHA-256 hash if is a regular file', '1.80', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'file_sha256_1', 14, 'long', true, false, false, 'the second 64 bits of SHA-256 hash if is a regular file', '1.80', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'file_sha256_2', 15, 'long', true, false, false, 'the third 64 bits of SHA-256 hash if is a regular file', '1.80', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'file_sha256_3', 16, 'long', true, false, false, 'the fourth 64 bits of SHA-256 hash if is a regular file', '1.80', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'symlink_target', 17, 'string', true, false, false, 'the target if is a symbolic link', '1.0a100', null;
 commit;
 begin;
 \echo distro_report_types

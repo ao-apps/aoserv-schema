@@ -7,8 +7,8 @@ alter table distro_files
 ;
 alter table distro_files
   add constraint type_fkey
-  foreign key (type)
-  references distro_file_types (type)
+  foreign key ("type")
+  references distro_file_types ("type")
   on delete restrict
   on update cascade
 ;
@@ -22,7 +22,7 @@ alter table distro_files
 alter table distro_files
   add constraint linux_group_fkey
   foreign key (linux_group)
-  references linux_groups (name)
+  references linux_groups ("name")
   on delete restrict
   on update cascade
 ;

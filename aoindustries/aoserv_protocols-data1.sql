@@ -1162,7 +1162,13 @@ insert into aoserv_protocols values(
   '2016-11-29',
   'added ao_servers.uid_min column
 added ao_servers.gid_min column
-removed linux_ids.is_system column'
+removed linux_ids.is_system column
+removed distro_files.file_md5_hi
+removed distro_files.file_md5_lo
+added distro_files.file_sha256_0
+added distro_files.file_sha256_1
+added distro_files.file_sha256_2
+added distro_files.file_sha256_3'
 );
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table

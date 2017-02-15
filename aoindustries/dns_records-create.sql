@@ -17,6 +17,6 @@ create table dns_records (
   dhcp_address integer,
   ttl          integer,
   unique("zone", "domain", "type", destination)
-) without oids;
+);
 grant all on dns_records to aoadmin;
 grant select, insert, update, delete on dns_records to aoserv_app;

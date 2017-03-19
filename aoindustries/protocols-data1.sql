@@ -39,8 +39,6 @@ SIMAP	993	Secure IMAP	t	tcp
 SPOP3	995	Secure Post Office Protocol Version 3	t	tcp
 cvspserver	2401	CVS pserver	t	tcp
 FTP-DATA	20	File Transfer Protocol Data	t	tcp
-rtmp	1	Routing Table Maintenance Protocol	f	raw
-zip	6	Zone Information Protocol	f	raw
 DNS	53	Domain Name Service	f	udp
 sunrpc	111	Sun Remote Procedure Call	f	udp
 nfs	2049	NFS	f	udp

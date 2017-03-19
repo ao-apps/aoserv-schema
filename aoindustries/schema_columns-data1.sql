@@ -93,8 +93,8 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_server
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'monitoring_load_medium', 40, 'float', true, false, false, 'the 5-minute load average that will trigger a medium-level alert', '1.35', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'monitoring_load_high', 41, 'float', true, false, false, 'the 5-minute load average that will trigger a high-level alert', '1.35', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'monitoring_load_critical', 42, 'float', true, false, false, 'the 5-minute load average that will trigger a critical-level alert', '1.35', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'uid_min', 43, 'fkey', false, false, false, 'the min value for automatic uid selection in useradd', '1.80', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'gid_min', 44, 'fkey', false, false, false, 'the min value for automatic gid selection in groupadd', '1.80', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'uid_min', 43, 'linux_id', false, false, false, 'the min value for automatic uid selection in useradd', '1.80', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'gid_min', 44, 'linux_id', false, false, false, 'the min value for automatic gid selection in groupadd', '1.80', null;
 commit;
 begin;
 \echo aoserv_permissions
@@ -864,7 +864,8 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'to_path', 15, 'string', false, false, false, 'the destination path for the replication', '1.17','1.30';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'chunk_always', 16, 'boolean', false, false, false, 'when true chunking will always be performed (mtime+length will not be considered a sufficient match)', '1.17', '1.30';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'quota_gid', 17, 'int', true, false, false, 'the gid used on the backup_partition for quota reports, required if backup_partitions quotas are enabled, not allowed otherwise', '1.31', '1.68';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'quota_gid', 18, 'fkey', true, false, false, 'the gid used on the backup_partition for quota reports, required if backup_partitions quotas are enabled, not allowed otherwise', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'quota_gid', 18, 'fkey', true, false, false, 'the gid used on the backup_partition for quota reports, required if backup_partitions quotas are enabled, not allowed otherwise', '1.69', '1.79';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'quota_gid', 19, 'linux_id', true, false, false, 'the gid used on the backup_partition for quota reports, required if backup_partitions quotas are enabled, not allowed otherwise', '1.80', null;
 commit;
 begin;
 \echo failover_file_schedule
@@ -1386,7 +1387,7 @@ commit;
 begin;
 \echo linux_ids
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_ids', 'id', 0, 'int', false, true, true, 'the id', '1.0a100', '1.68';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_ids', 'id', 1, 'pkey', false, true, true, 'the id', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_ids', 'id', 1, 'pkey', false, true, true, 'the id', '1.69', '1.79';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_ids', 'is_system', 2, 'boolean', false, false, true, 'true if reserved for system use', '1.0a100', '1.79';
 commit;
 begin;
@@ -1395,28 +1396,29 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_ser
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'username', 1, 'username', false, false, false, 'the name of the user', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'ao_server', 2, 'fkey', false, false, false, 'the pkey of the server the username is on', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'uid', 3, 'int', false, false, false, 'the uid of the user on the machine', '1.0a100', '1.68';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'uid', 4, 'fkey', false, false, false, 'the uid of the user on the machine', '1.69', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'home', 5, 'path', false, false, false, 'the home directory of the user on this machine', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'cron_backup_level', 6, 'short', false, false, false, 'the level of backup for cron table', '1.0a100', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'cron_backup_retention', 7, 'short', false, false, false, 'the number of days backup files will be kept', '1.0a100', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'home_backup_level', 8, 'short', false, false, false, 'the level of backup for home directory', '1.0a100', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'home_backup_retention', 9, 'short', false, false, false, 'the number of days backup files will be kept', '1.0a100', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'inbox_backup_level', 10, 'short', false, false, false, 'the level of backup for email inbox', '1.0a100', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'inbox_backup_retention', 11, 'short', false, false, false, 'the number of days backup files will be kept', '1.0a100', '1.30';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'autoresponder_from', 12, 'fkey', true, false, false, 'the pkey of the email address used for the autoresponder', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'autoresponder_subject', 13, 'string', true, false, false, 'the subject of autoresponder messages', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'autoresponder_path', 14, 'string', true, false, false, 'the full path of the autoresponder text file', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'is_autoresponder_enabled', 15, 'boolean', false, false, false, 'flags if the autoresponder is enabled', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'disable_log', 16, 'fkey', true, false, false, 'indicates the account is disabled', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'predisable_password', 17, 'string', true, false, false, 'stores the password that was used before the account was disabled', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'created', 18, 'date', false, false, false, 'the time this account was added', '1.0a100', '1.68';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'created', 19, 'time', false, false, false, 'the time this account was added', '1.69', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'use_inbox', 20, 'boolean', false, false, false, 'email for this account will be stored in the inbox, otherwise it is just deleted', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'trash_email_retention', 21, 'int', true, false, false, 'the number of days before messages in the Trash folder are automatically removed.', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'junk_email_retention', 22, 'int', true, false, false, 'the number of days before messages in the Junk folder are automatically removed.', '1.0a120', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'sa_integration_mode', 23, 'string', false, false, false, 'the integration mode for SpamAssassin', '1.0a120', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'sa_required_score', 24, 'float', false, false, false, 'the minimum SpamAssassin score considered Junk', '1.0a124', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'sa_discard_score', 25, 'int', true, false, false, 'the minimum SpamAssassin score that will be discarded instead of tagged or placed in the Junk folder', '1.40', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'uid', 4, 'fkey', false, false, false, 'the uid of the user on the machine', '1.69', '1.79';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'uid', 5, 'linux_id', false, false, false, 'the uid of the user on the machine', '1.80', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'home', 6, 'path', false, false, false, 'the home directory of the user on this machine', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'cron_backup_level', 7, 'short', false, false, false, 'the level of backup for cron table', '1.0a100', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'cron_backup_retention', 8, 'short', false, false, false, 'the number of days backup files will be kept', '1.0a100', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'home_backup_level', 9, 'short', false, false, false, 'the level of backup for home directory', '1.0a100', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'home_backup_retention', 10, 'short', false, false, false, 'the number of days backup files will be kept', '1.0a100', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'inbox_backup_level', 11, 'short', false, false, false, 'the level of backup for email inbox', '1.0a100', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'inbox_backup_retention', 12, 'short', false, false, false, 'the number of days backup files will be kept', '1.0a100', '1.30';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'autoresponder_from', 13, 'fkey', true, false, false, 'the pkey of the email address used for the autoresponder', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'autoresponder_subject', 14, 'string', true, false, false, 'the subject of autoresponder messages', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'autoresponder_path', 15, 'string', true, false, false, 'the full path of the autoresponder text file', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'is_autoresponder_enabled', 16, 'boolean', false, false, false, 'flags if the autoresponder is enabled', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'disable_log', 17, 'fkey', true, false, false, 'indicates the account is disabled', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'predisable_password', 18, 'string', true, false, false, 'stores the password that was used before the account was disabled', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'created', 19, 'date', false, false, false, 'the time this account was added', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'created', 20, 'time', false, false, false, 'the time this account was added', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'use_inbox', 21, 'boolean', false, false, false, 'email for this account will be stored in the inbox, otherwise it is just deleted', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'trash_email_retention', 22, 'int', true, false, false, 'the number of days before messages in the Trash folder are automatically removed.', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'junk_email_retention', 23, 'int', true, false, false, 'the number of days before messages in the Junk folder are automatically removed.', '1.0a120', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'sa_integration_mode', 24, 'string', false, false, false, 'the integration mode for SpamAssassin', '1.0a120', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'sa_required_score', 25, 'float', false, false, false, 'the minimum SpamAssassin score considered Junk', '1.0a124', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'sa_discard_score', 26, 'int', true, false, false, 'the minimum SpamAssassin score that will be discarded instead of tagged or placed in the Junk folder', '1.40', null;
 commit;
 begin;
 \echo linux_server_groups
@@ -1424,9 +1426,10 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_ser
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_groups', 'name', 1, 'string', false, false, false, 'the group name', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_groups', 'ao_server', 2, 'fkey', false, false, false, 'the pkey of the ao_server the group is on', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_groups', 'gid', 3, 'int', false, false, false, 'the gid on that machine', '1.0a100', '1.68';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_groups', 'gid', 4, 'fkey', false, false, false, 'the gid on that machine', '1.69', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_groups', 'created', 5, 'date', false, false, false, 'the time the group was added', '1.0a100', '1.68';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_groups', 'created', 6, 'time', false, false, false, 'the time the group was added', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_groups', 'gid', 4, 'fkey', false, false, false, 'the gid on that machine', '1.69', '1.79';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_groups', 'gid', 5, 'linux_id', false, false, false, 'the gid on that machine', '1.80', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_groups', 'created', 6, 'date', false, false, false, 'the time the group was added', '1.0a100', '1.68';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_groups', 'created', 7, 'time', false, false, false, 'the time the group was added', '1.69', null;
 commit;
 begin;
 \echo majordomo_lists
@@ -1713,16 +1716,17 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'server', 3, 'fkey', false, false, false, 'the pkey of the server that this port is bound on', '1.33', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'ip_address', 4, 'fkey', false, false, false, 'the pkey of the IP address that is bound to', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'port', 5, 'int', false, false, false, 'the port number that is bound', '1.0a100', '1.68';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'port', 6, 'fkey', false, false, false, 'the port number that is bound', '1.69', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'net_protocol', 7, 'string', false, false, false, 'the network protocol (<code>net_protocols</code>)', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'app_protocol', 8, 'string', false, false, false, 'the application protocol (<code>protocols</code>)', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'open_firewall', 9, 'boolean', false, false, false, 'flags if the firewall should be opened for this port', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitor_delay', 10, 'int', true, false, false, '', '1.0a100', '1.0a103';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitor_parameter', 11, 'string', true, false, false, '', '1.0a100', '1.0a103';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitor_contact', 12, 'string', true, false, false, '', '1.0a100', '1.0a103';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitor_info', 13, 'string', true, false, false, '', '1.0a100', '1.0a103';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitoring_enabled', 14, 'boolean', false, false, false, 'turns on monitoring of the port', '1.0a104', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitoring_parameters', 15, 'string', true, false, false, 'the URL-encoded name=value pairs of monitoring parameters', '1.58', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'port', 6, 'fkey', false, false, false, 'the port number that is bound', '1.69', '1.79';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'port', 7, 'net_port', false, false, false, 'the port that is bound', '1.80', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'net_protocol', 8, 'string', false, false, false, 'the network protocol (<code>net_protocols</code>)', '1.0a100', '1.79';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'app_protocol', 9, 'string', false, false, false, 'the application protocol (<code>protocols</code>)', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'open_firewall', 10, 'boolean', false, false, false, 'flags if the firewall should be opened for this port', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitor_delay', 11, 'int', true, false, false, '', '1.0a100', '1.0a103';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitor_parameter', 12, 'string', true, false, false, '', '1.0a100', '1.0a103';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitor_contact', 13, 'string', true, false, false, '', '1.0a100', '1.0a103';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitor_info', 14, 'string', true, false, false, '', '1.0a100', '1.0a103';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitoring_enabled', 15, 'boolean', false, false, false, 'turns on monitoring of the port', '1.0a104', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitoring_parameters', 16, 'string', true, false, false, 'the URL-encoded name=value pairs of monitoring parameters', '1.58', null;
 commit;
 begin;
 \echo net_device_host_routes
@@ -1770,12 +1774,12 @@ commit;
 begin;
 \echo net_ports
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_ports', 'port', 0, 'int', false, true, true, 'the unique port number', '1.0a100', '1.68';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_ports', 'port', 1, 'pkey', false, true, true, 'the unique port number', '1.69', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_ports', 'is_user', 2, 'boolean', false, false, true, 'true if user processes may listen on the port', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_ports', 'port', 1, 'pkey', false, true, true, 'the unique port number', '1.69', '1.79';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_ports', 'is_user', 2, 'boolean', false, false, true, 'true if user processes may listen on the port', '1.0a100', '1.79';
 commit;
 begin;
 \echo net_protocols
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_protocols', 'protocol', 0, 'string', false, true, true, 'the network protocol', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_protocols', 'protocol', 0, 'string', false, true, true, 'the network protocol', '1.0a100', '1.79';
 commit;
 begin;
 \echo net_tcp_redirects
@@ -1785,7 +1789,8 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_tcp_r
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_tcp_redirects', 'cps_overload_sleep_time', 3, 'int', false, false, false, 'the number of seconds the service will be disabled', '1.0a111', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_tcp_redirects', 'destination_host', 4, 'hostname', false, false, false, 'the destination IP address or hostname, please note that hostnames are only resolved once on xinetd startup', '1.0a111', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_tcp_redirects', 'destination_port', 5, 'int', false, false, false, 'the remote port to connect to', '1.0a111', '1.68';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_tcp_redirects', 'destination_port', 6, 'fkey', false, false, false, 'the remote port to connect to', '1.69', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_tcp_redirects', 'destination_port', 6, 'fkey', false, false, false, 'the remote port to connect to', '1.69', '1.79';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_tcp_redirects', 'destination_port', 7, 'net_port', false, false, false, 'the remote port to connect to', '1.80', null;
 commit;
 begin;
 \echo notice_logs
@@ -2011,10 +2016,11 @@ begin;
 \echo protocols
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'protocol', 0, 'string', false, true, true, 'the unique name of the protocol', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'port', 1, 'int', false, false, true, 'the default port of the protocol', '1.0a100', '1.68';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'port', 2, 'fkey', false, false, true, 'the default port of the protocol', '1.69', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'name', 3, 'string', false, false, true, 'the name of the service', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'is_user_service', 4, 'boolean', false, false, true, 'indicates that a user may add and remove this service', '1.0a105', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'net_protocol', 5, 'string', false, false, true, 'the default network protocol for this protocol', '1.0a105', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'port', 2, 'fkey', false, false, true, 'the default port of the protocol', '1.69', '1.79';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'port', 3, 'net_port', false, false, true, 'the default port of the protocol', '1.80', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'name', 4, 'string', false, false, true, 'the name of the service', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'is_user_service', 5, 'boolean', false, false, true, 'indicates that a user may add and remove this service', '1.0a105', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'net_protocol', 6, 'string', false, false, true, 'the default network protocol for this protocol', '1.0a105', '1.79';
 commit;
 begin;
 \echo racks

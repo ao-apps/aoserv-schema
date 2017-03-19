@@ -64,8 +64,6 @@ select add_schema_foreign_key('ao_servers', 'daemon_device_id', 'net_device_ids'
 select add_schema_foreign_key('ao_servers', 'daemon_connect_bind', 'net_binds', 'pkey', '1.0a119', null);
 select add_schema_foreign_key('ao_servers', 'time_zone', 'time_zones', 'name', '1.2', null);
 select add_schema_foreign_key('ao_servers', 'jilter_bind', 'net_binds', 'pkey', '1.7', null);
-select add_schema_foreign_key('ao_servers', 'uid_min', 'linux_ids', 'id', '1.80', null);
-select add_schema_foreign_key('ao_servers', 'gid_min', 'linux_ids', 'id', '1.80', null);
 commit;
 begin;
 \echo aosh_commands
@@ -286,7 +284,7 @@ select add_schema_foreign_key('failover_file_replications', 'to_server', 'ao_ser
 select add_schema_foreign_key('failover_file_replications', 'backup_partition', 'backup_partitions', 'pkey', '1.31', null);
 select add_schema_foreign_key('failover_file_replications', 'retention', 'backup_retentions', 'days', '1.13', null);
 select add_schema_foreign_key('failover_file_replications', 'quota_gid', 'linux_ids', 'id', '1.31', '1.68');
-select add_schema_foreign_key('failover_file_replications', 'quota_gid', 'linux_ids', 'id', '1.69', null);
+select add_schema_foreign_key('failover_file_replications', 'quota_gid', 'linux_ids', 'id', '1.69', '1.79');
 commit;
 begin;
 \echo failover_file_schedule
@@ -553,7 +551,7 @@ begin;
 select add_schema_foreign_key('linux_server_accounts', 'username', 'linux_accounts', 'username', '1.0a100', null);
 select add_schema_foreign_key('linux_server_accounts', 'ao_server', 'ao_servers', 'server', '1.0a100', null);
 select add_schema_foreign_key('linux_server_accounts', 'uid', 'linux_ids', 'id', '1.0a100', '1.68');
-select add_schema_foreign_key('linux_server_accounts', 'uid', 'linux_ids', 'id', '1.69', null);
+select add_schema_foreign_key('linux_server_accounts', 'uid', 'linux_ids', 'id', '1.69', '1.79');
 select add_schema_foreign_key('linux_server_accounts', 'cron_backup_level', 'backup_levels', 'level', '1.0a100', '1.30');
 select add_schema_foreign_key('linux_server_accounts', 'cron_backup_retention', 'backup_retentions', 'days', '1.0a100', '1.30');
 select add_schema_foreign_key('linux_server_accounts', 'home_backup_level', 'backup_levels', 'level', '1.0a100', '1.30');
@@ -569,7 +567,7 @@ begin;
 select add_schema_foreign_key('linux_server_groups', 'name', 'linux_groups', 'name', '1.0a100', null);
 select add_schema_foreign_key('linux_server_groups', 'ao_server', 'ao_servers', 'server', '1.0a100', null);
 select add_schema_foreign_key('linux_server_groups', 'gid', 'linux_ids', 'id', '1.0a100', '1.68');
-select add_schema_foreign_key('linux_server_groups', 'gid', 'linux_ids', 'id', '1.69', null);
+select add_schema_foreign_key('linux_server_groups', 'gid', 'linux_ids', 'id', '1.69', '1.79');
 commit;
 begin;
 \echo majordomo_lists
@@ -679,8 +677,8 @@ select add_schema_foreign_key('net_binds', 'ao_server', 'ao_servers', 'server', 
 select add_schema_foreign_key('net_binds', 'server', 'servers', 'pkey', '1.33', null);
 select add_schema_foreign_key('net_binds', 'ip_address', 'ip_addresses', 'pkey', '1.0a100', null);
 select add_schema_foreign_key('net_binds', 'port', 'net_ports', 'port', '1.0a100', '1.68');
-select add_schema_foreign_key('net_binds', 'port', 'net_ports', 'port', '1.69', null);
-select add_schema_foreign_key('net_binds', 'net_protocol', 'net_protocols', 'protocol', '1.0a100', null);
+select add_schema_foreign_key('net_binds', 'port', 'net_ports', 'port', '1.69', '1.79');
+select add_schema_foreign_key('net_binds', 'net_protocol', 'net_protocols', 'protocol', '1.0a100', '1.79');
 select add_schema_foreign_key('net_binds', 'app_protocol', 'protocols', 'protocol', '1.0a100', null);
 select add_schema_foreign_key('net_binds', 'monitor_delay', 'net_monitoring_times', 'time', '1.0a100', '1.0a103');
 commit;
@@ -704,7 +702,7 @@ begin;
 select add_schema_foreign_key('net_tcp_redirects', 'net_bind', 'net_binds', 'pkey', '1.0a111', '1.68');
 select add_schema_foreign_key('net_tcp_redirects', 'net_bind', 'net_binds', 'pkey', '1.69', null);
 select add_schema_foreign_key('net_tcp_redirects', 'destination_port', 'net_ports', 'port', '1.0a111', '1.68');
-select add_schema_foreign_key('net_tcp_redirects', 'destination_port', 'net_ports', 'port', '1.69', null);
+select add_schema_foreign_key('net_tcp_redirects', 'destination_port', 'net_ports', 'port', '1.69', '1.79');
 commit;
 begin;
 \echo notice_log
@@ -803,8 +801,8 @@ commit;
 begin;
 \echo protocols
 select add_schema_foreign_key('protocols', 'port', 'net_ports', 'port', '1.0a100', '1.68');
-select add_schema_foreign_key('protocols', 'port', 'net_ports', 'port', '1.69', null);
-select add_schema_foreign_key('protocols', 'net_protocol', 'net_protocols', 'protocol', '1.0a105', null);
+select add_schema_foreign_key('protocols', 'port', 'net_ports', 'port', '1.69', '1.79');
+select add_schema_foreign_key('protocols', 'net_protocol', 'net_protocols', 'protocol', '1.0a105', '1.79');
 commit;
 begin;
 \echo racks

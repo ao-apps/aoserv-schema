@@ -1006,7 +1006,7 @@ insert into schema_tables values(
     true,
     'The linux_ids is a table of all the GID and UID values that are acceptable for a linux_server_group or linux_server_account.  0-999 are flagged as system and 1000-65533 are user.',
     '1.0a100',
-    null
+    '1.79'
 );
 insert into schema_tables values(
     'linux_server_accounts',
@@ -1286,7 +1286,7 @@ insert into schema_tables values(
     true,
     'The net_ports table contains all of the possible network ports.',
     '1.0a100',
-    null
+    '1.79'
 );
 insert into schema_tables values(
     'net_protocols',
@@ -1295,7 +1295,7 @@ insert into schema_tables values(
     true,
     '<code>net_protocols</code> lists the possible network protocols used in <code>net_binds</code>.',
     '1.0a100',
-    null
+    '1.79'
 );
 insert into schema_tables values(
     'net_tcp_redirects',

@@ -1168,7 +1168,20 @@ removed distro_files.file_md5_lo
 added distro_files.file_sha256_0
 added distro_files.file_sha256_1
 added distro_files.file_sha256_2
-added distro_files.file_sha256_3'
+added distro_files.file_sha256_3
+removed linux_ids table
+removed net_ports table
+removed net_protocols table
+removed protocols.rtmp
+removed protocols.zip
+removed net_binds.net_protocol column
+removed protocols.net_protocol column
+changed failover_file_replications.quota_gid to linux_id type
+changed linux_server_accounts.uid to linux_id type
+changed linux_server_groups.gid to linux_id type
+changed net_binds.port to net_port type
+changed net_tcp_redirects.destination_port to net_port type
+changed protocols.port to net_port type'
 );
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table

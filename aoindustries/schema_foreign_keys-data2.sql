@@ -207,7 +207,8 @@ select add_schema_foreign_key('dns_records', 'dhcp_address', 'ip_addresses', 'pk
 commit;
 begin;
 \echo dns_zones
-select add_schema_foreign_key('dns_zones', 'package', 'packages', 'name', '1.0a100', null);
+select add_schema_foreign_key('dns_zones', 'package', 'packages', 'name', '1.0a100', '1.79');
+select add_schema_foreign_key('dns_zones', 'package', 'packages', 'name', '1.80', null);
 commit;
 begin;
 \echo email_addresses
@@ -221,7 +222,8 @@ commit;
 begin;
 \echo email_domains
 select add_schema_foreign_key('email_domains', 'ao_server', 'ao_servers', 'server', '1.0a100', null);
-select add_schema_foreign_key('email_domains', 'package', 'packages', 'name', '1.0a100', null);
+select add_schema_foreign_key('email_domains', 'package', 'packages', 'name', '1.0a100', '1.79');
+select add_schema_foreign_key('email_domains', 'package', 'packages', 'name', '1.80', null);
 commit;
 begin;
 \echo email_forwarding
@@ -250,12 +252,14 @@ commit;
 begin;
 \echo email_pipes
 select add_schema_foreign_key('email_pipes', 'ao_server', 'ao_servers', 'server', '1.0a100', null);
-select add_schema_foreign_key('email_pipes', 'package', 'packages', 'name', '1.0a100', null);
+select add_schema_foreign_key('email_pipes', 'package', 'packages', 'name', '1.0a100', '1.79');
+select add_schema_foreign_key('email_pipes', 'package', 'packages', 'name', '1.80', null);
 select add_schema_foreign_key('email_pipes', 'disable_log', 'disable_log', 'pkey', '1.0a100', null);
 commit;
 begin;
 \echo email_smtp_relays
-select add_schema_foreign_key('email_smtp_relays', 'package', 'packages', 'name', '1.0a100', null);
+select add_schema_foreign_key('email_smtp_relays', 'package', 'packages', 'name', '1.0a100', '1.79');
+select add_schema_foreign_key('email_smtp_relays', 'package', 'packages', 'name', '1.80', null);
 select add_schema_foreign_key('email_smtp_relays', 'ao_server', 'ao_servers', 'server', '1.0a100', null);
 select add_schema_foreign_key('email_smtp_relays', 'type', 'email_smtp_relay_types', 'name', '1.0a100', null);
 select add_schema_foreign_key('email_smtp_relays', 'disable_log', 'disable_log', 'pkey', '1.0a100', null);
@@ -397,7 +401,8 @@ commit;
 begin;
 \echo httpd_sites
 select add_schema_foreign_key('httpd_sites', 'ao_server', 'ao_servers', 'server', '1.0a100', null);
-select add_schema_foreign_key('httpd_sites', 'package', 'packages', 'name', '1.0a100', null);
+select add_schema_foreign_key('httpd_sites', 'package', 'packages', 'name', '1.0a100', '1.79');
+select add_schema_foreign_key('httpd_sites', 'package', 'packages', 'name', '1.80', null);
 select add_schema_foreign_key('httpd_sites', 'linux_account', 'linux_accounts', 'username', '1.0a100', null);
 select add_schema_foreign_key('httpd_sites', 'linux_group', 'linux_groups', 'name', '1.0a100', null);
 select add_schema_foreign_key('httpd_sites', 'config_backup_level', 'backup_levels', 'level', '1.0a100', '1.30');
@@ -489,7 +494,8 @@ commit;
 begin;
 \echo ip_addresses
 select add_schema_foreign_key('ip_addresses', 'net_device', 'net_devices', 'pkey', '1.0a100', null);
-select add_schema_foreign_key('ip_addresses', 'package', 'packages', 'name', '1.0a100', null);
+select add_schema_foreign_key('ip_addresses', 'package', 'packages', 'name', '1.0a100', '1.79');
+select add_schema_foreign_key('ip_addresses', 'package', 'packages', 'name', '1.80', null);
 commit;
 begin;
 \echo ip_reputation_limiter_limits
@@ -544,7 +550,8 @@ commit;
 begin;
 \echo linux_groups
 select add_schema_foreign_key('linux_groups', 'type', 'linux_group_types', 'name', '1.0a100', null);
-select add_schema_foreign_key('linux_groups', 'package', 'packages', 'name', '1.0a100', null);
+select add_schema_foreign_key('linux_groups', 'package', 'packages', 'name', '1.0a100', '1.79');
+select add_schema_foreign_key('linux_groups', 'package', 'packages', 'name', '1.80', null);
 commit;
 begin;
 \echo linux_server_accounts
@@ -619,7 +626,8 @@ commit;
 begin;
 \echo monthly_charges
 select add_schema_foreign_key('monthly_charges', 'accounting', 'businesses', 'accounting', '1.0a100', null);
-select add_schema_foreign_key('monthly_charges', 'package', 'packages', 'name', '1.0a100', null);
+select add_schema_foreign_key('monthly_charges', 'package', 'packages', 'name', '1.0a100', '1.79');
+select add_schema_foreign_key('monthly_charges', 'package', 'packages', 'name', '1.80', null);
 select add_schema_foreign_key('monthly_charges', 'type', 'rates', 'name', '1.0a100', '1.0a122');
 select add_schema_foreign_key('monthly_charges', 'type', 'transaction_types', 'name', '1.0a123', null);
 select add_schema_foreign_key('monthly_charges', 'created_by', 'business_administrators', 'username', '1.0a100', null);
@@ -637,7 +645,8 @@ begin;
 \echo mysql_databases
 select add_schema_foreign_key('mysql_databases', 'ao_server', 'ao_servers', 'server', '1.0a100', '1.3');
 select add_schema_foreign_key('mysql_databases', 'mysql_server', 'mysql_servers', 'pkey', '1.4', null);
-select add_schema_foreign_key('mysql_databases', 'package', 'packages', 'name', '1.0a100', null);
+select add_schema_foreign_key('mysql_databases', 'package', 'packages', 'name', '1.0a100', '1.79');
+select add_schema_foreign_key('mysql_databases', 'package', 'packages', 'name', '1.80', null);
 select add_schema_foreign_key('mysql_databases', 'backup_level', 'backup_levels', 'level', '1.0a100', '1.30');
 select add_schema_foreign_key('mysql_databases', 'backup_retention', 'backup_retentions', 'days', '1.0a100', '1.30');
 commit;
@@ -663,7 +672,8 @@ begin;
 select add_schema_foreign_key('mysql_servers', 'ao_server', 'ao_servers', 'server', '1.4', null);
 select add_schema_foreign_key('mysql_servers', 'version', 'technology_versions', 'pkey', '1.4', null);
 select add_schema_foreign_key('mysql_servers', 'net_bind', 'net_binds', 'pkey', '1.4', null);
-select add_schema_foreign_key('mysql_servers', 'package', 'packages', 'name', '1.28', null);
+select add_schema_foreign_key('mysql_servers', 'package', 'packages', 'name', '1.28', '1.79');
+select add_schema_foreign_key('mysql_servers', 'package', 'packages', 'name', '1.80', null);
 commit;
 begin;
 \echo mysql_users
@@ -672,7 +682,8 @@ select add_schema_foreign_key('mysql_users', 'disable_log', 'disable_log', 'pkey
 commit;
 begin;
 \echo net_binds
-select add_schema_foreign_key('net_binds', 'package', 'packages', 'name', '1.0a100', null);
+select add_schema_foreign_key('net_binds', 'package', 'packages', 'name', '1.0a100', '1.79');
+select add_schema_foreign_key('net_binds', 'package', 'packages', 'name', '1.80', null);
 select add_schema_foreign_key('net_binds', 'ao_server', 'ao_servers', 'server', '1.0a100', '1.32');
 select add_schema_foreign_key('net_binds', 'server', 'servers', 'pkey', '1.33', null);
 select add_schema_foreign_key('net_binds', 'ip_address', 'ip_addresses', 'pkey', '1.0a100', null);
@@ -1047,7 +1058,8 @@ select add_schema_foreign_key('transactions', 'credit_card_transaction', 'credit
 commit;
 begin;
 \echo usernames
-select add_schema_foreign_key('usernames', 'package', 'packages', 'name', '1.0a100', null);
+select add_schema_foreign_key('usernames', 'package', 'packages', 'name', '1.0a100', '1.79');
+select add_schema_foreign_key('usernames', 'package', 'packages', 'name', '1.80', null);
 select add_schema_foreign_key('usernames', 'disable_log', 'disable_log', 'pkey', '1.0a100', null);
 commit;
 begin;

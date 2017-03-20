@@ -333,7 +333,7 @@ insert into aosh_commands values(
   'checks the format of a business administrator username',
   '<i>username</i>',
   '1.0a100',
-  null
+  '1.79'
 );
 insert into aosh_commands values(
   'crypt',
@@ -426,7 +426,7 @@ insert into aosh_commands values(
 insert into aosh_commands values(
   'remove_business_server',
   'business_servers',
-  'removes a business\' access to a server',
+  'removes a business'' access to a server',
   '<i>business</i> <i>server</i>',
   '1.0a100',
   null
@@ -773,7 +773,7 @@ insert into aosh_commands values(
   'checks the format of a the destination for email forwarding',
   '<i>from_address</i> <i>to_address</i> [<i>from_address</i> <i>to_address</i>]...',
   '1.0a100',
-  null
+  '1.79'
 );
 insert into aosh_commands values(
   'remove_email_forwarding',
@@ -1602,7 +1602,7 @@ insert into aosh_commands values(
 insert into aosh_commands values(
   'remove_interbase_server_user',
   'interbase_server_users',
-  'revokes an InterBase account\'s access to a server',
+  'revokes an InterBase account''s access to a server',
   '<i>username</i> <i>ao_server</i>',
   '1.0a100',
   '1.30'
@@ -1693,7 +1693,7 @@ insert into aosh_commands values(
   'checks the format of an IP address',
   '<i>ip_address</i>',
   '1.0a100',
-  null
+  '1.79'
 );
 insert into aosh_commands values(
   'is_ip_address_used',
@@ -1821,7 +1821,7 @@ insert into aosh_commands values(
   'checks the format of a Linux account username',
   '<i>username</i>',
   '1.0a100',
-  null
+  '1.79'
 );
 insert into aosh_commands values(
   'disable_linux_account',
@@ -1899,7 +1899,7 @@ insert into aosh_commands values(
   'set_linux_account_shell',
   'linux_accounts',
   'sets the shell used by a Linux account',
-  '<i>username</i> {""|<i>shell</i>}',
+  '<i>username</i> <i>shell</i>',
   '1.0a100',
   null
 );
@@ -2459,7 +2459,7 @@ insert into aosh_commands values(
   'is_mysql_server_name_available',
   'mysql_servers',
   'determines if a MySQL server name is available',
-  '<i>database_name</i> <i>ao_server</i>',
+  '<i>server_name</i> <i>ao_server</i>',
   '1.4',
   null
 );
@@ -2741,7 +2741,7 @@ insert into aosh_commands values(
   'checks the format of a package name',
   '<i>package</i>',
   '1.0a100',
-  null
+  '1.79'
 );
 insert into aosh_commands values(
   'disable_package',
@@ -2931,7 +2931,7 @@ insert into aosh_commands values(
   'is_postgres_server_name_available',
   'postgres_servers',
   'determines if a PostgreSQL server name is available',
-  '<i>database_name</i> <i>ao_server</i>',
+  '<i>server_name</i> <i>ao_server</i>',
   '1.0a100',
   null
 );

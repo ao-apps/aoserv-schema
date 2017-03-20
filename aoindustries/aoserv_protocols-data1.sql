@@ -1168,20 +1168,44 @@ removed distro_files.file_md5_lo
 added distro_files.file_sha256_0
 added distro_files.file_sha256_1
 added distro_files.file_sha256_2
-added distro_files.file_sha256_3
-removed linux_ids table
+added distro_files.file_sha256_3'
+);
+insert into aoserv_protocols values(
+  '1.80.0-SNAPSHOT',
+  '2017-03-20',
+  'removed linux_ids table
 removed net_ports table
 removed net_protocols table
 removed protocols.rtmp
 removed protocols.zip
 removed net_binds.net_protocol column
 removed protocols.net_protocol column
+changed distro_files.group_name to group_id type
 changed failover_file_replications.quota_gid to linux_id type
+changed httpd_sites.group_name to group_id type
+changed linux_group_accounts.group_name to group_id type
+changed linux_groups.name to group_id type
+changed linux_server_groups.name to group_id type
 changed linux_server_accounts.uid to linux_id type
 changed linux_server_groups.gid to linux_id type
+changed mysql_databases.name to mysql_database_name type
+changed mysql_servers.name to mysql_server_name type
+changed mysql_server_users.username to mysql_username type
+changed mysql_users.username to mysql_username type
 changed net_binds.port to net_port type
 changed net_tcp_redirects.destination_port to net_port type
-changed protocols.port to net_port type'
+changed postgres_databases.name to postgres_database_name type
+changed postgres_servers.name to postgres_server_name type
+changed postgres_server_users.username to postgres_username type
+changed postgres_users.username to postgres_username type
+changed protocols.port to net_port type
+changed ticket_actions.old_assigned_to to username type
+changed ticket_actions.new_assigned_to to username type
+removed check_business_administrator_username command
+removed check_email_forwarding command
+removed check_ip_address command
+removed check_linux_account_username command
+removed check_package_name command'
 );
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table

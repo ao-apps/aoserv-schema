@@ -196,7 +196,8 @@ begin;
 select add_schema_foreign_key('distro_files', 'operating_system_version', 'operating_system_versions', 'pkey', '1.0a108', null);
 select add_schema_foreign_key('distro_files', 'type', 'distro_file_types', 'type', '1.0a100', null);
 select add_schema_foreign_key('distro_files', 'linux_account', 'linux_accounts', 'username', '1.0a100', null);
-select add_schema_foreign_key('distro_files', 'linux_group', 'linux_groups', 'name', '1.0a100', null);
+select add_schema_foreign_key('distro_files', 'linux_group', 'linux_groups', 'name', '1.0a100', '1.79');
+select add_schema_foreign_key('distro_files', 'linux_group', 'linux_groups', 'name', '1.80', null);
 commit;
 begin;
 \echo dns_records
@@ -404,7 +405,8 @@ select add_schema_foreign_key('httpd_sites', 'ao_server', 'ao_servers', 'server'
 select add_schema_foreign_key('httpd_sites', 'package', 'packages', 'name', '1.0a100', '1.79');
 select add_schema_foreign_key('httpd_sites', 'package', 'packages', 'name', '1.80', null);
 select add_schema_foreign_key('httpd_sites', 'linux_account', 'linux_accounts', 'username', '1.0a100', null);
-select add_schema_foreign_key('httpd_sites', 'linux_group', 'linux_groups', 'name', '1.0a100', null);
+select add_schema_foreign_key('httpd_sites', 'linux_group', 'linux_groups', 'name', '1.0a100', '1.79');
+select add_schema_foreign_key('httpd_sites', 'linux_group', 'linux_groups', 'name', '1.80', null);
 select add_schema_foreign_key('httpd_sites', 'config_backup_level', 'backup_levels', 'level', '1.0a100', '1.30');
 select add_schema_foreign_key('httpd_sites', 'config_backup_retention', 'backup_retentions', 'days', '1.0a100', '1.30');
 select add_schema_foreign_key('httpd_sites', 'file_backup_level', 'backup_levels', 'level', '1.0a100', '1.30');
@@ -544,7 +546,8 @@ select add_schema_foreign_key('linux_accounts', 'disable_log', 'disable_log', 'p
 commit;
 begin;
 \echo linux_group_accounts
-select add_schema_foreign_key('linux_group_accounts', 'group_name', 'linux_groups', 'name', '1.0a100', null);
+select add_schema_foreign_key('linux_group_accounts', 'group_name', 'linux_groups', 'name', '1.0a100', '1.79');
+select add_schema_foreign_key('linux_group_accounts', 'group_name', 'linux_groups', 'name', '1.80', null);
 select add_schema_foreign_key('linux_group_accounts', 'username', 'linux_accounts', 'username', '1.0a100', null);
 commit;
 begin;
@@ -571,7 +574,8 @@ select add_schema_foreign_key('linux_server_accounts', 'sa_integration_mode', 'e
 commit;
 begin;
 \echo linux_server_groups
-select add_schema_foreign_key('linux_server_groups', 'name', 'linux_groups', 'name', '1.0a100', null);
+select add_schema_foreign_key('linux_server_groups', 'name', 'linux_groups', 'name', '1.0a100', '1.79');
+select add_schema_foreign_key('linux_server_groups', 'name', 'linux_groups', 'name', '1.80', null);
 select add_schema_foreign_key('linux_server_groups', 'ao_server', 'ao_servers', 'server', '1.0a100', null);
 select add_schema_foreign_key('linux_server_groups', 'gid', 'linux_ids', 'id', '1.0a100', '1.68');
 select add_schema_foreign_key('linux_server_groups', 'gid', 'linux_ids', 'id', '1.69', '1.79');

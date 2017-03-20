@@ -1201,6 +1201,20 @@ changed postgres_users.username to postgres_username type
 changed protocols.port to net_port type
 changed ticket_actions.old_assigned_to to username type
 changed ticket_actions.new_assigned_to to username type
+removed package type
+changed dns_zones.package to accounting type
+changed email_domains.package to accounting type
+changed email_pipes.package to accounting type
+changed email_smtp_relays.package to accounting type
+changed httpd_sites.package to accounting type
+changed ip_addresses.package to accounting type
+changed linux_groups.package to accounting type
+changed monthly_charges.package to accounting type
+changed mysql_databases.package to accounting type
+changed mysql_servers.package to accounting type
+changed net_binds.package to accounting type
+changed packages.name to accounting type
+changed usernames.package to accounting type
 removed check_business_administrator_username command
 removed check_email_forwarding command
 removed check_ip_address command

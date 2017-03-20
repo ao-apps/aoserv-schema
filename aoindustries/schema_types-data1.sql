@@ -18,7 +18,7 @@ insert into schema_types values('ip_address',             15, '1.0a100', null);
 insert into schema_types values('long',                   16, '1.0a100', null);
 insert into schema_types values('octal_int',              17, '1.0a100', '1.68');
 insert into schema_types values('octal_long',             18, '1.0a100', null);
-insert into schema_types values('package',                19, '1.0a100', '1.79');
+insert into schema_types values('package',                19, '1.0a100', '1.80');
 insert into schema_types values('pkey',                   20, '1.0a100', null);
 insert into schema_types values('path',                   21, '1.0a100', null);
 insert into schema_types values('phone',                  22, '1.0a100', null);

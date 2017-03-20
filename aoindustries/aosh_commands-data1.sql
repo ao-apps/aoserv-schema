@@ -333,7 +333,7 @@ insert into aosh_commands values(
   'checks the format of a business administrator username',
   '<i>username</i>',
   '1.0a100',
-  '1.79'
+  '1.80'
 );
 insert into aosh_commands values(
   'crypt',
@@ -773,7 +773,7 @@ insert into aosh_commands values(
   'checks the format of a the destination for email forwarding',
   '<i>from_address</i> <i>to_address</i> [<i>from_address</i> <i>to_address</i>]...',
   '1.0a100',
-  '1.79'
+  '1.80'
 );
 insert into aosh_commands values(
   'remove_email_forwarding',
@@ -1693,7 +1693,7 @@ insert into aosh_commands values(
   'checks the format of an IP address',
   '<i>ip_address</i>',
   '1.0a100',
-  '1.79'
+  '1.80'
 );
 insert into aosh_commands values(
   'is_ip_address_used',
@@ -1821,7 +1821,7 @@ insert into aosh_commands values(
   'checks the format of a Linux account username',
   '<i>username</i>',
   '1.0a100',
-  '1.79'
+  '1.80'
 );
 insert into aosh_commands values(
   'disable_linux_account',
@@ -2741,7 +2741,7 @@ insert into aosh_commands values(
   'checks the format of a package name',
   '<i>package</i>',
   '1.0a100',
-  '1.79'
+  '1.80'
 );
 insert into aosh_commands values(
   'disable_package',

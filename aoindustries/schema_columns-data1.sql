@@ -1637,7 +1637,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_hos
 commit;
 begin;
 \echo mysql_reserved_words
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_reserved_words', 'word', 0, 'string', false, true, true, 'the word that may not be used', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_reserved_words', 'word', 0, 'string', false, true, true, 'the word that may not be used', '1.0a100', '1.80';
 commit;
 begin;
 \echo mysql_server_users
@@ -1969,7 +1969,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_
 commit;
 begin;
 \echo postgres_reserved_words
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_reserved_words', 'word', 0, 'string', false, true, true, 'the word that may not be used', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_reserved_words', 'word', 0, 'string', false, true, true, 'the word that may not be used', '1.0a100', '1.80';
 commit;
 begin;
 \echo postgres_servers

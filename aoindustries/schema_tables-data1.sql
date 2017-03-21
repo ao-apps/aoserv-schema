@@ -1177,7 +1177,7 @@ insert into schema_tables values(
     true,
     '<code>mysql_reserved_words</code> may not be used for database or table names in MySQL.',
     '1.0a100',
-    null
+    '1.80'
 );
 insert into schema_tables values(
     'mysql_server_users',
@@ -1439,7 +1439,7 @@ insert into schema_tables values(
     true,
     '<code>postgres_reserved_words</code> may not be used for database or table named in PostgreSQL.',
     '1.0a100',
-    null
+    '1.80'
 );
 insert into schema_tables values(
     'postgres_server_users',

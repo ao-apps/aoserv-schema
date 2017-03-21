@@ -1192,6 +1192,7 @@ changed linux_server_accounts.uid to linux_id type
 changed linux_server_groups.gid to linux_id type
 changed master_hosts.host to hostname type
 changed mysql_databases.name to mysql_database_name type
+removed mysql_reserved_words table
 changed mysql_servers.name to mysql_server_name type
 changed mysql_server_users.username to mysql_username type
 changed mysql_users.username to mysql_username type
@@ -1200,6 +1201,7 @@ removed net_binds.net_protocol column
 changed net_devices.mac_address to mac_address type
 changed net_tcp_redirects.destination_port to net_port type
 changed postgres_databases.name to postgres_database_name type
+removed postgres_reserved_words table
 changed postgres_servers.name to postgres_server_name type
 changed postgres_server_users.username to postgres_username type
 changed postgres_users.username to postgres_username type

@@ -18,7 +18,8 @@ begin;
 \echo ao_server_daemon_hosts
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_server_daemon_hosts', 'pkey', 0, 'pkey', false, true, false, 'a generated unique primary key', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_server_daemon_hosts', 'ao_server', 1, 'fkey', false, false, false, 'the pkey of the ao_server', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_server_daemon_hosts', 'host', 2, 'ip_address', false, false, false, 'the hostname or IP address that is allowed to connect', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_server_daemon_hosts', 'host', 2, 'ip_address', false, false, false, 'the hostname or IP address that is allowed to connect', '1.0a100', '1.80';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_server_daemon_hosts', 'host', 3, 'hostname', false, false, false, 'the hostname or IP address that is allowed to connect', '1.80.0-SNAPSHOT', null;
 commit;
 begin;
 \echo ao_servers
@@ -773,10 +774,11 @@ begin;
 \echo email_pipes
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_pipes', 'pkey', 0, 'pkey', false, true, false, 'a generated primary key', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_pipes', 'ao_server', 1, 'fkey', false, false, false, 'the pkey of the server the program resides on', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_pipes', 'path', 2, 'path', false, false, false, 'the complete path to the email handling program', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_pipes', 'package', 3, 'package', false, false, false, 'the package that this program runs for', '1.0a100', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_pipes', 'package', 4, 'accounting', false, false, false, 'the package that this program runs for', '1.80.0-SNAPSHOT', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_pipes', 'disable_log', 5, 'fkey', true, false, false, 'indicates that this email pipe is disabled', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_pipes', 'path', 2, 'path', false, false, false, 'the complete path to the email handling program', '1.0a100', '1.80';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_pipes', 'command', 3, 'string', false, false, false, 'the complete command string to the email handling program', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_pipes', 'package', 4, 'package', false, false, false, 'the package that this program runs for', '1.0a100', '1.80';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_pipes', 'package', 5, 'accounting', false, false, false, 'the package that this program runs for', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_pipes', 'disable_log', 6, 'fkey', true, false, false, 'indicates that this email pipe is disabled', '1.0a100', null;
 commit;
 begin;
 \echo email_smtp_relay_types
@@ -1491,7 +1493,8 @@ begin;
 \echo master_hosts
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_hosts', 'pkey', 0, 'pkey', false, true, false, 'a generated unique primary key', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_hosts', 'username', 1, 'username', false, false, false, 'the unique username of the user', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_hosts', 'host', 2, 'ip_address', false, false, false, 'the hostname or IP address they are allowed to connect from', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_hosts', 'host', 2, 'ip_address', false, false, false, 'the hostname or IP address they are allowed to connect from', '1.0a100', '1.80';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_hosts', 'host', 3, 'hostname', false, false, false, 'the hostname or IP address they are allowed to connect from', '1.80.0-SNAPSHOT', null;
 commit;
 begin;
 \echo master_processes
@@ -1565,7 +1568,7 @@ begin;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'monthly_charges', 'pkey',        0, 'pkey',        true,  true, false, 'a unique, generated number for reference',          '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'monthly_charges', 'accounting',  1, 'accounting', false, false, false, 'the account code that is charged to',               '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'monthly_charges', 'package',     2, 'package',    false, false, false, 'the package that this is charged for',              '1.0a100', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'monthly_charges', 'package',     3, 'accounting', false, false, false, 'the package that this is charged for',              '1.80.0-SNAPSHOT',    null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'monthly_charges', 'package',     3, 'accounting', false, false, false, 'the package that this is charged for',              '1.80.0-SNAPSHOT', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'monthly_charges', 'type',        4, 'string',     false, false, false, 'the type of charge, as found in transaction types', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'monthly_charges', 'description', 5, 'string',      true, false, false, 'the description that is placed in the transaction', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'monthly_charges', 'quantity',    6, 'decimal_3',  false, false, false, 'the quantity',                                      '1.0a100', null;
@@ -1643,15 +1646,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_ser
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'username', 2, 'mysql_username', false, false, false, 'the username', '1.80.0-SNAPSHOT', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'ao_server', 3, 'fkey', false, false, false, 'the pkey of the MySQL server', '1.0a100', '1.3';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'mysql_server', 4, 'fkey', false, false, false, 'the pkey of the MySQL server', '1.4', null;
-insert into schema_columns select
-    nextval('schema_columns_pkey_seq'),
-    'mysql_server_users',
-    'host',
-    4,
-    'ip_address',
-    false,
-    false,
-    false,
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'host', 5, 'ip_address', false, false, false,
 'the host this user is allowed to connect from,
 if this is not null, all access is restricted to these
 hosts, otherwise the entries in mysql_db_users and
@@ -1663,7 +1658,7 @@ insert into schema_columns select
     nextval('schema_columns_pkey_seq'),
     'mysql_server_users',
     'host',
-    5,
+    6,
     'string',
     false,
     false,
@@ -1675,12 +1670,12 @@ mysql_hosts are used.',
     '1.69',
     null
 ;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'disable_log', 6, 'fkey', true, false, false, 'indicates that this account is disabled', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'predisable_password', 7, 'string', true, false, false, 'the password used before the account was disabled', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'max_questions', 8, 'int', false, false, false, 'the maximum number of questions to this database server, 0 means unlimited', '1.4', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'max_updates', 9, 'int', false, false, false, 'the maximum number of updates to this database server, 0 means unlimited', '1.4', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'max_connections', 10, 'int', false, false, false, 'the maximum number of connections to this database server, 0 means unlimited', '1.0a111', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'max_user_connections', 11, 'int', false, false, false, 'the maximum number of user connections to this database server, 0 means unlimited', '1.4', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'disable_log', 7, 'fkey', true, false, false, 'indicates that this account is disabled', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'predisable_password', 8, 'string', true, false, false, 'the password used before the account was disabled', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'max_questions', 9, 'int', false, false, false, 'the maximum number of questions to this database server, 0 means unlimited', '1.4', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'max_updates', 10, 'int', false, false, false, 'the maximum number of updates to this database server, 0 means unlimited', '1.4', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'max_connections', 11, 'int', false, false, false, 'the maximum number of connections to this database server, 0 means unlimited', '1.0a111', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'max_user_connections', 12, 'int', false, false, false, 'the maximum number of user connections to this database server, 0 means unlimited', '1.4', null;
 commit;
 begin;
 \echo mysql_servers

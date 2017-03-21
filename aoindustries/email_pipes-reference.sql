@@ -8,7 +8,7 @@ alter table email_pipes
 alter table email_pipes
   add constraint package_fkey
   foreign key (package)
-  references packages (name)
+  references packages ("name")
   on delete restrict
   on update cascade
 ;

@@ -1180,7 +1180,10 @@ removed protocols.rtmp
 removed protocols.zip
 removed net_binds.net_protocol column
 removed protocols.net_protocol column
+changed ao_server_daemon_hosts.host to hostname type
 changed distro_files.group_name to group_id type
+changed email_pipes.path to string type
+renamed email_pipes.path to command
 changed failover_file_replications.quota_gid to linux_id type
 changed httpd_sites.group_name to group_id type
 changed httpd_tomcat_contexts.doc_base to path type
@@ -1189,6 +1192,7 @@ changed linux_groups.name to group_id type
 changed linux_server_groups.name to group_id type
 changed linux_server_accounts.uid to linux_id type
 changed linux_server_groups.gid to linux_id type
+changed master_hosts.host to hostname type
 changed mysql_databases.name to mysql_database_name type
 changed mysql_servers.name to mysql_server_name type
 changed mysql_server_users.username to mysql_username type

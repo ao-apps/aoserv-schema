@@ -885,6 +885,14 @@ insert into aosh_commands values(
   'adds a new email pipe',
   '<i>ao_server</i> <i>path</i> <i>package</i>',
   '1.0a100',
+  '1.80'
+);
+insert into aosh_commands values(
+  'add_email_pipe',
+  'email_pipes',
+  'adds a new email pipe',
+  '<i>ao_server</i> <i>command</i> <i>package</i>',
+  '1.80.0-SNAPSHOT',
   null
 );
 insert into aosh_commands values(

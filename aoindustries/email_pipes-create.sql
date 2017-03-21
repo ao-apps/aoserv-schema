@@ -8,7 +8,7 @@ create table email_pipes (
     constraint email_pipes_pkey primary key,
   ao_server integer
     not null,
-  path text
+  command text
     not null,
   package text
     not null,

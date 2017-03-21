@@ -1774,13 +1774,14 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devic
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'netmask', 8, 'string', false, false, false, 'the netmask of the local network', '1.0a100', '1.37';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'network', 9, 'ip_address', true, false, false, 'the local network', '1.0a112', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'broadcast', 10, 'ip_address', true, false, false, 'the broadcast IP', '1.0a112', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'mac_address', 11, 'string', true, true, false, 'the MAC address to be used on the device', '1.0a128', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'max_bit_rate', 12, 'long', true, false, false, 'the maximum bits per second for this network device', '1.2', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'monitoring_bit_rate_low', 13, 'long', true, false, false, 'the 5-minute average that will trigger a low-level alert', '1.35', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'monitoring_bit_rate_medium', 14, 'long', true, false, false, 'the 5-minute average that will trigger a medium-level alert', '1.35', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'monitoring_bit_rate_high', 15, 'long', true, false, false, 'the 5-minute average that will trigger a high-level alert', '1.35', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'monitoring_bit_rate_critical', 16, 'long', true, false, false, 'the 5-minute average that will trigger a critical-level alert', '1.35', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'monitoring_enabled', 17, 'boolean', false, false, false, 'indicates that this device should be monitored', '1.70', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'mac_address', 11, 'string', true, true, false, 'the MAC address to be used on the device', '1.0a128', '1.80';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'mac_address', 12, 'mac_address', true, true, false, 'the MAC address to be used on the device', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'max_bit_rate', 13, 'long', true, false, false, 'the maximum bits per second for this network device', '1.2', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'monitoring_bit_rate_low', 14, 'long', true, false, false, 'the 5-minute average that will trigger a low-level alert', '1.35', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'monitoring_bit_rate_medium', 15, 'long', true, false, false, 'the 5-minute average that will trigger a medium-level alert', '1.35', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'monitoring_bit_rate_high', 16, 'long', true, false, false, 'the 5-minute average that will trigger a high-level alert', '1.35', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'monitoring_bit_rate_critical', 17, 'long', true, false, false, 'the 5-minute average that will trigger a critical-level alert', '1.35', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'monitoring_enabled', 18, 'boolean', false, false, false, 'indicates that this device should be monitored', '1.70', null;
 commit;
 begin;
 \echo net_monitoring_times

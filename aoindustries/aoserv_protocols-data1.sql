@@ -1178,8 +1178,6 @@ removed net_ports table
 removed net_protocols table
 removed protocols.rtmp
 removed protocols.zip
-removed net_binds.net_protocol column
-removed protocols.net_protocol column
 changed ao_server_daemon_hosts.host to hostname type
 changed distro_files.group_name to group_id type
 changed email_pipes.path to string type
@@ -1198,11 +1196,14 @@ changed mysql_servers.name to mysql_server_name type
 changed mysql_server_users.username to mysql_username type
 changed mysql_users.username to mysql_username type
 changed net_binds.port to net_port type
+removed net_binds.net_protocol column
+changed net_devices.mac_address to mac_address type
 changed net_tcp_redirects.destination_port to net_port type
 changed postgres_databases.name to postgres_database_name type
 changed postgres_servers.name to postgres_server_name type
 changed postgres_server_users.username to postgres_username type
 changed postgres_users.username to postgres_username type
+removed protocols.net_protocol column
 changed protocols.port to net_port type
 changed ticket_actions.old_assigned_to to username type
 changed ticket_actions.new_assigned_to to username type

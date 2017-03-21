@@ -1183,6 +1183,7 @@ removed protocols.net_protocol column
 changed distro_files.group_name to group_id type
 changed failover_file_replications.quota_gid to linux_id type
 changed httpd_sites.group_name to group_id type
+changed httpd_tomcat_contexts.doc_base to path type
 changed linux_group_accounts.group_name to group_id type
 changed linux_groups.name to group_id type
 changed linux_server_groups.name to group_id type

@@ -1125,15 +1125,16 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tom
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'class_name', 2, 'string', true, false, false, 'the className attribute', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'cookies', 3, 'boolean', false, false, false, 'the cookies attribute', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'cross_context', 4, 'boolean', false, false, false, 'the crossContext attribute', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'doc_base', 5, 'string', false, false, false, 'the docBase attribute', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'override', 6, 'boolean', false, false, false, 'the override attribute', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'path', 7, 'string', false, false, false, 'the path attribute', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'privileged', 8, 'boolean', false, false, false, 'the privileged attribute', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'reloadable', 9, 'boolean', false, false, false, 'the reloadable attribute', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'use_naming', 10, 'boolean', false, false, false, 'the useNaming attribute', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'wrapper_class', 11, 'string', true, false, false, 'the wrapperClass attribute', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'debug', 12, 'int', false, false, false, 'the debug attribute', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'work_dir', 13, 'path', true, false, false, 'the workDir attribute', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'doc_base', 5, 'string', false, false, false, 'the docBase attribute', '1.0a100', '1.80';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'doc_base', 6, 'path', false, false, false, 'the docBase attribute', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'override', 7, 'boolean', false, false, false, 'the override attribute', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'path', 8, 'string', false, false, false, 'the path attribute', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'privileged', 9, 'boolean', false, false, false, 'the privileged attribute', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'reloadable', 10, 'boolean', false, false, false, 'the reloadable attribute', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'use_naming', 11, 'boolean', false, false, false, 'the useNaming attribute', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'wrapper_class', 12, 'string', true, false, false, 'the wrapperClass attribute', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'debug', 13, 'int', false, false, false, 'the debug attribute', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'work_dir', 14, 'path', true, false, false, 'the workDir attribute', '1.0a100', null;
 commit;
 begin;
 \echo httpd_tomcat_data_sources

@@ -2325,6 +2325,14 @@ insert into aosh_commands values(
   'dumps the contents of a MySQL database',
   '<i>database_name</i> <i>mysql_server</i> <i>ao_server</i>',
   '1.4',
+  '1.80'
+);
+insert into aosh_commands values(
+  'dump_mysql_database',
+  'mysql_databases',
+  'dumps the contents of a MySQL database',
+  '<i>database_name</i> <i>mysql_server</i> <i>ao_server</i> <i>gzip</i>',
+  '1.80.0-SNAPSHOT',
   null
 );
 insert into aosh_commands values(
@@ -2837,6 +2845,14 @@ insert into aosh_commands values(
   'dumps the contents of a PostgreSQL database',
   '<i>database_name</i> <i>postgres_server</i> <i>ao_server</i>',
   '1.0a100',
+  '1.80'
+);
+insert into aosh_commands values(
+  'dump_postgres_database',
+  'postgres_databases',
+  'dumps the contents of a PostgreSQL database',
+  '<i>database_name</i> <i>postgres_server</i> <i>ao_server</i> <i>gzip</i>',
+  '1.80.0-SNAPSHOT',
   null
 );
 insert into aosh_commands values(

@@ -666,7 +666,8 @@ select add_schema_foreign_key('mysql_hosts', 'ao_server', 'ao_servers', 'server'
 commit;
 begin;
 \echo mysql_server_users
-select add_schema_foreign_key('mysql_server_users', 'username', 'mysql_users', 'username', '1.0a100', null);
+select add_schema_foreign_key('mysql_server_users', 'username', 'mysql_users', 'username', '1.0a100', '1.80');
+select add_schema_foreign_key('mysql_server_users', 'username', 'mysql_users', 'username', '1.80.0-SNAPSHOT', null);
 select add_schema_foreign_key('mysql_server_users', 'ao_server', 'ao_servers', 'server', '1.0a100', '1.3');
 select add_schema_foreign_key('mysql_server_users', 'mysql_server', 'mysql_servers', 'pkey', '1.4', null);
 select add_schema_foreign_key('mysql_server_users', 'disable_log', 'disable_log', 'pkey', '1.0a100', null);
@@ -681,7 +682,8 @@ select add_schema_foreign_key('mysql_servers', 'package', 'packages', 'name', '1
 commit;
 begin;
 \echo mysql_users
-select add_schema_foreign_key('mysql_users', 'username', 'usernames', 'username', '1.0a100', null);
+select add_schema_foreign_key('mysql_users', 'username', 'usernames', 'username', '1.0a100', '1.80');
+select add_schema_foreign_key('mysql_users', 'username', 'usernames', 'username', '1.80.0-SNAPSHOT', null);
 select add_schema_foreign_key('mysql_users', 'disable_log', 'disable_log', 'pkey', '1.0a100', null);
 commit;
 begin;
@@ -781,7 +783,8 @@ select add_schema_foreign_key('postgres_encodings', 'postgres_version', 'postgre
 commit;
 begin;
 \echo postgres_server_users
-select add_schema_foreign_key('postgres_server_users', 'username', 'postgres_users', 'username', '1.0a100', null);
+select add_schema_foreign_key('postgres_server_users', 'username', 'postgres_users', 'username', '1.0a100', '1.80');
+select add_schema_foreign_key('postgres_server_users', 'username', 'postgres_users', 'username', '1.80.0-SNAPSHOT', null);
 select add_schema_foreign_key('postgres_server_users', 'postgres_server', 'postgres_servers', 'pkey', '1.0a100', '1.68');
 select add_schema_foreign_key('postgres_server_users', 'postgres_server', 'postgres_servers', 'pkey', '1.69', null);
 select add_schema_foreign_key('postgres_server_users', 'usesysid', 'linux_ids', 'id', '1.0a100', '1.0a130');
@@ -796,7 +799,8 @@ select add_schema_foreign_key('postgres_servers', 'last_postgres_usesysid', 'lin
 commit;
 begin;
 \echo postgres_users
-select add_schema_foreign_key('postgres_users', 'username', 'usernames', 'username', '1.0a100', null);
+select add_schema_foreign_key('postgres_users', 'username', 'usernames', 'username', '1.0a100', '1.80');
+select add_schema_foreign_key('postgres_users', 'username', 'usernames', 'username', '1.80.0-SNAPSHOT', null);
 select add_schema_foreign_key('postgres_users', 'disable_log', 'disable_log', 'pkey', '1.0a100', null);
 commit;
 begin;
@@ -1009,8 +1013,10 @@ select add_schema_foreign_key('ticket_actions', 'old_type', 'ticket_types', 'typ
 select add_schema_foreign_key('ticket_actions', 'new_type', 'ticket_types', 'type', '1.49', null);
 select add_schema_foreign_key('ticket_actions', 'old_status', 'ticket_stati', 'status', '1.44', null);
 select add_schema_foreign_key('ticket_actions', 'new_status', 'ticket_stati', 'status', '1.44', null);
-select add_schema_foreign_key('ticket_actions', 'old_assigned_to', 'business_administrators', 'username', '1.44', null);
-select add_schema_foreign_key('ticket_actions', 'new_assigned_to', 'business_administrators', 'username', '1.44', null);
+select add_schema_foreign_key('ticket_actions', 'old_assigned_to', 'business_administrators', 'username', '1.44', '1.80');
+select add_schema_foreign_key('ticket_actions', 'old_assigned_to', 'business_administrators', 'username', '1.80.0-SNAPSHOT', null);
+select add_schema_foreign_key('ticket_actions', 'new_assigned_to', 'business_administrators', 'username', '1.44', '1.80');
+select add_schema_foreign_key('ticket_actions', 'new_assigned_to', 'business_administrators', 'username', '1.80.0-SNAPSHOT', null);
 select add_schema_foreign_key('ticket_actions', 'old_category', 'ticket_categories', 'pkey', '1.44', null);
 select add_schema_foreign_key('ticket_actions', 'new_category', 'ticket_categories', 'pkey', '1.44', null);
 commit;

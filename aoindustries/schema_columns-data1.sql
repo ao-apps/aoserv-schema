@@ -643,7 +643,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_fi
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'mode', 6, 'octal_long', false, false, false, 'the mode (including file type bits)', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'linux_account', 7, 'username', false, false, false, 'the owner of the file', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'linux_group', 8, 'string', false, false, false, 'the group of the file', '1.0a100', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'linux_group', 9, 'group_id', false, false, false, 'the group of the file', '1.80.0-SNAPSHOT.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'linux_group', 9, 'group_id', false, false, false, 'the group of the file', '1.80.0-SNAPSHOT', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'size', 10, 'long', true, false, false, 'the length of the file', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'file_md5', 11, 'string', true, false, false, 'the md5 hash if is a regular file', '1.0a100', '1.0a104';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'file_md5_hi', 12, 'long', true, false, false, 'the md5 hash if is a regular file', '1.0a105', '1.79';

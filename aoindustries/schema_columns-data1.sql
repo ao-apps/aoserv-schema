@@ -19,7 +19,7 @@ begin;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_server_daemon_hosts', 'pkey', 0, 'pkey', false, true, false, 'a generated unique primary key', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_server_daemon_hosts', 'ao_server', 1, 'fkey', false, false, false, 'the pkey of the ao_server', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_server_daemon_hosts', 'host', 2, 'ip_address', false, false, false, 'the hostname or IP address that is allowed to connect', '1.0a100', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_server_daemon_hosts', 'host', 3, 'hostname', false, false, false, 'the hostname or IP address that is allowed to connect', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_server_daemon_hosts', 'host', 3, 'hostname', false, false, false, 'the hostname or IP address that is allowed to connect', '1.80.0', null;
 commit;
 begin;
 \echo ao_servers
@@ -643,7 +643,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_fi
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'mode', 6, 'octal_long', false, false, false, 'the mode (including file type bits)', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'linux_account', 7, 'username', false, false, false, 'the owner of the file', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'linux_group', 8, 'string', false, false, false, 'the group of the file', '1.0a100', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'linux_group', 9, 'group_id', false, false, false, 'the group of the file', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'linux_group', 9, 'group_id', false, false, false, 'the group of the file', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'size', 10, 'long', true, false, false, 'the length of the file', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'file_md5', 11, 'string', true, false, false, 'the md5 hash if is a regular file', '1.0a100', '1.0a104';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'distro_files', 'file_md5_hi', 12, 'long', true, false, false, 'the md5 hash if is a regular file', '1.0a105', '1.79';
@@ -700,7 +700,7 @@ begin;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_zones', 'zone', 0, 'zone', false, true, false, 'the zone (domain) that is hosted', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_zones', 'file', 1, 'string', false, false, false, 'the filename of the zone file', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_zones', 'package', 2, 'package', false, false, false, 'the package that owns the zones', '1.0a100', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_zones', 'package', 3, 'accounting', false, false, false, 'the package that owns the zones', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_zones', 'package', 3, 'accounting', false, false, false, 'the package that owns the zones', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_zones', 'hostmaster', 4, 'string', false, false, false, 'the email address of the person in charge of the domain', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_zones', 'serial', 5, 'long', false, false, false, 'the ever-incrementing serial number for the file', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'dns_zones', 'ttl', 6, 'int', false, false, false, '', '1.0a127', null;
@@ -738,7 +738,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_dom
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_domains', 'domain', 2, 'domain_name', false, false, false, 'the domain that is hosted in the email', '1.69', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_domains', 'ao_server', 3, 'fkey', false, false, false, 'the pkey of the server that is hosting the email', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_domains', 'package', 4, 'package', false, false, false, 'the owner of the domain', '1.0a100', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_domains', 'package', 5, 'accounting', false, false, false, 'the owner of the domain', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_domains', 'package', 5, 'accounting', false, false, false, 'the owner of the domain', '1.80.0', null;
 commit;
 begin;
 \echo email_forwarding
@@ -775,9 +775,9 @@ begin;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_pipes', 'pkey', 0, 'pkey', false, true, false, 'a generated primary key', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_pipes', 'ao_server', 1, 'fkey', false, false, false, 'the pkey of the server the program resides on', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_pipes', 'path', 2, 'path', false, false, false, 'the complete path to the email handling program', '1.0a100', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_pipes', 'command', 3, 'string', false, false, false, 'the complete command string to the email handling program', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_pipes', 'command', 3, 'string', false, false, false, 'the complete command string to the email handling program', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_pipes', 'package', 4, 'package', false, false, false, 'the package that this program runs for', '1.0a100', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_pipes', 'package', 5, 'accounting', false, false, false, 'the package that this program runs for', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_pipes', 'package', 5, 'accounting', false, false, false, 'the package that this program runs for', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_pipes', 'disable_log', 6, 'fkey', true, false, false, 'indicates that this email pipe is disabled', '1.0a100', null;
 commit;
 begin;
@@ -790,7 +790,7 @@ begin;
 \echo email_smtp_relays
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_relays', 'pkey', 0, 'pkey', false, true, false, 'a generated unique key', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_relays', 'package', 1, 'package', false, false, false, 'the package that owns this entry', '1.0a100', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_relays', 'package', 2, 'accounting', false, false, false, 'the package that owns this entry', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_relays', 'package', 2, 'accounting', false, false, false, 'the package that owns this entry', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_relays', 'ao_server', 3, 'fkey', true, false, false, 'the pkey of the server that the rule applies to', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_relays', 'host', 4, 'string', false, false, false, 'the hostname or IP the rule applies to', '1.0a100', '1.68';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'email_smtp_relays', 'host', 5, 'hostname', false, false, false, 'the hostname or IP the rule applies to', '1.69', null;
@@ -872,7 +872,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'chunk_always', 16, 'boolean', false, false, false, 'when true chunking will always be performed (mtime+length will not be considered a sufficient match)', '1.17', '1.30';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'quota_gid', 17, 'int', true, false, false, 'the gid used on the backup_partition for quota reports, required if backup_partitions quotas are enabled, not allowed otherwise', '1.31', '1.68';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'quota_gid', 18, 'fkey', true, false, false, 'the gid used on the backup_partition for quota reports, required if backup_partitions quotas are enabled, not allowed otherwise', '1.69', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'quota_gid', 19, 'linux_id', true, false, false, 'the gid used on the backup_partition for quota reports, required if backup_partitions quotas are enabled, not allowed otherwise', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'failover_file_replications', 'quota_gid', 19, 'linux_id', true, false, false, 'the gid used on the backup_partition for quota reports, required if backup_partitions quotas are enabled, not allowed otherwise', '1.80.0', null;
 commit;
 begin;
 \echo failover_file_schedule
@@ -1096,10 +1096,10 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sit
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'site_name', 2, 'string', false, false, false, 'the name of the site, as used in the /www directory.', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'list_first', 3, 'boolean', false, false, false, 'if <code>true</code>, this site will be listed first in the Apache configs.  This is normally used only for the "not found" site for each httpd_server.', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'package', 4, 'package', false, false, false, 'the package that the site is part of', '1.0a100', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'package', 5, 'accounting', false, false, false, 'the package that the site is part of', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'package', 5, 'accounting', false, false, false, 'the package that the site is part of', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'linux_account', 6, 'username', false, false, false, 'the user the site "runs as"', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'linux_group', 7, 'string', false, false, false, 'the primary group that can edit the site content', '1.0a100', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'linux_group', 8, 'group_id', false, false, false, 'the primary group that can edit the site content', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'linux_group', 8, 'group_id', false, false, false, 'the primary group that can edit the site content', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'server_admin', 9, 'email', false, false, false, 'the email address of the server administrator.  This address is provided when an error occurs.  The value is most often <code>webmaster@<i>domain.com</i></code>', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'content_src', 10, 'path', true, false, false, 'optional content added to site on creation', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'config_backup_level', 11, 'short', false, false, false, 'the number of copies of config backup files', '1.0a100', '1.30';
@@ -1128,7 +1128,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tom
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'cookies', 3, 'boolean', false, false, false, 'the cookies attribute', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'cross_context', 4, 'boolean', false, false, false, 'the crossContext attribute', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'doc_base', 5, 'string', false, false, false, 'the docBase attribute', '1.0a100', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'doc_base', 6, 'path', false, false, false, 'the docBase attribute', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'doc_base', 6, 'path', false, false, false, 'the docBase attribute', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'override', 7, 'boolean', false, false, false, 'the override attribute', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'path', 8, 'string', false, false, false, 'the path attribute', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'privileged', 9, 'boolean', false, false, false, 'the privileged attribute', '1.0a100', null;
@@ -1257,7 +1257,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addres
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'hostname',                    4, 'hostname',   false, false, false, 'the reverse mapping for the hostname', '1.0a100', '1.68';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'hostname',                    5, 'domain_name', true, false, false, 'the reverse mapping for the hostname, null only allowed for the "0.0.0.0"" or "::" IP addresses', '1.69', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'package',                     6, 'package',    false, false, false, 'the package that the IP address is part of', '1.0a100', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'package',                     7, 'accounting', false, false, false, 'the package that the IP address is part of', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'package',                     7, 'accounting', false, false, false, 'the package that the IP address is part of', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'price',                       8, 'decimal_2',   true, false, false, '', '1.0a100', '1.0a122';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'created',                     9, 'time',       false, false, false, 'the time the IP address was added', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ip_addresses', 'available',                  10, 'boolean',    false, false, false, 'a flag if the IP address is available', '1.0a100', null;
@@ -1381,7 +1381,7 @@ begin;
 \echo linux_group_accounts
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_group_accounts', 'pkey', 0, 'pkey', false, true, false, 'a generated unique number', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_group_accounts', 'group_name', 1, 'string', false, false, false, 'the linux group name', '1.0a100', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_group_accounts', 'group_name', 2, 'group_id', false, false, false, 'the linux group name', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_group_accounts', 'group_name', 2, 'group_id', false, false, false, 'the linux group name', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_group_accounts', 'username', 3, 'username', false, false, false, 'the linux account that is an alternate member', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_group_accounts', 'is_primary', 4, 'boolean', false, false, false, 'flag showing that this group is the user''s primary group', '1.0a100', null;
 commit;
@@ -1393,9 +1393,9 @@ commit;
 begin;
 \echo linux_groups
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_groups', 'name', 0, 'string', false, true, false, 'the name of the group', '1.0a100', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_groups', 'name', 1, 'group_id', false, true, false, 'the name of the group', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_groups', 'name', 1, 'group_id', false, true, false, 'the name of the group', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_groups', 'package', 2, 'package', false, false, false, 'the package of the group', '1.0a100', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_groups', 'package', 3, 'accounting', false, false, false, 'the package of the group', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_groups', 'package', 3, 'accounting', false, false, false, 'the package of the group', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_groups', 'type', 4, 'string', false, false, false, 'the type of group', '1.0a100', null;
 commit;
 begin;
@@ -1411,7 +1411,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_ser
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'ao_server', 2, 'fkey', false, false, false, 'the pkey of the server the username is on', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'uid', 3, 'int', false, false, false, 'the uid of the user on the machine', '1.0a100', '1.68';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'uid', 4, 'fkey', false, false, false, 'the uid of the user on the machine', '1.69', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'uid', 5, 'linux_id', false, false, false, 'the uid of the user on the machine', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'uid', 5, 'linux_id', false, false, false, 'the uid of the user on the machine', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'home', 6, 'path', false, false, false, 'the home directory of the user on this machine', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'cron_backup_level', 7, 'short', false, false, false, 'the level of backup for cron table', '1.0a100', '1.30';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'cron_backup_retention', 8, 'short', false, false, false, 'the number of days backup files will be kept', '1.0a100', '1.30';
@@ -1438,11 +1438,11 @@ begin;
 \echo linux_server_groups
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_groups', 'pkey', 0, 'pkey', false, true, false, 'a unique key', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_groups', 'name', 1, 'string', false, false, false, 'the group name', '1.0a100', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_groups', 'name', 2, 'group_id', false, false, false, 'the group name', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_groups', 'name', 2, 'group_id', false, false, false, 'the group name', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_groups', 'ao_server', 3, 'fkey', false, false, false, 'the pkey of the ao_server the group is on', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_groups', 'gid', 4, 'int', false, false, false, 'the gid on that machine', '1.0a100', '1.68';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_groups', 'gid', 5, 'fkey', false, false, false, 'the gid on that machine', '1.69', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_groups', 'gid', 6, 'linux_id', false, false, false, 'the gid on that machine', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_groups', 'gid', 6, 'linux_id', false, false, false, 'the gid on that machine', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_groups', 'created', 7, 'date', false, false, false, 'the time the group was added', '1.0a100', '1.68';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_groups', 'created', 8, 'time', false, false, false, 'the time the group was added', '1.69', null;
 commit;
@@ -1494,7 +1494,7 @@ begin;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_hosts', 'pkey', 0, 'pkey', false, true, false, 'a generated unique primary key', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_hosts', 'username', 1, 'username', false, false, false, 'the unique username of the user', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_hosts', 'host', 2, 'ip_address', false, false, false, 'the hostname or IP address they are allowed to connect from', '1.0a100', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_hosts', 'host', 3, 'hostname', false, false, false, 'the hostname or IP address they are allowed to connect from', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'master_hosts', 'host', 3, 'hostname', false, false, false, 'the hostname or IP address they are allowed to connect from', '1.80.0', null;
 commit;
 begin;
 \echo master_processes
@@ -1568,7 +1568,7 @@ begin;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'monthly_charges', 'pkey',        0, 'pkey',        true,  true, false, 'a unique, generated number for reference',          '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'monthly_charges', 'accounting',  1, 'accounting', false, false, false, 'the account code that is charged to',               '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'monthly_charges', 'package',     2, 'package',    false, false, false, 'the package that this is charged for',              '1.0a100', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'monthly_charges', 'package',     3, 'accounting', false, false, false, 'the package that this is charged for',              '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'monthly_charges', 'package',     3, 'accounting', false, false, false, 'the package that this is charged for',              '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'monthly_charges', 'type',        4, 'string',     false, false, false, 'the type of charge, as found in transaction types', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'monthly_charges', 'description', 5, 'string',      true, false, false, 'the description that is placed in the transaction', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'monthly_charges', 'quantity',    6, 'decimal_3',  false, false, false, 'the quantity',                                      '1.0a100', null;
@@ -1594,11 +1594,11 @@ begin;
 \echo mysql_databases
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_databases', 'pkey', 0, 'pkey', false, true, false, 'a unique, generated primary key', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_databases', 'name', 1, 'string', false, false, false, 'the name of the database', '1.0a100', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_databases', 'name', 2, 'mysql_database_name', false, false, false, 'the name of the database', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_databases', 'name', 2, 'mysql_database_name', false, false, false, 'the name of the database', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_databases', 'ao_server', 3, 'fkey', false, false, false, 'the pkey of the server that this database is hosted on', '1.0a100', '1.3';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_databases', 'mysql_server', 4, 'fkey', false, false, false, 'the pkey of the server that this database is hosted on', '1.4', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_databases', 'package', 5, 'package', false, false, false, 'the package that this database is part of', '1.0a100', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_databases', 'package', 6, 'accounting', false, false, false, 'the package that this database is part of', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_databases', 'package', 6, 'accounting', false, false, false, 'the package that this database is part of', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_databases', 'backup_level', 7, 'short', false, false, false, 'the number of backup copies to keep', '1.0a100', '1.30';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_databases', 'backup_retention', 8, 'short', false, false, false, 'the number of days backups will be kept', '1.0a100', '1.30';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_databases', 'max_check_table_alert_level', 9, 'string', false, false, false, 'the maximum alert level created for the check table monitoring of this database', '1.74', null;
@@ -1643,7 +1643,7 @@ begin;
 \echo mysql_server_users
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'pkey', 0, 'pkey', false, true, false, 'a generated primary key', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'username', 1, 'username', false, false, false, 'the username', '1.0a100', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'username', 2, 'mysql_username', false, false, false, 'the username', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'username', 2, 'mysql_username', false, false, false, 'the username', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'ao_server', 3, 'fkey', false, false, false, 'the pkey of the MySQL server', '1.0a100', '1.3';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'mysql_server', 4, 'fkey', false, false, false, 'the pkey of the MySQL server', '1.4', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_server_users', 'host', 5, 'ip_address', false, false, false,
@@ -1681,18 +1681,18 @@ begin;
 \echo mysql_servers
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'pkey', 0, 'pkey', false, true, false, 'a unique, generated primary key', '1.4', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'name', 1, 'string', false, false, false, 'the name of the server', '1.4', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'name', 2, 'mysql_server_name', false, false, false, 'the name of the server', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'name', 2, 'mysql_server_name', false, false, false, 'the name of the server', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'ao_server', 3, 'fkey', false, false, false, 'the pkey of the server that this database is hosted on', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'version', 4, 'fkey', false, false, false, 'the pkey of the MySQL version', '1.4', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'max_connections', 5, 'int', false, false, false, 'the maximum number of connections for the db', '1.4', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'net_bind', 6, 'fkey', false, true, false, 'the port the servers binds to', '1.4', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'package', 7, 'string', false, false, false, 'the package who owns the instance', '1.28', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'package', 8, 'accounting', false, false, false, 'the package who owns the instance', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'package', 8, 'accounting', false, false, false, 'the package who owns the instance', '1.80.0', null;
 commit;
 begin;
 \echo mysql_users
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'username', 0, 'username', false, true, false, 'the username of the MySQL user', '1.0a100', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'username', 1, 'mysql_username', false, true, false, 'the username of the MySQL user', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'username', 1, 'mysql_username', false, true, false, 'the username of the MySQL user', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'select_priv', 2, 'boolean', false, false, false, 'the SELECT privilege to all databases', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'insert_priv', 3, 'boolean', false, false, false, 'the INSERT privilege to all databases', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'update_priv', 4, 'boolean', false, false, false, 'the UPDATE privilege to all databases', '1.0a100', null;
@@ -1727,13 +1727,13 @@ begin;
 \echo net_binds
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'pkey', 0, 'pkey', false, true, false, 'a generated pkey', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'package', 1, 'package', false, false, false, 'the package that owns the opened port', '1.0a100', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'package', 2, 'accounting', false, false, false, 'the package that owns the opened port', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'package', 2, 'accounting', false, false, false, 'the package that owns the opened port', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'ao_server', 3, 'fkey', false, false, false, 'the pkey of the server that this port is bound on', '1.0a100', '1.32';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'server', 4, 'fkey', false, false, false, 'the pkey of the server that this port is bound on', '1.33', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'ip_address', 5, 'fkey', false, false, false, 'the pkey of the IP address that is bound to', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'port', 6, 'int', false, false, false, 'the port number that is bound', '1.0a100', '1.68';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'port', 7, 'fkey', false, false, false, 'the port number that is bound', '1.69', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'port', 8, 'net_port', false, false, false, 'the port that is bound', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'port', 8, 'net_port', false, false, false, 'the port that is bound', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'net_protocol', 9, 'string', false, false, false, 'the network protocol (<code>net_protocols</code>)', '1.0a100', '1.80';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'app_protocol', 10, 'string', false, false, false, 'the application protocol (<code>protocols</code>)', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'open_firewall', 11, 'boolean', false, false, false, 'flags if the firewall should be opened for this port', '1.0a100', null;
@@ -1775,7 +1775,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devic
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'network', 9, 'ip_address', true, false, false, 'the local network', '1.0a112', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'broadcast', 10, 'ip_address', true, false, false, 'the broadcast IP', '1.0a112', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'mac_address', 11, 'string', true, true, false, 'the MAC address to be used on the device', '1.0a128', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'mac_address', 12, 'mac_address', true, true, false, 'the MAC address to be used on the device', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'mac_address', 12, 'mac_address', true, true, false, 'the MAC address to be used on the device', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'max_bit_rate', 13, 'long', true, false, false, 'the maximum bits per second for this network device', '1.2', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'monitoring_bit_rate_low', 14, 'long', true, false, false, 'the 5-minute average that will trigger a low-level alert', '1.35', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_devices', 'monitoring_bit_rate_medium', 15, 'long', true, false, false, 'the 5-minute average that will trigger a medium-level alert', '1.35', null;
@@ -1807,7 +1807,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_tcp_r
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_tcp_redirects', 'destination_host', 4, 'hostname', false, false, false, 'the destination IP address or hostname, please note that hostnames are only resolved once on xinetd startup', '1.0a111', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_tcp_redirects', 'destination_port', 5, 'int', false, false, false, 'the remote port to connect to', '1.0a111', '1.68';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_tcp_redirects', 'destination_port', 6, 'fkey', false, false, false, 'the remote port to connect to', '1.69', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_tcp_redirects', 'destination_port', 7, 'net_port', false, false, false, 'the remote port to connect to', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_tcp_redirects', 'destination_port', 7, 'net_port', false, false, false, 'the remote port to connect to', '1.80.0', null;
 commit;
 begin;
 \echo notice_logs
@@ -1881,7 +1881,7 @@ begin;
 \echo packages
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'packages', 'pkey', 0, 'pkey', false, true, false, 'a generated unique key', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'packages', 'name', 1, 'package', false, true, false, 'the unique name of this package entry', '1.0a100', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'packages', 'name', 2, 'accounting', false, true, false, 'the unique name of this package entry', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'packages', 'name', 2, 'accounting', false, true, false, 'the unique name of this package entry', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'packages', 'accounting', 3, 'accounting', false, false, false, 'the accounting code of the business that pays for this package', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'packages', 'level', 4, 'string', false, false, false, '', '1.0a100', '1.0a122';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'packages', 'rate', 5, 'decimal_2', true, false, false, '', '1.0a100', '1.0a122';
@@ -1951,7 +1951,7 @@ begin;
 \echo postgres_databases
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_databases', 'pkey', 0, 'pkey', false, true, false, 'a unique, generated primary key', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_databases', 'name', 1, 'string', false, false, false, 'the name of the database', '1.0a100', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_databases', 'name', 2, 'postgres_database_name', false, false, false, 'the name of the database', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_databases', 'name', 2, 'postgres_database_name', false, false, false, 'the name of the database', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_databases', 'postgres_server', 3, 'fkey', false, false, false, 'the pkey of the PostgreSQL server', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_databases', 'datdba', 4, 'fkey', false, false, false, 'the datdba for the database', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_databases', 'encoding', 5, 'fkey', false, false, false, 'the pkey of the encoding system used for the database', '1.0a100', null;
@@ -1975,7 +1975,7 @@ begin;
 \echo postgres_servers
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_servers', 'pkey', 0, 'pkey', false, true, false, 'a unique, generated primary key', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_servers', 'name', 1, 'string', false, false, false, 'the name of the database', '1.0a100', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_servers', 'name', 2, 'postgres_server_name', false, false, false, 'the name of the database', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_servers', 'name', 2, 'postgres_server_name', false, false, false, 'the name of the database', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_servers', 'ao_server', 3, 'fkey', false, false, false, 'the pkey of the server that this database is hosted on', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_servers', 'version', 4, 'fkey', false, false, false, 'the pkey of the PostgreSQL version', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_servers', 'max_connections', 5, 'int', false, false, false, 'the maximum number of connections for the db', '1.0a100', null;
@@ -1989,7 +1989,7 @@ begin;
 \echo postgres_server_users
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_server_users', 'pkey', 0, 'pkey', false, true, false, 'a unique, generated number', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_server_users', 'username', 1, 'username', false, false, false, 'the username as found in postgres_users', '1.0a100', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_server_users', 'username', 2, 'postgres_username', false, false, false, 'the username as found in postgres_users', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_server_users', 'username', 2, 'postgres_username', false, false, false, 'the username as found in postgres_users', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_server_users', 'postgres_server', 3, 'pkey', false, false, false, 'the pkey of the PostgreSQL server', '1.0a100', '1.68';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_server_users', 'postgres_server', 4, 'fkey', false, false, false, 'the pkey of the PostgreSQL server', '1.69', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_server_users', 'usesysid', 5, 'int', false, false, false, 'the PostgreSQL usesysid as found in pg_users', '1.0a100', '1.0a130';
@@ -1999,7 +1999,7 @@ commit;
 begin;
 \echo postgres_users
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_users', 'username', 0, 'username', false, true, false, 'the username of the user', '1.0a100', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_users', 'username', 1, 'postgres_username', false, true, false, 'the username of the user', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_users', 'username', 1, 'postgres_username', false, true, false, 'the username of the user', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_users', 'createdb', 2, 'boolean', false, false, false, 'usecreatedb flag', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_users', 'trace', 3, 'boolean', false, false, false, 'usetrace flag', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_users', 'super', 4, 'boolean', false, false, false, 'usesuper flag', '1.0a100', null;
@@ -2039,7 +2039,7 @@ begin;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'protocol', 0, 'string', false, true, true, 'the unique name of the protocol', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'port', 1, 'int', false, false, true, 'the default port of the protocol', '1.0a100', '1.68';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'port', 2, 'fkey', false, false, true, 'the default port of the protocol', '1.69', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'port', 3, 'net_port', false, false, true, 'the default port of the protocol', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'port', 3, 'net_port', false, false, true, 'the default port of the protocol', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'name', 4, 'string', false, false, true, 'the name of the service', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'is_user_service', 5, 'boolean', false, false, true, 'indicates that a user may add and remove this service', '1.0a105', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'protocols', 'net_protocol', 6, 'string', false, false, true, 'the default network protocol for this protocol', '1.0a105', '1.80';
@@ -2853,9 +2853,9 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_ac
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'old_status',      13, 'string', true, false, false, '', '1.44', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'new_status',      14, 'string', true, false, false, '', '1.44', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'old_assigned_to', 15, 'string', true, false, false, '', '1.44', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'old_assigned_to', 16, 'username', true, false, false, '', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'old_assigned_to', 16, 'username', true, false, false, '', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'new_assigned_to', 17, 'string', true, false, false, '', '1.44', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'new_assigned_to', 18, 'username', true, false, false, '', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'new_assigned_to', 18, 'username', true, false, false, '', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'old_category',    19, 'fkey', true, false, false, '', '1.44', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'new_category',    20, 'fkey', true, false, false, '', '1.44', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ticket_actions', 'old_value',       21, 'string', true, false, false, '', '1.44', null;
@@ -3007,7 +3007,7 @@ begin;
 \echo usernames
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'usernames', 'username', 0, 'username', false, true, false, 'the unique username', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'usernames', 'package', 1, 'package', false, false, false, 'the package name that this user is part of', '1.0a100', '1.80';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'usernames', 'package', 2, 'accounting', false, false, false, 'the package name that this user is part of', '1.80.0-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'usernames', 'package', 2, 'accounting', false, false, false, 'the package name that this user is part of', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'usernames', 'disable_log', 3, 'fkey', true, false, false, 'indicates that the username is disabled', '1.0a100', null;
 commit;
 begin;

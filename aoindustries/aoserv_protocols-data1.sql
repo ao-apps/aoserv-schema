@@ -1171,8 +1171,8 @@ added distro_files.file_sha256_2
 added distro_files.file_sha256_3'
 );
 insert into aoserv_protocols values(
-  '1.80.0-SNAPSHOT',
-  '2017-03-20',
+  '1.80.0',
+  '2017-03-30',
   'removed linux_ids table
 removed net_ports table
 removed net_protocols table

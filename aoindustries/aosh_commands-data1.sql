@@ -892,7 +892,7 @@ insert into aosh_commands values(
   'email_pipes',
   'adds a new email pipe',
   '<i>ao_server</i> <i>command</i> <i>package</i>',
-  '1.80.0-SNAPSHOT',
+  '1.80.0',
   null
 );
 insert into aosh_commands values(
@@ -2332,7 +2332,7 @@ insert into aosh_commands values(
   'mysql_databases',
   'dumps the contents of a MySQL database',
   '<i>database_name</i> <i>mysql_server</i> <i>ao_server</i> <i>gzip</i>',
-  '1.80.0-SNAPSHOT',
+  '1.80.0',
   null
 );
 insert into aosh_commands values(
@@ -2852,7 +2852,7 @@ insert into aosh_commands values(
   'postgres_databases',
   'dumps the contents of a PostgreSQL database',
   '<i>database_name</i> <i>postgres_server</i> <i>ao_server</i> <i>gzip</i>',
-  '1.80.0-SNAPSHOT',
+  '1.80.0',
   null
 );
 insert into aosh_commands values(

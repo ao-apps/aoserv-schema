@@ -13,4 +13,10 @@ insert into postgres_versions values(3316, '7.2');
 insert into postgres_versions values(3317, '7.3');
 insert into postgres_versions values(3296, '8.1');
 insert into postgres_versions values(3298, '8.3');
+insert into postgres_versions values(3342, '9.2');
+insert into postgres_versions values(3346, '9.4');
+-- CentOS 7
+insert into postgres_versions values(3351, '8.3');
+insert into postgres_versions values(3352, '9.2');
+insert into postgres_versions values(3353, '9.4');
 commit;

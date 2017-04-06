@@ -2,6 +2,7 @@ COPY usernames (username, package, disable_log) FROM stdin;
 adm	AOINDUSTRIES	\N
 aoadmin	AOINDUSTRIES	\N
 avahi	AOINDUSTRIES	\N
+avahi-autoipd	AOINDUSTRIES	\N
 awstats	AOINDUSTRIES	\N
 bin	AOINDUSTRIES	\N
 cyrus	AOINDUSTRIES	\N
@@ -47,4 +48,7 @@ nfsnobody	AOINDUSTRIES	\N
 rpcuser	AOINDUSTRIES	\N
 nginx	AOINDUSTRIES	\N
 memcached	AOINDUSTRIES	\N
+systemd-bus-proxy	AOINDUSTRIES	\N
+tcpdump	AOINDUSTRIES	\N
+chrony	AOINDUSTRIES	\N
 \.

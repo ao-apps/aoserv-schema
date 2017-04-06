@@ -20,7 +20,7 @@ root	root	\N	\N	\N	system	/bin/bash	2001-09-03 13:48:37-05	\N
 sync	sync	\N	\N	\N	system	/bin/sync	2001-09-03 13:50:22-05	\N
 shutdown	shutdown	\N	\N	\N	system	/sbin/shutdown	2001-09-03 13:50:40-05	\N
 halt	halt	\N	\N	\N	system	/sbin/halt	2001-09-03 13:50:55-05	\N
-rpc	Portmapper RPC user	\N	\N	\N	system	/bin/false	2001-09-03 13:53:37-05	\N
+rpc	Rpcbind Daemon	\N	\N	\N	system	/bin/false	2001-09-03 13:53:37-05	\N
 aoadmin	AO Industries Admin	\N	\N	\N	user	/bin/bash	2001-09-03 13:55:58-05	\N
 nscd	NSCD Daemon	\N	\N	\N	system	/bin/false	2001-09-03 13:57:34-05	\N
 ident	pident user	\N	\N	\N	system	/bin/false	2001-09-03 13:58:30-05	\N
@@ -36,6 +36,7 @@ interbase	InterBase Server	\N	\N	\N	application	/bin/bash	2001-09-04 00:58:35-05
 apache	Apache	\N	\N	\N	application	/sbin/nologin	2006-06-19 04:11:54.116605	\N
 awstats	AWStats Background Log Processing	\N	\N	\N	application	/bin/false	2005-12-03 08:30:20.130052-06	\N
 avahi	Avahi daemon	\N	\N	\N	system	/sbin/nologin	2008-01-04 14:08:55.930677	\N
+avahi-autoipd	Avahi IPv4LL Stack	\N	\N	\N	system	/sbin/nologin	2017-04-06 17:43:45.743445+00	\N
 cyrus	Cyrus IMAP Server	\N	\N	\N	application	/bin/bash	2006-11-30 16:32:59.466179	\N
 gopher	gopher	\N	\N	\N	application	/sbin/nologin	2006-06-19 03:54:35.67468	\N
 dbus	System message bus	\N	\N	\N	application	/sbin/nologin	2006-06-19 03:56:39.344773	\N
@@ -46,4 +47,7 @@ nfsnobody	Anonymous NFS User	\N	\N	\N	system	/sbin/nologin	2008-01-04 14:19:36.4
 rpcuser	RPC Service User	\N	\N	\N	system	/sbin/nologin	2008-01-04 14:23:56.786483	\N
 nginx	nginx user	\N	\N	\N	application	/sbin/nologin	2013-04-19 13:13:53.314883-05	\N
 memcached	memcached user	\N	\N	\N	application	/sbin/nologin	2013-05-01 16:16:53.126302-05	\N
+systemd-bus-proxy	systemd Bus Proxy	\N	\N	\N	system	/sbin/nologin	2017-04-06 17:45:33.326501+00	\N
+tcpdump	\N	\N	\N	\N	system	/sbin/nologin	2017-04-06 17:59:21.153614+00	\N
+chrony	\N	\N	\N	\N	system	/sbin/nologin	2017-04-06 18:14:57.342109+00	\N
 \.

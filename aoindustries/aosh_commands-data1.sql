@@ -1797,6 +1797,14 @@ insert into aosh_commands values(
   'adds a new Linux account',
   '<i>username</i> <i>primary_group</i> <i>full_name</i> {""|<i>office_location</i>} {""|<i>office_phone</i>} {""|<i>home_phone</i>} <i>type</i> <i>shell</i>',
   '1.0a100',
+  '1.80.0'
+);
+insert into aosh_commands values(
+  'add_linux_account',
+  'linux_accounts',
+  'adds a new Linux account',
+  '<i>username</i> <i>primary_group</i> {""|<i>full_name</i>} {""|<i>office_location</i>} {""|<i>office_phone</i>} {""|<i>home_phone</i>} <i>type</i> <i>shell</i>',
+  '1.80.1-SNAPSHOT',
   null
 );
 insert into aosh_commands values(
@@ -1877,6 +1885,14 @@ insert into aosh_commands values(
   'sets the full name for a Linux account',
   '<i>username</i> <i>full_name</i>',
   '1.0a100',
+  '1.80.0'
+);
+insert into aosh_commands values(
+  'set_linux_account_name',
+  'linux_accounts',
+  'sets the full name for a Linux account',
+  '<i>username</i> {""|<i>full_name</i>}',
+  '1.80.1-SNAPSHOT',
   null
 );
 insert into aosh_commands values(

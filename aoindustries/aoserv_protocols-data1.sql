@@ -1229,6 +1229,11 @@ removed check_ip_address command
 removed check_linux_account_username command
 removed check_package_name command'
 );
+insert into aoserv_protocols values(
+  '1.80.1-SNAPSHOT',
+  '2017-04-06',
+  'linux_accounts.name is now nullable'
+);
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table

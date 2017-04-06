@@ -1,12 +1,11 @@
 create table linux_accounts (
   username text
     constraint linux_accounts_pkey primary key,
-  name text
-    not null,
+  "name" text,
   office_location text,
   office_phone text,
   home_phone text,
-  type text
+  "type" text
     not null,
   shell text
     not null,

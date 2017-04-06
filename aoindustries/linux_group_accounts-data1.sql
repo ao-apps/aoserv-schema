@@ -59,5 +59,13 @@ COPY linux_group_accounts (pkey, group_name, username, is_primary) FROM stdin;
 59	awstats	awstats	t
 60	nginx	nginx	t
 61	memcached	memcached	t
+62	avahi-autoipd	avahi-autoipd	t
+63	systemd-bus-proxy	systemd-bus-proxy	t
+64	systemd-network	systemd-network	t
+65	polkitd	polkitd	t
+66	tss	tss	t
+67	dhcpd	dhcpd	t
+69	tcpdump	tcpdump	t
+70	chrony	chrony	t
 \.
-SELECT setval ('"linux_group_accounts_pkey_seq"', 61, true);
+SELECT setval ('"linux_group_accounts_pkey_seq"', 70, true);

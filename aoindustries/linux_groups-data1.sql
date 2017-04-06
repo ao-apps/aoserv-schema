@@ -65,4 +65,14 @@ rpcuser	AOINDUSTRIES	system
 utempter	AOINDUSTRIES	system
 nginx	AOINDUSTRIES	system
 memcached	AOINDUSTRIES	system
+cdrom	AOINDUSTRIES	system
+dialout	AOINDUSTRIES	system
+tape	AOINDUSTRIES	system
+video	AOINDUSTRIES	system
+audio	AOINDUSTRIES	system
+avahi-autoipd	AOINDUSTRIES	system
+systemd-bus-proxy	AOINDUSTRIES	system
+tcpdump	AOINDUSTRIES	system
+chrony	AOINDUSTRIES	system
+cgred	AOINDUSTRIES	system
 \.

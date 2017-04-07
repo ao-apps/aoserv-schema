@@ -12,7 +12,8 @@ create table linux_group_accounts (
     not null,
   is_primary bool
     not null,
-  unique (group_name, username)
+  operating_system_version integer
 );
+
 grant all on linux_group_accounts to aoadmin;
 grant select, insert, update, delete on linux_group_accounts to aoserv_app;

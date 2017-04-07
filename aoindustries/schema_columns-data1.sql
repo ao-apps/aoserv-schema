@@ -1366,7 +1366,7 @@ begin;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'username', 0, 'username', false, true, false, 'the unique username', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'name', 1, 'string', false, false, false, 'the full name of the user', '1.0a100', '1.68';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'name', 2, 'gecos', false, false, false, 'the full name of the user', '1.69', '1.80.0';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'name', 3, 'gecos', null, false, false, 'the full name of the user', '1.80.1-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'name', 3, 'gecos', true, false, false, 'the full name of the user', '1.80.1-SNAPSHOT', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'office_location', 4, 'string', true, false, false, 'the location of the user', '1.0a100', '1.68';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'office_location', 5, 'gecos', true, false, false, 'the location of the user', '1.69', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'office_phone', 6, 'phone', true, false, false, 'the work phone number of the user', '1.0a100', '1.68';
@@ -1385,6 +1385,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_gro
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_group_accounts', 'group_name', 2, 'group_id', false, false, false, 'the linux group name', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_group_accounts', 'username', 3, 'username', false, false, false, 'the linux account that is an alternate member', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_group_accounts', 'is_primary', 4, 'boolean', false, false, false, 'flag showing that this group is the user''s primary group', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_group_accounts', 'operating_system_version', 5, 'fkey', true, false, false, 'the version of operating system where this group and user are associated, or null for all operating system versions', '1.80.1-SNAPSHOT', null;
 commit;
 begin;
 \echo linux_group_types

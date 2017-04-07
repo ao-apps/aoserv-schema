@@ -2450,7 +2450,7 @@ insert into aosh_commands values(
 insert into aosh_commands values(
   'remove_mysql_db_user',
   'mysql_db_users',
-  'removes a MySQL user\'s access to a MySQL database',
+  'removes a MySQL user''s access to a MySQL database',
   '<i>database_name</i> <i>ao_server</i> <i>username</i>',
   '1.0a100',
   '1.3'
@@ -2458,7 +2458,7 @@ insert into aosh_commands values(
 insert into aosh_commands values(
   'remove_mysql_db_user',
   'mysql_db_users',
-  'removes a MySQL user\'s access to a MySQL database',
+  'removes a MySQL user''s access to a MySQL database',
   '<i>database_name</i> <i>mysql_server</i> <i>ao_server</i> <i>username</i>',
   '1.4',
   null

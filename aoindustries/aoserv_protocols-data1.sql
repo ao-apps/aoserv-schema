@@ -604,7 +604,7 @@ updated AOSH command set_file_backup_setting
 updated AOSH command remove_file_backup_setting
 updated AOSH command add_business_server
 updated AOSH command invalidate
-updated AOSH command invalidate ao_servers.hostname, servers.package.name||\'/\'||servers.name, or servers.pkey
+updated AOSH command invalidate ao_servers.hostname, servers.package.name||''/''||servers.name, or servers.pkey
 removed file_backup_settings.recurse
 removed failover_file_replications.from_server
 added failover_file_replications.server
@@ -1232,7 +1232,8 @@ removed check_package_name command'
 insert into aoserv_protocols values(
   '1.80.1-SNAPSHOT',
   '2017-04-06',
-  'linux_accounts.name is now nullable'
+  'linux_accounts.name is now nullable
+added linux_group_accounts.operating_system_version column'
 );
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table

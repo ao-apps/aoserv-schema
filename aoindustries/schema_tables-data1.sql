@@ -1675,7 +1675,7 @@ insert into schema_tables values(
     (select count(*) from schema_tables),
     'Server CPU Report',
     false,
-    'sr_cpu - Doesn\'t exist in failover state',
+    'sr_cpu - Doesn''t exist in failover state',
     '1.0a100',
     '1.30'
 );
@@ -1684,7 +1684,7 @@ insert into schema_tables values(
     (select count(*) from schema_tables),
     'Server MySQL Report',
     false,
-    'sr_db_mysql - Doesn\'t exist if not a MySQL server',
+    'sr_db_mysql - Doesn''t exist if not a MySQL server',
     '1.0a100',
     '1.30'
 );
@@ -1693,7 +1693,7 @@ insert into schema_tables values(
     (select count(*) from schema_tables),
     'Server PostgreSQL Report',
     false,
-    'server_rep_db_postgres - Doesn\'t exist in failover state or if not a PostgreSQL server',
+    'server_rep_db_postgres - Doesn''t exist in failover state or if not a PostgreSQL server',
     '1.0a100',
     '1.30'
 );
@@ -1702,7 +1702,7 @@ insert into schema_tables values(
     (select count(*) from schema_tables),
     'Server Disk Access Report',
     false,
-    'sr_disk_access - Doesn\'t exist in failover state',
+    'sr_disk_access - Doesn''t exist in failover state',
     '1.0a100',
     '1.30'
 );
@@ -1711,7 +1711,7 @@ insert into schema_tables values(
     (select count(*) from schema_tables),
     'Server RAID Disk Report',
     false,
-    'sr_disk_mdstat - Doesn\'t exist in failover state',
+    'sr_disk_mdstat - Doesn''t exist in failover state',
     '1.0a100',
     '1.30'
 );
@@ -1729,7 +1729,7 @@ insert into schema_tables values(
     (select count(*) from schema_tables),
     'Server Kernel Report',
     false,
-    'sr_kernel - Doesn\'t exist in failover state',
+    'sr_kernel - Doesn''t exist in failover state',
     '1.0a100',
     '1.30'
 );
@@ -1738,7 +1738,7 @@ insert into schema_tables values(
     (select count(*) from schema_tables),
     'Server Load Report',
     false,
-    'sr_load - Doesn\'t exist in failover state',
+    'sr_load - Doesn''t exist in failover state',
     '1.0a100',
     '1.30'
 );
@@ -1747,7 +1747,7 @@ insert into schema_tables values(
     (select count(*) from schema_tables),
     'Server Memory Report',
     false,
-    'sr_memory - Doesn\'t exist in failover state',
+    'sr_memory - Doesn''t exist in failover state',
     '1.0a100',
     '1.30'
 );
@@ -1756,7 +1756,7 @@ insert into schema_tables values(
     (select count(*) from schema_tables),
     'Server Net Device Report',
     false,
-    'sr_net_devices - Doesn\'t exist in failover state',
+    'sr_net_devices - Doesn''t exist in failover state',
     '1.0a100',
     '1.30'
 );
@@ -1765,7 +1765,7 @@ insert into schema_tables values(
     (select count(*) from schema_tables),
     'Server Net ICMP Report',
     false,
-    'sr_net_icmp - Doesn\'t exist in failover state',
+    'sr_net_icmp - Doesn''t exist in failover state',
     '1.0a100',
     '1.30'
 );
@@ -1774,7 +1774,7 @@ insert into schema_tables values(
     (select count(*) from schema_tables),
     'Server Net IP Report',
     false,
-    'sr_net_ip - Doesn\'t exist in failover state',
+    'sr_net_ip - Doesn''t exist in failover state',
     '1.0a100',
     '1.30'
 );
@@ -1783,7 +1783,7 @@ insert into schema_tables values(
     (select count(*) from schema_tables),
     'Server Net TCP Report',
     false,
-    'sr_net_tcp - Doesn\'t exist in failover state',
+    'sr_net_tcp - Doesn''t exist in failover state',
     '1.0a100',
     '1.30'
 );
@@ -1792,7 +1792,7 @@ insert into schema_tables values(
     (select count(*) from schema_tables),
     'Server Net UDP Report',
     false,
-    'sr_net_udp - Doesn\'t exist in failover state',
+    'sr_net_udp - Doesn''t exist in failover state',
     '1.0a100',
     '1.30'
 );
@@ -1810,7 +1810,7 @@ insert into schema_tables values(
     (select count(*) from schema_tables),
     'Server Paging Report',
     false,
-    'sr_paging - Doesn\'t exist in failover state',
+    'sr_paging - Doesn''t exist in failover state',
     '1.0a100',
     '1.30'
 );

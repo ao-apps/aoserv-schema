@@ -33,6 +33,7 @@ create table linux_server_accounts (
     not null,
   sa_discard_score integer
     check (sa_discard_score is null or sa_discard_score>0),
+  sudo text,
   unique (username, ao_server)
 );
 grant all on linux_server_accounts to aoadmin;

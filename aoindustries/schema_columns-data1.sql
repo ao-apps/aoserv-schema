@@ -1435,6 +1435,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_ser
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'sa_integration_mode', 24, 'string', false, false, false, 'the integration mode for SpamAssassin', '1.0a120', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'sa_required_score', 25, 'float', false, false, false, 'the minimum SpamAssassin score considered Junk', '1.0a124', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'sa_discard_score', 26, 'int', true, false, false, 'the minimum SpamAssassin score that will be discarded instead of tagged or placed in the Junk folder', '1.40', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'sudo', 27, 'string', true, false, false, 'the sudo setting or null when sudo not allowed', '1.80.1-SNAPSHOT', null;
 commit;
 begin;
 \echo linux_server_groups

@@ -1233,7 +1233,8 @@ insert into aoserv_protocols values(
   '1.80.1-SNAPSHOT',
   '2017-04-06',
   'linux_accounts.name is now nullable
-added linux_group_accounts.operating_system_version column'
+added linux_group_accounts.operating_system_version column
+added linux_server_account.sudo column'
 );
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table

@@ -31,7 +31,11 @@ create table httpd_sites (
   check (
     -- CGI required for per-site PHP
     enable_cgi or php_version is null
-  )
+  ),
+  enable_ssi boolean not null,
+  enable_htaccess boolean not null,
+  enable_indexes boolean not null,
+  enable_follow_symlinks boolean not null,
   unique(ao_server, site_name)
 );
 grant all on httpd_sites to aoadmin;

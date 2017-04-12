@@ -1231,10 +1231,24 @@ removed check_package_name command'
 );
 insert into aoserv_protocols values(
   '1.80.1-SNAPSHOT',
-  '2017-04-06',
+  '2017-04-12',
   'linux_accounts.name is now nullable
 added linux_group_accounts.operating_system_version column
-added linux_server_account.sudo column'
+added linux_server_account.sudo column
+added httpd_sites.enable_ssi column
+added httpd_sites.enable_htaccess column
+added httpd_sites.enable_indexes column
+added httpd_sites.enable_follow_symlinks column
+added parameters to add_httpd_jboss_site command for new settings
+added parameters to add_httpd_tomcat_shared_site command for new settings
+added parameters to add_httpd_tomcat_std_site command for new settings
+added set_httpd_site_php_version command
+added set_httpd_site_enable_cgi command
+added set_httpd_site_enable_ssi command
+added set_httpd_site_enable_htaccess command
+added set_httpd_site_enable_indexes command
+added set_httpd_site_enable_follow_symlinks command
+added set_httpd_tomcat_site_use_apache command'
 );
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table

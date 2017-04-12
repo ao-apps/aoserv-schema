@@ -1077,6 +1077,14 @@ insert into aosh_commands values(
   'creates a new web site space running a JBoss configuration',
   '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin_email</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} <i>jboss_version</i> <i>primary_http_hostname</i> {""|<i>content_source</i>} [<i>alternate_http_hostname</i>]...',
   '1.0a100',
+  '1.80.0'
+);
+insert into aosh_commands values(
+  'add_httpd_jboss_site',
+  'httpd_jboss_sites',
+  'creates a new web site space running a JBoss configuration',
+  '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin_email</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} <i>jboss_version</i> <i>primary_http_hostname</i> {""|<i>content_source</i>} {""|<i>php_version</i>} <i>enable_cgi</i> <i>enable_ssi</i> <i>enable_htaccess</i> <i>enable_indexes</i> <i>enable_follow_symlinks</i> [<i>alternate_http_hostname</i>]...',
+  '1.80.1-SNAPSHOT',
   null
 );
 insert into aosh_commands values(
@@ -1336,6 +1344,54 @@ insert into aosh_commands values(
   null
 );
 insert into aosh_commands values(
+  'set_httpd_site_php_version',
+  'httpd_sites',
+  'sets the PHP version for a web site',
+  '<i>site_name</i> <i>ao_server</i> {""|<i>php_version</i>}',
+  '1.80.1-SNAPSHOT',
+  null
+);
+insert into aosh_commands values(
+  'set_httpd_site_enable_cgi',
+  'httpd_sites',
+  'sets the enable_cgi flag for a web site',
+  '<i>site_name</i> <i>ao_server</i> <i>enable_cgi</i>',
+  '1.80.1-SNAPSHOT',
+  null
+);
+insert into aosh_commands values(
+  'set_httpd_site_enable_ssi',
+  'httpd_sites',
+  'sets the enable_ssi flag for a web site',
+  '<i>site_name</i> <i>ao_server</i> <i>enable_ssi</i>',
+  '1.80.1-SNAPSHOT',
+  null
+);
+insert into aosh_commands values(
+  'set_httpd_site_enable_htaccess',
+  'httpd_sites',
+  'sets the enable_htaccess flag for a web site',
+  '<i>site_name</i> <i>ao_server</i> <i>enable_htaccess</i>',
+  '1.80.1-SNAPSHOT',
+  null
+);
+insert into aosh_commands values(
+  'set_httpd_site_enable_indexes',
+  'httpd_sites',
+  'sets the enable_indexes flag for a web site',
+  '<i>site_name</i> <i>ao_server</i> <i>enable_indexes</i>',
+  '1.80.1-SNAPSHOT',
+  null
+);
+insert into aosh_commands values(
+  'set_httpd_site_enable_follow_symlinks',
+  'httpd_sites',
+  'sets the enable_follow_symlinks flag for a web site',
+  '<i>site_name</i> <i>ao_server</i> <i>enable_follow_symlinks</i>',
+  '1.80.1-SNAPSHOT',
+  null
+);
+insert into aosh_commands values(
   'wait_for_httpd_site_rebuild',
   'httpd_sites',
   'waits for any pending or processing changes to complete',
@@ -1416,6 +1472,14 @@ insert into aosh_commands values(
   null
 );
 insert into aosh_commands values(
+  'set_httpd_tomcat_site_use_apache',
+  'httpd_tomcat_sites',
+  'sets the use_apache flag for a Tomcat-enabled web site',
+  '<i>site_name</i> <i>ao_server</i> <i>use_apache</i>',
+  '1.80.1-SNAPSHOT',
+  null
+);
+insert into aosh_commands values(
   'start_jvm',
   'httpd_tomcat_sites',
   'starts the Java VM',
@@ -1437,6 +1501,14 @@ insert into aosh_commands values(
   'creates a new web site space running a shared Tomcat configuration',
   '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} {""|<i>shared_tomcat_name</i>} {""|<i>tomcat_version</i>} <i>primary_http_hostname</i> {""|<i>content_source</i>} [<i>alternate_http_hostname</i>]...',
   '1.0a100',
+  '1.80.0'
+);
+insert into aosh_commands values(
+  'add_httpd_tomcat_shared_site',
+  'httpd_tomcat_shared_sites',
+  'creates a new web site space running a shared Tomcat configuration',
+  '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} {""|<i>shared_tomcat_name</i>} {""|<i>tomcat_version</i>} <i>primary_http_hostname</i> {""|<i>content_source</i>} {""|<i>php_version</i>} <i>enable_cgi</i> <i>enable_ssi</i> <i>enable_htaccess</i> <i>enable_indexes</i> <i>enable_follow_symlinks</i> [<i>alternate_http_hostname</i>]...',
+  '1.80.1-SNAPSHOT',
   null
 );
 insert into aosh_commands values(
@@ -1445,6 +1517,14 @@ insert into aosh_commands values(
   'creates a new web site space running a standard Tomcat configuration',
   '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} <i>tomcat_version</i> <i>primary_http_hostname</i> {""|<i>content_source</i>} [<i>alternate_http_hostname</i>]...',
   '1.0a100',
+  '1.80.0'
+);
+insert into aosh_commands values(
+  'add_httpd_tomcat_std_site',
+  'httpd_tomcat_std_sites',
+  'creates a new web site space running a standard Tomcat configuration',
+  '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} <i>tomcat_version</i> <i>primary_http_hostname</i> {""|<i>content_source</i>} {""|<i>php_version</i>} <i>enable_cgi</i> <i>enable_ssi</i> <i>enable_htaccess</i> <i>enable_indexes</i> <i>enable_follow_symlinks</i> [<i>alternate_http_hostname</i>]...',
+  '1.80.1-SNAPSHOT',
   null
 );
 insert into aosh_commands values(

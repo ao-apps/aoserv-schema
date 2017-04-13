@@ -6,7 +6,7 @@ create table httpd_shared_tomcats (
   pkey integer
     default nextval('httpd_shared_tomcats_pkey_seq')
     constraint httpd_shared_tomcats_pkey primary key,
-  name text
+  "name" text
     not null,
   ao_server integer
     not null,
@@ -28,7 +28,10 @@ create table httpd_shared_tomcats (
   tomcat4_shutdown_key text,
   is_manual bool
     not null,
-  unique (ao_server, name)
+  max_post_size integer
+    not null
+    check (max_post_size > 0),
+  unique (ao_server, "name")
 );
 grant all on httpd_shared_tomcats to aoadmin;
 grant select, insert, update, delete on httpd_shared_tomcats to aoserv_app;

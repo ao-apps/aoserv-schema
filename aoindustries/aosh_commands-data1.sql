@@ -1176,6 +1176,14 @@ insert into aosh_commands values(
   '1.30'
 );
 insert into aosh_commands values(
+  'set_httpd_shared_tomcat_max_post_size',
+  'httpd_shared_tomcats',
+  'sets the maximum POST size for a Multi-Site Tomcat installation',
+  '<i>name</i> <i>ao_server</i> <i>max_post_size</i>',
+  '1.80.1-SNAPSHOT',
+  null
+);
+insert into aosh_commands values(
   'disable_httpd_site_bind',
   'httpd_site_binds',
   'disables one network port of a web site',
@@ -1524,6 +1532,14 @@ insert into aosh_commands values(
   'httpd_tomcat_std_sites',
   'creates a new web site space running a standard Tomcat configuration',
   '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} <i>tomcat_version</i> <i>primary_http_hostname</i> {""|<i>content_source</i>} {""|<i>php_version</i>} <i>enable_cgi</i> <i>enable_ssi</i> <i>enable_htaccess</i> <i>enable_indexes</i> <i>enable_follow_symlinks</i> [<i>alternate_http_hostname</i>]...',
+  '1.80.1-SNAPSHOT',
+  null
+);
+insert into aosh_commands values(
+  'set_httpd_tomcat_std_site_max_post_size',
+  'httpd_tomcat_std_sites',
+  'sets the maximum POST size for a standard Tomcat installation',
+  '<i>site_name</i> <i>ao_server</i> <i>max_post_size</i>',
   '1.80.1-SNAPSHOT',
   null
 );

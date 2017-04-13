@@ -1248,7 +1248,11 @@ added set_httpd_site_enable_ssi command
 added set_httpd_site_enable_htaccess command
 added set_httpd_site_enable_indexes command
 added set_httpd_site_enable_follow_symlinks command
-added set_httpd_tomcat_site_use_apache command'
+added set_httpd_tomcat_site_use_apache command
+added httpd_shared_tomcats.max_post_size column
+added httpd_tomcat_std_sites.max_post_size column
+added set_httpd_shared_tomcat_max_post_size command
+added set_httpd_tomcat_std_site_max_post_size command'
 );
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table

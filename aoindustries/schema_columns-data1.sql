@@ -1040,7 +1040,9 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sha
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'tomcat4_shutdown_port', 16, 'fkey', true, true, false, 'the port that will shut down this JVM', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'tomcat4_shutdown_key', 17, 'string', true, false, false, 'the key used to shut down the JVM', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'is_manual', 18, 'boolean', false, false, false, 'the configuration files are manually maintained', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'max_post_size', 19, 'int', false, false, false, 'the maximum POST size allowed', '1.80.1-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'max_post_size', 19, 'int', true, false, false, 'the maximum POST size allowed', '1.80.1-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'unpack_wars', 20, 'boolean', false, false, false, 'the unpackWARs setting for this Tomcat', '1.80.1-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'auto_deploy', 21, 'boolean', false, false, false, 'the autoDeploy setting for this Tomcat', '1.80.1-SNAPSHOT', null;
 commit;
 begin;
 \echo httpd_site_authenticated_locations
@@ -1182,7 +1184,9 @@ begin;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_std_sites', 'tomcat_site', 0, 'fkey', false, true, false, 'the site that this Tomcat is running in', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_std_sites', 'tomcat4_shutdown_port', 1, 'fkey', true, true, false, 'the port that will shut down this JVM', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_std_sites', 'tomcat4_shutdown_key', 2, 'string', true, false, false, 'the key used to shut down the JVM', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_std_sites', 'max_post_size', 3, 'int', false, false, false, 'the maximum POST size allowed', '1.80.1-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_std_sites', 'max_post_size', 3, 'int', true, false, false, 'the maximum POST size allowed', '1.80.1-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_std_sites', 'unpack_wars', 4, 'boolean', false, false, false, 'the unpackWARs setting for this Tomcat', '1.80.1-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_std_sites', 'auto_deploy', 5, 'boolean', false, false, false, 'the autoDeploy setting for this Tomcat', '1.80.1-SNAPSHOT', null;
 commit;
 begin;
 \echo httpd_tomcat_versions

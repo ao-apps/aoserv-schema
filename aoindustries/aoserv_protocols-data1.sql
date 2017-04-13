@@ -1250,9 +1250,17 @@ added set_httpd_site_enable_indexes command
 added set_httpd_site_enable_follow_symlinks command
 added set_httpd_tomcat_site_use_apache command
 added httpd_shared_tomcats.max_post_size column
+added httpd_shared_tomcats.unpack_wars column
+added httpd_shared_tomcats.auto_deploy column
 added httpd_tomcat_std_sites.max_post_size column
+added httpd_tomcat_std_sites.unpack_wars column
+added httpd_tomcat_std_sites.auto_deploy column
 added set_httpd_shared_tomcat_max_post_size command
-added set_httpd_tomcat_std_site_max_post_size command'
+added set_httpd_shared_tomcat_unpack_wars command
+added set_httpd_shared_tomcat_auto_deploy command
+added set_httpd_tomcat_std_site_max_post_size command
+added set_httpd_tomcat_std_site_unpack_wars command
+added set_httpd_tomcat_std_site_auto_deploy command'
 );
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table

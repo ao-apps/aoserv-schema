@@ -29,8 +29,9 @@ create table httpd_shared_tomcats (
   is_manual bool
     not null,
   max_post_size integer
-    not null
-    check (max_post_size > 0),
+    check (max_post_size is null or max_post_size >= 0),
+  unpack_wars boolean not null,
+  auto_deploy boolean not null,
   unique (ao_server, "name")
 );
 grant all on httpd_shared_tomcats to aoadmin;

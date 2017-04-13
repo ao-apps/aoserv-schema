@@ -1179,7 +1179,23 @@ insert into aosh_commands values(
   'set_httpd_shared_tomcat_max_post_size',
   'httpd_shared_tomcats',
   'sets the maximum POST size for a Multi-Site Tomcat installation',
-  '<i>name</i> <i>ao_server</i> <i>max_post_size</i>',
+  '<i>name</i> <i>ao_server</i> {""|<i>max_post_size</i>}',
+  '1.80.1-SNAPSHOT',
+  null
+);
+insert into aosh_commands values(
+  'set_httpd_shared_tomcat_unpack_wars',
+  'httpd_shared_tomcats',
+  'sets the unpackWARs setting for a Multi-Site Tomcat installation',
+  '<i>name</i> <i>ao_server</i> <i>unpack_wars</i>',
+  '1.80.1-SNAPSHOT',
+  null
+);
+insert into aosh_commands values(
+  'set_httpd_shared_tomcat_auto_deploy',
+  'httpd_shared_tomcats',
+  'sets the autoDeploy setting for a Multi-Site Tomcat installation',
+  '<i>name</i> <i>ao_server</i> <i>auto_deploy</i>',
   '1.80.1-SNAPSHOT',
   null
 );
@@ -1539,7 +1555,23 @@ insert into aosh_commands values(
   'set_httpd_tomcat_std_site_max_post_size',
   'httpd_tomcat_std_sites',
   'sets the maximum POST size for a standard Tomcat installation',
-  '<i>site_name</i> <i>ao_server</i> <i>max_post_size</i>',
+  '<i>site_name</i> <i>ao_server</i> {""|<i>max_post_size</i>}',
+  '1.80.1-SNAPSHOT',
+  null
+);
+insert into aosh_commands values(
+  'set_httpd_tomcat_std_site_unpack_wars',
+  'httpd_tomcat_std_sites',
+  'sets the unpackWARs setting for a standard Tomcat installation',
+  '<i>site_name</i> <i>ao_server</i> <i>unpack_wars</i>',
+  '1.80.1-SNAPSHOT',
+  null
+);
+insert into aosh_commands values(
+  'set_httpd_tomcat_std_site_auto_deploy',
+  'httpd_tomcat_std_sites',
+  'sets the autoDeploy setting for a standard Tomcat installation',
+  '<i>site_name</i> <i>ao_server</i> <i>auto_deploy</i>',
   '1.80.1-SNAPSHOT',
   null
 );

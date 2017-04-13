@@ -1239,6 +1239,7 @@ added httpd_sites.enable_ssi column
 added httpd_sites.enable_htaccess column
 added httpd_sites.enable_indexes column
 added httpd_sites.enable_follow_symlinks column
+added httpd_sites.enable_anonymous_ftp column
 added parameters to add_httpd_jboss_site command for new settings
 added parameters to add_httpd_tomcat_shared_site command for new settings
 added parameters to add_httpd_tomcat_std_site command for new settings
@@ -1248,6 +1249,7 @@ added set_httpd_site_enable_ssi command
 added set_httpd_site_enable_htaccess command
 added set_httpd_site_enable_indexes command
 added set_httpd_site_enable_follow_symlinks command
+added set_httpd_site_enable_anonymous_ftp command
 added set_httpd_tomcat_site_use_apache command
 added httpd_shared_tomcats.max_post_size column
 added httpd_shared_tomcats.unpack_wars column

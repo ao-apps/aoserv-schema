@@ -1416,6 +1416,14 @@ insert into aosh_commands values(
   null
 );
 insert into aosh_commands values(
+  'set_httpd_site_enable_anonymous_ftp',
+  'httpd_sites',
+  'sets the enable_anonymous_ftp flag for a web site',
+  '<i>site_name</i> <i>ao_server</i> <i>enable_anonymous_ftp</i>',
+  '1.80.1-SNAPSHOT',
+  null
+);
+insert into aosh_commands values(
   'wait_for_httpd_site_rebuild',
   'httpd_sites',
   'waits for any pending or processing changes to complete',

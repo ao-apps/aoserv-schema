@@ -1122,6 +1122,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sit
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'enable_htaccess', 25, 'boolean', false, false, false, '.htaccess files are enabled on this website', '1.80.1-SNAPSHOT', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'enable_indexes', 26, 'boolean', false, false, false, 'Directory indexes are enabled on this website', '1.80.1-SNAPSHOT', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'enable_follow_symlinks', 27, 'boolean', false, false, false, 'Symbolic link following is enabled on this website (required for mod_rewrite)', '1.80.1-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'enable_anonymous_ftp', 28, 'boolean', false, false, false, 'Enables the anonymous FTP area for this site.', '1.80.1-SNAPSHOT', null;
 commit;
 begin;
 \echo httpd_static_sites

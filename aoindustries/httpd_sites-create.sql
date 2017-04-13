@@ -36,6 +36,7 @@ create table httpd_sites (
   enable_htaccess boolean not null,
   enable_indexes boolean not null,
   enable_follow_symlinks boolean not null,
+  enable_anonymous_ftp boolean not null,
   unique(ao_server, site_name)
 );
 grant all on httpd_sites to aoadmin;

@@ -1230,8 +1230,8 @@ removed check_linux_account_username command
 removed check_package_name command'
 );
 insert into aoserv_protocols values(
-  '1.80.1-SNAPSHOT',
-  '2017-04-12',
+  '1.80.1',
+  '2017-04-14',
   'linux_accounts.name is now nullable
 added linux_group_accounts.operating_system_version column
 added linux_server_account.sudo column

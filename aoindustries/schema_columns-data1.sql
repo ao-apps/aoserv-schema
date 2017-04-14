@@ -1040,9 +1040,9 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sha
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'tomcat4_shutdown_port', 16, 'fkey', true, true, false, 'the port that will shut down this JVM', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'tomcat4_shutdown_key', 17, 'string', true, false, false, 'the key used to shut down the JVM', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'is_manual', 18, 'boolean', false, false, false, 'the configuration files are manually maintained', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'max_post_size', 19, 'int', true, false, false, 'the maximum POST size allowed', '1.80.1-SNAPSHOT', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'unpack_wars', 20, 'boolean', false, false, false, 'the unpackWARs setting for this Tomcat', '1.80.1-SNAPSHOT', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'auto_deploy', 21, 'boolean', false, false, false, 'the autoDeploy setting for this Tomcat', '1.80.1-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'max_post_size', 19, 'int', true, false, false, 'the maximum POST size allowed', '1.80.1', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'unpack_wars', 20, 'boolean', false, false, false, 'the unpackWARs setting for this Tomcat', '1.80.1', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'auto_deploy', 21, 'boolean', false, false, false, 'the autoDeploy setting for this Tomcat', '1.80.1', null;
 commit;
 begin;
 \echo httpd_site_authenticated_locations
@@ -1118,11 +1118,11 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sit
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'awstats_skip_files', 21, 'string', true, false, false, 'the SkipFiles setting for AWStats', '1.0a129', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'php_version', 22, 'fkey', true, false, false, 'the active version of PHP, if any', '1.78', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'enable_cgi', 23, 'boolean', false, false, false, 'CGI is enabled on this website', '1.80', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'enable_ssi', 24, 'boolean', false, false, false, 'Server-side includes are enabled on this website', '1.80.1-SNAPSHOT', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'enable_htaccess', 25, 'boolean', false, false, false, '.htaccess files are enabled on this website', '1.80.1-SNAPSHOT', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'enable_indexes', 26, 'boolean', false, false, false, 'Directory indexes are enabled on this website', '1.80.1-SNAPSHOT', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'enable_follow_symlinks', 27, 'boolean', false, false, false, 'Symbolic link following is enabled on this website (required for mod_rewrite)', '1.80.1-SNAPSHOT', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'enable_anonymous_ftp', 28, 'boolean', false, false, false, 'Enables the anonymous FTP area for this site.', '1.80.1-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'enable_ssi', 24, 'boolean', false, false, false, 'Server-side includes are enabled on this website', '1.80.1', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'enable_htaccess', 25, 'boolean', false, false, false, '.htaccess files are enabled on this website', '1.80.1', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'enable_indexes', 26, 'boolean', false, false, false, 'Directory indexes are enabled on this website', '1.80.1', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'enable_follow_symlinks', 27, 'boolean', false, false, false, 'Symbolic link following is enabled on this website (required for mod_rewrite)', '1.80.1', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'enable_anonymous_ftp', 28, 'boolean', false, false, false, 'Enables the anonymous FTP area for this site.', '1.80.1', null;
 commit;
 begin;
 \echo httpd_static_sites
@@ -1185,9 +1185,9 @@ begin;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_std_sites', 'tomcat_site', 0, 'fkey', false, true, false, 'the site that this Tomcat is running in', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_std_sites', 'tomcat4_shutdown_port', 1, 'fkey', true, true, false, 'the port that will shut down this JVM', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_std_sites', 'tomcat4_shutdown_key', 2, 'string', true, false, false, 'the key used to shut down the JVM', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_std_sites', 'max_post_size', 3, 'int', true, false, false, 'the maximum POST size allowed', '1.80.1-SNAPSHOT', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_std_sites', 'unpack_wars', 4, 'boolean', false, false, false, 'the unpackWARs setting for this Tomcat', '1.80.1-SNAPSHOT', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_std_sites', 'auto_deploy', 5, 'boolean', false, false, false, 'the autoDeploy setting for this Tomcat', '1.80.1-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_std_sites', 'max_post_size', 3, 'int', true, false, false, 'the maximum POST size allowed', '1.80.1', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_std_sites', 'unpack_wars', 4, 'boolean', false, false, false, 'the unpackWARs setting for this Tomcat', '1.80.1', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_std_sites', 'auto_deploy', 5, 'boolean', false, false, false, 'the autoDeploy setting for this Tomcat', '1.80.1', null;
 commit;
 begin;
 \echo httpd_tomcat_versions
@@ -1377,7 +1377,7 @@ begin;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'username', 0, 'username', false, true, false, 'the unique username', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'name', 1, 'string', false, false, false, 'the full name of the user', '1.0a100', '1.68';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'name', 2, 'gecos', false, false, false, 'the full name of the user', '1.69', '1.80.0';
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'name', 3, 'gecos', true, false, false, 'the full name of the user', '1.80.1-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'name', 3, 'gecos', true, false, false, 'the full name of the user', '1.80.1', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'office_location', 4, 'string', true, false, false, 'the location of the user', '1.0a100', '1.68';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'office_location', 5, 'gecos', true, false, false, 'the location of the user', '1.69', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_accounts', 'office_phone', 6, 'phone', true, false, false, 'the work phone number of the user', '1.0a100', '1.68';
@@ -1396,7 +1396,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_gro
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_group_accounts', 'group_name', 2, 'group_id', false, false, false, 'the linux group name', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_group_accounts', 'username', 3, 'username', false, false, false, 'the linux account that is an alternate member', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_group_accounts', 'is_primary', 4, 'boolean', false, false, false, 'flag showing that this group is the user''s primary group', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_group_accounts', 'operating_system_version', 5, 'fkey', true, false, false, 'the version of operating system where this group and user are associated, or null for all operating system versions', '1.80.1-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_group_accounts', 'operating_system_version', 5, 'fkey', true, false, false, 'the version of operating system where this group and user are associated, or null for all operating system versions', '1.80.1', null;
 commit;
 begin;
 \echo linux_group_types
@@ -1446,7 +1446,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_ser
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'sa_integration_mode', 24, 'string', false, false, false, 'the integration mode for SpamAssassin', '1.0a120', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'sa_required_score', 25, 'float', false, false, false, 'the minimum SpamAssassin score considered Junk', '1.0a124', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'sa_discard_score', 26, 'int', true, false, false, 'the minimum SpamAssassin score that will be discarded instead of tagged or placed in the Junk folder', '1.40', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'sudo', 27, 'string', true, false, false, 'the sudo setting or null when sudo not allowed', '1.80.1-SNAPSHOT', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'linux_server_accounts', 'sudo', 27, 'string', true, false, false, 'the sudo setting or null when sudo not allowed', '1.80.1', null;
 commit;
 begin;
 \echo linux_server_groups

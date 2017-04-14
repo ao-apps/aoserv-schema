@@ -1084,7 +1084,7 @@ insert into aosh_commands values(
   'httpd_jboss_sites',
   'creates a new web site space running a JBoss configuration',
   '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin_email</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} <i>jboss_version</i> <i>primary_http_hostname</i> {""|<i>content_source</i>} {""|<i>php_version</i>} <i>enable_cgi</i> <i>enable_ssi</i> <i>enable_htaccess</i> <i>enable_indexes</i> <i>enable_follow_symlinks</i> [<i>alternate_http_hostname</i>]...',
-  '1.80.1-SNAPSHOT',
+  '1.80.1',
   null
 );
 insert into aosh_commands values(
@@ -1180,7 +1180,7 @@ insert into aosh_commands values(
   'httpd_shared_tomcats',
   'sets the maximum POST size for a Multi-Site Tomcat installation',
   '<i>name</i> <i>ao_server</i> {""|<i>max_post_size</i>}',
-  '1.80.1-SNAPSHOT',
+  '1.80.1',
   null
 );
 insert into aosh_commands values(
@@ -1188,7 +1188,7 @@ insert into aosh_commands values(
   'httpd_shared_tomcats',
   'sets the unpackWARs setting for a Multi-Site Tomcat installation',
   '<i>name</i> <i>ao_server</i> <i>unpack_wars</i>',
-  '1.80.1-SNAPSHOT',
+  '1.80.1',
   null
 );
 insert into aosh_commands values(
@@ -1196,7 +1196,7 @@ insert into aosh_commands values(
   'httpd_shared_tomcats',
   'sets the autoDeploy setting for a Multi-Site Tomcat installation',
   '<i>name</i> <i>ao_server</i> <i>auto_deploy</i>',
-  '1.80.1-SNAPSHOT',
+  '1.80.1',
   null
 );
 insert into aosh_commands values(
@@ -1372,7 +1372,7 @@ insert into aosh_commands values(
   'httpd_sites',
   'sets the PHP version for a web site',
   '<i>site_name</i> <i>ao_server</i> {""|<i>php_version</i>}',
-  '1.80.1-SNAPSHOT',
+  '1.80.1',
   null
 );
 insert into aosh_commands values(
@@ -1380,7 +1380,7 @@ insert into aosh_commands values(
   'httpd_sites',
   'sets the enable_cgi flag for a web site',
   '<i>site_name</i> <i>ao_server</i> <i>enable_cgi</i>',
-  '1.80.1-SNAPSHOT',
+  '1.80.1',
   null
 );
 insert into aosh_commands values(
@@ -1388,7 +1388,7 @@ insert into aosh_commands values(
   'httpd_sites',
   'sets the enable_ssi flag for a web site',
   '<i>site_name</i> <i>ao_server</i> <i>enable_ssi</i>',
-  '1.80.1-SNAPSHOT',
+  '1.80.1',
   null
 );
 insert into aosh_commands values(
@@ -1396,7 +1396,7 @@ insert into aosh_commands values(
   'httpd_sites',
   'sets the enable_htaccess flag for a web site',
   '<i>site_name</i> <i>ao_server</i> <i>enable_htaccess</i>',
-  '1.80.1-SNAPSHOT',
+  '1.80.1',
   null
 );
 insert into aosh_commands values(
@@ -1404,7 +1404,7 @@ insert into aosh_commands values(
   'httpd_sites',
   'sets the enable_indexes flag for a web site',
   '<i>site_name</i> <i>ao_server</i> <i>enable_indexes</i>',
-  '1.80.1-SNAPSHOT',
+  '1.80.1',
   null
 );
 insert into aosh_commands values(
@@ -1412,7 +1412,7 @@ insert into aosh_commands values(
   'httpd_sites',
   'sets the enable_follow_symlinks flag for a web site',
   '<i>site_name</i> <i>ao_server</i> <i>enable_follow_symlinks</i>',
-  '1.80.1-SNAPSHOT',
+  '1.80.1',
   null
 );
 insert into aosh_commands values(
@@ -1420,7 +1420,7 @@ insert into aosh_commands values(
   'httpd_sites',
   'sets the enable_anonymous_ftp flag for a web site',
   '<i>site_name</i> <i>ao_server</i> <i>enable_anonymous_ftp</i>',
-  '1.80.1-SNAPSHOT',
+  '1.80.1',
   null
 );
 insert into aosh_commands values(
@@ -1508,7 +1508,7 @@ insert into aosh_commands values(
   'httpd_tomcat_sites',
   'sets the use_apache flag for a Tomcat-enabled web site',
   '<i>site_name</i> <i>ao_server</i> <i>use_apache</i>',
-  '1.80.1-SNAPSHOT',
+  '1.80.1',
   null
 );
 insert into aosh_commands values(
@@ -1540,7 +1540,7 @@ insert into aosh_commands values(
   'httpd_tomcat_shared_sites',
   'creates a new web site space running a shared Tomcat configuration',
   '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} {""|<i>shared_tomcat_name</i>} {""|<i>tomcat_version</i>} <i>primary_http_hostname</i> {""|<i>content_source</i>} {""|<i>php_version</i>} <i>enable_cgi</i> <i>enable_ssi</i> <i>enable_htaccess</i> <i>enable_indexes</i> <i>enable_follow_symlinks</i> [<i>alternate_http_hostname</i>]...',
-  '1.80.1-SNAPSHOT',
+  '1.80.1',
   null
 );
 insert into aosh_commands values(
@@ -1556,7 +1556,7 @@ insert into aosh_commands values(
   'httpd_tomcat_std_sites',
   'creates a new web site space running a standard Tomcat configuration',
   '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} <i>tomcat_version</i> <i>primary_http_hostname</i> {""|<i>content_source</i>} {""|<i>php_version</i>} <i>enable_cgi</i> <i>enable_ssi</i> <i>enable_htaccess</i> <i>enable_indexes</i> <i>enable_follow_symlinks</i> [<i>alternate_http_hostname</i>]...',
-  '1.80.1-SNAPSHOT',
+  '1.80.1',
   null
 );
 insert into aosh_commands values(
@@ -1564,7 +1564,7 @@ insert into aosh_commands values(
   'httpd_tomcat_std_sites',
   'sets the maximum POST size for a standard Tomcat installation',
   '<i>site_name</i> <i>ao_server</i> {""|<i>max_post_size</i>}',
-  '1.80.1-SNAPSHOT',
+  '1.80.1',
   null
 );
 insert into aosh_commands values(
@@ -1572,7 +1572,7 @@ insert into aosh_commands values(
   'httpd_tomcat_std_sites',
   'sets the unpackWARs setting for a standard Tomcat installation',
   '<i>site_name</i> <i>ao_server</i> <i>unpack_wars</i>',
-  '1.80.1-SNAPSHOT',
+  '1.80.1',
   null
 );
 insert into aosh_commands values(
@@ -1580,7 +1580,7 @@ insert into aosh_commands values(
   'httpd_tomcat_std_sites',
   'sets the autoDeploy setting for a standard Tomcat installation',
   '<i>site_name</i> <i>ao_server</i> <i>auto_deploy</i>',
-  '1.80.1-SNAPSHOT',
+  '1.80.1',
   null
 );
 insert into aosh_commands values(
@@ -1940,7 +1940,7 @@ insert into aosh_commands values(
   'linux_accounts',
   'adds a new Linux account',
   '<i>username</i> <i>primary_group</i> {""|<i>full_name</i>} {""|<i>office_location</i>} {""|<i>office_phone</i>} {""|<i>home_phone</i>} <i>type</i> <i>shell</i>',
-  '1.80.1-SNAPSHOT',
+  '1.80.1',
   null
 );
 insert into aosh_commands values(
@@ -2028,7 +2028,7 @@ insert into aosh_commands values(
   'linux_accounts',
   'sets the full name for a Linux account',
   '<i>username</i> {""|<i>full_name</i>}',
-  '1.80.1-SNAPSHOT',
+  '1.80.1',
   null
 );
 insert into aosh_commands values(

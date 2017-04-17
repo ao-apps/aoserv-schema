@@ -9,7 +9,28 @@ create table httpd_sites (
   ao_server integer
     not null,
   site_name text
-    not null,
+    not null
+    -- Site may not conflict with standard packages
+    check (
+      -- Note: This matches keepWwwDirs in HttpdSiteManager.
+      -- Note: This matches isValidSiteName in HttpdSite.
+      site_name not in (
+        -- TODO: 'disabled' once packaged via RPM and not put into httpd_sites table itself
+        -- CentOS 5 only
+        'cache', -- nginx only?
+        'fastcgi',
+        'error',
+        'icons',
+        -- CentOS 7
+        'cgi-bin',
+        'html',
+        'mrtg',
+		-- Other filesystem patterns
+        'lost+found',
+        'aquota.group',
+        'aquota.user'
+      )
+    ),
   list_first boolean
     default false
     not null,

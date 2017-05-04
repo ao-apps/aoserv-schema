@@ -7,7 +7,17 @@ create table httpd_shared_tomcats (
     default nextval('httpd_shared_tomcats_pkey_seq')
     constraint httpd_shared_tomcats_pkey primary key,
   "name" text
-    not null,
+    not null
+    check (
+      -- Note: This matches keepWwwgroupDirs in HttpdSharedTomcatManager.
+      -- Note: This matches isValidSharedTomcatName in HttpdSharedTomcat.
+      "name" not in (
+		-- Other filesystem patterns
+        'lost+found',
+        'aquota.group',
+        'aquota.user'
+      )
+    ),
   ao_server integer
     not null,
   version integer

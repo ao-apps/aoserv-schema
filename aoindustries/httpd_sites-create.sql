@@ -15,7 +15,7 @@ create table httpd_sites (
       -- Note: This matches keepWwwDirs in HttpdSiteManager.
       -- Note: This matches isValidSiteName in HttpdSite.
       site_name not in (
-        -- TODO: 'disabled' once packaged via RPM and not put into httpd_sites table itself
+        'disabled', -- Provided by aoserv-httpd-site-disabled package
         -- CentOS 5 only
         'cache', -- nginx only?
         'fastcgi',

@@ -10,7 +10,7 @@ create table ao_servers (
   daemon_key text
     not null,
   pool_size integer
-    default 16
+    default 128
     not null,
   distro_hour integer
     not null

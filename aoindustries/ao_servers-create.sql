@@ -14,22 +14,31 @@ create table ao_servers (
     not null,
   distro_hour integer
     not null
+    default (random()*6)::integer -- Choose between 0 and 5 randomly
     constraint distro_hour_chk
       check (distro_hour>=0 and distro_hour<=23),
   last_distro_time timestamp with time zone,
   failover_server integer,
   daemon_device_id text
-    not null,
+    not null
+    default 'eth0',
   daemon_connect_bind integer,
-  time_zone text not null,
+  time_zone text not null default 'Etc/UTC',
   jilter_bind integer,
-  restrict_outbound_email bool not null,
+  restrict_outbound_email bool not null default true,
   daemon_connect_address text,
-  failover_batch_size integer not null,
-  monitoring_load_low float4,
-  monitoring_load_medium float4 check (monitoring_load_medium is null or monitoring_load_low is not null and monitoring_load_medium>monitoring_load_low),
-  monitoring_load_high float4 check (monitoring_load_high is null or monitoring_load_medium is not null and monitoring_load_high>monitoring_load_medium),
-  monitoring_load_critical float4 check (monitoring_load_critical is null or monitoring_load_high is not null and monitoring_load_critical>monitoring_load_high),
+  failover_batch_size integer not null default 1000,
+  monitoring_load_low float4
+    default 1,
+  monitoring_load_medium float4
+    default 2
+    check (monitoring_load_medium is null or monitoring_load_low is not null and monitoring_load_medium>monitoring_load_low),
+  monitoring_load_high float4
+    default 4
+    check (monitoring_load_high is null or monitoring_load_medium is not null and monitoring_load_high>monitoring_load_medium),
+  monitoring_load_critical float4
+    default 8
+    check (monitoring_load_critical is null or monitoring_load_high is not null and monitoring_load_critical>monitoring_load_high),
   uid_min integer not null check (uid_min >= 500 and uid_min < 60000) default 1000,
   gid_min integer not null check (gid_min >= 500 and gid_min < 60000) default 1000
 );

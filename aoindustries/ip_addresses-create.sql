@@ -15,14 +15,19 @@ create table ip_addresses (
   package text
     not null,
   created timestamp with time zone
-    not null,
+    not null
+    default now(),
   available bool
     not null,
   is_overflow bool
-    not null,
+    not null
+    default false,
   is_dhcp bool
-    not null,
-  ping_monitor_enabled bool not null,
+    not null
+    default false,
+  ping_monitor_enabled bool
+    not null
+    default true,
   external_ip_address text,
   netmask text
     not null,

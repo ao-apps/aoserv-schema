@@ -21,7 +21,8 @@ create table net_binds (
   open_firewall bool
     not null,
   monitoring_enabled bool
-    not null,
+    not null
+    default true,
   monitoring_parameters text,
   unique(server, ip_address, port, net_protocol)
 );

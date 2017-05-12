@@ -13,7 +13,7 @@ create table failover_file_replications (
   retention smallint not null,
   connect_address text,
   connect_from text,
-  enabled bool not null,
+  enabled bool not null default true,
   quota_gid integer,
   unique(server, backup_partition),
   unique(backup_partition, quota_gid),

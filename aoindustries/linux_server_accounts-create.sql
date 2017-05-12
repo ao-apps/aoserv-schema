@@ -18,20 +18,25 @@ create table linux_server_accounts (
   autoresponder_subject text,
   autoresponder_path text,
   is_autoresponder_enabled bool
-    not null,
+    not null
+    default false,
   disable_log integer,
   predisable_password text,
   created timestamp with time zone
-    not null,
+    not null
+    default now(),
   use_inbox bool
-    not null,
+    not null
+    default true,
   trash_email_retention integer,
   junk_email_retention integer,
   sa_integration_mode text
     not null,
   sa_required_score float4
-    not null,
+    not null
+    default 3,
   sa_discard_score integer
+    default 20
     check (sa_discard_score is null or sa_discard_score>0),
   sudo text,
   unique (username, ao_server)

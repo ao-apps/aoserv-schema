@@ -17,7 +17,8 @@ create table failover_file_schedule (
     constraint minute_chk
       check (minute>=0 and minute<=59),
   enabled bool
-    not null,
+    not null
+    default true,
   unique(replication, hour, minute)
 );
 grant all on failover_file_schedule to aoadmin;

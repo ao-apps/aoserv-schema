@@ -1264,6 +1264,11 @@ added set_httpd_tomcat_std_site_max_post_size command
 added set_httpd_tomcat_std_site_unpack_wars command
 added set_httpd_tomcat_std_site_auto_deploy command'
 );
+insert into aoserv_protocols values(
+  '1.80.2-SNAPSHOT',
+  '2017-06-12',
+  'check_email_list_path command altered to include ao_server parameter'
+);
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table

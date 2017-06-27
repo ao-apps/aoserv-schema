@@ -52,4 +52,5 @@ milter	12000	Sendmail Milter	f	tcp
 sieve	4190	timsieved	f	tcp
 RFB	5900	RFB used by VNC	f	tcp
 \.
-insert into protocols values('SMTPS', '465', 'SMTP over SSL', true, 'tcp');
+insert into protocols values ('SMTPS', 465, 'SMTP over SSL', true, 'tcp');
+insert into protocols values ('spamd', 783, 'SpamAssassin Daemon', false, 'tcp');

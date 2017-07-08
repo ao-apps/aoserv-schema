@@ -16,19 +16,23 @@ create table mysql_server_users (
   max_questions integer
     not null
         constraint max_questions_chk
-      check (max_questions>=0),
+      check (max_questions>=0)
+    default 0,
   max_updates integer
     not null
     constraint max_updates_chk
-      check (max_updates>=0),
+      check (max_updates>=0)
+    default 0,
   max_connections integer
     not null
     constraint max_connections_chk
-      check (max_connections>=0),
+      check (max_connections>=0)
+    default 0,
   max_user_connections integer
     not null
     constraint max_user_connections_chk
-      check (max_user_connections>=0),
+      check (max_user_connections>=0)
+    default 0,
   unique (mysql_server, username)
 );
 grant all on mysql_server_users to aoadmin;

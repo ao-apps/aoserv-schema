@@ -820,7 +820,7 @@ insert into aosh_commands values(
   'email_lists',
   'checks the format of an email list path',
   '<i>ao_server</i> <i>path</i>',
-  '1.80.2-SNAPSHOT',
+  '1.80.2',
   null
 );
 insert into aosh_commands values(

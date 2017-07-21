@@ -1265,8 +1265,8 @@ added set_httpd_tomcat_std_site_unpack_wars command
 added set_httpd_tomcat_std_site_auto_deploy command'
 );
 insert into aoserv_protocols values(
-  '1.80.2-SNAPSHOT',
-  '2017-06-12',
+  '1.80.2',
+  '2017-07-20',
   'check_email_list_path command altered to include ao_server parameter'
 );
 -- TODO added ip_sets table

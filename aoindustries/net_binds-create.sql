@@ -18,8 +18,6 @@ create table net_binds (
     not null,
   app_protocol text
     not null,
-  open_firewall bool
-    not null,
   monitoring_enabled bool
     not null
     default true,

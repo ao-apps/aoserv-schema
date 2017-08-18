@@ -968,6 +968,14 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'file_back
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'file_backup_stats', 'is_successful', 17, 'boolean', false, false, false, '', '1.0a100', '1.30';
 commit;
 begin;
+\echo firewalld_zones
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'firewalld_zones', 'pkey', 0, 'pkey', false, true, false, 'a generated unique primary key', '1.81.0', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'firewalld_zones', 'server', 1, 'fkey', false, false, false, 'the pkey of the server', '1.81.0', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'firewalld_zones', 'name', 2, 'firewalld_zone_name', false, false, false, 'the name of the Firewalld zone', '1.81.0', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'firewalld_zones', 'short', 3, 'string', true, false, false, 'the optional short name', '1.81.0', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'firewalld_zones', 'description', 4, 'string', true, false, false, 'the optional description', '1.81.0', null;
+commit;
+begin;
 \echo ftp_guest_users
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ftp_guest_users', 'username', 0, 'username', false, true, false, 'the username that is a guest user', '1.0a100', null;
 commit;
@@ -1738,6 +1746,12 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_use
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_users', 'disable_log', 30, 'fkey', true, false, false, 'indicates that this account is disabled', '1.0a100', null;
 commit;
 begin;
+\echo net_bind_firewalld_zones
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_bind_firewalld_zones', 'pkey', 0, 'pkey', false, true, false, 'a generated pkey', '1.81.0', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_bind_firewalld_zones', 'net_bind', 1, 'fkey', false, false, false, 'the pkey of the port that is associated with the zone', '1.81.0', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_bind_firewalld_zones', 'firewalld_zone', 2, 'fkey', false, false, false, 'the pkey of the zone this port is associated with', '1.81.0', null;
+commit;
+begin;
 \echo net_binds
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'pkey', 0, 'pkey', false, true, false, 'a generated pkey', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'package', 1, 'package', false, false, false, 'the package that owns the opened port', '1.0a100', '1.80';
@@ -1750,7 +1764,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'port', 8, 'net_port', false, false, false, 'the port that is bound', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'net_protocol', 9, 'string', false, false, false, 'the network protocol (<code>net_protocols</code>)', '1.0a100', '1.80';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'app_protocol', 10, 'string', false, false, false, 'the application protocol (<code>protocols</code>)', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'open_firewall', 11, 'boolean', false, false, false, 'flags if the firewall should be opened for this port', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'open_firewall', 11, 'boolean', false, false, false, 'flags if the firewall should be opened for this port', '1.0a100', '1.80.2';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitor_delay', 12, 'int', true, false, false, '', '1.0a100', '1.0a103';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitor_parameter', 13, 'string', true, false, false, '', '1.0a100', '1.0a103';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'net_binds', 'monitor_contact', 14, 'string', true, false, false, '', '1.0a100', '1.0a103';

@@ -2861,6 +2861,14 @@ insert into aosh_commands values(
   'adds a net binds to the system',
   '<i>server</i> <i>package</i> <i>ip_address</i> <i>net_device</i> <i>port</i> <i>net_protocol</i> <i>app_protocol</i> <i>open_firewall</i> <i>monitoring_enabled</i>',
   '1.33',
+  '1.80.2'
+);
+insert into aosh_commands values(
+  'add_net_bind',
+  'net_binds',
+  'adds a net binds to the system',
+  '<i>server</i> <i>package</i> <i>ip_address</i> <i>net_device</i> <i>port</i> <i>net_protocol</i> <i>app_protocol</i> <i>monitoring_enabled</i> [<i>firewalld_zone</i>] [...]',
+  '1.81.0',
   null
 );
 insert into aosh_commands values(
@@ -2869,6 +2877,14 @@ insert into aosh_commands values(
   'removes a net binds from the system',
   '<i>pkey</i>',
   '1.0a104',
+  null
+);
+insert into aosh_commands values(
+  'set_net_bind_firewalld_zones',
+  'net_binds',
+  'sets the enabled firewalld zones for this port',
+  '<i>pkey</i> [<i>firewalld_zone</i>] [...]',
+  '1.81.0',
   null
 );
 insert into aosh_commands values(
@@ -2885,7 +2901,7 @@ insert into aosh_commands values(
   'opens or closes the firewall filters associated with this port',
   '<i>pkey</i> <i>open_firewall</i>',
   '1.0a105',
-  null
+  '1.80.2'
 );
 insert into aosh_commands values(
   'add_notice_log',

@@ -48,4 +48,5 @@ insert into schema_types values('net_port',               45, '1.69', null);
 insert into schema_types values('postgres_database_name', 46, '1.69', null);
 insert into schema_types values('postgres_server_name',   47, '1.69', null);
 insert into schema_types values('postgres_username',      48, '1.69', null);
+insert into schema_types values('firewalld_zone_name',    49, '1.81.0', null);
 commit;

@@ -334,6 +334,10 @@ begin;
 select add_schema_foreign_key('file_backup_stats', 'server', 'servers', 'pkey', '1.0a100', '1.30');
 commit;
 begin;
+\echo firewalld_zones
+select add_schema_foreign_key('firewalld_zones', 'server', 'servers', 'pkey', '1.81.0', null);
+commit;
+begin;
 \echo ftp_guest_users
 select add_schema_foreign_key('ftp_guest_users', 'username', 'linux_accounts', 'username', '1.0a100', null);
 commit;
@@ -686,6 +690,11 @@ begin;
 select add_schema_foreign_key('mysql_users', 'username', 'usernames', 'username', '1.0a100', '1.80');
 select add_schema_foreign_key('mysql_users', 'username', 'usernames', 'username', '1.80.0', null);
 select add_schema_foreign_key('mysql_users', 'disable_log', 'disable_log', 'pkey', '1.0a100', null);
+commit;
+begin;
+\echo net_bind_firewalld_zones
+select add_schema_foreign_key('net_bind_firewalld_zones', 'net_bind', 'net_binds', 'pkey', '1.81.0', null);
+select add_schema_foreign_key('net_bind_firewalld_zones', 'firewalld_zone', 'firewalld_zones', 'pkey', '1.81.0', null);
 commit;
 begin;
 \echo net_binds

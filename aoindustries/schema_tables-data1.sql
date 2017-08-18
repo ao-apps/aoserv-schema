@@ -604,6 +604,15 @@ insert into schema_tables values(
     '1.30'
 );
 insert into schema_tables values(
+    'firewalld_zones',
+    (select count(*) from schema_tables),
+    'Firewalld Zones',
+    false,
+    'The <code>firewalld_zones</code> table defines all Firewall zones used on an AOServer.',
+    '1.81.0',
+    null
+);
+insert into schema_tables values(
     'ftp_guest_users',
     (select count(*) from schema_tables),
     'FTP Guest Users',
@@ -1204,6 +1213,15 @@ insert into schema_tables values(
     false,
     'The mysql_users table stores all of the user info that is common for every MySQL server a user has a MySQL user account on.  The server specifics are stored in the mysql_server_users table.',
     '1.0a100',
+    null
+);
+insert into schema_tables values(
+    'net_bind_firewalld_zones',
+    (select count(*) from schema_tables),
+    'Net Bind Firewalld Zones',
+    false,
+    'Each port may be independently associated with a specific set of Firewalld Zones.',
+    '1.81.0',
     null
 );
 insert into schema_tables values(

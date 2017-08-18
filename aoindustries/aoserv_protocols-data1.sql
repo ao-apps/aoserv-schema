@@ -1269,6 +1269,17 @@ insert into aoserv_protocols values(
   '2017-07-20',
   'check_email_list_path command altered to include ao_server parameter'
 );
+insert into aoserv_protocols values(
+  '1.81.0',
+  '2017-08-18',
+  'added firewalld_zone_name to schema_types
+added firewalld_zones table
+added net_bind_firewalld_zones table
+removed net_binds.open_firewall column
+removed set_net_bind_open_firewall command
+updated parameters to add_net_binds command for firewalld_zones
+added set_net_bind_firewalld_zones command'
+);
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table

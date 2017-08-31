@@ -696,6 +696,15 @@ insert into schema_tables values(
     null
 );
 insert into schema_tables values(
+    'httpd_site_bind_redirects',
+    (select count(*) from schema_tables),
+    'Httpd Site Bind Redirects',
+    false,
+    'The <code>httpd_site_bind_redirects</code> adds redirects to httpd_site_binds.',
+    '1.81.1',
+    null
+);
+insert into schema_tables values(
     'httpd_site_binds',
     (select count(*) from schema_tables),
     'Httpd Site Binds',

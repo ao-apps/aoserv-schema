@@ -1280,6 +1280,11 @@ removed set_net_bind_open_firewall command
 updated parameters to add_net_binds command for firewalld_zones
 added set_net_bind_firewalld_zones command'
 );
+insert into aoserv_protocols values(
+  '1.81.1',
+  '2017-08-30',
+  'added httpd_site_bind_redirects table'
+);
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table

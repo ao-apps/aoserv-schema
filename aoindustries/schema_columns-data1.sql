@@ -1064,6 +1064,15 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sit
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_authenticated_locations', 'require', 7, 'string', false, false, false, 'the require directive parameter(s) for Apache', '1.18', null;
 commit;
 begin;
+\echo httpd_site_bind_redirects
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_bind_redirects', 'pkey',            0, 'pkey',   false,  true, false, 'a generated primary key',                      '1.81.1', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_bind_redirects', 'httpd_site_bind', 1, 'fkey',   false, false, false, 'the site bind that is being referenced',       '1.81.1', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_bind_redirects', 'sort_order',      2, 'short',  false, false, false, 'the per-bind unique sort ordering',            '1.81.1', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_bind_redirects', 'pattern',         3, 'string', false, false, false, 'the per-bind unique pattern matched',          '1.81.1', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_bind_redirects', 'substitution',    4, 'string', false, false, false, 'the redirect substitution',                    '1.81.1', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_bind_redirects', 'comment',         5, 'string',  true, false, false, 'the optional comment describing the redirect', '1.81.1', null;
+commit;
+begin;
 \echo httpd_site_binds
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'pkey', 0, 'pkey', false, true, false, 'a generated primary key', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'httpd_site', 1, 'fkey', false, false, false, 'the site that is being referenced', '1.0a100', null;

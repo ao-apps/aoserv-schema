@@ -1285,6 +1285,11 @@ insert into aoserv_protocols values(
   '2017-08-30',
   'added httpd_site_bind_redirects table'
 );
+insert into aoserv_protocols values(
+  '1.81.2',
+  '2017-09-05',
+  'added can_reference parameter to add_mysql_db_user command'
+);
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table

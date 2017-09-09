@@ -1290,6 +1290,13 @@ insert into aoserv_protocols values(
   '2017-09-05',
   'added can_reference parameter to add_mysql_db_user command'
 );
+insert into aoserv_protocols values(
+  '1.81.3',
+  '2017-09-09',
+  'added httpd_tomcat_contexts.server_xml_configured column
+added server_xml_configured parameter to add_httpd_tomcat_context command
+added server_xml_configured parameter to set_httpd_tomcat_context_attributes command'
+);
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table

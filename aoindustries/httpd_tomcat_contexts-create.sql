@@ -17,7 +17,7 @@ create table httpd_tomcat_contexts (
     not null,
   override bool
     not null,
-  path text
+  "path" text
     not null,
   privileged bool
     not null,
@@ -29,7 +29,9 @@ create table httpd_tomcat_contexts (
   debug integer
     not null,
   work_dir text,
-  unique(tomcat_site, path)
+  server_xml_configured bool
+    not null,
+  unique(tomcat_site, "path")
 );
 grant all on httpd_tomcat_contexts to aoadmin;
 grant select, insert, update, delete on httpd_tomcat_contexts to aoserv_app;

@@ -1162,6 +1162,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tom
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'wrapper_class', 12, 'string', true, false, false, 'the wrapperClass attribute', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'debug', 13, 'int', false, false, false, 'the debug attribute', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'work_dir', 14, 'path', true, false, false, 'the workDir attribute', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_tomcat_contexts', 'server_xml_configured', 15, 'boolean', false, false, false, 'flag setting if the context is written into conf/server.xml', '1.81.3', null;
 commit;
 begin;
 \echo httpd_tomcat_data_sources

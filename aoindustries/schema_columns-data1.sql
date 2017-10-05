@@ -1065,26 +1065,28 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sit
 commit;
 begin;
 \echo httpd_site_bind_redirects
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_bind_redirects', 'pkey',            0, 'pkey',   false,  true, false, 'a generated primary key',                      '1.81.1', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_bind_redirects', 'httpd_site_bind', 1, 'fkey',   false, false, false, 'the site bind that is being referenced',       '1.81.1', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_bind_redirects', 'sort_order',      2, 'short',  false, false, false, 'the per-bind unique sort ordering',            '1.81.1', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_bind_redirects', 'pattern',         3, 'string', false, false, false, 'the per-bind unique pattern matched',          '1.81.1', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_bind_redirects', 'substitution',    4, 'string', false, false, false, 'the redirect substitution',                    '1.81.1', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_bind_redirects', 'comment',         5, 'string',  true, false, false, 'the optional comment describing the redirect', '1.81.1', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_bind_redirects', 'pkey',            0, 'pkey',    false,  true, false, 'a generated primary key',                      '1.81.1', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_bind_redirects', 'httpd_site_bind', 1, 'fkey',    false, false, false, 'the site bind that is being referenced',       '1.81.1', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_bind_redirects', 'sort_order',      2, 'short',   false, false, false, 'the per-bind unique sort ordering',            '1.81.1', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_bind_redirects', 'pattern',         3, 'string',  false, false, false, 'the per-bind unique pattern matched',          '1.81.1', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_bind_redirects', 'substitution',    4, 'string',  false, false, false, 'the redirect substitution',                    '1.81.1', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_bind_redirects', 'comment',         5, 'string',   true, false, false, 'the optional comment describing the redirect', '1.81.1', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_bind_redirects', 'no_escape',       6, 'boolean', false, false, false, 'enables the [NE] RewriteRule Flag',            '1.81.4', null;
 commit;
 begin;
 \echo httpd_site_binds
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'pkey', 0, 'pkey', false, true, false, 'a generated primary key', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'httpd_site', 1, 'fkey', false, false, false, 'the site that is being referenced', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'httpd_bind', 2, 'fkey', false, false, false, 'the IP and port information for the binding', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'access_log', 3, 'path', false, false, false, 'the file used for access logging', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'error_log', 4, 'path', false, false, false, 'the file used for error logging', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'ssl_cert_file', 5, 'path', true, false, false, 'the file holding the public key (HTTPS only)', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'ssl_cert_key_file', 6, 'path', true, false, false, 'the file holding the private key (HTTPS only)', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'disable_log', 7, 'fkey', true, false, false, 'indicates that this bind is disabled', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'predisable_config', 8, 'string', true, false, false, 'the config file before the site was disabled', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'is_manual', 9, 'boolean', false, false, false, 'the config file is manually maintained', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'redirect_to_primary_hostname', 10, 'boolean', false, false, false, 'tells that system to redirect any request that is not to either the IP address or the primary hostname to the primary hostname, while leaving the request path intact', '1.19', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'pkey',                          0, 'pkey',    false,  true, false, 'a generated primary key',                       '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'httpd_site',                    1, 'fkey',    false, false, false, 'the site that is being referenced',             '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'httpd_bind',                    2, 'fkey',    false, false, false, 'the IP and port information for the binding',   '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'access_log',                    3, 'path',    false, false, false, 'the file used for access logging',              '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'error_log',                     4, 'path',    false, false, false, 'the file used for error logging',               '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'ssl_cert_file',                 5, 'path',     true, false, false, 'the file holding the public key (HTTPS only)',  '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'ssl_cert_key_file',             6, 'path',     true, false, false, 'the file holding the private key (HTTPS only)', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'ssl_cert_chain_file',           7, 'path',     true, false, false, 'the file holding the CA chain (HTTPS only)',    '1.81.4',  null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'disable_log',                   8, 'fkey',     true, false, false, 'indicates that this bind is disabled',          '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'predisable_config',             9, 'string',   true, false, false, 'the config file before the site was disabled',  '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'is_manual',                    10, 'boolean', false, false, false, 'the config file is manually maintained',        '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'redirect_to_primary_hostname', 11, 'boolean', false, false, false, 'tells that system to redirect any request that is not to either the IP address or the primary hostname to the primary hostname, while leaving the request path intact', '1.19', null;
 commit;
 begin;
 \echo httpd_site_urls

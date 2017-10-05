@@ -56,3 +56,4 @@ insert into protocols values ('SMTPS', 465, 'SMTP over SSL', true, 'tcp');
 insert into protocols values ('spamd', 783, 'SpamAssassin Daemon', false, 'tcp');
 -- TODO: memcached also listens on UDP, how to represent in protocols table?
 insert into protocols values ('memcached', 11211, 'Memcached', false, 'tcp');
+insert into protocols values ('csync2', 30865, 'Csync2 Daemon', false, 'tcp');

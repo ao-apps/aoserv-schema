@@ -1297,6 +1297,12 @@ insert into aoserv_protocols values(
 added server_xml_configured parameter to add_httpd_tomcat_context command
 added server_xml_configured parameter to set_httpd_tomcat_context_attributes command'
 );
+insert into aoserv_protocols values(
+  '1.81.4',
+  '2017-10-02',
+  'added httpd_site_binds.ssl_cert_chain_file column
+added httpd_site_bind_redirects.no_escape column, defaulting to false'
+);
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table

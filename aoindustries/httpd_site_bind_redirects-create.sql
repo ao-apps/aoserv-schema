@@ -11,6 +11,7 @@ create table httpd_site_bind_redirects (
   pattern         text     not null,
   substitution    text     not null,
   comment         text,
+  no_escape       boolean  not null default false,
   unique(httpd_site_bind, sort_order),
   unique(pattern, httpd_site_bind)
 );

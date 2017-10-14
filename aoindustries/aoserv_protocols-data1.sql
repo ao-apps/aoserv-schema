@@ -1303,6 +1303,11 @@ insert into aoserv_protocols values(
   'added httpd_site_binds.ssl_cert_chain_file column
 added httpd_site_bind_redirects.no_escape column, defaulting to false'
 );
+insert into aoserv_protocols values(
+  '1.81.5',
+  '2017-10-14',
+  'added ao_servers.sftp_umask column'
+);
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table

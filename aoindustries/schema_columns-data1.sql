@@ -96,6 +96,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_server
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'monitoring_load_critical', 42, 'float', true, false, false, 'the 5-minute load average that will trigger a critical-level alert', '1.35', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'uid_min', 43, 'linux_id', false, false, false, 'the min value for automatic uid selection in useradd', '1.80', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'gid_min', 44, 'linux_id', false, false, false, 'the min value for automatic gid selection in groupadd', '1.80', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ao_servers', 'sftp_umask', 45, 'octal_long', true, false, false, 'the optional umask for the sftp-server', '1.81.5', null;
 commit;
 begin;
 \echo aoserv_permissions

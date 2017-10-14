@@ -40,7 +40,8 @@ create table ao_servers (
     default 8
     check (monitoring_load_critical is null or monitoring_load_high is not null and monitoring_load_critical>monitoring_load_high),
   uid_min integer not null check (uid_min >= 500 and uid_min < 60000) default 1000,
-  gid_min integer not null check (gid_min >= 500 and gid_min < 60000) default 1000
+  gid_min integer not null check (gid_min >= 500 and gid_min < 60000) default 1000,
+  sftp_umask int8
 );
 grant all on ao_servers to aoadmin;
 grant select, update on ao_servers to aoserv_app;

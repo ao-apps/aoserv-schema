@@ -42,6 +42,10 @@ create table ao_servers (
   uid_min integer not null check (uid_min >= 500 and uid_min < 60000) default 1000,
   gid_min integer not null check (gid_min >= 500 and gid_min < 60000) default 1000,
   sftp_umask int8
+  check (
+    sftp_umask is null
+    or sftp_umask between 0 and 511 -- Between 000 and 777 octal
+  )
 );
 grant all on ao_servers to aoadmin;
 grant select, update on ao_servers to aoserv_app;

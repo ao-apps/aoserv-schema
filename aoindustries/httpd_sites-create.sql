@@ -1,6 +1,6 @@
 create sequence httpd_sites_pkey_seq cycle;
 grant all on httpd_sites_pkey_seq to aoadmin;
-grant select, update, delete on httpd_sites_pkey_seq to aoserv_app;
+grant select, update on httpd_sites_pkey_seq to aoserv_app;
 
 create table httpd_sites (
   pkey integer
@@ -36,28 +36,31 @@ create table httpd_sites (
     not null,
   package text
     not null,
-  linux_account text
+  linux_account text -- TODO: This should go to linux_server_accounts.pkey on the same server
     not null,
-  linux_group text
+  linux_group text -- TODO: This should go to linux_server_groups.pkey on the same server
     not null,
   server_admin text
     not null,
   content_src text,
   disable_log integer,
-  is_manual bool
-    not null,
+  is_manual bool not null default false,
   awstats_skip_files text,
   php_version integer,
-  enable_cgi boolean not null,
+  enable_cgi boolean not null default false,
   check (
     -- CGI required for per-site PHP
     enable_cgi or php_version is null
   ),
-  enable_ssi boolean not null,
-  enable_htaccess boolean not null,
-  enable_indexes boolean not null,
-  enable_follow_symlinks boolean not null,
-  enable_anonymous_ftp boolean not null,
+  enable_ssi boolean not null default false,
+  enable_htaccess boolean not null default false,
+  enable_indexes boolean not null default false,
+  enable_follow_symlinks boolean not null default false,
+  enable_anonymous_ftp boolean not null default false,
+  block_trace_track boolean not null default true,
+  block_scm boolean not null default true,
+  block_core_dumps boolean not null default true,
+  block_editor_backups boolean not null default true,
   unique(ao_server, site_name)
 );
 grant all on httpd_sites to aoadmin;

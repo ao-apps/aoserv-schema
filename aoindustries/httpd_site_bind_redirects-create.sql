@@ -1,13 +1,16 @@
 create sequence httpd_site_bind_redirects_pkey_seq cycle;
 grant all on httpd_site_bind_redirects_pkey_seq to aoadmin;
-grant select on httpd_site_bind_redirects_pkey_seq to aoserv_app; -- , update, delete
+grant select on httpd_site_bind_redirects_pkey_seq to aoserv_app; -- , update
 
 create table httpd_site_bind_redirects (
   pkey            integer
     default nextval('httpd_site_bind_redirects_pkey_seq')
     constraint httpd_site_bind_redirects_pkey primary key,
   httpd_site_bind integer  not null,
-  sort_order      smallint not null,
+  sort_order      smallint not null
+  check (
+    sort_order >= 0
+  ),
   pattern         text     not null,
   substitution    text     not null,
   comment         text,

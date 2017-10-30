@@ -1,6 +1,6 @@
 create sequence httpd_tomcat_contexts_pkey_seq cycle;
 grant all on httpd_tomcat_contexts_pkey_seq to aoadmin;
-grant select, update, delete on httpd_tomcat_contexts_pkey_seq to aoserv_app;
+grant select, update on httpd_tomcat_contexts_pkey_seq to aoserv_app;
 
 create table httpd_tomcat_contexts (
   pkey integer

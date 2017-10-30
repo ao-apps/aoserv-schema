@@ -1308,6 +1308,34 @@ insert into aoserv_protocols values(
   '2017-10-14',
   'added ao_servers.sftp_umask column'
 );
+insert into aoserv_protocols values(
+  '1.81.6',
+  '2017-10-27',
+  'httpd_sites.enable_cgi now defaults to false
+httpd_sites.enable_ssi now defaults to false
+httpd_sites.enable_htaccess now defaults to false
+httpd_sites.enable_indexes now defaults to false
+httpd_sites.enable_follow_symlinks now defaults to false
+httpd_sites.enable_anonymous_ftp now defaults to false
+removed parameters from add_httpd_jboss_site command to use defaults
+removed parameters from add_httpd_tomcat_shared_site command to use defaults
+removed parameters from add_httpd_tomcat_std_site command to use defaults
+added httpd_sites.block_trace_track column
+added httpd_sites.block_scm column
+added httpd_sites.block_core_dumps column
+added httpd_sites.block_editor_backups column
+added set_httpd_site_block_trace_track command
+added set_httpd_site_block_scm command
+added set_httpd_site_block_core_dumps command
+added set_httpd_site_block_editor_backups command
+added httpd_tomcat_sites.block_webinf column
+added set_httpd_tomcat_site_block_webinf command
+added httpd_tomcat_site_jk_mounts
+added add_httpd_tomcat_site_jk_mount command
+added remove_httpd_tomcat_site_jk_mount command
+removed httpd_tomcat_sites.use_apache column
+removed set_httpd_tomcat_site_use_apache command'
+);
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table

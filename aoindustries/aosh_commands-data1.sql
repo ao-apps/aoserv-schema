@@ -1093,6 +1093,14 @@ insert into aosh_commands values(
   'creates a new web site space running a JBoss configuration',
   '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin_email</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} <i>jboss_version</i> <i>primary_http_hostname</i> {""|<i>content_source</i>} {""|<i>php_version</i>} <i>enable_cgi</i> <i>enable_ssi</i> <i>enable_htaccess</i> <i>enable_indexes</i> <i>enable_follow_symlinks</i> [<i>alternate_http_hostname</i>]...',
   '1.80.1',
+  '1.81.5'
+);
+insert into aosh_commands values(
+  'add_httpd_jboss_site',
+  'httpd_jboss_sites',
+  'creates a new web site space running a JBoss configuration',
+  '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin_email</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} <i>jboss_version</i> <i>primary_http_hostname</i> {""|<i>content_source</i>} [<i>alternate_http_hostname</i>]...',
+  '1.81.6',
   null
 );
 insert into aosh_commands values(
@@ -1432,6 +1440,38 @@ insert into aosh_commands values(
   null
 );
 insert into aosh_commands values(
+  'set_httpd_site_block_trace_track',
+  'httpd_sites',
+  'sets the block_trace_track flag for a web site',
+  '<i>site_name</i> <i>ao_server</i> <i>block_trace_track</i>',
+  '1.81.6',
+  null
+);
+insert into aosh_commands values(
+  'set_httpd_site_block_scm',
+  'httpd_sites',
+  'sets the block_scm flag for a web site',
+  '<i>site_name</i> <i>ao_server</i> <i>block_scm</i>',
+  '1.81.6',
+  null
+);
+insert into aosh_commands values(
+  'set_httpd_site_block_core_dumps',
+  'httpd_sites',
+  'sets the block_core_dumps flag for a web site',
+  '<i>site_name</i> <i>ao_server</i> <i>block_core_dumps</i>',
+  '1.81.6',
+  null
+);
+insert into aosh_commands values(
+  'set_httpd_site_block_editor_backups',
+  'httpd_sites',
+  'sets the block_editor_backups flag for a web site',
+  '<i>site_name</i> <i>ao_server</i> <i>block_editor_backups</i>',
+  '1.81.6',
+  null
+);
+insert into aosh_commands values(
   'wait_for_httpd_site_rebuild',
   'httpd_sites',
   'waits for any pending or processing changes to complete',
@@ -1528,11 +1568,35 @@ insert into aosh_commands values(
   null
 );
 insert into aosh_commands values(
+  'add_httpd_tomcat_site_jk_mount',
+  'httpd_tomcat_site_jk_mounts',
+  'adds a JkMount or JkUnMount to a Tomcat site',
+  '<i>site_name</i> <i>ao_server</i> <i>path</i> <i>mount</i>',
+  '1.81.6',
+  null
+);
+insert into aosh_commands values(
+  'remove_httpd_tomcat_site_jk_mount',
+  'httpd_tomcat_site_jk_mounts',
+  'removes a JkMount or JkUnMount from a Tomcat site',
+  '<i>site_name</i> <i>ao_server</i> <i>path</i>',
+  '1.81.6',
+  null
+);
+insert into aosh_commands values(
   'set_httpd_tomcat_site_use_apache',
   'httpd_tomcat_sites',
   'sets the use_apache flag for a Tomcat-enabled web site',
   '<i>site_name</i> <i>ao_server</i> <i>use_apache</i>',
   '1.80.1',
+  null
+);
+insert into aosh_commands values(
+  'set_httpd_tomcat_site_block_webinf',
+  'httpd_tomcat_sites',
+  'sets the block_webinf flag for a Tomcat-enabled web site',
+  '<i>site_name</i> <i>ao_server</i> <i>block_webinf</i>',
+  '1.81.6',
   null
 );
 insert into aosh_commands values(
@@ -1565,6 +1629,14 @@ insert into aosh_commands values(
   'creates a new web site space running a shared Tomcat configuration',
   '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} {""|<i>shared_tomcat_name</i>} {""|<i>tomcat_version</i>} <i>primary_http_hostname</i> {""|<i>content_source</i>} {""|<i>php_version</i>} <i>enable_cgi</i> <i>enable_ssi</i> <i>enable_htaccess</i> <i>enable_indexes</i> <i>enable_follow_symlinks</i> [<i>alternate_http_hostname</i>]...',
   '1.80.1',
+  '1.81.5'
+);
+insert into aosh_commands values(
+  'add_httpd_tomcat_shared_site',
+  'httpd_tomcat_shared_sites',
+  'creates a new web site space running a shared Tomcat configuration',
+  '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} {""|<i>shared_tomcat_name</i>} {""|<i>tomcat_version</i>} <i>primary_http_hostname</i> {""|<i>content_source</i>} [<i>alternate_http_hostname</i>]...',
+  '1.81.6',
   null
 );
 insert into aosh_commands values(
@@ -1581,6 +1653,14 @@ insert into aosh_commands values(
   'creates a new web site space running a standard Tomcat configuration',
   '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} <i>tomcat_version</i> <i>primary_http_hostname</i> {""|<i>content_source</i>} {""|<i>php_version</i>} <i>enable_cgi</i> <i>enable_ssi</i> <i>enable_htaccess</i> <i>enable_indexes</i> <i>enable_follow_symlinks</i> [<i>alternate_http_hostname</i>]...',
   '1.80.1',
+  '1.81.5'
+);
+insert into aosh_commands values(
+  'add_httpd_tomcat_std_site',
+  'httpd_tomcat_std_sites',
+  'creates a new web site space running a standard Tomcat configuration',
+  '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} <i>tomcat_version</i> <i>primary_http_hostname</i> {""|<i>content_source</i>} [<i>alternate_http_hostname</i>]...',
+  '1.81.6',
   null
 );
 insert into aosh_commands values(

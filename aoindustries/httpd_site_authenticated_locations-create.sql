@@ -1,6 +1,6 @@
 create sequence httpd_site_authenticated_locations_pkey_seq cycle;
 grant all on httpd_site_authenticated_locations_pkey_seq to aoadmin;
-grant select, update, delete on httpd_site_authenticated_locations_pkey_seq to aoserv_app;
+grant select, update on httpd_site_authenticated_locations_pkey_seq to aoserv_app;
 
 create table httpd_site_authenticated_locations (
   pkey integer

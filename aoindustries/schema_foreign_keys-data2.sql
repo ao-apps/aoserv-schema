@@ -443,6 +443,10 @@ begin;
 select add_schema_foreign_key('httpd_tomcat_parameters', 'tomcat_context', 'httpd_tomcat_contexts', 'pkey', '1.5', null);
 commit;
 begin;
+\echo httpd_tomcat_site_jk_mounts
+select add_schema_foreign_key('httpd_tomcat_site_jk_mounts', 'httpd_tomcat_site', 'httpd_tomcat_sites', 'httpd_site', '1.81.6', null);
+commit;
+begin;
 \echo httpd_tomcat_sites
 select add_schema_foreign_key('httpd_tomcat_sites', 'httpd_site', 'httpd_sites', 'pkey', '1.0a100', null);
 select add_schema_foreign_key('httpd_tomcat_sites', 'version', 'httpd_tomcat_versions', 'version', '1.0a100', null);

@@ -774,6 +774,15 @@ insert into schema_tables values(
     null
 );
 insert into schema_tables values(
+    'httpd_tomcat_site_jk_mounts',
+    (select count(*) from schema_tables),
+    'Httpd Tomcat Site JK Mounts',
+    false,
+    'The <code>httpd_tomcat_site_jk_mounts</code> stores the JkMount and JkUnMount settings for each Tomcat-based site.',
+    '1.81.6',
+    null
+);
+insert into schema_tables values(
     'httpd_tomcat_sites',
     (select count(*) from schema_tables),
     'Httpd Tomcat Sites',

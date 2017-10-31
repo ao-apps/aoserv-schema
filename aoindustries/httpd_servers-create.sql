@@ -8,7 +8,7 @@ create table httpd_servers (
     constraint httpd_servers_pkey primary key,
   ao_server integer
     not null,
-  number integer
+  "number" integer
     not null,
   can_add_sites bool
     not null,
@@ -34,7 +34,36 @@ create table httpd_servers (
   max_concurrency integer
     not null
     default 200,
-  unique(ao_server, number)
+  mod_access_compat boolean,
+  mod_actions boolean,
+  mod_alias boolean,
+  mod_auth_basic boolean,
+  mod_authn_core boolean,
+  mod_authn_file boolean,
+  mod_authz_core boolean,
+  mod_authz_groupfile boolean,
+  mod_authz_host boolean,
+  mod_authz_user boolean,
+  mod_autoindex boolean,
+  mod_deflate boolean,
+  mod_dir boolean,
+  mod_filter boolean,
+  mod_headers boolean,
+  mod_include boolean,
+  mod_jk boolean,
+  mod_log_config boolean,
+  mod_mime boolean,
+  mod_mime_magic boolean,
+  mod_negotiation boolean,
+  mod_proxy boolean,
+  mod_proxy_http boolean,
+  mod_reqtimeout boolean,
+  mod_rewrite boolean,
+  mod_setenvif boolean,
+  mod_socache_shmcb boolean,
+  mod_ssl boolean,
+  mod_status boolean,
+  unique(ao_server, "number")
 );
 grant all on httpd_servers to aoadmin;
 grant select, delete on httpd_servers to aoserv_app;

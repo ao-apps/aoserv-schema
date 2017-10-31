@@ -1336,6 +1336,39 @@ added remove_httpd_tomcat_site_jk_mount command
 removed httpd_tomcat_sites.use_apache column
 removed set_httpd_tomcat_site_use_apache command'
 );
+insert into aoserv_protocols values(
+  '1.81.7',
+  '2017-10-30',
+  'added httpd_servers.enable_mod_access_compat column
+added httpd_servers.enable_mod_actions column
+added httpd_servers.enable_mod_alias column
+added httpd_servers.enable_mod_auth_basic column
+added httpd_servers.enable_mod_authn_core column
+added httpd_servers.enable_mod_authn_file column
+added httpd_servers.enable_mod_authz_core column
+added httpd_servers.enable_mod_authz_groupfile column
+added httpd_servers.enable_mod_authz_host column
+added httpd_servers.enable_mod_authz_user column
+added httpd_servers.enable_mod_autoindex column
+added httpd_servers.enable_mod_deflate column
+added httpd_servers.enable_mod_dir column
+added httpd_servers.enable_mod_filter column
+added httpd_servers.enable_mod_headers column
+added httpd_servers.enable_mod_include column
+added httpd_servers.enable_mod_jk column
+added httpd_servers.enable_mod_log_config column
+added httpd_servers.enable_mod_mime column
+added httpd_servers.enable_mod_mime_magic column
+added httpd_servers.enable_mod_negotiation column
+added httpd_servers.enable_mod_proxy column
+added httpd_servers.enable_mod_proxy_http column
+added httpd_servers.enable_mod_reqtimeout column
+added httpd_servers.enable_mod_rewrite column
+added httpd_servers.enable_mod_setenvif column
+added httpd_servers.enable_mod_socache_shmcb column
+added httpd_servers.enable_mod_ssl column
+added httpd_servers.enable_mod_status column'
+);
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table

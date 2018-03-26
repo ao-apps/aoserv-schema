@@ -67,5 +67,7 @@ COPY linux_group_accounts (pkey, group_name, username, is_primary) FROM stdin;
 67	dhcpd	dhcpd	t	\N
 69	tcpdump	tcpdump	t	\N
 70	chrony	chrony	t	\N
+71	aoserv-jilter	aoserv-jilter	t	\N
+72	aoserv-xen-migration	aoserv-xen-migration	t	\N
 \.
-SELECT setval ('"linux_group_accounts_pkey_seq"', 70, true);
+SELECT setval ('"linux_group_accounts_pkey_seq"', 72, true);

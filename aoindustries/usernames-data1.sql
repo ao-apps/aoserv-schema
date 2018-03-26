@@ -51,4 +51,6 @@ memcached	AOINDUSTRIES	\N
 systemd-bus-proxy	AOINDUSTRIES	\N
 tcpdump	AOINDUSTRIES	\N
 chrony	AOINDUSTRIES	\N
+aoserv-jilter	AOINDUSTRIES	\N
+aoserv-xen-migration	AOINDUSTRIES	\N
 \.

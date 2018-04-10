@@ -77,4 +77,5 @@ chrony	AOINDUSTRIES	system
 cgred	AOINDUSTRIES	system
 aoserv-jilter	AOINDUSTRIES	system
 aoserv-xen-migration	AOINDUSTRIES	system
+mockbuild	AOINDUSTRIES	user
 \.

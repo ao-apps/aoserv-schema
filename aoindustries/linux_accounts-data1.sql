@@ -52,4 +52,5 @@ tcpdump	\N	\N	\N	\N	system	/sbin/nologin	2017-04-06 17:59:21.153614+00	\N
 chrony	\N	\N	\N	\N	system	/sbin/nologin	2017-04-06 18:14:57.342109+00	\N
 aoserv-jilter	AOServ Jilter	\N	\N	\N	system	/sbin/nologin	2017-05-08 18:18:27.495141+00	\N
 aoserv-xen-migration	AOServ Xen Migration	\N	\N	\N	system	/bin/bash	2018-03-26 05:22:56.964296+00	\N
+mockbuild	RPM Build Environment	\N	\N	\N	user	/bin/bash	2018-04-09 02:42:42.401376+00	\N
 \.

@@ -54,4 +54,5 @@ chrony	AOINDUSTRIES	\N
 aoserv-jilter	AOINDUSTRIES	\N
 aoserv-xen-migration	AOINDUSTRIES	\N
 mockbuild	AOINDUSTRIES	\N
+bird	AOINDUSTRIES	\N
 \.

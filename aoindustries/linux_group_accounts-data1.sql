@@ -70,5 +70,6 @@ COPY linux_group_accounts (pkey, group_name, username, is_primary) FROM stdin;
 71	aoserv-jilter	aoserv-jilter	t	\N
 72	aoserv-xen-migration	aoserv-xen-migration	t	\N
 73	mockbuild	mockbuild	t	\N
+74	bird	bird	t	\N
 \.
-SELECT setval ('"linux_group_accounts_pkey_seq"', 73, true);
+SELECT setval ('"linux_group_accounts_pkey_seq"', 74, true);

@@ -8,8 +8,8 @@ create table httpd_servers (
     constraint httpd_servers_pkey primary key,
   ao_server integer
     not null,
-  "number" integer
-    not null,
+  "name" text
+    check ("name" is null or length("name") > 0),
   can_add_sites bool
     not null,
   is_mod_jk bool
@@ -62,8 +62,7 @@ create table httpd_servers (
   mod_setenvif boolean,
   mod_socache_shmcb boolean,
   mod_ssl boolean,
-  mod_status boolean,
-  unique(ao_server, "number")
+  mod_status boolean
 );
 grant all on httpd_servers to aoadmin;
 grant select, delete on httpd_servers to aoserv_app;

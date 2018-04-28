@@ -1369,6 +1369,11 @@ added httpd_servers.enable_mod_socache_shmcb column
 added httpd_servers.enable_mod_ssl column
 added httpd_servers.enable_mod_status column'
 );
+insert into aoserv_protocols values(
+  '1.81.8',
+  '2018-04-28',
+  'renamed httpd_servers.number to "name" and changed type from int to string'
+);
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table

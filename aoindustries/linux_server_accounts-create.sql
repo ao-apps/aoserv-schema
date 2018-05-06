@@ -31,7 +31,8 @@ create table linux_server_accounts (
   trash_email_retention integer,
   junk_email_retention integer,
   sa_integration_mode text
-    not null,
+    not null
+    default 'none',
   sa_required_score float4
     not null
     default 3,

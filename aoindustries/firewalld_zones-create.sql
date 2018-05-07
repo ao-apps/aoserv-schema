@@ -12,6 +12,9 @@ create table firewalld_zones (
     not null,
   short text,
   description text,
+  fail2ban boolean
+    not null
+    default "name" in ('dmz', 'external', 'public'),
   unique(server, "name")
 );
 grant all on firewalld_zones to aoadmin;

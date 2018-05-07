@@ -1374,6 +1374,11 @@ insert into aoserv_protocols values(
   '2018-04-28',
   'renamed httpd_servers.number to "name" and changed type from int to string'
 );
+insert into aoserv_protocols values(
+  '1.81.9',
+  '2018-05-06',
+  'added firewalld_zones.fail2ban column'
+);
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table

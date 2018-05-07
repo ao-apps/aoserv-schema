@@ -975,6 +975,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'firewalld
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'firewalld_zones', 'name', 2, 'firewalld_zone_name', false, false, false, 'the name of the Firewalld zone', '1.81.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'firewalld_zones', 'short', 3, 'string', true, false, false, 'the optional short name', '1.81.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'firewalld_zones', 'description', 4, 'string', true, false, false, 'the optional description', '1.81.0', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'firewalld_zones', 'fail2ban', 5, 'boolean', false, false, false, 'enables Fail2ban on services in this zone', '1.81.9', null;
 commit;
 begin;
 \echo ftp_guest_users

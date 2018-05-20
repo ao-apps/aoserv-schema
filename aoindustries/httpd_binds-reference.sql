@@ -2,7 +2,7 @@ alter table httpd_binds
   add constraint net_bind_fkey
   foreign key (net_bind)
   references net_binds (pkey)
-  on delete restrict
+  on delete cascade
   on update cascade
 ;
 alter table httpd_binds

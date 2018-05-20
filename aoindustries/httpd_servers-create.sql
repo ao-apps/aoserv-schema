@@ -12,10 +12,6 @@ create table httpd_servers (
     check ("name" is null or length("name") > 0),
   can_add_sites bool
     not null,
-  is_mod_jk bool
-    not null,
-  max_binds integer
-    not null,
   linux_server_account integer
     not null,
   linux_server_group integer
@@ -62,7 +58,8 @@ create table httpd_servers (
   mod_setenvif boolean,
   mod_socache_shmcb boolean,
   mod_ssl boolean,
-  mod_status boolean
+  mod_status boolean,
+  mod_wsgi boolean
 );
 grant all on httpd_servers to aoadmin;
 grant select, delete on httpd_servers to aoserv_app;

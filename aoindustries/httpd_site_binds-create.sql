@@ -14,17 +14,7 @@ create table httpd_site_binds (
     not null,
   error_log text
     not null,
-  ssl_cert_file text,
-  ssl_cert_key_file text,
-  ssl_cert_chain_file text,
-  check (
-    -- Either both cert and key exist or neither exist
-    (ssl_cert_file is null)=(ssl_cert_key_file is null)
-  ),
-  check (
-    -- chain may only exist when cert exists (no chain without cert)
-    (ssl_cert_chain_file is null) or (ssl_cert_file is not null)
-  ),
+  certificate int,
   disable_log integer,
   predisable_config text,
   is_manual bool
@@ -33,6 +23,13 @@ create table httpd_site_binds (
   redirect_to_primary_hostname bool
     not null
     default true,
+  include_site_config text
+    check (
+      include_site_config is null
+      or include_site_config='true'
+      or include_site_config='false'
+      or include_site_config like 'IfModule %'
+    ),
   unique(httpd_site, httpd_bind)
 );
 grant all on httpd_site_binds to aoadmin;

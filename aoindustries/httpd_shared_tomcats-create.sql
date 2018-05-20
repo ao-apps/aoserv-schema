@@ -26,10 +26,6 @@ create table httpd_shared_tomcats (
     not null,
   linux_server_group integer
     not null,
-  is_secure bool
-    not null,
-  is_overflow bool
-    not null,
   disable_log integer,
   tomcat4_worker integer
     unique,

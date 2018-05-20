@@ -1101,6 +1101,14 @@ insert into aosh_commands values(
   'creates a new web site space running a JBoss configuration',
   '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin_email</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} <i>jboss_version</i> <i>primary_http_hostname</i> {""|<i>content_source</i>} [<i>alternate_http_hostname</i>]...',
   '1.81.6',
+  '1.81.9'
+);
+insert into aosh_commands values(
+  'add_httpd_jboss_site',
+  'httpd_jboss_sites',
+  'creates a new web site space running a JBoss configuration',
+  '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin_email</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} <i>jboss_version</i> <i>primary_http_hostname</i> [<i>alternate_http_hostname</i>]...',
+  '1.81.10',
   null
 );
 insert into aosh_commands values(
@@ -1109,6 +1117,14 @@ insert into aosh_commands values(
   'adds a new Multi-Site Tomcat JVM to a server',
   '<i>tomcat_name</i> <i>ao_server</i> <i>tomcat_version</i> <i>linux_server_account</i> <i>linux_server_group</i> <i>is_secure</i> <i>is_overflow</i>',
   '1.0a100',
+  '1.81.9'
+);
+insert into aosh_commands values(
+  'add_httpd_shared_tomcat',
+  'httpd_shared_tomcats',
+  'adds a new Multi-Site Tomcat JVM to a server',
+  '<i>tomcat_name</i> <i>ao_server</i> <i>tomcat_version</i> <i>linux_server_account</i> <i>linux_server_group</i>',
+  '1.81.10',
   null
 );
 insert into aosh_commands values(
@@ -1637,6 +1653,14 @@ insert into aosh_commands values(
   'creates a new web site space running a shared Tomcat configuration',
   '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} {""|<i>shared_tomcat_name</i>} {""|<i>tomcat_version</i>} <i>primary_http_hostname</i> {""|<i>content_source</i>} [<i>alternate_http_hostname</i>]...',
   '1.81.6',
+  '1.81.9'
+);
+insert into aosh_commands values(
+  'add_httpd_tomcat_shared_site',
+  'httpd_tomcat_shared_sites',
+  'creates a new web site space running a shared Tomcat configuration',
+  '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} {<i>shared_tomcat_name</i>} <i>primary_http_hostname</i> [<i>alternate_http_hostname</i>]...',
+  '1.81.10',
   null
 );
 insert into aosh_commands values(
@@ -1661,6 +1685,14 @@ insert into aosh_commands values(
   'creates a new web site space running a standard Tomcat configuration',
   '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} <i>tomcat_version</i> <i>primary_http_hostname</i> {""|<i>content_source</i>} [<i>alternate_http_hostname</i>]...',
   '1.81.6',
+  '1.81.9'
+);
+insert into aosh_commands values(
+  'add_httpd_tomcat_std_site',
+  'httpd_tomcat_std_sites',
+  'creates a new web site space running a standard Tomcat configuration',
+  '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} <i>tomcat_version</i> <i>primary_http_hostname</i> [<i>alternate_http_hostname</i>]...',
+  '1.81.10',
   null
 );
 insert into aosh_commands values(
@@ -3341,6 +3373,14 @@ insert into aosh_commands values(
   'waits for any pending or current database user config rebuilds to complete',
   '<i>ao_server</i>',
   '1.0a100',
+  null
+);
+insert into aosh_commands values(
+  'check_ssl_certificate',
+  'ssl_certificates',
+  'checks an SSL certificate status',
+  '<i>ao_server</i> <i>key_file_or_certbot_name</i>',
+  '1.81.10',
   null
 );
 insert into aosh_commands values(

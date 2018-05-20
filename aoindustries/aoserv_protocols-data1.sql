@@ -1379,6 +1379,33 @@ insert into aoserv_protocols values(
   '2018-05-06',
   'added firewalld_zones.fail2ban column'
 );
+insert into aoserv_protocols values(
+  '1.81.10',
+  '2018-05-12',
+  'added httpd_servers.mod_wsgi column
+added httpd_site_binds.include_site_config column
+added ssl_certificates table
+added ssl_certificate_alt_names table
+added httpd_site_binds.certificate column
+removed httpd_site_binds.ssl_cert_file column
+removed httpd_site_binds.ssl_cert_key_file column
+removed httpd_site_binds.ssl_cert_chain_file column
+added check_ssl_certificate AOSH command
+added cyrus_imapd_binds table
+added cyrus_imapd_servers table
+added sendmail_binds table
+added sendmail_servers table
+removed AOSH command set_imap_folder_subscribed
+removed httpd_servers.is_mod_jk column
+removed httpd_servers.max_binds column
+removed httpd_shared_tomcats.is_secure column
+removed httpd_shared_tomcats.is_overflow column
+removed httpd_sites.content_src column
+removed is_secure and is_overflow parameters from add_httpd_shared_tomcat AOSH command
+removed content_source parameter from add_httpd_jboss_site AOSH command
+removed tomcat_version and content_source parameters from add_httpd_tomcat_shared_site AOSH command
+removed content_source parameter from add_httpd_tomcat_std_site AOSH command'
+);
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table

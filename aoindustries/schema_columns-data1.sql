@@ -602,6 +602,28 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'cvs_repos
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'cvs_repositories', 'disable_log', 8, 'fkey', true, false, false, 'indicates that this repository is disabled', '1.0a100', null;
 commit;
 begin;
+\echo cyrus_imapd_binds
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'cyrus_imapd_binds', 'net_bind',             0, 'fkey',        false,  true, false, 'the IP address, port, and protocol details',                     '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'cyrus_imapd_binds', 'cyrus_imapd_server',   1, 'fkey',        false, false, false, 'the server that is listening on the address',                    '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'cyrus_imapd_binds', 'servername',           2, 'domain_name',  true, false, false, 'the servername for this bind',                                   '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'cyrus_imapd_binds', 'certificate',          3, 'fkey',         true, false, false, 'the certificate used by this bind',                              '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'cyrus_imapd_binds', 'allow_plaintext_auth', 4, 'boolean',      true, false, false, 'allows plaintext authentication (PLAIN/LOGIN) on non-TLS links', '1.81.10', null;
+commit;
+begin;
+\echo cyrus_imapd_servers
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'cyrus_imapd_servers', 'ao_server',              0, 'fkey',        false,  true, false, 'the pkey of the server that runs this Cyrus IMAPD instance',         '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'cyrus_imapd_servers', 'sieve_net_bind',         1, 'fkey',         true,  true, false, 'the port the server binds to for sieve, if enabled',                 '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'cyrus_imapd_servers', 'servername',             2, 'domain_name',  true, false, false, 'the servername for this server',                                     '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'cyrus_imapd_servers', 'certificate',            3, 'fkey',        false, false, false, 'the certificate used for this server',                               '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'cyrus_imapd_servers', 'allow_plaintext_auth',   4, 'boolean',     false, false, false, 'allows plaintext authentication (PLAIN/LOGIN) on non-TLS links',     '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'cyrus_imapd_servers', 'delete_duration',        5, 'float',        true, false, false, 'the duration after which delayed delete folders are removed',        '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'cyrus_imapd_servers', 'delete_duration_unit',   6, 'string',       true, false, false, 'the time unit for delete_duration, one of "d", "h", "m", "s"',       '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'cyrus_imapd_servers', 'expire_duration',        7, 'float',       false, false, false, 'prune the duplicate database of entries older than expire-duration', '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'cyrus_imapd_servers', 'expire_duration_unit',   8, 'string',       true, false, false, 'the time unit for expire_duration, one of "d", "h", "m", "s"',       '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'cyrus_imapd_servers', 'expunge_duration',       9, 'float',        true, false, false, 'the duration after which delayed expunge messages are removed',      '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'cyrus_imapd_servers', 'expunge_duration_unit', 10, 'string',       true, false, false, 'the time unit for expunge_duration, one of "d", "h", "m", "s"',      '1.81.10', null;
+commit;
+begin;
 \echo daemon_profile
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'server', 0, 'hostname', false, false, false, '', '1.0a100', '1.30';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'daemon_profile', 'ao_server', 1, 'hostname', false, false, false, '', '1.31', '1.68';
@@ -1017,13 +1039,13 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_ser
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_servers', 'number', 2, 'int', false, false, false, 'the number of the instance on the server', '1.0a100', '1.81.7';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_servers', 'name', 3, 'string', true, false, false, 'the name of the instance on the server, null for the default instance', '1.81.8', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_servers', 'can_add_sites', 4, 'boolean', false, false, false, 'indicated that more sites may be added to the server', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_servers', 'is_mod_jk', 5, 'boolean', false, false, false, 'does this server use mod_jk and support AJP1.3', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_servers', 'max_binds', 6, 'int', false, false, false, 'the maximum number of httpd_site_binds on this server', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_servers', 'is_mod_jk', 5, 'boolean', false, false, false, 'does this server use mod_jk and support AJP1.3', '1.0a100', '1.81.9';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_servers', 'max_binds', 6, 'int', false, false, false, 'the maximum number of httpd_site_binds on this server', '1.0a100', '1.81.9';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_servers', 'linux_server_account', 7, 'fkey', false, false, false, 'the account to run as', '1.0a102', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_servers', 'linux_server_group', 8, 'fkey', false, false, false, 'the group to run as', '1.0a102', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_servers', 'mod_php_version', 9, 'fkey', true, false, false, 'the version of mod_php to run', '1.0a102', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_servers', 'use_suexec', 10, 'boolean', false, false, false, 'indicates that the suexec wrapper will be used for CGI', '1.0a102', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_servers', 'package', 11, 'fkey', false, false, false, 'the package that is billed for the server', '1.0a102', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_servers', 'package', 11, 'fkey', false, false, false, 'the package that owns the server', '1.0a102', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_servers', 'price', 12, 'decimal_2', true, false, false, 'the price monthly charged for the server instance', '1.0a102', '1.0a122';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_servers', 'is_shared', 13, 'boolean', false, false, false, 'indicates that any user on the server may use this httpd instance', '1.0a102', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_servers', 'use_mod_perl', 14, 'boolean', false, false, false, '', '1.0a103', null;
@@ -1058,6 +1080,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_ser
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_servers', 'mod_socache_shmcb', 43, 'boolean', true, false, false, 'manually enables or disables the mod_socache_shmcb Apache module for this server instance', '1.81.7', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_servers', 'mod_ssl', 44, 'boolean', true, false, false, 'manually enables or disables the mod_ssl Apache module for this server instance', '1.81.7', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_servers', 'mod_status', 45, 'boolean', true, false, false, 'manually enables or disables the mod_status Apache module for this server instance', '1.81.7', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_servers', 'mod_wsgi', 46, 'boolean', true, false, false, 'manually enables or disables the mod_wsgi Apache module for this server instance', '1.81.10', null;
 commit;
 begin;
 \echo httpd_shared_tomcats
@@ -1067,8 +1090,8 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sha
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'version', 3, 'fkey',false, false, false, 'the tomcat version', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'linux_server_account', 4, 'fkey', false, false, false, 'the account under which this tomcat runs', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'linux_server_group', 5, 'fkey', false, false, false, 'the group to which this tomcat is assigned', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'is_secure', 6, 'boolean', false, false, false, 'is the jvm secure', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'is_overflow', 7, 'boolean', false, false, false, 'is an overflow JVM for several accounts', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'is_secure', 6, 'boolean', false, false, false, 'is the jvm secure', '1.0a100', '1.81.9';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'is_overflow', 7, 'boolean', false, false, false, 'is an overflow JVM for several accounts', '1.0a100', '1.81.9';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'config_backup_level', 8, 'short', false, false, false, 'the number of copies of config backups to store', '1.0a100', '1.30';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'config_backup_retention', 9, 'short', false, false, false, 'the number of days backups are maintained', '1.0a100', '1.30';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_shared_tomcats', 'file_backup_level', 10, 'short', false, false, false, 'the number of copies of backups to store', '1.0a100', '1.30';
@@ -1112,13 +1135,15 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sit
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'httpd_bind',                    2, 'fkey',    false, false, false, 'the IP and port information for the binding',   '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'access_log',                    3, 'path',    false, false, false, 'the file used for access logging',              '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'error_log',                     4, 'path',    false, false, false, 'the file used for error logging',               '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'ssl_cert_file',                 5, 'path',     true, false, false, 'the file holding the public key (HTTPS only)',  '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'ssl_cert_key_file',             6, 'path',     true, false, false, 'the file holding the private key (HTTPS only)', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'ssl_cert_chain_file',           7, 'path',     true, false, false, 'the file holding the CA chain (HTTPS only)',    '1.81.4',  null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'disable_log',                   8, 'fkey',     true, false, false, 'indicates that this bind is disabled',          '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'predisable_config',             9, 'string',   true, false, false, 'the config file before the site was disabled',  '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'is_manual',                    10, 'boolean', false, false, false, 'the config file is manually maintained',        '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'redirect_to_primary_hostname', 11, 'boolean', false, false, false, 'tells that system to redirect any request that is not to either the IP address or the primary hostname to the primary hostname, while leaving the request path intact', '1.19', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'certificate',                   5, 'fkey',     true, false, false, 'the certificate used by this bind',             '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'ssl_cert_file',                 6, 'path',     true, false, false, 'the file holding the public key (HTTPS only)',  '1.0a100', '1.81.9';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'ssl_cert_key_file',             7, 'path',     true, false, false, 'the file holding the private key (HTTPS only)', '1.0a100', '1.81.9';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'ssl_cert_chain_file',           8, 'path',     true, false, false, 'the file holding the CA chain (HTTPS only)',    '1.81.4',  '1.81.9';
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'disable_log',                   9, 'fkey',     true, false, false, 'indicates that this bind is disabled',          '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'predisable_config',            10, 'string',   true, false, false, 'the config file before the site was disabled',  '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'is_manual',                    11, 'boolean', false, false, false, 'the config file is manually maintained',        '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'redirect_to_primary_hostname', 12, 'boolean', false, false, false, 'tells that system to redirect any request that is not to either the IP address or the primary hostname to the primary hostname, while leaving the request path intact', '1.19', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_site_binds', 'include_site_config',          13, 'string',   true, false, false, 'controls whether this bind includes the per-site configuration file', '1.81.10', null;
 commit;
 begin;
 \echo httpd_site_urls
@@ -1155,7 +1180,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sit
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'linux_group',              7, 'string',     false, false, false, 'the primary group that can edit the site content', '1.0a100', '1.80';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'linux_group',              8, 'group_id',   false, false, false, 'the primary group that can edit the site content', '1.80.0', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'server_admin',             9, 'email',      false, false, false, 'the email address of the server administrator.  This address is provided when an error occurs.  The value is most often <code>webmaster@<i>domain.com</i></code>', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'content_src',             10, 'path',       true,  false, false, 'optional content added to site on creation', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'content_src',             10, 'path',       true,  false, false, 'optional content added to site on creation', '1.0a100', '1.81.9';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'config_backup_level',     11, 'short',      false, false, false, 'the number of copies of config backup files', '1.0a100', '1.30';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'config_backup_retention', 12, 'short',      false, false, false, 'the number of days backups will be kept', '1.0a100', '1.30';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'httpd_sites', 'file_backup_level',       13, 'short',      false, false, false, 'the number of copies of backup files', '1.0a100', '1.30';
@@ -1763,7 +1788,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_ser
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'ao_server', 3, 'fkey', false, false, false, 'the pkey of the server that this database is hosted on', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'version', 4, 'fkey', false, false, false, 'the pkey of the MySQL version', '1.4', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'max_connections', 5, 'int', false, false, false, 'the maximum number of connections for the db', '1.4', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'net_bind', 6, 'fkey', false, true, false, 'the port the servers binds to', '1.4', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'net_bind', 6, 'fkey', false, true, false, 'the port the server binds to', '1.4', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'package', 7, 'string', false, false, false, 'the package who owns the instance', '1.28', '1.80';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'mysql_servers', 'package', 8, 'accounting', false, false, false, 'the package who owns the instance', '1.80.0', null;
 commit;
@@ -2063,7 +2088,7 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_servers', 'ao_server', 3, 'fkey', false, false, false, 'the pkey of the server that this database is hosted on', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_servers', 'version', 4, 'fkey', false, false, false, 'the pkey of the PostgreSQL version', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_servers', 'max_connections', 5, 'int', false, false, false, 'the maximum number of connections for the db', '1.0a100', null;
-insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_servers', 'net_bind', 6, 'fkey', false, true, false, 'the port the servers binds to', '1.0a100', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_servers', 'net_bind', 6, 'fkey', false, true, false, 'the port the server binds to', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_servers', 'sort_mem', 7, 'int', false, false, false, 'the amount of shared memory used for sorting', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_servers', 'shared_buffers', 8, 'int', false, false, false, 'the number of shared buffers', '1.0a100', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'postgres_servers', 'fsync', 9, 'boolean', false, false, false, 'indicates that writes are synchronous', '1.0a100', null;
@@ -2221,6 +2246,35 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'sendmail_
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'sendmail_smtp_stats', 'excess_out_count', 9, 'int', false, false, false, 'the number of emails beyond the package limit', '1.0a100', '1.30';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'sendmail_smtp_stats', 'email_out_bandwidth', 10, 'long', false, false, false, 'the amount of bandwidth consumed', '1.0a100', '1.30';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'sendmail_smtp_stats', 'excess_out_bandwidth', 11, 'long', false, false, false, 'the amount of bandwidth beyond the package limit', '1.0a100', '1.30';
+commit;
+begin;
+\echo sendmail_binds
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'sendmail_binds', 'net_bind',        0, 'fkey',   false,  true, false, 'the IP address, port, and protocol details',   '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'sendmail_binds', 'sendmail_server', 1, 'fkey',   false, false, false, 'the server that is listening on the address',  '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'sendmail_binds', 'servername',      2, 'string',  true, false, false, 'the Name for DaemonPortOptions for this bind', '1.81.10', null;
+commit;
+begin;
+\echo sendmail_servers
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'sendmail_servers', 'pkey',                      0, 'pkey',        false,  true, false, 'a generated unique number',                                             '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'sendmail_servers', 'ao_server',                 1, 'fkey',        false, false, false, 'the pkey of the server that runs this sendmail instance',               '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'sendmail_servers', 'name',                      2, 'string',       true, false, false, 'the name of the instance on the server, null for the default instance', '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'sendmail_servers', 'package',                   3, 'fkey',        false, false, false, 'the package that owns the SSL certificate',                             '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'sendmail_servers', 'hostname',                  4, 'domain_name',  true, false, false, 'the fully qualified hostname for Dw, Dm, and Dj',                       '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'sendmail_servers', 'server_certificate',        5, 'fkey',        false, false, false, 'the certificate used for this server',                                  '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'sendmail_servers', 'client_certificate',        6, 'fkey',        false, false, false, 'the certificate used for this client',                                  '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'sendmail_servers', 'allow_plaintext_auth',      7, 'boolean',     false, false, false, 'allows plaintext authentication (PLAIN/LOGIN) on non-TLS links',        '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'sendmail_servers', 'max_queue_children',        8, 'int',          true, false, false, 'the value for confMAX_QUEUE_CHILDREN',                                  '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'sendmail_servers', 'nice_queue_run',            9, 'int',          true, false, false, 'the value for confNICE_QUEUE_RUN',                                      '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'sendmail_servers', 'delay_la',                 10, 'int',          true, false, false, 'the value for confDELAY_LA',                                            '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'sendmail_servers', 'queue_la',                 11, 'int',          true, false, false, 'the value for confQUEUE_LA',                                            '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'sendmail_servers', 'refuse_la',                12, 'int',          true, false, false, 'the value for confREFUSE_LA',                                           '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'sendmail_servers', 'max_daemon_children',      13, 'int',          true, false, false, 'the value for confMAX_DAEMON_CHILDREN',                                 '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'sendmail_servers', 'bad_rcpt_throttle',        14, 'int',          true, false, false, 'the value for confBAD_RCPT_THROTTLE',                                   '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'sendmail_servers', 'connection_rate_throttle', 15, 'int',          true, false, false, 'the value for confCONNECTION_RATE_THROTTLE',                            '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'sendmail_servers', 'max_message_size',         16, 'int',          true, false, false, 'the value for confMAX_MESSAGE_SIZE',                                    '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'sendmail_servers', 'min_free_blocks',          17, 'int',          true, false, false, 'the value for confMIN_FREE_BLOCKS',                                     '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'sendmail_servers', 'client_addr_inet',         18, 'fkey',         true, false, false, 'the Addr for ClientPortOptions with Family=inet',                       '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'sendmail_servers', 'client_addr_inet6',        19, 'fkey',         true, false, false, 'the Addr for ClientPortOptions with Family=inet6',                      '1.81.10', null;
 commit;
 begin;
 \echo server_farms
@@ -2875,6 +2929,25 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'sr_swap_s
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'sr_swap_size', 'used_min', 7, 'int', false, false, false, '', '1.0a100', '1.30';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'sr_swap_size', 'used_avg', 8, 'float', false, false, false, '', '1.0a100', '1.30';
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'sr_swap_size', 'used_max', 9, 'int', false, false, false, '', '1.0a100', '1.30';
+commit;
+begin;
+\echo ssl_certificate_names
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ssl_certificate_names', 'pkey',            0, 'pkey',        false,  true, false, 'a generated primary key',                                      '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ssl_certificate_names', 'ssl_certificate', 1, 'fkey',        false, false, false, 'the pkey of the SSL certificate this name is on',              '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ssl_certificate_names', 'is_common_name',  2, 'boolean',     false, false, false, 'indicates this is the Common Name (CN) or a Subject Alt Name', '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ssl_certificate_names', 'is_wildcard',     3, 'boolean',     false, false, false, 'is a *.(domain) wildcard certificate',                         '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ssl_certificate_names', 'domain',          4, 'domain_name', false, false, false, 'the domain name',                                              '1.81.10', null;
+commit;
+begin;
+\echo ssl_certificates
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ssl_certificates', 'pkey',         0, 'pkey',  false,  true, false, 'a generated primary key',                                    '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ssl_certificates', 'ao_server',    1, 'fkey',  false, false, false, 'the pkey of the server the SSL certificate is on',           '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ssl_certificates', 'package',      2, 'fkey',  false, false, false, 'the package that owns the SSL certificate',                  '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ssl_certificates', 'key_file',     3, 'path',  false, false, false, 'the file holding the private key',                           '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ssl_certificates', 'csr_file',     4, 'path',   true, false, false, 'the file holding the CSR',                                   '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ssl_certificates', 'cert_file',    5, 'path',  false, false, false, 'the file holding the public key',                            '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ssl_certificates', 'chain_file',   6, 'path',   true, false, false, 'the file holding the CA chain',                              '1.81.10', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ssl_certificates', 'certbot_name', 7, 'string', true, false, false, 'the name of the certbot-managed Let''s Encrypt certificate', '1.81.10', null;
 commit;
 begin;
 \echo system_email_aliases

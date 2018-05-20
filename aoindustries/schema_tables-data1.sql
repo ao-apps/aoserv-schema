@@ -270,6 +270,24 @@ insert into schema_tables values(
     null
 );
 insert into schema_tables values(
+    'cyrus_imapd_binds',
+    (select count(*) from schema_tables),
+    'Cyrus IMAPD Binds',
+    false,
+    'The <code>cyrus_imapd_binds</code> table represents all the ip_address port binding combinations.  The app_protocol of the bind should always be POP3, IMAP2, SIMAP, or SPOP3.',
+    '1.81.10',
+    null
+);
+insert into schema_tables values(
+    'cyrus_imapd_servers',
+    (select count(*) from schema_tables),
+    'Cyrus IMAPD Servers',
+    false,
+    'The cyrus_imapd_servers table contains a list of all the Cyrus IMAPD servers.',
+    '1.81.10',
+    null
+);
+insert into schema_tables values(
     'daemon_profile',
     (select count(*) from schema_tables),
     'Daemon Profile',
@@ -1635,6 +1653,24 @@ insert into schema_tables values(
     '1.30'
 );
 insert into schema_tables values(
+    'sendmail_binds',
+    (select count(*) from schema_tables),
+    'Sendmail Binds',
+    false,
+    'The <code>sendmail_binds</code> table represents all the ip_address port binding combinations.  The app_protocol of the bind should always be SMTP, SMTPS, or submission.',
+    '1.81.10',
+    null
+);
+insert into schema_tables values(
+    'sendmail_servers',
+    (select count(*) from schema_tables),
+    'Sendmail Servers',
+    false,
+    'The sendmail_servers table contains a list of all the Sendmail servers.',
+    '1.81.10',
+    null
+);
+insert into schema_tables values(
     'server_farms',
     (select count(*) from schema_tables),
     'Server Farms',
@@ -1876,6 +1912,24 @@ insert into schema_tables values(
     'sr_swap_size - Doesn''t exist in failover state',
     '1.0a100',
     '1.30'
+);
+insert into schema_tables values(
+    'ssl_certificate_names',
+    (select count(*) from schema_tables),
+    'SSL Certificate Names',
+    false,
+    'The ssl_certificate_names contains all of the names associated with SSL certificates.',
+    '1.81.10',
+    null
+);
+insert into schema_tables values(
+    'ssl_certificates',
+    (select count(*) from schema_tables),
+    'SSL Certificates',
+    false,
+    'The ssl_certificates contains all of the names and paths of managed SSL certificates.',
+    '1.81.10',
+    null
 );
 insert into schema_tables values(
     'system_email_aliases',

@@ -42,7 +42,6 @@ create table httpd_sites (
     not null,
   server_admin text
     not null,
-  content_src text,
   disable_log integer,
   is_manual bool not null default false,
   awstats_skip_files text,

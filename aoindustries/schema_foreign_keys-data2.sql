@@ -181,6 +181,18 @@ select add_schema_foreign_key('cvs_repositories', 'backup_retention', 'backup_re
 select add_schema_foreign_key('cvs_repositories', 'disable_log', 'disable_log', 'pkey', '1.0a100', null);
 commit;
 begin;
+\echo cyrus_imapd_binds
+select add_schema_foreign_key('cyrus_imapd_binds', 'net_bind', 'net_binds', 'pkey', '1.81.10', null);
+select add_schema_foreign_key('cyrus_imapd_binds', 'cyrus_imapd_server', 'cyrus_imapd_servers', 'ao_server', '1.81.10', null);
+select add_schema_foreign_key('cyrus_imapd_binds', 'certificate', 'ssl_certificates', 'pkey', '1.81.10', null);
+commit;
+begin;
+\echo cyrus_imapd_servers
+select add_schema_foreign_key('cyrus_imapd_servers', 'ao_server', 'ao_servers', 'server', '1.81.10', null);
+select add_schema_foreign_key('cyrus_imapd_servers', 'sieve_net_bind', 'net_binds', 'pkey', '1.81.10', null);
+select add_schema_foreign_key('cyrus_imapd_servers', 'certificate', 'ssl_certificates', 'pkey', '1.81.10', null);
+commit;
+begin;
 \echo daemon_profile
 select add_schema_foreign_key('daemon_profile', 'server', 'servers', 'hostname', '1.0a100', '1.30');
 select add_schema_foreign_key('daemon_profile', 'ao_server', 'ao_servers', 'hostname', '1.31', '1.68');
@@ -401,6 +413,7 @@ begin;
 \echo httpd_site_binds
 select add_schema_foreign_key('httpd_site_binds', 'httpd_site', 'httpd_sites', 'pkey', '1.0a100', null);
 select add_schema_foreign_key('httpd_site_binds', 'httpd_bind', 'httpd_binds', 'net_bind', '1.0a100', null);
+select add_schema_foreign_key('httpd_site_binds', 'certificate', 'ssl_certificates', 'pkey', '1.81.10', null);
 select add_schema_foreign_key('httpd_site_binds', 'disable_log', 'disable_log', 'pkey', '1.0a100', null);
 commit;
 begin;
@@ -880,6 +893,20 @@ select add_schema_foreign_key('sendmail_smtp_stats', 'package', 'packages', 'nam
 select add_schema_foreign_key('sendmail_smtp_stats', 'ao_server', 'ao_servers', 'server', '1.0a100', '1.30');
 commit;
 begin;
+\echo sendmail_binds
+select add_schema_foreign_key('sendmail_binds', 'net_bind', 'net_binds', 'pkey', '1.81.10', null);
+select add_schema_foreign_key('sendmail_binds', 'sendmail_server', 'sendmail_servers', 'pkey', '1.81.10', null);
+commit;
+begin;
+\echo sendmail_servers
+select add_schema_foreign_key('sendmail_servers', 'ao_server', 'ao_servers', 'server', '1.81.10', null);
+select add_schema_foreign_key('sendmail_servers', 'package', 'packages', 'pkey', '1.81.10', null);
+select add_schema_foreign_key('sendmail_servers', 'server_certificate', 'ssl_certificates', 'pkey', '1.81.10', null);
+select add_schema_foreign_key('sendmail_servers', 'client_certificate', 'ssl_certificates', 'pkey', '1.81.10', null);
+select add_schema_foreign_key('sendmail_servers', 'client_addr_inet', 'ip_addresses', 'pkey', '1.81.10', null);
+select add_schema_foreign_key('sendmail_servers', 'client_addr_inet6', 'ip_addresses', 'pkey', '1.81.10', null);
+commit;
+begin;
 \echo server_farms
 select add_schema_foreign_key('server_farms', 'backup_farm', 'server_farms', 'name', '1.0a100', '1.30');
 select add_schema_foreign_key('server_farms', 'owner', 'packages', 'pkey', '1.0a102', null);
@@ -1000,6 +1027,15 @@ commit;
 begin;
 \echo sr_swap_size
 select add_schema_foreign_key('sr_swap_size', 'server_report', 'server_reports', 'pkey', '1.0a100', '1.30');
+commit;
+begin;
+\echo ssl_certificate_names
+select add_schema_foreign_key('ssl_certificate_names', 'ssl_certificate', 'ssl_certificates', 'pkey', '1.81.10', null);
+commit;
+begin;
+\echo ssl_certificates
+select add_schema_foreign_key('ssl_certificates', 'ao_server', 'ao_servers', 'server', '1.81.10', null);
+select add_schema_foreign_key('ssl_certificates', 'package', 'packages', 'pkey', '1.81.10', null);
 commit;
 begin;
 \echo system_email_aliases

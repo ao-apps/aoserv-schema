@@ -28,3 +28,4 @@ create table packages (
 );
 grant all on packages to aoadmin;
 grant select, insert, update, delete on packages to aoserv_app;
+grant select on packages to kaori;

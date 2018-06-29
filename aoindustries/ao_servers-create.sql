@@ -29,16 +29,35 @@ create table ao_servers (
   daemon_connect_address text,
   failover_batch_size integer not null default 1000,
   monitoring_load_low float4
-    default 1,
+    default 1
+    check (
+      monitoring_load_low is null
+      or monitoring_load_low > 0
+    ),
   monitoring_load_medium float4
     default 2
-    check (monitoring_load_medium is null or monitoring_load_low is not null and monitoring_load_medium>monitoring_load_low),
+    check (
+      monitoring_load_medium is null or (
+        monitoring_load_low is not null
+        and monitoring_load_medium > monitoring_load_low
+      )
+    ),
   monitoring_load_high float4
     default 4
-    check (monitoring_load_high is null or monitoring_load_medium is not null and monitoring_load_high>monitoring_load_medium),
+    check (
+      monitoring_load_high is null or (
+        monitoring_load_medium is not null
+        and monitoring_load_high > monitoring_load_medium
+      )
+    ),
   monitoring_load_critical float4
     default 8
-    check (monitoring_load_critical is null or monitoring_load_high is not null and monitoring_load_critical>monitoring_load_high),
+    check (
+      monitoring_load_critical is null or (
+        monitoring_load_high is not null
+        and monitoring_load_critical > monitoring_load_high
+      )
+    ),
   uid_min integer not null check (uid_min >= 500 and uid_min < 60000) default 1000,
   gid_min integer not null check (gid_min >= 500 and gid_min < 60000) default 1000,
   sftp_umask int8

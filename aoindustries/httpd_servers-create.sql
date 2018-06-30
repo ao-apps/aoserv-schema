@@ -31,7 +31,7 @@ create table httpd_servers (
     not null
     default 200,
   monitoring_concurrency_low integer
-    default 100
+    default 120
     check (
       monitoring_concurrency_low is null or (
         monitoring_concurrency_low > 0
@@ -39,7 +39,7 @@ create table httpd_servers (
       )
     ),
   monitoring_concurrency_medium integer
-    default 120
+    default 140
     check (
       monitoring_concurrency_medium is null or (
         monitoring_concurrency_low is not null

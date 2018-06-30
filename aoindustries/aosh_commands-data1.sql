@@ -1112,6 +1112,14 @@ insert into aosh_commands values(
   null
 );
 insert into aosh_commands values(
+  'get_httpd_server_concurrency',
+  'httpd_servers',
+  'gets the current concurrency of an HTTP server instance',
+  '<i>ao_server</i> {""|<i>name</i>}',
+  '1.81.11',
+  null
+);
+insert into aosh_commands values(
   'add_httpd_shared_tomcat',
   'httpd_shared_tomcats',
   'adds a new Multi-Site Tomcat JVM to a server',

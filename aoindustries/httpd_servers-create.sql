@@ -30,6 +30,41 @@ create table httpd_servers (
   max_concurrency integer
     not null
     default 200,
+  monitoring_concurrency_low integer
+    default 100
+    check (
+      monitoring_concurrency_low is null or (
+        monitoring_concurrency_low > 0
+        and monitoring_concurrency_low <= max_concurrency
+      )
+    ),
+  monitoring_concurrency_medium integer
+    default 120
+    check (
+      monitoring_concurrency_medium is null or (
+        monitoring_concurrency_low is not null
+        and monitoring_concurrency_medium > monitoring_concurrency_low
+        and monitoring_concurrency_medium <= max_concurrency
+      )
+    ),
+  monitoring_concurrency_high integer
+    default 160
+    check (
+      monitoring_concurrency_high is null or (
+        monitoring_concurrency_medium is not null
+        and monitoring_concurrency_high > monitoring_concurrency_medium
+        and monitoring_concurrency_high <= max_concurrency
+      )
+    ),
+  monitoring_concurrency_critical integer
+    default 180
+    check (
+      monitoring_concurrency_critical is null or (
+        monitoring_concurrency_high is not null
+        and monitoring_concurrency_critical > monitoring_concurrency_high
+        and monitoring_concurrency_critical <= max_concurrency
+      )
+    ),
   mod_access_compat boolean,
   mod_actions boolean,
   mod_alias boolean,

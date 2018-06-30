@@ -1406,6 +1406,15 @@ removed content_source parameter from add_httpd_jboss_site AOSH command
 removed tomcat_version and content_source parameters from add_httpd_tomcat_shared_site AOSH command
 removed content_source parameter from add_httpd_tomcat_std_site AOSH command'
 );
+insert into aoserv_protocols values(
+  '1.81.11',
+  '2018-06-29',
+  'added httpd_servers.monitoring_concurrency_low column
+added httpd_servers.monitoring_concurrency_medium column
+added httpd_servers.monitoring_concurrency_high column
+added httpd_servers.monitoring_concurrency_critical column
+added get_httpd_server_concurrency AOSH command'
+);
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table

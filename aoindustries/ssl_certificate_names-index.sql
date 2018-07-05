@@ -7,5 +7,5 @@ create unique index ssl_certificate_names_common_name_uni on ssl_certificate_nam
 create unique index ssl_certificate_names_alt_name_uni on ssl_certificate_names (
   ssl_certificate,
   is_wildcard,
-  "domain"
+  lower("domain")
 ) where not is_common_name;

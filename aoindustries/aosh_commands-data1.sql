@@ -635,7 +635,7 @@ insert into aosh_commands values(
   'add_dns_record',
   'dns_records',
   'adds a record to a name server zone',
-  '<i>zone</i> {<b>@</b>|<i>hostname</i>} <i>type</i> {""|<i>priority</i>} {""|<i>weight</i>} {""|<i>port</i>} {<i>hostname</i>|<i>ip_address</i>} {""|<i>ttl</i>}',
+  '<i>zone</i> {<b>@</b>|<i>hostname</i>} <i>type</i> {""|<i>priority</i>} {""|<i>weight</i>} {""|<i>port</i>} {<i>hostname</i>|<i>ip_address</i>|<i>destination</i>} {""|<i>ttl</i>}',
   '1.72',
   null
 );
@@ -651,7 +651,7 @@ insert into aosh_commands values(
   'remove_dns_record',
   'dns_records',
   'removes a record from a name server zone',
-  '{<i>pkey</i>|<i>zone</i> {<b>@</b>|<i>hostname</i>} <i>type</i> {<i>hostname</i>|<i>ip_address</i>}}',
+  '{<i>pkey</i>|<i>zone</i> {<b>@</b>|<i>hostname</i>} <i>type</i> {<i>hostname</i>|<i>ip_address</i>|<i>destination</i>}}',
   '1.75',
   null
 );
@@ -3682,7 +3682,7 @@ insert into aosh_commands values(
 insert into aosh_commands values(
   'create_virtual_server',
   'virtual_servers',
-  'calls "xm create" on the current primary physical server',
+  'calls "xl create" on the current primary physical server',
   '<i>virtual_server</i>',
   '1.64',
   null
@@ -3690,7 +3690,7 @@ insert into aosh_commands values(
 insert into aosh_commands values(
   'reboot_virtual_server',
   'virtual_servers',
-  'calls "xm reboot" on the current primary physical server',
+  'calls "xl reboot" on the current primary physical server',
   '<i>virtual_server</i>',
   '1.64',
   null
@@ -3698,7 +3698,7 @@ insert into aosh_commands values(
 insert into aosh_commands values(
   'shutdown_virtual_server',
   'virtual_servers',
-  'calls "xm shutdown" on the current primary physical server',
+  'calls "xl shutdown" on the current primary physical server',
   '<i>virtual_server</i>',
   '1.64',
   null
@@ -3706,7 +3706,7 @@ insert into aosh_commands values(
 insert into aosh_commands values(
   'destroy_virtual_server',
   'virtual_servers',
-  'calls "xm destroy" on the current primary physical server',
+  'calls "xl destroy" on the current primary physical server',
   '<i>virtual_server</i>',
   '1.64',
   null
@@ -3714,7 +3714,7 @@ insert into aosh_commands values(
 insert into aosh_commands values(
   'pause_virtual_server',
   'virtual_servers',
-  'calls "xm pause" on the current primary physical server',
+  'calls "xl pause" on the current primary physical server',
   '<i>virtual_server</i>',
   '1.64',
   null
@@ -3722,7 +3722,7 @@ insert into aosh_commands values(
 insert into aosh_commands values(
   'unpause_virtual_server',
   'virtual_servers',
-  'calls "xm unpause" on the current primary physical server',
+  'calls "xl unpause" on the current primary physical server',
   '<i>virtual_server</i>',
   '1.64',
   null
@@ -3746,7 +3746,7 @@ insert into aosh_commands values(
 insert into aosh_commands values(
   'get_virtual_server_status',
   'virtual_servers',
-  'calls "xm list" to get the current state on the current primary physical server',
+  'calls "xl list" to get the current state on the current primary physical server',
   '<i>virtual_server</i>',
   '1.64',
   null

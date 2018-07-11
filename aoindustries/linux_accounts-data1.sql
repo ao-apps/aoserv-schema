@@ -54,4 +54,6 @@ aoserv-jilter	AOServ Jilter	\N	\N	\N	system	/sbin/nologin	2017-05-08 18:18:27.49
 aoserv-xen-migration	AOServ Xen Migration	\N	\N	\N	system	/bin/bash	2018-03-26 05:22:56.964296+00	\N
 mockbuild	RPM Build Environment	\N	\N	\N	user	/bin/bash	2018-04-09 02:42:42.401376+00	\N
 bird	BIRD Internet Routing Daemon	\N	\N	\N	system	/sbin/nologin	2012-05-31 09:00:59.350862+00	\N
+clamupdate	Clamav database update user	\N	\N	\N	system	/sbin/nologin	2018-07-11 04:07:22.467792+00	\N
+clamscan	Clamav scanner user	\N	\N	\N	system	/sbin/nologin	2018-07-11 04:07:53.611256+00	\N
 \.

@@ -79,4 +79,7 @@ aoserv-jilter	AOINDUSTRIES	system
 aoserv-xen-migration	AOINDUSTRIES	system
 mockbuild	AOINDUSTRIES	user
 bird	AOINDUSTRIES	system
+clamupdate	AOINDUSTRIES	system
+virusgroup	AOINDUSTRIES	system
+clamscan	AOINDUSTRIES	system
 \.

@@ -1,4 +1,5 @@
 -- 7.1 Mandriva 2006.0
+begin;
 insert into postgres_encodings values(144, 'ALT', 14);
 insert into postgres_encodings values(145, 'BIG5', 14);
 insert into postgres_encodings values(146, 'EUC_CN', 14);
@@ -17,8 +18,10 @@ insert into postgres_encodings values(158, 'SQL_ASCII', 14);
 insert into postgres_encodings values(159, 'UNICODE', 14);
 insert into postgres_encodings values(160, 'WIN', 14);
 insert into postgres_encodings values(161, 'WIN1250', 14);
+commit;
 
 -- 7.1 CentOS 5 i686,x86_64
+begin;
 insert into postgres_encodings values(391, 'ALT', 3315);
 insert into postgres_encodings values(392, 'BIG5', 3315);
 insert into postgres_encodings values(393, 'EUC_CN', 3315);
@@ -37,8 +40,10 @@ insert into postgres_encodings values(405, 'SQL_ASCII', 3315);
 insert into postgres_encodings values(406, 'UNICODE', 3315);
 insert into postgres_encodings values(407, 'WIN', 3315);
 insert into postgres_encodings values(408, 'WIN1250', 3315);
+commit;
 
 -- 7.2 Mandriva 2006.0
+begin;
 insert into postgres_encodings values(162, 'ALT', 15);
 insert into postgres_encodings values(163, 'BIG5', 15);
 insert into postgres_encodings values(164, 'EUC_CN', 15);
@@ -66,8 +71,10 @@ insert into postgres_encodings values(185, 'SQL_ASCII', 15);
 insert into postgres_encodings values(186, 'UNICODE', 15);
 insert into postgres_encodings values(187, 'WIN', 15);
 insert into postgres_encodings values(188, 'WIN1250', 15);
+commit;
 
 -- 7.2 CentOS 5 i686,x86_64
+begin;
 insert into postgres_encodings values(409, 'ALT', 3316);
 insert into postgres_encodings values(410, 'BIG5', 3316);
 insert into postgres_encodings values(411, 'EUC_CN', 3316);
@@ -95,8 +102,10 @@ insert into postgres_encodings values(432, 'SQL_ASCII', 3316);
 insert into postgres_encodings values(433, 'UNICODE', 3316);
 insert into postgres_encodings values(434, 'WIN', 3316);
 insert into postgres_encodings values(435, 'WIN1250', 3316);
+commit;
 
 -- 7.3 Mandriva 2006.0
+begin;
 insert into postgres_encodings values(189, 'ALT', 16);
 insert into postgres_encodings values(190, 'BIG5', 16);
 insert into postgres_encodings values(191, 'EUC_CN', 16);
@@ -131,8 +140,10 @@ insert into postgres_encodings values(219, 'WIN', 16);
 insert into postgres_encodings values(220, 'WIN874', 16);
 insert into postgres_encodings values(221, 'WIN1250', 16);
 insert into postgres_encodings values(222, 'WIN1256', 16);
+commit;
 
 -- 7.3 CentOS 5 i686,x86_64
+begin;
 insert into postgres_encodings values(436, 'ALT', 3317);
 insert into postgres_encodings values(437, 'BIG5', 3317);
 insert into postgres_encodings values(438, 'EUC_CN', 3317);
@@ -167,8 +178,10 @@ insert into postgres_encodings values(466, 'WIN', 3317);
 insert into postgres_encodings values(467, 'WIN874', 3317);
 insert into postgres_encodings values(468, 'WIN1250', 3317);
 insert into postgres_encodings values(469, 'WIN1256', 3317);
+commit;
 
 -- 8.0 Mandriva 2006.0
+begin;
 insert into postgres_encodings values(223, 'ALT', 17);
 insert into postgres_encodings values(224, 'EUC_CN', 17);
 insert into postgres_encodings values(225, 'EUC_JP', 17);
@@ -198,9 +211,11 @@ insert into postgres_encodings values(248, 'WIN', 17);
 insert into postgres_encodings values(249, 'WIN874', 17);
 insert into postgres_encodings values(250, 'WIN1250', 17);
 insert into postgres_encodings values(251, 'WIN1256', 17);
+commit;
 
 -- 8.1 Mandrake 10.1
 -- https://www.postgresql.org/docs/8.1/static/multibyte.html
+begin;
 insert into postgres_encodings values(252, 'BIG5', 18);
 insert into postgres_encodings values(253, 'EUC_CN', 18);
 insert into postgres_encodings values(254, 'EUC_JP', 18);
@@ -236,9 +251,11 @@ insert into postgres_encodings values(283, 'WIN1251', 18);
 insert into postgres_encodings values(284, 'WIN1252', 18);
 insert into postgres_encodings values(285, 'WIN1256', 18);
 insert into postgres_encodings values(286, 'WIN1258', 18);
+commit;
 
 -- 8.1 RedHat ES4
 -- https://www.postgresql.org/docs/8.1/static/multibyte.html
+begin;
 insert into postgres_encodings values(287, 'BIG5', 2586);
 insert into postgres_encodings values(288, 'EUC_CN', 2586);
 insert into postgres_encodings values(289, 'EUC_JP', 2586);
@@ -274,9 +291,11 @@ insert into postgres_encodings values(318, 'WIN1251', 2586);
 insert into postgres_encodings values(319, 'WIN1252', 2586);
 insert into postgres_encodings values(320, 'WIN1256', 2586);
 insert into postgres_encodings values(321, 'WIN1258', 2586);
+commit;
 
 -- 8.1 CentOS 5 i686,x86_64
 -- https://www.postgresql.org/docs/8.1/static/multibyte.html
+begin;
 insert into postgres_encodings values(322, 'BIG5', 3296);
 insert into postgres_encodings values(323, 'EUC_CN', 3296);
 insert into postgres_encodings values(324, 'EUC_JP', 3296);
@@ -312,9 +331,11 @@ insert into postgres_encodings values(353, 'WIN1251', 3296);
 insert into postgres_encodings values(354, 'WIN1252', 3296);
 insert into postgres_encodings values(355, 'WIN1256', 3296);
 insert into postgres_encodings values(356, 'WIN1258', 3296);
+commit;
 
 -- 8.3 CentOS 5 i686,x86_64
 -- https://www.postgresql.org/docs/8.3/static/multibyte.html
+begin;
 insert into postgres_encodings values(357, 'EUC_CN', 3298);
 insert into postgres_encodings values(358, 'EUC_JP', 3298);
 insert into postgres_encodings values(359, 'EUC_JIS_2004', 3298);
@@ -349,9 +370,11 @@ insert into postgres_encodings values(387, 'WIN1255', 3298);
 insert into postgres_encodings values(388, 'WIN1256', 3298);
 insert into postgres_encodings values(389, 'WIN1257', 3298);
 insert into postgres_encodings values(390, 'WIN1258', 3298);
+commit;
 
 -- 8.3 CentOS 7 x86_64
 -- https://www.postgresql.org/docs/8.3/static/multibyte.html
+begin;
 insert into postgres_encodings values(506, 'EUC_CN', 3351);
 insert into postgres_encodings values(507, 'EUC_JP', 3351);
 insert into postgres_encodings values(508, 'EUC_JIS_2004', 3351);
@@ -386,9 +409,11 @@ insert into postgres_encodings values(536, 'WIN1255', 3351);
 insert into postgres_encodings values(537, 'WIN1256', 3351);
 insert into postgres_encodings values(538, 'WIN1257', 3351);
 insert into postgres_encodings values(539, 'WIN1258', 3351);
+commit;
 
 -- 9.4 CentOS 5 i686,x86_64
 -- https://www.postgresql.org/docs/9.4/static/multibyte.html
+begin;
 insert into postgres_encodings values(471, 'EUC_CN', 3346);
 insert into postgres_encodings values(472, 'EUC_JP', 3346);
 insert into postgres_encodings values(473, 'EUC_JIS_2004', 3346);
@@ -424,9 +449,11 @@ insert into postgres_encodings values(502, 'WIN1255', 3346);
 insert into postgres_encodings values(503, 'WIN1256', 3346);
 insert into postgres_encodings values(504, 'WIN1257', 3346);
 insert into postgres_encodings values(505, 'WIN1258', 3346);
+commit;
 
 -- 9.4 CentOS 7 x86_64
 -- https://www.postgresql.org/docs/9.4/static/multibyte.html
+begin;
 insert into postgres_encodings values(540, 'EUC_CN', 3353);
 insert into postgres_encodings values(541, 'EUC_JP', 3353);
 insert into postgres_encodings values(542, 'EUC_JIS_2004', 3353);
@@ -462,3 +489,44 @@ insert into postgres_encodings values(571, 'WIN1255', 3353);
 insert into postgres_encodings values(572, 'WIN1256', 3353);
 insert into postgres_encodings values(573, 'WIN1257', 3353);
 insert into postgres_encodings values(574, 'WIN1258', 3353);
+commit;
+
+-- 9.5 CentOS 7 x86_64
+-- https://www.postgresql.org/docs/9.5/static/multibyte.html (Server = Yes only)
+begin;
+insert into postgres_encodings values(575, 'EUC_CN', 3369);
+insert into postgres_encodings values(576, 'EUC_JP', 3369);
+insert into postgres_encodings values(577, 'EUC_JIS_2004', 3369);
+insert into postgres_encodings values(578, 'EUC_KR', 3369);
+insert into postgres_encodings values(579, 'EUC_TW', 3369);
+insert into postgres_encodings values(580, 'ISO_8859_5', 3369);
+insert into postgres_encodings values(581, 'ISO_8859_6', 3369);
+insert into postgres_encodings values(582, 'ISO_8859_7', 3369);
+insert into postgres_encodings values(583, 'ISO_8859_8', 3369);
+insert into postgres_encodings values(584, 'KOI8R', 3369);
+insert into postgres_encodings values(585, 'KOI8U', 3369);
+insert into postgres_encodings values(586, 'LATIN1', 3369);
+insert into postgres_encodings values(587, 'LATIN2', 3369);
+insert into postgres_encodings values(588, 'LATIN3', 3369);
+insert into postgres_encodings values(589, 'LATIN4', 3369);
+insert into postgres_encodings values(590, 'LATIN5', 3369);
+insert into postgres_encodings values(591, 'LATIN6', 3369);
+insert into postgres_encodings values(592, 'LATIN7', 3369);
+insert into postgres_encodings values(593, 'LATIN8', 3369);
+insert into postgres_encodings values(594, 'LATIN9', 3369);
+insert into postgres_encodings values(595, 'LATIN10', 3369);
+insert into postgres_encodings values(596, 'MULE_INTERNAL', 3369);
+insert into postgres_encodings values(597, 'SQL_ASCII', 3369);
+insert into postgres_encodings values(598, 'UTF8', 3369);
+insert into postgres_encodings values(599, 'WIN866', 3369);
+insert into postgres_encodings values(600, 'WIN874', 3369);
+insert into postgres_encodings values(601, 'WIN1250', 3369);
+insert into postgres_encodings values(602, 'WIN1251', 3369);
+insert into postgres_encodings values(603, 'WIN1252', 3369);
+insert into postgres_encodings values(604, 'WIN1253', 3369);
+insert into postgres_encodings values(605, 'WIN1254', 3369);
+insert into postgres_encodings values(606, 'WIN1255', 3369);
+insert into postgres_encodings values(607, 'WIN1256', 3369);
+insert into postgres_encodings values(608, 'WIN1257', 3369);
+insert into postgres_encodings values(609, 'WIN1258', 3369);
+commit;

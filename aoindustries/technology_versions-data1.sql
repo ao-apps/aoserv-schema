@@ -1402,6 +1402,7 @@ COPY "technology_versions" FROM stdin;
 3353	postgresql	9.4.11	2017-03-30 20:23:10.757269-05	orion	70
 3369	postgresql	9.5.NEW	2018-07-14 22:26:03.10491+00	orion	70
 3370	postgresql	9.6.NEW	2018-07-15 05:34:17.323549+00	orion	70
+3371	postgresql	10.NEW	2018-07-15 07:56:07.192482+00	orion	70
 3236	MySQL	4.1.21	2006-10-12 17:40:00	orion	45
 10	MySQL	5.0.27	2006-11-08 03:42:56.584713	orion	47
 3239	MySQL	5.0.27	2006-11-08 03:42:56.584713	orion	45
@@ -1419,4 +1420,4 @@ COPY "technology_versions" FROM stdin;
 3356	MySQL	5.6.35	2017-04-03 04:06:23.495491+00	orion	70
 3357	MySQL	5.7.17	2017-04-03 04:06:29.419632+00	orion	70
 \.
-SELECT setval ('"technology_versions_pkey_seq"', 3371, true);
+SELECT setval ('"technology_versions_pkey_seq"', 3372, true);

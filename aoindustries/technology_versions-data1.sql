@@ -1419,5 +1419,6 @@ COPY "technology_versions" FROM stdin;
 3355	MySQL	5.1.73	2017-04-03 04:06:17.099881+00	orion	70
 3356	MySQL	5.6.35	2017-04-03 04:06:23.495491+00	orion	70
 3357	MySQL	5.7.17	2017-04-03 04:06:29.419632+00	orion	70
+3372	MySQL	8.0.NEW	2018-07-15 19:32:37.066566+00	orion	70
 \.
-SELECT setval ('"technology_versions_pkey_seq"', 3372, true);
+SELECT setval ('"technology_versions_pkey_seq"', 3373, true);

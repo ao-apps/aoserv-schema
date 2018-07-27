@@ -12,3 +12,4 @@ insert into httpd_tomcat_versions values(3228, '/opt/apache-tomcat-5.5', true);
 insert into httpd_tomcat_versions values(3358, '/opt/apache-tomcat-6.0', true);
 insert into httpd_tomcat_versions values(3359, '/opt/apache-tomcat-7.0', true);
 insert into httpd_tomcat_versions values(3360, '/opt/apache-tomcat-8.0', true);
+insert into httpd_tomcat_versions values(3376, '/opt/apache-tomcat-8.5', true);

@@ -1367,6 +1367,7 @@ COPY "technology_versions" FROM stdin;
 3234	jakarta-tomcat	4.1.31	2005-04-20 15:44:58.330444-05	orion	45
 3235	jakarta-tomcat	5.5.17	2006-05-16 21:09:00-05	orion	45
 3228	jakarta-tomcat	5.5.17	2006-09-25 20:38:00-05	orion	47
+3376	jakarta-tomcat	8.5.0	2018-07-27 04:12:22.854095+00	orion	70
 1956	jdk	1.1.8	2004-01-23 17:43:50.676047-06	orion	14
 1957	jdk	1.2.2	2004-01-23 17:43:55.075869-06	orion	14
 1958	jdk	1.3.1	2004-01-23 17:43:59.056556-06	orion	14
@@ -1424,4 +1425,4 @@ COPY "technology_versions" FROM stdin;
 3357	MySQL	5.7.17	2017-04-03 04:06:29.419632+00	orion	70
 3372	MySQL	8.0.0	2018-07-15 19:32:37.066566+00	orion	70
 \.
-SELECT setval ('"technology_versions_pkey_seq"', 3376, true);
+SELECT setval ('"technology_versions_pkey_seq"', 3377, true);

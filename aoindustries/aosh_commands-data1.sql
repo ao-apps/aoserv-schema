@@ -1240,6 +1240,14 @@ insert into aosh_commands values(
   null
 );
 insert into aosh_commands values(
+  'set_httpd_shared_tomcat_version',
+  'httpd_shared_tomcats',
+  'sets the Tomcat version for a Multi-Site Tomcat installation',
+  '<i>name</i> <i>ao_server</i> <i>series</i>[.<i>major</i>[.<i>minor</i>]]',
+  '1.81.12',
+  null
+);
+insert into aosh_commands values(
   'disable_httpd_site_bind',
   'httpd_site_binds',
   'disables one network port of a web site',
@@ -1725,6 +1733,14 @@ insert into aosh_commands values(
   'sets the autoDeploy setting for a standard Tomcat installation',
   '<i>site_name</i> <i>ao_server</i> <i>auto_deploy</i>',
   '1.80.1',
+  null
+);
+insert into aosh_commands values(
+  'set_httpd_tomcat_std_site_version',
+  'httpd_tomcat_std_sites',
+  'sets the Tomcat version for a standard Tomcat installation',
+  '<i>site_name</i> <i>ao_server</i> <i>series</i>[.<i>major</i>[.<i>minor</i>]]',
+  '1.81.12',
   null
 );
 insert into aosh_commands values(

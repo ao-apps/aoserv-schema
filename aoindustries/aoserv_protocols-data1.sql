@@ -1415,6 +1415,12 @@ added httpd_servers.monitoring_concurrency_high column
 added httpd_servers.monitoring_concurrency_critical column
 added get_httpd_server_concurrency AOSH command'
 );
+insert into aoserv_protocols values(
+  '1.81.12',
+  '2018-08-25',
+  'added set_httpd_shared_tomcat_version AOSH command
+added set_httpd_tomcat_std_site_version AOSH command'
+);
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table

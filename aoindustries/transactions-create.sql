@@ -38,7 +38,7 @@ create table transactions (
 );
 grant all on transactions to aoadmin;
 grant select, insert, update, delete on transactions to aoserv_app;
-grant select, update on transactions to kaori;
+grant select, update, delete on transactions to kaori;
 
 CREATE OR REPLACE FUNCTION first_day(date)
 RETURNS date AS

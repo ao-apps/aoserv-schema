@@ -8,7 +8,7 @@ create table httpd_site_authenticated_locations (
     constraint httpd_site_authenticated_locations_pkey primary key,
   httpd_site integer
     not null,
-  path text
+  "path" text
     not null,
   is_regular_expression bool
     not null,
@@ -20,7 +20,9 @@ create table httpd_site_authenticated_locations (
     not null,
   require text
     not null,
-  unique(httpd_site, path)
+  "handler" text
+    check ("handler" is null or "handler" in ('server-status')),
+  unique(httpd_site, "path")
 );
 grant all on httpd_site_authenticated_locations to aoadmin;
 grant select, insert, update, delete on httpd_site_authenticated_locations to aoserv_app;

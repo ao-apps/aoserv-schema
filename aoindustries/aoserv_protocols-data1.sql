@@ -1421,6 +1421,13 @@ insert into aoserv_protocols values(
   'added set_httpd_shared_tomcat_version AOSH command
 added set_httpd_tomcat_std_site_version AOSH command'
 );
+insert into aoserv_protocols values(
+  '1.81.13',
+  '2018-10-04',
+  'added httpd_site_authenticated_locations.handler column
+added add_httpd_site_authenticated_location AOSH command
+added set_httpd_site_authenticated_location_attributes AOSH command'
+);
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table

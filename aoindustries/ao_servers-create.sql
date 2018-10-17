@@ -5,6 +5,10 @@ create table ao_servers (
     check(
       hostname=lower(hostname) -- Must be all lowercase
       and hostname!='default'  -- Don't allow hostname of 'default' because they may conflict with Cyrus virtdomains defaultdomain.
+      -- https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/migration_planning_guide/sect-red_hat_enterprise_linux-migration_planning_guide-networking
+      -- "2.7.1. Recommended naming practices"
+      and length(hostname) <= 64
+      and hostname not like '%\_%'
     ),
   daemon_bind integer,
   daemon_key text

@@ -1428,6 +1428,11 @@ insert into aoserv_protocols values(
 added add_httpd_site_authenticated_location AOSH command
 added set_httpd_site_authenticated_location_attributes AOSH command'
 );
+insert into aoserv_protocols values(
+  '1.81.14',
+  '2018-10-24',
+  'added httpd_site_binds.name column'
+);
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table

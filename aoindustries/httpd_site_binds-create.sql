@@ -10,6 +10,8 @@ create table httpd_site_binds (
     not null,
   httpd_bind integer
     not null,
+  "name" text
+    check ("name" is null or length("name") > 0),
   access_log text
     not null,
   error_log text
@@ -29,8 +31,7 @@ create table httpd_site_binds (
       or include_site_config='true'
       or include_site_config='false'
       or include_site_config like 'IfModule %'
-    ),
-  unique(httpd_site, httpd_bind)
+    )
 );
 grant all on httpd_site_binds to aoadmin;
 grant select, insert, update, delete on httpd_site_binds to aoserv_app;

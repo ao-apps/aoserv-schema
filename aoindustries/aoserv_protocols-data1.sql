@@ -1433,6 +1433,11 @@ insert into aoserv_protocols values(
   '2018-10-24',
   'added httpd_site_binds.name column'
 );
+insert into aoserv_protocols values(
+  '1.81.15',
+  '2018-10-26',
+  'added httpd_site_bind_headers table'
+);
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table

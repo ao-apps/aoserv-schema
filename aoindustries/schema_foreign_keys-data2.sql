@@ -406,6 +406,10 @@ begin;
 select add_schema_foreign_key('httpd_site_authenticated_locations', 'httpd_site', 'httpd_sites', 'pkey', '1.18', null);
 commit;
 begin;
+\echo httpd_site_bind_headers
+select add_schema_foreign_key('httpd_site_bind_headers', 'httpd_site_bind', 'httpd_site_binds', 'pkey', '1.81.15', null);
+commit;
+begin;
 \echo httpd_site_bind_redirects
 select add_schema_foreign_key('httpd_site_bind_redirects', 'httpd_site_bind', 'httpd_site_binds', 'pkey', '1.81.1', null);
 commit;

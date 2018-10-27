@@ -714,6 +714,15 @@ insert into schema_tables values(
     null
 );
 insert into schema_tables values(
+    'httpd_site_bind_headers',
+    (select count(*) from schema_tables),
+    'Httpd Site Bind Headers',
+    false,
+    'The <code>httpd_site_bind_headers</code> configures headers on httpd_site_binds.',
+    '1.81.15',
+    null
+);
+insert into schema_tables values(
     'httpd_site_bind_redirects',
     (select count(*) from schema_tables),
     'Httpd Site Bind Redirects',

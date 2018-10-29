@@ -1380,6 +1380,7 @@ COPY "technology_versions" FROM stdin;
 9	jdk	1.5.0_07	2006-06-06 16:58:00-05	orion	14
 11	jdk	1.5.0_07	2006-06-19 03:51:00-05	orion	47
 3378	jdk	10.0.0	2018-07-29 05:50:40.592101+00	orion	70
+3379	jdk	11.0.0	2018-10-29 03:07:38.983226+00	orion	70
 3229	mod_jk	1.2.18	2006-09-25 21:37:00	orion	47
 3230	iptraf	2.7.0-11	2006-09-25 23:07:00	orion	47
 3231	screen	4.0.2-5	2006-09-25 23:08:00	orion	47
@@ -1427,4 +1428,4 @@ COPY "technology_versions" FROM stdin;
 3357	MySQL	5.7.17	2017-04-03 04:06:29.419632+00	orion	70
 3372	MySQL	8.0.0	2018-07-15 19:32:37.066566+00	orion	70
 \.
-SELECT setval ('"technology_versions_pkey_seq"', 3379, true);
+SELECT setval ('"technology_versions_pkey_seq"', 3380, true);

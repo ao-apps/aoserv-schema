@@ -22,4 +22,5 @@ insert into postgres_versions values(3353, '9.4');
 insert into postgres_versions values(3369, '9.5');
 insert into postgres_versions values(3370, '9.6');
 insert into postgres_versions values(3371, '10');
+insert into postgres_versions values(3380, '11');
 commit;

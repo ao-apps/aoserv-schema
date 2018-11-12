@@ -1,5 +1,5 @@
 create or replace view
-  management."cleanup-canceled-mysql_users"
+  management."remove-canceled-mysql_users"
 as
 select
   bu.accounting,
@@ -13,5 +13,5 @@ from
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 
-revoke all on management."cleanup-canceled-mysql_users" from aoadmin;
-grant select on management."cleanup-canceled-mysql_users" to aoadmin;
+revoke all on management."remove-canceled-mysql_users" from aoadmin;
+grant select on management."remove-canceled-mysql_users" to aoadmin;

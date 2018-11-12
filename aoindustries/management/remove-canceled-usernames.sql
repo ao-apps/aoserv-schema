@@ -1,5 +1,5 @@
 create or replace view
-  management."cleanup-canceled-usernames"
+  management."remove-canceled-usernames"
 as
 select
   bu.accounting,
@@ -16,5 +16,5 @@ where
   ba.username is null
   and bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 
-revoke all on management."cleanup-canceled-usernames" from aoadmin;
-grant select on management."cleanup-canceled-usernames" to aoadmin;
+revoke all on management."remove-canceled-usernames" from aoadmin;
+grant select on management."remove-canceled-usernames" to aoadmin;

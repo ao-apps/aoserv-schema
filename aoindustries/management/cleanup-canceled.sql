@@ -12,10 +12,6 @@ union all (select accounting, aosh_command from management."cleanup-canceled-htt
 -- httpd_shared_tomcats
 union all (select accounting, aosh_command from management."cleanup-canceled-httpd_shared_tomcats" order by accounting, reverse_hostname(hostname), "name")
 -- TODO: httpd_servers
--- linux_accounts
-union all (select accounting, aosh_command from management."cleanup-canceled-linux_accounts" order by accounting, username)
--- linux_groups
-union all (select accounting, aosh_command from management."cleanup-canceled-linux_groups" order by accounting, "name")
 -- mysql_databases
 union all (select accounting, aosh_command from management."cleanup-canceled-mysql_databases" order by accounting, mysql_server, "name")
 -- mysql_users
@@ -26,14 +22,19 @@ union all (select accounting, aosh_command from management."cleanup-canceled-pos
 -- postgres_users
 union all (select accounting, aosh_command from management."cleanup-canceled-postgres_users" order by accounting, username)
 -- TODO: postgres_servers
+-- TODO: sendmail_servers without any sendmail_binds
+-- TODO: ssl_certificates (once have auto-cleanup within aoserv-daemon)
 -- net_binds
 union all (select accounting, aosh_command from management."cleanup-canceled-net_binds" order by accounting, port)
--- TODO: ssl_certificates (once have auto-cleanup within aoserv-daemon)
 -- ip_addresses.hostname
 union all (select accounting, aosh_command from management."cleanup-canceled-ip_addresses.hostname" order by accounting, reverse_hostname(hostname), pad_ip_address(ip_address))
 -- ip_addresses.package
 union all (select accounting, aosh_command from management."cleanup-canceled-ip_addresses.package" order by accounting, reverse_hostname(hostname), pad_ip_address(ip_address))
 -- TODO: servers (once a server is owned by a package in the schema)
+-- linux_accounts
+union all (select accounting, aosh_command from management."cleanup-canceled-linux_accounts" order by accounting, username)
+-- linux_groups
+union all (select accounting, aosh_command from management."cleanup-canceled-linux_groups" order by accounting, "name")
 -- usernames
 union all (select accounting, aosh_command from management."cleanup-canceled-usernames" order by accounting, username)
 -- business_servers

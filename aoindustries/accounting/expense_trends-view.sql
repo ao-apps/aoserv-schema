@@ -20,4 +20,4 @@ order by
   expense_code,
   "year";
 
-grant all on accounting.expense_trends to aoadmin;
+grant select on accounting.expense_trends to aoadmin;

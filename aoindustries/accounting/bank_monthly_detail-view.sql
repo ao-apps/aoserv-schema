@@ -11,4 +11,4 @@ from
 order by
   "time";
 
-grant all on accounting.bank_monthly_detail to aoadmin;
+grant select on accounting.bank_monthly_detail to aoadmin;

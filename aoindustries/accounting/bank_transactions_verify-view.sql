@@ -31,4 +31,4 @@ order by
   "time"::date,
   transid;
 
-grant all on accounting.bank_transactions_verify to aoadmin;
+grant select on accounting.bank_transactions_verify to aoadmin;

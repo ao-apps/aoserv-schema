@@ -18,4 +18,4 @@ group by
   "name"
 ;
 
-grant all on accounting.salary_report to aoadmin;
+grant select on accounting.salary_report to aoadmin;

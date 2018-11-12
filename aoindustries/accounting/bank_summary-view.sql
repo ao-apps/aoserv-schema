@@ -10,4 +10,4 @@ where
   bt.expense_code=ec.expense_code
 group by bt.expense_code, "month";
 
-grant all on accounting.bank_summary to aoadmin;
+grant select on accounting.bank_summary to aoadmin;

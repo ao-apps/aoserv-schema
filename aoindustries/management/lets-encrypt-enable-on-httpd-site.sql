@@ -1,7 +1,8 @@
 -- See http://localhost:8080/docs/ao/certificate-authorities/lets-encrypt/enable-on-httpd-site
 create or replace view
   management."lets-encrypt-enable-on-httpd-site"
-as select
+as
+select
   ao.hostname as "SERVER",
   hs.site_name as "SITE_NAME", hs.linux_group as "LINUX_GROUP",
   is_80.pkey as "HSB_80", is_443.pkey as "HSB_443",

@@ -1,7 +1,8 @@
 -- See http://localhost:8080/docs/ao/software/aoserv/aoserv-master#view-web-site-settings
 create or replace view
   management."web-site-settings"
-as select
+as
+select
   hs.pkey,
   hs.ao_server,
   ao.hostname,

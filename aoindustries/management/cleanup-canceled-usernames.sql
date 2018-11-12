@@ -1,6 +1,7 @@
 create or replace view
   management."cleanup-canceled-usernames"
-as select
+as
+select
   bu.accounting,
   'remove_username ' || un.username as aosh_command,
   un.username

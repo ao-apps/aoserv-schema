@@ -1,7 +1,8 @@
 -- See http://localhost:8080/docs/ao/software/3rd-party/mysql/bind-to-localhost#procedure
 create or replace view
   management."httpd_tomcat_data_sources-joined"
-as select
+as
+select
   ao.hostname,
   htds.pkey,
   hs.site_name,

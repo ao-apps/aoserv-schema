@@ -1,6 +1,7 @@
 create or replace view
   management."cleanup-canceled-mysql_databases"
-as select
+as
+select
   bu.accounting,
   'remove_mysql_database ' || md."name" || ' ' || ms."name" || ' ' || ao.hostname as aosh_command,
   ao.hostname,

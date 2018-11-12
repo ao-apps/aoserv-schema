@@ -7,7 +7,8 @@
  * balance     the account balance, negative means credit
  *
  *********************************************************************/
-create view account_balances as select
+create view account_balances as
+select
   t.accounting as accounting,
   sum(cast(t.quantity*t.rate as decimal(9,2))) as balance
   from

@@ -1,6 +1,7 @@
 create or replace view
   management."cleanup-canceled-net_binds"
-as select
+as
+select
   bu.accounting,
   -- TODO: A non-pkey selector might be more helpful, like done for the remove_dns_record command
   -- TODO: Would be based on matching the add_net_bind command, but for unique set of columns, currently (server, ip_address, port, net_protocol)

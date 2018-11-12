@@ -1,6 +1,7 @@
 create or replace view
   management."cleanup-canceled-email_lists"
-as select
+as
+select
   bu.accounting,
   'remove_email_list ' || el."path" || ' ' || ao.hostname as aosh_command,
   ao.hostname,

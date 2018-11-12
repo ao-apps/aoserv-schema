@@ -1,6 +1,7 @@
 create or replace view
   management."cleanup-canceled-ip_addresses.package"
-as select
+as
+select
   bu.accounting,
   'set_ip_address_package '
   || ia.ip_address

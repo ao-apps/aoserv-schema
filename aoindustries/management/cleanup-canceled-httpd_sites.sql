@@ -1,6 +1,7 @@
 create or replace view
   management."cleanup-canceled-httpd_sites"
-as select
+as
+select
   bu.accounting,
   'remove_httpd_site ' || hs.site_name || ' ' || ao.hostname as aosh_command,
   ao.hostname,

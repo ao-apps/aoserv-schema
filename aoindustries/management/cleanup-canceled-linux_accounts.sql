@@ -1,6 +1,7 @@
 create or replace view
   management."cleanup-canceled-linux_accounts"
-as select
+as
+select
   bu.accounting,
   'remove_linux_account ' || la.username as aosh_command,
   la.username

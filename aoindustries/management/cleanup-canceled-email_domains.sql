@@ -1,6 +1,7 @@
 create or replace view
   management."cleanup-canceled-email_domains"
-as select
+as
+select
   bu.accounting,
   'remove_email_domain ' || ed."domain" || ' ' || ao.hostname as aosh_command,
   ao.hostname,

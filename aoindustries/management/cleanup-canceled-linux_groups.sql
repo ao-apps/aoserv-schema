@@ -1,6 +1,7 @@
 create or replace view
   management."cleanup-canceled-linux_groups"
-as select
+as
+select
   bu.accounting,
   'remove_linux_group ' || lg."name" as aosh_command,
   lg."name"

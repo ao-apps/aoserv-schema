@@ -1,7 +1,8 @@
 -- See http://localhost:8080/docs/ao/software/3rd-party/mysql/bind-to-localhost#procedure
 create or replace view
   management."mysql-bind-to-localhost"
-as select
+as
+select
   ia.ip_address,
   ao.hostname as "SERVER",
   ms."name" as "NAME",

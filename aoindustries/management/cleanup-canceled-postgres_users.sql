@@ -1,6 +1,7 @@
 create or replace view
   management."cleanup-canceled-postgres_users"
-as select
+as
+select
   bu.accounting,
   'remove_postgres_user ' || pu.username as aosh_command,
   pu.username

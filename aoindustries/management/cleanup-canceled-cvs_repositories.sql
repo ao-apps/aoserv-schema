@@ -1,6 +1,7 @@
 create or replace view
   management."cleanup-canceled-cvs_repositories"
-as select
+as
+select
   bu.accounting,
   'remove_cvs_repository ' || ao.hostname || ' ' || cr."path" as aosh_command,
   ao.hostname,

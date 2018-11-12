@@ -1,6 +1,7 @@
 create or replace view
   management."cleanup-canceled-httpd_shared_tomcats"
-as select
+as
+select
   bu.accounting,
   'remove_httpd_shared_tomcat ' || hst.name || ' ' || ao.hostname as aosh_command,
   ao.hostname,

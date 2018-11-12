@@ -1,6 +1,7 @@
 create or replace view
   management."cleanup-canceled-business_servers"
-as select
+as
+select
   bu.accounting,
   'remove_business_server ' || bs.accounting || ' ' || se."name" as aosh_command,
   bs.is_default

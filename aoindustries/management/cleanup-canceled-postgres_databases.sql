@@ -1,6 +1,7 @@
 create or replace view
   management."cleanup-canceled-postgres_databases"
-as select
+as
+select
   bu.accounting,
   'remove_postgres_database ' || pd."name" || ' ' || ps."name" || ' ' || ao.hostname as aosh_command,
   ao.hostname,

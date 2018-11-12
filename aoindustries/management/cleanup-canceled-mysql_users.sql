@@ -1,6 +1,7 @@
 create or replace view
   management."cleanup-canceled-mysql_users"
-as select
+as
+select
   bu.accounting,
   'remove_mysql_user ' || mu.username as aosh_command,
   mu.username

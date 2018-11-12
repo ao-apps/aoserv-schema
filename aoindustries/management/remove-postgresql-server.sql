@@ -1,7 +1,8 @@
 -- See http://localhost:8080/docs/ao/management/postgresql/remove-postgresql-server#procedure
 create or replace view
   management."remove-postgresql-server"
-as select
+as
+select
   (select count(*) from public.postgres_databases pd where
     pd.postgres_server=ps.pkey and pd."name" not in (
       'template0', 'template1', 'aoserv'

@@ -52,4 +52,5 @@ as
 --    public.ao_servers
 ;
 
-grant all on management.server_stats to aoadmin;
+revoke all on management.server_stats from aoadmin;
+grant select on management.server_stats to aoadmin;

@@ -22,4 +22,5 @@ from
   left outer join public.technology_versions tv on hs.php_version=tv.pkey
   left outer join public.httpd_tomcat_sites hts on hs.pkey=hts.httpd_site;
 
+revoke all on management."web-site-settings" from aoadmin;
 grant select on management."web-site-settings" to aoadmin;

@@ -15,4 +15,5 @@ from
   inner join public.httpd_sites hs on htc.tomcat_site=hs.pkey
   inner join public.ao_servers ao on hs.ao_server=ao.server;
 
+revoke all on management."httpd_tomcat_data_sources-joined" from aoadmin;
 grant select on management."httpd_tomcat_data_sources-joined" to aoadmin;

@@ -38,4 +38,5 @@ where
   (osv.operating_system, osv.version_number)!=('centos', '5')
   and (is_443.ssl_cert_file is null or is_443.ssl_cert_file not like '/etc/letsencrypt/%');
 
+revoke all on management."lets-encrypt-enable-on-httpd-site" from aoadmin;
 grant select on management."lets-encrypt-enable-on-httpd-site" to aoadmin;

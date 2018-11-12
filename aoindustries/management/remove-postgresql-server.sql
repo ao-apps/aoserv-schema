@@ -33,4 +33,5 @@ from
   inner join public.operating_system_versions osv on tv.operating_system_version=osv.pkey
   inner join public.net_binds nb on ps.net_bind=nb.pkey;
 
-grant all on management."remove-postgresql-server" to aoadmin;
+revoke all on management."remove-postgresql-server" from aoadmin;
+grant select on management."remove-postgresql-server" to aoadmin;

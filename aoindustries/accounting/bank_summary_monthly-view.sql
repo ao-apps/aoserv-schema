@@ -10,4 +10,5 @@ where
   bt.expense_code=ec.expense_code
 group by "month", bt.expense_code;
 
+revoke all on accounting.bank_summary_monthly from aoadmin;
 grant select on accounting.bank_summary_monthly to aoadmin;

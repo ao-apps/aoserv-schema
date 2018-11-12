@@ -11,4 +11,5 @@ from
 order by
   "time";
 
+revoke all on accounting.bank_monthly_detail from aoadmin;
 grant select on accounting.bank_monthly_detail to aoadmin;

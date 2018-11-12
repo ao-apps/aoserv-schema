@@ -139,4 +139,5 @@ union select
       public.bank_transactions
   );
 
+revoke all on accounting.earnings_and_losses from aoadmin;
 grant select on accounting.earnings_and_losses to aoadmin;

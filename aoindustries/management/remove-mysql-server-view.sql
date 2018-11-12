@@ -35,4 +35,5 @@ from
   inner join net_binds nb on ms.net_bind=nb.pkey
   inner join ip_addresses ia on nb.ip_address=ia.pkey;
 
+revoke all on management."remove-mysql-server" from aoadmin;
 grant select on management."remove-mysql-server" to aoadmin;

@@ -16,5 +16,7 @@ create view account_balances as select
     t.payment_confirmed!='N'
   group by t.accounting
 ;
+
+revoke all on account_balances from aoadmin;
 grant select on account_balances to aoadmin;
 grant select on account_balances to aoserv_app;

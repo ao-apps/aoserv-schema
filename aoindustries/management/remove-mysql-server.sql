@@ -30,11 +30,11 @@ select
   ) is not null then 'Yes' else 'No' end as "HAS_OTHER_ANY_VERSION"
 from
              public.ao_servers                ao
-  inner join public.mysql_servers             ms  on ao.server                   = ms.ao_server
-  inner join public.technology_versions       tv  on ms.version                  = tv.pkey
+  inner join public.mysql_servers             ms  on ao.server                   =  ms.ao_server
+  inner join public.technology_versions       tv  on ms.version                  =  tv.pkey
   inner join public.operating_system_versions osv on tv.operating_system_version = osv.pkey
-  inner join public.net_binds                 nb  on ms.net_bind                 = nb.pkey
-  inner join public.ip_addresses              ia  on nb.ip_address               = ia.pkey;
+  inner join public.net_binds                 nb  on ms.net_bind                 =  nb.pkey
+  inner join public.ip_addresses              ia  on nb.ip_address               =  ia.pkey;
 
 revoke all    on management."remove-mysql-server" from aoadmin;
 grant  select on management."remove-mysql-server" to   aoadmin;

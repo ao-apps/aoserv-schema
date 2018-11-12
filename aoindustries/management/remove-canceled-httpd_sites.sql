@@ -7,10 +7,10 @@ select
   ao.hostname,
   hs.site_name
 from
-  public.httpd_sites hs
-  inner join public.ao_servers ao on hs.ao_server=ao.server
-  inner join public.packages pk on hs.package=pk."name"
-  inner join public.businesses bu on pk.accounting=bu.accounting
+             public.httpd_sites hs
+  inner join public.ao_servers  ao on hs.ao_server  = ao.server
+  inner join public.packages    pk on hs.package    = pk."name"
+  inner join public.businesses  bu on pk.accounting = bu.accounting
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 

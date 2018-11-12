@@ -33,9 +33,9 @@ create or replace function get_assets_by_pkey (integer)
     select
       as1.pkey
     from
-      assets as1
-      left outer join assets as2 on as1.contained_by=as2.pkey
-      left outer join assets as3 on as2.contained_by=as3.pkey
+                      assets as1
+      left outer join assets as2 on as1.contained_by = as2.pkey
+      left outer join assets as3 on as2.contained_by = as3.pkey
     where
       as1.pkey= $1
       or as1.contained_by= $1
@@ -53,10 +53,10 @@ create or replace function get_assets_by_label (text)
     select
       as1.pkey
     from
-      assets as1
-      left outer join assets as2 on as1.contained_by=as2.pkey
-      left outer join assets as3 on as2.contained_by=as3.pkey
-      left outer join assets as4 on as3.contained_by=as4.pkey
+                      assets as1
+      left outer join assets as2 on as1.contained_by = as2.pkey
+      left outer join assets as3 on as2.contained_by = as3.pkey
+      left outer join assets as4 on as3.contained_by = as4.pkey
     where
       as1.label= $1
       or as2.label= $1

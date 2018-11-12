@@ -4,9 +4,9 @@ create or replace function get_schema_column (text,text,text,text)
     select
       sc.pkey
     from
-      schema_columns sc
-      inner join aoserv_protocols since on sc.since_version=since.version
-      left outer join aoserv_protocols last on sc.last_version=last.version
+                      schema_columns      sc
+      inner      join aoserv_protocols since on sc.since_version = since.version
+      left outer join aoserv_protocols  last on sc.last_version  =  last.version
     where
       sc.table_name = $1
       and sc.column_name = $2

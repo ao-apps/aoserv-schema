@@ -20,12 +20,12 @@ select
   ao.hostname,
   ia.ip_address
 from
-  public.ip_addresses ia
-  inner join public.packages pk on ia.package=pk."name"
-  inner join public.businesses bu on pk.accounting=bu.accounting
-  inner join public.net_devices nd on ia.net_device=nd.pkey
-  inner join public.servers se on nd.server=se.pkey
-  left outer join public.ao_servers ao on se.pkey=ao.server
+                  public.ip_addresses ia
+  inner      join public.packages     pk on ia.package    = pk."name"
+  inner      join public.businesses   bu on pk.accounting = bu.accounting
+  inner      join public.net_devices  nd on ia.net_device = nd.pkey
+  inner      join public.servers      se on nd.server     = se.pkey
+  left outer join public.ao_servers   ao on se.pkey       = ao.server
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 

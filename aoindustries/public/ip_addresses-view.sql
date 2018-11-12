@@ -19,10 +19,10 @@ select
   ia.package as package,
   ia.available as available
 from
-  servers se
-  inner join net_devices nd on se.pkey=nd.server
-  inner join net_device_ids ndi on nd.device_id=ndi."name"
-  inner join ip_addresses ia on nd.pkey=ia.net_device
+             servers         se
+  inner join net_devices     nd on se.pkey      =  nd.server
+  inner join net_device_ids ndi on nd.device_id = ndi."name"
+  inner join ip_addresses    ia on nd.pkey      =  ia.net_device
 where
   -- May only release alias IPs
   ia.is_alias

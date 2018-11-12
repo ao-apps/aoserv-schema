@@ -6,10 +6,10 @@ select
   'remove_postgres_user ' || pu.username as aosh_command,
   pu.username
 from
-  public.postgres_users pu
-  inner join public.usernames un on pu.username=un.username
-  inner join public.packages pk on un.package=pk."name"
-  inner join public.businesses bu on pk.accounting=bu.accounting
+             public.postgres_users pu
+  inner join public.usernames      un on pu.username   = un.username
+  inner join public.packages       pk on un.package    = pk."name"
+  inner join public.businesses     bu on pk.accounting = bu.accounting
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 

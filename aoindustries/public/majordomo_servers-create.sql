@@ -14,5 +14,5 @@ create table majordomo_servers (
   majordomo_owner_add integer
     not null
 );
-grant all on majordomo_servers to aoadmin;
+grant all                    on majordomo_servers to aoadmin;
 grant select, insert, delete on majordomo_servers to aoserv_app;

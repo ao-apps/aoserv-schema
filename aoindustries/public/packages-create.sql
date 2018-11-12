@@ -1,5 +1,5 @@
 create sequence packages_pkey_seq cycle;
-grant all on packages_pkey_seq to aoadmin;
+grant all            on packages_pkey_seq to aoadmin;
 grant select, update on packages_pkey_seq to aoserv_app;
 
 create table packages (
@@ -26,6 +26,6 @@ create table packages (
   email_relay_burst integer,
   email_relay_rate float4
 );
-grant all on packages to aoadmin;
+grant all                            on packages to aoadmin;
 grant select, insert, update, delete on packages to aoserv_app;
-grant select on packages to kaori;
+grant select                         on packages to kaori;

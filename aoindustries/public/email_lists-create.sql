@@ -1,5 +1,5 @@
 create sequence email_lists_pkey_seq cycle;
-grant all on email_lists_pkey_seq to aoadmin;
+grant all            on email_lists_pkey_seq to aoadmin;
 grant select, update on email_lists_pkey_seq to aoserv_app;
 
 create table email_lists (
@@ -14,5 +14,5 @@ create table email_lists (
     not null,
   disable_log integer
 );
-grant all on email_lists to aoadmin;
+grant all                            on email_lists to aoadmin;
 grant select, insert, update, delete on email_lists to aoserv_app;

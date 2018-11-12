@@ -30,5 +30,5 @@ create table aoserv_howto_categories (
   keywords text
     not null
 );
-grant all on aoserv_howto_categories to aoadmin;
+grant all    on aoserv_howto_categories to aoadmin;
 grant select on aoserv_howto_categories to aoweb_app;

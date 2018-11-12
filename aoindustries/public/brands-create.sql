@@ -51,5 +51,5 @@ create table brands (
   aoweb_struts_keystore_type text not null,
   aoweb_struts_keystore_password text not null
 );
-grant all on brands to aoadmin;
+grant all    on brands to aoadmin;
 grant select on brands to aoserv_app;

@@ -18,5 +18,5 @@ create table asset_vendors (
   phone_number text
     not null
 );
-grant all on asset_vendors to aoadmin;
+grant all    on asset_vendors to aoadmin;
 grant select on asset_vendors to aoweb_app;

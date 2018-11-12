@@ -10,5 +10,5 @@ create table protocols (
   net_protocol text
     not null
 );
-grant all on protocols to aoadmin;
+grant all            on protocols to aoadmin;
 grant select, update on protocols to aoserv_app;

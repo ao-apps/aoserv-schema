@@ -1,5 +1,5 @@
 create sequence net_devices_pkey_seq cycle;
-grant all on net_devices_pkey_seq to aoadmin;
+grant all            on net_devices_pkey_seq to aoadmin;
 grant select, update on net_devices_pkey_seq to aoserv_app;
 
 create table net_devices (
@@ -27,5 +27,5 @@ create table net_devices (
     default true,
   unique(server, device_id)
 );
-grant all on net_devices to aoadmin;
+grant all    on net_devices to aoadmin;
 grant select on net_devices to aoserv_app;

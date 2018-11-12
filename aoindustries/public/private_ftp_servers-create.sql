@@ -19,5 +19,5 @@ create table private_ftp_servers (
   allow_anonymous bool
     not null
 );
-grant all on private_ftp_servers to aoadmin;
+grant all            on private_ftp_servers to aoadmin;
 grant select, delete on private_ftp_servers to aoserv_app;

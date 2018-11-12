@@ -1,5 +1,5 @@
 create sequence business_servers_pkey_seq cycle;
-grant all on business_servers_pkey_seq to aoadmin;
+grant all            on business_servers_pkey_seq to aoadmin;
 grant select, update on business_servers_pkey_seq to aoserv_app;
 
 create table business_servers (
@@ -19,5 +19,5 @@ create table business_servers (
   can_control_virtual_server bool not null default false,
   unique(accounting, server)
 );
-grant all on business_servers to aoadmin;
+grant all                            on business_servers to aoadmin;
 grant select, update, insert, delete on business_servers to aoserv_app;

@@ -1,5 +1,5 @@
 create sequence failover_file_replications_pkey_seq cycle;
-grant all on failover_file_replications_pkey_seq to aoadmin;
+grant all            on failover_file_replications_pkey_seq to aoadmin;
 grant select, update on failover_file_replications_pkey_seq to aoserv_app;
 
 create table failover_file_replications (
@@ -20,5 +20,5 @@ create table failover_file_replications (
   -- Failover mirrors (retention=1) may not be on a quota-enabled partition
   check(not(retention=1 and quota_gid is not null))
 );
-grant all on failover_file_replications to aoadmin;
+grant all            on failover_file_replications to aoadmin;
 grant select, update on failover_file_replications to aoserv_app;

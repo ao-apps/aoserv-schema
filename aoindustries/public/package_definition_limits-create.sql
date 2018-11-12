@@ -1,5 +1,5 @@
 create sequence package_definition_limits_pkey_seq cycle;
-grant all on package_definition_limits_pkey_seq to aoadmin;
+grant all            on package_definition_limits_pkey_seq to aoadmin;
 grant select, update on package_definition_limits_pkey_seq to aoserv_app;
 
 create table package_definition_limits (
@@ -16,5 +16,5 @@ create table package_definition_limits (
   additional_transaction_type text,
   unique(package_definition, resource)
 );
-grant all on package_definition_limits to aoadmin;
+grant all                            on package_definition_limits to aoadmin;
 grant select, insert, update, delete on package_definition_limits to aoserv_app;

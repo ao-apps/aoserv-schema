@@ -1,5 +1,5 @@
 create sequence servers_pkey_seq cycle;
-grant all on servers_pkey_seq to aoadmin;
+grant all            on servers_pkey_seq to aoadmin;
 grant select, update on servers_pkey_seq to aoserv_app;
 
 create table servers (
@@ -14,6 +14,6 @@ create table servers (
   name text not null check (length(name)>0 and name not like '%/%'),
   monitoring_enabled boolean not null default true
 );
-grant all on servers to aoadmin;
+grant all                    on servers to aoadmin;
 grant select, insert, update on servers to aoserv_app;
-grant select, update on servers to kaori;
+grant select, update         on servers to kaori;

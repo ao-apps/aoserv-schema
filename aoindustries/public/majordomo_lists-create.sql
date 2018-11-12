@@ -25,5 +25,5 @@ create table majordomo_lists (
     unique,
   unique (majordomo_server, name)
 );
-grant all on majordomo_lists to aoadmin;
+grant all                    on majordomo_lists to aoadmin;
 grant select, insert, delete on majordomo_lists to aoserv_app;

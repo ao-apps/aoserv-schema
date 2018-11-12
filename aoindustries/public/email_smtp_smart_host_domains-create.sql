@@ -1,5 +1,5 @@
 create sequence email_smtp_smart_host_domains_pkey_seq cycle;
-grant all on email_smtp_smart_host_domains_pkey_seq to aoadmin;
+grant all            on email_smtp_smart_host_domains_pkey_seq to aoadmin;
 grant select, update on email_smtp_smart_host_domains_pkey_seq to aoserv_app;
 
 create table email_smtp_smart_host_domains (
@@ -13,5 +13,5 @@ create table email_smtp_smart_host_domains (
   domain_out_rate float4,
   check ((domain_out_burst is null)=(domain_out_rate is null))
 );
-grant all on email_smtp_smart_host_domains to aoadmin;
+grant all    on email_smtp_smart_host_domains to aoadmin;
 grant select on email_smtp_smart_host_domains to aoserv_app;

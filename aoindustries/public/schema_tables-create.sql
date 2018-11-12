@@ -15,5 +15,5 @@ create table schema_tables (
   last_version text,
   unique(table_id)
 );
-grant all on schema_tables to aoadmin;
+grant all    on schema_tables to aoadmin;
 grant select on schema_tables to aoserv_app;

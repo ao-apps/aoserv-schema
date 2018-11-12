@@ -5,5 +5,5 @@ create table majordomo_versions (
     not null
     default now()
 );
-grant all on majordomo_versions to aoadmin;
+grant all    on majordomo_versions to aoadmin;
 grant select on majordomo_versions to aoserv_app;

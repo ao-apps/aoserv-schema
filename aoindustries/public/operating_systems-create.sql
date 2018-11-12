@@ -6,5 +6,5 @@ create table operating_systems (
   is_unix bool
     not null
 );
-grant all on operating_systems to aoadmin;
+grant all    on operating_systems to aoadmin;
 grant select on operating_systems to aoserv_app;

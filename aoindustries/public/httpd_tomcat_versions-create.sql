@@ -7,5 +7,5 @@ create table httpd_tomcat_versions (
   requires_mod_jk bool
     not null
 );
-grant all on httpd_tomcat_versions to aoadmin;
+grant all            on httpd_tomcat_versions to aoadmin;
 grant select, update on httpd_tomcat_versions to aoserv_app;

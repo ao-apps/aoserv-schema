@@ -7,5 +7,5 @@ create table email_smtp_smart_hosts (
   default_domain_out_rate float4,
   check ((default_domain_out_burst is null)=(default_domain_out_rate is null))
 );
-grant all on email_smtp_smart_hosts to aoadmin;
+grant all    on email_smtp_smart_hosts to aoadmin;
 grant select on email_smtp_smart_hosts to aoserv_app;

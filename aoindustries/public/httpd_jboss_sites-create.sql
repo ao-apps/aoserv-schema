@@ -14,5 +14,5 @@ create table httpd_jboss_sites (
   jmx_bind integer
     not null
 );
-grant all on httpd_jboss_sites to aoadmin;
+grant all                            on httpd_jboss_sites to aoadmin;
 grant select, insert, update, delete on httpd_jboss_sites to aoserv_app;

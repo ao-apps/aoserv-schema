@@ -7,5 +7,5 @@ create table dns_types (
   has_port     boolean not null,
   param_ip     boolean not null
 );
-grant all on dns_types to aoadmin;
+grant all            on dns_types to aoadmin;
 grant select, update on dns_types to aoserv_app;

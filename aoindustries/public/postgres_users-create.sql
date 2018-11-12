@@ -15,5 +15,5 @@ create table postgres_users (
     default false,
   disable_log integer
 );
-grant all on postgres_users to aoadmin;
+grant all                            on postgres_users to aoadmin;
 grant select, insert, update, delete on postgres_users to aoserv_app;

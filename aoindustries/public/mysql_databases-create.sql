@@ -1,5 +1,5 @@
 create sequence mysql_databases_pkey_seq cycle;
-grant all on mysql_databases_pkey_seq to aoadmin;
+grant all            on mysql_databases_pkey_seq to aoadmin;
 grant select, update on mysql_databases_pkey_seq to aoserv_app;
 
 create table mysql_databases (
@@ -20,5 +20,5 @@ create table mysql_databases (
     ),
   unique (mysql_server, "name")
 );
-grant all on mysql_databases to aoadmin;
+grant all                            on mysql_databases to aoadmin;
 grant select, insert, update, delete on mysql_databases to aoserv_app;

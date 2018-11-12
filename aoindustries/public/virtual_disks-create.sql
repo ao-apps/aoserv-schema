@@ -1,5 +1,5 @@
 create sequence virtual_disks_pkey_seq cycle;
-grant all on virtual_disks_pkey_seq to aoadmin;
+grant all    on virtual_disks_pkey_seq to aoadmin;
 grant select on virtual_disks_pkey_seq to aoserv_app;
 
 create table virtual_disks (
@@ -32,5 +32,5 @@ create table virtual_disks (
     default 1, -- 1:00 AM
   unique(virtual_server, device)
 );
-grant all on virtual_disks to aoadmin;
+grant all    on virtual_disks to aoadmin;
 grant select on virtual_disks to aoserv_app;

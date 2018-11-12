@@ -1,5 +1,5 @@
 create sequence ip_reputation_limiter_manual_sets_pkey_seq cycle;
-grant all on ip_reputation_limiter_manual_sets_pkey_seq to aoadmin;
+grant all            on ip_reputation_limiter_manual_sets_pkey_seq to aoadmin;
 --grant select, update on ip_reputation_limiter_manual_sets_pkey_seq to aoserv_app;
 
 -- Each limiter may use one or more manual sets for whitelist or blacklist.
@@ -14,5 +14,5 @@ create table ip_reputation_limiter_manual_sets (
   "class" text not null check ("class" in ('gm', 'bm')), -- values match ip_reputation_limiter_limits
   unique(limiter, "set")
 );
-grant all on ip_reputation_limiter_manual_sets to aoadmin;
+grant all    on ip_reputation_limiter_manual_sets to aoadmin;
 grant select on ip_reputation_limiter_manual_sets to aoserv_app;

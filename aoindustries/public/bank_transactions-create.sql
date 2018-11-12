@@ -1,5 +1,5 @@
 create sequence bank_transactions_transid_seq cycle;
-grant all on bank_transactions_transid_seq to aoadmin;
+grant all            on bank_transactions_transid_seq to aoadmin;
 grant select, update on bank_transactions_transid_seq to aoserv_app;
 
 create table bank_transactions (
@@ -28,5 +28,5 @@ create table bank_transactions (
 --  constraint amount_chk
 --    check ( case when ( select is_negative from bank_transaction_types t1 where t1.type=type )=true then amount<=0 else amount>=0 end )
 );
-grant all on bank_transactions to aoadmin;
+grant all                            on bank_transactions to aoadmin;
 grant select, insert, update, delete on bank_transactions to aoserv_app;

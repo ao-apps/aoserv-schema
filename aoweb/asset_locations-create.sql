@@ -22,5 +22,5 @@ create table asset_locations (
   phone_number text
     not null
 );
-grant all on asset_locations to aoadmin;
+grant all    on asset_locations to aoadmin;
 grant select on asset_locations to aoweb_app;

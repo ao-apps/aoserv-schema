@@ -1,5 +1,5 @@
 create sequence racks_pkey_seq cycle;
-grant all on racks_pkey_seq to aoadmin;
+grant all    on racks_pkey_seq to aoadmin;
 grant select on racks_pkey_seq to aoserv_app;
 
 create table racks (
@@ -16,5 +16,5 @@ create table racks (
     check (total_rack_units is null or total_rack_units>0),
   unique(farm, name)
 );
-grant all on racks to aoadmin;
+grant all    on racks to aoadmin;
 grant select on racks to aoserv_app;

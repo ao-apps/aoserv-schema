@@ -1,5 +1,5 @@
 create sequence ip_reputation_limiter_sets_pkey_seq cycle;
-grant all on ip_reputation_limiter_sets_pkey_seq to aoadmin;
+grant all            on ip_reputation_limiter_sets_pkey_seq to aoadmin;
 --grant select, update on ip_reputation_limiter_sets_pkey_seq to aoserv_app;
 
 -- Each limiter may use one or more sets of reputation.
@@ -15,7 +15,7 @@ create table ip_reputation_limiter_sets (
   sort_order smallint not null,
   unique(limiter, sort_order)
 );
-grant all on ip_reputation_limiter_sets to aoadmin;
+grant all    on ip_reputation_limiter_sets to aoadmin;
 grant select on ip_reputation_limiter_sets to aoserv_app;
 
 -- Initial Data

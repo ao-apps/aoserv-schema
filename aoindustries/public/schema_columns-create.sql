@@ -1,5 +1,5 @@
 create sequence schema_columns_pkey_seq cycle;
-grant all on schema_columns_pkey_seq to aoadmin;
+grant all    on schema_columns_pkey_seq to aoadmin;
 grant select on schema_columns_pkey_seq to aoserv_app;
 
 create table schema_columns (
@@ -27,5 +27,5 @@ create table schema_columns (
   last_version text,
   unique(table_name, index)
 );
-grant all on schema_columns to aoadmin;
+grant all    on schema_columns to aoadmin;
 grant select on schema_columns to aoserv_app;

@@ -6,5 +6,5 @@ create table shells (
   is_system bool
     not null
 );
-grant all on shells to aoadmin;
+grant all            on shells to aoadmin;
 grant select, update on shells to aoserv_app;

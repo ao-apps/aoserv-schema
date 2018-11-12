@@ -10,5 +10,5 @@ create table net_tcp_redirects (
   destination_port integer
     not null
 );
-grant all on net_tcp_redirects to aoadmin;
+grant all                            on net_tcp_redirects to aoadmin;
 grant select, insert, update, delete on net_tcp_redirects to aoserv_app;

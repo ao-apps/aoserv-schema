@@ -6,5 +6,5 @@ create table linux_account_types (
   is_email bool
     not null
 );
-grant all on linux_account_types to aoadmin;
+grant all            on linux_account_types to aoadmin;
 grant select, update on linux_account_types to aoserv_app;

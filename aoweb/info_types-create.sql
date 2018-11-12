@@ -27,5 +27,5 @@ create table info_types (
   keywords text
     not null
 );
-grant all on info_types to aoadmin;
+grant all    on info_types to aoadmin;
 grant select on info_types to aoweb_app;

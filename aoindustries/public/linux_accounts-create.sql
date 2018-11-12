@@ -14,5 +14,5 @@ create table linux_accounts (
     default now(),
   disable_log integer
 );
-grant all on linux_accounts to aoadmin;
+grant all                            on linux_accounts to aoadmin;
 grant select, insert, update, delete on linux_accounts to aoserv_app;

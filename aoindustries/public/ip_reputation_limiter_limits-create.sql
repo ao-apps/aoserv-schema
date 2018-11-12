@@ -1,5 +1,5 @@
 create sequence ip_reputation_limiter_limits_pkey_seq cycle;
-grant all on ip_reputation_limiter_limits_pkey_seq to aoadmin;
+grant all            on ip_reputation_limiter_limits_pkey_seq to aoadmin;
 --grant select, update on ip_reputation_limiter_limits_pkey_seq to aoserv_app;
 
 -- Based on reputation, traffic is divided into six classes:
@@ -184,7 +184,7 @@ create table ip_reputation_limiter_limits (
     )
   )
 );
-grant all on ip_reputation_limiter_limits to aoadmin;
+grant all    on ip_reputation_limiter_limits to aoadmin;
 grant select on ip_reputation_limiter_limits to aoserv_app;
 
 -- Initial Data

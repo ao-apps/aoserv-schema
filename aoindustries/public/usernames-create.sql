@@ -13,5 +13,5 @@ create table usernames (
     not null,
   disable_log integer
 );
-grant all on usernames to aoadmin;
+grant all                            on usernames to aoadmin;
 grant select, insert, update, delete on usernames to aoserv_app;

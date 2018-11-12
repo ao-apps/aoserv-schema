@@ -26,5 +26,5 @@ create table master_users (
     default false
     not null
 );
-grant all on master_users to aoadmin;
+grant all                    on master_users to aoadmin;
 grant select, insert, delete on master_users to aoserv_app;

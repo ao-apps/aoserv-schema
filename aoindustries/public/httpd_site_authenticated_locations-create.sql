@@ -1,5 +1,5 @@
 create sequence httpd_site_authenticated_locations_pkey_seq cycle;
-grant all on httpd_site_authenticated_locations_pkey_seq to aoadmin;
+grant all            on httpd_site_authenticated_locations_pkey_seq to aoadmin;
 grant select, update on httpd_site_authenticated_locations_pkey_seq to aoserv_app;
 
 create table httpd_site_authenticated_locations (
@@ -24,5 +24,5 @@ create table httpd_site_authenticated_locations (
     check ("handler" is null or "handler" in ('server-status')),
   unique(httpd_site, "path")
 );
-grant all on httpd_site_authenticated_locations to aoadmin;
+grant all                            on httpd_site_authenticated_locations to aoadmin;
 grant select, insert, update, delete on httpd_site_authenticated_locations to aoserv_app;

@@ -1,5 +1,5 @@
 create sequence httpd_tomcat_contexts_pkey_seq cycle;
-grant all on httpd_tomcat_contexts_pkey_seq to aoadmin;
+grant all            on httpd_tomcat_contexts_pkey_seq to aoadmin;
 grant select, update on httpd_tomcat_contexts_pkey_seq to aoserv_app;
 
 create table httpd_tomcat_contexts (
@@ -33,5 +33,5 @@ create table httpd_tomcat_contexts (
     not null,
   unique(tomcat_site, "path")
 );
-grant all on httpd_tomcat_contexts to aoadmin;
+grant all                            on httpd_tomcat_contexts to aoadmin;
 grant select, insert, update, delete on httpd_tomcat_contexts to aoserv_app;

@@ -1,5 +1,5 @@
 create sequence whois_history_pkey_seq cycle;
-grant all on whois_history_pkey_seq to aoadmin;
+grant all            on whois_history_pkey_seq to aoadmin;
 grant select, update on whois_history_pkey_seq to aoserv_app;
 
 create table whois_history (
@@ -16,5 +16,5 @@ create table whois_history (
   whois_output text
     not null
 );
-grant all on whois_history to aoadmin;
+grant all                    on whois_history to aoadmin;
 grant select, insert, delete on whois_history to aoserv_app;

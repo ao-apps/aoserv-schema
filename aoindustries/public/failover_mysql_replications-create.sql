@@ -1,5 +1,5 @@
 create sequence failover_mysql_replications_pkey_seq cycle;
-grant all on failover_mysql_replications_pkey_seq to aoadmin;
+grant all            on failover_mysql_replications_pkey_seq to aoadmin;
 grant select, update on failover_mysql_replications_pkey_seq to aoserv_app;
 
 create table failover_mysql_replications (
@@ -25,5 +25,5 @@ create table failover_mysql_replications (
       max_alert_level in ('NONE', 'LOW', 'MEDIUM', 'HIGH', 'CRITICAL', 'UNKNOWN')
     )
 );
-grant all on failover_mysql_replications to aoadmin;
+grant all    on failover_mysql_replications to aoadmin;
 grant select on failover_mysql_replications to aoserv_app;

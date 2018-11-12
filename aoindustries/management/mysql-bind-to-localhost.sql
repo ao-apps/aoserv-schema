@@ -26,5 +26,5 @@ from
 where
   ia.ip_address!='127.0.0.1';
 
-revoke all on management."mysql-bind-to-localhost" from aoadmin;
-grant select on management."mysql-bind-to-localhost" to aoadmin;
+revoke all    on management."mysql-bind-to-localhost" from aoadmin;
+grant  select on management."mysql-bind-to-localhost" to   aoadmin;

@@ -1,6 +1,6 @@
 -- Tracks the per-network reputation for one set.
 create sequence ip_reputation_set_networks_pkey_seq cycle;
-grant all on ip_reputation_set_networks_pkey_seq to aoadmin;
+grant all            on ip_reputation_set_networks_pkey_seq to aoadmin;
 grant select, update on ip_reputation_set_networks_pkey_seq to aoserv_app;
 
 create table ip_reputation_set_networks (
@@ -17,5 +17,5 @@ create table ip_reputation_set_networks (
     check (counter>0), -- Will be deleted once decays back to zero
   unique("set", network)
 );
-grant all on ip_reputation_set_networks to aoadmin;
+grant all                            on ip_reputation_set_networks to aoadmin;
 grant select, insert, update, delete on ip_reputation_set_networks to aoserv_app;

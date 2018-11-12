@@ -18,6 +18,6 @@ select
   group by t.accounting
 ;
 
-revoke all on account_balances from aoadmin;
-grant select on account_balances to aoadmin;
-grant select on account_balances to aoserv_app;
+revoke all    on account_balances from aoadmin;
+grant  select on account_balances to   aoadmin;
+grant  select on account_balances to   aoserv_app;

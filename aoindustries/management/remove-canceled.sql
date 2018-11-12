@@ -41,5 +41,5 @@ union all (select accounting, aosh_command from management."remove-canceled-user
 union all (select accounting, aosh_command from management."remove-canceled-business_servers" order by accounting, is_default)
 ;
 
-revoke all on management."remove-canceled" from aoadmin;
-grant select on management."remove-canceled" to aoadmin;
+revoke all    on management."remove-canceled" from aoadmin;
+grant  select on management."remove-canceled" to   aoadmin;

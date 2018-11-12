@@ -4,5 +4,5 @@ create table ticket_brand_categories (
   category integer not null,
   enabled bool not null
 );
-grant all on ticket_brand_categories to aoadmin;
+grant all    on ticket_brand_categories to aoadmin;
 grant select on ticket_brand_categories to aoserv_app;

@@ -1,6 +1,6 @@
 -- Tracks the per-host reputation for one set.
 create sequence ip_reputation_set_hosts_pkey_seq cycle;
-grant all on ip_reputation_set_hosts_pkey_seq to aoadmin;
+grant all            on ip_reputation_set_hosts_pkey_seq to aoadmin;
 grant select, update on ip_reputation_set_hosts_pkey_seq to aoserv_app;
 
 create table ip_reputation_set_hosts (
@@ -31,5 +31,5 @@ create table ip_reputation_set_hosts (
   ),
   unique("set", "host")
 );
-grant all on ip_reputation_set_hosts to aoadmin;
+grant all                            on ip_reputation_set_hosts to aoadmin;
 grant select, insert, update, delete on ip_reputation_set_hosts to aoserv_app;

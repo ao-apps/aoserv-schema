@@ -18,5 +18,5 @@ from
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 
-revoke all on management."remove-canceled-postgres_databases" from aoadmin;
-grant select on management."remove-canceled-postgres_databases" to aoadmin;
+revoke all    on management."remove-canceled-postgres_databases" from aoadmin;
+grant  select on management."remove-canceled-postgres_databases" to   aoadmin;

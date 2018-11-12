@@ -1,5 +1,5 @@
 create sequence linux_acc_addresses_pkey_seq cycle;
-grant all on linux_acc_addresses_pkey_seq to aoadmin;
+grant all            on linux_acc_addresses_pkey_seq to aoadmin;
 grant select, update on linux_acc_addresses_pkey_seq to aoserv_app;
 
 create table linux_acc_addresses (
@@ -12,5 +12,5 @@ create table linux_acc_addresses (
     not null,
   unique(email_address, linux_server_account)
 );
-grant all on linux_acc_addresses to aoadmin;
+grant all                            on linux_acc_addresses to aoadmin;
 grant select, insert, update, delete on linux_acc_addresses to aoserv_app;

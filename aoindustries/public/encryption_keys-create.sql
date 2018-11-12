@@ -1,5 +1,5 @@
 create sequence encryption_keys_pkey_seq cycle;
-grant all on encryption_keys_pkey_seq to aoadmin;
+grant all    on encryption_keys_pkey_seq to aoadmin;
 grant select on encryption_keys_pkey_seq to aoserv_app;
 
 create table encryption_keys (
@@ -11,5 +11,5 @@ create table encryption_keys (
   id text
     not null
 );
-grant all on encryption_keys to aoadmin;
+grant all    on encryption_keys to aoadmin;
 grant select on encryption_keys to aoserv_app;

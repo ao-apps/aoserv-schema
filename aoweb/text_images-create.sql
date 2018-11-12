@@ -24,7 +24,7 @@
  *
  *********************************************************************/
 create sequence text_images_imageid_seq cycle;
-grant all on text_images_imageid_seq to aoadmin;
+grant all            on text_images_imageid_seq to aoadmin;
 grant select, update on text_images_imageid_seq to aoweb_app;
 
 create table text_images (
@@ -67,5 +67,5 @@ create table text_images (
   image_height integer
     not null
 );
-grant all on text_images to aoadmin;
+grant all                            on text_images to aoadmin;
 grant select, insert, update, delete on text_images to aoweb_app;

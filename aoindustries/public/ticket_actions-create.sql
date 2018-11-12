@@ -1,5 +1,5 @@
 create sequence ticket_actions_pkey_seq cycle;
-grant all on ticket_actions_pkey_seq to aoadmin;
+grant all            on ticket_actions_pkey_seq to aoadmin;
 grant select, update on ticket_actions_pkey_seq to aoserv_app;
 
 create table ticket_actions (
@@ -361,7 +361,7 @@ create table ticket_actions (
 --        end
 --    )
 );
-grant all on ticket_actions to aoadmin;
+grant all                    on ticket_actions to aoadmin;
 grant select, insert, delete on ticket_actions to aoserv_app;
 
 

@@ -1,5 +1,5 @@
 create sequence email_smtp_relays_pkey_seq cycle;
-grant all on email_smtp_relays_pkey_seq to aoadmin;
+grant all            on email_smtp_relays_pkey_seq to aoadmin;
 grant select, update on email_smtp_relays_pkey_seq to aoserv_app;
 
 create table email_smtp_relays (
@@ -23,5 +23,5 @@ create table email_smtp_relays (
   disable_log integer,
   unique(package, ao_server, host)
 );
-grant all on email_smtp_relays to aoadmin;
+grant all                            on email_smtp_relays to aoadmin;
 grant select, insert, update, delete on email_smtp_relays to aoserv_app;

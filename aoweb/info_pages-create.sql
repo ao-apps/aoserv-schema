@@ -17,7 +17,7 @@
  *
  *********************************************************************/
 create sequence info_pages_pkey_seq cycle;
-grant all on info_pages_pkey_seq to aoadmin;
+grant all            on info_pages_pkey_seq to aoadmin;
 grant select, update on info_pages_pkey_seq to aoweb_app;
 
 create table info_pages (
@@ -50,5 +50,5 @@ create table info_pages (
     not null,
   unique(category, name)
 );
-grant all on info_pages to aoadmin;
+grant all    on info_pages to aoadmin;
 grant select on info_pages to aoweb_app;

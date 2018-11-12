@@ -29,7 +29,7 @@ create table tickets (
   -- Enforce time consistency
   check (status_timeout is null or status_timeout>=open_date)
 );
-grant all on tickets to aoadmin;
+grant all                            on tickets to aoadmin;
 grant select, insert, update, delete on tickets to aoserv_app;
 
 

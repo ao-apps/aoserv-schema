@@ -1,5 +1,5 @@
 create sequence master_hosts_pkey_seq cycle;
-grant all on master_hosts_pkey_seq to aoadmin;
+grant all    on master_hosts_pkey_seq to aoadmin;
 grant select on master_hosts_pkey_seq to aoserv_app;
 
 create table master_hosts (
@@ -12,5 +12,5 @@ create table master_hosts (
     not null,
   unique(username, host)
 );
-grant all on master_hosts to aoadmin;
+grant all    on master_hosts to aoadmin;
 grant select on master_hosts to aoserv_app;

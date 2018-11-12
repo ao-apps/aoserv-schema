@@ -4,5 +4,5 @@ create table transaction_types (
   is_credit bool
     not null
 );
-grant all on transaction_types to aoadmin;
+grant all    on transaction_types to aoadmin;
 grant select on transaction_types to aoserv_app;

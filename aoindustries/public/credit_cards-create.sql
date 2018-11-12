@@ -1,5 +1,5 @@
 create sequence credit_cards_pkey_seq cycle;
-grant all on credit_cards_pkey_seq to aoadmin;
+grant all            on credit_cards_pkey_seq to aoadmin;
 grant select, update on credit_cards_pkey_seq to aoserv_app;
 
 create table credit_cards (
@@ -48,5 +48,5 @@ create table credit_cards (
     )
   )
 );
-grant all on credit_cards to aoadmin;
+grant all                            on credit_cards to aoadmin;
 grant select, insert, update, delete on credit_cards to aoserv_app;

@@ -1,5 +1,5 @@
 create sequence assets_pkey_seq cycle;
-grant all on assets_pkey_seq to aoadmin;
+grant all            on assets_pkey_seq to aoadmin;
 grant select, update on assets_pkey_seq to aoweb_app;
 
 create table assets (
@@ -24,7 +24,7 @@ create table assets (
     default true
     not null
 );
-grant all on assets to aoadmin;
+grant all                    on assets to aoadmin;
 grant select, insert, update on assets to aoweb_app;
 
 create or replace function get_assets_by_pkey (integer)

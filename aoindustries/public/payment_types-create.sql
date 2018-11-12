@@ -8,5 +8,5 @@ create table payment_types (
   allow_web bool
     not null
 );
-grant all on payment_types to aoadmin;
+grant all            on payment_types to aoadmin;
 grant select, update on payment_types to aoserv_app;

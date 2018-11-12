@@ -20,5 +20,5 @@ order by
   expense_code,
   "year";
 
-revoke all on accounting.expense_trends from aoadmin;
-grant select on accounting.expense_trends to aoadmin;
+revoke all    on accounting.expense_trends from aoadmin;
+grant  select on accounting.expense_trends to   aoadmin;

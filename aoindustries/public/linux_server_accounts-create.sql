@@ -1,5 +1,5 @@
 create sequence linux_server_accounts_pkey_seq cycle;
-grant all on linux_server_accounts_pkey_seq to aoadmin;
+grant all            on linux_server_accounts_pkey_seq to aoadmin;
 grant select, update on linux_server_accounts_pkey_seq to aoserv_app;
 
 create table linux_server_accounts (
@@ -42,5 +42,5 @@ create table linux_server_accounts (
   sudo text,
   unique (username, ao_server)
 );
-grant all on linux_server_accounts to aoadmin;
+grant all                            on linux_server_accounts to aoadmin;
 grant select, insert, update, delete on linux_server_accounts to aoserv_app;

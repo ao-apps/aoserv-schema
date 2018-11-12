@@ -4,5 +4,5 @@ create table notice_types (
   description text
     not null
 );
-grant all on notice_types to aoadmin;
+grant all            on notice_types to aoadmin;
 grant select, update on notice_types to aoserv_app;

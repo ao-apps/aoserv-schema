@@ -21,9 +21,9 @@ create table businesses (
   bill_parent bool
     not null
 );
-grant all on businesses to aoadmin;
+grant all                            on businesses to aoadmin;
 grant select, insert, update, delete on businesses to aoserv_app;
-grant select on businesses to kaori;
+grant select                         on businesses to kaori;
 
 /**********************************************************************
  *

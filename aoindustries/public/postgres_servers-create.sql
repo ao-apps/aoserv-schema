@@ -1,5 +1,5 @@
 create sequence postgres_servers_pkey_seq cycle;
-grant all on postgres_servers_pkey_seq to aoadmin;
+grant all            on postgres_servers_pkey_seq to aoadmin;
 grant select, update on postgres_servers_pkey_seq to aoserv_app;
 
 create table postgres_servers (
@@ -25,5 +25,5 @@ create table postgres_servers (
     not null,
   unique (ao_server, name)
 );
-grant all on postgres_servers to aoadmin;
+grant all                            on postgres_servers to aoadmin;
 grant select, insert, update, delete on postgres_servers to aoserv_app;

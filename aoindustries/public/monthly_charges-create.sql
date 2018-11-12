@@ -1,5 +1,5 @@
 create sequence monthly_charges_pkey_seq cycle;
-grant all on monthly_charges_pkey_seq to aoadmin;
+grant all            on monthly_charges_pkey_seq to aoadmin;
 grant select, update on monthly_charges_pkey_seq to aoserv_app;
 
 create table monthly_charges (
@@ -29,5 +29,5 @@ create table monthly_charges (
     not null
     default 'true'
 );
-grant all on monthly_charges to aoadmin;
+grant all    on monthly_charges to aoadmin;
 grant select on monthly_charges to aoserv_app;

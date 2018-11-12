@@ -1,5 +1,5 @@
 create sequence ssl_certificates_pkey_seq cycle;
-grant all on ssl_certificates_pkey_seq to aoadmin;
+grant all    on ssl_certificates_pkey_seq to aoadmin;
 grant select on ssl_certificates_pkey_seq to aoserv_app;
 
 create table ssl_certificates (
@@ -40,5 +40,5 @@ create table ssl_certificates (
       )
     )
 );
-grant all on ssl_certificates to aoadmin;
+grant all    on ssl_certificates to aoadmin;
 grant select on ssl_certificates to aoserv_app;

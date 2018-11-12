@@ -9,5 +9,5 @@ create table schema_types (
   last_version text,
   unique(num)
 );
-grant all on schema_types to aoadmin;
+grant all    on schema_types to aoadmin;
 grant select on schema_types to aoserv_app;

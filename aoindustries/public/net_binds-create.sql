@@ -1,5 +1,5 @@
 create sequence net_binds_pkey_seq cycle;
-grant all on net_binds_pkey_seq to aoadmin;
+grant all            on net_binds_pkey_seq to aoadmin;
 grant select, update on net_binds_pkey_seq to aoserv_app;
 
 create table net_binds (
@@ -24,5 +24,5 @@ create table net_binds (
   monitoring_parameters text,
   unique(server, ip_address, port, net_protocol)
 );
-grant all on net_binds to aoadmin;
+grant all                            on net_binds to aoadmin;
 grant select, insert, update, delete on net_binds to aoserv_app;

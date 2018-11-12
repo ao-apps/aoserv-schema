@@ -1,5 +1,5 @@
 create sequence postgres_server_users_pkey_seq cycle;
-grant all on postgres_server_users_pkey_seq to aoadmin;
+grant all            on postgres_server_users_pkey_seq to aoadmin;
 grant select, update on postgres_server_users_pkey_seq to aoserv_app;
 
 create table postgres_server_users (
@@ -14,5 +14,5 @@ create table postgres_server_users (
   predisable_password text,
   unique (username, postgres_server)
 );
-grant all on postgres_server_users to aoadmin;
+grant all                            on postgres_server_users to aoadmin;
 grant select, insert, update, delete on postgres_server_users to aoserv_app;

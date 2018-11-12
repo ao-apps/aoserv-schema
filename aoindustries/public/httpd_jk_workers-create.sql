@@ -1,5 +1,5 @@
 create sequence httpd_workers_pkey_seq cycle;
-grant all on httpd_workers_pkey_seq to aoadmin;
+grant all            on httpd_workers_pkey_seq to aoadmin;
 grant select, update on httpd_workers_pkey_seq to aoserv_app;
 
 create table httpd_workers (
@@ -13,5 +13,5 @@ create table httpd_workers (
     unique,
   tomcat_site integer
 );
-grant all on httpd_workers to aoadmin;
+grant all                            on httpd_workers to aoadmin;
 grant select, insert, update, delete on httpd_workers to aoserv_app;

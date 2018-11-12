@@ -1,5 +1,5 @@
 create sequence ip_reputation_limiters_pkey_seq cycle;
-grant all on ip_reputation_limiters_pkey_seq to aoadmin;
+grant all            on ip_reputation_limiters_pkey_seq to aoadmin;
 --grant select, update on ip_reputation_limiters_pkey_seq to aoserv_app;
 
 create table ip_reputation_limiters (
@@ -25,7 +25,7 @@ create table ip_reputation_limiters (
         or (description=trim(description) and length(description)>0)
     )
 );
-grant all on ip_reputation_limiters to aoadmin;
+grant all    on ip_reputation_limiters to aoadmin;
 grant select on ip_reputation_limiters to aoserv_app;
 
 -- Initial Data

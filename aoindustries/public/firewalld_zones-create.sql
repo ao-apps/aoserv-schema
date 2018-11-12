@@ -1,5 +1,5 @@
 create sequence firewalld_zones_pkey_seq cycle;
-grant all on firewalld_zones_pkey_seq to aoadmin;
+grant all     on firewalld_zones_pkey_seq to aoadmin;
 -- grant select on firewalld_zones_pkey_seq to aoserv_app;
 
 create table firewalld_zones (
@@ -17,5 +17,5 @@ create table firewalld_zones (
     default "name" in ('dmz', 'external', 'public'),
   unique(server, "name")
 );
-grant all on firewalld_zones to aoadmin;
+grant all    on firewalld_zones to aoadmin;
 grant select on firewalld_zones to aoserv_app;

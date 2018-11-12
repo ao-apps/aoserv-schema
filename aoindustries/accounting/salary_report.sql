@@ -18,5 +18,5 @@ group by
   "name"
 ;
 
-revoke all on accounting.salary_report from aoadmin;
-grant select on accounting.salary_report to aoadmin;
+revoke all    on accounting.salary_report from aoadmin;
+grant  select on accounting.salary_report to   aoadmin;

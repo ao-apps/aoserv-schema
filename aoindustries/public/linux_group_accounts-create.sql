@@ -1,5 +1,5 @@
 create sequence linux_group_accounts_pkey_seq cycle;
-grant all on linux_group_accounts_pkey_seq to aoadmin;
+grant all            on linux_group_accounts_pkey_seq to aoadmin;
 grant select, update on linux_group_accounts_pkey_seq to aoserv_app;
 
 create table linux_group_accounts (
@@ -15,5 +15,5 @@ create table linux_group_accounts (
   operating_system_version integer
 );
 
-grant all on linux_group_accounts to aoadmin;
+grant all                            on linux_group_accounts to aoadmin;
 grant select, insert, update, delete on linux_group_accounts to aoserv_app;

@@ -1,5 +1,5 @@
 create sequence credit_card_transactions_pkey_seq cycle;
-grant all on credit_card_transactions_pkey_seq to aoadmin;
+grant all            on credit_card_transactions_pkey_seq to aoadmin;
 grant select, update on credit_card_transactions_pkey_seq to aoserv_app;
 
 create table credit_card_transactions (
@@ -92,5 +92,5 @@ create table credit_card_transactions (
   unique(processor_id, capture_provider_unique_id),
   unique(processor_id, void_provider_unique_id)
 );
-grant all on credit_card_transactions to aoadmin;
+grant all                    on credit_card_transactions to aoadmin;
 grant select, insert, update on credit_card_transactions to aoserv_app;

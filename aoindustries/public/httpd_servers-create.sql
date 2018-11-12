@@ -1,5 +1,5 @@
 create sequence httpd_servers_pkey_seq cycle;
-grant all on httpd_servers_pkey_seq to aoadmin;
+grant all            on httpd_servers_pkey_seq to aoadmin;
 grant select, update on httpd_servers_pkey_seq to aoserv_app;
 
 create table httpd_servers (
@@ -96,5 +96,5 @@ create table httpd_servers (
   mod_status boolean,
   mod_wsgi boolean
 );
-grant all on httpd_servers to aoadmin;
+grant all            on httpd_servers to aoadmin;
 grant select, delete on httpd_servers to aoserv_app;

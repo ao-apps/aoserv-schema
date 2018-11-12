@@ -1,5 +1,5 @@
 create sequence httpd_shared_tomcats_pkey_seq cycle;
-grant all on httpd_shared_tomcats_pkey_seq to aoadmin;
+grant all            on httpd_shared_tomcats_pkey_seq to aoadmin;
 grant select, update on httpd_shared_tomcats_pkey_seq to aoserv_app;
 
 create table httpd_shared_tomcats (
@@ -40,5 +40,5 @@ create table httpd_shared_tomcats (
   auto_deploy boolean not null,
   unique (ao_server, "name")
 );
-grant all on httpd_shared_tomcats to aoadmin;
+grant all                            on httpd_shared_tomcats to aoadmin;
 grant select, insert, update, delete on httpd_shared_tomcats to aoserv_app;

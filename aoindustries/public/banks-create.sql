@@ -4,5 +4,5 @@ create table banks (
   display text
     not null
 );
-grant all on banks to aoadmin;
+grant all    on banks to aoadmin;
 grant select on banks to aoserv_app;

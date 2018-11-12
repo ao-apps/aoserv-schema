@@ -7,5 +7,5 @@ create table technology_names (
   image_alt text,
   home_page_url text
 );
-grant all on technology_names to aoadmin;
+grant all            on technology_names to aoadmin;
 grant select, update on technology_names to aoserv_app;

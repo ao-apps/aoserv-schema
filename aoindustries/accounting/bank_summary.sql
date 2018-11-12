@@ -10,5 +10,5 @@ where
   bt.expense_code=ec.expense_code
 group by bt.expense_code, "month";
 
-revoke all on accounting.bank_summary from aoadmin;
-grant select on accounting.bank_summary to aoadmin;
+revoke all    on accounting.bank_summary from aoadmin;
+grant  select on accounting.bank_summary to   aoadmin;

@@ -11,7 +11,7 @@
  *
  *********************************************************************/
 create sequence signup_requests_pkey_seq cycle;
-grant all on signup_requests_pkey_seq to aoadmin;
+grant all            on signup_requests_pkey_seq to aoadmin;
 grant select, update on signup_requests_pkey_seq to aoweb_app;
 
 create table signup_requests (
@@ -28,6 +28,6 @@ create table signup_requests (
   completed_by text,
   completed_time timestamp
 );
-grant all on signup_requests to aoadmin;
+grant all                            on signup_requests to aoadmin;
 grant select, insert, update, delete on signup_requests to aoweb_app;
-grant select on signup_requests to aoweb_noc_app;
+grant select                         on signup_requests to aoweb_noc_app;

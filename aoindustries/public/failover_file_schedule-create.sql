@@ -1,5 +1,5 @@
 create sequence failover_file_schedule_pkey_seq cycle;
-grant all on failover_file_schedule_pkey_seq to aoadmin;
+grant all            on failover_file_schedule_pkey_seq to aoadmin;
 grant select, update on failover_file_schedule_pkey_seq to aoserv_app;
 
 create table failover_file_schedule (
@@ -21,5 +21,5 @@ create table failover_file_schedule (
     default true,
   unique(replication, hour, minute)
 );
-grant all on failover_file_schedule to aoadmin;
+grant all                    on failover_file_schedule to aoadmin;
 grant select, insert, delete on failover_file_schedule to aoserv_app;

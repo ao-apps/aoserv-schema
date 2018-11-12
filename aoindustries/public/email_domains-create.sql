@@ -1,5 +1,5 @@
 create sequence email_domains_pkey_seq cycle;
-grant all on email_domains_pkey_seq to aoadmin;
+grant all            on email_domains_pkey_seq to aoadmin;
 grant select, update on email_domains_pkey_seq to aoserv_app;
 
 create table email_domains (
@@ -15,5 +15,5 @@ create table email_domains (
     not null,
   unique(ao_server, domain)
 );
-grant all on email_domains to aoadmin;
+grant all                            on email_domains to aoadmin;
 grant select, insert, update, delete on email_domains to aoserv_app;

@@ -14,5 +14,5 @@ create table cyrus_imapd_binds (
   certificate integer,
   allow_plaintext_auth boolean
 );
-grant all on cyrus_imapd_binds to aoadmin;
+grant all            on cyrus_imapd_binds to aoadmin;
 grant select, delete on cyrus_imapd_binds to aoserv_app;

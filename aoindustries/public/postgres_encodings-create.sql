@@ -1,5 +1,5 @@
 create sequence postgres_encodings_pkey_seq cycle;
-grant all on postgres_encodings_pkey_seq to aoadmin;
+grant all            on postgres_encodings_pkey_seq to aoadmin;
 grant select, update on postgres_encodings_pkey_seq to aoserv_app;
 
 create table postgres_encodings (
@@ -12,5 +12,5 @@ create table postgres_encodings (
     not null,
   unique(encoding, postgres_version)
 );
-grant all on postgres_encodings to aoadmin;
+grant all            on postgres_encodings to aoadmin;
 grant select, update on postgres_encodings to aoserv_app;

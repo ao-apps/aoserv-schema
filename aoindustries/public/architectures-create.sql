@@ -4,5 +4,5 @@ create table architectures (
   bits integer
     not null
 );
-grant all on architectures to aoadmin;
+grant all    on architectures to aoadmin;
 grant select on architectures to aoserv_app;

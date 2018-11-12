@@ -1,5 +1,5 @@
 create sequence ip_reputation_sets_pkey_seq cycle;
-grant all on ip_reputation_sets_pkey_seq to aoadmin;
+grant all            on ip_reputation_sets_pkey_seq to aoadmin;
 --grant select, update on ip_reputation_sets_pkey_seq to aoserv_app;
 
 -- TODO: Move this to ipsets function since it is more general.
@@ -104,7 +104,7 @@ create table ip_reputation_sets (
     not null
     default now()
 );
-grant all on ip_reputation_sets to aoadmin;
+grant all            on ip_reputation_sets to aoadmin;
 grant select, update on ip_reputation_sets to aoserv_app;
 
 BEGIN;

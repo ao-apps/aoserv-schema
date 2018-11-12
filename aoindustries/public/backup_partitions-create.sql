@@ -1,5 +1,5 @@
 create sequence backup_partitions_pkey_seq cycle;
-grant all on backup_partitions_pkey_seq to aoadmin;
+grant all            on backup_partitions_pkey_seq to aoadmin;
 grant select, update on backup_partitions_pkey_seq to aoserv_app;
 
 create table backup_partitions (
@@ -12,5 +12,5 @@ create table backup_partitions (
   quota_enabled bool not null,
   unique(ao_server, path)
 );
-grant all on backup_partitions to aoadmin;
+grant all            on backup_partitions to aoadmin;
 grant select, update on backup_partitions to aoserv_app;

@@ -9,5 +9,5 @@ create table httpd_tomcat_std_sites (
   unpack_wars boolean not null,
   auto_deploy boolean not null
 );
-grant all on httpd_tomcat_std_sites to aoadmin;
+grant all                            on httpd_tomcat_std_sites to aoadmin;
 grant select, insert, update, delete on httpd_tomcat_std_sites to aoserv_app;

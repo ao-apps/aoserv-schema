@@ -5,5 +5,5 @@ create table httpd_tomcat_sites (
     not null,
   block_webinf boolean not null default true
 );
-grant all on httpd_tomcat_sites to aoadmin;
+grant all                            on httpd_tomcat_sites to aoadmin;
 grant select, insert, update, delete on httpd_tomcat_sites to aoserv_app;

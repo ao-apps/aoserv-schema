@@ -15,5 +15,5 @@ from
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 
-revoke all on management."remove-canceled-net_binds" from aoadmin;
-grant select on management."remove-canceled-net_binds" to aoadmin;
+revoke all    on management."remove-canceled-net_binds" from aoadmin;
+grant  select on management."remove-canceled-net_binds" to   aoadmin;

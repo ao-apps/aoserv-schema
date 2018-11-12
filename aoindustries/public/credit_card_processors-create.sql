@@ -18,5 +18,5 @@ create table credit_card_processors (
     or (encryption_from is not null and encryption_recipient is not null)
   )
 );
-grant all on credit_card_processors to aoadmin;
+grant all    on credit_card_processors to aoadmin;
 grant select on credit_card_processors to aoserv_app;

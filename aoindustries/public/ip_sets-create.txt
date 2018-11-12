@@ -1,5 +1,5 @@
 create sequence ip_sets_pkey_seq cycle;
-grant all on ip_sets_pkey_seq to aoadmin;
+grant all            on ip_sets_pkey_seq to aoadmin;
 --grant select, update on ip_sets_pkey_seq to aoserv_app;
 
 create table ip_sets (
@@ -19,7 +19,7 @@ create table ip_sets (
   allow_subaccount_use boolean
     not null
 );
-grant all on ip_sets to aoadmin;
+grant all    on ip_sets to aoadmin;
 grant select on ip_sets to aoserv_app;
 
 BEGIN;

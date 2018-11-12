@@ -17,7 +17,7 @@
  *
  *********************************************************************/
 create sequence nav_images_imageid_seq cycle;
-grant all on nav_images_imageid_seq to aoadmin;
+grant all            on nav_images_imageid_seq to aoadmin;
 grant select, update on nav_images_imageid_seq to aoweb_app;
 
 create table nav_images (
@@ -46,5 +46,5 @@ create table nav_images (
   highlighted bool
     not null
 );
-grant all on nav_images to aoadmin;
+grant all            on nav_images to aoadmin;
 grant select, insert on nav_images to aoweb_app;

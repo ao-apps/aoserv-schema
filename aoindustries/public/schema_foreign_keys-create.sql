@@ -1,5 +1,5 @@
 create sequence schema_foreign_keys_pkey_seq cycle;
-grant all on schema_foreign_keys_pkey_seq to aoadmin;
+grant all    on schema_foreign_keys_pkey_seq to aoadmin;
 grant select on schema_foreign_keys_pkey_seq to aoserv_app;
 
 create table schema_foreign_keys (
@@ -15,5 +15,5 @@ create table schema_foreign_keys (
   last_version text,
   unique(key_column, foreign_column)
 );
-grant all on schema_foreign_keys to aoadmin;
+grant all    on schema_foreign_keys to aoadmin;
 grant select on schema_foreign_keys to aoserv_app;

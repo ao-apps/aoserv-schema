@@ -1,5 +1,5 @@
 create sequence cvs_repositories_pkey_seq cycle;
-grant all on cvs_repositories_pkey_seq to aoadmin;
+grant all            on cvs_repositories_pkey_seq to aoadmin;
 grant select, update on cvs_repositories_pkey_seq to aoserv_app;
 
 create table cvs_repositories (
@@ -18,5 +18,5 @@ create table cvs_repositories (
     not null,
   disable_log integer
 );
-grant all on cvs_repositories to aoadmin;
+grant all                            on cvs_repositories to aoadmin;
 grant select, update, insert, delete on cvs_repositories to aoserv_app;

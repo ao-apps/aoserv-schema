@@ -1,6 +1,6 @@
 -- Tracks the entries for ip sets
 create sequence ip_set_entries_pkey_seq cycle;
-grant all on ip_set_entries_pkey_seq to aoadmin;
+grant all            on ip_set_entries_pkey_seq to aoadmin;
 grant select, update on ip_set_entries_pkey_seq to aoserv_app;
 
 create table ip_set_entries (
@@ -25,5 +25,5 @@ create table ip_set_entries (
   ),
   unique("set", entry, "prefix")
 );
-grant all on ip_set_entries to aoadmin;
+grant all            on ip_set_entries to aoadmin;
 grant select, insert on ip_set_entries to aoserv_app;

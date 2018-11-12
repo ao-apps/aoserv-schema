@@ -7,5 +7,5 @@ create table country_codes (
     not null,
   charge_com_name text
 );
-grant all on country_codes to aoadmin;
-grant all on country_codes to aoserv_app;
+grant all    on country_codes to aoadmin;
+grant select on country_codes to aoserv_app;

@@ -1,5 +1,5 @@
 create sequence notice_log_pkey_seq cycle;
-grant all on notice_log_pkey_seq to aoadmin;
+grant all            on notice_log_pkey_seq to aoadmin;
 grant select, update on notice_log_pkey_seq to aoserv_app;
 
 create table notice_log (
@@ -21,5 +21,5 @@ create table notice_log (
     not null,
   transid integer
 );
-grant all on notice_log to aoadmin;
+grant all            on notice_log to aoadmin;
 grant select, insert on notice_log to aoserv_app;

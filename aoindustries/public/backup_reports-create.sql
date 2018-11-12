@@ -1,5 +1,5 @@
 create sequence backup_reports_pkey_seq cycle;
-grant all on backup_reports_pkey_seq to aoadmin;
+grant all            on backup_reports_pkey_seq to aoadmin;
 grant select, update on backup_reports_pkey_seq to aoserv_app;
 
 create table backup_reports (
@@ -17,5 +17,5 @@ create table backup_reports (
   disk_size int8
     not null
 );
-grant all on backup_reports to aoadmin;
+grant all                            on backup_reports to aoadmin;
 grant select, update, insert, delete on backup_reports to aoserv_app;

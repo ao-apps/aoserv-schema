@@ -1,5 +1,5 @@
 create sequence email_pipes_pkey_seq cycle;
-grant all on email_pipes_pkey_seq to aoadmin;
+grant all            on email_pipes_pkey_seq to aoadmin;
 grant select, update on email_pipes_pkey_seq to aoserv_app;
 
 create table email_pipes (
@@ -15,5 +15,5 @@ create table email_pipes (
   disable_log integer,
   unique(ao_server, path)
 );
-grant all on email_pipes to aoadmin;
+grant all                            on email_pipes to aoadmin;
 grant select, insert, update, delete on email_pipes to aoserv_app;

@@ -4,5 +4,5 @@ create table technology_classes (
   description text
     not null
 );
-grant all on technology_classes to aoadmin;
+grant all    on technology_classes to aoadmin;
 grant select on technology_classes to aoserv_app;

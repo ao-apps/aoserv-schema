@@ -1,5 +1,5 @@
 create sequence distro_files_pkey_seq cycle;
-grant all on distro_files_pkey_seq to aoadmin;
+grant all            on distro_files_pkey_seq to aoadmin;
 grant select, update on distro_files_pkey_seq to aoserv_app;
 
 create table distro_files (
@@ -28,5 +28,5 @@ create table distro_files (
   symlink_target text,
   unique("path", operating_system_version)
 );
-grant all on distro_files to aoadmin;
+grant all    on distro_files to aoadmin;
 grant select on distro_files to aoserv_app;

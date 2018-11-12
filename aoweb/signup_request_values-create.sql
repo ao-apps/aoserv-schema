@@ -9,7 +9,7 @@
  *
  *********************************************************************/
 create sequence signup_request_values_pkey_seq cycle;
-grant all on signup_request_values_pkey_seq to aoadmin;
+grant all            on signup_request_values_pkey_seq to aoadmin;
 grant select, update on signup_request_values_pkey_seq to aoweb_app;
 
 create table signup_request_values (
@@ -23,5 +23,5 @@ create table signup_request_values (
   value text,
   unique(request, name)
 );
-grant all on signup_request_values to aoadmin;
+grant all                    on signup_request_values to aoadmin;
 grant select, insert, delete on signup_request_values to aoweb_app;

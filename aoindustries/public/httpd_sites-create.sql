@@ -1,5 +1,5 @@
 create sequence httpd_sites_pkey_seq cycle;
-grant all on httpd_sites_pkey_seq to aoadmin;
+grant all            on httpd_sites_pkey_seq to aoadmin;
 grant select, update on httpd_sites_pkey_seq to aoserv_app;
 
 create table httpd_sites (
@@ -62,5 +62,5 @@ create table httpd_sites (
   block_editor_backups boolean not null default true,
   unique(ao_server, site_name)
 );
-grant all on httpd_sites to aoadmin;
+grant all                            on httpd_sites to aoadmin;
 grant select, insert, update, delete on httpd_sites to aoserv_app;

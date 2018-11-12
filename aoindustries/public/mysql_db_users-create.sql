@@ -1,5 +1,5 @@
 create sequence mysql_db_users_pkey_seq cycle;
-grant all on mysql_db_users_pkey_seq to aoadmin;
+grant all            on mysql_db_users_pkey_seq to aoadmin;
 grant select, update on mysql_db_users_pkey_seq to aoserv_app;
 
 create table mysql_db_users (
@@ -69,5 +69,5 @@ create table mysql_db_users (
     default false,
   unique (mysql_database, mysql_server_user)
 );
-grant all on mysql_db_users to aoadmin;
+grant all                            on mysql_db_users to aoadmin;
 grant select, update, insert, delete on mysql_db_users to aoserv_app;

@@ -1,5 +1,5 @@
 create sequence net_bind_firewalld_zones_pkey_seq cycle;
-grant all on net_bind_firewalld_zones_pkey_seq to aoadmin;
+grant all            on net_bind_firewalld_zones_pkey_seq to aoadmin;
 grant select, update on net_bind_firewalld_zones_pkey_seq to aoserv_app;
 
 create table net_bind_firewalld_zones (
@@ -12,5 +12,5 @@ create table net_bind_firewalld_zones (
     not null,
   unique(net_bind, firewalld_zone)
 );
-grant all on net_bind_firewalld_zones to aoadmin;
+grant all                    on net_bind_firewalld_zones to aoadmin;
 grant select, insert, delete on net_bind_firewalld_zones to aoserv_app;

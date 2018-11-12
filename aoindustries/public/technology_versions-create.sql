@@ -1,5 +1,5 @@
 create sequence technology_versions_pkey_seq cycle;
-grant all on technology_versions_pkey_seq to aoadmin;
+grant all            on technology_versions_pkey_seq to aoadmin;
 grant select, update on technology_versions_pkey_seq to aoserv_app;
 
 create table technology_versions (
@@ -26,5 +26,5 @@ create table technology_versions (
   ),
   unique("name", version, operating_system_version)
 );
-grant all on technology_versions to aoadmin;
+grant all    on technology_versions to aoadmin;
 grant select on technology_versions to aoserv_app;

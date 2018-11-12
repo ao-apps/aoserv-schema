@@ -1,5 +1,5 @@
 create sequence linux_server_groups_pkey_seq cycle;
-grant all on linux_server_groups_pkey_seq to aoadmin;
+grant all            on linux_server_groups_pkey_seq to aoadmin;
 grant select, update on linux_server_groups_pkey_seq to aoserv_app;
 
 create table linux_server_groups (
@@ -18,5 +18,5 @@ create table linux_server_groups (
   unique(name, ao_server),
   unique(ao_server, gid)
 );
-grant all on linux_server_groups to aoadmin;
+grant all                            on linux_server_groups to aoadmin;
 grant select, insert, update, delete on linux_server_groups to aoserv_app;

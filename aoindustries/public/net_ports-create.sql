@@ -5,5 +5,5 @@ create table net_ports (
   is_user boolean
     not null
 );
-grant all on net_ports to aoadmin;
+grant all    on net_ports to aoadmin;
 grant select on net_ports to aoserv_app;

@@ -8,5 +8,5 @@ create table server_farms (
   use_restricted_smtp_port bool
     not null
 );
-grant all on server_farms to aoadmin;
+grant all    on server_farms to aoadmin;
 grant select on server_farms to aoserv_app;

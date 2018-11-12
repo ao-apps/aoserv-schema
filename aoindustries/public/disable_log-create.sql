@@ -1,5 +1,5 @@
 create sequence disable_log_pkey_seq cycle;
-grant all on disable_log_pkey_seq to aoadmin;
+grant all            on disable_log_pkey_seq to aoadmin;
 grant select, update on disable_log_pkey_seq to aoserv_app;
 
 create table disable_log (
@@ -15,5 +15,5 @@ create table disable_log (
     not null,
   disable_reason text
 );
-grant all on disable_log to aoadmin;
+grant all                    on disable_log to aoadmin;
 grant select, insert, delete on disable_log to aoserv_app;

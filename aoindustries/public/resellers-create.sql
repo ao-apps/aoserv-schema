@@ -3,5 +3,5 @@ create table resellers (
   -- Ticket-specific settings
   ticket_auto_escalate bool not null
 );
-grant all on resellers to aoadmin;
+grant all    on resellers to aoadmin;
 grant select on resellers to aoserv_app;

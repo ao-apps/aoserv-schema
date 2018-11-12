@@ -1,5 +1,5 @@
 create sequence httpd_site_bind_redirects_pkey_seq cycle;
-grant all on httpd_site_bind_redirects_pkey_seq to aoadmin;
+grant all    on httpd_site_bind_redirects_pkey_seq to aoadmin;
 grant select on httpd_site_bind_redirects_pkey_seq to aoserv_app; -- , update
 
 create table httpd_site_bind_redirects (
@@ -18,5 +18,5 @@ create table httpd_site_bind_redirects (
   unique(httpd_site_bind, sort_order),
   unique(pattern, httpd_site_bind)
 );
-grant all on httpd_site_bind_redirects to aoadmin;
+grant all            on httpd_site_bind_redirects to aoadmin;
 grant select, delete on httpd_site_bind_redirects to aoserv_app; -- , insert, update

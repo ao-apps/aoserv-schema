@@ -14,5 +14,5 @@ create table dns_zones (
   ttl integer
     not null
 );
-grant all on dns_zones to aoadmin;
+grant all                            on dns_zones to aoadmin;
 grant select, insert, update, delete on dns_zones to aoserv_app;

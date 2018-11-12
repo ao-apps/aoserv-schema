@@ -1,5 +1,5 @@
 create sequence sendmail_servers_pkey_seq cycle;
-grant all on sendmail_servers_pkey_seq to aoadmin;
+grant all    on sendmail_servers_pkey_seq to aoadmin;
 grant select on sendmail_servers_pkey_seq to aoserv_app;
 
 create table sendmail_servers (
@@ -98,5 +98,5 @@ create table sendmail_servers (
   client_addr_inet  integer,
   client_addr_inet6 integer
 );
-grant all on sendmail_servers to aoadmin;
+grant all    on sendmail_servers to aoadmin;
 grant select on sendmail_servers to aoserv_app;

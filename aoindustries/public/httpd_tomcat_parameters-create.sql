@@ -1,5 +1,5 @@
 create sequence httpd_tomcat_parameters_pkey_seq cycle;
-grant all on httpd_tomcat_parameters_pkey_seq to aoadmin;
+grant all            on httpd_tomcat_parameters_pkey_seq to aoadmin;
 grant select, update on httpd_tomcat_parameters_pkey_seq to aoserv_app;
 
 create table httpd_tomcat_parameters (
@@ -18,5 +18,5 @@ create table httpd_tomcat_parameters (
   description text,
   unique(tomcat_context, "name")
 );
-grant all on httpd_tomcat_parameters to aoadmin;
+grant all                            on httpd_tomcat_parameters to aoadmin;
 grant select, insert, update, delete on httpd_tomcat_parameters to aoserv_app;

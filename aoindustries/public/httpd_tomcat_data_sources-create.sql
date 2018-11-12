@@ -1,5 +1,5 @@
 create sequence httpd_tomcat_data_sources_pkey_seq cycle;
-grant all on httpd_tomcat_data_sources_pkey_seq to aoadmin;
+grant all            on httpd_tomcat_data_sources_pkey_seq to aoadmin;
 grant select, update on httpd_tomcat_data_sources_pkey_seq to aoserv_app;
 
 create table httpd_tomcat_data_sources (
@@ -27,5 +27,5 @@ create table httpd_tomcat_data_sources (
   validation_query text,
   unique(tomcat_context, name)
 );
-grant all on httpd_tomcat_data_sources to aoadmin;
+grant all                            on httpd_tomcat_data_sources to aoadmin;
 grant select, insert, update, delete on httpd_tomcat_data_sources to aoserv_app;

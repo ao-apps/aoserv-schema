@@ -1,5 +1,5 @@
 create sequence business_profiles_pkey_seq cycle;
-grant all on business_profiles_pkey_seq to aoadmin;
+grant all            on business_profiles_pkey_seq to aoadmin;
 grant select, update on business_profiles_pkey_seq to aoserv_app;
 
 create table business_profiles (
@@ -45,5 +45,5 @@ create table business_profiles (
     not null,
   unique(accounting, priority)
 );
-grant all on business_profiles to aoadmin;
+grant all                    on business_profiles to aoadmin;
 grant select, insert, update on business_profiles to aoserv_app;

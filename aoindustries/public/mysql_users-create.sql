@@ -87,5 +87,5 @@ create table mysql_users (
     default false,
   disable_log integer
 );
-grant all on mysql_users to aoadmin;
+grant all                            on mysql_users to aoadmin;
 grant select, insert, update, delete on mysql_users to aoserv_app;

@@ -10,5 +10,5 @@ create table bank_accounts (
   withdrawal_delay integer
     not null
 );
-grant all on bank_accounts to aoadmin;
+grant all    on bank_accounts to aoadmin;
 grant select on bank_accounts to aoserv_app;

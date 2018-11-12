@@ -15,7 +15,7 @@
  *
  *********************************************************************/
 create sequence info_categories_pkey_seq cycle;
-grant all on info_categories_pkey_seq to aoadmin;
+grant all            on info_categories_pkey_seq to aoadmin;
 grant select, update on info_categories_pkey_seq to aoweb_app;
 
 create table info_categories (
@@ -40,5 +40,5 @@ create table info_categories (
     not null,
   unique(type, category)
 );
-grant all on info_categories to aoadmin;
+grant all    on info_categories to aoadmin;
 grant select on info_categories to aoweb_app;

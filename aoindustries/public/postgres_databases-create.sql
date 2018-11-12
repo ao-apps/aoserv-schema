@@ -1,5 +1,5 @@
 create sequence postgres_databases_pkey_seq cycle;
-grant all on postgres_databases_pkey_seq to aoadmin;
+grant all            on postgres_databases_pkey_seq to aoadmin;
 grant select, update on postgres_databases_pkey_seq to aoserv_app;
 
 create table postgres_databases (
@@ -22,5 +22,5 @@ create table postgres_databases (
     not null,
   unique (name, postgres_server)
 );
-grant all on postgres_databases to aoadmin;
+grant all                            on postgres_databases to aoadmin;
 grant select, insert, update, delete on postgres_databases to aoserv_app;

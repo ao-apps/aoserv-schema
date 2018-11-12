@@ -15,7 +15,7 @@
  *
  *********************************************************************/
 create sequence shameless_plus_pkey_seq cycle;
-grant all on shameless_plus_pkey_seq to aoadmin;
+grant all            on shameless_plus_pkey_seq to aoadmin;
 grant select, update on shameless_plus_pkey_seq to aoweb_app;
 
 create table shameless_plugs (

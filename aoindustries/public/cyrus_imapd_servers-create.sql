@@ -61,5 +61,5 @@ create table cyrus_imapd_servers (
       )
     )
 );
-grant all on cyrus_imapd_servers to aoadmin;
+grant all    on cyrus_imapd_servers to aoadmin;
 grant select on cyrus_imapd_servers to aoserv_app;

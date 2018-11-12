@@ -1,5 +1,5 @@
 create sequence httpd_site_binds_pkey_seq cycle;
-grant all on httpd_site_binds_pkey_seq to aoadmin;
+grant all            on httpd_site_binds_pkey_seq to aoadmin;
 grant select, update on httpd_site_binds_pkey_seq to aoserv_app;
 
 create table httpd_site_binds (
@@ -33,5 +33,5 @@ create table httpd_site_binds (
       or include_site_config like 'IfModule %'
     )
 );
-grant all on httpd_site_binds to aoadmin;
+grant all                            on httpd_site_binds to aoadmin;
 grant select, insert, update, delete on httpd_site_binds to aoserv_app;

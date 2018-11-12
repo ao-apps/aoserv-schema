@@ -15,5 +15,5 @@ create table physical_servers (
   supports_hvm boolean,
   ups_type text not null check (ups_type in ('none', 'datacenter', 'apc')) default 'none'
 );
-grant all on physical_servers to aoadmin;
+grant all    on physical_servers to aoadmin;
 grant select on physical_servers to aoserv_app;

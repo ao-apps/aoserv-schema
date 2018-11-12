@@ -43,5 +43,5 @@ create table virtual_servers (
     unique
     check (length(vnc_password)>=8) -- Must be at least 8 characters
 );
-grant all on virtual_servers to aoadmin;
+grant all    on virtual_servers to aoadmin;
 grant select on virtual_servers to aoserv_app;

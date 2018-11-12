@@ -4,5 +4,5 @@ create table distro_file_types (
   description text
     not null
 );
-grant all on distro_file_types to aoadmin;
+grant all    on distro_file_types to aoadmin;
 grant select on distro_file_types to aoserv_app;

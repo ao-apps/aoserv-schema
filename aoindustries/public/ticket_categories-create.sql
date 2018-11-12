@@ -7,5 +7,5 @@ create table ticket_categories (
         and (name not like '%/%') -- For "/ path"
     )
 );
-grant all on ticket_categories to aoadmin;
+grant all    on ticket_categories to aoadmin;
 grant select on ticket_categories to aoserv_app;

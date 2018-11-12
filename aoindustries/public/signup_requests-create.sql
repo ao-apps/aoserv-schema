@@ -1,5 +1,5 @@
 create sequence signup_requests_pkey_seq cycle;
-grant all on signup_requests_pkey_seq to aoadmin;
+grant all            on signup_requests_pkey_seq to aoadmin;
 grant select, update on signup_requests_pkey_seq to aoserv_app;
 
 create table signup_requests (
@@ -46,5 +46,5 @@ create table signup_requests (
   completed_by text,
   completed_time timestamp with time zone
 );
-grant all on signup_requests to aoadmin;
+grant all                            on signup_requests to aoadmin;
 grant select, insert, update, delete on signup_requests to aoserv_app;

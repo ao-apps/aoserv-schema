@@ -1,5 +1,5 @@
 create sequence ip_addresses_pkey_seq cycle;
-grant all on ip_addresses_pkey_seq to aoadmin;
+grant all            on ip_addresses_pkey_seq to aoadmin;
 grant select, update on ip_addresses_pkey_seq to aoserv_app;
 
 create table ip_addresses (
@@ -39,5 +39,5 @@ create table ip_addresses (
     =(hostname is null)
   )
 );
-grant all on ip_addresses to aoadmin;
+grant all            on ip_addresses to aoadmin;
 grant select, update on ip_addresses to aoserv_app;

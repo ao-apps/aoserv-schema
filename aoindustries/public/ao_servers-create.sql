@@ -70,5 +70,5 @@ create table ao_servers (
     or sftp_umask between 0 and 511 -- Between 000 and 777 octal
   )
 );
-grant all on ao_servers to aoadmin;
+grant all            on ao_servers to aoadmin;
 grant select, update on ao_servers to aoserv_app;

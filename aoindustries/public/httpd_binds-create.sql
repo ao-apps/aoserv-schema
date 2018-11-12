@@ -4,5 +4,5 @@ create table httpd_binds (
   httpd_server integer
     not null
 );
-grant all on httpd_binds to aoadmin;
+grant all                            on httpd_binds to aoadmin;
 grant select, insert, update, delete on httpd_binds to aoserv_app;

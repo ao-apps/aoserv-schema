@@ -1,5 +1,5 @@
 create sequence httpd_site_bind_headers_pkey_seq cycle;
-grant all on httpd_site_bind_headers_pkey_seq to aoadmin;
+grant all    on httpd_site_bind_headers_pkey_seq to aoadmin;
 grant select on httpd_site_bind_headers_pkey_seq to aoserv_app; -- , update
 
 -- See https://httpd.apache.org/docs/2.4/mod/mod_headers.html
@@ -34,5 +34,5 @@ create table httpd_site_bind_headers (
   comment         text,
   unique(httpd_site_bind, sort_order)
 );
-grant all on httpd_site_bind_headers to aoadmin;
+grant all            on httpd_site_bind_headers to aoadmin;
 grant select, delete on httpd_site_bind_headers to aoserv_app; -- , insert, update

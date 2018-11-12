@@ -46,5 +46,5 @@ create table aoserv_howtos (
   simple_client_code text,
   full_client_code text
 );
-grant all on aoserv_howtos to aoadmin;
+grant all    on aoserv_howtos to aoadmin;
 grant select on aoserv_howtos to aoweb_app;

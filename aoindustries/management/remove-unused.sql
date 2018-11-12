@@ -34,5 +34,5 @@ union all (select 'ssl_certificates', count(*) as unused from management."remove
 -- TODO: business_servers (access to a server but without any resources - useful?)
 ;
 
-revoke all on management."remove-unused" from aoadmin;
-grant select on management."remove-unused" to aoadmin;
+revoke all    on management."remove-unused" from aoadmin;
+grant  select on management."remove-unused" to   aoadmin;

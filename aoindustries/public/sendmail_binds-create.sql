@@ -10,5 +10,5 @@ create table sendmail_binds (
       or "name" not like '% %'
     )
 );
-grant all on sendmail_binds to aoadmin;
+grant all            on sendmail_binds to aoadmin;
 grant select, delete on sendmail_binds to aoserv_app;

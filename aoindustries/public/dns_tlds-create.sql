@@ -4,5 +4,5 @@ create table dns_tlds (
   description text
     not null
 );
-grant all on dns_tlds to aoadmin;
+grant all    on dns_tlds to aoadmin;
 grant select on dns_tlds to aoserv_app;

@@ -1,5 +1,5 @@
 create sequence master_servers_pkey_seq cycle;
-grant all on master_servers_pkey_seq to aoadmin;
+grant all            on master_servers_pkey_seq to aoadmin;
 grant select, update on master_servers_pkey_seq to aoserv_app;
 
 create table master_servers (
@@ -12,5 +12,5 @@ create table master_servers (
     not null,
   unique(username, server)
 );
-grant all on master_servers to aoadmin;
+grant all            on master_servers to aoadmin;
 grant select, insert on master_servers to aoserv_app;

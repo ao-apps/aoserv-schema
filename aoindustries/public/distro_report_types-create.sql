@@ -4,5 +4,5 @@ create table distro_report_types (
   display text
     not null
 );
-grant all on distro_report_types to aoadmin;
+grant all    on distro_report_types to aoadmin;
 grant select on distro_report_types to aoserv_app;

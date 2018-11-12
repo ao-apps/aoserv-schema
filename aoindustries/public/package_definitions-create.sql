@@ -1,5 +1,5 @@
 create sequence package_definitions_pkey_seq cycle;
-grant all on package_definitions_pkey_seq to aoadmin;
+grant all            on package_definitions_pkey_seq to aoadmin;
 grant select, update on package_definitions_pkey_seq to aoserv_app;
 
 create table package_definitions (
@@ -29,5 +29,5 @@ create table package_definitions (
   approved bool
     not null
 );
-grant all on package_definitions to aoadmin;
+grant all                            on package_definitions to aoadmin;
 grant select, insert, update, delete on package_definitions to aoserv_app;

@@ -10,5 +10,5 @@ create table aosh_commands (
     not null,
   last_version text
 );
-grant all on aosh_commands to aoadmin;
+grant all    on aosh_commands to aoadmin;
 grant select on aosh_commands to aoserv_app;

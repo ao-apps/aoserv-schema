@@ -1,5 +1,5 @@
 create or replace view
-  management."cleanup-cvs_repositories"
+  management."cleanup-canceled-cvs_repositories"
 as select
   bu.accounting,
   'remove_cvs_repository ' || ao.hostname || ' ' || cr."path" as aosh_command,
@@ -15,5 +15,5 @@ from
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 
-revoke all on management."cleanup-cvs_repositories" from aoadmin;
-grant select on management."cleanup-cvs_repositories" to aoadmin;
+revoke all on management."cleanup-canceled-cvs_repositories" from aoadmin;
+grant select on management."cleanup-canceled-cvs_repositories" to aoadmin;

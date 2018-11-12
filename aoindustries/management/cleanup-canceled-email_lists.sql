@@ -1,5 +1,5 @@
 create or replace view
-  management."cleanup-email_lists"
+  management."cleanup-canceled-email_lists"
 as select
   bu.accounting,
   'remove_email_list ' || el."path" || ' ' || ao.hostname as aosh_command,
@@ -15,5 +15,5 @@ from
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 
-revoke all on management."cleanup-email_lists" from aoadmin;
-grant select on management."cleanup-email_lists" to aoadmin;
+revoke all on management."cleanup-canceled-email_lists" from aoadmin;
+grant select on management."cleanup-canceled-email_lists" to aoadmin;

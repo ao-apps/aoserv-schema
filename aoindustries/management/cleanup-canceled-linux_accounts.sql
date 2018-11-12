@@ -1,5 +1,5 @@
 create or replace view
-  management."cleanup-linux_accounts"
+  management."cleanup-canceled-linux_accounts"
 as select
   bu.accounting,
   'remove_linux_account ' || la.username as aosh_command,
@@ -12,5 +12,5 @@ from
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 
-revoke all on management."cleanup-linux_accounts" from aoadmin;
-grant select on management."cleanup-linux_accounts" to aoadmin;
+revoke all on management."cleanup-canceled-linux_accounts" from aoadmin;
+grant select on management."cleanup-canceled-linux_accounts" to aoadmin;

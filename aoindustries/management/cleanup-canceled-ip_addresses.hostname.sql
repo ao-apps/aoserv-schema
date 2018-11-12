@@ -1,5 +1,5 @@
 create or replace view
-  management."cleanup-ip_addresses.hostname"
+  management."cleanup-canceled-ip_addresses.hostname"
 as select
   bu.accounting,
   'set_ip_address_hostname '
@@ -28,5 +28,5 @@ from
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 
-revoke all on management."cleanup-ip_addresses.hostname" from aoadmin;
-grant select on management."cleanup-ip_addresses.hostname" to aoadmin;
+revoke all on management."cleanup-canceled-ip_addresses.hostname" from aoadmin;
+grant select on management."cleanup-canceled-ip_addresses.hostname" to aoadmin;

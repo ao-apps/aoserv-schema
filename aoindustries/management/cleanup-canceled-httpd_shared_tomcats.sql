@@ -1,5 +1,5 @@
 create or replace view
-  management."cleanup-httpd_shared_tomcats"
+  management."cleanup-canceled-httpd_shared_tomcats"
 as select
   bu.accounting,
   'remove_httpd_shared_tomcat ' || hst.name || ' ' || ao.hostname as aosh_command,
@@ -15,5 +15,5 @@ from
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 
-revoke all on management."cleanup-httpd_shared_tomcats" from aoadmin;
-grant select on management."cleanup-httpd_shared_tomcats" to aoadmin;
+revoke all on management."cleanup-canceled-httpd_shared_tomcats" from aoadmin;
+grant select on management."cleanup-canceled-httpd_shared_tomcats" to aoadmin;

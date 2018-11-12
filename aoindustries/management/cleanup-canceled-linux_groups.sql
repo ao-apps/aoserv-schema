@@ -1,5 +1,5 @@
 create or replace view
-  management."cleanup-linux_groups"
+  management."cleanup-canceled-linux_groups"
 as select
   bu.accounting,
   'remove_linux_group ' || lg."name" as aosh_command,
@@ -11,5 +11,5 @@ from
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 
-revoke all on management."cleanup-linux_groups" from aoadmin;
-grant select on management."cleanup-linux_groups" to aoadmin;
+revoke all on management."cleanup-canceled-linux_groups" from aoadmin;
+grant select on management."cleanup-canceled-linux_groups" to aoadmin;

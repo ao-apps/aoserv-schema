@@ -1,5 +1,5 @@
 create or replace view
-  management."cleanup-mysql_databases"
+  management."cleanup-canceled-mysql_databases"
 as select
   bu.accounting,
   'remove_mysql_database ' || md."name" || ' ' || ms."name" || ' ' || ao.hostname as aosh_command,
@@ -15,5 +15,5 @@ from
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 
-revoke all on management."cleanup-mysql_databases" from aoadmin;
-grant select on management."cleanup-mysql_databases" to aoadmin;
+revoke all on management."cleanup-canceled-mysql_databases" from aoadmin;
+grant select on management."cleanup-canceled-mysql_databases" to aoadmin;

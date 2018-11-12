@@ -1,4 +1,4 @@
--- See http://localhost:8080/docs/ao/software/3rd-party/postgresql/remove-postgresql-server#procedure
+-- See http://localhost:8080/docs/ao/management/postgresql/remove-postgresql-server#procedure
 create or replace view
   management."remove-postgresql-server"
 as select

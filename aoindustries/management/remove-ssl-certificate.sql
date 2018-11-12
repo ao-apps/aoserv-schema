@@ -1,4 +1,4 @@
--- See http://localhost:8080/docs/ao/management/remove/ssl-certificate#procedure
+-- See http://localhost:8080/docs/ao/management/ssl-certificates/remove#procedure
 create or replace view
   management."remove-ssl-certificate"
 as

@@ -8,11 +8,11 @@ echo "delete from schema_types;"
 echo "drop table if exists aoserv_protocols_last_used;"
 echo "create table aoserv_protocols_last_used as select version, last_used from aoserv_protocols;"
 echo "delete from aoserv_protocols;"
-cat ${DIR}/aoindustries/aoserv_protocols-data1.sql
+cat "${DIR}/aoindustries/public/aoserv_protocols-data1.sql"
 echo "update aoserv_protocols ap set last_used=(select aplu.last_used from aoserv_protocols_last_used aplu where aplu.version=ap.version) where ap.last_used is null;"
 echo "drop table aoserv_protocols_last_used;"
-cat ${DIR}/aoindustries/schema_types-data1.sql
-cat ${DIR}/aoindustries/schema_tables-data1.sql
-cat ${DIR}/aoindustries/schema_columns-data1.sql
-cat ${DIR}/aoindustries/aosh_commands-data1.sql
-cat ${DIR}/aoindustries/schema_foreign_keys-data2.sql
+cat "${DIR}/aoindustries/public/schema_types-data1.sql"
+cat "${DIR}/aoindustries/public/schema_tables-data1.sql"
+cat "${DIR}/aoindustries/public/schema_columns-data1.sql"
+cat "${DIR}/aoindustries/public/aosh_commands-data1.sql"
+cat "${DIR}/aoindustries/public/schema_foreign_keys-data2.sql"

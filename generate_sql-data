@@ -3,13 +3,13 @@ DIR=`dirname "$0"`
 DB_NAME="$1"
 if [ "$DB_NAME" = "" ]
 then
-	echo "usage: $0 {aoweb|aoindustries}" 2>&1
+	echo "usage: $0 {aoweb|aoindustries/public}" 2>&1
 	exit 1
 fi
 
 for TYPE in data1 data2 data3
 do
-	for FILE in ${DIR}/${DB_NAME}/*-${TYPE}.sql
+	for FILE in "${DIR}/${DB_NAME}"/*-"${TYPE}.sql"
 	do
 		if [ -f "${FILE}" ]
 		then

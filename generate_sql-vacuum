@@ -3,10 +3,10 @@ DIR=`dirname "$0"`
 DB_NAME="$1"
 if [ "$DB_NAME" = "" ]
 then
-	echo "usage: $0 {aoweb|aoindustries}" 2>&1
+	echo "usage: $0 {aoweb|aoindustries/public}" 2>&1
 	exit 1
 fi
-grep -h -i "create table" ${DIR}/${DB_NAME}/*.sql | cut -c14- | cut -d\  -f1 | while read TABLE_NAME
+grep -h -i "create table" "${DIR}/${DB_NAME}"/*.sql | cut -c14- | cut -d\  -f1 | while read TABLE_NAME
 do
 	echo "vacuum full analyze ${TABLE_NAME};"
 done

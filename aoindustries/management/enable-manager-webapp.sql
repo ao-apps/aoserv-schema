@@ -3,14 +3,11 @@ create or replace view
   management."enable-manager-webapp"
 as
 select
-  -- TODO: Update manager webapps during in-place Tomcat version upgrades
-  -- TODO: Switch to this style configuration on ao1.kc.aoindustries.com
   (
     select count(*) from public.httpd_tomcat_contexts htc
     where
       htc.tomcat_site = hts.httpd_site
-      -- TODO: Test this regexp once we have some configured
-      and htc.doc_base similar to '^/opt/apache-tomcat-[0-9]+.[0-9]+/webapps/manager$'
+      and htc.doc_base ~ '^/opt/apache-tomcat-\d+\.\d+/webapps/manager$'
   ) as num_manager_webapps,
   ao.hostname as "SERVER",
   hs.site_name as "SITE_NAME",

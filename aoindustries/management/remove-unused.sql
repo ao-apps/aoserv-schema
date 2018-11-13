@@ -7,12 +7,14 @@ as
 -- TODO: email_domains with no addresses
 -- TODO: email_pipes with no addresses
 -- TODO: httpd_shared_tomcats
--- TODO: httpd_servers
+-- httpd_servers
+          (select 'httpd_servers', count(*) as unused from management."remove-httpd-server"
+           where num_site_binds=0)
 -- TODO: mysql_databases (without any mysql_db_users)
 -- TODO: mysql_server_users (without any mysql_db_users)
 -- TODO: mysql_users (orphaned)
 -- mysql_servers
-          (select 'mysql_servers', count(*) as unused from management."remove-mysql-server"
+union all (select 'mysql_servers', count(*) as unused from management."remove-mysql-server"
            where num_databases=0 or num_users=0)
 -- TODO: postgres_databases (without any postgres_users in same business?/package?)
 -- TODO: postgres_server_users (without any postgres_databases in same business?/package?)

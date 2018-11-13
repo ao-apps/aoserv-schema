@@ -11,7 +11,22 @@ select
   ao.hostname as "SERVER",
   case when osv.operating_system='centos' then 'CentOS' else osv.operating_system end
     || ' ' || osv.version_number as "OS",
+  (
+    select
+      case when scn.is_wildcard then '*.' else '' end
+      || scn."domain"
+    from
+      ssl_certificate_names scn
+    where
+      scn.ssl_certificate=sc.pkey
+      and scn.is_common_name
+  ) as "COMMON_NAME",
   sc.certbot_name as "CERTBOT_NAME",
+  case when (
+    select sc2.pkey from public.ssl_certificates sc2 where
+      sc2.ao_server=sc.ao_server and sc2.pkey!=sc.pkey and sc2.certbot_name is not null
+    limit 1
+  ) is not null then 'Yes' else 'No' end as "HAS_OTHER_CERTBOT",
   case when sc.certbot_name is null then sc.key_file   else null end as "KEY_FILE",
   case when sc.certbot_name is null then sc.csr_file   else null end as "CSR_FILE",
   case when sc.certbot_name is null then sc.cert_file  else null end as "CERT_FILE",

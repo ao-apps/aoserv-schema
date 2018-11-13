@@ -1037,6 +1037,10 @@ begin;
 select add_schema_foreign_key('ssl_certificate_names', 'ssl_certificate', 'ssl_certificates', 'pkey', '1.81.10', null);
 commit;
 begin;
+\echo ssl_certificate_other_uses
+select add_schema_foreign_key('ssl_certificate_other_uses', 'ssl_certificate', 'ssl_certificates', 'pkey', '1.81.16', null);
+commit;
+begin;
 \echo ssl_certificates
 select add_schema_foreign_key('ssl_certificates', 'ao_server', 'ao_servers', 'server', '1.81.10', null);
 select add_schema_foreign_key('ssl_certificates', 'package', 'packages', 'pkey', '1.81.10', null);

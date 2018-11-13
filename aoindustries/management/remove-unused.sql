@@ -23,7 +23,7 @@ union all (select 'postgres_servers', count(*) as unused from management."remove
 -- TODO: sendmail_servers without any sendmail_binds
 -- ssl_certificates
 union all (select 'ssl_certificates', count(*) as unused from management."remove-ssl-certificate"
-           where num_cyrus_imapd_binds=0 and num_cyrus_imapd_servers=0 and num_httpd_site_binds=0 and num_sendmail_servers=0)
+           where num_cyrus_imapd_binds=0 and num_cyrus_imapd_servers=0 and num_httpd_site_binds=0 and num_sendmail_servers=0 and num_other_uses=0)
 -- TODO: firewalld_zones
 -- TODO: ip_addresses
 -- TODO: ftp_guest_users

@@ -2959,6 +2959,14 @@ insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ssl_certi
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ssl_certificate_names', 'domain',          4, 'domain_name', false, false, false, 'the domain name',                                              '1.81.10', null;
 commit;
 begin;
+\echo ssl_certificate_other_uses
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ssl_certificate_other_uses', 'pkey',            0, 'pkey',   false,  true, false, 'a generated primary key',                                                 '1.81.16', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ssl_certificate_other_uses', 'ssl_certificate', 1, 'fkey',   false, false, false, 'the pkey of the SSL certificate this name is on',                         '1.81.16', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ssl_certificate_other_uses', 'sort_order',      2, 'short',  false, false, false, 'the per-certificate unique sort ordering',                                '1.81.16', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ssl_certificate_other_uses', 'count',           3, 'int',    false, false, false, 'the number of times this other resource uses the certificate',            '1.81.16', null;
+insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ssl_certificate_other_uses', 'display',         4, 'string', false, false, false, 'a short display value, which will often follow the count when displayed', '1.81.16', null;
+commit;
+begin;
 \echo ssl_certificates
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ssl_certificates', 'pkey',         0, 'pkey',  false,  true, false, 'a generated primary key',                                    '1.81.10', null;
 insert into schema_columns select nextval('schema_columns_pkey_seq'), 'ssl_certificates', 'ao_server',    1, 'fkey',  false, false, false, 'the pkey of the server the SSL certificate is on',           '1.81.10', null;

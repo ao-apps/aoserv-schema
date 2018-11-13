@@ -1438,6 +1438,11 @@ insert into aoserv_protocols values(
   '2018-10-26',
   'added httpd_site_bind_headers table'
 );
+insert into aoserv_protocols values(
+  '1.81.16',
+  '2018-11-12',
+  'added ssl_certificate_other_uses table'
+);
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table

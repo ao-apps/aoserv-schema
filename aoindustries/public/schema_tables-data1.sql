@@ -1932,6 +1932,15 @@ insert into schema_tables values(
     null
 );
 insert into schema_tables values(
+    'ssl_certificate_other_uses',
+    (select count(*) from schema_tables),
+    'SSL Certificate Other Uses',
+    false,
+    'The ssl_certificate_other_uses contains additional descriptions of how SSL certificates are used.',
+    '1.81.16',
+    null
+);
+insert into schema_tables values(
     'ssl_certificates',
     (select count(*) from schema_tables),
     'SSL Certificates',

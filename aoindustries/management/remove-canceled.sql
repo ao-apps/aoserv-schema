@@ -23,13 +23,13 @@ union all (select accounting, aosh_command from management."remove-canceled-post
 union all (select accounting, aosh_command from management."remove-canceled-postgres_users" order by accounting, username)
 -- TODO: postgres_servers
 -- TODO: sendmail_servers without any sendmail_binds
--- TODO: ssl_certificates (once have auto-cleanup within aoserv-daemon)
 -- net_binds
 union all (select accounting, aosh_command from management."remove-canceled-net_binds" order by accounting, port)
 -- ip_addresses.hostname
 union all (select accounting, aosh_command from management."remove-canceled-ip_addresses.hostname" order by accounting, reverse_hostname(hostname), pad_ip_address(ip_address))
 -- ip_addresses.package
 union all (select accounting, aosh_command from management."remove-canceled-ip_addresses.package" order by accounting, reverse_hostname(hostname), pad_ip_address(ip_address))
+-- TODO: ssl_certificates (once have auto-cleanup within aoserv-daemon)
 -- TODO: servers (once a server is owned by a package in the schema)
 -- linux_accounts
 union all (select accounting, aosh_command from management."remove-canceled-linux_accounts" order by accounting, username)

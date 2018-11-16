@@ -37,7 +37,10 @@ create table ip_addresses (
     -- Only the unspecified IP addresses may have a null hostname
     (ip_address='0.0.0.0')
     =(hostname is null)
-  )
+  ),
+  monitoring_enabled boolean
+    not null
+    default true
 );
 grant all            on ip_addresses to aoadmin;
 grant select, update on ip_addresses to aoserv_app;

@@ -2064,6 +2064,14 @@ insert into aosh_commands values(
   null
 );
 insert into aosh_commands values(
+  'set_ip_address_monitoring_enabled',
+  'ip_addresses',
+  'enables or disables the monitoring of an IP address',
+  '<i>ip_address</i> <i>server</i> <i>net_device</i> <i>enabled</i>',
+  '1.81.17',
+  null
+);
+insert into aosh_commands values(
   'set_ip_address_package',
   'ip_addresses',
   'sets the package ownership of an IP address',

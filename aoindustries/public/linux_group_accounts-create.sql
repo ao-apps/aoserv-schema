@@ -6,7 +6,7 @@ create table linux_group_accounts (
   pkey integer
     default nextval('linux_group_accounts_pkey_seq')
     constraint linux_group_accounts_pkey primary key,
-  group_name text
+  "group" text
     not null,
   username text
     not null,

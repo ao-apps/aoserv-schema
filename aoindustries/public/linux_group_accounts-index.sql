@@ -1,12 +1,12 @@
 -- Unique group, user when osv not provided
 create unique index linux_group_accounts_uni_no_osv on linux_group_accounts (
-  group_name,
+  "group",
   username
 ) where operating_system_version is null;
 
 -- Unique group, user when osv provided
 create unique index linux_group_accounts_uni_osv on linux_group_accounts (
-  group_name,
+  "group",
   username,
   operating_system_version
 ) where operating_system_version is not null;

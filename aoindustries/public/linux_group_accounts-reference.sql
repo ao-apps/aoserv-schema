@@ -1,7 +1,7 @@
 alter table linux_group_accounts
-  add constraint group_name_fkey
-  foreign key (group_name)
-  references linux_groups (name)
+  add constraint group_fkey
+  foreign key ("group")
+  references linux_groups ("name")
   on delete restrict
   on update cascade
 ;

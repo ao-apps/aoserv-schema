@@ -6,7 +6,7 @@ select
   hs.pkey,
   hs.ao_server,
   ao.hostname,
-  hs.site_name,
+  hs."name",
   hs.list_first,
   hs.is_manual,
   tv.version as php,

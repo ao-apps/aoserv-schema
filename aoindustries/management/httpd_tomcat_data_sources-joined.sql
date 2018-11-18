@@ -5,7 +5,7 @@ as
 select
   ao.hostname,
   htds.pkey,
-  hs.site_name,
+  hs."name" as site_name,
   htc."path",
   htds."name",
   htds.driver_class_name,

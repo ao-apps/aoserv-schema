@@ -4,7 +4,7 @@ create or replace view
 as
 select
   ao.hostname as "SERVER",
-  hs.site_name as "SITE_NAME", hs.linux_group as "LINUX_GROUP",
+  hs."name" as "SITE_NAME", hs.linux_group as "LINUX_GROUP",
   is_80.pkey as "HSB_80", is_443.pkey as "HSB_443",
   coalesce(is_443."name", is_80."name", '') as "HSB_NAME",
   coalesce(is_443.disable_log, is_80.disable_log) as "DISABLE_LOG",

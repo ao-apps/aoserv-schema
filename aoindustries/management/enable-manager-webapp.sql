@@ -10,7 +10,7 @@ select
       and htc.doc_base ~ '^/opt/apache-tomcat-\d+\.\d+/webapps/manager$'
   ) as num_manager_webapps,
   ao.hostname as "SERVER",
-  hs.site_name as "SITE_NAME",
+  hs."name" as "SITE_NAME",
   hst."name" as "SHARED_TOMCAT",
   substring(tv.version from '^\d+\.\d+') as "VERSION",
   case when exists (

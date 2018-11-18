@@ -3,9 +3,9 @@ create or replace view
 as
 select
   bu.accounting,
-  'remove_httpd_site ' || hs.site_name || ' ' || ao.hostname as aosh_command,
+  'remove_httpd_site ' || hs."name" || ' ' || ao.hostname as aosh_command,
   ao.hostname,
-  hs.site_name
+  hs."name"
 from
              public.httpd_sites hs
   inner join public.ao_servers  ao on hs.ao_server  = ao.server

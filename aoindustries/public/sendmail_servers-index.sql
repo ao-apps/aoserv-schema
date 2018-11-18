@@ -32,9 +32,9 @@ create index sendmail_servers_server_certificate_idx on sendmail_servers (
 create index sendmail_servers_client_certificate_idx on sendmail_servers (
   client_certificate
 );
-create index sendmail_servers_client_addr_inet_idx on sendmail_servers (
-  client_addr_inet
+create index "sendmail_servers_clientAddrInet_idx" on sendmail_servers (
+  "clientAddrInet"
 );
-create index sendmail_servers_client_addr_inet6_idx on sendmail_servers (
-  client_addr_inet6
+create index "sendmail_servers_clientAddrInet6_idx" on sendmail_servers (
+  "clientAddrInet6"
 );

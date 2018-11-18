@@ -27,16 +27,16 @@ alter table sendmail_servers
   on update cascade
 ;
 alter table sendmail_servers
-  add constraint client_addr_inet_fkey
-  foreign key (client_addr_inet)
-  references ip_addresses (pkey)
+  add constraint "clientAddrInet_fkey"
+  foreign key ("clientAddrInet")
+  references "IPAddress" (id)
   on delete restrict
   on update cascade
 ;
 alter table sendmail_servers
-  add constraint client_addr_inet6_fkey
-  foreign key (client_addr_inet6)
-  references ip_addresses (pkey)
+  add constraint "clientAddrInet6_fkey"
+  foreign key ("clientAddrInet6")
+  references "IPAddress" (id)
   on delete restrict
   on update cascade
 ;

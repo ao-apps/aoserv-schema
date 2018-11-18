@@ -95,8 +95,8 @@ create table sendmail_servers (
       min_free_blocks is null
       or min_free_blocks > 0
     ),
-  client_addr_inet  integer,
-  client_addr_inet6 integer
+  "clientAddrInet"  integer,
+  "clientAddrInet6" integer
 );
 grant all    on sendmail_servers to aoadmin;
 grant select on sendmail_servers to aoserv_app;

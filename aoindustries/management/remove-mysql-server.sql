@@ -16,7 +16,7 @@ select
     || ' ' || osv.version_number as "OS",
   ms."name" as "NAME",
   substring(tv.version from '^\d+\.\d+') as "VERSION",
-  case when ia.ip_address='0.0.0.0' then '*' else ia.ip_address end as "BIND_ADDRESS",
+  case when ia."inetAddress"='0.0.0.0' then '*' else ia."inetAddress" end as "BIND_ADDRESS",
   nb.port as "PORT",
   case when (
     select ms2.pkey from public.mysql_servers ms2 where
@@ -34,7 +34,7 @@ from
   inner join public.technology_versions       tv  on ms.version                  =  tv.pkey
   inner join public.operating_system_versions osv on tv.operating_system_version = osv.pkey
   inner join public.net_binds                 nb  on ms.net_bind                 =  nb.pkey
-  inner join public.ip_addresses              ia  on nb.ip_address               =  ia.pkey;
+  inner join public."IPAddress"               ia  on nb."ipAddress"              =  ia.id;
 
 revoke all    on management."remove-mysql-server" from aoadmin;
 grant  select on management."remove-mysql-server" to   aoadmin;

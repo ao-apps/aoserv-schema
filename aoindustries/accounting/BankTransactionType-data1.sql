@@ -1,4 +1,4 @@
-COPY "bank_transaction_types" FROM stdin;
+COPY accounting."BankTransactionType" FROM stdin;
 wire_transfer	Wire Transfer	Wire Transfer	t
 withdrawal	Withdrawal	Withdrawal from account	t
 card_fee	Debit Card Fee	Debit card fee	t
@@ -11,4 +11,4 @@ merchant_fee	Merchant Fee	Merchant account fee	t
 service_fee	Service Fee	Bank service fee	t
 refund	Refund	Refund client account balance	t
 \.
-insert into bank_transaction_types values('pseudo', 'Pseudo Transaction', 'Zero-sum pseudo transactions used to rellocate funds between expense categories', false);
+insert into accounting."BankTransactionType" values('pseudo', 'Pseudo Transaction', 'Zero-sum pseudo transactions used to rellocate funds between expense categories', false);

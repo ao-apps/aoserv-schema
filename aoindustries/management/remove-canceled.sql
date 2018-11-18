@@ -8,7 +8,7 @@ union all (select accounting, aosh_command from management."remove-canceled-emai
 -- email_domains
 union all (select accounting, aosh_command from management."remove-canceled-email_domains" order by accounting, reverse_hostname(hostname), "domain")
 -- httpd_sites
-union all (select accounting, aosh_command from management."remove-canceled-httpd_sites" order by accounting, reverse_hostname(hostname), site_name)
+union all (select accounting, aosh_command from management."remove-canceled-httpd_sites" order by accounting, reverse_hostname(hostname), "name")
 -- httpd_shared_tomcats
 union all (select accounting, aosh_command from management."remove-canceled-httpd_shared_tomcats" order by accounting, reverse_hostname(hostname), "name")
 -- TODO: httpd_servers
@@ -25,10 +25,10 @@ union all (select accounting, aosh_command from management."remove-canceled-post
 -- TODO: sendmail_servers without any sendmail_binds
 -- net_binds
 union all (select accounting, aosh_command from management."remove-canceled-net_binds" order by accounting, port)
--- ip_addresses.hostname
-union all (select accounting, aosh_command from management."remove-canceled-ip_addresses.hostname" order by accounting, reverse_hostname(hostname), pad_ip_address(ip_address))
--- ip_addresses.package
-union all (select accounting, aosh_command from management."remove-canceled-ip_addresses.package" order by accounting, reverse_hostname(hostname), pad_ip_address(ip_address))
+-- IPAddress.hostname
+union all (select accounting, aosh_command from management."remove-canceled-IPAddress.hostname" order by accounting, reverse_hostname(hostname), pad_ip_address("inetAddress"))
+-- IPAddress.package
+union all (select accounting, aosh_command from management."remove-canceled-IPAddress.package" order by accounting, reverse_hostname(hostname), pad_ip_address("inetAddress"))
 -- TODO: ssl_certificates (once have auto-cleanup within aoserv-daemon)
 -- TODO: servers (once a server is owned by a package in the schema)
 -- linux_accounts

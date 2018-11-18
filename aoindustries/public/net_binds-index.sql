@@ -1,8 +1,8 @@
 create index net_binds_package_idx on net_binds (
   package
 );
-create index net_binds_ip_address_idx on net_binds (
-  ip_address
+create index "net_binds_ipAddress_idx" on net_binds (
+  "ipAddress"
 );
 create index net_binds_port_idx on net_binds (
   port

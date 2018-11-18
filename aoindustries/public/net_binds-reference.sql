@@ -1,7 +1,7 @@
 alter table net_binds
   add constraint package_fkey
   foreign key (package)
-  references packages (name)
+  references packages ("name")
   on delete restrict
   on update cascade
 ;
@@ -13,9 +13,9 @@ alter table net_binds
   on update cascade
 ;
 alter table net_binds
-  add constraint ip_address_fkey
-  foreign key (ip_address)
-  references ip_addresses (pkey)
+  add constraint "ipAddress_fkey"
+  foreign key ("ipAddress")
+  references "IPAddress" (id)
   on delete restrict
   on update cascade
 ;

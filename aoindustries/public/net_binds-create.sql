@@ -10,7 +10,7 @@ create table net_binds (
     not null,
   server integer
     not null,
-  ip_address integer
+  "ipAddress" integer
     not null,
   port integer
     not null,
@@ -22,7 +22,7 @@ create table net_binds (
     not null
     default true,
   monitoring_parameters text,
-  unique(server, ip_address, port, net_protocol)
+  unique(server, "ipAddress", port, net_protocol)
 );
 grant all                            on net_binds to aoadmin;
 grant select, insert, update, delete on net_binds to aoserv_app;

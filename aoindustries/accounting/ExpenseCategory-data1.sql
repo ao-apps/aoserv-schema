@@ -1,4 +1,4 @@
-COPY "expense_categories" FROM stdin;
+COPY accounting."ExpenseCategory" FROM stdin;
 salary
 dividend
 hardware

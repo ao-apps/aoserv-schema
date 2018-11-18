@@ -8,13 +8,13 @@ create table httpd_sites (
     constraint httpd_sites_pkey primary key,
   ao_server integer
     not null,
-  site_name text
+  "name" text
     not null
     -- Site may not conflict with standard packages
     check (
       -- Note: This matches keepWwwDirs in HttpdSiteManager.
       -- Note: This matches isValidSiteName in HttpdSite.
-      site_name not in (
+      "name" not in (
         'disabled', -- Provided by aoserv-httpd-site-disabled package
         -- CentOS 5 only
         'cache', -- nginx only?
@@ -60,7 +60,7 @@ create table httpd_sites (
   block_scm boolean not null default true,
   block_core_dumps boolean not null default true,
   block_editor_backups boolean not null default true,
-  unique(ao_server, site_name)
+  unique(ao_server, "name")
 );
 grant all                            on httpd_sites to aoadmin;
 grant select, insert, update, delete on httpd_sites to aoserv_app;

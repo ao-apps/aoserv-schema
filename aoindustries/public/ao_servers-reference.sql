@@ -20,9 +20,9 @@ alter table ao_servers
   on update cascade
 ;
 alter table ao_servers
-  add constraint daemon_device_id_fkey
-  foreign key (daemon_device_id)
-  references net_device_ids (name)
+  add constraint "daemonDeviceID_fkey"
+  foreign key ("daemonDeviceID")
+  references net_device_ids ("name")
   on delete restrict
   on update cascade
 ;
@@ -36,7 +36,7 @@ alter table ao_servers
 alter table ao_servers
   add constraint time_zone_fkey
   foreign key (time_zone)
-  references time_zones (name)
+  references time_zones ("name")
   on delete restrict
   on update cascade
 ;

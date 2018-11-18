@@ -23,7 +23,7 @@ create table ao_servers (
       check (distro_hour>=0 and distro_hour<=23),
   last_distro_time timestamp with time zone,
   failover_server integer,
-  daemon_device_id text
+  "daemonDeviceID" text
     not null
     default 'eth0',
   daemon_connect_bind integer,

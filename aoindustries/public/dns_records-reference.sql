@@ -13,9 +13,9 @@ alter table dns_records
   on update cascade
 ;
 alter table dns_records
-  add constraint dhcp_address_fkey
-  foreign key (dhcp_address)
-  references ip_addresses (pkey)
+  add constraint "dhcpAddress_fkey"
+  foreign key ("dhcpAddress")
+  references "IPAddress" (id)
   on delete restrict
   on update cascade
 ;

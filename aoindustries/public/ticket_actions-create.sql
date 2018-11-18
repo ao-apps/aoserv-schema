@@ -366,7 +366,7 @@ grant select, insert, delete on ticket_actions to aoserv_app;
 
 
 
-/*create index actions_temp_index on actions_20090611 (ticket_id, pkey);
+/*create index actions_temp_index on actions_20090611 (ticket, pkey);
 
 
 update actions_20090611 set old_value='PRIVATE_CART_TEST' where old_value='PSC_TEST';
@@ -387,7 +387,7 @@ from
     (
         select
             ac.pkey * 2 as pkey,
-            ac.ticket_id,
+            ac.ticket,
             ac.administrator,
             ac.time,
             case
@@ -407,8 +407,8 @@ from
             case when ac.action_type='SB' then (
                 select new_accounting_possibilities.new_accounting from (
                     -- Use the next old_value from set_business with same ticket and higher pkey
-                    select ac2.pkey, ac2.old_value as new_accounting from actions_20090611 ac2 where ac.ticket_id=ac2.ticket_id and ac2.action_type='SB' and ac2.pkey>ac.pkey
-                    union all select 1000000, accounting from tickets ti where ac.ticket_id=ti.pkey
+                    select ac2.pkey, ac2.old_value as new_accounting from actions_20090611 ac2 where ac.ticket=ac2.ticket and ac2.action_type='SB' and ac2.pkey>ac.pkey
+                    union all select 1000000, accounting from tickets ti where ac.ticket=ti.pkey
                 ) new_accounting_possibilities order by new_accounting_possibilities.pkey limit 1
             ) else null end as new_accounting,
             -- set_client_priority and set_admin_priority
@@ -417,15 +417,15 @@ from
                 when ac.action_type='CP' then (
                     select new_priority_possibilities.new_priority from (
                         -- Use the next old_value from set_business with same ticket and higher pkey
-                        select ac2.pkey, ac2.old_value as new_priority from actions_20090611 ac2 where ac.ticket_id=ac2.ticket_id and ac2.action_type='CP' and ac2.pkey>ac.pkey
-                        union all select 1000000, client_priority from tickets ti where ac.ticket_id=ti.pkey
+                        select ac2.pkey, ac2.old_value as new_priority from actions_20090611 ac2 where ac.ticket=ac2.ticket and ac2.action_type='CP' and ac2.pkey>ac.pkey
+                        union all select 1000000, client_priority from tickets ti where ac.ticket=ti.pkey
                     ) new_priority_possibilities order by new_priority_possibilities.pkey limit 1
                 )
                 when ac.action_type='AP' then (
                     select new_priority_possibilities.new_priority from (
                         -- Use the next old_value from set_business with same ticket and higher pkey
-                        select ac2.pkey, ac2.old_value as new_priority from actions_20090611 ac2 where ac.ticket_id=ac2.ticket_id and ac2.action_type='AP' and ac2.pkey>ac.pkey
-                        union all select 1000000, admin_priority from tickets ti where ac.ticket_id=ti.pkey
+                        select ac2.pkey, ac2.old_value as new_priority from actions_20090611 ac2 where ac.ticket=ac2.ticket and ac2.action_type='AP' and ac2.pkey>ac.pkey
+                        union all select 1000000, admin_priority from tickets ti where ac.ticket=ti.pkey
                     ) new_priority_possibilities order by new_priority_possibilities.pkey limit 1
                 )
                 else null
@@ -437,7 +437,7 @@ from
                     when (
                         select ac2.pkey
                         from actions_20090611 ac2
-                        where ac.ticket_id=ac2.ticket_id and ac2.pkey<ac.pkey and ac2.action_type in ('AH', 'AK', 'BO', 'CH', 'CK', 'CO', 'RE')
+                        where ac.ticket=ac2.ticket and ac2.pkey<ac.pkey and ac2.action_type in ('AH', 'AK', 'BO', 'CH', 'CK', 'CO', 'RE')
                         limit 1
                     ) is null
                     then 'open'
@@ -456,7 +456,7 @@ from
                                 else 'BAD'
                             end
                         from actions_20090611 ac2
-                        where ac.ticket_id=ac2.ticket_id and ac2.pkey<ac.pkey and ac2.action_type in ('AH', 'AK', 'BO', 'CH', 'CK', 'CO', 'RE')
+                        where ac.ticket=ac2.ticket and ac2.pkey<ac.pkey and ac2.action_type in ('AH', 'AK', 'BO', 'CH', 'CK', 'CO', 'RE')
                         order by ac2.pkey desc
                         limit 1
                     )
@@ -477,8 +477,8 @@ from
             case when ac.action_type='AS' then (
                 select new_assigned_to_possibilities.new_assigned_to from (
                     -- Use the next old_value from set_business with same ticket and higher pkey
-                    select ac2.pkey, ac2.old_value as new_assigned_to from actions_20090611 ac2 where ac.ticket_id=ac2.ticket_id and ac2.action_type='AS' and ac2.pkey>ac.pkey
-                    union all select 1000000, assigned_to from tickets_20090611 ti where ac.ticket_id=ti.pkey
+                    select ac2.pkey, ac2.old_value as new_assigned_to from actions_20090611 ac2 where ac.ticket=ac2.ticket and ac2.action_type='AS' and ac2.pkey>ac.pkey
+                    union all select 1000000, assigned_to from tickets_20090611 ti where ac.ticket=ti.pkey
                 ) new_assigned_to_possibilities order by new_assigned_to_possibilities.pkey limit 1
             ) else null end as new_assigned_to,
             -- set_category
@@ -552,8 +552,8 @@ from
                             else ac2.old_value -- Cause error
                         end :: integer as new_category
                     from actions_20090611 ac2
-                    where ac.ticket_id=ac2.ticket_id and ac2.action_type='TY' and ac2.pkey>ac.pkey
-                    union all select 1000000, category from tickets ti where ac.ticket_id=ti.pkey
+                    where ac.ticket=ac2.ticket and ac2.action_type='TY' and ac2.pkey>ac.pkey
+                    union all select 1000000, category from tickets ti where ac.ticket=ti.pkey
                 ) new_category_possibilities order by new_category_possibilities.pkey limit 1
             ) else null end as new_category,
             -- any others
@@ -562,15 +562,15 @@ from
                 when ac.action_type='SE' then (
                     select new_value_possibilities.new_value from (
                         -- Use the next old_value from set_business with same ticket and higher pkey
-                        select ac2.pkey, ac2.old_value as new_value from actions_20090611 ac2 where ac.ticket_id=ac2.ticket_id and ac2.action_type='SE' and ac2.pkey>ac.pkey
-                        union all select 1000000, contact_emails from tickets ti where ac.ticket_id=ti.pkey
+                        select ac2.pkey, ac2.old_value as new_value from actions_20090611 ac2 where ac.ticket=ac2.ticket and ac2.action_type='SE' and ac2.pkey>ac.pkey
+                        union all select 1000000, contact_emails from tickets ti where ac.ticket=ti.pkey
                     ) new_value_possibilities order by new_value_possibilities.pkey limit 1
                 )
                 when ac.action_type='SP' then (
                     select new_value_possibilities.new_value from (
                         -- Use the next old_value from set_business with same ticket and higher pkey
-                        select ac2.pkey, ac2.old_value as new_value from actions_20090611 ac2 where ac.ticket_id=ac2.ticket_id and ac2.action_type='SP' and ac2.pkey>ac.pkey
-                        union all select 1000000, contact_phone_numbers from tickets ti where ac.ticket_id=ti.pkey
+                        select ac2.pkey, ac2.old_value as new_value from actions_20090611 ac2 where ac.ticket=ac2.ticket and ac2.action_type='SP' and ac2.pkey>ac.pkey
+                        union all select 1000000, contact_phone_numbers from tickets ti where ac.ticket=ti.pkey
                     ) new_value_possibilities order by new_value_possibilities.pkey limit 1
                 )
                 else null
@@ -585,7 +585,7 @@ from
         -- Add in add_annotation entries for all status-changing action types
         union all select
             ac.pkey * 2 - 1 as pkey, -- Annotations occur before status change
-            ac.ticket_id,
+            ac.ticket,
             ac.administrator,
             ac.time,
             'add_annotation',
@@ -622,7 +622,7 @@ from
         and (old_priority is null or new_priority is null or old_priority!=new_priority) -- Had some duplicate close entries
         and (old_assigned_to is null or new_assigned_to is null or old_assigned_to!=new_assigned_to) -- Had some duplicate close entries
         and (old_value is null or new_value is null or old_value!=new_value) -- Had some duplicate close entries
-    order by ticket_id, pkey
+    order by ticket, pkey
 ;
 
 select setval('ticket_actions_pkey_seq', 14769);

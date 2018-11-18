@@ -1,14 +1,14 @@
-alter table ip_addresses
-  add constraint net_device_fkey
-  foreign key (net_device)
+alter table "IPAddress"
+  add constraint "netDevice_fkey"
+  foreign key ("netDevice")
   references net_devices (pkey)
   on delete restrict
   on update cascade
 ;
-alter table ip_addresses
+alter table "IPAddress"
   add constraint package_fkey
   foreign key (package)
-  references packages (name)
+  references packages (pkey)
   on delete restrict
   on update cascade
 ;

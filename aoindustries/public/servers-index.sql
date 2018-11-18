@@ -6,5 +6,5 @@ create index servers_operating_system_version_idx on servers (
 );
 create unique index servers_package_name_uni on servers (
   package,
-  name
+  "name"
 );

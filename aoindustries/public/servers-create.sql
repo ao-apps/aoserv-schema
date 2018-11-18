@@ -11,7 +11,7 @@ create table servers (
   description text not null,
   operating_system_version integer,
   package integer not null,
-  name text not null check (length(name)>0 and name not like '%/%'),
+  "name" text not null check (length("name") > 0 and "name" not like '%/%'),
   monitoring_enabled boolean not null default true
 );
 grant all                    on servers to aoadmin;

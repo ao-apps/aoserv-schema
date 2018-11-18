@@ -8,7 +8,7 @@ create table net_devices (
     constraint net_devices_pkey primary key,
   server integer
     not null,
-  device_id text
+  "deviceID" text
     not null,
   description text
     not null,
@@ -25,7 +25,7 @@ create table net_devices (
   monitoring_enabled boolean
     not null
     default true,
-  unique(server, device_id)
+  unique(server, "deviceID")
 );
 grant all    on net_devices to aoadmin;
 grant select on net_devices to aoserv_app;

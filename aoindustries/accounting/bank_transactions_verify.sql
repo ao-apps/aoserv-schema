@@ -3,15 +3,15 @@ create or replace view accounting.bank_transactions_verify as
 select
   *
 from
-  public.bank_transactions
+  accounting."BankTransaction"
 where
   amount=0
   or (
     case when type='refund' then amount > 0 else amount < 0 end
-    and expense_code is null
+    and "expenseCategory" is null
   ) or (
     case when type='refund' then amount < 0 else amount > 0 end
-    and expense_code is not null
+    and "expenseCategory" is not null
   ) or (
     (
       "type"='merchant_deposit'
@@ -20,16 +20,16 @@ where
   ) or (
     "type"!='merchant_deposit'
     and "type"!='merchant_fee'
-    and expense_code!='charge_back'
+    and "expenseCategory"!='charge_back'
     and processor is not null
   ) or (
-    expense_code='charge_back'
+    "expenseCategory"='charge_back'
     and "type"!='refund'
     and "type"!='service_fee'
   )
 order by
   "time"::date,
-  transid;
+  id;
 
 revoke all    on accounting.bank_transactions_verify from aoadmin;
 grant  select on accounting.bank_transactions_verify to   aoadmin;

@@ -3,11 +3,11 @@ select
   "time"::date as "date",
   administrator,
   "type",
-  expense_code,
+  "expenseCategory",
   description,
   amount
 from
-  public.bank_transactions
+  accounting."BankTransaction"
 order by
   "time";
 

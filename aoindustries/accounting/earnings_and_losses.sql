@@ -15,14 +15,14 @@ from (
       select distinct
         substring("time"::text from 1 for 7) as "month"
       from
-        public.bank_transactions
+        accounting."BankTransaction"
     ) as months
     left outer join (
       select
         substring("time"::text from 1 for 7) as "month",
         sum(amount) as total_earnings
       from
-        public.bank_transactions
+        accounting."BankTransaction"
       where
         amount > 0
       group by
@@ -33,10 +33,10 @@ from (
         substring("time"::text from 1 for 7) as "month",
         -sum(amount) as payroll
       from
-        public.bank_transactions
+        accounting."BankTransaction"
       where
         amount < 0
-        and expense_code in ('dividend', 'rent', 'salary', 'treasury_stock', 'utilities')
+        and "expenseCategory" in ('dividend', 'rent', 'salary', 'treasury_stock', 'utilities')
       group by
         "month"
     ) as payroll on months."month"=payroll."month"
@@ -45,10 +45,10 @@ from (
         substring("time"::text from 1 for 7) as "month",
         -sum(amount) as hardware
       from
-        public.bank_transactions
+        accounting."BankTransaction"
       where
         amount < 0
-        and expense_code in ('hardware', 'supplies_perm')
+        and "expenseCategory" in ('hardware', 'supplies_perm')
       group by
         "month"
     ) as hardware on months."month"=hardware."month"
@@ -57,10 +57,10 @@ from (
         substring("time"::text from 1 for 7) as "month",
         -sum(amount) as other_expenses
       from
-        public.bank_transactions
+        accounting."BankTransaction"
       where
         amount < 0
-        and expense_code not in ('hardware', 'supplies_perm', 'dividend', 'rent', 'salary', 'treasury_stock', 'utilities')
+        and "expenseCategory" not in ('hardware', 'supplies_perm', 'dividend', 'rent', 'salary', 'treasury_stock', 'utilities')
       group by
         "month"
     ) as other_expenses on months."month"=other_expenses."month"
@@ -69,7 +69,7 @@ from (
         substring("time"::text from 1 for 7) as "month",
         -sum(amount) as total_losses
       from
-        public.bank_transactions
+        accounting."BankTransaction"
       where
         amount < 0
       group by
@@ -80,7 +80,7 @@ from (
         substring("time"::text from 1 for 7) as "month",
     sum(amount) as corporate_profit
       from
-        public.bank_transactions
+        accounting."BankTransaction"
       group by
         "month"
     ) as corporate_profit on months."month"=corporate_profit."month"
@@ -93,7 +93,7 @@ union select
     select
       sum(amount) as total_earnings
     from
-      public.bank_transactions
+      accounting."BankTransaction"
     where
       amount > 0
   ),
@@ -101,34 +101,34 @@ union select
     select
       -sum(amount) as payroll
     from
-      public.bank_transactions
+      accounting."BankTransaction"
     where
       amount < 0
-      and expense_code in ('dividend', 'rent', 'salary', 'treasury_stock', 'utilities')
+      and "expenseCategory" in ('dividend', 'rent', 'salary', 'treasury_stock', 'utilities')
   ),
   (
     select
       -sum(amount) as hardware
     from
-      public.bank_transactions
+      accounting."BankTransaction"
     where
       amount < 0
-      and expense_code in ('hardware', 'supplies_perm')
+      and "expenseCategory" in ('hardware', 'supplies_perm')
   ),
   (
     select
       -sum(amount) as other_expenses
     from
-      public.bank_transactions
+      accounting."BankTransaction"
     where
       amount < 0
-      and expense_code not in ('hardware', 'supplies_perm', 'dividend', 'rent', 'salary', 'treasury_stock', 'utilities')
+      and "expenseCategory" not in ('hardware', 'supplies_perm', 'dividend', 'rent', 'salary', 'treasury_stock', 'utilities')
   ),
   (
     select
       -sum(amount) as total_losses
     from
-      public.bank_transactions
+      accounting."BankTransaction"
     where
       amount < 0
   ),
@@ -136,7 +136,7 @@ union select
     select
       sum(amount) as corporate_profit
     from
-      public.bank_transactions
+      accounting."BankTransaction"
   );
 
 revoke all    on accounting.earnings_and_losses from aoadmin;

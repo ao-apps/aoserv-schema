@@ -1,5 +1,5 @@
 #!/bin/bash
-DIR=`dirname "$0"`
+DIR="${BASH_SOURCE%/*}"
 DB_NAME="$1"
 if [ "$DB_NAME" = "" ]
 then

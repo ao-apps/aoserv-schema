@@ -25,17 +25,6 @@ select "schema".add_foreign_key('backup_partitions', 'ao_server', 'ao_servers', 
 select "schema".add_foreign_key('backup_reports', 'server', 'servers', 'pkey', '1.0a101', null);
 select "schema".add_foreign_key('backup_reports', 'package', 'packages', 'pkey', '1.0a101', null);
 
-\echo bank_accounts
-select "schema".add_foreign_key('bank_accounts', 'bank', 'banks', 'name', '1.0a100', null);
-
-\echo bank_transactions
-select "schema".add_foreign_key('bank_transactions', 'bank_account', 'bank_accounts', 'name', '1.0a100', null);
-select "schema".add_foreign_key('bank_transactions', 'merchant_account', 'merchant_accounts', 'name', '1.0a100', '1.28');
-select "schema".add_foreign_key('bank_transactions', 'processor', 'credit_card_processors', 'provider_id', '1.29', null);
-select "schema".add_foreign_key('bank_transactions', 'administrator', 'master_users', 'username', '1.0a100', null);
-select "schema".add_foreign_key('bank_transactions', 'type', 'bank_transaction_types', 'type', '1.0a100', null);
-select "schema".add_foreign_key('bank_transactions', 'expense_code', 'expense_categories', 'expense_code', '1.0a100', null);
-
 \echo blackhole_email_addresses
 select "schema".add_foreign_key('blackhole_email_addresses', 'email_address', 'email_addresses', 'pkey', '1.0a100', null);
 

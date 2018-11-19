@@ -137,38 +137,6 @@ select "schema".add_column('backup_reports', 'disk_size', 7, 'long', false, fals
 select "schema".add_column('backup_retentions', 'days', 0, 'short', false, true, true, 'the number of days to keep the backup data', '1.0a100', null);
 select "schema".add_column('backup_retentions', 'display', 1, 'string', false, false, true, 'the text displayed for this time increment', '1.0a100', null);
 
-\echo bank_accounts
-select "schema".add_column('bank_accounts', 'name', 0, 'string', false, true, false, 'the unique name of this account', '1.0a100', null);
-select "schema".add_column('bank_accounts', 'display', 1, 'string', false, false, false, 'the display name of this account', '1.0a100', null);
-select "schema".add_column('bank_accounts', 'bank', 2, 'string', false, false, false, 'the bank the account is with', '1.0a100', null);
-select "schema".add_column('bank_accounts', 'deposit_delay', 3, 'int', false, false, false, 'the number of business days it takes for a deposit to be sent to the bank account', '1.0a100', null);
-select "schema".add_column('bank_accounts', 'withdrawal_delay', 4, 'int', false, false, false, 'the number of business days it takes for a withdrawal to be taken from the bank account', '1.0a100', null);
-
-\echo bank_transaction_types
-select "schema".add_column('bank_transaction_types', 'type', 0, 'string', false, true, false, 'the name of the type', '1.0a100', null);
-select "schema".add_column('bank_transaction_types', 'display', 1, 'string', false, false, false, 'the display value for the type', '1.0a100', null);
-select "schema".add_column('bank_transaction_types', 'description', 2, 'string', false, false, false, 'a description of the type', '1.0a100', null);
-select "schema".add_column('bank_transaction_types', 'is_negative', 3, 'boolean', false, false, false, 'if true the amount must be negative', '1.0a100', null);
-
-\echo bank_transactions
-select "schema".add_column('bank_transactions', 'time', 0, 'time', false, false, false, 'the time the transaction occured', '1.0a100', null);
-select "schema".add_column('bank_transactions', 'transid', 1, 'int', false, true, false, 'a unique identifier for the transaction', '1.0a100', '1.68');
-select "schema".add_column('bank_transactions', 'transid', 2, 'pkey', false, true, false, 'a unique identifier for the transaction', '1.69', null);
-select "schema".add_column('bank_transactions', 'bank_account', 3, 'string', false, false, false, 'the account the transaction is for', '1.0a100', null);
-select "schema".add_column('bank_transactions', 'merchant_account', 4, 'string', true, false, false, 'the merchant account the transaction is for', '1.0a100', '1.28');
-select "schema".add_column('bank_transactions', 'processor', 5, 'string', true, false, false, 'the credit card processor used by this transaction', '1.29', null);
-select "schema".add_column('bank_transactions', 'administrator', 6, 'username', false, false, false, 'the business_administrator who made this transaction', '1.0a100', null);
-select "schema".add_column('bank_transactions', 'type', 7, 'string', false, false, false, 'the type of transaction', '1.0a100', null);
-select "schema".add_column('bank_transactions', 'expense_code', 8, 'string', true, false, false, 'the category in which this expense belongs', '1.0a100', null);
-select "schema".add_column('bank_transactions', 'description', 9, 'string', false, false, false, 'a description of the transaction', '1.0a100', null);
-select "schema".add_column('bank_transactions', 'check_no', 10, 'string', true, false, false, 'the check number (if available)', '1.0a100', null);
-select "schema".add_column('bank_transactions', 'amount', 11, 'decimal_2', false, false, false, 'the amount (negative for withdrawal)', '1.0a100', null);
-select "schema".add_column('bank_transactions', 'confirmed', 12, 'boolean', false, false, false, 'the confirmation status with bank', '1.0a100', null);
-
-\echo banks
-select "schema".add_column('banks', 'name', 0, 'string', false, true, false, 'the unique name of the bank', '1.0a100', null);
-select "schema".add_column('banks', 'display', 1, 'string', false, false, false, 'the name that is displayed', '1.0a100', null);
-
 \echo blackhole_email_addresses
 select "schema".add_column('blackhole_email_addresses', 'email_address', 0, 'fkey', false, true, false, 'the primary key of the email_address', '1.0a100', null);
 
@@ -778,9 +746,6 @@ select "schema".add_column('encryption_keys', 'signup_recipient', 5, 'boolean', 
 select "schema".add_column('encryption_keys', 'use_credit_cards', 6, 'boolean', false, false, false, 'if true, this key may be used for encrypting credit cards in the credit_cards table', '1.23', '1.24');
 select "schema".add_column('encryption_keys', 'credit_card_signer', 7, 'boolean', false, false, false, 'if true, this key may be used for signing credit cards in the credit_cards table', '1.25', '1.30');
 select "schema".add_column('encryption_keys', 'credit_card_recipient', 8, 'boolean', false, false, false, 'if true, this key may be used for encrypting credit cards in the credit_cards table', '1.25', '1.30');
-
-\echo expense_categories
-select "schema".add_column('expense_categories', 'expense_code', 0, 'string', false, true, false, 'a simple code used as primary key', '1.0a100', null);
 
 \echo failover_file_log
 select "schema".add_column('failover_file_log', 'pkey', 0, 'pkey', false, true, false, 'a generated, unique id', '1.0a100', null);

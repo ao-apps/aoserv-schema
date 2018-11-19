@@ -25,6 +25,30 @@ as '
 language 'sql';
 
 create or replace function "schema".add_foreign_key (
+  "schema" name,
+  "table" name,
+  "column" name,
+  "foreignTable" name,
+  "foreignColumn" name,
+  "sinceVersion" text,
+  "lastVersion" text
+)
+returns integer
+as '
+  select "schema".add_foreign_key (
+    $1,
+    $2,
+    $3,
+    $1,
+    $4,
+    $5,
+    $6,
+    $7
+  );
+'
+language 'sql';
+
+create or replace function "schema".add_foreign_key (
   "table" name,
   "column" name,
   "foreignTable" name,

@@ -1,4 +1,4 @@
-create or replace function "schema".get_schema_table_versioned (
+create or replace function "schema".get_table_versioned (
   "schema" name,
   "name" name,
   "sinceVersion" text,
@@ -32,5 +32,5 @@ as '
 language 'sql';
 
 -- Examples
--- select "schema".get_schema_table_versioned('public', 'action_types', '1.0a100', '1.43');
+-- select "schema".get_table_versioned('public', 'action_types', '1.0a100', '1.43');
 -- Expect: 0

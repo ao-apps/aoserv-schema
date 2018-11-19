@@ -31,7 +31,6 @@ cat "${DIR}/aoindustries/schema/ForeignKey-data5-pre.sql"
 		echo "\echo $SQL"
 		cat "$SQL"
 	done
-	cat "${DIR}/aoindustries/schema/Column-data4.sql"
 	cat "${DIR}/aoindustries/schema/Column-data4-post.sql"
 # 5
 for SQL in "${DIR}/aoindustries"/*/*-schema.ForeignKey.sql "${DIR}/aoindustries"/*/old/*-schema.ForeignKey.sql

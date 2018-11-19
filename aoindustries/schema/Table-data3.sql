@@ -1803,6 +1803,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'tls',
     'ssl_certificate_names',
     'SSL Certificate Names',
     false,
@@ -1811,6 +1812,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'tls',
     'ssl_certificate_other_uses',
     'SSL Certificate Other Uses',
     false,
@@ -1819,6 +1821,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'tls',
     'ssl_certificates',
     'SSL Certificates',
     false,

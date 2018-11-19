@@ -27,7 +27,7 @@ union all (select 'public'::name as "schema", 'postgres_servers'::name as "table
 union all (select 'public'::name as "schema", 'IPAddress'::name as "table", count(*) as unused from management."release-IPAddress"
            where num_binds=0 and "AO_SERVER" is not null)
 -- ssl_certificates
-union all (select 'public'::name as "schema", 'ssl_certificates'::name as "table", count(*) as unused from management."remove-ssl-certificate"
+union all (select 'public'::name as "schema", 'tls.ssl_certificates'::name as "table", count(*) as unused from management."remove-ssl-certificate"
            where num_cyrus_imapd_binds=0 and num_cyrus_imapd_servers=0 and num_httpd_site_binds=0 and num_sendmail_servers=0 and num_other_uses=0)
 -- TODO: ftp_guest_users
 -- TODO: linux_accounts (orphaned)

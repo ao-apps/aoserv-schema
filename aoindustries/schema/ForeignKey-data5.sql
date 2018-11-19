@@ -10,9 +10,6 @@ select "schema".add_foreign_key('ao_servers', 'daemon_connect_bind', 'net_binds'
 select "schema".add_foreign_key('ao_servers', 'time_zone', 'time_zones', 'name', '1.2', null);
 select "schema".add_foreign_key('ao_servers', 'jilter_bind', 'net_binds', 'pkey', '1.7', null);
 
-\echo backup_data
-select "schema".add_foreign_key('backup_data', 'backup_partition', 'backup_partitions', 'pkey', '1.0a100', '1.30');
-
 \echo backup_partitions
 select "schema".add_foreign_key('backup_partitions', 'ao_server', 'ao_servers', 'server', '1.0a100', null);
 
@@ -101,11 +98,6 @@ select "schema".add_foreign_key('cyrus_imapd_binds', 'certificate', 'ssl_certifi
 select "schema".add_foreign_key('cyrus_imapd_servers', 'ao_server', 'ao_servers', 'server', '1.81.10', null);
 select "schema".add_foreign_key('cyrus_imapd_servers', 'sieve_net_bind', 'net_binds', 'pkey', '1.81.10', null);
 select "schema".add_foreign_key('cyrus_imapd_servers', 'certificate', 'ssl_certificates', 'pkey', '1.81.10', null);
-
-\echo daemon_profile
-select "schema".add_foreign_key('daemon_profile', 'server', 'servers', 'hostname', '1.0a100', '1.30');
-select "schema".add_foreign_key('daemon_profile', 'ao_server', 'ao_servers', 'hostname', '1.31', '1.68');
-select "schema".add_foreign_key('daemon_profile', 'ao_server', 'ao_servers', 'hostname', '1.69', '1.76');
 
 \echo disable_log
 select "schema".add_foreign_key('disable_log', 'disabled_by', 'business_administrators', 'username', '1.0a100', null);
@@ -203,32 +195,12 @@ select "schema".add_foreign_key('failover_mysql_replications', 'replication', 'f
 select "schema".add_foreign_key('failover_mysql_replications', 'replication', 'failover_file_replications', 'pkey', '1.59', null);
 select "schema".add_foreign_key('failover_mysql_replications', 'mysql_server', 'mysql_servers', 'pkey', '1.28', null);
 
-\echo file_backups
-select "schema".add_foreign_key('file_backups', 'server', 'servers', 'pkey', '1.0a100', '1.30');
-select "schema".add_foreign_key('file_backups', 'device', 'file_backup_devices', 'pkey', '1.0a100', '1.0a106');
-select "schema".add_foreign_key('file_backups', 'device', 'file_backup_devices', 'pkey', '1.0a107', '1.30');
-select "schema".add_foreign_key('file_backups', 'package', 'packages', 'pkey', '1.0a100', '1.30');
-select "schema".add_foreign_key('file_backups', 'uid', 'linux_ids', 'id', '1.0a100', '1.0a106');
-select "schema".add_foreign_key('file_backups', 'uid', 'linux_ids', 'id', '1.0a107', '1.30');
-select "schema".add_foreign_key('file_backups', 'gid', 'linux_ids', 'id', '1.0a100', '1.0a106');
-select "schema".add_foreign_key('file_backups', 'gid', 'linux_ids', 'id', '1.0a107', '1.30');
-select "schema".add_foreign_key('file_backups', 'backup_data', 'backup_data', 'pkey', '1.0a100', '1.30');
-select "schema".add_foreign_key('file_backups', 'backup_level', 'backup_levels', 'level', '1.0a100', '1.30');
-select "schema".add_foreign_key('file_backups', 'backup_retention', 'backup_retentions', 'days', '1.0a100', '1.30');
-
-\echo file_backup_roots
-select "schema".add_foreign_key('file_backup_roots', 'server', 'servers', 'pkey', '1.0a100', '1.30');
-select "schema".add_foreign_key('file_backup_roots', 'package', 'packages', 'pkey', '1.0a100', '1.30');
-
 \echo file_backup_settings
 select "schema".add_foreign_key('file_backup_settings', 'server', 'servers', 'pkey', '1.0a100', '1.30');
 select "schema".add_foreign_key('file_backup_settings', 'replication', 'failover_file_replications', 'pkey', '1.31', null);
 select "schema".add_foreign_key('file_backup_settings', 'package', 'packages', 'pkey', '1.0a100', '1.30');
 select "schema".add_foreign_key('file_backup_settings', 'backup_level', 'backup_levels', 'level', '1.0a100', '1.30');
 select "schema".add_foreign_key('file_backup_settings', 'backup_retention', 'backup_retentions', 'days', '1.0a100', '1.30');
-
-\echo file_backup_stats
-select "schema".add_foreign_key('file_backup_stats', 'server', 'servers', 'pkey', '1.0a100', '1.30');
 
 \echo firewalld_zones
 select "schema".add_foreign_key('firewalld_zones', 'server', 'servers', 'pkey', '1.81.0', null);
@@ -349,34 +321,6 @@ select "schema".add_foreign_key('httpd_workers', 'code', 'httpd_jk_codes', 'code
 select "schema".add_foreign_key('httpd_workers', 'net_bind', 'net_binds', 'pkey', '1.0a100', null);
 select "schema".add_foreign_key('httpd_workers', 'tomcat_site', 'httpd_tomcat_sites', 'httpd_site', '1.0a100', null);
 
-\echo incoming_payments
-select "schema".add_foreign_key('incoming_payments', 'transid', 'transactions', 'transid', '1.0a100', '1.28');
-
-\echo interbase_backups
-select "schema".add_foreign_key('interbase_backups', 'package', 'packages', 'pkey', '1.0a100', '1.30');
-select "schema".add_foreign_key('interbase_backups', 'ao_server', 'ao_servers', 'server', '1.0a100', '1.30');
-select "schema".add_foreign_key('interbase_backups', 'backup_data', 'backup_data', 'pkey', '1.0a100', '1.30');
-select "schema".add_foreign_key('interbase_backups', 'backup_level', 'backup_levels', 'level', '1.0a100', '1.30');
-select "schema".add_foreign_key('interbase_backups', 'backup_retention', 'backup_retentions', 'days', '1.0a100', '1.30');
-
-\echo interbase_databases
-select "schema".add_foreign_key('interbase_databases', 'db_group', 'interbase_db_groups', 'pkey', '1.0a100', '1.30');
-select "schema".add_foreign_key('interbase_databases', 'datdba', 'interbase_server_users', 'pkey', '1.0a100', '1.30');
-select "schema".add_foreign_key('interbase_databases', 'backup_level', 'backup_levels', 'level', '1.0a114', '1.30');
-select "schema".add_foreign_key('interbase_databases', 'backup_retention', 'backup_retentions', 'days', '1.0a114', '1.30');
-
-\echo interbase_db_groups
-select "schema".add_foreign_key('interbase_db_groups', 'linux_server_group', 'linux_server_groups', 'pkey', '1.0a100', '1.30');
-
-\echo interbase_server_users
-select "schema".add_foreign_key('interbase_server_users', 'username', 'interbase_users', 'username', '1.0a100', '1.30');
-select "schema".add_foreign_key('interbase_server_users', 'ao_server', 'ao_servers', 'server', '1.0a100', '1.30');
-select "schema".add_foreign_key('interbase_server_users', 'disable_log', 'disable_log', 'pkey', '1.0a100', '1.30');
-
-\echo interbase_users
-select "schema".add_foreign_key('interbase_users', 'username', 'usernames', 'username', '1.0a100', '1.30');
-select "schema".add_foreign_key('interbase_users', 'disable_log', 'disable_log', 'pkey', '1.0a100', '1.30');
-
 \echo ip_reputation_limiter_limits
 select "schema".add_foreign_key('ip_reputation_limiter_limits', 'limiter', 'ip_reputation_limiters', 'pkey', '1.66', null);
 
@@ -397,10 +341,6 @@ select "schema".add_foreign_key('ip_reputation_set_networks', 'set',      'ip_re
 
 \echo ip_reputation_sets
 select "schema".add_foreign_key('ip_reputation_sets', 'accounting', 'businesses', 'accounting', '1.65', null);
-
-\echo limits
-select "schema".add_foreign_key('limits', 'service_level', 'service_levels', 'name', '1.0a100', '1.0a122');
-select "schema".add_foreign_key('limits', 'resource', 'resources', 'name', '1.0a100', '1.0a122');
 
 \echo linux_acc_addresses
 select "schema".add_foreign_key('linux_acc_addresses', 'email_address', 'email_addresses', 'pkey', '1.0a100', null);
@@ -483,9 +423,6 @@ select "schema".add_foreign_key('master_servers', 'server', 'servers', 'pkey', '
 \echo master_users
 select "schema".add_foreign_key('master_users', 'username', 'business_administrators', 'username', '1.0a100', null);
 
-\echo merchant_accounts
-select "schema".add_foreign_key('merchant_accounts', 'bank_account', 'bank_accounts', 'name', '1.0a100', '1.28');
-
 \echo monthly_charges
 select "schema".add_foreign_key('monthly_charges', 'accounting', 'businesses', 'accounting', '1.0a100', null);
 select "schema".add_foreign_key('monthly_charges', 'package', 'packages', 'name', '1.0a100', '1.80');
@@ -493,14 +430,6 @@ select "schema".add_foreign_key('monthly_charges', 'package', 'packages', 'name'
 select "schema".add_foreign_key('monthly_charges', 'type', 'rates', 'name', '1.0a100', '1.0a122');
 select "schema".add_foreign_key('monthly_charges', 'type', 'transaction_types', 'name', '1.0a123', null);
 select "schema".add_foreign_key('monthly_charges', 'created_by', 'business_administrators', 'username', '1.0a100', null);
-
-\echo mysql_backups
-select "schema".add_foreign_key('mysql_backups', 'package', 'packages', 'pkey', '1.0a100', '1.30');
-select "schema".add_foreign_key('mysql_backups', 'ao_server', 'ao_servers', 'server', '1.0a100', '1.3');
-select "schema".add_foreign_key('mysql_backups', 'mysql_server', 'mysql_servers', 'pkey', '1.4', '1.30');
-select "schema".add_foreign_key('mysql_backups', 'backup_data', 'backup_data', 'pkey', '1.0a100', '1.30');
-select "schema".add_foreign_key('mysql_backups', 'backup_level', 'backup_levels', 'level', '1.0a100', '1.30');
-select "schema".add_foreign_key('mysql_backups', 'backup_retention', 'backup_retentions', 'days', '1.0a100', '1.30');
 
 \echo mysql_databases
 select "schema".add_foreign_key('mysql_databases', 'ao_server', 'ao_servers', 'server', '1.0a100', '1.3');
@@ -514,9 +443,6 @@ select "schema".add_foreign_key('mysql_databases', 'backup_retention', 'backup_r
 select "schema".add_foreign_key('mysql_db_users', 'mysql_database', 'mysql_databases', 'pkey', '1.0a100', null);
 select "schema".add_foreign_key('mysql_db_users', 'mysql_user', 'mysql_server_users', 'pkey', '1.0a100', '1.30');
 select "schema".add_foreign_key('mysql_db_users', 'mysql_server_user', 'mysql_server_users', 'pkey', '1.31', null);
-
-\echo mysql_hosts
-select "schema".add_foreign_key('mysql_hosts', 'ao_server', 'ao_servers', 'server', '1.0a100', '1.3');
 
 \echo mysql_server_users
 select "schema".add_foreign_key('mysql_server_users', 'username', 'mysql_users', 'username', '1.0a100', '1.80');
@@ -552,13 +478,6 @@ select "schema".add_foreign_key('net_binds', 'port', 'net_ports', 'port', '1.69'
 select "schema".add_foreign_key('net_binds', 'net_protocol', 'net_protocols', 'protocol', '1.0a100', '1.80');
 select "schema".add_foreign_key('net_binds', 'app_protocol', 'protocols', 'protocol', '1.0a100', null);
 select "schema".add_foreign_key('net_binds', 'monitor_delay', 'net_monitoring_times', 'time', '1.0a100', '1.0a103');
-
-\echo net_device_host_routes
-select "schema".add_foreign_key('net_device_host_routes', 'net_device', 'net_devices', 'pkey', '1.0a100', '1.0a130');
-select "schema".add_foreign_key('net_device_host_routes', 'connected_ao_server', 'ao_servers', 'server', '1.0a100', '1.0a130');
-
-\echo net_device_local_routes
-select "schema".add_foreign_key('net_device_local_routes', 'net_device', 'net_devices', 'pkey', '1.0a100', '1.0a130');
 
 \echo net_devices
 select "schema".add_foreign_key('net_devices', 'ao_server', 'ao_servers', 'server', '1.0a100', '1.32');
@@ -605,13 +524,6 @@ select "schema".add_foreign_key('physical_servers', 'server', 'servers', 'pkey',
 select "schema".add_foreign_key('physical_servers', 'rack', 'racks', 'pkey', '1.36', null);
 select "schema".add_foreign_key('physical_servers', 'processor_type', 'processor_types', 'type', '1.36', null);
 
-\echo postgres_backups
-select "schema".add_foreign_key('postgres_backups', 'package', 'packages', 'pkey', '1.0a100', '1.30');
-select "schema".add_foreign_key('postgres_backups', 'postgres_server', 'postgres_servers', 'pkey', '1.0a100', '1.30');
-select "schema".add_foreign_key('postgres_backups', 'backup_data', 'backup_data', 'pkey', '1.0a100', '1.30');
-select "schema".add_foreign_key('postgres_backups', 'backup_level', 'backup_levels', 'level', '1.0a100', '1.30');
-select "schema".add_foreign_key('postgres_backups', 'backup_retention', 'backup_retentions', 'days', '1.0a100', '1.30');
-
 \echo postgres_databases
 select "schema".add_foreign_key('postgres_databases', 'postgres_server', 'postgres_servers', 'pkey', '1.0a100', null);
 select "schema".add_foreign_key('postgres_databases', 'datdba', 'postgres_server_users', 'pkey', '1.0a100', null);
@@ -653,20 +565,11 @@ select "schema".add_foreign_key('private_ftp_servers', 'linux_server_account', '
 select "schema".add_foreign_key('private_ftp_servers', 'linux_server_account', 'linux_server_accounts', 'pkey', '1.69', null);
 select "schema".add_foreign_key('private_ftp_servers', 'linux_server_group', 'linux_server_groups', 'pkey', '1.0a100', '1.38');
 
-\echo protocols
-select "schema".add_foreign_key('protocols', 'port', 'net_ports', 'port', '1.0a100', '1.68');
-select "schema".add_foreign_key('protocols', 'port', 'net_ports', 'port', '1.69', '1.80');
-select "schema".add_foreign_key('protocols', 'net_protocol', 'net_protocols', 'protocol', '1.0a105', '1.80');
-
 \echo racks
 select "schema".add_foreign_key('racks', 'farm', 'server_farms', 'name', '1.36', null);
 
 \echo resellers
 select "schema".add_foreign_key('resellers', 'accounting', 'brands', 'accounting', '1.44', null);
-
-\echo sendmail_smtp_stats
-select "schema".add_foreign_key('sendmail_smtp_stats', 'package', 'packages', 'name', '1.0a100', '1.30');
-select "schema".add_foreign_key('sendmail_smtp_stats', 'ao_server', 'ao_servers', 'server', '1.0a100', '1.30');
 
 \echo sendmail_binds
 select "schema".add_foreign_key('sendmail_binds', 'net_bind', 'net_binds', 'pkey', '1.81.10', null);
@@ -684,10 +587,6 @@ select "schema".add_foreign_key('sendmail_servers', 'client_addr_inet6', 'ip_add
 select "schema".add_foreign_key('server_farms', 'backup_farm', 'server_farms', 'name', '1.0a100', '1.30');
 select "schema".add_foreign_key('server_farms', 'owner', 'packages', 'pkey', '1.0a102', null);
 
-\echo server_reports
-select "schema".add_foreign_key('server_reports', 'ao_server', 'ao_servers', 'server', '1.0a100', '1.30');
-select "schema".add_foreign_key('server_reports', 'failover_server', 'ao_servers', 'server', '1.0a100', '1.30');
-
 \echo servers
 select "schema".add_foreign_key('servers', 'farm', 'server_farms', 'name', '1.0a100', null);
 select "schema".add_foreign_key('servers', 'owner', 'businesses', 'accounting', '1.0a100', '1.30');
@@ -696,9 +595,6 @@ select "schema".add_foreign_key('servers', 'architecture', 'architectures', 'nam
 select "schema".add_foreign_key('servers', 'operating_system_version', 'operating_system_versions', 'pkey', '1.0a100', '1.30');
 select "schema".add_foreign_key('servers', 'operating_system_version', 'operating_system_versions', 'pkey', '1.31', null);
 select "schema".add_foreign_key('servers', 'package', 'packages', 'pkey', '1.31', null);
-
-\echo service_levels
-select "schema".add_foreign_key('service_levels', 'name', 'rates', 'name', '1.0a100', '1.0a122');
 
 \echo signup_request_options
 select "schema".add_foreign_key('signup_request_options', 'request', 'signup_requests', 'pkey', '1.23', null);
@@ -718,63 +614,6 @@ select "schema".add_foreign_key('signup_requests', 'completed_by', 'business_adm
 
 \echo spam_email_messages
 select "schema".add_foreign_key('spam_email_messages', 'email_relay', 'email_smtp_relays', 'pkey', '1.0a100', null);
-
-\echo sr_cpu
-select "schema".add_foreign_key('sr_cpu', 'server_report', 'server_reports', 'pkey', '1.0a100', '1.30');
-
-\echo sr_db_mysql
-select "schema".add_foreign_key('sr_db_mysql', 'server_report', 'server_reports', 'pkey', '1.0a100', '1.30');
-
-\echo sr_db_postgres
-select "schema".add_foreign_key('sr_db_postgres', 'server_report', 'server_reports', 'pkey', '1.0a100', '1.30');
-
-\echo sr_disk_access
-select "schema".add_foreign_key('sr_disk_access', 'server_report', 'server_reports', 'pkey', '1.0a100', '1.30');
-
-\echo sr_disk_mdstat
-select "schema".add_foreign_key('sr_disk_mdstat', 'server_report', 'server_reports', 'pkey', '1.0a100', '1.30');
-
-\echo sr_disk_space
-select "schema".add_foreign_key('sr_disk_space', 'server_report', 'server_reports', 'pkey', '1.0a100', '1.30');
-
-\echo sr_kernel
-select "schema".add_foreign_key('sr_kernel', 'server_report', 'server_reports', 'pkey', '1.0a100', '1.30');
-
-\echo sr_load
-select "schema".add_foreign_key('sr_load', 'server_report', 'server_reports', 'pkey', '1.0a100', '1.30');
-
-\echo sr_memory
-select "schema".add_foreign_key('sr_memory', 'server_report', 'server_reports', 'pkey', '1.0a100', '1.30');
-
-\echo sr_net_devices
-select "schema".add_foreign_key('sr_net_devices', 'server_report', 'server_reports', 'pkey', '1.0a100', '1.30');
-
-\echo sr_net_icmp
-select "schema".add_foreign_key('sr_net_icmp', 'server_report', 'server_reports', 'pkey', '1.0a100', '1.30');
-
-\echo sr_net_ip
-select "schema".add_foreign_key('sr_net_ip', 'server_report', 'server_reports', 'pkey', '1.0a100', '1.30');
-
-\echo sr_net_tcp
-select "schema".add_foreign_key('sr_net_tcp', 'server_report', 'server_reports', 'pkey', '1.0a100', '1.30');
-
-\echo sr_net_udp
-select "schema".add_foreign_key('sr_net_udp', 'server_report', 'server_reports', 'pkey', '1.0a100', '1.30');
-
-\echo sr_num_users
-select "schema".add_foreign_key('sr_num_users', 'server_report', 'server_reports', 'pkey', '1.0a100', '1.30');
-
-\echo sr_paging
-select "schema".add_foreign_key('sr_paging', 'server_report', 'server_reports', 'pkey', '1.0a100', '1.30');
-
-\echo sr_processes
-select "schema".add_foreign_key('sr_processes', 'server_report', 'server_reports', 'pkey', '1.0a100', '1.30');
-
-\echo sr_swap_rate
-select "schema".add_foreign_key('sr_swap_rate', 'server_report', 'server_reports', 'pkey', '1.0a100', '1.30');
-
-\echo sr_swap_size
-select "schema".add_foreign_key('sr_swap_size', 'server_report', 'server_reports', 'pkey', '1.0a100', '1.30');
 
 \echo ssl_certificate_names
 select "schema".add_foreign_key('ssl_certificate_names', 'ssl_certificate', 'ssl_certificates', 'pkey', '1.81.10', null);

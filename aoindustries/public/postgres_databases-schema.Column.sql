@@ -1,0 +1,11 @@
+select "schema".add_column('postgres_databases', 'pkey', 0, 'pkey', false, true, false, 'a unique, generated primary key', '1.0a100', null);
+select "schema".add_column('postgres_databases', 'name', 1, 'string', false, false, false, 'the name of the database', '1.0a100', '1.80');
+select "schema".add_column('postgres_databases', 'name', 2, 'postgres_database_name', false, false, false, 'the name of the database', '1.80.0', null);
+select "schema".add_column('postgres_databases', 'postgres_server', 3, 'fkey', false, false, false, 'the pkey of the PostgreSQL server', '1.0a100', null);
+select "schema".add_column('postgres_databases', 'datdba', 4, 'fkey', false, false, false, 'the datdba for the database', '1.0a100', null);
+select "schema".add_column('postgres_databases', 'encoding', 5, 'fkey', false, false, false, 'the pkey of the encoding system used for the database', '1.0a100', null);
+select "schema".add_column('postgres_databases', 'is_template', 6, 'boolean', false, false, false, 'if true, this database is a template', '1.0a100', null);
+select "schema".add_column('postgres_databases', 'allow_conn', 7, 'boolean', false, false, false, 'if true, this database is accepting connections', '1.0a100', null);
+select "schema".add_column('postgres_databases', 'backup_level', 8, 'short', false, false, false, 'the number of backup copies to keep', '1.0a100', '1.30');
+select "schema".add_column('postgres_databases', 'backup_retention', 9, 'short', false, false, false, 'the number of days backups will be kept', '1.0a100', '1.30');
+select "schema".add_column('postgres_databases', 'enable_postgis', 10, 'boolean', false, false, false, 'indicates PostGIS is enabled on this database', '1.27', null);

@@ -52,5 +52,3 @@ insert into "schema"."Schema" values(
     true,
     null -- Uses pg_catalog.pg_description
 );
-
-analyze "schema"."Schema";

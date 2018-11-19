@@ -1,0 +1,18 @@
+select "schema".add_column('file_backup_stats', 'pkey', 0, 'pkey', false, true, false, 'a generated primary key', '1.0a100', '1.30');
+select "schema".add_column('file_backup_stats', 'server', 1, 'fkey', false, false, false, 'the pkey of the server that the file resides on', '1.0a100', '1.30');
+select "schema".add_column('file_backup_stats', 'start_time', 2, 'time', false, false, false, 'the time the backup started', '1.0a100', '1.30');
+select "schema".add_column('file_backup_stats', 'end_time', 3, 'time', false, false, false, 'the time the backup ended', '1.0a100', '1.30');
+select "schema".add_column('file_backup_stats', 'scanned', 4, 'int', false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('file_backup_stats', 'file_backup_attribute_matches', 5, 'int', false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('file_backup_stats', 'not_matched_md5_files', 6, 'int', false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('file_backup_stats', 'not_matched_md5_failures', 7, 'int', false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('file_backup_stats', 'send_missing_backup_data_files', 8, 'int', false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('file_backup_stats', 'send_missing_backup_data_failures', 9, 'int', false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('file_backup_stats', 'delete_unused_backup_data1', 10, 'int', false, false, false, '', '1.0a100', '1.0a108');
+select "schema".add_column('file_backup_stats', 'temp_files', 11, 'int', false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('file_backup_stats', 'temp_send_backup_data_files', 12, 'int', false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('file_backup_stats', 'temp_failures', 13, 'int', false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('file_backup_stats', 'delete_unused_backup_data2', 14, 'int', false, false, false, '', '1.0a100', '1.0a108');
+select "schema".add_column('file_backup_stats', 'added', 15, 'int', false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('file_backup_stats', 'deleted', 16, 'int', false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('file_backup_stats', 'is_successful', 17, 'boolean', false, false, false, '', '1.0a100', '1.30');

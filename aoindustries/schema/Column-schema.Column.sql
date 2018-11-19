@@ -1,0 +1,11 @@
+select "schema".add_column('schema_columns', 'pkey', 'pkey', false, true, true, 'a generated unique pkey', '1.0a100', null);
+select "schema".add_column('schema_columns', 'table_name', 'string', false, false, true, 'the name of the table the column is in', '1.0a100', null);
+select "schema".add_column('schema_columns', 'column_name', 'string', false, false, true, 'the name of the column', '1.0a100', null);
+select "schema".add_column('schema_columns', 'index', 'int', false, false, true, 'the index of the column', '1.0a100', null);
+select "schema".add_column('schema_columns', 'type', 'string', false, false, true, 'the type of data in the column', '1.0a100', null);
+select "schema".add_column('schema_columns', 'is_nullable', 'boolean', false, false, true, 'if the value may be null', '1.0a100', null);
+select "schema".add_column('schema_columns', 'is_unique', 'boolean', false, false, true, 'if true, the value is unique across rows', '1.0a100', null);
+select "schema".add_column('schema_columns', 'is_public', 'boolean', false, false, true, 'if the value is publicly accessible', '1.0a100', null);
+select "schema".add_column('schema_columns', 'description', 'string', false, false, true, 'any description associated with the column', '1.0a100', null);
+select "schema".add_column('schema_columns', 'since_version', 'string', false, false, true, 'the first aoserv_protocol version this column was in', '1.0a101', null);
+select "schema".add_column('schema_columns', 'last_version', 'string', true, false, true, 'the last version containing this field', '1.0a104', null);

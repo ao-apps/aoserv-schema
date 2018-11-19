@@ -1540,7 +1540,8 @@ added schema management
 
 
 TODO: Nullable descriptions instead of where we have ''?
-TODO: filter schema.Type by only those matching current protocol, including id non-breaking sequence starting at 0'
+TODO: filter schema.Type by only those matching current protocol, including id non-breaking sequence starting at 0
+TODO: Remove unused email_attachment_blocks'
 );
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table

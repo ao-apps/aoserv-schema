@@ -1,0 +1,9 @@
+select "schema".add_column('notice_log', 'pkey', 0, 'pkey', false, true, false, '', '1.0a100', null);
+select "schema".add_column('notice_log', 'create_time', 1, 'time', false, false, false, '', '1.0a100', null);
+select "schema".add_column('notice_log', 'accounting', 2, 'accounting', false, false, false, '', '1.0a100', null);
+select "schema".add_column('notice_log', 'billing_contact', 3, 'string', false, false, false, '', '1.0a100', null);
+select "schema".add_column('notice_log', 'billing_email', 4, 'email', false, false, false, '', '1.0a100', null);
+select "schema".add_column('notice_log', 'balance', 5, 'decimal_2', false, false, false, '', '1.0a100', null);
+select "schema".add_column('notice_log', 'notice_type', 6, 'string', false, false, false, '', '1.0a100', null);
+select "schema".add_column('notice_log', 'transid', 7, 'int', true, false, false, '', '1.0a100', '1.68');
+select "schema".add_column('notice_log', 'transid', 8, 'fkey', true, false, false, '', '1.69', null);

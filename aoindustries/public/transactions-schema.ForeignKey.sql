@@ -1,0 +1,9 @@
+select "schema".add_foreign_key('transactions', 'accounting', 'businesses', 'accounting', '1.0a100', null);
+select "schema".add_foreign_key('transactions', 'source_accounting', 'businesses', 'accounting', '1.0a100', null);
+select "schema".add_foreign_key('transactions', 'username', 'business_administrators', 'username', '1.0a100', null);
+select "schema".add_foreign_key('transactions', 'type', 'rates', 'name', '1.0a100', '1.0a122');
+select "schema".add_foreign_key('transactions', 'type', 'transaction_types', 'name', '1.0a123', null);
+select "schema".add_foreign_key('transactions', 'payment_type', 'payment_types', 'name', '1.0a100', null);
+select "schema".add_foreign_key('transactions', 'merchant_account', 'merchant_accounts', 'name', '1.0a100', '1.28');
+select "schema".add_foreign_key('transactions', 'processor', 'credit_card_processors', 'provider_id', '1.29', null);
+select "schema".add_foreign_key('transactions', 'credit_card_transaction', 'credit_card_transactions', 'pkey', '1.29', null);

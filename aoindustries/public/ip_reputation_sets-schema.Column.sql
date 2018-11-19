@@ -1,0 +1,14 @@
+select "schema".add_column('ip_reputation_sets', 'pkey',                     0,  'pkey',        false, true,  false, 'a generated, unique key',                              '1.65', null);
+select "schema".add_column('ip_reputation_sets', 'accounting',               1,  'accounting',  false, false, false, 'the accounting code of the business',                  '1.65', null);
+select "schema".add_column('ip_reputation_sets', 'identifier',               2,  'string',      false, true,  false, 'a globally unique identifier',                         '1.65', null);
+select "schema".add_column('ip_reputation_sets', 'allow_subaccount_use',     3,  'boolean',     false, false, false, 'allows subaccounts to use the set',                    '1.65', null);
+select "schema".add_column('ip_reputation_sets', 'max_hosts',                4,  'int',         false, false, false, 'the maximum number of individual hosts tracked',       '1.65', null);
+select "schema".add_column('ip_reputation_sets', 'max_uncertain_reputation', 5,  'short',       false, false, false, 'the maximum reputation from uncertain sources',        '1.65', null);
+select "schema".add_column('ip_reputation_sets', 'max_definite_reputation',  6,  'short',       false, false, false, 'the maximum reputation from definite sources',         '1.65', null);
+select "schema".add_column('ip_reputation_sets', 'network_prefix',           7,  'short',       false, false, false, 'the network size, for example 24 for a /24 (class C)', '1.65', null);
+select "schema".add_column('ip_reputation_sets', 'max_network_reputation',   8,  'short',       false, false, false, 'the maximum reputation for a network',                 '1.65', null);
+select "schema".add_column('ip_reputation_sets', 'host_decay_interval',      9,  'int',         false, false, false, 'the number of seconds between each host decay',        '1.65', null);
+select "schema".add_column('ip_reputation_sets', 'last_host_decay',          10, 'time',        false, false, false, 'the time the hosts were last decayed',                 '1.65', null);
+select "schema".add_column('ip_reputation_sets', 'network_decay_interval',   11, 'int',         false, false, false, 'the number of seconds between each network decay',     '1.65', null);
+select "schema".add_column('ip_reputation_sets', 'last_network_decay',       12, 'time',        false, false, false, 'the time the networks were last decayed',              '1.65', null);
+select "schema".add_column('ip_reputation_sets', 'last_reputation_added',    13, 'time',        false, false, false, 'the time reputation was last added',                   '1.67', null);

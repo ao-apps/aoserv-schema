@@ -1,0 +1,18 @@
+select "schema".add_column('net_binds', 'pkey', 0, 'pkey', false, true, false, 'a generated pkey', '1.0a100', null);
+select "schema".add_column('net_binds', 'package', 1, 'package', false, false, false, 'the package that owns the opened port', '1.0a100', '1.80');
+select "schema".add_column('net_binds', 'package', 2, 'accounting', false, false, false, 'the package that owns the opened port', '1.80.0', null);
+select "schema".add_column('net_binds', 'ao_server', 3, 'fkey', false, false, false, 'the pkey of the server that this port is bound on', '1.0a100', '1.32');
+select "schema".add_column('net_binds', 'server', 4, 'fkey', false, false, false, 'the pkey of the server that this port is bound on', '1.33', null);
+select "schema".add_column('net_binds', 'ip_address', 5, 'fkey', false, false, false, 'the pkey of the IP address that is bound to', '1.0a100', null);
+select "schema".add_column('net_binds', 'port', 6, 'int', false, false, false, 'the port number that is bound', '1.0a100', '1.68');
+select "schema".add_column('net_binds', 'port', 7, 'fkey', false, false, false, 'the port number that is bound', '1.69', '1.80');
+select "schema".add_column('net_binds', 'port', 8, 'net_port', false, false, false, 'the port that is bound', '1.80.0', null);
+select "schema".add_column('net_binds', 'net_protocol', 9, 'string', false, false, false, 'the network protocol (<code>net_protocols</code>)', '1.0a100', '1.80');
+select "schema".add_column('net_binds', 'app_protocol', 10, 'string', false, false, false, 'the application protocol (<code>protocols</code>)', '1.0a100', null);
+select "schema".add_column('net_binds', 'open_firewall', 11, 'boolean', false, false, false, 'flags if the firewall should be opened for this port', '1.0a100', '1.80.2');
+select "schema".add_column('net_binds', 'monitor_delay', 12, 'int', true, false, false, '', '1.0a100', '1.0a103');
+select "schema".add_column('net_binds', 'monitor_parameter', 13, 'string', true, false, false, '', '1.0a100', '1.0a103');
+select "schema".add_column('net_binds', 'monitor_contact', 14, 'string', true, false, false, '', '1.0a100', '1.0a103');
+select "schema".add_column('net_binds', 'monitor_info', 15, 'string', true, false, false, '', '1.0a100', '1.0a103');
+select "schema".add_column('net_binds', 'monitoring_enabled', 16, 'boolean', false, false, false, 'turns on monitoring of the port', '1.0a104', null);
+select "schema".add_column('net_binds', 'monitoring_parameters', 17, 'string', true, false, false, 'the URL-encoded name=value pairs of monitoring parameters', '1.58', null);

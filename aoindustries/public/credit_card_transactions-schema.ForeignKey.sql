@@ -1,0 +1,9 @@
+select "schema".add_foreign_key('credit_card_transactions', 'accounting', 'businesses', 'accounting', '1.69', null);
+select "schema".add_foreign_key('credit_card_transactions', 'authorization_username', 'business_administrators', 'username', '1.69', null);
+select "schema".add_foreign_key('credit_card_transactions', 'capture_username', 'business_administrators', 'username', '1.69', null);
+select "schema".add_foreign_key('credit_card_transactions', 'credit_card_accounting', 'businesses', 'accounting', '1.69', null);
+select "schema".add_foreign_key('credit_card_transactions', 'credit_card_country_code', 'country_codes', 'code', '1.69', null);
+select "schema".add_foreign_key('credit_card_transactions', 'credit_card_created_by', 'business_administrators', 'username', '1.69', null);
+select "schema".add_foreign_key('credit_card_transactions', 'processor_id', 'credit_card_processors', 'provider_id', '1.69', null);
+select "schema".add_foreign_key('credit_card_transactions', 'shipping_country_code', 'country_codes', 'code', '1.69', null);
+select "schema".add_foreign_key('credit_card_transactions', 'void_username', 'business_administrators', 'username', '1.69', null);

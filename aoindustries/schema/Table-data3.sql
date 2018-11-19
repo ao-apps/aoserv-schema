@@ -1232,6 +1232,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'monitoring',
     'net_monitoring_times',
     'Net Monitoring Times',
     true,
@@ -1573,6 +1574,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'monitoring',
     'server_reports',
     'Server Reports',
     false,
@@ -1630,6 +1632,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'monitoring',
     'sr_cpu',
     'Server CPU Report',
     false,
@@ -1638,6 +1641,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'monitoring',
     'sr_db_mysql',
     'Server MySQL Report',
     false,
@@ -1646,6 +1650,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'monitoring',
     'sr_db_postgres',
     'Server PostgreSQL Report',
     false,
@@ -1654,6 +1659,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'monitoring',
     'sr_disk_access',
     'Server Disk Access Report',
     false,
@@ -1662,6 +1668,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'monitoring',
     'sr_disk_mdstat',
     'Server RAID Disk Report',
     false,
@@ -1670,6 +1677,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'monitoring',
     'sr_disk_space',
     'Server Disk Space Report',
     false,
@@ -1678,6 +1686,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'monitoring',
     'sr_kernel',
     'Server Kernel Report',
     false,
@@ -1686,6 +1695,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'monitoring',
     'sr_load',
     'Server Load Report',
     false,
@@ -1694,6 +1704,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'monitoring',
     'sr_memory',
     'Server Memory Report',
     false,
@@ -1702,6 +1713,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'monitoring',
     'sr_net_devices',
     'Server Net Device Report',
     false,
@@ -1710,6 +1722,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'monitoring',
     'sr_net_icmp',
     'Server Net ICMP Report',
     false,
@@ -1718,6 +1731,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'monitoring',
     'sr_net_ip',
     'Server Net IP Report',
     false,
@@ -1726,6 +1740,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'monitoring',
     'sr_net_tcp',
     'Server Net TCP Report',
     false,
@@ -1734,6 +1749,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'monitoring',
     'sr_net_udp',
     'Server Net UDP Report',
     false,
@@ -1742,6 +1758,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'monitoring',
     'sr_num_users',
     'Server User Report',
     false,
@@ -1750,6 +1767,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'monitoring',
     'sr_paging',
     'Server Paging Report',
     false,
@@ -1758,6 +1776,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'monitoring',
     'sr_processes',
     'Server Process Report',
     false,
@@ -1766,6 +1785,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'monitoring',
     'sr_swap_rate',
     'Server Swap Rate Report',
     false,
@@ -1774,6 +1794,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'monitoring',
     'sr_swap_size',
     'Server Swap Size Report',
     false,

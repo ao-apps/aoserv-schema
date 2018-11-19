@@ -56,7 +56,7 @@ insert into "schema"."Schema" values(
 insert into "schema"."Schema" values(
     (select count(*) from "schema"."Schema"),
     'monitoring',
-    '1.81.18',
+    '1.0a100',
     null,
     'Monitoring',
     true,

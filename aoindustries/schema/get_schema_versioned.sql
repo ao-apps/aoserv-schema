@@ -1,5 +1,5 @@
 create or replace function "schema".get_schema_versioned (
-  "name" text,
+  "name" name,
   "sinceVersion" text,
   "lastVersion" text
 )

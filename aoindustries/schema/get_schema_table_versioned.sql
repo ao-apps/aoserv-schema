@@ -1,6 +1,6 @@
 create or replace function "schema".get_schema_table_versioned (
-  "schema" text,
-  "name" text,
+  "schema" name,
+  "name" name,
   "sinceVersion" text,
   "lastVersion" text
 )

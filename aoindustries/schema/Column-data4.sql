@@ -1,16 +1,3 @@
-\echo action_types
-select "schema".add_column('action_types', 'type', 0, 'string', false, true, true, '', '1.0a100', '1.43');
-select "schema".add_column('action_types', 'description', 1, 'string', true, false, true, '', '1.0a100', '1.43');
-
-\echo actions
-select "schema".add_column('actions', 'pkey', 0, 'pkey', false, true, false, '', '1.0a100', '1.43');
-select "schema".add_column('actions', 'ticket_id', 1, 'fkey', true, false, false, '', '1.0a100', '1.43');
-select "schema".add_column('actions', 'administrator', 2, 'username', false, false, false, '', '1.0a100', '1.43');
-select "schema".add_column('actions', 'time', 3, 'time', false, false, false, '', '1.0a100', '1.43');
-select "schema".add_column('actions', 'action_type', 4, 'string', false, false, false, '', '1.0a100', '1.43');
-select "schema".add_column('actions', 'old_value', 5, 'string', true, false, false, '', '1.0a100', '1.43');
-select "schema".add_column('actions', 'comments', 6, 'string', true, false, false, '', '1.0a100', '1.43');
-
 \echo ao_server_daemon_hosts
 select "schema".add_column('ao_server_daemon_hosts', 'pkey', 0, 'pkey', false, true, false, 'a generated unique primary key', '1.0a100', null);
 select "schema".add_column('ao_server_daemon_hosts', 'ao_server', 1, 'fkey', false, false, false, 'the pkey of the ao_server', '1.0a100', null);

@@ -1093,6 +1093,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'mysql',
     'mysql_backups',
     'MySQL Backups',
     false,
@@ -1101,6 +1102,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'mysql',
     'mysql_databases',
     'MySQL Databases',
     false,
@@ -1109,6 +1111,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'mysql',
     'mysql_db_users',
     'MySQL DB Users',
     false,
@@ -1117,6 +1120,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'mysql',
     'mysql_hosts',
     'MySQL Hosts',
     false,
@@ -1125,6 +1129,7 @@ select "schema".add_table(
     '1.3'
 );
 select "schema".add_table(
+    'mysql',
     'mysql_reserved_words',
     'MySQL Reserved Words',
     true,
@@ -1133,6 +1138,7 @@ select "schema".add_table(
     '1.80'
 );
 select "schema".add_table(
+    'mysql',
     'mysql_server_users',
     'MySQL Server Users',
     false,
@@ -1141,6 +1147,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'mysql',
     'mysql_servers',
     'MySQL Servers',
     false,
@@ -1149,6 +1156,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'mysql',
     'mysql_users',
     'MySQL Users',
     false,

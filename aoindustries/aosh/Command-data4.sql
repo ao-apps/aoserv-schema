@@ -2650,6 +2650,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'get_mysql_backup',
+  'mysql',
   'mysql_backups',
   'gets the contents of a MySQL database backup',
   '<i>pkey</i>',
@@ -2658,6 +2659,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_mysql_backup',
+  'mysql',
   'mysql_backups',
   'removes a MySQL database backup from the system',
   '<i>pkey</i>',
@@ -2666,6 +2668,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_mysql_database',
+  'mysql',
   'mysql_databases',
   'adds a new MySQL database',
   '<i>database_name</i> <i>ao_server</i> <i>package</i>',
@@ -2674,6 +2677,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_mysql_database',
+  'mysql',
   'mysql_databases',
   'adds a new MySQL database',
   '<i>database_name</i> <i>mysql_server</i> <i>ao_server</i> <i>package</i>',
@@ -2682,6 +2686,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'backup_mysql_database',
+  'mysql',
   'mysql_databases',
   'stores a compressed dump of a MySQL database in the backup system',
   '<i>database_name</i> <i>ao_server</i>',
@@ -2690,6 +2695,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'backup_mysql_database',
+  'mysql',
   'mysql_databases',
   'stores a compressed dump of a MySQL database in the backup system',
   '<i>database_name</i> <i>mysql_server</i> <i>ao_server</i>',
@@ -2698,6 +2704,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'check_mysql_database_name',
+  'mysql',
   'mysql_databases',
   'checks the format of a MySQL database name',
   '<i>database_name</i>',
@@ -2706,6 +2713,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'dump_mysql_database',
+  'mysql',
   'mysql_databases',
   'dumps the contents of a MySQL database',
   '<i>database_name</i> <i>ao_server</i>',
@@ -2714,6 +2722,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'dump_mysql_database',
+  'mysql',
   'mysql_databases',
   'dumps the contents of a MySQL database',
   '<i>database_name</i> <i>mysql_server</i> <i>ao_server</i>',
@@ -2722,6 +2731,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'dump_mysql_database',
+  'mysql',
   'mysql_databases',
   'dumps the contents of a MySQL database',
   '<i>database_name</i> <i>mysql_server</i> <i>ao_server</i> <i>gzip</i>',
@@ -2730,6 +2740,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'generate_mysql_database_name',
+  'mysql',
   'mysql_databases',
   'generates a unique MySQL database name',
   '<i>template_base</i> <i>template_added</i>',
@@ -2738,6 +2749,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'is_mysql_database_name_available',
+  'mysql',
   'mysql_databases',
   'determines if a MySQL database name is available',
   '<i>database_name</i> <i>ao_server</i>',
@@ -2746,6 +2758,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'is_mysql_database_name_available',
+  'mysql',
   'mysql_databases',
   'determines if a MySQL database name is available',
   '<i>database_name</i> <i>mysql_server</i> <i>ao_server</i>',
@@ -2754,6 +2767,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_mysql_database',
+  'mysql',
   'mysql_databases',
   'removes a MySQL database',
   '<i>database_name</i> <i>ao_server</i>',
@@ -2762,6 +2776,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_mysql_database',
+  'mysql',
   'mysql_databases',
   'removes a MySQL database',
   '<i>database_name</i> <i>mysql_server</i> <i>ao_server</i>',
@@ -2770,6 +2785,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_mysql_database_backup_retention',
+  'mysql',
   'mysql_databases',
   'sets the backup retention for a MySQL database',
   '<i>database_name</i> <i>ao_server</i> <i>backup_retention</i>',
@@ -2778,6 +2794,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_mysql_database_backup_retention',
+  'mysql',
   'mysql_databases',
   'sets the backup retention for a MySQL database',
   '<i>database_name</i> <i>mysql_server</i> <i>ao_server</i> <i>backup_retention</i>',
@@ -2786,6 +2803,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'wait_for_mysql_database_rebuild',
+  'mysql',
   'mysql_databases',
   'waits for any pending or current MySQL database config rebuilds to complete',
   '<i>ao_server</i>',
@@ -2794,6 +2812,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_mysql_db_user',
+  'mysql',
   'mysql_db_users',
   'grants a MySQL user permission to access a MySQL database',
   '<i>database_name</i> <i>ao_server</i> <i>username</i> <i>can_select</i> <i>can_insert</i> <i>can_update</i> <i>can_delete</i> <i>can_create</i> <i>can_drop</i> <i>can_index</i> <i>can_alter</i>',
@@ -2802,6 +2821,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_mysql_db_user',
+  'mysql',
   'mysql_db_users',
   'grants a MySQL user permission to access a MySQL database',
   '<i>database_name</i> <i>ao_server</i> <i>username</i> <i>can_select</i> <i>can_insert</i> <i>can_update</i> <i>can_delete</i> <i>can_create</i> <i>can_drop</i> <i>can_index</i> <i>can_alter</i> <i>can_create_temp_table</i> <i>can_lock_tables</i>',
@@ -2810,6 +2830,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_mysql_db_user',
+  'mysql',
   'mysql_db_users',
   'grants a MySQL user permission to access a MySQL database',
   '<i>database_name</i> <i>mysql_server</i> <i>ao_server</i> <i>username</i> <i>can_select</i> <i>can_insert</i> <i>can_update</i> <i>can_delete</i> <i>can_create</i> <i>can_drop</i> <i>can_index</i> <i>can_alter</i> <i>can_create_temp_table</i> <i>can_lock_tables</i> <i>can_create_view</i> <i>can_show_view</i> <i>can_create_routine</i> <i>can_alter_routine</i> <i>can_execute</i>',
@@ -2818,6 +2839,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_mysql_db_user',
+  'mysql',
   'mysql_db_users',
   'grants a MySQL user permission to access a MySQL database',
   '<i>database_name</i> <i>mysql_server</i> <i>ao_server</i> <i>username</i> <i>can_select</i> <i>can_insert</i> <i>can_update</i> <i>can_delete</i> <i>can_create</i> <i>can_drop</i> <i>can_index</i> <i>can_alter</i> <i>can_create_temp_table</i> <i>can_lock_tables</i> <i>can_create_view</i> <i>can_show_view</i> <i>can_create_routine</i> <i>can_alter_routine</i> <i>can_execute</i> <i>can_event</i> <i>can_trigger</i>',
@@ -2826,6 +2848,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_mysql_db_user',
+  'mysql',
   'mysql_db_users',
   'grants a MySQL user permission to access a MySQL database',
   '<i>database_name</i> <i>mysql_server</i> <i>ao_server</i> <i>username</i> <i>can_select</i> <i>can_insert</i> <i>can_update</i> <i>can_delete</i> <i>can_create</i> <i>can_drop</i> <i>can_reference</i> <i>can_index</i> <i>can_alter</i> <i>can_create_temp_table</i> <i>can_lock_tables</i> <i>can_create_view</i> <i>can_show_view</i> <i>can_create_routine</i> <i>can_alter_routine</i> <i>can_execute</i> <i>can_event</i> <i>can_trigger</i>',
@@ -2834,6 +2857,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_mysql_db_user',
+  'mysql',
   'mysql_db_users',
   'removes a MySQL user''s access to a MySQL database',
   '<i>database_name</i> <i>ao_server</i> <i>username</i>',
@@ -2842,6 +2866,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_mysql_db_user',
+  'mysql',
   'mysql_db_users',
   'removes a MySQL user''s access to a MySQL database',
   '<i>database_name</i> <i>mysql_server</i> <i>ao_server</i> <i>username</i>',
@@ -2850,6 +2875,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'wait_for_mysql_db_user_rebuild',
+  'mysql',
   'mysql_db_users',
   'waits for any pending or current MySQL permission config rebuilds to complete',
   '<i>ao_server</i>',
@@ -2858,6 +2884,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'wait_for_mysql_host_rebuild',
+  'mysql',
   'mysql_hosts',
   'waits for any pending or current MySQL host permission rebuilds to complete',
   '<i>ao_server</i>',
@@ -2866,6 +2893,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'check_mysql_server_name',
+  'mysql',
   'mysql_servers',
   'checks the format of a MySQL server name',
   '<i>name</i>',
@@ -2874,6 +2902,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'is_mysql_server_name_available',
+  'mysql',
   'mysql_servers',
   'determines if a MySQL server name is available',
   '<i>server_name</i> <i>ao_server</i>',
@@ -2882,6 +2911,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'restart_mysql',
+  'mysql',
   'mysql_servers',
   'restarts the MySQL database server',
   '<i>mysql_server</i> <i>ao_server</i>',
@@ -2890,6 +2920,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'start_mysql',
+  'mysql',
   'mysql_servers',
   'starts the MySQL database server',
   '<i>mysql_server</i> <i>ao_server</i>',
@@ -2898,6 +2929,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'stop_mysql',
+  'mysql',
   'mysql_servers',
   'stops the MySQL database server',
   '<i>mysql_server</i> <i>ao_server</i>',
@@ -2906,6 +2938,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'wait_for_mysql_server_rebuild',
+  'mysql',
   'mysql_servers',
   'waits for any pending or current database server config rebuilds to complete',
   '<i>ao_server</i>',
@@ -2914,6 +2947,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_mysql_server_user',
+  'mysql',
   'mysql_server_users',
   'adds a MySQL user to a server',
   '<i>username</i> <i>ao_server</i> <i>host</i>',
@@ -2922,6 +2956,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_mysql_server_user',
+  'mysql',
   'mysql_server_users',
   'adds a MySQL user to a server',
   '<i>username</i> <i>mysql_server</i> <i>ao_server</i> <i>host</i>',
@@ -2930,6 +2965,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'disable_mysql_server_user',
+  'mysql',
   'mysql_server_users',
   'disables a MySQL account on one server',
   '<i>username</i> <i>ao_server</i> <i>reason</i>',
@@ -2938,6 +2974,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'disable_mysql_server_user',
+  'mysql',
   'mysql_server_users',
   'disables a MySQL account on one server',
   '<i>username</i> <i>mysql_server</i> <i>ao_server</i> <i>reason</i>',
@@ -2946,6 +2983,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'enable_mysql_server_user',
+  'mysql',
   'mysql_server_users',
   'enables a MySQL account on one server',
   '<i>username</i> <i>ao_server</i>',
@@ -2954,6 +2992,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'enable_mysql_server_user',
+  'mysql',
   'mysql_server_users',
   'enables a MySQL account on one server',
   '<i>username</i> <i>mysql_server</i> <i>ao_server</i>',
@@ -2962,6 +3001,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'is_mysql_server_user_password_set',
+  'mysql',
   'mysql_server_users',
   'determines if a MySQL account password is set',
   '<i>username</i> <i>ao_server</i>',
@@ -2970,6 +3010,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'is_mysql_server_user_password_set',
+  'mysql',
   'mysql_server_users',
   'determines if a MySQL account password is set',
   '<i>username</i> <i>mysql_server</i> <i>ao_server</i>',
@@ -2978,6 +3019,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_mysql_server_user',
+  'mysql',
   'mysql_server_users',
   'removes a MySQL user from a server',
   '<i>username</i> <i>ao_server</i>',
@@ -2986,6 +3028,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_mysql_server_user',
+  'mysql',
   'mysql_server_users',
   'removes a MySQL user from a server',
   '<i>username</i> <i>mysql_server</i> <i>ao_server</i>',
@@ -2994,6 +3037,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_mysql_server_user_password',
+  'mysql',
   'mysql_server_users',
   'sets the password for a MySQL user on one server',
   '<i>username</i> <i>ao_server</i> <i>password</i>',
@@ -3002,6 +3046,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_mysql_server_user_password',
+  'mysql',
   'mysql_server_users',
   'sets the password for a MySQL user on one server',
   '<i>username</i> <i>mysql_server</i> <i>ao_server</i> <i>password</i>',
@@ -3010,6 +3055,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_mysql_user',
+  'mysql',
   'mysql_users',
   'adds a MySQL user to the system',
   '<i>username</i>',
@@ -3018,6 +3064,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'are_mysql_user_passwords_set',
+  'mysql',
   'mysql_users',
   'determines if <b>all</b>, <b>some</b>, or <b>none</b> of the passwords for a MySQL account are set',
   '<i>username</i>',
@@ -3026,6 +3073,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'check_mysql_password',
+  'mysql',
   'mysql_users',
   'checks the format of a password for a MySQL user',
   '<i>username</i> <i>password</i>',
@@ -3034,6 +3082,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'check_mysql_username',
+  'mysql',
   'mysql_users',
   'checks the format of a MySQL username',
   '<i>username</i>',
@@ -3042,6 +3091,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'disable_mysql_user',
+  'mysql',
   'mysql_users',
   'disables a MySQL account on all servers',
   '<i>username</i> <i>reason</i>',
@@ -3050,6 +3100,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'enable_mysql_user',
+  'mysql',
   'mysql_users',
   'enables a MySQL account on all servers',
   '<i>username</i>',
@@ -3058,6 +3109,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_mysql_user',
+  'mysql',
   'mysql_users',
   'removes a MySQL user from the system',
   '<i>username</i>',
@@ -3066,6 +3118,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_mysql_user_password',
+  'mysql',
   'mysql_users',
   'sets the password for a MySQL user on all servers',
   '<i>username</i> <i>password</i>',
@@ -3074,6 +3127,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'wait_for_mysql_user_rebuild',
+  'mysql',
   'mysql_users',
   'waits for any pending or current MySQL user config rebuilds to complete',
   '<i>ao_server</i>',

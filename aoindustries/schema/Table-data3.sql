@@ -314,6 +314,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'dns',
     'dns_forbidden_zones',
     'DNS Forbidden Zones',
     true,
@@ -322,6 +323,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'dns',
     'dns_records',
     'DNS Records',
     false,
@@ -330,6 +332,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'dns',
     'dns_tlds',
     'DNS TLDs',
     true,
@@ -338,6 +341,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'dns',
     'dns_types',
     'DNS Types',
     true,
@@ -346,6 +350,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'dns',
     'dns_zones',
     'DNS Zones',
     false,

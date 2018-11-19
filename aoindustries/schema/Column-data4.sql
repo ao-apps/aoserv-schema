@@ -86,20 +86,6 @@ select "schema".add_column('aoserv_permissions', 'sort_order', 1, 'short', false
 select "schema".add_column('architectures', 'name', 0, 'string', false, true, true, 'the unique name of the architecture', '1.0a100', null);
 select "schema".add_column('architectures', 'bits', 1, 'int', false, false, true, 'the number of bits used by the architecture', '1.0a108', null);
 
-\echo backup_data
-select "schema".add_column('backup_data', 'pkey', 0, 'pkey', false, true, false, 'a generated primary key', '1.0a100', '1.30');
-select "schema".add_column('backup_data', 'created', 1, 'time', false, false, false, 'the time the dataset was created', '1.0a100', '1.30');
-select "schema".add_column('backup_data', 'backup_partition', 2, 'fkey', false, false, false, 'the backup partition that stores the content', '1.0a100', '1.30');
-select "schema".add_column('backup_data', 'data_size', 3, 'long', false, false, false, 'the uncompressed size of this data', '1.0a100', '1.30');
-select "schema".add_column('backup_data', 'compressed_size', 4, 'long', true, false, false, 'the compressed size of this data', '1.0a100', '1.30');
-select "schema".add_column('backup_data', 'md5_hi', 5, 'long', false, false, false, 'the 8 high-order bytes of the uncompressed data', '1.0a100', '1.30');
-select "schema".add_column('backup_data', 'md5_lo', 6, 'long', false, false, false, 'the 8 low-order bytes of the uncompressed data', '1.0a100', '1.30');
-select "schema".add_column('backup_data', 'is_stored', 7, 'boolean', false, false, false, 'indicates that the data is available on the backup_partition', '1.0a100', '1.30');
-
-\echo backup_levels
-select "schema".add_column('backup_levels', 'level', 0, 'short', false, true, true, 'the number of the level', '1.0a100', '1.30');
-select "schema".add_column('backup_levels', 'display', 1, 'string', false, false, true, 'the text displayed for this level', '1.0a100', '1.30');
-
 \echo backup_partitions
 select "schema".add_column('backup_partitions', 'pkey', 0, 'pkey', false, true, false, 'a generated primary key', '1.0a100', null);
 select "schema".add_column('backup_partitions', 'ao_server', 1, 'fkey', false, false, false, 'the pkey of the server that stores the backup data', '1.0a100', null);
@@ -318,16 +304,6 @@ select "schema".add_column('business_servers', 'can_control_xvfb', 11, 'boolean'
 select "schema".add_column('business_servers', 'can_vnc_console', 12, 'boolean', false, false, false, '', '1.51', null);
 select "schema".add_column('business_servers', 'can_control_virtual_server', 13, 'boolean', false, false, false, '', '1.64', null);
 
-\echo client_jvm_profile
-select "schema".add_column('client_jvm_profile', 'level', 0, 'int', false, false, false, '', '1.0a100', '1.76');
-select "schema".add_column('client_jvm_profile', 'classname', 1, 'string', false, false, false, '', '1.0a100', '1.76');
-select "schema".add_column('client_jvm_profile', 'method_name', 2, 'string', false, false, false, '', '1.0a100', '1.76');
-select "schema".add_column('client_jvm_profile', 'parameter', 3, 'string', true, false, false, '', '1.0a100', '1.76');
-select "schema".add_column('client_jvm_profile', 'use_count', 4, 'long', false, false, false, '', '1.0a100', '1.76');
-select "schema".add_column('client_jvm_profile', 'total_time', 5, 'interval', false, false, false, '', '1.0a100', '1.76');
-select "schema".add_column('client_jvm_profile', 'min_time', 6, 'interval', true, false, false, '', '1.0a100', '1.76');
-select "schema".add_column('client_jvm_profile', 'max_time', 7, 'interval', true, false, false, '', '1.0a100', '1.76');
-
 \echo country_codes
 select "schema".add_column('country_codes', 'code', 0, 'country', false, true, true, 'the two-character code for the country', '1.0a100', '1.68');
 select "schema".add_column('country_codes', 'code', 1, 'string', false, true, true, 'the two-character code for the country', '1.69', null);
@@ -525,29 +501,12 @@ select "schema".add_column('cyrus_imapd_servers', 'expire_duration_unit',   8, '
 select "schema".add_column('cyrus_imapd_servers', 'expunge_duration',       9, 'float',        true, false, false, 'the duration after which delayed expunge messages are removed',      '1.81.10', null);
 select "schema".add_column('cyrus_imapd_servers', 'expunge_duration_unit', 10, 'string',       true, false, false, 'the time unit for expunge_duration, one of "d", "h", "m", "s"',      '1.81.10', null);
 
-\echo daemon_profile
-select "schema".add_column('daemon_profile', 'server', 0, 'hostname', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('daemon_profile', 'ao_server', 1, 'hostname', false, false, false, '', '1.31', '1.68');
-select "schema".add_column('daemon_profile', 'ao_server', 2, 'domain_name', false, false, false, '', '1.69', '1.76');
-select "schema".add_column('daemon_profile', 'level', 3, 'int', false, false, false, '', '1.0a100', '1.76');
-select "schema".add_column('daemon_profile', 'classname', 4, 'string', false, false, false, '', '1.0a100', '1.76');
-select "schema".add_column('daemon_profile', 'method_name', 5, 'string', false, false, false, '', '1.0a100', '1.76');
-select "schema".add_column('daemon_profile', 'parameter', 6, 'string', true, false, false, '', '1.0a100', '1.76');
-select "schema".add_column('daemon_profile', 'use_count', 7, 'long', false, false, false, '', '1.0a100', '1.76');
-select "schema".add_column('daemon_profile', 'total_time', 8, 'interval', false, false, false, '', '1.0a100', '1.76');
-select "schema".add_column('daemon_profile', 'min_time', 9, 'interval', true, false, false, '', '1.0a100', '1.76');
-select "schema".add_column('daemon_profile', 'max_time', 10, 'interval', true, false, false, '', '1.0a100', '1.76');
-
 \echo disable_log
 select "schema".add_column('disable_log', 'pkey', 0, 'pkey', false, true, false, 'a generated primary key', '1.0a100', null);
 select "schema".add_column('disable_log', 'time', 1, 'time', false, false, false, 'the time the stuff was disabled', '1.0a100', null);
 select "schema".add_column('disable_log', 'accounting', 2, 'accounting', false, false, false, 'the business whose resources are being disabled', '1.0a100', null);
 select "schema".add_column('disable_log', 'disabled_by', 3, 'username', false, false, false, 'the person who disabled the accounts', '1.0a100', null);
 select "schema".add_column('disable_log', 'disable_reason', 4, 'string', true, false, false, 'the optional reason the accounts were disabled', '1.0a100', null);
-
-\echo disk_types
-select "schema".add_column('disk_types', 'type', 0, 'string', false, true, true, 'the unique name of the type of disk', '1.36', '1.41');
-select "schema".add_column('disk_types', 'sort_order', 1, 'short', false, true, true, 'the sort order of the disk, those sorted higher may be substituted for those sorted lower', '1.36', '1.41');
 
 \echo distro_file_types
 select "schema".add_column('distro_file_types', 'type', 0, 'string', false, true, true, 'the unique name of the type', '1.0a100', null);
@@ -633,13 +592,6 @@ select "schema".add_column('email_attachment_blocks', 'extension', 2, 'string', 
 select "schema".add_column('email_attachment_types', 'extension', 0, 'string', false, true, true, 'the unique filename extension', '1.0a116', null);
 select "schema".add_column('email_attachment_types', 'description', 1, 'string', false, false, true, 'a brief description of the attachment type', '1.0a116', null);
 select "schema".add_column('email_attachment_types', 'is_default_block', 2, 'boolean', false, false, true, 'indicates that the type will be blocked by default', '1.0a116', null);
-
-\echo email_blacklists
-select "schema".add_column('email_blacklists', 'ip_address', 0, 'string', false, true, false, '', '1.0a105', '1.0a121');
-select "schema".add_column('email_blacklists', 'is_dsbl', 1, 'boolean', false, false, false, '', '1.0a105', '1.0a121');
-select "schema".add_column('email_blacklists', 'is_ordb', 2, 'boolean', false, false, false, '', '1.0a105', '1.0a121');
-select "schema".add_column('email_blacklists', 'is_spamhaus', 3, 'boolean', false, false, false, '', '1.0a105', '1.0a121');
-select "schema".add_column('email_blacklists', 'spamhaus_lists', 4, 'string', true, false, false, '', '1.0a106', '1.0a121');
 
 \echo email_domains
 select "schema".add_column('email_domains', 'pkey', 0, 'pkey', false, true, false, 'a generated unique key', '1.0a100', null);
@@ -785,41 +737,6 @@ select "schema".add_column('failover_mysql_replications', 'monitoring_seconds_be
 select "schema".add_column('failover_mysql_replications', 'monitoring_seconds_behind_critical', 8, 'int', true, false, false, 'the seconds behind where will trigger critical alert level', '1.56', null);
 select "schema".add_column('failover_mysql_replications', 'max_alert_level', 9, 'string', false, false, false, 'the maximum alert level for all monitoring of this slave', '1.74', null);
 
-\echo file_backups
-select "schema".add_column('file_backups', 'pkey', 0, 'pkey', false, true, false, 'a generated primary key', '1.0a100', '1.30');
-select "schema".add_column('file_backups', 'server', 1, 'fkey', false, false, false, 'the server that the file resides on', '1.0a100', '1.30');
-select "schema".add_column('file_backups', 'path', 2, 'string', false, false, false, 'the pkey in file_paths for the path of this file', '1.0a100', '1.30');
-select "schema".add_column('file_backups', 'device', 3, 'short', false, false, false, 'the device that was storing this file', '1.0a100', '1.0a106');
-select "schema".add_column('file_backups', 'device', 4, 'short', true, false, false, 'the device that was storing this file', '1.0a107', '1.30');
-select "schema".add_column('file_backups', 'inode', 5, 'long', false, false, false, 'the unique identifier for this object within the device', '1.0a100', '1.0a106');
-select "schema".add_column('file_backups', 'inode', 6, 'long', true, false, false, 'the unique identifier for this object within the device', '1.0a107', '1.30');
-select "schema".add_column('file_backups', 'package', 7, 'fkey', false, false, false, 'the number of the package that owns the file', '1.0a100', '1.30');
-select "schema".add_column('file_backups', 'mode', 8, 'octal_long', false, false, false, 'the permissions and type of the file', '1.0a100', '1.30');
-select "schema".add_column('file_backups', 'uid', 9, 'int', false, false, false, 'the file owner', '1.0a100', '1.0a106');
-select "schema".add_column('file_backups', 'uid', 10, 'int', true, false, false, 'the file owner', '1.0a107', '1.30');
-select "schema".add_column('file_backups', 'gid', 11, 'int', false, false, false, 'the file group', '1.0a100', '1.0a106');
-select "schema".add_column('file_backups', 'gid', 12, 'int', true, false, false, 'the file group', '1.0a107', '1.30');
-select "schema".add_column('file_backups', 'backup_data', 13, 'fkey', true, false, false, 'the data content for the file', '1.0a100', '1.30');
-select "schema".add_column('file_backups', 'create_time', 14, 'time', false, false, false, 'the time the file backup entry was created', '1.0a100', '1.30');
-select "schema".add_column('file_backups', 'modify_time', 15, 'time', true, false, false, 'the modification time of the file the last time it was verified', '1.0a100', '1.30');
-select "schema".add_column('file_backups', 'remove_time', 16, 'time', true, false, false, 'the time the file backup entry was no longer valid', '1.0a100', '1.30');
-select "schema".add_column('file_backups', 'backup_level', 17, 'short', false, false, false, 'the number of times to store this backup', '1.0a100', '1.30');
-select "schema".add_column('file_backups', 'backup_retention', 18, 'short', false, false, false, 'the number of days the backups will be kept', '1.0a100', '1.30');
-select "schema".add_column('file_backups', 'symlink_target', 19, 'string', true, false, false, 'the target of a symbolic link', '1.0a100', '1.30');
-select "schema".add_column('file_backups', 'device_id', 20, 'long', true, false, false, 'the ID for device files', '1.0a100', '1.30');
-
-\echo file_backup_devices
-select "schema".add_column('file_backup_devices', 'pkey', 0, 'short', false, true, true, 'a generated primary key', '1.0a100', '1.30');
-select "schema".add_column('file_backup_devices', 'device', 1, 'long', false, true, true, 'the device number', '1.0a100', '1.30');
-select "schema".add_column('file_backup_devices', 'can_backup', 2, 'boolean', false, false, true, 'indicates that the backup system is allowed to backup files on devices of this number', '1.0a100', '1.30');
-select "schema".add_column('file_backup_devices', 'description', 3, 'string', false, false, true, 'a description of the device', '1.0a100', '1.30');
-
-\echo file_backup_roots
-select "schema".add_column('file_backup_roots', 'pkey', 0, 'pkey', false, true, false, 'a generated primary key', '1.0a100', '1.30');
-select "schema".add_column('file_backup_roots', 'path', 1, 'string', false, false, false, 'the pkey in file_paths for the path of this file', '1.0a100', '1.30');
-select "schema".add_column('file_backup_roots', 'server', 2, 'fkey', false, false, false, 'the server that the file resides on', '1.0a100', '1.30');
-select "schema".add_column('file_backup_roots', 'package', 3, 'fkey', false, false, false, 'the number of the package that owns the file', '1.0a100', '1.30');
-
 \echo file_backup_settings
 select "schema".add_column('file_backup_settings', 'pkey', 0, 'pkey', false, true, false, 'a generated primary key', '1.0a100', null);
 select "schema".add_column('file_backup_settings', 'server', 1, 'fkey', false, false, false, 'the pkey of the server configured', '1.0a100', '1.30');
@@ -831,26 +748,6 @@ select "schema".add_column('file_backup_settings', 'backup_enabled', 6, 'boolean
 select "schema".add_column('file_backup_settings', 'backup_retention', 7, 'short', false, false, false, 'the number of days to keep the backup data', '1.0a100', '1.30');
 select "schema".add_column('file_backup_settings', 'recurse', 8, 'boolean', false, false, false, 'indicates that the backup system should recursively scan directories in <code>path</code>', '1.0a100', '1.30');
 select "schema".add_column('file_backup_settings', 'required', 9, 'boolean', false, false, false, 'indicates that backup pass will not be considered successful if file or path is missing', '1.62', null);
-
-\echo file_backup_stats
-select "schema".add_column('file_backup_stats', 'pkey', 0, 'pkey', false, true, false, 'a generated primary key', '1.0a100', '1.30');
-select "schema".add_column('file_backup_stats', 'server', 1, 'fkey', false, false, false, 'the pkey of the server that the file resides on', '1.0a100', '1.30');
-select "schema".add_column('file_backup_stats', 'start_time', 2, 'time', false, false, false, 'the time the backup started', '1.0a100', '1.30');
-select "schema".add_column('file_backup_stats', 'end_time', 3, 'time', false, false, false, 'the time the backup ended', '1.0a100', '1.30');
-select "schema".add_column('file_backup_stats', 'scanned', 4, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('file_backup_stats', 'file_backup_attribute_matches', 5, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('file_backup_stats', 'not_matched_md5_files', 6, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('file_backup_stats', 'not_matched_md5_failures', 7, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('file_backup_stats', 'send_missing_backup_data_files', 8, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('file_backup_stats', 'send_missing_backup_data_failures', 9, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('file_backup_stats', 'delete_unused_backup_data1', 10, 'int', false, false, false, '', '1.0a100', '1.0a108');
-select "schema".add_column('file_backup_stats', 'temp_files', 11, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('file_backup_stats', 'temp_send_backup_data_files', 12, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('file_backup_stats', 'temp_failures', 13, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('file_backup_stats', 'delete_unused_backup_data2', 14, 'int', false, false, false, '', '1.0a100', '1.0a108');
-select "schema".add_column('file_backup_stats', 'added', 15, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('file_backup_stats', 'deleted', 16, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('file_backup_stats', 'is_successful', 17, 'boolean', false, false, false, '', '1.0a100', '1.30');
 
 \echo firewalld_zones
 select "schema".add_column('firewalld_zones', 'pkey', 0, 'pkey', false, true, false, 'a generated unique primary key', '1.81.0', null);
@@ -1147,56 +1044,6 @@ select "schema".add_column('httpd_workers', 'code', 1, 'string', false, false, f
 select "schema".add_column('httpd_workers', 'net_bind', 2, 'fkey', false, true, false, 'the network binding reservation and details', '1.0a100', null);
 select "schema".add_column('httpd_workers', 'tomcat_site', 3, 'fkey', true, false, false, 'the site that provides this workers (Tomcat 3 only)', '1.0a100', null);
 
-\echo incoming_payments
-select "schema".add_column('incoming_payments', 'transid', 0, 'int', false, true, false, 'the unique transaction number (see transactions)', '1.0a100', '1.28');
-select "schema".add_column('incoming_payments', 'encrypted_card_name', 1, 'string', false, false, false, 'the encrypted name of the card', '1.0a100', '1.28');
-select "schema".add_column('incoming_payments', 'encrypted_card_number', 2, 'string', false, false, false, 'the encrypted card number', '1.0a100', '1.28');
-select "schema".add_column('incoming_payments', 'encrypted_expiration_month', 3, 'string', false, false, false, 'the encrypted expiration month', '1.0a100', '1.28');
-select "schema".add_column('incoming_payments', 'encrypted_expiration_year', 4, 'string', false, false, false, 'the encrypted expiration year', '1.0a100', '1.28');
-
-\echo interbase_backups
-select "schema".add_column('interbase_backups', 'pkey', 0, 'pkey', false, true, false, 'a unique, generated primary key', '1.0a100', '1.30');
-select "schema".add_column('interbase_backups', 'package', 1, 'fkey', false, false, false, 'the pkey of the package that owns this backup', '1.0a100', '1.30');
-select "schema".add_column('interbase_backups', 'db_group_name', 2, 'string', false, false, false, 'the name of the database group', '1.0a100', '1.30');
-select "schema".add_column('interbase_backups', 'db_name', 3, 'string', false, false, false, 'the name of the database', '1.0a100', '1.30');
-select "schema".add_column('interbase_backups', 'ao_server', 4, 'fkey', false, false, false, 'the pkey of the server that this database was backed-up from', '1.0a100', '1.30');
-select "schema".add_column('interbase_backups', 'start_time', 5, 'time', false, false, false, 'the time the backup was started', '1.0a100', '1.30');
-select "schema".add_column('interbase_backups', 'end_time', 6, 'time', false, false, false, 'the time the backup was completed', '1.0a100', '1.30');
-select "schema".add_column('interbase_backups', 'backup_data', 7, 'fkey', false, false, false, 'the pkey of the backup_data', '1.0a100', '1.30');
-select "schema".add_column('interbase_backups', 'backup_level', 8, 'short', false, false, false, 'the number of backup copies to keep', '1.0a100', '1.30');
-select "schema".add_column('interbase_backups', 'backup_retention', 9, 'short', false, false, false, 'the number of days to keep the backups', '1.0a100', '1.30');
-
-\echo interbase_databases
-select "schema".add_column('interbase_databases', 'pkey', 0, 'pkey', false, true, false, 'a generated primary key', '1.0a100', '1.30');
-select "schema".add_column('interbase_databases', 'name', 1, 'string', false, false, false, 'the unique-per-server group name', '1.0a100', '1.30');
-select "schema".add_column('interbase_databases', 'db_group', 2, 'string', false, false, false, 'the pkey in interbase_db_groups', '1.0a100', '1.30');
-select "schema".add_column('interbase_databases', 'datdba', 3, 'fkey', false, false, false, 'the pkey in interbase_server_users', '1.0a100', '1.30');
-select "schema".add_column('interbase_databases', 'backup_retention', 4, 'int', false, false, false, 'the number of days backups will be kept', '1.0a100', '1.0a113');
-select "schema".add_column('interbase_databases', 'backup_level', 5, 'short', false, false, false, 'the number of backup copies to keep', '1.0a114', '1.30');
-select "schema".add_column('interbase_databases', 'backup_retention', 6, 'short', false, false, false, 'the number of days backups will be kept', '1.0a114', '1.30');
-
-\echo interbase_db_groups
-select "schema".add_column('interbase_db_groups', 'pkey', 0, 'pkey', false, true, false, 'a generated primary key', '1.0a100', '1.30');
-select "schema".add_column('interbase_db_groups', 'name', 1, 'string', false, false, false, 'the unique-per-server group name', '1.0a100', '1.30');
-select "schema".add_column('interbase_db_groups', 'linux_server_group', 2, 'fkey', false, false, false, 'the pkey in linux_server_groups', '1.0a100', '1.30');
-
-\echo interbase_server_users
-select "schema".add_column('interbase_server_users', 'pkey', 0, 'pkey', false, true, false, 'a generated primary key', '1.0a100', '1.30');
-select "schema".add_column('interbase_server_users', 'username', 1, 'username', false, false, false, 'the username of the interbase_user', '1.0a100', '1.30');
-select "schema".add_column('interbase_server_users', 'ao_server', 2, 'fkey', false, false, false, 'the pkey of the server', '1.0a100', '1.30');
-select "schema".add_column('interbase_server_users', 'disable_log', 3, 'fkey', true, false, false, 'indicates that this account is disable', '1.0a100', '1.30');
-select "schema".add_column('interbase_server_users', 'predisable_password', 4, 'string', true, false, false, 'the password used before the account was disabled', '1.0a115', '1.30');
-
-\echo interbase_reserved_words
-select "schema".add_column('interbase_reserved_words', 'word', 0, 'string', false, true, true, 'the reserved word', '1.0a100', '1.30');
-
-\echo interbase_users
-select "schema".add_column('interbase_users', 'username', 0, 'username', false, true, false, 'the username of the user', '1.0a100', '1.30');
-select "schema".add_column('interbase_users', 'first_name', 1, 'string', true, false, false, 'the first name of the user', '1.0a100', '1.30');
-select "schema".add_column('interbase_users', 'middle_name', 2, 'string', true, false, false, 'the middle name of the user', '1.0a100', '1.30');
-select "schema".add_column('interbase_users', 'last_name', 3, 'string', true, false, false, 'the last name of the user', '1.0a100', '1.30');
-select "schema".add_column('interbase_users', 'disable_log', 4, 'fkey', true, false, false, 'indicates that this account is disabled', '1.0a100', '1.30');
-
 \echo ip_reputation_limiter_limits
 select "schema".add_column('ip_reputation_limiter_limits', 'pkey',                 0, 'pkey',   false, true,  false, 'a generated, unique key',       '1.66', null);
 select "schema".add_column('ip_reputation_limiter_limits', 'limiter',              1, 'fkey',   false, false, false, 'the identifier of the limiter', '1.66', null);
@@ -1264,11 +1111,6 @@ select "schema".add_column('ip_reputation_sets', 'last_reputation_added',    13,
 \echo languages
 select "schema".add_column('languages', 'code', 0, 'string', false, true, true, 'the language code', '1.44', null);
 
-\echo limits
-select "schema".add_column('limits', 'service_level', 0, 'string', false, false, true, '', '1.0a100', '1.0a122');
-select "schema".add_column('limits', 'resource', 1, 'string', false, false, true, '', '1.0a100', '1.0a122');
-select "schema".add_column('limits', 'resource_limit', 2, 'int', true, false, true, '', '1.0a100', '1.0a122');
-
 \echo linux_acc_addresses
 select "schema".add_column('linux_acc_addresses', 'pkey', 0, 'pkey', false, true, false, 'a unique, generated primary key', '1.0a100', null);
 select "schema".add_column('linux_acc_addresses', 'email_address', 1, 'fkey', false, false, false, 'reference to pkey of email_addresses', '1.0a100', null);
@@ -1314,11 +1156,6 @@ select "schema".add_column('linux_groups', 'name', 1, 'group_id', false, true, f
 select "schema".add_column('linux_groups', 'package', 2, 'package', false, false, false, 'the package of the group', '1.0a100', '1.80');
 select "schema".add_column('linux_groups', 'package', 3, 'accounting', false, false, false, 'the package of the group', '1.80.0', null);
 select "schema".add_column('linux_groups', 'type', 4, 'string', false, false, false, 'the type of group', '1.0a100', null);
-
-\echo linux_ids
-select "schema".add_column('linux_ids', 'id', 0, 'int', false, true, true, 'the id', '1.0a100', '1.68');
-select "schema".add_column('linux_ids', 'id', 1, 'pkey', false, true, true, 'the id', '1.69', '1.80');
-select "schema".add_column('linux_ids', 'is_system', 2, 'boolean', false, false, true, 'true if reserved for system use', '1.0a100', '1.79');
 
 \echo linux_server_accounts
 select "schema".add_column('linux_server_accounts', 'pkey', 0, 'pkey', false, true, false, 'the generated primary key', '1.0a100', null);
@@ -1387,19 +1224,6 @@ select "schema".add_column('majordomo_servers', 'backup_retention', 8, 'short', 
 select "schema".add_column('majordomo_versions', 'version', 0, 'string', false, true, true, 'the version number', '1.0a100', null);
 select "schema".add_column('majordomo_versions', 'created', 1, 'time', false, false, true, 'the time the version was added', '1.0a100', null);
 
-\echo master_history
-select "schema".add_column('master_history', 'command_id', 0, 'long', false, true, false, '', '1.0a100', '1.76');
-select "schema".add_column('master_history', 'process_id', 1, 'long', false, false, false, '', '1.0a100', '1.76');
-select "schema".add_column('master_history', 'connector_id', 2, 'long', false, false, false, '', '1.0a100', '1.76');
-select "schema".add_column('master_history', 'authenticated_user', 3, 'username', false, false, false, '', '1.0a100', '1.76');
-select "schema".add_column('master_history', 'effective_user', 4, 'username', false, false, false, '', '1.0a100', '1.76');
-select "schema".add_column('master_history', 'host', 5, 'ip_address', false, false, false, '', '1.0a100', '1.76');
-select "schema".add_column('master_history', 'protocol', 6, 'string', false, false, false, '', '1.0a100', '1.76');
-select "schema".add_column('master_history', 'is_secure', 7, 'boolean', false, false, false, '', '1.0a100', '1.76');
-select "schema".add_column('master_history', 'start_time', 8, 'time', false, false, false, '', '1.0a100', '1.76');
-select "schema".add_column('master_history', 'end_time', 9, 'time', false, false, false, '', '1.0a100', '1.76');
-select "schema".add_column('master_history', 'command', 10, 'string', true, false, false, '', '1.0a100', '1.76');
-
 \echo master_hosts
 select "schema".add_column('master_hosts', 'pkey', 0, 'pkey', false, true, false, 'a generated unique primary key', '1.0a100', null);
 select "schema".add_column('master_hosts', 'username', 1, 'username', false, false, false, 'the unique username of the user', '1.0a100', null);
@@ -1424,16 +1248,6 @@ select "schema".add_column('master_processes', 'state', 13, 'string', false, fal
 select "schema".add_column('master_processes', 'command', 14, 'string', true, false, false, '', '1.0a100', null);
 select "schema".add_column('master_processes', 'state_start_time', 15, 'time', false, false, false, '', '1.0a100', null);
 
-\echo master_server_profile
-select "schema".add_column('master_server_profile', 'level', 0, 'int', false, false, false, '', '1.0a100', '1.76');
-select "schema".add_column('master_server_profile', 'classname', 1, 'string', false, false, false, '', '1.0a100', '1.76');
-select "schema".add_column('master_server_profile', 'method_name', 2, 'string', false, false, false, '', '1.0a100', '1.76');
-select "schema".add_column('master_server_profile', 'parameter', 3, 'string', true, false, false, '', '1.0a100', '1.76');
-select "schema".add_column('master_server_profile', 'use_count', 4, 'long', false, false, false, '', '1.0a100', '1.76');
-select "schema".add_column('master_server_profile', 'total_time', 5, 'interval', false, false, false, '', '1.0a100', '1.76');
-select "schema".add_column('master_server_profile', 'min_time', 6, 'interval', true, false, false, '', '1.0a100', '1.76');
-select "schema".add_column('master_server_profile', 'max_time', 7, 'interval', true, false, false, '', '1.0a100', '1.76');
-
 \echo master_server_stats
 select "schema".add_column('master_server_stats', 'name', 0, 'string', false, true, false, '', '1.0a100', null);
 select "schema".add_column('master_server_stats', 'value', 1, 'string', true, false, false, '', '1.0a100', null);
@@ -1457,16 +1271,6 @@ select "schema".add_column('master_users', 'can_switch_users',           8, 'boo
 select "schema".add_column('master_users', 'is_router',                  9, 'boolean', false, false, false, 'if they read all router stuff', '1.65', null);
 select "schema".add_column('master_users', 'is_cluster_admin',          10, 'boolean', false, false, false, 'if they can control cluster resources', '1.73', null);
 
-\echo merchant_accounts
-select "schema".add_column('merchant_accounts', 'name', 0, 'string', false, true, false, 'the unique name', '1.0a100', '1.28');
-select "schema".add_column('merchant_accounts', 'display', 1, 'string', false, false, false, 'the display name', '1.0a100', '1.28');
-select "schema".add_column('merchant_accounts', 'bank_account', 2, 'string', false, false, false, 'the bank account used in the transactions', '1.0a100', '1.28');
-select "schema".add_column('merchant_accounts', 'java_connector', 3, 'string', true, false, false, 'the Java class that connects to this provider, NULL means cannot connect with Java', '1.0a100', '1.28');
-select "schema".add_column('merchant_accounts', 'url', 4, 'string', true, false, false, 'the URL to connect to', '1.0a100', '1.28');
-select "schema".add_column('merchant_accounts', 'merchant_id', 5, 'string', false, false, false, 'the merchant ID', '1.0a100', '1.28');
-select "schema".add_column('merchant_accounts', 'deposit_delay', 6, 'int', false, false, false, 'the number of business days it takes for a deposit to be sent to the bank account', '1.0a100', '1.28');
-select "schema".add_column('merchant_accounts', 'withdrawal_delay', 7, 'int', false, false, false, 'the number of business days it takes for a withdrawal to be taken from the bank account', '1.0a100', '1.28');
-
 \echo monthly_charges
 select "schema".add_column('monthly_charges', 'pkey',        0, 'pkey',        true,  true, false, 'a unique, generated number for reference',          '1.0a100', null);
 select "schema".add_column('monthly_charges', 'accounting',  1, 'accounting', false, false, false, 'the account code that is charged to',               '1.0a100', null);
@@ -1479,18 +1283,6 @@ select "schema".add_column('monthly_charges', 'rate',        7, 'decimal_2',  fa
 select "schema".add_column('monthly_charges', 'created',     8, 'time',       false, false, false, 'the time this entry was created',                   '1.0a100', null);
 select "schema".add_column('monthly_charges', 'created_by',  9, 'username',   false, false, false, 'the business_administrator who created the entry',  '1.0a100', null);
 select "schema".add_column('monthly_charges', 'active',     10, 'boolean',    false, false, false, 'flags if this entry is active',                     '1.0a100', null);
-
-\echo mysql_backups
-select "schema".add_column('mysql_backups', 'pkey', 0, 'pkey', false, true, false, 'a unique, generated primary key', '1.0a100', '1.30');
-select "schema".add_column('mysql_backups', 'package', 1, 'fkey', false, false, false, 'the pkey of package that owns this backup', '1.0a100', '1.30');
-select "schema".add_column('mysql_backups', 'db_name', 2, 'string', false, false, false, 'the name of the database', '1.0a100', '1.30');
-select "schema".add_column('mysql_backups', 'ao_server', 3, 'fkey', false, false, false, 'the pkey of the server that this database was backed-up from', '1.0a100', '1.3');
-select "schema".add_column('mysql_backups', 'mysql_server', 4, 'fkey', false, false, false, 'the pkey of the MySQL server that this database was backed-up from', '1.4', '1.30');
-select "schema".add_column('mysql_backups', 'start_time', 5, 'time', false, false, false, 'the time the backup was started', '1.0a100', '1.30');
-select "schema".add_column('mysql_backups', 'end_time', 6, 'time', false, false, false, 'the time the backup was completed', '1.0a100', '1.30');
-select "schema".add_column('mysql_backups', 'backup_data', 7, 'fkey', false, false, false, 'the data store for this backup', '1.0a100', '1.30');
-select "schema".add_column('mysql_backups', 'backup_level', 8, 'short', false, false, false, 'the number of backup copies to keep', '1.0a100', '1.30');
-select "schema".add_column('mysql_backups', 'backup_retention', 9, 'short', false, false, false, 'the number of days to keep the backup data', '1.0a100', '1.30');
 
 \echo mysql_databases
 select "schema".add_column('mysql_databases', 'pkey', 0, 'pkey', false, true, false, 'a unique, generated primary key', '1.0a100', null);
@@ -1528,14 +1320,6 @@ select "schema".add_column('mysql_db_users', 'alter_routine_priv', 19, 'boolean'
 select "schema".add_column('mysql_db_users', 'execute_priv', 20, 'boolean', false, false, false, 'the Execute_priv', '1.4', null);
 select "schema".add_column('mysql_db_users', 'event_priv', 21, 'boolean', false, false, false, 'the Event_priv', '1.54', null);
 select "schema".add_column('mysql_db_users', 'trigger_priv', 22, 'boolean', false, false, false, 'the Trigger_priv', '1.54', null);
-
-\echo mysql_hosts
-select "schema".add_column('mysql_hosts', 'pkey', 0, 'pkey', false, true, false, 'a genenrated primary key', '1.0a100', '1.3');
-select "schema".add_column('mysql_hosts', 'ao_server', 1, 'fkey', false, false, false, 'the pkey of the mysql server', '1.0a100', '1.3');
-select "schema".add_column('mysql_hosts', 'host', 2, 'string', false, false, false, 'the hostname that is allowed to connect', '1.0a100', '1.3');
-
-\echo mysql_reserved_words
-select "schema".add_column('mysql_reserved_words', 'word', 0, 'string', false, true, true, 'the word that may not be used', '1.0a100', '1.80');
 
 \echo mysql_server_users
 select "schema".add_column('mysql_server_users', 'pkey', 0, 'pkey', false, true, false, 'a generated primary key', '1.0a100', null);
@@ -1642,19 +1426,9 @@ select "schema".add_column('net_binds', 'monitor_info', 15, 'string', true, fals
 select "schema".add_column('net_binds', 'monitoring_enabled', 16, 'boolean', false, false, false, 'turns on monitoring of the port', '1.0a104', null);
 select "schema".add_column('net_binds', 'monitoring_parameters', 17, 'string', true, false, false, 'the URL-encoded name=value pairs of monitoring parameters', '1.58', null);
 
-\echo net_device_host_routes
-select "schema".add_column('net_device_host_routes', 'pkey', 0, 'pkey', false, true, false, '', '1.0a100', '1.0a130');
-select "schema".add_column('net_device_host_routes', 'net_device', 1, 'fkey', false, false, false, '', '1.0a100', '1.0a130');
-select "schema".add_column('net_device_host_routes', 'connected_ao_server', 2, 'fkey', false, false, false, '', '1.0a100', '1.0a130');
-
 \echo net_device_ids
 select "schema".add_column('net_device_ids', 'name', 0, 'string', false, true, true, 'the unique name of the device', '1.0a100', null);
 select "schema".add_column('net_device_ids', 'is_loopback', 1, 'boolean', false, false, true, 'if the device is the loopback device', '1.0a100', null);
-
-\echo net_device_local_routes
-select "schema".add_column('net_device_local_routes', 'pkey', 0, 'pkey', false, true, false, '', '1.0a100', '1.0a130');
-select "schema".add_column('net_device_local_routes', 'net_device', 1, 'fkey', false, false, false, '', '1.0a100', '1.0a130');
-select "schema".add_column('net_device_local_routes', 'local_net', 2, 'string', false, false, false, '', '1.0a100', '1.0a130');
 
 \echo net_devices
 select "schema".add_column('net_devices', 'pkey', 0, 'pkey', false, true, false, 'a unique, generated pkey', '1.0a100', null);
@@ -1676,18 +1450,6 @@ select "schema".add_column('net_devices', 'monitoring_bit_rate_medium', 15, 'lon
 select "schema".add_column('net_devices', 'monitoring_bit_rate_high', 16, 'long', true, false, false, 'the 5-minute average that will trigger a high-level alert', '1.35', null);
 select "schema".add_column('net_devices', 'monitoring_bit_rate_critical', 17, 'long', true, false, false, 'the 5-minute average that will trigger a critical-level alert', '1.35', null);
 select "schema".add_column('net_devices', 'monitoring_enabled', 18, 'boolean', false, false, false, 'indicates that this device should be monitored', '1.70', null);
-
-\echo net_monitoring_times
-select "schema".add_column('net_monitoring_times', 'time', 0, 'int', false, true, true, '', '1.0a100', '1.0a103');
-select "schema".add_column('net_monitoring_times', 'display', 1, 'string', false, false, true, '', '1.0a100', '1.0a103');
-
-\echo net_ports
-select "schema".add_column('net_ports', 'port', 0, 'int', false, true, true, 'the unique port number', '1.0a100', '1.68');
-select "schema".add_column('net_ports', 'port', 1, 'pkey', false, true, true, 'the unique port number', '1.69', '1.80');
-select "schema".add_column('net_ports', 'is_user', 2, 'boolean', false, false, true, 'true if user processes may listen on the port', '1.0a100', '1.80');
-
-\echo net_protocols
-select "schema".add_column('net_protocols', 'protocol', 0, 'string', false, true, true, 'the network protocol', '1.0a100', '1.80');
 
 \echo net_tcp_redirects
 select "schema".add_column('net_tcp_redirects', 'net_bind', 0, 'int', false, true, false, 'the pkey as found in net_binds', '1.0a111', '1.68');
@@ -1804,27 +1566,6 @@ select "schema".add_column('physical_servers', 'max_power', 7, 'float', true, fa
 select "schema".add_column('physical_servers', 'supports_hvm', 8, 'boolean', true, false, false, 'indicates supports full hardware virtualization', '1.37', null);
 select "schema".add_column('physical_servers', 'ups_type', 9, 'string', false, false, false, 'the type of UPS powering the server', '1.63', null);
 
-\echo phone_numbers
-select "schema".add_column('phone_numbers', 'pkey', 0, 'pkey', false, true, false, 'a generated, unique id', '1.0a100', '1.30');
-select "schema".add_column('phone_numbers', 'created', 1, 'time', false, false, false, 'time the entry was created', '1.0a100', '1.30');
-select "schema".add_column('phone_numbers', 'business', 2, 'string', false, false, false, 'the name of the business', '1.0a100', '1.30');
-select "schema".add_column('phone_numbers', 'person', 3, 'string', false, false, false, 'the name of the individual', '1.0a100', '1.30');
-select "schema".add_column('phone_numbers', 'work', 4, 'phone', false, false, false, 'the work number', '1.0a100', '1.30');
-select "schema".add_column('phone_numbers', 'cell', 5, 'phone', false, false, false, 'the cell number', '1.0a100', '1.30');
-select "schema".add_column('phone_numbers', 'home', 6, 'phone', false, false, false, 'the home number', '1.0a100', '1.30');
-select "schema".add_column('phone_numbers', 'fax', 7, 'phone', false, false, false, 'the fax number', '1.0a100', '1.30');
-
-\echo postgres_backups
-select "schema".add_column('postgres_backups', 'pkey', 0, 'pkey', false, true, false, 'a unique, generated primary key', '1.0a100', '1.30');
-select "schema".add_column('postgres_backups', 'package', 1, 'fkey', false, false, false, 'the pkey of the package that owns this backup', '1.0a100', '1.30');
-select "schema".add_column('postgres_backups', 'db_name', 2, 'string', false, false, false, 'the name of the database', '1.0a100', '1.30');
-select "schema".add_column('postgres_backups', 'postgres_server', 3, 'fkey', false, false, false, 'the pkey of the PostgreSQL server', '1.0a100', '1.30');
-select "schema".add_column('postgres_backups', 'start_time', 4, 'time', false, false, false, 'the time the backup was started', '1.0a100', '1.30');
-select "schema".add_column('postgres_backups', 'end_time', 5, 'time', false, false, false, 'the time the backup was completed', '1.0a100', '1.30');
-select "schema".add_column('postgres_backups', 'backup_data', 6, 'fkey', false, false, false, 'the pkey of the backup_data', '1.0a100', '1.30');
-select "schema".add_column('postgres_backups', 'backup_level', 7, 'short', false, false, false, 'the number of backup copies to store', '1.0a100', '1.30');
-select "schema".add_column('postgres_backups', 'backup_retention', 8, 'short', false, false, false, 'the number of days to store the backup data', '1.0a100', '1.30');
-
 \echo postgres_databases
 select "schema".add_column('postgres_databases', 'pkey', 0, 'pkey', false, true, false, 'a unique, generated primary key', '1.0a100', null);
 select "schema".add_column('postgres_databases', 'name', 1, 'string', false, false, false, 'the name of the database', '1.0a100', '1.80');
@@ -1842,9 +1583,6 @@ select "schema".add_column('postgres_databases', 'enable_postgis', 10, 'boolean'
 select "schema".add_column('postgres_encodings', 'pkey', 0, 'pkey', false, true, true, 'a generated unique key', '1.0a100', null);
 select "schema".add_column('postgres_encodings', 'encoding', 1, 'string', false, false, true, 'the name of the encoding', '1.0a100', null);
 select "schema".add_column('postgres_encodings', 'postgres_version', 2, 'fkey', false, false, true, 'the version of PostgreSQL', '1.0a100', null);
-
-\echo postgres_reserved_words
-select "schema".add_column('postgres_reserved_words', 'word', 0, 'string', false, true, true, 'the word that may not be used', '1.0a100', '1.80');
 
 \echo postgres_servers
 select "schema".add_column('postgres_servers', 'pkey', 0, 'pkey', false, true, false, 'a unique, generated primary key', '1.0a100', null);
@@ -1919,18 +1657,6 @@ select "schema".add_column('racks', 'name', 2, 'string', false, false, false, 't
 select "schema".add_column('racks', 'max_power', 3, 'float', true, false, false, 'the maximum electrical load supported by the rack', '1.36', null);
 select "schema".add_column('racks', 'total_rack_units', 4, 'int', true, false, false, 'the number of rack units of physical space', '1.36', null);
 
-\echo raid_types
-select "schema".add_column('raid_types', 'type', 0, 'string', false, true, true, 'the unique name of the type of RAID configuration', '1.36', '1.41');
-select "schema".add_column('raid_types', 'sort_order', 1, 'short', false, true, true, 'the sort order of the RAID type, those sorted higher may be substituted for those sorted lower', '1.36', '1.41');
-
-\echo rates
-select "schema".add_column('rates', 'name', 0, 'string', false, true, true, '', '1.0a100', '1.0a122');
-select "schema".add_column('rates', 'display', 1, 'string', false, false, true, '', '1.0a100', '1.0a122');
-select "schema".add_column('rates', 'description', 2, 'string', false, false, true, '', '1.0a100', '1.0a122');
-select "schema".add_column('rates', 'unit', 3, 'string', false, false, true, '', '1.0a100', '1.0a122');
-select "schema".add_column('rates', 'price', 4, 'decimal_2', false, false, true, '', '1.0a100', '1.0a122');
-select "schema".add_column('rates', 'is_credit', 5, 'boolean', false, false, true, '', '1.0a100', '1.0a122');
-
 \echo resellers
 select "schema".add_column('resellers', 'accounting', 0, 'accounting', false, true, false, '', '1.44', null);
 select "schema".add_column('resellers', 'ticket_auto_escalate', 1, 'boolean', false, false, false, '', '1.44', null);
@@ -1942,20 +1668,6 @@ select "schema".add_column('resources', 'singular_display_unit', 2, 'string', fa
 select "schema".add_column('resources', 'plural_display_unit', 3, 'string', false, false, true, 'the unit for display purposes (plural)', '1.0a123', '1.60');
 select "schema".add_column('resources', 'per_unit', 4, 'string', false, false, true, 'the unit for display as a "per"', '1.0a123', '1.60');
 select "schema".add_column('resources', 'description', 5, 'string', false, false, true, 'a description of the resource', '1.0a100', '1.60');
-
-\echo sendmail_smtp_stats
-select "schema".add_column('sendmail_smtp_stats', 'pkey', 0, 'pkey', false, true, false, 'a generated unique key', '1.0a100', '1.30');
-select "schema".add_column('sendmail_smtp_stats', 'package', 1, 'package', false, false, false, 'the package that owns this entry', '1.0a100', '1.30');
-select "schema".add_column('sendmail_smtp_stats', 'date', 2, 'date', false, false, false, 'the date of the statistics', '1.0a100', '1.30');
-select "schema".add_column('sendmail_smtp_stats', 'ao_server', 3, 'fkey', false, false, false, 'the pkey of the server processing the emails', '1.0a100', '1.30');
-select "schema".add_column('sendmail_smtp_stats', 'email_in_count', 4, 'int', false, false, false, 'the number of emails received', '1.0a100', '1.30');
-select "schema".add_column('sendmail_smtp_stats', 'excess_in_count', 5, 'int', false, false, false, 'the number of emails beyond the package limit', '1.0a100', '1.30');
-select "schema".add_column('sendmail_smtp_stats', 'email_in_bandwidth', 6, 'long', false, false, false, 'the amount of bandwidth consumed', '1.0a100', '1.30');
-select "schema".add_column('sendmail_smtp_stats', 'excess_in_bandwidth', 7, 'long', false, false, false, 'the amount of bandwidth beyond the package limit', '1.0a100', '1.30');
-select "schema".add_column('sendmail_smtp_stats', 'email_out_count', 8, 'int', false, false, false, 'the number of emails sent', '1.0a100', '1.30');
-select "schema".add_column('sendmail_smtp_stats', 'excess_out_count', 9, 'int', false, false, false, 'the number of emails beyond the package limit', '1.0a100', '1.30');
-select "schema".add_column('sendmail_smtp_stats', 'email_out_bandwidth', 10, 'long', false, false, false, 'the amount of bandwidth consumed', '1.0a100', '1.30');
-select "schema".add_column('sendmail_smtp_stats', 'excess_out_bandwidth', 11, 'long', false, false, false, 'the amount of bandwidth beyond the package limit', '1.0a100', '1.30');
 
 \echo sendmail_binds
 select "schema".add_column('sendmail_binds', 'net_bind',        0, 'fkey',   false,  true, false, 'the IP address, port, and protocol details',   '1.81.10', null);
@@ -1993,13 +1705,6 @@ select "schema".add_column('server_farms', 'backup_farm', 4, 'string', false, fa
 select "schema".add_column('server_farms', 'owner', 5, 'fkey', false, false, false, 'the package that owns of the farm', '1.0a102', null);
 select "schema".add_column('server_farms', 'use_restricted_smtp_port', 6, 'boolean', false, false, false, 'outgoing servers should use restricted source ports (affects firewall rules)', '1.26', null);
 
-\echo server_reports
-select "schema".add_column('server_reports', 'pkey', 0, 'pkey', false, true, false, 'a unique, generated key', '1.0a100', '1.30');
-select "schema".add_column('server_reports', 'time', 1, 'time', false, false, false, 'time these stats were reported (the ending time of the interval)', '1.0a100', '1.30');
-select "schema".add_column('server_reports', 'interval', 2, 'interval', false, false, false, 'time interval in milliseconds seconds that these stats apply to', '1.0a100', '1.30');
-select "schema".add_column('server_reports', 'ao_server', 3, 'fkey', false, false, false, 'the pkey of the server that these stats are for', '1.0a100', '1.30');
-select "schema".add_column('server_reports', 'failover_server', 4, 'fkey', true, false, false, 'the pkey of the outer server for this server at the time of this report', '1.0a100', '1.30');
-
 \echo servers
 select "schema".add_column('servers', 'pkey', 0, 'pkey', false, true, false, 'a generated, unique ID', '1.0a100', null);
 select "schema".add_column('servers', 'hostname', 1, 'hostname', false, true, false, 'the unique hostname of the server', '1.0a100', '1.30');
@@ -2018,12 +1723,6 @@ select "schema".add_column('servers', 'maximum_power', 13, 'float', true, false,
 select "schema".add_column('servers', 'package', 14, 'fkey', false, false, false, 'the package accountable for resources used by the server', '1.31', null);
 select "schema".add_column('servers', 'name', 15, 'string', false, false, false, 'the per-package unique name of the server (no special formatting required)', '1.31', null);
 select "schema".add_column('servers', 'monitoring_enabled', 16, 'boolean', false, false, false, 'enables/disables monitoring', '1.32', null);
-
-\echo service_levels
-select "schema".add_column('service_levels', 'name', 0, 'string', false, true, true, '', '1.0a100', '1.0a122');
-select "schema".add_column('service_levels', 'display', 1, 'string', false, false, true, '', '1.0a100', '1.0a122');
-select "schema".add_column('service_levels', 'description', 2, 'string', false, false, true, '', '1.0a100', '1.0a122');
-select "schema".add_column('service_levels', 'is_virtual', 3, 'boolean', false, false, true, '', '1.0a100', '1.0a122');
 
 \echo shells
 select "schema".add_column('shells', 'path', 0, 'path', false, true, true, 'the complete path to the executable', '1.0a100', null);
@@ -2096,520 +1795,6 @@ select "schema".add_column('spam_email_messages', 'pkey', 0, 'pkey', false, true
 select "schema".add_column('spam_email_messages', 'email_relay', 1, 'fkey', false, false, false, 'the relay that has been denied', '1.0a100', null);
 select "schema".add_column('spam_email_messages', 'time', 2, 'time', false, false, false, 'the time the message was added', '1.0a100', null);
 select "schema".add_column('spam_email_messages', 'message', 3, 'string', false, false, false, 'the message contents', '1.0a100', null);
-
-\echo sr_cpu
-select "schema".add_column('sr_cpu', 'pkey', 0, 'pkey', false, true, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_cpu', 'server_report', 1, 'fkey', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_cpu', 'cpu_number', 2, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_cpu', 'user_min', 3, 'float', false, false, false, 'minimum user CPU %', '1.0a100', '1.30');
-select "schema".add_column('sr_cpu', 'user_avg', 4, 'float', false, false, false, 'average user CPU %', '1.0a100', '1.30');
-select "schema".add_column('sr_cpu', 'user_max', 5, 'float', false, false, false, 'maximum user CPU %', '1.0a100', '1.30');
-select "schema".add_column('sr_cpu', 'nice_min', 6, 'float', false, false, false, 'minimum nice CPU %', '1.0a100', '1.30');
-select "schema".add_column('sr_cpu', 'nice_avg', 7, 'float', false, false, false, 'average nice CPU %', '1.0a100', '1.30');
-select "schema".add_column('sr_cpu', 'nice_max', 8, 'float', false, false, false, 'maximum nice CPU %', '1.0a100', '1.30');
-select "schema".add_column('sr_cpu', 'sys_min', 9, 'float', false, false, false, 'minimum system CPU %', '1.0a100', '1.30');
-select "schema".add_column('sr_cpu', 'sys_avg', 10, 'float', false, false, false, 'average system CPU %', '1.0a100', '1.30');
-select "schema".add_column('sr_cpu', 'sys_max', 11, 'float', false, false, false, 'maximum system CPU %', '1.0a100', '1.30');
-
-\echo sr_db_mysql
-select "schema".add_column('sr_db_mysql', 'server_report', 0, 'fkey', false, true, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_db_mysql', 'conn_min', 1, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_db_mysql', 'conn_avg', 2, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_db_mysql', 'conn_max', 3, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_db_mysql', 'questions_min', 4, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_db_mysql', 'questions_avg', 5, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_db_mysql', 'questions_max', 6, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_db_mysql', 'slow_queries_min', 7, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_db_mysql', 'slow_queries_avg', 8, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_db_mysql', 'slow_queries_max', 9, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_db_mysql', 'opens_min', 10, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_db_mysql', 'opens_avg', 11, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_db_mysql', 'opens_max', 12, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_db_mysql', 'flush_min', 13, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_db_mysql', 'flush_avg', 14, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_db_mysql', 'flush_max', 15, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_db_mysql', 'open_tables_min', 16, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_db_mysql', 'open_tables_avg', 17, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_db_mysql', 'open_tables_max', 18, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_db_mysql', 'query_rate_min', 19, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_db_mysql', 'query_rate_avg', 20, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_db_mysql', 'query_rate_max', 21, 'float', false, false, false, '', '1.0a100', '1.30');
-
-\echo sr_db_postgres
-select "schema".add_column('sr_db_postgres', 'server_report', 0, 'fkey', false, true, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_db_postgres', 'conn_min', 1, 'int', false, false, false, 'minimum concurrent users', '1.0a100', '1.30');
-select "schema".add_column('sr_db_postgres', 'conn_avg', 2, 'float', false, false, false, 'average concurrent users', '1.0a100', '1.30');
-select "schema".add_column('sr_db_postgres', 'conn_max', 3, 'int', false, false, false, 'maximum concurrent users', '1.0a100', '1.30');
-
-\echo sr_disk_access
-select "schema".add_column('sr_disk_access', 'pkey', 0, 'pkey', false, true, false, 'a generated pkey', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'server_report', 1, 'fkey', false, false, false, 'the report this is part of', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'device_major', 2, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'device_minor', 3, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'blocks_min', 4, 'long', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'blocks_avg', 5, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'blocks_max', 6, 'long', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'rios_min', 7, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'rios_avg', 8, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'rios_max', 9, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'rmerges_min', 10, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'rmerges_avg', 11, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'rmerges_max', 12, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'rsect_min', 13, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'rsect_avg', 14, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'rsect_max', 15, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'ruse_min', 16, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'ruse_avg', 17, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'ruse_max', 18, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'wios_min', 19, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'wios_avg', 20, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'wios_max', 21, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'wmerge_min', 22, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'wmerge_avg', 23, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'wmerge_max', 24, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'wsect_min', 25, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'wsect_avg', 26, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'wsect_max', 27, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'wuse_min', 28, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'wuse_avg', 29, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'wuse_max', 30, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'running_min', 31, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'running_avg', 32, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'running_max', 33, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'use_min', 34, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'use_avg', 35, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'use_max', 36, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'aveq_min', 37, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'aveq_avg', 38, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_access', 'aveq_max', 39, 'float', false, false, false, '', '1.0a100', '1.30');
-
-\echo sr_disk_mdstat
-select "schema".add_column('sr_disk_mdstat', 'pkey', 0, 'pkey', false, true, false, 'a generated pkey', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_mdstat', 'server_report', 1, 'fkey', false, false, false, 'the report this is part of', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_mdstat', 'device_major', 2, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_mdstat', 'device_minor', 3, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_mdstat', 'total_partitions_min', 4, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_mdstat', 'total_partitions_avg', 5, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_mdstat', 'total_partitions_max', 6, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_mdstat', 'active_partitions_min', 7, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_mdstat', 'active_partitions_avg', 8, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_mdstat', 'active_partitions_max', 9, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_mdstat', 'rebuild_percent_min', 10, 'float', true, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_mdstat', 'rebuild_percent_avg', 11, 'float', true, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_mdstat', 'rebuild_percent_max', 12, 'float', true, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_mdstat', 'rebuild_rate_min', 13, 'int', true, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_mdstat', 'rebuild_rate_avg', 14, 'float', true, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_mdstat', 'rebuild_rate_max', 15, 'int', true, false, false, '', '1.0a100', '1.30');
-
-\echo sr_disk_space
-select "schema".add_column('sr_disk_space', 'pkey', 0, 'pkey', false, true, false, 'a generated pkey', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_space', 'server_report', 1, 'fkey', false, false, false, 'the report this is part of', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_space', 'device_major', 2, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_space', 'device_minor', 3, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_space', 'total_min', 4, 'long', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_space', 'total_avg', 5, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_space', 'total_max', 6, 'long', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_space', 'used_min', 7, 'long', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_space', 'used_avg', 8, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_space', 'used_max', 9, 'long', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_space', 'free_min', 10, 'long', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_space', 'free_avg', 11, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_disk_space', 'free_max', 12, 'long', false, false, false, '', '1.0a100', '1.30');
-
-\echo sr_kernel
-select "schema".add_column('sr_kernel', 'server_report', 0, 'fkey', false, true, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'files_allocated_min', 1, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'files_allocated_avg', 2, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'files_allocated_max', 3, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'files_used_min', 4, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'files_used_avg', 5, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'files_used_max', 6, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'files_max_min', 7, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'files_max_avg', 8, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'files_max_max', 9, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'nr_inodes_min', 10, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'nr_inodes_avg', 11, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'nr_inodes_max', 12, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'nr_free_inodes_min', 13, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'nr_free_inodes_avg', 14, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'nr_free_inodes_max', 15, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'inode_preshrink_min', 16, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'inode_preshrink_avg', 17, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'inode_preshrink_max', 18, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'msgmax_min', 19, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'msgmax_avg', 20, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'msgmax_max', 21, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'msgmnb_min', 22, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'msgmnb_avg', 23, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'msgmnb_max', 24, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'msgmni_min', 25, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'msgmni_avg', 26, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'msgmni_max', 27, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'nr_msg_min', 28, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'nr_msg_avg', 29, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'nr_msg_max', 30, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'entropy_avail_min', 31, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'entropy_avail_avg', 32, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'entropy_avail_max', 33, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'rtsig_max_min', 34, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'rtsig_max_avg', 35, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'rtsig_max_max', 36, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'rtsig_nr_min', 37, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'rtsig_nr_avg', 38, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'rtsig_nr_max', 39, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'semmsl_min', 40, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'semmsl_avg', 41, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'semmsl_max', 42, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'semmns_min', 43, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'semmns_avg', 44, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'semmns_max', 45, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'semopm_min', 46, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'semopm_avg', 47, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'semopm_max', 48, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'semmni_min', 49, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'semmni_avg', 50, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'semmni_max', 51, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'nr_sem_min', 52, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'nr_sem_avg', 53, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'nr_sem_max', 54, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'shmall_min', 55, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'shmall_avg', 56, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'shmall_max', 57, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'shmmax_min', 58, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'shmmax_avg', 59, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'shmmax_max', 60, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'shmmni_min', 61, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'shmmni_avg', 62, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'shmmni_max', 63, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'nr_shm_min', 64, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'nr_shm_avg', 65, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'nr_shm_max', 66, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'shm_used_min', 67, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'shm_used_avg', 68, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'shm_used_max', 69, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'threads_max_min', 70, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'threads_max_avg', 71, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_kernel', 'threads_max_max', 72, 'int', false, false, false, '', '1.0a100', '1.30');
-
-\echo sr_load
-select "schema".add_column('sr_load', 'server_report', 0, 'fkey', false, true, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_load', 'min', 1, 'float', false, false, false, 'minimum load', '1.0a100', '1.30');
-select "schema".add_column('sr_load', 'avg', 2, 'float', false, false, false, 'average load', '1.0a100', '1.30');
-select "schema".add_column('sr_load', 'max', 3, 'float', false, false, false, 'maximum load', '1.0a100', '1.30');
-
-\echo sr_memory
-select "schema".add_column('sr_memory', 'server_report', 0, 'fkey', false, true, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'mem_total_min', 1, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'mem_total_avg', 2, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'mem_total_max', 3, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'mem_free_min', 4, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'mem_free_avg', 5, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'mem_free_max', 6, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'mem_shared_min', 7, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'mem_shared_avg', 8, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'mem_shared_max', 9, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'buffers_min', 10, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'buffers_avg', 11, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'buffers_max', 12, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'cached_min', 13, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'cached_avg', 14, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'cached_max', 15, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'swap_cached_min', 16, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'swap_cached_avg', 17, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'swap_cached_max', 18, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'active_min', 19, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'active_avg', 20, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'active_max', 21, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'inact_dirty_min', 22, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'inact_dirty_avg', 23, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'inact_dirty_max', 24, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'inact_clean_min', 25, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'inact_clean_avg', 26, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'inact_clean_max', 27, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'inact_target_min', 28, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'inact_target_avg', 29, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'inact_target_max', 30, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'high_total_min', 31, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'high_total_avg', 32, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'high_total_max', 33, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'high_free_min', 34, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'high_free_avg', 35, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'high_free_max', 36, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'low_total_min', 37, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'low_total_avg', 38, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'low_total_max', 39, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'low_free_min', 40, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'low_free_avg', 41, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_memory', 'low_free_max', 42, 'int', false, false, false, '', '1.0a100', '1.30');
-
-\echo sr_net_devices
-select "schema".add_column('sr_net_devices', 'pkey', 0, 'pkey', false, true, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'server_report', 1, 'fkey', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'device_id', 2, 'string', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'rx_bytes_min', 3, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'rx_bytes_avg', 4, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'rx_bytes_max', 5, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'rx_packets_min', 6, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'rx_packets_avg', 7, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'rx_packets_max', 8, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'rx_errors_min', 9, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'rx_errors_avg', 10, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'rx_errors_max', 11, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'rx_drop_min', 12, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'rx_drop_avg', 13, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'rx_drop_max', 14, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'rx_fifo_min', 15, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'rx_fifo_avg', 16, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'rx_fifo_max', 17, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'rx_frame_min', 18, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'rx_frame_avg', 19, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'rx_frame_max', 20, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'rx_compress_min', 21, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'rx_compress_avg', 22, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'rx_compress_max', 23, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'rx_multicast_min', 24, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'rx_multicast_avg', 25, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'rx_multicast_max', 26, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'tx_bytes_min', 27, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'tx_bytes_avg', 28, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'tx_bytes_max', 29, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'tx_packets_min', 30, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'tx_packets_avg', 31, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'tx_packets_max', 32, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'tx_errors_min', 33, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'tx_errors_avg', 34, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'tx_errors_max', 35, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'tx_drop_min', 36, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'tx_drop_avg', 37, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'tx_drop_max', 38, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'tx_fifo_min', 39, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'tx_fifo_avg', 40, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'tx_fifo_max', 41, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'tx_colls_min', 42, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'tx_colls_avg', 43, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'tx_colls_max', 44, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'tx_carrier_min', 45, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'tx_carrier_avg', 46, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'tx_carrier_max', 47, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'tx_compressed_min', 48, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'tx_compressed_avg', 49, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'tx_compressed_max', 50, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'listen_min', 51, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'listen_avg', 52, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_devices', 'listen_max', 53, 'int', false, false, false, '', '1.0a100', '1.30');
-
-\echo sr_net_icmp
-select "schema".add_column('sr_net_icmp', 'server_report', 0, 'fkey', false, true, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'in_message_min', 1, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'in_message_avg', 2, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'in_message_max', 3, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'in_fail_min', 4, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'in_fail_avg', 5, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'in_fail_max', 6, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'in_unreachable_min', 7, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'in_unreachable_avg', 8, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'in_unreachable_max', 9, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'in_timeout_min', 10, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'in_timeout_avg', 11, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'in_timeout_max', 12, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'in_quench_min', 13, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'in_quench_avg', 14, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'in_quench_max', 15, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'in_redirect_min', 16, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'in_redirect_avg', 17, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'in_redirect_max', 18, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'in_echo_request_min', 19, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'in_echo_request_avg', 20, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'in_echo_request_max', 21, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'in_echo_reply_min', 22, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'in_echo_reply_avg', 23, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'in_echo_reply_max', 24, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'out_message_min', 25, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'out_message_avg', 26, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'out_message_max', 27, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'out_fail_min', 28, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'out_fail_avg', 29, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'out_fail_max', 30, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'out_unreachable_min', 31, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'out_unreachable_avg', 32, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'out_unreachable_max', 33, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'out_timeout_min', 34, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'out_timeout_avg', 35, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'out_timeout_max', 36, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'out_redirect_min', 37, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'out_redirect_avg', 38, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'out_redirect_max', 39, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'out_echo_reply_min', 40, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'out_echo_reply_avg', 41, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_icmp', 'out_echo_reply_max', 42, 'float', false, false, false, '', '1.0a100', '1.30');
-
-\echo sr_net_ip
-select "schema".add_column('sr_net_ip', 'server_report', 0, 'fkey', false, true, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'packet_min', 1, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'packet_avg', 2, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'packet_max', 3, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'invalid_headers_min', 4, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'invalid_headers_avg', 5, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'invalid_headers_max', 6, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'forward_min', 7, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'forward_avg', 8, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'forward_max', 9, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'discard_min', 10, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'discard_avg', 11, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'discard_max', 12, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'deliver_min', 13, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'deliver_avg', 14, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'deliver_max', 15, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'request_min', 16, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'request_avg', 17, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'request_max', 18, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'out_drop_min', 19, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'out_drop_avg', 20, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'out_drop_max', 21, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'out_drop_no_route_min', 22, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'out_drop_no_route_avg', 23, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'out_drop_no_route_max', 24, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'out_drop_timeout_min', 25, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'out_drop_timeout_avg', 26, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'out_drop_timeout_max', 27, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'ra_req_min', 28, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'ra_req_avg', 29, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'ra_req_max', 30, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'ra_ok_min', 31, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'ra_ok_avg', 32, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'ra_ok_max', 33, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'ra_fail_min', 34, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'ra_fail_avg', 35, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_ip', 'ra_fail_max', 36, 'float', false, false, false, '', '1.0a100', '1.30');
-
-\echo sr_net_tcp
-select "schema".add_column('sr_net_tcp', 'server_report', 0, 'fkey', false, true, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_tcp', 'active_connect_min', 1, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_tcp', 'active_connect_avg', 2, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_tcp', 'active_connect_max', 3, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_tcp', 'passive_connect_min', 4, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_tcp', 'passive_connect_avg', 5, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_tcp', 'passive_connect_max', 6, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_tcp', 'fail_connect_min', 7, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_tcp', 'fail_connect_avg', 8, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_tcp', 'fail_connect_max', 9, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_tcp', 'in_reset_min', 10, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_tcp', 'in_reset_avg', 11, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_tcp', 'in_reset_max', 12, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_tcp', 'connect_min', 13, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_tcp', 'connect_avg', 14, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_tcp', 'connect_max', 15, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_tcp', 'segment_receive_min', 16, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_tcp', 'segment_receive_avg', 17, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_tcp', 'segment_receive_max', 18, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_tcp', 'segment_send_min', 19, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_tcp', 'segment_send_avg', 20, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_tcp', 'segment_send_max', 21, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_tcp', 'segment_resend_min', 22, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_tcp', 'segment_resend_avg', 23, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_tcp', 'segment_resend_max', 24, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_tcp', 'bad_segment_receive_min', 25, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_tcp', 'bad_segment_receive_avg', 26, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_tcp', 'bad_segment_receive_max', 27, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_tcp', 'out_reset_min', 28, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_tcp', 'out_reset_avg', 29, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_tcp', 'out_reset_max', 30, 'float', false, false, false, '', '1.0a100', '1.30');
-
-\echo sr_net_udp
-select "schema".add_column('sr_net_udp', 'server_report', 0, 'fkey', false, true, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_udp', 'receive_min', 1, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_udp', 'receive_avg', 2, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_udp', 'receive_max', 3, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_udp', 'unknown_min', 4, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_udp', 'unknown_avg', 5, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_udp', 'unknown_max', 6, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_udp', 'error_min', 7, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_udp', 'error_avg', 8, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_udp', 'error_max', 9, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_udp', 'send_min', 10, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_udp', 'send_avg', 11, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_net_udp', 'send_max', 12, 'float', false, false, false, '', '1.0a100', '1.30');
-
-\echo sr_num_users
-select "schema".add_column('sr_num_users', 'server_report', 0, 'fkey', false, true, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_num_users', 'min', 1, 'int', false, false, false, 'minimum concurrent users', '1.0a100', '1.30');
-select "schema".add_column('sr_num_users', 'avg', 2, 'float', false, false, false, 'average concurrent users', '1.0a100', '1.30');
-select "schema".add_column('sr_num_users', 'max', 3, 'int', false, false, false, 'maximum concurrent users', '1.0a100', '1.30');
-
-\echo sr_paging
-select "schema".add_column('sr_paging', 'server_report', 0, 'fkey', false, true, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_paging', 'in_min', 1, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_paging', 'in_avg', 2, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_paging', 'in_max', 3, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_paging', 'out_min', 4, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_paging', 'out_avg', 5, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_paging', 'out_max', 6, 'float', false, false, false, '', '1.0a100', '1.30');
-
-\echo sr_processes
-select "schema".add_column('sr_processes', 'server_report', 0, 'fkey', false, true, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'total_sleep_min', 1, 'int', true, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'total_sleep_avg', 2, 'float', true, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'total_sleep_max', 3, 'int', true, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'user_sleep_min', 4, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'user_sleep_avg', 5, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'user_sleep_max', 6, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'total_run_min', 7, 'int', true, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'total_run_avg', 8, 'float', true, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'total_run_max', 9, 'int', true, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'user_run_min', 10, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'user_run_avg', 11, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'user_run_max', 12, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'total_zombie_min', 13, 'int', true, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'total_zombie_avg', 14, 'float', true, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'total_zombie_max', 15, 'int', true, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'user_zombie_min', 16, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'user_zombie_avg', 17, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'user_zombie_max', 18, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'total_trace_min', 19, 'int', true, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'total_trace_avg', 20, 'float', true, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'total_trace_max', 21, 'int', true, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'user_trace_min', 22, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'user_trace_avg', 23, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'user_trace_max', 24, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'total_uninterruptible_min', 25, 'int', true, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'total_uninterruptible_avg', 26, 'float', true, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'total_uninterruptible_max', 27, 'int', true, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'user_uninterruptible_min', 28, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'user_uninterruptible_avg', 29, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'user_uninterruptible_max', 30, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'total_unknown_min', 31, 'int', true, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'total_unknown_avg', 32, 'float', true, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'total_unknown_max', 33, 'int', true, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'user_unknown_min', 34, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'user_unknown_avg', 35, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'user_unknown_max', 36, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'rate_min', 37, 'float', true, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'rate_avg', 38, 'float', true, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'rate_max', 39, 'float', true, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'context_min', 40, 'float', true, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'context_avg', 41, 'float', true, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_processes', 'context_max', 42, 'float', true, false, false, '', '1.0a100', '1.30');
-
-\echo sr_swap_rate
-select "schema".add_column('sr_swap_rate', 'server_report', 0, 'fkey', false, true, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_swap_rate', 'in_min', 1, 'float', false, false, false, 'minimum swap reads per second', '1.0a100', '1.30');
-select "schema".add_column('sr_swap_rate', 'in_avg', 2, 'float', false, false, false, 'average swap reads per second', '1.0a100', '1.30');
-select "schema".add_column('sr_swap_rate', 'in_max', 3, 'float', false, false, false, 'maximum swap reads per second', '1.0a100', '1.30');
-select "schema".add_column('sr_swap_rate', 'out_min', 4, 'float', false, false, false, 'minimum swap writes per second', '1.0a100', '1.30');
-select "schema".add_column('sr_swap_rate', 'out_avg', 5, 'float', false, false, false, 'average swap writes per second', '1.0a100', '1.30');
-select "schema".add_column('sr_swap_rate', 'out_max', 6, 'float', false, false, false, 'maximum swap writes per second', '1.0a100', '1.30');
-
-\echo sr_swap_size
-select "schema".add_column('sr_swap_size', 'pkey', 0, 'pkey', false, true, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_swap_size', 'server_report', 1, 'fkey', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_swap_size', 'device_major', 2, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_swap_size', 'device_minor', 3, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_swap_size', 'total_min', 4, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_swap_size', 'total_avg', 5, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_swap_size', 'total_max', 6, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_swap_size', 'used_min', 7, 'int', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_swap_size', 'used_avg', 8, 'float', false, false, false, '', '1.0a100', '1.30');
-select "schema".add_column('sr_swap_size', 'used_max', 9, 'int', false, false, false, '', '1.0a100', '1.30');
 
 \echo ssl_certificate_names
 select "schema".add_column('ssl_certificate_names', 'pkey',            0, 'pkey',        false,  true, false, 'a generated primary key',                                      '1.81.10', null);

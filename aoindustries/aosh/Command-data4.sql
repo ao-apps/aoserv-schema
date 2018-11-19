@@ -3264,6 +3264,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'get_postgres_backup',
+  'postgresql',
   'postgres_backups',
   'gets the contents of a PostgreSQL database backup',
   '<i>pkey</i>',
@@ -3272,6 +3273,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_postgres_backup',
+  'postgresql',
   'postgres_backups',
   'removes a PostgreSQL database backup from the system',
   '<i>pkey</i>',
@@ -3280,6 +3282,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_postgres_database',
+  'postgresql',
   'postgres_databases',
   'adds a new PostgreSQL database',
   '<i>database_name</i> <i>postgres_server</i> <i>ao_server</i> <i>datdba</i> <i>encoding</i>',
@@ -3288,6 +3291,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_postgres_database',
+  'postgresql',
   'postgres_databases',
   'adds a new PostgreSQL database',
   '<i>database_name</i> <i>postgres_server</i> <i>ao_server</i> <i>datdba</i> <i>encoding</i> <i>enable_postgis</i>',
@@ -3296,6 +3300,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'backup_postgres_database',
+  'postgresql',
   'postgres_databases',
   'stores a compressed dump of a PostgreSQL database in the backup system',
   '<i>database_name</i> <i>postgres_server</i> <i>ao_server</i>',
@@ -3304,6 +3309,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'check_postgres_database_name',
+  'postgresql',
   'postgres_databases',
   'checks the format of a PostgreSQL database name',
   '<i>database_name</i>',
@@ -3312,6 +3318,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'dump_postgres_database',
+  'postgresql',
   'postgres_databases',
   'dumps the contents of a PostgreSQL database',
   '<i>database_name</i> <i>postgres_server</i> <i>ao_server</i>',
@@ -3320,6 +3327,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'dump_postgres_database',
+  'postgresql',
   'postgres_databases',
   'dumps the contents of a PostgreSQL database',
   '<i>database_name</i> <i>postgres_server</i> <i>ao_server</i> <i>gzip</i>',
@@ -3328,6 +3336,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'generate_postgres_database_name',
+  'postgresql',
   'postgres_databases',
   'generates a unique PostgreSQL database name',
   '<i>template_base</i> <i>template_added</i>',
@@ -3336,6 +3345,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'is_postgres_database_name_available',
+  'postgresql',
   'postgres_databases',
   'determines if a PostgreSQL database name is available',
   '<i>database_name</i> <i>postgres_server</i> <i>ao_server</i>',
@@ -3344,6 +3354,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_postgres_database',
+  'postgresql',
   'postgres_databases',
   'removes a PostgreSQL database',
   '<i>database_name</i> <i>postgres_server</i> <i>ao_server</i>',
@@ -3352,6 +3363,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_postgres_database_backup_retention',
+  'postgresql',
   'postgres_databases',
   'sets the backup retention for a PostgreSQL database',
   '<i>database_name</i> <i>postgres_server</i> <i>ao_server</i> <i>backup_retention</i>',
@@ -3360,6 +3372,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'wait_for_postgres_database_rebuild',
+  'postgresql',
   'postgres_databases',
   'waits for any pending or current database config rebuilds to complete',
   '<i>ao_server</i>',
@@ -3368,6 +3381,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_postgres_server_user',
+  'postgresql',
   'postgres_server_users',
   'adds a PostgreSQL user to a server',
   '<i>username</i> <i>postgres_server</i> <i>ao_server</i>',
@@ -3376,6 +3390,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'disable_postgres_server_user',
+  'postgresql',
   'postgres_server_users',
   'disables a PostgreSQL account on one server',
   '<i>username</i> <i>postgres_server</i> <i>ao_server</i> <i>reason</i>',
@@ -3384,6 +3399,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'enable_postgres_server_user',
+  'postgresql',
   'postgres_server_users',
   'enables a PostgreSQL account on one server',
   '<i>username</i> <i>postgres_server</i> <i>ao_server</i>',
@@ -3392,6 +3408,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'is_postgres_server_user_password_set',
+  'postgresql',
   'postgres_server_users',
   'determines if a PostgreSQL account password is set',
   '<i>username</i> <i>postgres_server</i> <i>ao_server</i>',
@@ -3400,6 +3417,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_postgres_server_user',
+  'postgresql',
   'postgres_server_users',
   'removes a PostgreSQL user from a server',
   '<i>username</i> <i>postgres_server</i> <i>ao_server</i>',
@@ -3408,6 +3426,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_postgres_server_user_password',
+  'postgresql',
   'postgres_server_users',
   'sets the password for a PostgreSQL user on one server',
   '<i>username</i> <i>postgres_server</i> <i>ao_server</i> <i>password</i>',
@@ -3416,6 +3435,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'check_postgres_server_name',
+  'postgresql',
   'postgres_servers',
   'checks the format of a PostgreSQL server name',
   '<i>name</i>',
@@ -3424,6 +3444,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'is_postgres_server_name_available',
+  'postgresql',
   'postgres_servers',
   'determines if a PostgreSQL server name is available',
   '<i>server_name</i> <i>ao_server</i>',
@@ -3432,6 +3453,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'restart_postgresql',
+  'postgresql',
   'postgres_servers',
   'restarts the PostgreSQL database server',
   '<i>postgres_server</i> <i>ao_server</i>',
@@ -3440,6 +3462,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'start_postgresql',
+  'postgresql',
   'postgres_servers',
   'starts the PostgreSQL database server',
   '<i>postgres_server</i> <i>ao_server</i>',
@@ -3448,6 +3471,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'stop_postgresql',
+  'postgresql',
   'postgres_servers',
   'stops the PostgreSQL database server',
   '<i>postgres_server</i> <i>ao_server</i>',
@@ -3456,6 +3480,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'wait_for_postgres_server_rebuild',
+  'postgresql',
   'postgres_servers',
   'waits for any pending or current database server config rebuilds to complete',
   '<i>ao_server</i>',
@@ -3464,6 +3489,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_postgres_user',
+  'postgresql',
   'postgres_users',
   'adds a PostgreSQL user to the system',
   '<i>username</i>',
@@ -3472,6 +3498,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'are_postgres_user_passwords_set',
+  'postgresql',
   'postgres_users',
   'determines if <b>all</b>, <b>some</b>, or <b>none</b> of the passwords for a PostgreSQL account are set',
   '<i>username</i>',
@@ -3480,6 +3507,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'check_postgres_password',
+  'postgresql',
   'postgres_users',
   'checks the format of a password for a PostgreSQL user',
   '<i>username</i> <i>password</i>',
@@ -3488,6 +3516,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'check_postgres_username',
+  'postgresql',
   'postgres_users',
   'checks the format of a PostgreSQL username',
   '<i>username</i>',
@@ -3496,6 +3525,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'disable_postgres_user',
+  'postgresql',
   'postgres_users',
   'disables a PostgreSQL account on all servers',
   '<i>username</i> <i>reason</i>',
@@ -3504,6 +3534,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'enable_postgres_user',
+  'postgresql',
   'postgres_users',
   'enables a PostgreSQL account on all servers',
   '<i>username</i>',
@@ -3512,6 +3543,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_postgres_user',
+  'postgresql',
   'postgres_users',
   'removes a PostgreSQL user from the system',
   '<i>username</i>',
@@ -3520,6 +3552,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_postgres_user_password',
+  'postgresql',
   'postgres_users',
   'sets the password for a PostgreSQL user on all servers',
   '<i>username</i> <i>password</i>',
@@ -3528,6 +3561,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'wait_for_postgres_user_rebuild',
+  'postgresql',
   'postgres_users',
   'waits for any pending or current database user config rebuilds to complete',
   '<i>ao_server</i>',

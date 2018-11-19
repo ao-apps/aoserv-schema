@@ -1352,6 +1352,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'postgresql',
     'postgres_backups',
     'PostgreSQL Backups',
     false,
@@ -1360,6 +1361,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'postgresql',
     'postgres_databases',
     'PostgreSQL Databases',
     false,
@@ -1368,6 +1370,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'postgresql',
     'postgres_encodings',
     'PostgreSQL Encodings',
     true,
@@ -1376,6 +1379,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'postgresql',
     'postgres_reserved_words',
     'PostgreSQL Reserved Words',
     true,
@@ -1384,6 +1388,7 @@ select "schema".add_table(
     '1.80'
 );
 select "schema".add_table(
+    'postgresql',
     'postgres_server_users',
     'PostgreSQL Server Users',
     false,
@@ -1392,6 +1397,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'postgresql',
     'postgres_servers',
     'PostgreSQL Servers',
     false,
@@ -1400,6 +1406,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'postgresql',
     'postgres_users',
     'PostgreSQL Users',
     false,
@@ -1412,6 +1419,7 @@ postgres_server_users table.',
     null
 );
 select "schema".add_table(
+    'postgresql',
     'postgres_versions',
     'PostgreSQL Versions',
     true,

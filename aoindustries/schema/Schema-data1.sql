@@ -1,7 +1,7 @@
 insert into "schema"."Schema" values(
     (select count(*) from "schema"."Schema"),
     'public',
-    '1.81.18',
+    '1.0a100',
     null,
     'Public',
     false,

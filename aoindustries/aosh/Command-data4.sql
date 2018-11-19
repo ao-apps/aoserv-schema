@@ -1,5 +1,59 @@
-begin;
-insert into aosh_commands values(
+create or replace function aosh.add_command (
+  command name,
+  "schema" name,
+  "table" name,
+  description text,
+  syntax text,
+  "sinceVersion" text,
+  "lastVersion" text
+)
+returns name
+as '
+  insert into aosh."Command"(
+    command,
+    "sinceVersion",
+    "lastVersion",
+    "table",
+    description,
+    syntax
+  ) values(
+    $1 ,
+    $6 ,
+    $7 ,
+    case
+      when $3 is null then null
+      else "schema".get_table_versioned($2, $3, $6, $7)
+    end,
+    $4 ,
+    $5
+  );
+  select $1 ;
+'
+language 'sql';
+
+create or replace function aosh.add_command (
+  command name,
+  "table" name,
+  description text,
+  syntax text,
+  "sinceVersion" text,
+  "lastVersion" text
+)
+returns name
+as '
+  select aosh.add_command (
+    $1 ,
+    case when $2 is null then null else ''public'' end,
+    $2 ,
+    $3 ,
+    $4 ,
+    $5 ,
+    $6
+  );
+'
+language 'sql';
+
+select aosh.add_command(
   'clear',
   null,
   'clears the screen',
@@ -7,7 +61,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'echo',
   null,
   'echoes the parameters to standard output',
@@ -15,7 +69,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'exit',
   null,
   'exits the shell',
@@ -23,7 +77,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'invalidate',
   null,
   'globally invalidates a table',
@@ -31,7 +85,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'invalidate',
   null,
   'globally invalidates a table',
@@ -39,7 +93,7 @@ insert into aosh_commands values(
   '1.31',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'jobs',
   null,
   'lists all of the background processes',
@@ -47,7 +101,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'ping',
   null,
   'times the communication with the server',
@@ -55,7 +109,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'repeat',
   null,
   'repeatedly executes a command',
@@ -63,7 +117,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'su',
   null,
   'switches to a different user',
@@ -71,7 +125,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'time',
   null,
   'times a command',
@@ -79,7 +133,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'whoami',
   null,
   'displays who is logged in',
@@ -87,7 +141,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'get_mrtg_file',
   'ao_servers',
   'gets a file from the MRTG report directory',
@@ -95,7 +149,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'get_ups_status',
   'ao_servers',
   'gets the status of the UPS powering this server',
@@ -103,7 +157,7 @@ insert into aosh_commands values(
   '1.63',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'restart_apache',
   'ao_servers',
   'restarts the Apache web server',
@@ -111,7 +165,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'restart_cron',
   'ao_servers',
   'restarts the cron daemon',
@@ -119,7 +173,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'restart_interbase',
   'ao_servers',
   'restarts the InterBase database server',
@@ -127,7 +181,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'restart_mysql',
   'ao_servers',
   'restarts the MySQL database server',
@@ -135,7 +189,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.3'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'restart_xfs',
   'ao_servers',
   'restarts the X Font Server',
@@ -143,7 +197,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'restart_xvfb',
   'ao_servers',
   'restarts the X Virtual Frame Buffer',
@@ -151,7 +205,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'start_apache',
   'ao_servers',
   'starts the Apache web server',
@@ -159,7 +213,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'start_cron',
   'ao_servers',
   'starts the cron daemon',
@@ -167,7 +221,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'start_interbase',
   'ao_servers',
   'starts the InterBase database server',
@@ -175,7 +229,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'start_mysql',
   'ao_servers',
   'starts the MySQL database server',
@@ -183,7 +237,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.3'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'start_xfs',
   'ao_servers',
   'starts the X Font Server',
@@ -191,7 +245,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'start_xvfb',
   'ao_servers',
   'starts the X Virtual Frame Buffer',
@@ -199,7 +253,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'stop_apache',
   'ao_servers',
   'stops the Apache web server',
@@ -207,7 +261,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'stop_cron',
   'ao_servers',
   'stops the cron daemon',
@@ -215,7 +269,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'stop_interbase',
   'ao_servers',
   'stops the InterBase database server',
@@ -223,7 +277,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'stop_mysql',
   'ao_servers',
   'stops the MySQL database server',
@@ -231,7 +285,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.3'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'stop_xfs',
   'ao_servers',
   'stops the X Font Server',
@@ -239,7 +293,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'stop_xvfb',
   'ao_servers',
   'stops the X Virtual Frame Buffer',
@@ -247,7 +301,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'help',
   'aosh_commands',
   'displays the help screen',
@@ -255,7 +309,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   '?',
   'aosh_commands',
   'displays the help screen',
@@ -263,7 +317,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'get_backup_data',
   'backup_data',
   'gets the contents of a backup data set',
@@ -271,7 +325,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_unused_backup_data',
   'backup_data',
   'removes backup data that if no longer referenced',
@@ -279,7 +333,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.0a108'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'get_backup_partition_total_size',
   'backup_partitions',
   'gets the total size of a backup partition',
@@ -287,7 +341,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'get_backup_partition_used_size',
   'backup_partitions',
   'gets the disk space used on a backup partition',
@@ -295,7 +349,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_blackhole_email_address',
   'blackhole_email_addresses',
   'stops emails from being discarded sent to /dev/null',
@@ -303,7 +357,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_business_administrator',
   'business_administrators',
   'adds a business administrator to the list of people who may maintain the account',
@@ -311,7 +365,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.43'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_business_administrator',
   'business_administrators',
   'adds a business administrator to the list of people who may maintain the account',
@@ -319,7 +373,7 @@ insert into aosh_commands values(
   '1.44',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_business_administrator_password',
   'business_administrators',
   'checks the format of a password for a business administrator',
@@ -327,7 +381,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_business_administrator_username',
   'business_administrators',
   'checks the format of a business administrator username',
@@ -335,7 +389,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.80'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'crypt',
   'business_administrators',
   'encrypts a password as used in Apache password lists',
@@ -343,7 +397,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'disable_business_administrator',
   'business_administrators',
   'disables a business administrator account',
@@ -351,7 +405,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'enable_business_administrator',
   'business_administrators',
   'enables a business administrator account',
@@ -359,7 +413,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'is_business_administrator_password_set',
   'business_administrators',
   'determines if a business administrator password is set',
@@ -367,7 +421,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_business_administrator',
   'business_administrators',
   'removes the administrative access for a user',
@@ -375,7 +429,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_business_administrator_password',
   'business_administrators',
   'sets the password used for administrative access',
@@ -383,7 +437,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_business_administrator_profile',
   'business_administrators',
   'sets the profile associated with a business administrator',
@@ -391,7 +445,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_business_profile',
   'business_profiles',
   'adds a new business profile to a business',
@@ -399,7 +453,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_business_server',
   'business_servers',
   'grants a business access to a server',
@@ -407,7 +461,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.0a101'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_business_server',
   'business_servers',
   'grants a business access to a server',
@@ -415,7 +469,7 @@ insert into aosh_commands values(
   '1.0a102',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_business_server',
   'business_servers',
   'grants a business access to a server',
@@ -423,7 +477,7 @@ insert into aosh_commands values(
   '1.31',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_business_server',
   'business_servers',
   'removes a business'' access to a server',
@@ -431,7 +485,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_default_business_server',
   'business_servers',
   'sets the default server for a business',
@@ -439,7 +493,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_business',
   'businesses',
   'adds a new business to the system',
@@ -447,7 +501,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.0a101'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_business',
   'businesses',
   'adds a new business to the system',
@@ -455,7 +509,7 @@ insert into aosh_commands values(
   '1.0a102',
   '1.0a102'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_business',
   'businesses',
   'adds a new business to the system',
@@ -463,7 +517,7 @@ insert into aosh_commands values(
   '1.0a103',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'cancel_business',
   'businesses',
   'cancels a business',
@@ -471,7 +525,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_accounting',
   'businesses',
   'checks the format of an accounting code',
@@ -479,7 +533,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'disable_business',
   'businesses',
   'disables a business and everything in it, except its business administrators',
@@ -487,7 +541,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'enable_business',
   'businesses',
   'enables a business and everything in it',
@@ -495,7 +549,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'generate_accounting',
   'businesses',
   'generates a unique accounting code based on a template',
@@ -503,7 +557,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'get_root_business',
   'businesses',
   'gets the name of the root business in the business tree',
@@ -511,7 +565,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'is_accounting_available',
   'businesses',
   'checks the availability of an accounting code',
@@ -519,7 +573,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'move_business',
   'businesses',
   'moves all of the resources for one business from one server to another server',
@@ -527,7 +581,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_business_accounting',
   'businesses',
   'changes the accounting code that uniquely identifies a business',
@@ -535,7 +589,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_credit_card',
   'credit_cards',
   'adds a credit card to a business',
@@ -543,7 +597,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.28'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'decline_credit_card',
   'credit_cards',
   'declines and disables a credit card',
@@ -551,7 +605,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_credit_card',
   'credit_cards',
   'removes a credit card from a business',
@@ -559,7 +613,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_cvs_repository',
   'cvs_repositories',
   'adds a CVS repository to a server',
@@ -567,7 +621,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'disable_cvs_repositories',
   'cvs_repositories',
   'disables a CVS repository',
@@ -575,7 +629,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'enable_cvs_repositories',
   'cvs_repositories',
   'enables a CVS repository',
@@ -583,7 +637,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_cvs_repository',
   'cvs_repositories',
   'removes a CVS repository from a server',
@@ -591,7 +645,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_cvs_repository_backup_retention',
   'cvs_repositories',
   'sets the backup retention for a CVS repository',
@@ -599,7 +653,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_cvs_repository_mode',
   'cvs_repositories',
   'sets the directory permissions of a CVS repository',
@@ -607,7 +661,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'start_distro',
   'distro_files',
   'starts the distribution verification on a server',
@@ -615,7 +669,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_dns_record',
   'dns_records',
   'adds a record to a name server zone',
@@ -623,7 +677,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.0a126'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_dns_record',
   'dns_records',
   'adds a record to a name server zone',
@@ -631,7 +685,7 @@ insert into aosh_commands values(
   '1.0a127',
   '1.71'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_dns_record',
   'dns_records',
   'adds a record to a name server zone',
@@ -639,7 +693,7 @@ insert into aosh_commands values(
   '1.72',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_dns_record',
   'dns_records',
   'removes a record from a name server zone',
@@ -647,7 +701,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.74'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_dns_record',
   'dns_records',
   'removes a record from a name server zone',
@@ -655,7 +709,7 @@ insert into aosh_commands values(
   '1.75',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_dns_zone',
   'dns_zones',
   'adds a zone to the name servers',
@@ -663,7 +717,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.0a126'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_dns_zone',
   'dns_zones',
   'adds a zone to the name servers',
@@ -671,7 +725,7 @@ insert into aosh_commands values(
   '1.0a127',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_dns_zone_ttl',
   'dns_zones',
   'sets the default TTL value for a name server zone',
@@ -679,7 +733,7 @@ insert into aosh_commands values(
   '1.0a127',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_dns_zone',
   'dns_zones',
   'checks the format of a zone name',
@@ -687,7 +741,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'is_dns_zone_available',
   'dns_zones',
   'checks the availability of a DNS zone',
@@ -695,7 +749,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'print_zone_file',
   'dns_zones',
   'generates a zone file',
@@ -703,7 +757,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_dns_zone',
   'dns_zones',
   'removes a zone from the name servers',
@@ -711,7 +765,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_email_address',
   'email_addresses',
   'checks the format of an email address',
@@ -719,7 +773,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_email_address',
   'email_addresses',
   'removes an email address and all associated resources',
@@ -727,7 +781,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_email_domain',
   'email_domains',
   'adds a new email domain',
@@ -735,7 +789,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_email_domain',
   'email_domains',
   'checks the format of an email domain',
@@ -743,7 +797,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'is_email_domain_available',
   'email_domains',
   'checks the availability of an email domain',
@@ -751,7 +805,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_email_domain',
   'email_domains',
   'removes an email domain and all associated email addresses',
@@ -759,7 +813,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_email_forwarding',
   'email_forwarding',
   'attaches a forwarding address to an email address',
@@ -767,7 +821,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_email_forwarding',
   'email_forwarding',
   'checks the format of a the destination for email forwarding',
@@ -775,7 +829,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.80'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_email_forwarding',
   'email_forwarding',
   'detaches a forwarding address from an email address',
@@ -783,7 +837,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_email_list_address',
   'email_list_addresses',
   'attaches an email address to an email list',
@@ -791,7 +845,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_email_list_address',
   'email_list_addresses',
   'detaches an email address from an email list',
@@ -799,7 +853,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_email_list',
   'email_lists',
   'adds a new email list',
@@ -807,7 +861,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_email_list_path',
   'email_lists',
   'checks the format of an email list path',
@@ -815,7 +869,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.80.1'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_email_list_path',
   'email_lists',
   'checks the format of an email list path',
@@ -823,7 +877,7 @@ insert into aosh_commands values(
   '1.80.2',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'disable_email_list',
   'email_lists',
   'disables an email list',
@@ -831,7 +885,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'enable_email_list',
   'email_lists',
   'enables an email list',
@@ -839,7 +893,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'get_email_list',
   'email_lists',
   'gets the list of addresses for a list',
@@ -847,7 +901,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_email_list',
   'email_lists',
   'removes an email list',
@@ -855,7 +909,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_email_list',
   'email_lists',
   'sets the list of addresses for a list',
@@ -863,7 +917,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_email_list_backup_retention',
   'email_lists',
   'sets the backup retention for a list',
@@ -871,7 +925,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_email_pipe_address',
   'email_pipe_addresses',
   'attaches an email address to an email pipe',
@@ -879,7 +933,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_email_pipe_address',
   'email_pipe_addresses',
   'detaches an email address from an email pipe',
@@ -887,7 +941,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_email_pipe',
   'email_pipes',
   'adds a new email pipe',
@@ -895,7 +949,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.80'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_email_pipe',
   'email_pipes',
   'adds a new email pipe',
@@ -903,7 +957,7 @@ insert into aosh_commands values(
   '1.80.0',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'disable_email_pipe',
   'email_pipes',
   'disables an email pipe',
@@ -911,7 +965,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'enable_email_pipe',
   'email_pipes',
   'enables an email pipe',
@@ -919,7 +973,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_email_pipe',
   'email_pipes',
   'removes an email pipe',
@@ -927,7 +981,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_email_smtp_relay',
   'email_smtp_relays',
   'adds a SMTP relay rule',
@@ -935,7 +989,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'disable_email_smtp_relay',
   'email_smtp_relays',
   'disables a SMTP access rule',
@@ -943,7 +997,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'enable_email_smtp_relay',
   'email_smtp_relays',
   'enables a SMTP access rule',
@@ -951,7 +1005,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'refresh_email_smtp_relay',
   'email_smtp_relays',
   'refreshes a SMTP access rule',
@@ -959,7 +1013,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_email_smtp_relay',
   'email_smtp_relays',
   'removes a SMTP access rule',
@@ -967,7 +1021,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'get_failover_file_replication_activity',
   'failover_file_replications',
   'gets the most recently reported replication activity',
@@ -975,7 +1029,7 @@ insert into aosh_commands values(
   '1.76',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_file_backup_device',
   'file_backup_devices',
   'creates a new FileBackupDevice',
@@ -983,7 +1037,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'get_file_backup',
   'file_backups',
   'gets the contents of a file backup',
@@ -991,7 +1045,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_file_backup',
   'file_backups',
   'removes a backup copy of a file from the system',
@@ -999,7 +1053,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_file_backup_setting',
   'file_backup_settings',
   'creates a new FileBackupSetting',
@@ -1007,7 +1061,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_file_backup_setting',
   'file_backup_settings',
   'creates a new FileBackupSetting',
@@ -1015,7 +1069,7 @@ insert into aosh_commands values(
   '1.31',
   '1.61'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_file_backup_setting',
   'file_backup_settings',
   'creates a new FileBackupSetting',
@@ -1023,7 +1077,7 @@ insert into aosh_commands values(
   '1.62',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_file_backup_setting',
   'file_backup_settings',
   'removes a FileBackupSetting',
@@ -1031,7 +1085,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_file_backup_setting',
   'file_backup_settings',
   'removes a FileBackupSetting',
@@ -1039,7 +1093,7 @@ insert into aosh_commands values(
   '1.31',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_file_backup_setting',
   'file_backup_settings',
   'sets the values in a FileBackupSetting',
@@ -1047,7 +1101,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_file_backup_setting',
   'file_backup_settings',
   'sets the values in a FileBackupSetting',
@@ -1055,7 +1109,7 @@ insert into aosh_commands values(
   '1.31',
   '1.61'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_file_backup_setting',
   'file_backup_settings',
   'sets the values in a FileBackupSetting',
@@ -1063,7 +1117,7 @@ insert into aosh_commands values(
   '1.62',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_ftp_guest_user',
   'ftp_guest_users',
   'adds a new FTP guest user',
@@ -1071,7 +1125,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_ftp_guest_user',
   'ftp_guest_users',
   'removes a FTP guest user',
@@ -1079,7 +1133,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_httpd_jboss_site',
   'httpd_jboss_sites',
   'creates a new web site space running a JBoss configuration',
@@ -1087,7 +1141,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.80.0'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_httpd_jboss_site',
   'httpd_jboss_sites',
   'creates a new web site space running a JBoss configuration',
@@ -1095,7 +1149,7 @@ insert into aosh_commands values(
   '1.80.1',
   '1.81.5'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_httpd_jboss_site',
   'httpd_jboss_sites',
   'creates a new web site space running a JBoss configuration',
@@ -1103,7 +1157,7 @@ insert into aosh_commands values(
   '1.81.6',
   '1.81.9'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_httpd_jboss_site',
   'httpd_jboss_sites',
   'creates a new web site space running a JBoss configuration',
@@ -1111,7 +1165,7 @@ insert into aosh_commands values(
   '1.81.10',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'get_httpd_server_concurrency',
   'httpd_servers',
   'gets the current concurrency of an HTTP server instance',
@@ -1119,7 +1173,7 @@ insert into aosh_commands values(
   '1.81.11',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_httpd_shared_tomcat',
   'httpd_shared_tomcats',
   'adds a new Multi-Site Tomcat JVM to a server',
@@ -1127,7 +1181,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.81.9'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_httpd_shared_tomcat',
   'httpd_shared_tomcats',
   'adds a new Multi-Site Tomcat JVM to a server',
@@ -1135,7 +1189,7 @@ insert into aosh_commands values(
   '1.81.10',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_shared_tomcat_name',
   'httpd_shared_tomcats',
   'checks the format of a Multi-Site Tomcat JVM name',
@@ -1143,7 +1197,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'disable_httpd_shared_tomcat',
   'httpd_shared_tomcats',
   'disables a Multi-Site Tomcat JVM',
@@ -1151,7 +1205,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'enable_httpd_shared_tomcat',
   'httpd_shared_tomcats',
   'enables a Multi-Site Tomcat JVM',
@@ -1159,7 +1213,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'generate_shared_tomcat_name',
   'httpd_shared_tomcats',
   'generates a unique Multi-Site Tomcat JVM name based on a template',
@@ -1167,7 +1221,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'is_shared_tomcat_name_available',
   'httpd_shared_tomcats',
   'determines if a name may be used for a Multi-Site Tomcat JVM',
@@ -1175,7 +1229,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_httpd_shared_tomcat',
   'httpd_shared_tomcats',
   'removes a multi-site Tomcat JVM from the servers',
@@ -1183,7 +1237,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_shared_tomcat_config_backup_retention',
   'httpd_shared_tomcats',
   'sets the config file backup retention for a Multi-Site Tomcat JVM',
@@ -1191,7 +1245,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_shared_tomcat_file_backup_retention',
   'httpd_shared_tomcats',
   'sets the file backup retention for a Multi-Site Tomcat JVM',
@@ -1199,7 +1253,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_shared_tomcat_is_manual',
   'httpd_shared_tomcats',
   'sets the is_manual flag for a Multi-Site Tomcat JVM',
@@ -1207,7 +1261,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_shared_tomcat_log_backup_retention',
   'httpd_shared_tomcats',
   'sets the log file backup retention for a Multi-Site Tomcat JVM',
@@ -1215,7 +1269,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_shared_tomcat_max_post_size',
   'httpd_shared_tomcats',
   'sets the maximum POST size for a Multi-Site Tomcat installation',
@@ -1223,7 +1277,7 @@ insert into aosh_commands values(
   '1.80.1',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_shared_tomcat_unpack_wars',
   'httpd_shared_tomcats',
   'sets the unpackWARs setting for a Multi-Site Tomcat installation',
@@ -1231,7 +1285,7 @@ insert into aosh_commands values(
   '1.80.1',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_shared_tomcat_auto_deploy',
   'httpd_shared_tomcats',
   'sets the autoDeploy setting for a Multi-Site Tomcat installation',
@@ -1239,7 +1293,7 @@ insert into aosh_commands values(
   '1.80.1',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_shared_tomcat_version',
   'httpd_shared_tomcats',
   'sets the Tomcat version for a Multi-Site Tomcat installation',
@@ -1247,7 +1301,7 @@ insert into aosh_commands values(
   '1.81.12',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'disable_httpd_site_bind',
   'httpd_site_binds',
   'disables one network port of a web site',
@@ -1255,7 +1309,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'enable_httpd_site_bind',
   'httpd_site_binds',
   'enables one network port of a web site',
@@ -1263,7 +1317,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_site_bind_is_manual',
   'httpd_site_binds',
   'sets the is_manual flag for one network port of a web site',
@@ -1271,7 +1325,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_site_bind_redirect_to_primary_hostname',
   'httpd_site_binds',
   'sets the redirect_to_primary_hostname flag for one network port of a web site',
@@ -1279,7 +1333,7 @@ insert into aosh_commands values(
   '1.19',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_httpd_site_url',
   'httpd_site_urls',
   'adds a hostname to a web site',
@@ -1287,7 +1341,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_httpd_site_url',
   'httpd_site_urls',
   'removes a hostname from a web site',
@@ -1295,7 +1349,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_primary_httpd_site_url',
   'httpd_site_urls',
   'sets the primary hostname for one specific IP address and port',
@@ -1303,7 +1357,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_site_name',
   'httpd_sites',
   'checks the format of a site name',
@@ -1311,7 +1365,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'disable_httpd_site',
   'httpd_sites',
   'disables a web site, including its Java virtual machine and all network ports',
@@ -1319,7 +1373,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'enable_httpd_site',
   'httpd_sites',
   'enables a web site, including its Java virtual machine and all network ports',
@@ -1327,7 +1381,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'generate_site_name',
   'httpd_sites',
   'generates a unique site name based on a template',
@@ -1335,7 +1389,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'get_awstats_file',
   'httpd_sites',
   'gets a file from the AWStats report',
@@ -1343,7 +1397,7 @@ insert into aosh_commands values(
   '1.0a128',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'initialize_httpd_site_passwd_file',
   'httpd_sites',
   'creates the default conf/passwd file',
@@ -1351,7 +1405,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.0a128'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'is_site_name_available',
   'httpd_sites',
   'determines if a site name is available',
@@ -1359,7 +1413,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_httpd_site',
   'httpd_sites',
   'removes a web site from the servers',
@@ -1367,7 +1421,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_site_config_backup_retention',
   'httpd_sites',
   'sets the config file backup retention for a web site',
@@ -1375,7 +1429,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_site_file_backup_retention',
   'httpd_sites',
   'sets the file backup retention for a web site',
@@ -1383,7 +1437,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_site_ftp_backup_retention',
   'httpd_sites',
   'sets the ftp file backup retention for a web site',
@@ -1391,7 +1445,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_site_is_manual',
   'httpd_sites',
   'sets the is_manual flag for a web site',
@@ -1399,7 +1453,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_site_log_backup_retention',
   'httpd_sites',
   'sets the log file backup retention for a web site',
@@ -1407,7 +1461,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_site_server_admin',
   'httpd_sites',
   'sets the administrative email address for a web site',
@@ -1415,7 +1469,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_site_php_version',
   'httpd_sites',
   'sets the PHP version for a web site',
@@ -1423,7 +1477,7 @@ insert into aosh_commands values(
   '1.80.1',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_site_enable_cgi',
   'httpd_sites',
   'sets the enable_cgi flag for a web site',
@@ -1431,7 +1485,7 @@ insert into aosh_commands values(
   '1.80.1',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_site_enable_ssi',
   'httpd_sites',
   'sets the enable_ssi flag for a web site',
@@ -1439,7 +1493,7 @@ insert into aosh_commands values(
   '1.80.1',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_site_enable_htaccess',
   'httpd_sites',
   'sets the enable_htaccess flag for a web site',
@@ -1447,7 +1501,7 @@ insert into aosh_commands values(
   '1.80.1',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_site_enable_indexes',
   'httpd_sites',
   'sets the enable_indexes flag for a web site',
@@ -1455,7 +1509,7 @@ insert into aosh_commands values(
   '1.80.1',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_site_enable_follow_symlinks',
   'httpd_sites',
   'sets the enable_follow_symlinks flag for a web site',
@@ -1463,7 +1517,7 @@ insert into aosh_commands values(
   '1.80.1',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_site_enable_anonymous_ftp',
   'httpd_sites',
   'sets the enable_anonymous_ftp flag for a web site',
@@ -1471,7 +1525,7 @@ insert into aosh_commands values(
   '1.80.1',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_site_block_trace_track',
   'httpd_sites',
   'sets the block_trace_track flag for a web site',
@@ -1479,7 +1533,7 @@ insert into aosh_commands values(
   '1.81.6',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_site_block_scm',
   'httpd_sites',
   'sets the block_scm flag for a web site',
@@ -1487,7 +1541,7 @@ insert into aosh_commands values(
   '1.81.6',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_site_block_core_dumps',
   'httpd_sites',
   'sets the block_core_dumps flag for a web site',
@@ -1495,7 +1549,7 @@ insert into aosh_commands values(
   '1.81.6',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_site_block_editor_backups',
   'httpd_sites',
   'sets the block_editor_backups flag for a web site',
@@ -1503,7 +1557,7 @@ insert into aosh_commands values(
   '1.81.6',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'wait_for_httpd_site_rebuild',
   'httpd_sites',
   'waits for any pending or processing changes to complete',
@@ -1511,7 +1565,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_httpd_site_authenticated_location',
   'httpd_site_authenticated_locations',
   'adds an authenticated location to a web site',
@@ -1519,7 +1573,7 @@ insert into aosh_commands values(
   '1.81.13',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_site_authenticated_location_attributes',
   'httpd_site_authenticated_locations',
   'updates an authenticated location on a web site',
@@ -1527,7 +1581,7 @@ insert into aosh_commands values(
   '1.81.13',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_httpd_tomcat_context',
   'httpd_tomcat_contexts',
   'adds a context (webapp) to a Tomcat site',
@@ -1535,7 +1589,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.81.2'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_httpd_tomcat_context',
   'httpd_tomcat_contexts',
   'adds a context (webapp) to a Tomcat site',
@@ -1543,7 +1597,7 @@ insert into aosh_commands values(
   '1.81.3',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_httpd_tomcat_context',
   'httpd_tomcat_contexts',
   'removes a context (webapp) from a Tomcat site',
@@ -1551,7 +1605,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_tomcat_context_attributes',
   'httpd_tomcat_contexts',
   'sets the attributes for a context (webapp) on a Tomcat site',
@@ -1559,7 +1613,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.81.2'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_tomcat_context_attributes',
   'httpd_tomcat_contexts',
   'sets the attributes for a context (webapp) on a Tomcat site',
@@ -1567,7 +1621,7 @@ insert into aosh_commands values(
   '1.81.3',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_httpd_tomcat_data_source',
   'httpd_tomcat_data_sources',
   'adds a data source to a Tomcat context (webapp)',
@@ -1575,7 +1629,7 @@ insert into aosh_commands values(
   '1.5',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_httpd_tomcat_data_source',
   'httpd_tomcat_data_sources',
   'removes a data source from a Tomcat context (webapp)',
@@ -1583,7 +1637,7 @@ insert into aosh_commands values(
   '1.5',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'update_httpd_tomcat_data_source',
   'httpd_tomcat_data_sources',
   'updates a Tomcat context (webapp) data source',
@@ -1591,7 +1645,7 @@ insert into aosh_commands values(
   '1.5',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_httpd_tomcat_parameter',
   'httpd_tomcat_parameters',
   'adds a parameter to a Tomcat context (webapp)',
@@ -1599,7 +1653,7 @@ insert into aosh_commands values(
   '1.5',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_httpd_tomcat_parameter',
   'httpd_tomcat_parameters',
   'removes a parameter from a Tomcat context (webapp)',
@@ -1607,7 +1661,7 @@ insert into aosh_commands values(
   '1.5',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'update_httpd_tomcat_parameter',
   'httpd_tomcat_parameters',
   'updates a Tomcat context (webapp) parameter',
@@ -1615,7 +1669,7 @@ insert into aosh_commands values(
   '1.5',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_httpd_tomcat_site_jk_mount',
   'httpd_tomcat_site_jk_mounts',
   'adds a JkMount or JkUnMount to a Tomcat site',
@@ -1623,7 +1677,7 @@ insert into aosh_commands values(
   '1.81.6',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_httpd_tomcat_site_jk_mount',
   'httpd_tomcat_site_jk_mounts',
   'removes a JkMount or JkUnMount from a Tomcat site',
@@ -1631,7 +1685,7 @@ insert into aosh_commands values(
   '1.81.6',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_tomcat_site_use_apache',
   'httpd_tomcat_sites',
   'sets the use_apache flag for a Tomcat-enabled web site',
@@ -1639,7 +1693,7 @@ insert into aosh_commands values(
   '1.80.1',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_tomcat_site_block_webinf',
   'httpd_tomcat_sites',
   'sets the block_webinf flag for a Tomcat-enabled web site',
@@ -1647,7 +1701,7 @@ insert into aosh_commands values(
   '1.81.6',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'start_jvm',
   'httpd_tomcat_sites',
   'starts the Java VM',
@@ -1655,7 +1709,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'stop_jvm',
   'httpd_tomcat_sites',
   'stops the Java VM',
@@ -1663,7 +1717,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_httpd_tomcat_shared_site',
   'httpd_tomcat_shared_sites',
   'creates a new web site space running a shared Tomcat configuration',
@@ -1671,7 +1725,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.80.0'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_httpd_tomcat_shared_site',
   'httpd_tomcat_shared_sites',
   'creates a new web site space running a shared Tomcat configuration',
@@ -1679,7 +1733,7 @@ insert into aosh_commands values(
   '1.80.1',
   '1.81.5'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_httpd_tomcat_shared_site',
   'httpd_tomcat_shared_sites',
   'creates a new web site space running a shared Tomcat configuration',
@@ -1687,7 +1741,7 @@ insert into aosh_commands values(
   '1.81.6',
   '1.81.9'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_httpd_tomcat_shared_site',
   'httpd_tomcat_shared_sites',
   'creates a new web site space running a shared Tomcat configuration',
@@ -1695,7 +1749,7 @@ insert into aosh_commands values(
   '1.81.10',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_httpd_tomcat_std_site',
   'httpd_tomcat_std_sites',
   'creates a new web site space running a standard Tomcat configuration',
@@ -1703,7 +1757,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.80.0'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_httpd_tomcat_std_site',
   'httpd_tomcat_std_sites',
   'creates a new web site space running a standard Tomcat configuration',
@@ -1711,7 +1765,7 @@ insert into aosh_commands values(
   '1.80.1',
   '1.81.5'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_httpd_tomcat_std_site',
   'httpd_tomcat_std_sites',
   'creates a new web site space running a standard Tomcat configuration',
@@ -1719,7 +1773,7 @@ insert into aosh_commands values(
   '1.81.6',
   '1.81.9'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_httpd_tomcat_std_site',
   'httpd_tomcat_std_sites',
   'creates a new web site space running a standard Tomcat configuration',
@@ -1727,7 +1781,7 @@ insert into aosh_commands values(
   '1.81.10',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_tomcat_std_site_max_post_size',
   'httpd_tomcat_std_sites',
   'sets the maximum POST size for a standard Tomcat installation',
@@ -1735,7 +1789,7 @@ insert into aosh_commands values(
   '1.80.1',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_tomcat_std_site_unpack_wars',
   'httpd_tomcat_std_sites',
   'sets the unpackWARs setting for a standard Tomcat installation',
@@ -1743,7 +1797,7 @@ insert into aosh_commands values(
   '1.80.1',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_tomcat_std_site_auto_deploy',
   'httpd_tomcat_std_sites',
   'sets the autoDeploy setting for a standard Tomcat installation',
@@ -1751,7 +1805,7 @@ insert into aosh_commands values(
   '1.80.1',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_httpd_tomcat_std_site_version',
   'httpd_tomcat_std_sites',
   'sets the Tomcat version for a standard Tomcat installation',
@@ -1759,7 +1813,7 @@ insert into aosh_commands values(
   '1.81.12',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_incoming_payment',
   'incoming_payments',
   'attaches payment data to a transaction',
@@ -1767,7 +1821,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.28'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_incoming_payment',
   'incoming_payments',
   'removes payment data from a transaction',
@@ -1775,7 +1829,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.28'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'get_interbase_backup',
   'interbase_backups',
   'retrieves the contents of an InterBase backup from a backup server',
@@ -1783,7 +1837,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_interbase_backup',
   'interbase_backups',
   'removes the contents of an InterBase backup from the backup servers',
@@ -1791,7 +1845,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_interbase_database',
   'interbase_databases',
   'creates a new InterBase database',
@@ -1799,7 +1853,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'backup_interbase_database',
   'interbase_databases',
   'dumps the contents of a database onto a backup server',
@@ -1807,7 +1861,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_interbase_database_name',
   'interbase_databases',
   'checks the validity for an InterBase database name',
@@ -1815,7 +1869,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'dump_interbase_database',
   'interbase_databases',
   'dumps the contents of an InterBase database',
@@ -1823,7 +1877,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'generate_interbase_database_name',
   'interbase_databases',
   'generates a per-server and per-group unique InterBase database name',
@@ -1831,7 +1885,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'is_interbase_database_name_available',
   'interbase_databases',
   'checks the availability of an InterBase database name',
@@ -1839,7 +1893,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_interbase_database',
   'interbase_databases',
   'removes an InterBase database from the system',
@@ -1847,7 +1901,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_interbase_db_group',
   'interbase_db_groups',
   'adds an InterBase database group to the system',
@@ -1855,7 +1909,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_interbase_db_group_name',
   'interbase_db_groups',
   'checks for format of an InterBase database group name',
@@ -1863,7 +1917,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'generate_interbase_db_group_name',
   'interbase_db_groups',
   'generates a per-server unique InterBase database group name',
@@ -1871,7 +1925,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'is_interbase_db_group_name_available',
   'interbase_db_groups',
   'determines if an InterBase database group name is available',
@@ -1879,7 +1933,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_interbase_db_group',
   'interbase_db_groups',
   'removes an InterBase database group from the system',
@@ -1887,7 +1941,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_interbase_server_user',
   'interbase_server_users',
   'grants an InterBase account access to a server',
@@ -1895,7 +1949,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'disable_interbase_server_user',
   'interbase_server_users',
   'disables an InterBase account on one server',
@@ -1903,7 +1957,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'enable_interbase_server_user',
   'interbase_server_users',
   'enables an InterBase account on one server',
@@ -1911,7 +1965,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'is_interbase_server_user_password_set',
   'interbase_server_users',
   'determines if an InterBase account password is set',
@@ -1919,7 +1973,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_interbase_server_user',
   'interbase_server_users',
   'revokes an InterBase account''s access to a server',
@@ -1927,7 +1981,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_interbase_server_user_password',
   'interbase_server_users',
   'sets the password for an InterBase accounts access to one server',
@@ -1935,7 +1989,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_interbase_user',
   'interbase_users',
   'adds an InterBase user to the system',
@@ -1943,7 +1997,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'are_interbase_user_passwords_set',
   'interbase_users',
   'determines if <b>all</b>, <b>some</b>, or <b>none</b> of the passwords for an InterBase account are set',
@@ -1951,7 +2005,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_interbase_password',
   'interbase_users',
   'checks the strength of a password that will be used for an InterBase account',
@@ -1959,7 +2013,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_interbase_username',
   'interbase_users',
   'determines if a username may be used for an InterBase account',
@@ -1967,7 +2021,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'disable_interbase_user',
   'interbase_users',
   'disables an InterBase account, including its access to all database servers',
@@ -1975,7 +2029,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'enable_interbase_user',
   'interbase_users',
   'enables an InterBase account, including its access to all database servers',
@@ -1983,7 +2037,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_interbase_user',
   'interbase_users',
   'removes an InterBase user from the system',
@@ -1991,7 +2045,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_interbase_user_password',
   'interbase_users',
   'sets the password used to access an InterBase user',
@@ -1999,7 +2053,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'wait_for_interbase_rebuild',
   'interbase_users',
   'waits for any pending or processing InterBase server updates to complete',
@@ -2007,7 +2061,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_ip_address',
   'ip_addresses',
   'checks the format of an IP address',
@@ -2015,7 +2069,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.80'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'is_ip_address_used',
   'ip_addresses',
   'determines if an IP address is currently in use',
@@ -2023,7 +2077,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.32'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'is_ip_address_used',
   'ip_addresses',
   'determines if an IP address is currently in use',
@@ -2031,7 +2085,7 @@ insert into aosh_commands values(
   '1.33',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'move_ip_address',
   'ip_addresses',
   'moves an IP address to a new server',
@@ -2039,7 +2093,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_ip_address_dhcp_address',
   'ip_addresses',
   'sets the new IP address for a DHCP-enabled device',
@@ -2047,7 +2101,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_ip_address_hostname',
   'ip_addresses',
   'sets the hostname associated with an IP address',
@@ -2055,7 +2109,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.32'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_ip_address_hostname',
   'ip_addresses',
   'sets the hostname associated with an IP address',
@@ -2063,7 +2117,7 @@ insert into aosh_commands values(
   '1.33',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_ip_address_monitoring_enabled',
   'ip_addresses',
   'enables or disables the monitoring of an IP address',
@@ -2071,7 +2125,7 @@ insert into aosh_commands values(
   '1.81.17',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_ip_address_package',
   'ip_addresses',
   'sets the package ownership of an IP address',
@@ -2079,7 +2133,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.32'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_ip_address_package',
   'ip_addresses',
   'sets the package ownership of an IP address',
@@ -2087,7 +2141,7 @@ insert into aosh_commands values(
   '1.33',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_ip_reputation',
   'ip_reputation_sets',
   'adds reputation for a host and its network',
@@ -2095,7 +2149,7 @@ insert into aosh_commands values(
   '1.65',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_linux_acc_address',
   'linux_acc_addresses',
   'attaches an email address to a Linux account',
@@ -2103,7 +2157,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_linux_acc_address',
   'linux_acc_addresses',
   'detaches an email address from a Linux account',
@@ -2111,7 +2165,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_linux_account',
   'linux_accounts',
   'adds a new Linux account',
@@ -2119,7 +2173,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.80.0'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_linux_account',
   'linux_accounts',
   'adds a new Linux account',
@@ -2127,7 +2181,7 @@ insert into aosh_commands values(
   '1.80.1',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'are_linux_account_passwords_set',
   'linux_accounts',
   'determines if <b>all</b>, <b>some</b>, or <b>none</b> of the passwords for a Linux account are set',
@@ -2135,7 +2189,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_linux_account_name',
   'linux_accounts',
   'checks the format of a Linux account full name',
@@ -2143,7 +2197,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_linux_account_password',
   'linux_accounts',
   'checks the format of a password for a Linux account',
@@ -2151,7 +2205,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_linux_account_username',
   'linux_accounts',
   'checks the format of a Linux account username',
@@ -2159,7 +2213,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.80'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'disable_linux_account',
   'linux_accounts',
   'disables a Linux account and removes its access to all servers',
@@ -2167,7 +2221,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'enable_linux_account',
   'linux_accounts',
   'enables a Linux account and restores its access to all servers',
@@ -2175,7 +2229,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'generate_password',
   'linux_accounts',
   'generates a random, valid password',
@@ -2183,7 +2237,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_linux_account',
   'linux_accounts',
   'removes a Linux account from all servers',
@@ -2191,7 +2245,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_linux_account_home_phone',
   'linux_accounts',
   'sets the home phone number for a Linux account',
@@ -2199,7 +2253,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_linux_account_name',
   'linux_accounts',
   'sets the full name for a Linux account',
@@ -2207,7 +2261,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.80.0'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_linux_account_name',
   'linux_accounts',
   'sets the full name for a Linux account',
@@ -2215,7 +2269,7 @@ insert into aosh_commands values(
   '1.80.1',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_linux_account_office_location',
   'linux_accounts',
   'sets the office location for a Linux account',
@@ -2223,7 +2277,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_linux_account_office_phone',
   'linux_accounts',
   'sets the office phone number for a Linux account',
@@ -2231,7 +2285,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_linux_account_password',
   'linux_accounts',
   'sets the password for a Linux account on all servers',
@@ -2239,7 +2293,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_linux_account_shell',
   'linux_accounts',
   'sets the shell used by a Linux account',
@@ -2247,7 +2301,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'wait_for_linux_account_rebuild',
   'linux_accounts',
   'waits for any pending or current server config rebuild to complete',
@@ -2255,7 +2309,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_linux_group_account',
   'linux_group_accounts',
   'grants a Linux account access to a Linux group',
@@ -2263,7 +2317,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_linux_group_account',
   'linux_group_accounts',
   'revokes access of a Linux account to a Linux group',
@@ -2271,7 +2325,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_primary_linux_group_account',
   'linux_group_accounts',
   'sets the primary Linux group associated with a Linux account',
@@ -2279,7 +2333,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_linux_group',
   'linux_groups',
   'adds a new Linux group',
@@ -2287,7 +2341,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_linux_group_name',
   'linux_groups',
   'checks validity of a Linux group name',
@@ -2295,7 +2349,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'is_linux_group_name_available',
   'linux_groups',
   'check availability Linux group name',
@@ -2303,7 +2357,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_linux_group',
   'linux_groups',
   'removes a Linux group',
@@ -2311,7 +2365,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_linux_server_account',
   'linux_server_accounts',
   'grants a Linux account access to a server',
@@ -2319,7 +2373,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'compare_linux_server_account_password',
   'linux_server_accounts',
   'compares the provided password to the password on the server',
@@ -2327,7 +2381,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'copy_home_directory',
   'linux_server_accounts',
   'copies the contents of a home directory from one server to another',
@@ -2335,7 +2389,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'copy_linux_server_account_password',
   'linux_server_accounts',
   'copies the password of one Linux account to another account',
@@ -2343,7 +2397,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'disable_linux_server_account',
   'linux_server_accounts',
   'disables a Linux account on one server',
@@ -2351,7 +2405,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'enable_linux_server_account',
   'linux_server_accounts',
   'enables a Linux account on one server',
@@ -2359,7 +2413,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'get_autoresponder_content',
   'linux_server_accounts',
   'gets the message body of an autoresponder',
@@ -2367,7 +2421,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'get_cron_table',
   'linux_server_accounts',
   'gets the contents of a user cron table',
@@ -2375,7 +2429,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'get_imap_folder_sizes',
   'linux_server_accounts',
   'gets the file sizes for IMAP folders',
@@ -2383,7 +2437,7 @@ insert into aosh_commands values(
   '1.0a120',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'get_inbox_attributes',
   'linux_server_accounts',
   'gets the attributes of an email inbox',
@@ -2391,7 +2445,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'is_linux_server_account_password_set',
   'linux_server_accounts',
   'determines if a Linux account password is set',
@@ -2399,7 +2453,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'is_linux_server_account_procmail_manual',
   'linux_server_accounts',
   'determines if a Linux account is in manual procmail mode',
@@ -2407,7 +2461,7 @@ insert into aosh_commands values(
   '1.0a116',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_linux_server_account',
   'linux_server_accounts',
   'removes a Linux account from a server',
@@ -2415,7 +2469,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_autoresponder',
   'linux_server_accounts',
   'configures an autoresponder',
@@ -2423,7 +2477,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_cron_table',
   'linux_server_accounts',
   'sets the contents of a user cron table',
@@ -2431,7 +2485,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_linux_server_account_cron_backup_retention',
   'linux_server_accounts',
   'sets the cron file backup retention for a Linux account on one server',
@@ -2439,7 +2493,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_linux_server_account_home_backup_retention',
   'linux_server_accounts',
   'sets the home directory backup retention for a Linux account on one server',
@@ -2447,7 +2501,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_linux_server_account_inbox_backup_retention',
   'linux_server_accounts',
   'sets the email inbox directory backup retention for a Linux account on one server',
@@ -2455,7 +2509,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_linux_server_account_junk_email_retention',
   'linux_server_accounts',
   'sets the number of days emails will remain in the Junk folder',
@@ -2463,7 +2517,7 @@ insert into aosh_commands values(
   '1.0a120',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_linux_server_account_password',
   'linux_server_accounts',
   'sets the password for a Linux account on one server',
@@ -2471,7 +2525,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_linux_server_account_spamassassin_integration_mode',
   'linux_server_accounts',
   'sets the behavior of the SpamAssassin filters',
@@ -2479,7 +2533,7 @@ insert into aosh_commands values(
   '1.0a120',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_linux_server_account_spamassassin_required_score',
   'linux_server_accounts',
   'sets the required score for the SpamAssassin filters',
@@ -2487,7 +2541,7 @@ insert into aosh_commands values(
   '1.0a124',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_linux_server_account_trash_email_retention',
   'linux_server_accounts',
   'sets the number of days emails will remain in the Trash folder',
@@ -2495,7 +2549,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_linux_server_account_use_inbox',
   'linux_server_accounts',
   'sets whether or not email will be stored in the inbox',
@@ -2503,7 +2557,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_linux_server_group',
   'linux_server_groups',
   'adds a Linux group to a server',
@@ -2511,7 +2565,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_linux_server_group',
   'linux_server_groups',
   'removes a Linux group from a server',
@@ -2519,7 +2573,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_majordomo_list',
   'majordomo_lists',
   'adds a new Majordomo list',
@@ -2527,7 +2581,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_majordomo_list_name',
   'majordomo_lists',
   'checks the format of a Majordomo list name',
@@ -2535,7 +2589,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'get_majordomo_info_file',
   'majordomo_lists',
   'gets the info file for a Majordomo list',
@@ -2543,7 +2597,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'get_majordomo_intro_file',
   'majordomo_lists',
   'gets the intro file for a Majordomo list',
@@ -2551,7 +2605,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_majordomo_info_file',
   'majordomo_lists',
   'sets the info file for a Majordomo list',
@@ -2559,7 +2613,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_majordomo_intro_file',
   'majordomo_lists',
   'sets the intro file for a Majordomo list',
@@ -2567,7 +2621,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_majordomo_server',
   'majordomo_servers',
   'adds a new Majordomo server',
@@ -2575,7 +2629,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_majordomo_server',
   'majordomo_servers',
   'remvoes a Majordomo server',
@@ -2583,7 +2637,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_majordomo_server_backup_retention',
   'majordomo_servers',
   'sets the backup retention for a Majordomo server',
@@ -2591,7 +2645,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'get_mysql_backup',
   'mysql_backups',
   'gets the contents of a MySQL database backup',
@@ -2599,7 +2653,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_mysql_backup',
   'mysql_backups',
   'removes a MySQL database backup from the system',
@@ -2607,7 +2661,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_mysql_database',
   'mysql_databases',
   'adds a new MySQL database',
@@ -2615,7 +2669,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.3'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_mysql_database',
   'mysql_databases',
   'adds a new MySQL database',
@@ -2623,7 +2677,7 @@ insert into aosh_commands values(
   '1.4',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'backup_mysql_database',
   'mysql_databases',
   'stores a compressed dump of a MySQL database in the backup system',
@@ -2631,7 +2685,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.3'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'backup_mysql_database',
   'mysql_databases',
   'stores a compressed dump of a MySQL database in the backup system',
@@ -2639,7 +2693,7 @@ insert into aosh_commands values(
   '1.4',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_mysql_database_name',
   'mysql_databases',
   'checks the format of a MySQL database name',
@@ -2647,7 +2701,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'dump_mysql_database',
   'mysql_databases',
   'dumps the contents of a MySQL database',
@@ -2655,7 +2709,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.3'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'dump_mysql_database',
   'mysql_databases',
   'dumps the contents of a MySQL database',
@@ -2663,7 +2717,7 @@ insert into aosh_commands values(
   '1.4',
   '1.80'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'dump_mysql_database',
   'mysql_databases',
   'dumps the contents of a MySQL database',
@@ -2671,7 +2725,7 @@ insert into aosh_commands values(
   '1.80.0',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'generate_mysql_database_name',
   'mysql_databases',
   'generates a unique MySQL database name',
@@ -2679,7 +2733,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'is_mysql_database_name_available',
   'mysql_databases',
   'determines if a MySQL database name is available',
@@ -2687,7 +2741,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.3'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'is_mysql_database_name_available',
   'mysql_databases',
   'determines if a MySQL database name is available',
@@ -2695,7 +2749,7 @@ insert into aosh_commands values(
   '1.4',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_mysql_database',
   'mysql_databases',
   'removes a MySQL database',
@@ -2703,7 +2757,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.3'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_mysql_database',
   'mysql_databases',
   'removes a MySQL database',
@@ -2711,7 +2765,7 @@ insert into aosh_commands values(
   '1.4',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_mysql_database_backup_retention',
   'mysql_databases',
   'sets the backup retention for a MySQL database',
@@ -2719,7 +2773,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.3'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_mysql_database_backup_retention',
   'mysql_databases',
   'sets the backup retention for a MySQL database',
@@ -2727,7 +2781,7 @@ insert into aosh_commands values(
   '1.4',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'wait_for_mysql_database_rebuild',
   'mysql_databases',
   'waits for any pending or current MySQL database config rebuilds to complete',
@@ -2735,7 +2789,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_mysql_db_user',
   'mysql_db_users',
   'grants a MySQL user permission to access a MySQL database',
@@ -2743,7 +2797,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.0a110'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_mysql_db_user',
   'mysql_db_users',
   'grants a MySQL user permission to access a MySQL database',
@@ -2751,7 +2805,7 @@ insert into aosh_commands values(
   '1.0a111',
   '1.3'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_mysql_db_user',
   'mysql_db_users',
   'grants a MySQL user permission to access a MySQL database',
@@ -2759,7 +2813,7 @@ insert into aosh_commands values(
   '1.4',
   '1.53'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_mysql_db_user',
   'mysql_db_users',
   'grants a MySQL user permission to access a MySQL database',
@@ -2767,7 +2821,7 @@ insert into aosh_commands values(
   '1.54',
   '1.81.1'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_mysql_db_user',
   'mysql_db_users',
   'grants a MySQL user permission to access a MySQL database',
@@ -2775,7 +2829,7 @@ insert into aosh_commands values(
   '1.81.2',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_mysql_db_user',
   'mysql_db_users',
   'removes a MySQL user''s access to a MySQL database',
@@ -2783,7 +2837,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.3'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_mysql_db_user',
   'mysql_db_users',
   'removes a MySQL user''s access to a MySQL database',
@@ -2791,7 +2845,7 @@ insert into aosh_commands values(
   '1.4',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'wait_for_mysql_db_user_rebuild',
   'mysql_db_users',
   'waits for any pending or current MySQL permission config rebuilds to complete',
@@ -2799,15 +2853,15 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'wait_for_mysql_host_rebuild',
   'mysql_hosts',
   'waits for any pending or current MySQL host permission rebuilds to complete',
   '<i>ao_server</i>',
   '1.0a100',
-  null
+  '1.3'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_mysql_server_name',
   'mysql_servers',
   'checks the format of a MySQL server name',
@@ -2815,7 +2869,7 @@ insert into aosh_commands values(
   '1.4',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'is_mysql_server_name_available',
   'mysql_servers',
   'determines if a MySQL server name is available',
@@ -2823,7 +2877,7 @@ insert into aosh_commands values(
   '1.4',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'restart_mysql',
   'mysql_servers',
   'restarts the MySQL database server',
@@ -2831,7 +2885,7 @@ insert into aosh_commands values(
   '1.4',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'start_mysql',
   'mysql_servers',
   'starts the MySQL database server',
@@ -2839,7 +2893,7 @@ insert into aosh_commands values(
   '1.4',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'stop_mysql',
   'mysql_servers',
   'stops the MySQL database server',
@@ -2847,7 +2901,7 @@ insert into aosh_commands values(
   '1.4',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'wait_for_mysql_server_rebuild',
   'mysql_servers',
   'waits for any pending or current database server config rebuilds to complete',
@@ -2855,7 +2909,7 @@ insert into aosh_commands values(
   '1.4',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_mysql_server_user',
   'mysql_server_users',
   'adds a MySQL user to a server',
@@ -2863,7 +2917,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.3'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_mysql_server_user',
   'mysql_server_users',
   'adds a MySQL user to a server',
@@ -2871,7 +2925,7 @@ insert into aosh_commands values(
   '1.4',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'disable_mysql_server_user',
   'mysql_server_users',
   'disables a MySQL account on one server',
@@ -2879,7 +2933,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.3'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'disable_mysql_server_user',
   'mysql_server_users',
   'disables a MySQL account on one server',
@@ -2887,7 +2941,7 @@ insert into aosh_commands values(
   '1.4',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'enable_mysql_server_user',
   'mysql_server_users',
   'enables a MySQL account on one server',
@@ -2895,7 +2949,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.3'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'enable_mysql_server_user',
   'mysql_server_users',
   'enables a MySQL account on one server',
@@ -2903,7 +2957,7 @@ insert into aosh_commands values(
   '1.4',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'is_mysql_server_user_password_set',
   'mysql_server_users',
   'determines if a MySQL account password is set',
@@ -2911,7 +2965,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.3'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'is_mysql_server_user_password_set',
   'mysql_server_users',
   'determines if a MySQL account password is set',
@@ -2919,7 +2973,7 @@ insert into aosh_commands values(
   '1.4',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_mysql_server_user',
   'mysql_server_users',
   'removes a MySQL user from a server',
@@ -2927,7 +2981,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.3'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_mysql_server_user',
   'mysql_server_users',
   'removes a MySQL user from a server',
@@ -2935,7 +2989,7 @@ insert into aosh_commands values(
   '1.4',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_mysql_server_user_password',
   'mysql_server_users',
   'sets the password for a MySQL user on one server',
@@ -2943,7 +2997,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.3'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_mysql_server_user_password',
   'mysql_server_users',
   'sets the password for a MySQL user on one server',
@@ -2951,7 +3005,7 @@ insert into aosh_commands values(
   '1.4',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_mysql_user',
   'mysql_users',
   'adds a MySQL user to the system',
@@ -2959,7 +3013,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'are_mysql_user_passwords_set',
   'mysql_users',
   'determines if <b>all</b>, <b>some</b>, or <b>none</b> of the passwords for a MySQL account are set',
@@ -2967,7 +3021,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_mysql_password',
   'mysql_users',
   'checks the format of a password for a MySQL user',
@@ -2975,7 +3029,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_mysql_username',
   'mysql_users',
   'checks the format of a MySQL username',
@@ -2983,7 +3037,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'disable_mysql_user',
   'mysql_users',
   'disables a MySQL account on all servers',
@@ -2991,7 +3045,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'enable_mysql_user',
   'mysql_users',
   'enables a MySQL account on all servers',
@@ -2999,7 +3053,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_mysql_user',
   'mysql_users',
   'removes a MySQL user from the system',
@@ -3007,7 +3061,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_mysql_user_password',
   'mysql_users',
   'sets the password for a MySQL user on all servers',
@@ -3015,7 +3069,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'wait_for_mysql_user_rebuild',
   'mysql_users',
   'waits for any pending or current MySQL user config rebuilds to complete',
@@ -3023,7 +3077,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_net_bind',
   'net_binds',
   'adds a net binds to the system',
@@ -3031,7 +3085,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.0a103'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_net_bind',
   'net_binds',
   'adds a net binds to the system',
@@ -3039,7 +3093,7 @@ insert into aosh_commands values(
   '1.0a104',
   '1.32'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_net_bind',
   'net_binds',
   'adds a net binds to the system',
@@ -3047,7 +3101,7 @@ insert into aosh_commands values(
   '1.33',
   '1.80.2'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_net_bind',
   'net_binds',
   'adds a net binds to the system',
@@ -3055,7 +3109,7 @@ insert into aosh_commands values(
   '1.81.0',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_net_bind',
   'net_binds',
   'removes a net binds from the system',
@@ -3063,7 +3117,7 @@ insert into aosh_commands values(
   '1.0a104',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_net_bind_firewalld_zones',
   'net_binds',
   'sets the enabled firewalld zones for this port',
@@ -3071,7 +3125,7 @@ insert into aosh_commands values(
   '1.81.0',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_net_bind_monitoring_enabled',
   'net_binds',
   'enables or disables the monitoring of this port',
@@ -3079,7 +3133,7 @@ insert into aosh_commands values(
   '1.0a105',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_net_bind_open_firewall',
   'net_binds',
   'opens or closes the firewall filters associated with this port',
@@ -3087,7 +3141,7 @@ insert into aosh_commands values(
   '1.0a105',
   '1.80.2'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_notice_log',
   'notice_log',
   'adds a notice log entry to a business',
@@ -3095,7 +3149,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_package',
   'packages',
   'adds a new package to a business',
@@ -3103,7 +3157,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.0a122'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_package',
   'packages',
   'adds a new package to a business',
@@ -3111,7 +3165,7 @@ insert into aosh_commands values(
   '1.0a123',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_package_name',
   'packages',
   'checks the format of a package name',
@@ -3119,7 +3173,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.80'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'disable_package',
   'packages',
   'disables a package and everything in it, except its business administrators',
@@ -3127,7 +3181,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'enable_package',
   'packages',
   'enables a package and everything in it',
@@ -3135,7 +3189,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'generate_package_name',
   'packages',
   'generates a unique package name based on a template',
@@ -3143,7 +3197,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'is_package_name_available',
   'packages',
   'checks the availability of a package name',
@@ -3151,7 +3205,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'get_postgres_backup',
   'postgres_backups',
   'gets the contents of a PostgreSQL database backup',
@@ -3159,7 +3213,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_postgres_backup',
   'postgres_backups',
   'removes a PostgreSQL database backup from the system',
@@ -3167,7 +3221,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_postgres_database',
   'postgres_databases',
   'adds a new PostgreSQL database',
@@ -3175,7 +3229,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.26'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_postgres_database',
   'postgres_databases',
   'adds a new PostgreSQL database',
@@ -3183,7 +3237,7 @@ insert into aosh_commands values(
   '1.27',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'backup_postgres_database',
   'postgres_databases',
   'stores a compressed dump of a PostgreSQL database in the backup system',
@@ -3191,7 +3245,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_postgres_database_name',
   'postgres_databases',
   'checks the format of a PostgreSQL database name',
@@ -3199,7 +3253,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'dump_postgres_database',
   'postgres_databases',
   'dumps the contents of a PostgreSQL database',
@@ -3207,7 +3261,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.80'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'dump_postgres_database',
   'postgres_databases',
   'dumps the contents of a PostgreSQL database',
@@ -3215,7 +3269,7 @@ insert into aosh_commands values(
   '1.80.0',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'generate_postgres_database_name',
   'postgres_databases',
   'generates a unique PostgreSQL database name',
@@ -3223,7 +3277,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'is_postgres_database_name_available',
   'postgres_databases',
   'determines if a PostgreSQL database name is available',
@@ -3231,7 +3285,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_postgres_database',
   'postgres_databases',
   'removes a PostgreSQL database',
@@ -3239,7 +3293,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_postgres_database_backup_retention',
   'postgres_databases',
   'sets the backup retention for a PostgreSQL database',
@@ -3247,7 +3301,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'wait_for_postgres_database_rebuild',
   'postgres_databases',
   'waits for any pending or current database config rebuilds to complete',
@@ -3255,7 +3309,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_postgres_server_user',
   'postgres_server_users',
   'adds a PostgreSQL user to a server',
@@ -3263,7 +3317,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'disable_postgres_server_user',
   'postgres_server_users',
   'disables a PostgreSQL account on one server',
@@ -3271,7 +3325,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'enable_postgres_server_user',
   'postgres_server_users',
   'enables a PostgreSQL account on one server',
@@ -3279,7 +3333,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'is_postgres_server_user_password_set',
   'postgres_server_users',
   'determines if a PostgreSQL account password is set',
@@ -3287,7 +3341,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_postgres_server_user',
   'postgres_server_users',
   'removes a PostgreSQL user from a server',
@@ -3295,7 +3349,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_postgres_server_user_password',
   'postgres_server_users',
   'sets the password for a PostgreSQL user on one server',
@@ -3303,7 +3357,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_postgres_server_name',
   'postgres_servers',
   'checks the format of a PostgreSQL server name',
@@ -3311,7 +3365,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'is_postgres_server_name_available',
   'postgres_servers',
   'determines if a PostgreSQL server name is available',
@@ -3319,7 +3373,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'restart_postgresql',
   'postgres_servers',
   'restarts the PostgreSQL database server',
@@ -3327,7 +3381,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'start_postgresql',
   'postgres_servers',
   'starts the PostgreSQL database server',
@@ -3335,7 +3389,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'stop_postgresql',
   'postgres_servers',
   'stops the PostgreSQL database server',
@@ -3343,7 +3397,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'wait_for_postgres_server_rebuild',
   'postgres_servers',
   'waits for any pending or current database server config rebuilds to complete',
@@ -3351,7 +3405,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_postgres_user',
   'postgres_users',
   'adds a PostgreSQL user to the system',
@@ -3359,7 +3413,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'are_postgres_user_passwords_set',
   'postgres_users',
   'determines if <b>all</b>, <b>some</b>, or <b>none</b> of the passwords for a PostgreSQL account are set',
@@ -3367,7 +3421,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_postgres_password',
   'postgres_users',
   'checks the format of a password for a PostgreSQL user',
@@ -3375,7 +3429,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_postgres_username',
   'postgres_users',
   'checks the format of a PostgreSQL username',
@@ -3383,7 +3437,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'disable_postgres_user',
   'postgres_users',
   'disables a PostgreSQL account on all servers',
@@ -3391,7 +3445,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'enable_postgres_user',
   'postgres_users',
   'enables a PostgreSQL account on all servers',
@@ -3399,7 +3453,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_postgres_user',
   'postgres_users',
   'removes a PostgreSQL user from the system',
@@ -3407,7 +3461,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_postgres_user_password',
   'postgres_users',
   'sets the password for a PostgreSQL user on all servers',
@@ -3415,7 +3469,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'wait_for_postgres_user_rebuild',
   'postgres_users',
   'waits for any pending or current database user config rebuilds to complete',
@@ -3423,7 +3477,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_ssl_certificate',
   'ssl_certificates',
   'checks an SSL certificate status',
@@ -3431,7 +3485,7 @@ insert into aosh_commands values(
   '1.81.10',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'desc',
   'schema_tables',
   'describes the structure of a table',
@@ -3439,7 +3493,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'describe',
   'schema_tables',
   'describes the structure of a table',
@@ -3447,7 +3501,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'select',
   'schema_tables',
   'selects rows and columns from a table',
@@ -3455,7 +3509,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'show',
   'schema_tables',
   'shows information about tables',
@@ -3463,7 +3517,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_sendmail_smtp_stat',
   'sendmail_smtp_stats',
   'adds to the daily SMTP statistics',
@@ -3471,7 +3525,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.30'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_backup_server',
   'servers',
   'adds a new backup server',
@@ -3479,7 +3533,7 @@ insert into aosh_commands values(
   '1.0a102',
   '1.0a107'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_backup_server',
   'servers',
   'adds a new backup server',
@@ -3487,7 +3541,7 @@ insert into aosh_commands values(
   '1.0a108',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_spam_email_message',
   'spam_email_messages',
   'adds a spam email message to the database',
@@ -3495,7 +3549,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_ticket',
   'tickets',
   'adds a new ticket',
@@ -3503,7 +3557,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.0a124'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_ticket',
   'tickets',
   'adds a new ticket',
@@ -3511,7 +3565,7 @@ insert into aosh_commands values(
   '1.0a125',
   '1.0a125'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_ticket',
   'tickets',
   'adds a new ticket',
@@ -3519,7 +3573,7 @@ insert into aosh_commands values(
   '1.0a126',
   '1.43'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_ticket_work',
   'tickets',
   'adds work information to a ticket',
@@ -3527,7 +3581,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.43'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'bounce_ticket',
   'tickets',
   'bounces a ticket',
@@ -3535,7 +3589,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.43'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'change_ticket_admin_priority',
   'tickets',
   'changes the administrative priority of a ticket',
@@ -3543,7 +3597,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.43'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'change_ticket_client_priority',
   'tickets',
   'changes the client priority of a ticket',
@@ -3551,7 +3605,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.43'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'change_ticket_deadline',
   'tickets',
   'changes the deadline for a ticket',
@@ -3559,7 +3613,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.43'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'change_ticket_technology',
   'tickets',
   'changes the technology associated with a ticket',
@@ -3567,7 +3621,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.43'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'change_ticket_type',
   'tickets',
   'changes the type of a ticket',
@@ -3575,7 +3629,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.43'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'complete_ticket',
   'tickets',
   'completes a ticket',
@@ -3583,7 +3637,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.43'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'hold_ticket',
   'tickets',
   'places a ticket in the hold state',
@@ -3591,7 +3645,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.43'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'kill_ticket',
   'tickets',
   'kills a ticket',
@@ -3599,7 +3653,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.43'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'reactivate_ticket',
   'tickets',
   'reactivates a ticket that is on hold',
@@ -3607,7 +3661,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.43'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_transaction',
   'transactions',
   'adds a new transaction to a business account',
@@ -3615,7 +3669,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.28'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_transaction',
   'transactions',
   'adds a new transaction to a business account',
@@ -3623,7 +3677,7 @@ insert into aosh_commands values(
   '1.29',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'approve_transaction',
   'transactions',
   'flags a transaction as approved',
@@ -3631,7 +3685,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.28'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'decline_transaction',
   'transactions',
   'flags a transaction as declined',
@@ -3639,7 +3693,7 @@ insert into aosh_commands values(
   '1.0a100',
   '1.28'
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'add_username',
   'usernames',
   'adds a new username',
@@ -3647,7 +3701,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'are_username_passwords_set',
   'usernames',
   'determines if <b>all</b>, <b>some</b>, or <b>none</b> of the passwords for a username are set',
@@ -3655,7 +3709,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_username',
   'usernames',
   'checks the format of a username',
@@ -3663,7 +3717,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'check_username_password',
   'usernames',
   'checks the format of a password for a Username',
@@ -3671,7 +3725,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'disable_username',
   'usernames',
   'disables a username and accounts using it, except its business administrator',
@@ -3679,7 +3733,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'enable_username',
   'usernames',
   'enables a username and accounts using it',
@@ -3687,7 +3741,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'is_username_available',
   'usernames',
   'checks the availability of a username',
@@ -3695,7 +3749,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'remove_username',
   'usernames',
   'removes a username from the system',
@@ -3703,7 +3757,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'set_username_password',
   'usernames',
   'sets the password for a Username on all services',
@@ -3711,7 +3765,7 @@ insert into aosh_commands values(
   '1.0a100',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'verify_virtual_disk',
   'virtual_disks',
   'begins a verification of the redundancy of the virtual disk',
@@ -3719,7 +3773,7 @@ insert into aosh_commands values(
   '1.71',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'create_virtual_server',
   'virtual_servers',
   'calls "xl create" on the current primary physical server',
@@ -3727,7 +3781,7 @@ insert into aosh_commands values(
   '1.64',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'reboot_virtual_server',
   'virtual_servers',
   'calls "xl reboot" on the current primary physical server',
@@ -3735,7 +3789,7 @@ insert into aosh_commands values(
   '1.64',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'shutdown_virtual_server',
   'virtual_servers',
   'calls "xl shutdown" on the current primary physical server',
@@ -3743,7 +3797,7 @@ insert into aosh_commands values(
   '1.64',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'destroy_virtual_server',
   'virtual_servers',
   'calls "xl destroy" on the current primary physical server',
@@ -3751,7 +3805,7 @@ insert into aosh_commands values(
   '1.64',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'pause_virtual_server',
   'virtual_servers',
   'calls "xl pause" on the current primary physical server',
@@ -3759,7 +3813,7 @@ insert into aosh_commands values(
   '1.64',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'unpause_virtual_server',
   'virtual_servers',
   'calls "xl unpause" on the current primary physical server',
@@ -3767,7 +3821,7 @@ insert into aosh_commands values(
   '1.64',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'get_primary_physical_server',
   'virtual_servers',
   'gets the physical server that is currently the primary node for this virtual server',
@@ -3775,7 +3829,7 @@ insert into aosh_commands values(
   '1.73',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'get_secondary_physical_server',
   'virtual_servers',
   'gets the physical server that is currently the secondary node for this virtual server',
@@ -3783,7 +3837,7 @@ insert into aosh_commands values(
   '1.73',
   null
 );
-insert into aosh_commands values(
+select aosh.add_command(
   'get_virtual_server_status',
   'virtual_servers',
   'calls "xl list" to get the current state on the current primary physical server',
@@ -3791,4 +3845,8 @@ insert into aosh_commands values(
   '1.64',
   null
 );
-commit;
+
+drop function aosh.add_command (name,name,text,text,text,text);
+drop function aosh.add_command (name,name,name,text,text,text,text);
+
+analyze aosh."Command";

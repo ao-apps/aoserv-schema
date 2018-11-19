@@ -52,7 +52,5 @@ insert into "schema"."Schema" values(
     true,
     null -- Uses pg_catalog.pg_description
 );
--- TODO: Query to cause error when no description set either directly or from system catalog join - same for other tables
---       Or just default to ''?
 
 analyze "schema"."Schema";

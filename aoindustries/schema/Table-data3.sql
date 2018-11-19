@@ -1,4 +1,5 @@
 select "schema".add_table(
+    'ticket',
     'action_types',
     'Action Types',
     true,
@@ -7,6 +8,7 @@ select "schema".add_table(
     '1.43'
 );
 select "schema".add_table(
+    'ticket',
     'actions',
     'Actions',
     false,
@@ -1824,6 +1826,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'ticket',
     'ticket_action_types',
     'Ticket Action Types',
     true,
@@ -1832,6 +1835,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'ticket',
     'ticket_actions',
     'Ticket Actions',
     false,
@@ -1842,6 +1846,7 @@ an action to be logged.',
     null
 );
 select "schema".add_table(
+    'ticket',
     'ticket_assignments',
     'Ticket Assignments',
     false,
@@ -1850,6 +1855,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'ticket',
     'ticket_brand_categories',
     'Ticket Brand Categories',
     false,
@@ -1858,6 +1864,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'ticket',
     'ticket_categories',
     'Ticket Categories',
     false,
@@ -1866,6 +1873,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'ticket',
     'ticket_priorities',
     'Ticket Priorities',
     true,
@@ -1874,6 +1882,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'ticket',
     'ticket_stati',
     'Ticket Statuses',
     true,
@@ -1882,6 +1891,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'ticket',
     'ticket_types',
     'Ticket Types',
     true,
@@ -1890,6 +1900,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'ticket',
     'tickets',
     'Tickets',
     false,

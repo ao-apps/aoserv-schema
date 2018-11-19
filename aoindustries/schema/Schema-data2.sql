@@ -10,7 +10,7 @@ insert into "schema"."Schema" values(
 insert into "schema"."Schema" values(
     (select count(*) from "schema"."Schema"),
     'accounting',
-    '1.81.18',
+    '1.0a100',
     null,
     'Accounting',
     false,
@@ -19,7 +19,7 @@ insert into "schema"."Schema" values(
 insert into "schema"."Schema" values(
     (select count(*) from "schema"."Schema"),
     'aosh',
-    '1.81.18',
+    '1.0a100',
     null,
     'AOSH',
     true,
@@ -46,7 +46,7 @@ insert into "schema"."Schema" values(
 insert into "schema"."Schema" values(
     (select count(*) from "schema"."Schema"),
     'schema',
-    '1.81.18',
+    '1.0a100',
     null,
     'Schema',
     true,

@@ -39,6 +39,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'schema',
     'aoserv_protocols',
     'AOServ Protocols',
     true,
@@ -47,6 +48,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'aosh',
     'aosh_commands',
     'AOSH Commands',
     true,
@@ -103,6 +105,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'accounting',
     'bank_accounts',
     'Bank Accounts',
     false,
@@ -111,6 +114,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'accounting',
     'bank_transaction_types',
     'Bank Transaction Types',
     false,
@@ -119,6 +123,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'accounting',
     'bank_transactions',
     'Bank Transactions',
     false,
@@ -127,6 +132,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'accounting',
     'banks',
     'Banks',
     false,
@@ -471,6 +477,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'accounting',
     'expense_categories',
     'Expense Categories',
     false,
@@ -1040,6 +1047,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'accounting',
     'merchant_accounts',
     'Merchant Accounts',
     false,
@@ -1439,6 +1447,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'schema',
     'schema_columns',
     'Schema Columns',
     true,
@@ -1447,6 +1456,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'schema',
     'schema_foreign_keys',
     'Schema Foreign Keys',
     true,
@@ -1455,6 +1465,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'schema',
     'schema_tables',
     'Schema Tables',
     true,
@@ -1463,6 +1474,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'schema',
     'schema_types',
     'Schema Types',
     true,

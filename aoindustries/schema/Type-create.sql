@@ -5,7 +5,9 @@ create table "schema"."Type" (
     not null,
   "sinceVersion" text
     not null,
-  "lastVersion" text
+  "lastVersion" text,
+  unique("sinceVersion", "name"),
+  unique("name", "lastVersion")
 );
 
 comment on column "schema"."Type"."name" is 'the unique name within a single protocol version';

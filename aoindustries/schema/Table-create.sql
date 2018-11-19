@@ -12,7 +12,8 @@ create table "schema"."Table" (
     not null,
   "isPublic" bool
     not null,
-  description text
+  description text,
+  unique("sinceVersion", "schema", "name")
 );
 
 comment on table  "schema"."Table"             is 'stores table names, display names, and descriptions for each table.';

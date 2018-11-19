@@ -298,6 +298,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_blackhole_email_address',
+  'email',
   'blackhole_email_addresses',
   'stops emails from being discarded sent to /dev/null',
   '<i>address</i> <i>ao_server</i>',
@@ -714,6 +715,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'check_email_address',
+  'email',
   'email_addresses',
   'checks the format of an email address',
   '<i>address</i> [<i>...</i>]',
@@ -722,6 +724,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_email_address',
+  'email',
   'email_addresses',
   'removes an email address and all associated resources',
   '<i>address</i> <i>ao_server> [<i>...</i>]',
@@ -730,6 +733,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_email_domain',
+  'email',
   'email_domains',
   'adds a new email domain',
   '<i>domain</i> <i>ao_server</i> <i>package</i>',
@@ -738,6 +742,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'check_email_domain',
+  'email',
   'email_domains',
   'checks the format of an email domain',
   '<i>domain</i>',
@@ -746,6 +751,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'is_email_domain_available',
+  'email',
   'email_domains',
   'checks the availability of an email domain',
   '<i>domain</i> <i>ao_server</i>',
@@ -754,6 +760,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_email_domain',
+  'email',
   'email_domains',
   'removes an email domain and all associated email addresses',
   '<i>domain</i> <i>ao_server</i>',
@@ -762,6 +769,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_email_forwarding',
+  'email',
   'email_forwarding',
   'attaches a forwarding address to an email address',
   '<i>from_address</i> <i>ao_server</i> <i>to_address</i> [<i>from_address</i> <i>ao_server</i> <i>to_address</i>]...',
@@ -770,6 +778,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'check_email_forwarding',
+  'email',
   'email_forwarding',
   'checks the format of a the destination for email forwarding',
   '<i>from_address</i> <i>to_address</i> [<i>from_address</i> <i>to_address</i>]...',
@@ -778,6 +787,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_email_forwarding',
+  'email',
   'email_forwarding',
   'detaches a forwarding address from an email address',
   '<i>from_address</i> <i>ao_server</i> <i>to_address</i>',
@@ -786,6 +796,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_email_list_address',
+  'email',
   'email_list_addresses',
   'attaches an email address to an email list',
   '<i>address</i> <i>path</i> <i>ao_server</i> [<i>address</i> <i>path</i> <i>ao_server</i>]...',
@@ -794,6 +805,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_email_list_address',
+  'email',
   'email_list_addresses',
   'detaches an email address from an email list',
   '<i>address</i> <i>path</i> <i>ao_server</i>',
@@ -802,6 +814,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_email_list',
+  'email',
   'email_lists',
   'adds a new email list',
   '<i>ao_server</i> <i>path</i> <i>username</i> <i>group</i>',
@@ -810,6 +823,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'check_email_list_path',
+  'email',
   'email_lists',
   'checks the format of an email list path',
   '<i>path</i> [<i>...</i>]',
@@ -818,6 +832,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'check_email_list_path',
+  'email',
   'email_lists',
   'checks the format of an email list path',
   '<i>ao_server</i> <i>path</i>',
@@ -826,6 +841,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'disable_email_list',
+  'email',
   'email_lists',
   'disables an email list',
   '<i>path</i> <i>ao_server</i> <i>reason</i>',
@@ -834,6 +850,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'enable_email_list',
+  'email',
   'email_lists',
   'enables an email list',
   '<i>path</i> <i>ao_server</i>',
@@ -842,6 +859,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'get_email_list',
+  'email',
   'email_lists',
   'gets the list of addresses for a list',
   '<i>path</i> <i>ao_server</i>',
@@ -850,6 +868,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_email_list',
+  'email',
   'email_lists',
   'removes an email list',
   '<i>path</i> <i>ao_server</i>',
@@ -858,6 +877,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_email_list',
+  'email',
   'email_lists',
   'sets the list of addresses for a list',
   '<i>path</i> <i>ao_server</i> <i>list_contents</i>',
@@ -866,6 +886,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_email_list_backup_retention',
+  'email',
   'email_lists',
   'sets the backup retention for a list',
   '<i>path</i> <i>ao_server</i> <i>backup_retention</i>',
@@ -874,6 +895,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_email_pipe_address',
+  'email',
   'email_pipe_addresses',
   'attaches an email address to an email pipe',
   '<i>address</i> <i>pipe_pkey</i> [<i>address</i> <i>pipe_pkey</i>]...',
@@ -882,6 +904,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_email_pipe_address',
+  'email',
   'email_pipe_addresses',
   'detaches an email address from an email pipe',
   '<i>address</i> <i>pipe_pkey</i>',
@@ -890,6 +913,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_email_pipe',
+  'email',
   'email_pipes',
   'adds a new email pipe',
   '<i>ao_server</i> <i>path</i> <i>package</i>',
@@ -898,6 +922,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_email_pipe',
+  'email',
   'email_pipes',
   'adds a new email pipe',
   '<i>ao_server</i> <i>command</i> <i>package</i>',
@@ -906,6 +931,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'disable_email_pipe',
+  'email',
   'email_pipes',
   'disables an email pipe',
   '<i>pkey</i> <i>reason</i>',
@@ -914,6 +940,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'enable_email_pipe',
+  'email',
   'email_pipes',
   'enables an email pipe',
   '<i>pkey</i>',
@@ -922,6 +949,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_email_pipe',
+  'email',
   'email_pipes',
   'removes an email pipe',
   '<i>pipe_pkey</i>',
@@ -930,6 +958,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_email_smtp_relay',
+  'email',
   'email_smtp_relays',
   'adds a SMTP relay rule',
   '<i>package</i> {""|<i>ao_server</i>} <i>host</i> <i>type</i> {""|<i>duration</i>}',
@@ -938,6 +967,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'disable_email_smtp_relay',
+  'email',
   'email_smtp_relays',
   'disables a SMTP access rule',
   '<i>pkey</i> <i>reason</i>',
@@ -946,6 +976,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'enable_email_smtp_relay',
+  'email',
   'email_smtp_relays',
   'enables a SMTP access rule',
   '<i>pkey</i>',
@@ -954,6 +985,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'refresh_email_smtp_relay',
+  'email',
   'email_smtp_relays',
   'refreshes a SMTP access rule',
   '<i>pkey</i> {""|<i>min_duration</i>}',
@@ -962,6 +994,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_email_smtp_relay',
+  'email',
   'email_smtp_relays',
   'removes a SMTP access rule',
   '<i>pkey</i>',
@@ -2098,6 +2131,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_linux_acc_address',
+  'email',
   'linux_acc_addresses',
   'attaches an email address to a Linux account',
   '<i>address</i> <i>ao_server</i> <i>username</i>',
@@ -2106,6 +2140,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_linux_acc_address',
+  'email',
   'linux_acc_addresses',
   'detaches an email address from a Linux account',
   '<i>address</i> <i>ao_server</i> <i>username</i>',
@@ -2522,6 +2557,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_majordomo_list',
+  'email',
   'majordomo_lists',
   'adds a new Majordomo list',
   '<i>domain</i> <i>ao_server</i> <i>list_name</i>',
@@ -2530,6 +2566,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'check_majordomo_list_name',
+  'email',
   'majordomo_lists',
   'checks the format of a Majordomo list name',
   '<i>list_name</i>',
@@ -2538,6 +2575,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'get_majordomo_info_file',
+  'email',
   'majordomo_lists',
   'gets the info file for a Majordomo list',
   '<i>domain</i> <i>ao_server</i> <i>list_name</i>',
@@ -2546,6 +2584,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'get_majordomo_intro_file',
+  'email',
   'majordomo_lists',
   'gets the intro file for a Majordomo list',
   '<i>domain</i> <i>ao_server</i> <i>list_name</i>',
@@ -2554,6 +2593,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_majordomo_info_file',
+  'email',
   'majordomo_lists',
   'sets the info file for a Majordomo list',
   '<i>domain</i> <i>ao_server</i> <i>list_name</i> <i>file</i>',
@@ -2562,6 +2602,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_majordomo_intro_file',
+  'email',
   'majordomo_lists',
   'sets the intro file for a Majordomo list',
   '<i>domain</i> <i>ao_server</i> <i>list_name</i> <i>file</i>',
@@ -2570,6 +2611,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_majordomo_server',
+  'email',
   'majordomo_servers',
   'adds a new Majordomo server',
   '<i>domain</i> <i>ao_server</i> <i>linux_account</i> <i>linux_group</i> <i>version</i>',
@@ -2578,6 +2620,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_majordomo_server',
+  'email',
   'majordomo_servers',
   'remvoes a Majordomo server',
   '<i>domain</i> <i>ao_server</i>',
@@ -2586,6 +2629,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_majordomo_server_backup_retention',
+  'email',
   'majordomo_servers',
   'sets the backup retention for a Majordomo server',
   '<i>domain</i> <i>ao_server</i> <i>backup_retention</i>',
@@ -3470,6 +3514,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_sendmail_smtp_stat',
+  'email',
   'sendmail_smtp_stats',
   'adds to the daily SMTP statistics',
   '<i>package</i> <i>date</i> <i>ao_server</i> <i>in_count</i> <i>in_bandwidth</i> <i>out_count</i> <i>out_bandwidth</i>',
@@ -3494,6 +3539,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_spam_email_message',
+  'email',
   'spam_email_messages',
   'adds a spam email message to the database',
   '<i>email_relay</i> <i>message</i>',

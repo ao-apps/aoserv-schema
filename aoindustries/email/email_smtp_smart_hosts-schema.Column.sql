@@ -1,0 +1,5 @@
+select "schema".add_column('email', 'email_smtp_smart_hosts', 'net_bind', 0, 'fkey', false, true, false, 'a reference to the port that is being used as a Smart Host', '1.57', null);
+select "schema".add_column('email', 'email_smtp_smart_hosts', 'total_out_burst', 1, 'int', true, false, false, 'the aggregate email burst limit for all emails sent through this host, null means unlimited', '1.57', null);
+select "schema".add_column('email', 'email_smtp_smart_hosts', 'total_out_rate', 2, 'float', true, false, false, 'the sustained email rate for all emails sent through this host, null means unlimited', '1.57', null);
+select "schema".add_column('email', 'email_smtp_smart_hosts', 'default_domain_out_burst', 3, 'int', true, false, false, 'the default per-domain email burst limit when no domain-specific value is provided in email_smtp_smart_host_domains, null means unlimited', '1.57', null);
+select "schema".add_column('email', 'email_smtp_smart_hosts', 'default_domain_out_rate', 4, 'float', true, false, false, 'the default per-domain email rate when no domain-specific value is provided in email_smtp_smart_host_domains, null means unlimited', '1.57', null);

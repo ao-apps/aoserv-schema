@@ -1,0 +1,12 @@
+select "schema".add_column('email', 'email_smtp_relays', 'pkey', 0, 'pkey', false, true, false, 'a generated unique key', '1.0a100', null);
+select "schema".add_column('email', 'email_smtp_relays', 'package', 1, 'package', false, false, false, 'the package that owns this entry', '1.0a100', '1.80');
+select "schema".add_column('email', 'email_smtp_relays', 'package', 2, 'accounting', false, false, false, 'the package that owns this entry', '1.80.0', null);
+select "schema".add_column('email', 'email_smtp_relays', 'ao_server', 3, 'fkey', true, false, false, 'the pkey of the server that the rule applies to', '1.0a100', null);
+select "schema".add_column('email', 'email_smtp_relays', 'host', 4, 'string', false, false, false, 'the hostname or IP the rule applies to', '1.0a100', '1.68');
+select "schema".add_column('email', 'email_smtp_relays', 'host', 5, 'hostname', false, false, false, 'the hostname or IP the rule applies to', '1.69', null);
+select "schema".add_column('email', 'email_smtp_relays', 'type', 6, 'string', false, false, false, 'the type of entry', '1.0a100', null);
+select "schema".add_column('email', 'email_smtp_relays', 'created', 7, 'time', false, false, false, 'the time the entry was created', '1.0a100', null);
+select "schema".add_column('email', 'email_smtp_relays', 'last_refreshed', 8, 'time', false, false, false, 'the time the entry was last updated', '1.0a100', null);
+select "schema".add_column('email', 'email_smtp_relays', 'refresh_count', 9, 'int', false, false, false, 'the number of times the entry has been updated', '1.0a100', null);
+select "schema".add_column('email', 'email_smtp_relays', 'expiration', 10, 'time', true, false, false, 'the expiration time of the entry, or null if non-expiring', '1.0a100', null);
+select "schema".add_column('email', 'email_smtp_relays', 'disable_log', 11, 'fkey', true, false, false, 'indicates that the rule is disabled', '1.0a100', null);

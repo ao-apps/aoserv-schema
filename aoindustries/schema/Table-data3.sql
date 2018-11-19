@@ -141,6 +141,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'email',
     'blackhole_email_addresses',
     'Blackhole Email Addresses',
     false,
@@ -245,6 +246,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'email',
     'cyrus_imapd_binds',
     'Cyrus IMAPD Binds',
     false,
@@ -253,6 +255,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'email',
     'cyrus_imapd_servers',
     'Cyrus IMAPD Servers',
     false,
@@ -349,6 +352,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'email',
     'email_addresses',
     'Email Addresses',
     false,
@@ -357,6 +361,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'email',
     'email_attachment_blocks',
     'Email Attachment Blocks',
     false,
@@ -365,6 +370,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'email',
     'email_attachment_types',
     'Email Attachment Types',
     true,
@@ -373,6 +379,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'email',
     'email_blacklists',
     'Email Blacklists',
     false,
@@ -381,6 +388,7 @@ select "schema".add_table(
     '1.0a121'
 );
 select "schema".add_table(
+    'email',
     'email_domains',
     'Email Domains',
     false,
@@ -389,6 +397,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'email',
     'email_forwarding',
     'Email Forwarding',
     false,
@@ -397,6 +406,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'email',
     'email_list_addresses',
     'Email List Addresses',
     false,
@@ -405,6 +415,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'email',
     'email_lists',
     'Email Lists',
     false,
@@ -413,6 +424,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'email',
     'email_pipe_addresses',
     'Email Pipe Addresses',
     false,
@@ -421,6 +433,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'email',
     'email_pipes',
     'Email Pipes',
     false,
@@ -429,6 +442,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'email',
     'email_smtp_relay_types',
     'Email SMTP Relay Types',
     true,
@@ -437,6 +451,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'email',
     'email_smtp_relays',
     'Email SMTP Relays',
     false,
@@ -445,6 +460,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'email',
     'email_smtp_smart_host_domains',
     'Email SMTP Smart Host Domains',
     false,
@@ -453,6 +469,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'email',
     'email_smtp_smart_hosts',
     'Email SMTP Smart Hosts',
     false,
@@ -461,6 +478,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'email',
     'email_sa_integration_modes',
     'Email SpamAssassin Integration Modes',
     true,
@@ -895,6 +913,7 @@ select "schema".add_table(
     '1.0a122'
 );
 select "schema".add_table(
+    'email',
     'linux_acc_addresses',
     'Linux Account Addresses',
     false,
@@ -967,6 +986,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'email',
     'majordomo_lists',
     'Majordomo Lists',
     false,
@@ -975,6 +995,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'email',
     'majordomo_servers',
     'Majordomo Servers',
     false,
@@ -983,6 +1004,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'email',
     'majordomo_versions',
     'Majordomo Versions',
     true,
@@ -1493,6 +1515,7 @@ select "schema".add_table(
 );
  */
 select "schema".add_table(
+    'email',
     'sendmail_smtp_stats',
     'Sendmail SMTP Stats',
     false,
@@ -1501,6 +1524,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'email',
     'sendmail_binds',
     'Sendmail Binds',
     false,
@@ -1509,6 +1533,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'email',
     'sendmail_servers',
     'Sendmail Servers',
     false,
@@ -1573,6 +1598,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'email',
     'spam_email_messages',
     'Spam Email Messages',
     false,
@@ -1757,6 +1783,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'email',
     'system_email_aliases',
     'System Email Aliases',
     false,

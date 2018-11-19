@@ -1,3 +1,457 @@
+\echo failover_file_log
+select "schema".add_foreign_key('failover_file_log', 'replication', 'failover_file_replications', 'pkey', '1.0a100', null);
+
+\echo failover_file_replications
+select "schema".add_foreign_key('failover_file_replications', 'from_server', 'ao_servers', 'server', '1.0a100', '1.30');
+select "schema".add_foreign_key('failover_file_replications', 'server', 'servers', 'pkey', '1.31', null);
+select "schema".add_foreign_key('failover_file_replications', 'to_server', 'ao_servers', 'server', '1.0a100', '1.30');
+select "schema".add_foreign_key('failover_file_replications', 'backup_partition', 'backup_partitions', 'pkey', '1.31', null);
+select "schema".add_foreign_key('failover_file_replications', 'retention', 'backup_retentions', 'days', '1.13', null);
+select "schema".add_foreign_key('failover_file_replications', 'quota_gid', 'linux_ids', 'id', '1.31', '1.68');
+select "schema".add_foreign_key('failover_file_replications', 'quota_gid', 'linux_ids', 'id', '1.69', '1.80');
+
+\echo failover_file_schedule
+select "schema".add_foreign_key('failover_file_schedule', 'replication', 'failover_file_replications', 'pkey', '1.0a100', null);
+
+\echo failover_mysql_replications
+select "schema".add_foreign_key('failover_mysql_replications', 'ao_server', 'ao_servers', 'server', '1.59', null);
+select "schema".add_foreign_key('failover_mysql_replications', 'replication', 'failover_file_replications', 'pkey', '1.28', '1.58');
+select "schema".add_foreign_key('failover_mysql_replications', 'replication', 'failover_file_replications', 'pkey', '1.59', null);
+select "schema".add_foreign_key('failover_mysql_replications', 'mysql_server', 'mysql_servers', 'pkey', '1.28', null);
+
+\echo file_backup_settings
+select "schema".add_foreign_key('file_backup_settings', 'server', 'servers', 'pkey', '1.0a100', '1.30');
+select "schema".add_foreign_key('file_backup_settings', 'replication', 'failover_file_replications', 'pkey', '1.31', null);
+select "schema".add_foreign_key('file_backup_settings', 'package', 'packages', 'pkey', '1.0a100', '1.30');
+select "schema".add_foreign_key('file_backup_settings', 'backup_level', 'backup_levels', 'level', '1.0a100', '1.30');
+select "schema".add_foreign_key('file_backup_settings', 'backup_retention', 'backup_retentions', 'days', '1.0a100', '1.30');
+
+\echo firewalld_zones
+select "schema".add_foreign_key('firewalld_zones', 'server', 'servers', 'pkey', '1.81.0', null);
+
+\echo ftp_guest_users
+select "schema".add_foreign_key('ftp_guest_users', 'username', 'linux_accounts', 'username', '1.0a100', null);
+
+\echo httpd_binds
+select "schema".add_foreign_key('httpd_binds', 'net_bind', 'net_binds', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('httpd_binds', 'httpd_server', 'httpd_servers', 'pkey', '1.0a100', null);
+
+\echo httpd_jboss_sites
+select "schema".add_foreign_key('httpd_jboss_sites', 'tomcat_site', 'httpd_tomcat_sites', 'httpd_site', '1.0a100', null);
+select "schema".add_foreign_key('httpd_jboss_sites', 'version', 'httpd_jboss_versions', 'version', '1.0a100', null);
+select "schema".add_foreign_key('httpd_jboss_sites', 'jnp_bind', 'net_binds', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('httpd_jboss_sites', 'webserver_bind', 'net_binds', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('httpd_jboss_sites', 'rmi_bind', 'net_binds', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('httpd_jboss_sites', 'hypersonic_bind', 'net_binds', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('httpd_jboss_sites', 'jmx_bind', 'net_binds', 'pkey', '1.0a100', null);
+
+\echo httpd_jboss_versions
+select "schema".add_foreign_key('httpd_jboss_versions', 'version', 'technology_versions', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('httpd_jboss_versions', 'tomcat_version', 'httpd_tomcat_versions', 'version', '1.0a100', null);
+
+\echo httpd_jk_protocols
+select "schema".add_foreign_key('httpd_jk_protocols', 'protocol', 'protocols', 'protocol', '1.0a100', null);
+
+\echo httpd_servers
+select "schema".add_foreign_key('httpd_servers', 'ao_server', 'ao_servers', 'server', '1.0a100', null);
+select "schema".add_foreign_key('httpd_servers', 'linux_server_account', 'linux_server_accounts', 'pkey', '1.0a102', null);
+select "schema".add_foreign_key('httpd_servers', 'linux_server_group', 'linux_server_groups', 'pkey', '1.0a102', null);
+select "schema".add_foreign_key('httpd_servers', 'mod_php_version', 'technology_versions', 'pkey', '1.0a102', null);
+select "schema".add_foreign_key('httpd_servers', 'package', 'packages', 'pkey', '1.0a102', null);
+
+\echo httpd_shared_tomcats
+select "schema".add_foreign_key('httpd_shared_tomcats', 'ao_server', 'ao_servers', 'server', '1.0a100', null);
+select "schema".add_foreign_key('httpd_shared_tomcats', 'version', 'httpd_tomcat_versions', 'version', '1.0a100', null);
+select "schema".add_foreign_key('httpd_shared_tomcats', 'linux_server_account', 'linux_server_accounts', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('httpd_shared_tomcats', 'linux_server_group', 'linux_server_groups', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('httpd_shared_tomcats', 'config_backup_level', 'backup_levels', 'level', '1.0a100', '1.30');
+select "schema".add_foreign_key('httpd_shared_tomcats', 'config_backup_retention', 'backup_retentions', 'days', '1.0a100', '1.30');
+select "schema".add_foreign_key('httpd_shared_tomcats', 'file_backup_level', 'backup_levels', 'level', '1.0a100', '1.30');
+select "schema".add_foreign_key('httpd_shared_tomcats', 'file_backup_retention', 'backup_retentions', 'days', '1.0a100', '1.30');
+select "schema".add_foreign_key('httpd_shared_tomcats', 'log_backup_level', 'backup_levels', 'level', '1.0a100', '1.30');
+select "schema".add_foreign_key('httpd_shared_tomcats', 'log_backup_retention', 'backup_retentions', 'days', '1.0a100', '1.30');
+select "schema".add_foreign_key('httpd_shared_tomcats', 'disable_log', 'disable_log', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('httpd_shared_tomcats', 'tomcat4_worker', 'httpd_workers', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('httpd_shared_tomcats', 'tomcat4_shutdown_port', 'net_binds', 'pkey', '1.0a100', null);
+
+\echo httpd_site_authenticated_locations
+select "schema".add_foreign_key('httpd_site_authenticated_locations', 'httpd_site', 'httpd_sites', 'pkey', '1.18', null);
+
+\echo httpd_site_bind_headers
+select "schema".add_foreign_key('httpd_site_bind_headers', 'httpd_site_bind', 'httpd_site_binds', 'pkey', '1.81.15', null);
+
+\echo httpd_site_bind_redirects
+select "schema".add_foreign_key('httpd_site_bind_redirects', 'httpd_site_bind', 'httpd_site_binds', 'pkey', '1.81.1', null);
+
+\echo httpd_site_binds
+select "schema".add_foreign_key('httpd_site_binds', 'httpd_site', 'httpd_sites', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('httpd_site_binds', 'httpd_bind', 'httpd_binds', 'net_bind', '1.0a100', null);
+select "schema".add_foreign_key('httpd_site_binds', 'certificate', 'ssl_certificates', 'pkey', '1.81.10', null);
+select "schema".add_foreign_key('httpd_site_binds', 'disable_log', 'disable_log', 'pkey', '1.0a100', null);
+
+\echo httpd_site_urls
+select "schema".add_foreign_key('httpd_site_urls', 'httpd_site_bind', 'httpd_site_binds', 'pkey', '1.0a100', null);
+
+\echo httpd_sites
+select "schema".add_foreign_key('httpd_sites', 'ao_server', 'ao_servers', 'server', '1.0a100', null);
+select "schema".add_foreign_key('httpd_sites', 'package', 'packages', 'name', '1.0a100', '1.80');
+select "schema".add_foreign_key('httpd_sites', 'package', 'packages', 'name', '1.80.0', null);
+select "schema".add_foreign_key('httpd_sites', 'linux_account', 'linux_accounts', 'username', '1.0a100', null);
+select "schema".add_foreign_key('httpd_sites', 'linux_group', 'linux_groups', 'name', '1.0a100', '1.80');
+select "schema".add_foreign_key('httpd_sites', 'linux_group', 'linux_groups', 'name', '1.80.0', null);
+select "schema".add_foreign_key('httpd_sites', 'config_backup_level', 'backup_levels', 'level', '1.0a100', '1.30');
+select "schema".add_foreign_key('httpd_sites', 'config_backup_retention', 'backup_retentions', 'days', '1.0a100', '1.30');
+select "schema".add_foreign_key('httpd_sites', 'file_backup_level', 'backup_levels', 'level', '1.0a100', '1.30');
+select "schema".add_foreign_key('httpd_sites', 'file_backup_retention', 'backup_retentions', 'days', '1.0a100', '1.30');
+select "schema".add_foreign_key('httpd_sites', 'ftp_backup_level', 'backup_levels', 'level', '1.0a100', '1.30');
+select "schema".add_foreign_key('httpd_sites', 'ftp_backup_retention', 'backup_retentions', 'days', '1.0a100', '1.30');
+select "schema".add_foreign_key('httpd_sites', 'log_backup_level', 'backup_levels', 'level', '1.0a100', '1.30');
+select "schema".add_foreign_key('httpd_sites', 'log_backup_retention', 'backup_retentions', 'days', '1.0a100', '1.30');
+select "schema".add_foreign_key('httpd_sites', 'disable_log', 'disable_log', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('httpd_sites', 'php_version', 'technology_versions', 'pkey', '1.78', null);
+
+\echo httpd_static_sites
+select "schema".add_foreign_key('httpd_static_sites', 'httpd_site', 'httpd_sites', 'pkey', '1.0a100', null);
+
+\echo httpd_tomcat_contexts
+select "schema".add_foreign_key('httpd_tomcat_contexts', 'tomcat_site', 'httpd_tomcat_sites', 'httpd_site', '1.0a100', null);
+
+\echo httpd_tomcat_data_sources
+select "schema".add_foreign_key('httpd_tomcat_data_sources', 'tomcat_context', 'httpd_tomcat_contexts', 'pkey', '1.5', null);
+
+\echo httpd_tomcat_parameters
+select "schema".add_foreign_key('httpd_tomcat_parameters', 'tomcat_context', 'httpd_tomcat_contexts', 'pkey', '1.5', null);
+
+\echo httpd_tomcat_site_jk_mounts
+select "schema".add_foreign_key('httpd_tomcat_site_jk_mounts', 'httpd_tomcat_site', 'httpd_tomcat_sites', 'httpd_site', '1.81.6', null);
+
+\echo httpd_tomcat_sites
+select "schema".add_foreign_key('httpd_tomcat_sites', 'httpd_site', 'httpd_sites', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('httpd_tomcat_sites', 'version', 'httpd_tomcat_versions', 'version', '1.0a100', null);
+
+\echo httpd_tomcat_shared_sites
+select "schema".add_foreign_key('httpd_tomcat_shared_sites', 'tomcat_site', 'httpd_tomcat_sites', 'httpd_site', '1.0a100', null);
+select "schema".add_foreign_key('httpd_tomcat_shared_sites', 'httpd_shared_tomcat', 'httpd_shared_tomcats', 'pkey', '1.0a100', null);
+
+\echo httpd_tomcat_std_sites
+select "schema".add_foreign_key('httpd_tomcat_std_sites', 'tomcat_site', 'httpd_tomcat_sites', 'httpd_site', '1.0a100', null);
+select "schema".add_foreign_key('httpd_tomcat_std_sites', 'tomcat4_shutdown_port', 'net_binds', 'pkey', '1.0a100', null);
+
+\echo httpd_tomcat_versions
+select "schema".add_foreign_key('httpd_tomcat_versions', 'version', 'technology_versions', 'pkey', '1.0a100', null);
+
+\echo httpd_workers
+select "schema".add_foreign_key('httpd_workers', 'code', 'httpd_jk_codes', 'code', '1.0a100', null);
+select "schema".add_foreign_key('httpd_workers', 'net_bind', 'net_binds', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('httpd_workers', 'tomcat_site', 'httpd_tomcat_sites', 'httpd_site', '1.0a100', null);
+
+\echo ip_reputation_limiter_limits
+select "schema".add_foreign_key('ip_reputation_limiter_limits', 'limiter', 'ip_reputation_limiters', 'pkey', '1.66', null);
+
+\echo ip_reputation_limiter_sets
+select "schema".add_foreign_key('ip_reputation_limiter_sets', 'limiter', 'ip_reputation_limiters', 'pkey', '1.66', null);
+select "schema".add_foreign_key('ip_reputation_limiter_sets', 'set',     'ip_reputation_sets',     'pkey', '1.66', null);
+
+\echo ip_reputation_limiters
+select "schema".add_foreign_key('ip_reputation_limiters', 'net_device', 'net_devices', 'pkey', '1.66', null);
+
+\echo ip_reputation_set_hosts
+select "schema".add_foreign_key('ip_reputation_set_hosts', 'set_fkey', 'ip_reputation_sets', 'pkey', '1.65', '1.65');
+select "schema".add_foreign_key('ip_reputation_set_hosts', 'set',      'ip_reputation_sets', 'pkey', '1.66', null);
+
+\echo ip_reputation_set_networks
+select "schema".add_foreign_key('ip_reputation_set_networks', 'set_fkey', 'ip_reputation_sets', 'pkey', '1.65', '1.65');
+select "schema".add_foreign_key('ip_reputation_set_networks', 'set',      'ip_reputation_sets', 'pkey', '1.66', null);
+
+\echo ip_reputation_sets
+select "schema".add_foreign_key('ip_reputation_sets', 'accounting', 'businesses', 'accounting', '1.65', null);
+
+\echo linux_acc_addresses
+select "schema".add_foreign_key('linux_acc_addresses', 'email_address', 'email_addresses', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('linux_acc_addresses', 'linux_account', 'linux_accounts', 'username', '1.0a100', '1.30');
+select "schema".add_foreign_key('linux_acc_addresses', 'linux_server_account', 'linux_server_accounts', 'pkey', '1.31', null);
+
+\echo linux_accounts
+select "schema".add_foreign_key('linux_accounts', 'username', 'usernames', 'username', '1.0a100', null);
+select "schema".add_foreign_key('linux_accounts', 'shell', 'shells', 'path', '1.0a100', null);
+select "schema".add_foreign_key('linux_accounts', 'type', 'linux_account_types', 'name', '1.0a100', null);
+select "schema".add_foreign_key('linux_accounts', 'disable_log', 'disable_log', 'pkey', '1.0a100', null);
+
+\echo linux_group_accounts
+select "schema".add_foreign_key('linux_group_accounts', 'group_name', 'linux_groups', 'name', '1.0a100', '1.80');
+select "schema".add_foreign_key('linux_group_accounts', 'group_name', 'linux_groups', 'name', '1.80.0', null);
+select "schema".add_foreign_key('linux_group_accounts', 'username', 'linux_accounts', 'username', '1.0a100', null);
+select "schema".add_foreign_key('linux_group_accounts', 'operating_system_version', 'operating_system_versions', 'pkey', '1.80.1', null);
+
+\echo linux_groups
+select "schema".add_foreign_key('linux_groups', 'type', 'linux_group_types', 'name', '1.0a100', null);
+select "schema".add_foreign_key('linux_groups', 'package', 'packages', 'name', '1.0a100', '1.80');
+select "schema".add_foreign_key('linux_groups', 'package', 'packages', 'name', '1.80.0', null);
+
+\echo linux_server_accounts
+select "schema".add_foreign_key('linux_server_accounts', 'username', 'linux_accounts', 'username', '1.0a100', null);
+select "schema".add_foreign_key('linux_server_accounts', 'ao_server', 'ao_servers', 'server', '1.0a100', null);
+select "schema".add_foreign_key('linux_server_accounts', 'uid', 'linux_ids', 'id', '1.0a100', '1.68');
+select "schema".add_foreign_key('linux_server_accounts', 'uid', 'linux_ids', 'id', '1.69', '1.80');
+select "schema".add_foreign_key('linux_server_accounts', 'cron_backup_level', 'backup_levels', 'level', '1.0a100', '1.30');
+select "schema".add_foreign_key('linux_server_accounts', 'cron_backup_retention', 'backup_retentions', 'days', '1.0a100', '1.30');
+select "schema".add_foreign_key('linux_server_accounts', 'home_backup_level', 'backup_levels', 'level', '1.0a100', '1.30');
+select "schema".add_foreign_key('linux_server_accounts', 'home_backup_retention', 'backup_retentions', 'days', '1.0a100', '1.30');
+select "schema".add_foreign_key('linux_server_accounts', 'inbox_backup_level', 'backup_levels', 'level', '1.0a100', '1.30');
+select "schema".add_foreign_key('linux_server_accounts', 'inbox_backup_retention', 'backup_retentions', 'days', '1.0a100', '1.30');
+select "schema".add_foreign_key('linux_server_accounts', 'autoresponder_from', 'linux_acc_addresses', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('linux_server_accounts', 'disable_log', 'disable_log', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('linux_server_accounts', 'sa_integration_mode', 'email_sa_integration_modes', 'name', '1.0a120', null);
+
+\echo linux_server_groups
+select "schema".add_foreign_key('linux_server_groups', 'name', 'linux_groups', 'name', '1.0a100', '1.80');
+select "schema".add_foreign_key('linux_server_groups', 'name', 'linux_groups', 'name', '1.80.0', null);
+select "schema".add_foreign_key('linux_server_groups', 'ao_server', 'ao_servers', 'server', '1.0a100', null);
+select "schema".add_foreign_key('linux_server_groups', 'gid', 'linux_ids', 'id', '1.0a100', '1.68');
+select "schema".add_foreign_key('linux_server_groups', 'gid', 'linux_ids', 'id', '1.69', '1.80');
+
+\echo majordomo_lists
+select "schema".add_foreign_key('majordomo_lists', 'email_list', 'email_lists', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('majordomo_lists', 'majordomo_server', 'majordomo_servers', 'domain', '1.0a100', null);
+select "schema".add_foreign_key('majordomo_lists', 'listname_pipe_add', 'email_pipe_addresses', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('majordomo_lists', 'listname_list_add', 'email_list_addresses', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('majordomo_lists', 'owner_listname_add', 'email_addresses', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('majordomo_lists', 'listname_owner_add', 'email_addresses', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('majordomo_lists', 'listname_approval_add', 'email_addresses', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('majordomo_lists', 'listname_request_pipe_add', 'email_pipe_addresses', 'pkey', '1.0a100', null);
+
+\echo majordomo_servers
+select "schema".add_foreign_key('majordomo_servers', 'domain', 'email_domains', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('majordomo_servers', 'linux_server_account', 'linux_server_accounts', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('majordomo_servers', 'linux_server_group', 'linux_server_groups', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('majordomo_servers', 'version', 'majordomo_versions', 'version', '1.0a100', null);
+select "schema".add_foreign_key('majordomo_servers', 'majordomo_pipe_address', 'email_pipe_addresses', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('majordomo_servers', 'owner_majordomo_add', 'email_addresses', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('majordomo_servers', 'majordomo_owner_add', 'email_addresses', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('majordomo_servers', 'backup_level', 'backup_levels', 'level', '1.0a100', '1.30');
+select "schema".add_foreign_key('majordomo_servers', 'backup_retention', 'backup_retentions', 'days', '1.0a100', '1.30');
+
+\echo master_hosts
+select "schema".add_foreign_key('master_hosts', 'username', 'master_users', 'username', '1.0a100', null);
+
+\echo master_processes
+select "schema".add_foreign_key('master_processes', 'authenticated_user', 'business_administrators', 'username', '1.0a100', null);
+select "schema".add_foreign_key('master_processes', 'effective_user', 'business_administrators', 'username', '1.0a100', null);
+select "schema".add_foreign_key('master_processes', 'daemon_server', 'ao_servers', 'server', '1.0a100', null);
+select "schema".add_foreign_key('master_processes', 'aoserv_protocol', 'aoserv_protocols', 'version', '1.0a101', null);
+
+\echo master_servers
+select "schema".add_foreign_key('master_servers', 'username', 'master_users', 'username', '1.0a100', null);
+select "schema".add_foreign_key('master_servers', 'server', 'servers', 'pkey', '1.0a100', null);
+
+\echo master_users
+select "schema".add_foreign_key('master_users', 'username', 'business_administrators', 'username', '1.0a100', null);
+
+\echo monthly_charges
+select "schema".add_foreign_key('monthly_charges', 'accounting', 'businesses', 'accounting', '1.0a100', null);
+select "schema".add_foreign_key('monthly_charges', 'package', 'packages', 'name', '1.0a100', '1.80');
+select "schema".add_foreign_key('monthly_charges', 'package', 'packages', 'name', '1.80.0', null);
+select "schema".add_foreign_key('monthly_charges', 'type', 'rates', 'name', '1.0a100', '1.0a122');
+select "schema".add_foreign_key('monthly_charges', 'type', 'transaction_types', 'name', '1.0a123', null);
+select "schema".add_foreign_key('monthly_charges', 'created_by', 'business_administrators', 'username', '1.0a100', null);
+
+\echo mysql_databases
+select "schema".add_foreign_key('mysql_databases', 'ao_server', 'ao_servers', 'server', '1.0a100', '1.3');
+select "schema".add_foreign_key('mysql_databases', 'mysql_server', 'mysql_servers', 'pkey', '1.4', null);
+select "schema".add_foreign_key('mysql_databases', 'package', 'packages', 'name', '1.0a100', '1.80');
+select "schema".add_foreign_key('mysql_databases', 'package', 'packages', 'name', '1.80.0', null);
+select "schema".add_foreign_key('mysql_databases', 'backup_level', 'backup_levels', 'level', '1.0a100', '1.30');
+select "schema".add_foreign_key('mysql_databases', 'backup_retention', 'backup_retentions', 'days', '1.0a100', '1.30');
+
+\echo mysql_db_users
+select "schema".add_foreign_key('mysql_db_users', 'mysql_database', 'mysql_databases', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('mysql_db_users', 'mysql_user', 'mysql_server_users', 'pkey', '1.0a100', '1.30');
+select "schema".add_foreign_key('mysql_db_users', 'mysql_server_user', 'mysql_server_users', 'pkey', '1.31', null);
+
+\echo mysql_server_users
+select "schema".add_foreign_key('mysql_server_users', 'username', 'mysql_users', 'username', '1.0a100', '1.80');
+select "schema".add_foreign_key('mysql_server_users', 'username', 'mysql_users', 'username', '1.80.0', null);
+select "schema".add_foreign_key('mysql_server_users', 'ao_server', 'ao_servers', 'server', '1.0a100', '1.3');
+select "schema".add_foreign_key('mysql_server_users', 'mysql_server', 'mysql_servers', 'pkey', '1.4', null);
+select "schema".add_foreign_key('mysql_server_users', 'disable_log', 'disable_log', 'pkey', '1.0a100', null);
+
+\echo mysql_servers
+select "schema".add_foreign_key('mysql_servers', 'ao_server', 'ao_servers', 'server', '1.4', null);
+select "schema".add_foreign_key('mysql_servers', 'version', 'technology_versions', 'pkey', '1.4', null);
+select "schema".add_foreign_key('mysql_servers', 'net_bind', 'net_binds', 'pkey', '1.4', null);
+select "schema".add_foreign_key('mysql_servers', 'package', 'packages', 'name', '1.28', '1.80');
+select "schema".add_foreign_key('mysql_servers', 'package', 'packages', 'name', '1.80.0', null);
+
+\echo mysql_users
+select "schema".add_foreign_key('mysql_users', 'username', 'usernames', 'username', '1.0a100', '1.80');
+select "schema".add_foreign_key('mysql_users', 'username', 'usernames', 'username', '1.80.0', null);
+select "schema".add_foreign_key('mysql_users', 'disable_log', 'disable_log', 'pkey', '1.0a100', null);
+
+\echo net_bind_firewalld_zones
+select "schema".add_foreign_key('net_bind_firewalld_zones', 'net_bind', 'net_binds', 'pkey', '1.81.0', null);
+select "schema".add_foreign_key('net_bind_firewalld_zones', 'firewalld_zone', 'firewalld_zones', 'pkey', '1.81.0', null);
+
+\echo net_binds
+select "schema".add_foreign_key('net_binds', 'package', 'packages', 'name', '1.0a100', '1.80');
+select "schema".add_foreign_key('net_binds', 'package', 'packages', 'name', '1.80.0', null);
+select "schema".add_foreign_key('net_binds', 'ao_server', 'ao_servers', 'server', '1.0a100', '1.32');
+select "schema".add_foreign_key('net_binds', 'server', 'servers', 'pkey', '1.33', null);
+select "schema".add_foreign_key('net_binds', 'ip_address', 'ip_addresses', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('net_binds', 'port', 'net_ports', 'port', '1.0a100', '1.68');
+select "schema".add_foreign_key('net_binds', 'port', 'net_ports', 'port', '1.69', '1.80');
+select "schema".add_foreign_key('net_binds', 'net_protocol', 'net_protocols', 'protocol', '1.0a100', '1.80');
+select "schema".add_foreign_key('net_binds', 'app_protocol', 'protocols', 'protocol', '1.0a100', null);
+select "schema".add_foreign_key('net_binds', 'monitor_delay', 'net_monitoring_times', 'time', '1.0a100', '1.0a103');
+
+\echo net_devices
+select "schema".add_foreign_key('net_devices', 'ao_server', 'ao_servers', 'server', '1.0a100', '1.32');
+select "schema".add_foreign_key('net_devices', 'server', 'servers', 'pkey', '1.33', null);
+select "schema".add_foreign_key('net_devices', 'device_id', 'net_device_ids', 'name', '1.0a100', null);
+
+\echo net_tcp_redirects
+select "schema".add_foreign_key('net_tcp_redirects', 'net_bind', 'net_binds', 'pkey', '1.0a111', '1.68');
+select "schema".add_foreign_key('net_tcp_redirects', 'net_bind', 'net_binds', 'pkey', '1.69', null);
+select "schema".add_foreign_key('net_tcp_redirects', 'destination_port', 'net_ports', 'port', '1.0a111', '1.68');
+select "schema".add_foreign_key('net_tcp_redirects', 'destination_port', 'net_ports', 'port', '1.69', '1.80');
+
+\echo notice_log
+select "schema".add_foreign_key('notice_log', 'accounting', 'businesses', 'accounting', '1.0a100', null);
+select "schema".add_foreign_key('notice_log', 'notice_type', 'notice_types', 'type', '1.0a100', null);
+select "schema".add_foreign_key('notice_log', 'transid', 'transactions', 'transid', '1.0a100', '1.68');
+select "schema".add_foreign_key('notice_log', 'transid', 'transactions', 'transid', '1.69', null);
+
+\echo operating_system_versions
+select "schema".add_foreign_key('operating_system_versions', 'operating_system', 'operating_systems', 'name', '1.0a100', null);
+select "schema".add_foreign_key('operating_system_versions', 'architecture', 'architectures', 'name', '1.0a108', null);
+
+\echo package_definition_limits
+select "schema".add_foreign_key('package_definition_limits', 'package_definition', 'package_definitions', 'pkey', '1.0a123', null);
+select "schema".add_foreign_key('package_definition_limits', 'resource', 'resources', 'name', '1.0a123', null);
+select "schema".add_foreign_key('package_definition_limits', 'additional_transaction_type', 'transaction_types', 'name', '1.0a123', null);
+
+\echo package_definitions
+select "schema".add_foreign_key('package_definitions', 'accounting', 'businesses', 'accounting', '1.0a123', '1.43');
+select "schema".add_foreign_key('package_definitions', 'brand', 'brands', 'accounting', '1.44', '1.44');
+select "schema".add_foreign_key('package_definitions', 'accounting', 'businesses', 'accounting', '1.45', null);
+select "schema".add_foreign_key('package_definitions', 'category', 'package_categories', 'name', '1.0a123', null);
+select "schema".add_foreign_key('package_definitions', 'setup_fee_transaction_type', 'transaction_types', 'name', '1.0a123', null);
+select "schema".add_foreign_key('package_definitions', 'monthly_rate_transaction_type', 'transaction_types', 'name', '1.0a123', null);
+
+\echo packages
+select "schema".add_foreign_key('packages', 'accounting', 'businesses', 'accounting', '1.0a100', null);
+select "schema".add_foreign_key('packages', 'level', 'service_levels', 'name', '1.0a100', '1.0a122');
+select "schema".add_foreign_key('packages', 'created_by', 'business_administrators', 'username', '1.0a100', null);
+select "schema".add_foreign_key('packages', 'disable_log', 'disable_log', 'pkey', '1.0a100', null);
+
+\echo physical_servers
+select "schema".add_foreign_key('physical_servers', 'server', 'servers', 'pkey', '1.36', null);
+select "schema".add_foreign_key('physical_servers', 'rack', 'racks', 'pkey', '1.36', null);
+select "schema".add_foreign_key('physical_servers', 'processor_type', 'processor_types', 'type', '1.36', null);
+
+\echo postgres_databases
+select "schema".add_foreign_key('postgres_databases', 'postgres_server', 'postgres_servers', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('postgres_databases', 'datdba', 'postgres_server_users', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('postgres_databases', 'encoding', 'postgres_encodings', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('postgres_databases', 'backup_level', 'backup_levels', 'level', '1.0a100', '1.30');
+select "schema".add_foreign_key('postgres_databases', 'backup_retention', 'backup_retentions', 'days', '1.0a100', '1.30');
+
+\echo postgres_encodings
+select "schema".add_foreign_key('postgres_encodings', 'postgres_version', 'postgres_versions', 'version', '1.0a100', null);
+
+\echo postgres_server_users
+select "schema".add_foreign_key('postgres_server_users', 'username', 'postgres_users', 'username', '1.0a100', '1.80');
+select "schema".add_foreign_key('postgres_server_users', 'username', 'postgres_users', 'username', '1.80.0', null);
+select "schema".add_foreign_key('postgres_server_users', 'postgres_server', 'postgres_servers', 'pkey', '1.0a100', '1.68');
+select "schema".add_foreign_key('postgres_server_users', 'postgres_server', 'postgres_servers', 'pkey', '1.69', null);
+select "schema".add_foreign_key('postgres_server_users', 'usesysid', 'linux_ids', 'id', '1.0a100', '1.0a130');
+select "schema".add_foreign_key('postgres_server_users', 'disable_log', 'disable_log', 'pkey', '1.0a100', null);
+
+\echo postgres_servers
+select "schema".add_foreign_key('postgres_servers', 'ao_server', 'ao_servers', 'server', '1.0a100', null);
+select "schema".add_foreign_key('postgres_servers', 'version', 'postgres_versions', 'version', '1.0a100', null);
+select "schema".add_foreign_key('postgres_servers', 'net_bind', 'net_binds', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('postgres_servers', 'last_postgres_usesysid', 'linux_ids', 'id', '1.0a100', '1.0a130');
+
+\echo postgres_users
+select "schema".add_foreign_key('postgres_users', 'username', 'usernames', 'username', '1.0a100', '1.80');
+select "schema".add_foreign_key('postgres_users', 'username', 'usernames', 'username', '1.80.0', null);
+select "schema".add_foreign_key('postgres_users', 'disable_log', 'disable_log', 'pkey', '1.0a100', null);
+
+\echo postgres_versions
+select "schema".add_foreign_key('postgres_versions', 'version', 'technology_versions', 'pkey', '1.0a100', null);
+select "schema".add_foreign_key('postgres_versions', 'default_port', 'net_ports', 'port', '1.0a100', '1.0a109');
+select "schema".add_foreign_key('postgres_versions', 'postgis_version', 'technology_versions', 'pkey', '1.27', null);
+
+\echo private_ftp_servers
+select "schema".add_foreign_key('private_ftp_servers', 'ip_address', 'ip_addresses', 'pkey', '1.0a100', '1.0a112');
+select "schema".add_foreign_key('private_ftp_servers', 'net_bind', 'net_binds', 'pkey', '1.0a113', null);
+select "schema".add_foreign_key('private_ftp_servers', 'linux_server_account', 'linux_server_accounts', 'pkey', '1.0a100', '1.68');
+select "schema".add_foreign_key('private_ftp_servers', 'linux_server_account', 'linux_server_accounts', 'pkey', '1.69', null);
+select "schema".add_foreign_key('private_ftp_servers', 'linux_server_group', 'linux_server_groups', 'pkey', '1.0a100', '1.38');
+
+\echo racks
+select "schema".add_foreign_key('racks', 'farm', 'server_farms', 'name', '1.36', null);
+
+\echo resellers
+select "schema".add_foreign_key('resellers', 'accounting', 'brands', 'accounting', '1.44', null);
+
+\echo sendmail_binds
+select "schema".add_foreign_key('sendmail_binds', 'net_bind', 'net_binds', 'pkey', '1.81.10', null);
+select "schema".add_foreign_key('sendmail_binds', 'sendmail_server', 'sendmail_servers', 'pkey', '1.81.10', null);
+
+\echo sendmail_servers
+select "schema".add_foreign_key('sendmail_servers', 'ao_server', 'ao_servers', 'server', '1.81.10', null);
+select "schema".add_foreign_key('sendmail_servers', 'package', 'packages', 'pkey', '1.81.10', null);
+select "schema".add_foreign_key('sendmail_servers', 'server_certificate', 'ssl_certificates', 'pkey', '1.81.10', null);
+select "schema".add_foreign_key('sendmail_servers', 'client_certificate', 'ssl_certificates', 'pkey', '1.81.10', null);
+select "schema".add_foreign_key('sendmail_servers', 'client_addr_inet', 'ip_addresses', 'pkey', '1.81.10', null);
+select "schema".add_foreign_key('sendmail_servers', 'client_addr_inet6', 'ip_addresses', 'pkey', '1.81.10', null);
+
+\echo server_farms
+select "schema".add_foreign_key('server_farms', 'backup_farm', 'server_farms', 'name', '1.0a100', '1.30');
+select "schema".add_foreign_key('server_farms', 'owner', 'packages', 'pkey', '1.0a102', null);
+
+\echo servers
+select "schema".add_foreign_key('servers', 'farm', 'server_farms', 'name', '1.0a100', null);
+select "schema".add_foreign_key('servers', 'owner', 'businesses', 'accounting', '1.0a100', '1.30');
+select "schema".add_foreign_key('servers', 'administrator', 'business_administrators', 'username', '1.0a100', '1.30');
+select "schema".add_foreign_key('servers', 'architecture', 'architectures', 'name', '1.0a100', '1.0a107');
+select "schema".add_foreign_key('servers', 'operating_system_version', 'operating_system_versions', 'pkey', '1.0a100', '1.30');
+select "schema".add_foreign_key('servers', 'operating_system_version', 'operating_system_versions', 'pkey', '1.31', null);
+select "schema".add_foreign_key('servers', 'package', 'packages', 'pkey', '1.31', null);
+
+\echo signup_request_options
+select "schema".add_foreign_key('signup_request_options', 'request', 'signup_requests', 'pkey', '1.23', null);
+
+\echo signup_requests
+select "schema".add_foreign_key('signup_requests', 'accounting', 'businesses', 'accounting', '1.23', '1.43');
+select "schema".add_foreign_key('signup_requests', 'brand', 'brands', 'accounting', '1.44', null);
+select "schema".add_foreign_key('signup_requests', 'package_definition', 'package_definitions', 'pkey', '1.23', null);
+select "schema".add_foreign_key('signup_requests', 'business_country', 'country_codes', 'code', '1.23', '1.68');
+select "schema".add_foreign_key('signup_requests', 'business_country', 'country_codes', 'code', '1.69', null);
+select "schema".add_foreign_key('signup_requests', 'ba_country', 'country_codes', 'code', '1.23', '1.68');
+select "schema".add_foreign_key('signup_requests', 'ba_country', 'country_codes', 'code', '1.69', null);
+select "schema".add_foreign_key('signup_requests', 'encryption_from', 'encryption_keys', 'pkey', '1.31', null);
+select "schema".add_foreign_key('signup_requests', 'encryption_key', 'encryption_keys', 'pkey', '1.23', '1.30');
+select "schema".add_foreign_key('signup_requests', 'encryption_recipient', 'encryption_keys', 'pkey', '1.31', null);
+select "schema".add_foreign_key('signup_requests', 'completed_by', 'business_administrators', 'username', '1.23', null);
+
+\echo spam_email_messages
+select "schema".add_foreign_key('spam_email_messages', 'email_relay', 'email_smtp_relays', 'pkey', '1.0a100', null);
+
+\echo ssl_certificate_names
+select "schema".add_foreign_key('ssl_certificate_names', 'ssl_certificate', 'ssl_certificates', 'pkey', '1.81.10', null);
+
+\echo ssl_certificate_other_uses
+select "schema".add_foreign_key('ssl_certificate_other_uses', 'ssl_certificate', 'ssl_certificates', 'pkey', '1.81.16', null);
+
+\echo ssl_certificates
+select "schema".add_foreign_key('ssl_certificates', 'ao_server', 'ao_servers', 'server', '1.81.10', null);
+select "schema".add_foreign_key('ssl_certificates', 'package', 'packages', 'pkey', '1.81.10', null);
+
+\echo system_email_aliases
+select "schema".add_foreign_key('system_email_aliases', 'ao_server', 'ao_servers', 'server', '1.0a100', null);
+
 \echo technologies
 select "schema".add_foreign_key('technologies', 'name', 'technology_names', 'name', '1.0a100', null);
 select "schema".add_foreign_key('technologies', 'class', 'technology_classes', 'name', '1.0a100', null);

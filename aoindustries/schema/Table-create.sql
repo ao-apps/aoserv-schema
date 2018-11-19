@@ -13,7 +13,8 @@ create table "schema"."Table" (
   "isPublic" bool
     not null,
   description text,
-  unique("sinceVersion", "schema", "name")
+  unique("sinceVersion", "schema", "name"),
+  unique("schema", "name", "lastVersion")
 );
 
 comment on table  "schema"."Table"             is 'stores table names, display names, and descriptions for each table.';

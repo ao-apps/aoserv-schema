@@ -24,7 +24,9 @@ create table "schema"."Column" (
   "isPublic" bool
     not null,
   description text,
-  unique(index, "table")
+  unique(index, "table"),
+  unique("sinceVersion", "table", "name"),
+  unique("table", "name", "lastVersion")
 );
 
 comment on table  "schema"."Column"             is 'stores the details about the data contained in each column.';

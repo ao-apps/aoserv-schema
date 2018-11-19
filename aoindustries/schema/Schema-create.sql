@@ -10,7 +10,9 @@ create table "schema"."Schema" (
     not null,
   "isPublic" bool
     not null,
-  description text
+  description text,
+  unique("sinceVersion", "name"),
+  unique("name", "lastVersion")
 );
 
 comment on table  "schema"."Schema"             is 'A schema is one namespace of database objects.';

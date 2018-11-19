@@ -21,7 +21,6 @@ as '
       and (
         case
           when $5 is null then (select created from "schema"."AOServProtocol" order by created desc limit 1)
-          when $5 is null then (select created from "schema"."AOServProtocol" order by created desc limit 1)
           else (select created from "schema"."AOServProtocol" where version= $5 )
         end
         <=
@@ -36,7 +35,8 @@ as '
     )::integer
   );
 '
-language 'sql';
+language 'sql'
+stable;
 
 -- Examples
 

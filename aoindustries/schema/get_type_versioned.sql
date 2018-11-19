@@ -32,7 +32,8 @@ as '
     )::integer
   );
 '
-language 'sql';
+language 'sql'
+stable;
 
 -- Examples
 

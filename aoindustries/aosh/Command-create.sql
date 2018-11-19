@@ -9,8 +9,8 @@ create table aosh."Command" (
     not null,
   syntax text
     not null,
-  unique("sinceVersion", command),
-  unique(command, "lastVersion")
+  unique(command, "sinceVersion"),
+  unique("lastVersion", command)
 );
 
 comment on column aosh."Command".command is 'the unique command within a single protocol version';

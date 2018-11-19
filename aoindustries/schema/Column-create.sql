@@ -25,8 +25,8 @@ create table "schema"."Column" (
     not null,
   description text,
   unique(index, "table"),
-  unique("sinceVersion", "table", "name"),
-  unique("table", "name", "lastVersion")
+  unique("table", "name", "sinceVersion"),
+  unique("lastVersion", "table", "name")
 );
 
 comment on table  "schema"."Column"             is 'stores the details about the data contained in each column.';

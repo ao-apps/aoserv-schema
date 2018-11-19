@@ -1,3 +1,3 @@
-create index "Table_lastVersion_idx" on "schema"."Table" (
-  "lastVersion"
+create index "Table_sinceVersion_idx" on "schema"."Table" (
+  "sinceVersion"
 );

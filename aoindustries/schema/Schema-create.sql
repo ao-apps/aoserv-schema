@@ -11,8 +11,8 @@ create table "schema"."Schema" (
   "isPublic" bool
     not null,
   description text,
-  unique("sinceVersion", "name"),
-  unique("name", "lastVersion")
+  unique("name", "sinceVersion"),
+  unique("lastVersion", "name")
 );
 
 comment on table  "schema"."Schema"             is 'A schema is one namespace of database objects.';

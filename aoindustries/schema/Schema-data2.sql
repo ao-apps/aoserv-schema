@@ -4,7 +4,7 @@ insert into "schema"."Schema" values(
     '1.0a100',
     null,
     'Public',
-    false,
+    true,
     null -- Uses pg_catalog.pg_description
 );
 insert into "schema"."Schema" values(
@@ -40,7 +40,7 @@ insert into "schema"."Schema" values(
     '1.81.18',
     null,
     'Monitoring',
-    false,
+    true,
     null -- Uses pg_catalog.pg_description
 );
 insert into "schema"."Schema" values(

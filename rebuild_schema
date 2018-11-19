@@ -1,41 +1,39 @@
 #!/bin/bash
 DIR="${BASH_SOURCE%/*}"
 echo "BEGIN;"
-echo "delete from \"schema\".\"ForeignKey\";"
-echo "delete from \"schema\".\"Column\";"
-echo "delete from aosh.\"Command\";"
-echo "delete from \"schema\".\"Table\";"
-echo "delete from \"schema\".\"Type\";"
-echo "delete from \"schema\".\"Schema\";"
-
-# Backup last_used
-echo "drop table if exists \"schema\".\"AOServProtocol_lastUsed\";"
-echo "create table \"schema\".\"AOServProtocol_lastUsed\" as select version, \"lastUsed\" from \"schema\".\"AOServProtocol\";"
-
-echo "delete from \"schema\".\"AOServProtocol\";"
-cat "${DIR}/aoindustries/schema/AOServProtocol-data1.sql"
-
-# Restore last_used
-echo "update \"schema\".\"AOServProtocol\" ap set \"lastUsed\"=("
-echo "  select aplu.\"lastUsed\""
-echo "  from \"schema\".\"AOServProtocol_lastUsed\" aplu"
-echo "  where aplu.version = ap.version"
-echo ") where ap.\"lastUsed\" is null;"
-echo "drop table \"schema\".\"AOServProtocol_lastUsed\";"
-
-cat "${DIR}/aoindustries/schema/Schema-data2.sql"
-cat "${DIR}/aoindustries/schema/Type-data2.sql"
-cat "${DIR}/aoindustries/schema/Table-data3.sql"
-cat "${DIR}/aoindustries/aosh/Command-data4.sql"
-cat "${DIR}/aoindustries/schema/Column-data4.sql"
+# 5
+cat "${DIR}/aoindustries/schema/ForeignKey-data5-pre.sql"
+	# 4
+	cat "${DIR}/aoindustries/schema/Column-data4-pre.sql"
+	cat "${DIR}/aoindustries/aosh/Command-data4-pre.sql"
+		# 3
+		cat "${DIR}/aoindustries/schema/Table-data3-pre.sql"
+			# 2
+			cat "${DIR}/aoindustries/schema/Type-data2-pre.sql"
+			cat "${DIR}/aoindustries/schema/Schema-data2-pre.sql"
+				# 1
+				cat "${DIR}/aoindustries/schema/AOServProtocol-data1-pre.sql"
+				cat "${DIR}/aoindustries/schema/AOServProtocol-data1.sql"
+				cat "${DIR}/aoindustries/schema/AOServProtocol-data1-post.sql"
+			# 2
+			cat "${DIR}/aoindustries/schema/Schema-data2.sql"
+			cat "${DIR}/aoindustries/schema/Schema-data2-post.sql"
+			cat "${DIR}/aoindustries/schema/Type-data2.sql"
+			cat "${DIR}/aoindustries/schema/Type-data2-post.sql"
+		# 3
+		cat "${DIR}/aoindustries/schema/Table-data3.sql"
+		cat "${DIR}/aoindustries/schema/Table-data3-post.sql"
+	# 4
+	cat "${DIR}/aoindustries/aosh/Command-data4.sql"
+	cat "${DIR}/aoindustries/aosh/Command-data4-post.sql"
+	for SQL in "${DIR}/aoindustries"/*/*-schema.Column.sql
+	do
+	  echo "\echo $SQL"
+	  cat "$SQL"
+	done
+	cat "${DIR}/aoindustries/schema/Column-data4.sql"
+	cat "${DIR}/aoindustries/schema/Column-data4-post.sql"
+# 5
 cat "${DIR}/aoindustries/schema/ForeignKey-data5.sql"
+cat "${DIR}/aoindustries/schema/ForeignKey-data5-post.sql"
 echo "COMMIT;"
-
-echo "\echo vacuuming"
-echo "vacuum full analyze \"schema\".\"AOServProtocol\";"
-echo "vacuum full analyze \"schema\".\"Schema\";"
-echo "vacuum full analyze \"schema\".\"Type\";"
-echo "vacuum full analyze \"schema\".\"Table\";"
-echo "vacuum full analyze aosh.\"Command\";"
-echo "vacuum full analyze \"schema\".\"Column\";"
-echo "vacuum full analyze \"schema\".\"ForeignKey\";"

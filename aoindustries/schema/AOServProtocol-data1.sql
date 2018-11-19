@@ -1545,5 +1545,3 @@ TODO: filter schema.Type by only those matching current protocol, including id n
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table
 -- TODO added ip_reputation_limiter_manual_sets table
-
-analyze "schema"."AOServProtocol";

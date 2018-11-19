@@ -18,10 +18,10 @@ select
   hs.enable_anonymous_ftp as anon_ftp,
   hts.block_webinf
 from
-                  public.ao_servers          ao
-  inner      join public.httpd_sites         hs  on ao.server      = hs.ao_server
-  left outer join public.technology_versions tv  on hs.php_version = tv.pkey
-  left outer join public.httpd_tomcat_sites  hts on hs.pkey        = hts.httpd_site;
+             public.ao_servers          ao
+  inner join public.httpd_sites         hs  on ao.server      = hs.ao_server
+  left  join public.technology_versions tv  on hs.php_version = tv.pkey
+  left  join public.httpd_tomcat_sites  hts on hs.pkey        = hts.httpd_site;
 
 revoke all    on management."web-site-settings" from aoadmin;
 grant  select on management."web-site-settings" to   aoadmin;

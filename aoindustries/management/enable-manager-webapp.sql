@@ -20,12 +20,12 @@ select
       and mount
   ) then 'Yes' else 'No' end as "HAS_JK_MOUNT_ALL"
 from
-                  public.ao_servers                  ao
-  inner      join public.httpd_sites                 hs on ao.server                =   hs.ao_server
-  inner      join public.httpd_tomcat_sites         hts on hs.pkey                  =  hts.httpd_site
-  inner      join public.technology_versions         tv on hts.version              =   tv.pkey
-  left outer join public.httpd_tomcat_shared_sites htss on  hts.httpd_site          = htss.tomcat_site
-  left outer join public.httpd_shared_tomcats       hst on htss.httpd_shared_tomcat =  hst.pkey;
+             public.ao_servers                  ao
+  inner join public.httpd_sites                 hs on ao.server                =   hs.ao_server
+  inner join public.httpd_tomcat_sites         hts on hs.pkey                  =  hts.httpd_site
+  inner join public.technology_versions         tv on hts.version              =   tv.pkey
+  left  join public.httpd_tomcat_shared_sites htss on  hts.httpd_site          = htss.tomcat_site
+  left  join public.httpd_shared_tomcats       hst on htss.httpd_shared_tomcat =  hst.pkey;
 
 revoke all    on management."enable-manager-webapp" from aoadmin;
 grant  select on management."enable-manager-webapp" to   aoadmin;

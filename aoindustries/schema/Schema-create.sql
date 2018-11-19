@@ -25,7 +25,7 @@ select
   coalesce(s.description, d.description) as description
 from
   "schema"."Schema" s
-  left outer join (
+  left join (
     select
       pn.nspname, pd.description
     from

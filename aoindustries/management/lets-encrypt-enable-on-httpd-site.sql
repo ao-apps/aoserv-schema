@@ -21,18 +21,18 @@ from
   inner join public.ao_servers                 ao on hs.ao_server                =  ao.server
   inner join public.servers                    se on ao.server                   =  se.pkey
   inner join public.operating_system_versions osv on se.operating_system_version = osv.pkey
-  left outer join (
+  left  join (
     select hsb_80.pkey, hsb_80.httpd_site, hsb_80."name", hsb_80.disable_log, hsu_80.hostname from
                  public.httpd_site_binds hsb_80
       inner join public.net_binds         nb_80 on hsb_80.httpd_bind =  nb_80.pkey            and  nb_80.port = 80
       inner join public.httpd_site_urls  hsu_80 on hsb_80.pkey       = hsu_80.httpd_site_bind and hsu_80.is_primary
   ) is_80 on hs.pkey=is_80.httpd_site
-  left outer join (
+  left  join (
     select hsb_443.pkey, hsb_443.httpd_site, hsb_443."name", hsb_443.disable_log, hsu_443.hostname, sc_443.cert_file as ssl_cert_file from
-                      public.httpd_site_binds hsb_443
-      inner      join public.net_binds         nb_443 on hsb_443.httpd_bind  =  nb_443.pkey            and  nb_443.port = 443
-      inner      join public.httpd_site_urls  hsu_443 on hsb_443.pkey        = hsu_443.httpd_site_bind and hsu_443.is_primary
-      left outer join public.ssl_certificates  sc_443 on hsb_443.certificate =  sc_443.pkey
+                 public.httpd_site_binds hsb_443
+      inner join public.net_binds         nb_443 on hsb_443.httpd_bind  =  nb_443.pkey            and  nb_443.port = 443
+      inner join public.httpd_site_urls  hsu_443 on hsb_443.pkey        = hsu_443.httpd_site_bind and hsu_443.is_primary
+      left  join public.ssl_certificates  sc_443 on hsb_443.certificate =  sc_443.pkey
   ) is_443 on hs.pkey=is_443.httpd_site and coalesce(is_80."name", '')=coalesce(is_443."name", '')
 where
   -- Let's Encrypt not supported on CentOS 5

@@ -17,7 +17,7 @@ from (
       from
         accounting."BankTransaction"
     ) as months
-    left outer join (
+    left join (
       select
         substring("time"::text from 1 for 7) as "month",
         sum(amount) as total_earnings
@@ -28,7 +28,7 @@ from (
       group by
         "month"
     ) as total_earnings on months."month"=total_earnings."month"
-    left outer join (
+    left join (
       select
         substring("time"::text from 1 for 7) as "month",
         -sum(amount) as payroll
@@ -40,7 +40,7 @@ from (
       group by
         "month"
     ) as payroll on months."month"=payroll."month"
-    left outer join (
+    left join (
       select
         substring("time"::text from 1 for 7) as "month",
         -sum(amount) as hardware
@@ -52,7 +52,7 @@ from (
       group by
         "month"
     ) as hardware on months."month"=hardware."month"
-    left outer join (
+    left join (
       select
         substring("time"::text from 1 for 7) as "month",
         -sum(amount) as other_expenses
@@ -64,7 +64,7 @@ from (
       group by
         "month"
     ) as other_expenses on months."month"=other_expenses."month"
-    left outer join (
+    left join (
       select
         substring("time"::text from 1 for 7) as "month",
         -sum(amount) as total_losses
@@ -75,7 +75,7 @@ from (
       group by
         "month"
     ) as total_losses on months."month"=total_losses."month"
-    left outer join (
+    left join (
       select
         substring("time"::text from 1 for 7) as "month",
     sum(amount) as corporate_profit

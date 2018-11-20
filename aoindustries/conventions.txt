@@ -1,0 +1,20 @@
+1) Numeric generated primary keys named "id"
+
+2) Tables named capitalized and singular, matching Java class name
+
+3) Tables names never all caps for word, "IpAddress" instead of "IPAddress".
+   "IPAddress" becomes bean "iPAddress".
+
+4) Non-foreign key columns lower camelCase, matching Java field and JavaBeans getters.
+
+5) Foreign key columns named capital, matching the name of the table they reference.
+   This connects well to AOSH dot-join syntax:
+       select Package.name from Username
+
+6) Boolean columns should be "isSomething", matching the Java conventions.
+   On the Java side, the field should also be "isSomething", with a getter
+   "isSomething()" and setter of "setSomething(boolean isSomething)".
+
+7) Not strictly required, but good idea to avoid Java keywords in column names,
+   as this can save the overhead of manually declaring JavaBeans properties and
+   JSP EL expressions such as obj['public'] where obj.public wouldn't work.

@@ -266,6 +266,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'get_backup_data',
+  'backup',
   'backup_data',
   'gets the contents of a backup data set',
   '<i>pkey</i>',
@@ -274,6 +275,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_unused_backup_data',
+  'backup',
   'backup_data',
   'removes backup data that if no longer referenced',
   '<i>pkey</i> [...]',
@@ -282,6 +284,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'get_backup_partition_total_size',
+  'backup',
   'backup_partitions',
   'gets the total size of a backup partition',
   '<i>ao_server</i> <i>path</i>',
@@ -290,6 +293,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'get_backup_partition_used_size',
+  'backup',
   'backup_partitions',
   'gets the disk space used on a backup partition',
   '<i>ao_server</i> <i>path</i>',
@@ -1015,6 +1019,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'get_failover_file_replication_activity',
+  'backup',
   'failover_file_replications',
   'gets the most recently reported replication activity',
   '<i>from_server</i> <i>to_server</i> <i>path</i>',
@@ -1023,6 +1028,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_file_backup_device',
+  'backup',
   'file_backup_devices',
   'creates a new FileBackupDevice',
   '<i>device</i> <i>can_backup</i> <i>description</i>',
@@ -1031,6 +1037,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'get_file_backup',
+  'backup',
   'file_backups',
   'gets the contents of a file backup',
   '<i>pkey</i>',
@@ -1039,6 +1046,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_file_backup',
+  'backup',
   'file_backups',
   'removes a backup copy of a file from the system',
   '<i>pkey</i>',
@@ -1047,6 +1055,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_file_backup_setting',
+  'backup',
   'file_backup_settings',
   'creates a new FileBackupSetting',
   '<i>server</i> <i>path</i> <i>package</i> <i>backup_level</i> <i>backup_retention</i> <i>recurse</i>',
@@ -1055,6 +1064,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_file_backup_setting',
+  'backup',
   'file_backup_settings',
   'creates a new FileBackupSetting',
   '<i>replication</i> <i>path</i> <i>backup_enabled</i>',
@@ -1063,6 +1073,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_file_backup_setting',
+  'backup',
   'file_backup_settings',
   'creates a new FileBackupSetting',
   '<i>replication</i> <i>path</i> <i>backup_enabled</i> <i>required</i>',
@@ -1071,6 +1082,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_file_backup_setting',
+  'backup',
   'file_backup_settings',
   'removes a FileBackupSetting',
   '<i>server</i> <i>path</i>',
@@ -1079,6 +1091,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_file_backup_setting',
+  'backup',
   'file_backup_settings',
   'removes a FileBackupSetting',
   '<i>replication</i> <i>path</i>',
@@ -1087,6 +1100,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_file_backup_setting',
+  'backup',
   'file_backup_settings',
   'sets the values in a FileBackupSetting',
   '<i>server</i> <i>path</i> <i>package</i> <i>backup_level</i> <i>backup_retention</i> <i>recurse</i>',
@@ -1095,6 +1109,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_file_backup_setting',
+  'backup',
   'file_backup_settings',
   'sets the values in a FileBackupSetting',
   '<i>replication</i> <i>path</i> <i>backup_enabled</i>',
@@ -1103,6 +1118,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_file_backup_setting',
+  'backup',
   'file_backup_settings',
   'sets the values in a FileBackupSetting',
   '<i>replication</i> <i>path</i> <i>backup_enabled</i> <i>required</i>',
@@ -1823,6 +1839,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'get_interbase_backup',
+  'backup',
   'interbase_backups',
   'retrieves the contents of an InterBase backup from a backup server',
   '<i>pkey</i>',
@@ -1831,6 +1848,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_interbase_backup',
+  'backup',
   'interbase_backups',
   'removes the contents of an InterBase backup from the backup servers',
   '<i>pkey</i>',
@@ -2661,7 +2679,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'get_mysql_backup',
-  'mysql',
+  'backup',
   'mysql_backups',
   'gets the contents of a MySQL database backup',
   '<i>pkey</i>',
@@ -2670,7 +2688,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_mysql_backup',
-  'mysql',
+  'backup',
   'mysql_backups',
   'removes a MySQL database backup from the system',
   '<i>pkey</i>',
@@ -3283,7 +3301,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'get_postgres_backup',
-  'postgresql',
+  'backup',
   'postgres_backups',
   'gets the contents of a PostgreSQL database backup',
   '<i>pkey</i>',
@@ -3292,7 +3310,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_postgres_backup',
-  'postgresql',
+  'backup',
   'postgres_backups',
   'removes a PostgreSQL database backup from the system',
   '<i>pkey</i>',

@@ -67,6 +67,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'backup',
     'backup_data',
     'Backup Data',
     false,
@@ -75,6 +76,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'backup',
     'backup_levels',
     'Backup Levels',
     true,
@@ -83,6 +85,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'backup',
     'backup_partitions',
     'Backup Partitions',
     false,
@@ -91,6 +94,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'backup',
     'backup_reports',
     'Backup Reports',
     false,
@@ -99,6 +103,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'backup',
     'backup_retentions',
     'Backup Retentions',
     true,
@@ -511,6 +516,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'backup',
     'failover_file_log',
     'Failover File Log',
     false,
@@ -519,6 +525,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'backup',
     'failover_file_replications',
     'Failover File Replications',
     false,
@@ -527,6 +534,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'backup',
     'failover_file_schedule',
     'Failover File Schedule',
     false,
@@ -535,6 +543,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'backup',
     'failover_mysql_replications',
     'Failover MySQL Replications',
     false,
@@ -543,6 +552,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'backup',
     'file_backups',
     'File Backups',
     false,
@@ -551,6 +561,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'backup',
     'file_backup_devices',
     'File Backup Devices',
     true,
@@ -559,6 +570,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'backup',
     'file_backup_roots',
     'File Backup Roots',
     false,
@@ -567,6 +579,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'backup',
     'file_backup_settings',
     'File Backup Settings',
     false,
@@ -575,6 +588,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'backup',
     'file_backup_stats',
     'File Backup Stats',
     false,
@@ -801,6 +815,7 @@ the accounting department transfers the data to their records.',
     '1.28'
 );
 select "schema".add_table(
+    'backup',
     'interbase_backups',
     'InterBase Backups',
     false,
@@ -1101,7 +1116,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'mysql',
+    'backup',
     'mysql_backups',
     'MySQL Backups',
     false,
@@ -1370,7 +1385,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
-    'postgresql',
+    'backup',
     'postgres_backups',
     'PostgreSQL Backups',
     false,

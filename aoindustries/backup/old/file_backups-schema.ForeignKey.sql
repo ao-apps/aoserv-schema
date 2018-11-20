@@ -1,0 +1,11 @@
+select "schema".add_foreign_key('backup', 'file_backups', 'server',           'public', 'servers',             'pkey',  '1.0a100', '1.30');
+select "schema".add_foreign_key('backup', 'file_backups', 'device',                     'file_backup_devices', 'pkey',  '1.0a100', '1.0a106');
+select "schema".add_foreign_key('backup', 'file_backups', 'device',                     'file_backup_devices', 'pkey',  '1.0a107', '1.30');
+select "schema".add_foreign_key('backup', 'file_backups', 'package',          'public', 'packages',            'pkey',  '1.0a100', '1.30');
+select "schema".add_foreign_key('backup', 'file_backups', 'uid',              'public', 'linux_ids',           'id',    '1.0a100', '1.0a106');
+select "schema".add_foreign_key('backup', 'file_backups', 'uid',              'public', 'linux_ids',           'id',    '1.0a107', '1.30');
+select "schema".add_foreign_key('backup', 'file_backups', 'gid',              'public', 'linux_ids',           'id',    '1.0a100', '1.0a106');
+select "schema".add_foreign_key('backup', 'file_backups', 'gid',              'public', 'linux_ids',           'id',    '1.0a107', '1.30');
+select "schema".add_foreign_key('backup', 'file_backups', 'backup_data',                'backup_data',         'pkey',  '1.0a100', '1.30');
+select "schema".add_foreign_key('backup', 'file_backups', 'backup_level',               'backup_levels',       'level', '1.0a100', '1.30');
+select "schema".add_foreign_key('backup', 'file_backups', 'backup_retention',           'backup_retentions',   'days',  '1.0a100', '1.30');

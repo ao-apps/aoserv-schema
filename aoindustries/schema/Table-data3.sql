@@ -1718,6 +1718,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'signup',
     'signup_request_options',
     'Sign-Up Request Options',
     false,
@@ -1726,6 +1727,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'signup',
     'signup_requests',
     'Sign-Up Requests',
     false,

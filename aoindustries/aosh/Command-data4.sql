@@ -1146,6 +1146,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_httpd_jboss_site',
+  'httpd',
   'httpd_jboss_sites',
   'creates a new web site space running a JBoss configuration',
   '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin_email</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} <i>jboss_version</i> <i>primary_http_hostname</i> {""|<i>content_source</i>} [<i>alternate_http_hostname</i>]...',
@@ -1154,6 +1155,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_httpd_jboss_site',
+  'httpd',
   'httpd_jboss_sites',
   'creates a new web site space running a JBoss configuration',
   '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin_email</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} <i>jboss_version</i> <i>primary_http_hostname</i> {""|<i>content_source</i>} {""|<i>php_version</i>} <i>enable_cgi</i> <i>enable_ssi</i> <i>enable_htaccess</i> <i>enable_indexes</i> <i>enable_follow_symlinks</i> [<i>alternate_http_hostname</i>]...',
@@ -1162,6 +1164,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_httpd_jboss_site',
+  'httpd',
   'httpd_jboss_sites',
   'creates a new web site space running a JBoss configuration',
   '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin_email</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} <i>jboss_version</i> <i>primary_http_hostname</i> {""|<i>content_source</i>} [<i>alternate_http_hostname</i>]...',
@@ -1170,6 +1173,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_httpd_jboss_site',
+  'httpd',
   'httpd_jboss_sites',
   'creates a new web site space running a JBoss configuration',
   '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin_email</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} <i>jboss_version</i> <i>primary_http_hostname</i> [<i>alternate_http_hostname</i>]...',
@@ -1178,6 +1182,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'get_httpd_server_concurrency',
+  'httpd',
   'httpd_servers',
   'gets the current concurrency of an HTTP server instance',
   '<i>ao_server</i> {""|<i>name</i>}',
@@ -1186,6 +1191,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_httpd_shared_tomcat',
+  'httpd',
   'httpd_shared_tomcats',
   'adds a new Multi-Site Tomcat JVM to a server',
   '<i>tomcat_name</i> <i>ao_server</i> <i>tomcat_version</i> <i>linux_server_account</i> <i>linux_server_group</i> <i>is_secure</i> <i>is_overflow</i>',
@@ -1194,6 +1200,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_httpd_shared_tomcat',
+  'httpd',
   'httpd_shared_tomcats',
   'adds a new Multi-Site Tomcat JVM to a server',
   '<i>tomcat_name</i> <i>ao_server</i> <i>tomcat_version</i> <i>linux_server_account</i> <i>linux_server_group</i>',
@@ -1202,6 +1209,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'check_shared_tomcat_name',
+  'httpd',
   'httpd_shared_tomcats',
   'checks the format of a Multi-Site Tomcat JVM name',
   '<i>shared_tomcat_name</i>',
@@ -1210,6 +1218,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'disable_httpd_shared_tomcat',
+  'httpd',
   'httpd_shared_tomcats',
   'disables a Multi-Site Tomcat JVM',
   '<i>name</i> <i>ao_server</i> <i>reason</i>',
@@ -1218,6 +1227,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'enable_httpd_shared_tomcat',
+  'httpd',
   'httpd_shared_tomcats',
   'enables a Multi-Site Tomcat JVM',
   '<i>name</i> <i>ao_server</i>',
@@ -1226,6 +1236,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'generate_shared_tomcat_name',
+  'httpd',
   'httpd_shared_tomcats',
   'generates a unique Multi-Site Tomcat JVM name based on a template',
   '<i>template</i>',
@@ -1234,6 +1245,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'is_shared_tomcat_name_available',
+  'httpd',
   'httpd_shared_tomcats',
   'determines if a name may be used for a Multi-Site Tomcat JVM',
   '<i>name</i>',
@@ -1242,6 +1254,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_httpd_shared_tomcat',
+  'httpd',
   'httpd_shared_tomcats',
   'removes a multi-site Tomcat JVM from the servers',
   '<i>name</i> <i>ao_server</i>',
@@ -1250,6 +1263,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_shared_tomcat_config_backup_retention',
+  'httpd',
   'httpd_shared_tomcats',
   'sets the config file backup retention for a Multi-Site Tomcat JVM',
   '<i>name</i> <i>ao_server</i> <i>backup_retention</i>',
@@ -1258,6 +1272,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_shared_tomcat_file_backup_retention',
+  'httpd',
   'httpd_shared_tomcats',
   'sets the file backup retention for a Multi-Site Tomcat JVM',
   '<i>name</i> <i>ao_server</i> <i>backup_retention</i>',
@@ -1266,6 +1281,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_shared_tomcat_is_manual',
+  'httpd',
   'httpd_shared_tomcats',
   'sets the is_manual flag for a Multi-Site Tomcat JVM',
   '<i>name</i> <i>ao_server</i> <i>is_manual</i>',
@@ -1274,6 +1290,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_shared_tomcat_log_backup_retention',
+  'httpd',
   'httpd_shared_tomcats',
   'sets the log file backup retention for a Multi-Site Tomcat JVM',
   '<i>name</i> <i>ao_server</i> <i>backup_retention</i>',
@@ -1282,6 +1299,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_shared_tomcat_max_post_size',
+  'httpd',
   'httpd_shared_tomcats',
   'sets the maximum POST size for a Multi-Site Tomcat installation',
   '<i>name</i> <i>ao_server</i> {""|<i>max_post_size</i>}',
@@ -1290,6 +1308,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_shared_tomcat_unpack_wars',
+  'httpd',
   'httpd_shared_tomcats',
   'sets the unpackWARs setting for a Multi-Site Tomcat installation',
   '<i>name</i> <i>ao_server</i> <i>unpack_wars</i>',
@@ -1298,6 +1317,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_shared_tomcat_auto_deploy',
+  'httpd',
   'httpd_shared_tomcats',
   'sets the autoDeploy setting for a Multi-Site Tomcat installation',
   '<i>name</i> <i>ao_server</i> <i>auto_deploy</i>',
@@ -1306,6 +1326,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_shared_tomcat_version',
+  'httpd',
   'httpd_shared_tomcats',
   'sets the Tomcat version for a Multi-Site Tomcat installation',
   '<i>name</i> <i>ao_server</i> <i>series</i>[.<i>major</i>[.<i>minor</i>]]',
@@ -1314,6 +1335,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'disable_httpd_site_bind',
+  'httpd',
   'httpd_site_binds',
   'disables one network port of a web site',
   '<i>pkey</i> <i>reason</i>',
@@ -1322,6 +1344,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'enable_httpd_site_bind',
+  'httpd',
   'httpd_site_binds',
   'enables one network port of a web site',
   '<i>pkey</i>',
@@ -1330,6 +1353,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_site_bind_is_manual',
+  'httpd',
   'httpd_site_binds',
   'sets the is_manual flag for one network port of a web site',
   '<i>pkey</i> <i>is_manual</i>',
@@ -1338,6 +1362,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_site_bind_redirect_to_primary_hostname',
+  'httpd',
   'httpd_site_binds',
   'sets the redirect_to_primary_hostname flag for one network port of a web site',
   '<i>pkey</i> <i>redirect_to_primary_hostname</i>',
@@ -1346,6 +1371,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_httpd_site_url',
+  'httpd',
   'httpd_site_urls',
   'adds a hostname to a web site',
   '<i>httpd_site_bind_pkey</i> <i>hostname</i>',
@@ -1354,6 +1380,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_httpd_site_url',
+  'httpd',
   'httpd_site_urls',
   'removes a hostname from a web site',
   '<i>pkey</i>',
@@ -1362,6 +1389,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_primary_httpd_site_url',
+  'httpd',
   'httpd_site_urls',
   'sets the primary hostname for one specific IP address and port',
   '<i>pkey</i>',
@@ -1370,6 +1398,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'check_site_name',
+  'httpd',
   'httpd_sites',
   'checks the format of a site name',
   '<i>site_name</i>',
@@ -1378,6 +1407,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'disable_httpd_site',
+  'httpd',
   'httpd_sites',
   'disables a web site, including its Java virtual machine and all network ports',
   '<i>site_name</i> <i>ao_server</i> <i>reason</i>',
@@ -1386,6 +1416,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'enable_httpd_site',
+  'httpd',
   'httpd_sites',
   'enables a web site, including its Java virtual machine and all network ports',
   '<i>site_name</i> <i>ao_server</i>',
@@ -1394,6 +1425,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'generate_site_name',
+  'httpd',
   'httpd_sites',
   'generates a unique site name based on a template',
   '<i>template</i>',
@@ -1402,6 +1434,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'get_awstats_file',
+  'httpd',
   'httpd_sites',
   'gets a file from the AWStats report',
   '<i>site_name</i> <i>ao_server</i> <i>path</i> {""|<i>query_string</i>}',
@@ -1410,6 +1443,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'initialize_httpd_site_passwd_file',
+  'httpd',
   'httpd_sites',
   'creates the default conf/passwd file',
   '<i>site_name</i> <i>ao_server</i> <i>username</i> <i>password</i>',
@@ -1418,6 +1452,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'is_site_name_available',
+  'httpd',
   'httpd_sites',
   'determines if a site name is available',
   '<i>site_name</i>',
@@ -1426,6 +1461,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_httpd_site',
+  'httpd',
   'httpd_sites',
   'removes a web site from the servers',
   '<i>site_name</i> <i>ao_server</i>',
@@ -1434,6 +1470,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_site_config_backup_retention',
+  'httpd',
   'httpd_sites',
   'sets the config file backup retention for a web site',
   '<i>site_name</i> <i>ao_server</i> <i>backup_retention</i>',
@@ -1442,6 +1479,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_site_file_backup_retention',
+  'httpd',
   'httpd_sites',
   'sets the file backup retention for a web site',
   '<i>site_name</i> <i>ao_server</i> <i>backup_retention</i>',
@@ -1450,6 +1488,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_site_ftp_backup_retention',
+  'httpd',
   'httpd_sites',
   'sets the ftp file backup retention for a web site',
   '<i>site_name</i> <i>ao_server</i> <i>backup_retention</i>',
@@ -1458,6 +1497,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_site_is_manual',
+  'httpd',
   'httpd_sites',
   'sets the is_manual flag for a web site',
   '<i>site_name</i> <i>ao_server</i> <i>is_manual</i>',
@@ -1466,6 +1506,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_site_log_backup_retention',
+  'httpd',
   'httpd_sites',
   'sets the log file backup retention for a web site',
   '<i>site_name</i> <i>ao_server</i> <i>backup_retention</i>',
@@ -1474,6 +1515,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_site_server_admin',
+  'httpd',
   'httpd_sites',
   'sets the administrative email address for a web site',
   '<i>site_name</i> <i>ao_server</i> <i>email_address</i>',
@@ -1482,6 +1524,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_site_php_version',
+  'httpd',
   'httpd_sites',
   'sets the PHP version for a web site',
   '<i>site_name</i> <i>ao_server</i> {""|<i>php_version</i>}',
@@ -1490,6 +1533,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_site_enable_cgi',
+  'httpd',
   'httpd_sites',
   'sets the enable_cgi flag for a web site',
   '<i>site_name</i> <i>ao_server</i> <i>enable_cgi</i>',
@@ -1498,6 +1542,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_site_enable_ssi',
+  'httpd',
   'httpd_sites',
   'sets the enable_ssi flag for a web site',
   '<i>site_name</i> <i>ao_server</i> <i>enable_ssi</i>',
@@ -1506,6 +1551,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_site_enable_htaccess',
+  'httpd',
   'httpd_sites',
   'sets the enable_htaccess flag for a web site',
   '<i>site_name</i> <i>ao_server</i> <i>enable_htaccess</i>',
@@ -1514,6 +1560,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_site_enable_indexes',
+  'httpd',
   'httpd_sites',
   'sets the enable_indexes flag for a web site',
   '<i>site_name</i> <i>ao_server</i> <i>enable_indexes</i>',
@@ -1522,6 +1569,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_site_enable_follow_symlinks',
+  'httpd',
   'httpd_sites',
   'sets the enable_follow_symlinks flag for a web site',
   '<i>site_name</i> <i>ao_server</i> <i>enable_follow_symlinks</i>',
@@ -1530,6 +1578,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_site_enable_anonymous_ftp',
+  'httpd',
   'httpd_sites',
   'sets the enable_anonymous_ftp flag for a web site',
   '<i>site_name</i> <i>ao_server</i> <i>enable_anonymous_ftp</i>',
@@ -1538,6 +1587,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_site_block_trace_track',
+  'httpd',
   'httpd_sites',
   'sets the block_trace_track flag for a web site',
   '<i>site_name</i> <i>ao_server</i> <i>block_trace_track</i>',
@@ -1546,6 +1596,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_site_block_scm',
+  'httpd',
   'httpd_sites',
   'sets the block_scm flag for a web site',
   '<i>site_name</i> <i>ao_server</i> <i>block_scm</i>',
@@ -1554,6 +1605,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_site_block_core_dumps',
+  'httpd',
   'httpd_sites',
   'sets the block_core_dumps flag for a web site',
   '<i>site_name</i> <i>ao_server</i> <i>block_core_dumps</i>',
@@ -1562,6 +1614,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_site_block_editor_backups',
+  'httpd',
   'httpd_sites',
   'sets the block_editor_backups flag for a web site',
   '<i>site_name</i> <i>ao_server</i> <i>block_editor_backups</i>',
@@ -1570,6 +1623,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'wait_for_httpd_site_rebuild',
+  'httpd',
   'httpd_sites',
   'waits for any pending or processing changes to complete',
   '<i>ao_server</i>',
@@ -1578,6 +1632,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_httpd_site_authenticated_location',
+  'httpd',
   'httpd_site_authenticated_locations',
   'adds an authenticated location to a web site',
   '<i>site_name</i> <i>ao_server</i> <i>path</i> <i>is_regular_expression</i> <i>auth_name</i> {""|<i>auth_group_file</i>} {""|<i>auth_user_file</i>} <i>require</i> {""|<i>handler</i>}',
@@ -1586,6 +1641,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_site_authenticated_location_attributes',
+  'httpd',
   'httpd_site_authenticated_locations',
   'updates an authenticated location on a web site',
   '<i>site_name</i> <i>ao_server</i> <i>path</i> <i>is_regular_expression</i> <i>auth_name</i> {""|<i>auth_group_file</i>} {""|<i>auth_user_file</i>} <i>require</i> {""|*|<i>handler</i>}',
@@ -1594,6 +1650,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_httpd_tomcat_context',
+  'httpd',
   'httpd_tomcat_contexts',
   'adds a context (webapp) to a Tomcat site',
   '<i>site_name</i> <i>ao_server</i> {""|<i>class_name</i>} <i>use_cookies</i> <i>cross_context</i> <i>doc_base</i> <i>allow_override</i> <i>path</i> <i>is_privileged</i> <i>is_reloadable</i> <i>use_naming</i> {""|<i>wrapper_class</i>} <i>debug_level</i> {""|<i>work_dir</i>}',
@@ -1602,6 +1659,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_httpd_tomcat_context',
+  'httpd',
   'httpd_tomcat_contexts',
   'adds a context (webapp) to a Tomcat site',
   '<i>site_name</i> <i>ao_server</i> {""|<i>class_name</i>} <i>use_cookies</i> <i>cross_context</i> <i>doc_base</i> <i>allow_override</i> <i>path</i> <i>is_privileged</i> <i>is_reloadable</i> <i>use_naming</i> {""|<i>wrapper_class</i>} <i>debug_level</i> {""|<i>work_dir</i>} <i>server_xml_configured</i>',
@@ -1610,6 +1668,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_httpd_tomcat_context',
+  'httpd',
   'httpd_tomcat_contexts',
   'removes a context (webapp) from a Tomcat site',
   '<i>pkey</i>',
@@ -1618,6 +1677,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_tomcat_context_attributes',
+  'httpd',
   'httpd_tomcat_contexts',
   'sets the attributes for a context (webapp) on a Tomcat site',
   '<i>site_name</i> <i>ao_server</i> <i>old_path</i> {""|<i>class_name</i>} <i>use_cookies</i> <i>cross_context</i> <i>doc_base</i> <i>allow_override</i> <i>new_path</i> <i>is_privileged</i> <i>is_reloadable</i> <i>use_naming</i> {""|<i>wrapper_class</i>} <i>debug_level</i> {""|<i>work_dir</i>}',
@@ -1626,6 +1686,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_tomcat_context_attributes',
+  'httpd',
   'httpd_tomcat_contexts',
   'sets the attributes for a context (webapp) on a Tomcat site',
   '<i>site_name</i> <i>ao_server</i> <i>old_path</i> {""|<i>class_name</i>} <i>use_cookies</i> <i>cross_context</i> <i>doc_base</i> <i>allow_override</i> <i>new_path</i> <i>is_privileged</i> <i>is_reloadable</i> <i>use_naming</i> {""|<i>wrapper_class</i>} <i>debug_level</i> {""|<i>work_dir</i>} <i>server_xml_configured</i>',
@@ -1634,6 +1695,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_httpd_tomcat_data_source',
+  'httpd',
   'httpd_tomcat_data_sources',
   'adds a data source to a Tomcat context (webapp)',
   '<i>site_name</i> <i>ao_server</i> <i>path</i> <i>name</i> <i>driver_class_name</i> <i>url</i> <i>username</i> <i>password</i> <i>max_active</i> <i>max_idle</i> <i>max_wait</i> {""|<i>validation_query</i>}',
@@ -1642,6 +1704,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_httpd_tomcat_data_source',
+  'httpd',
   'httpd_tomcat_data_sources',
   'removes a data source from a Tomcat context (webapp)',
   '<i>pkey</i>',
@@ -1650,6 +1713,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'update_httpd_tomcat_data_source',
+  'httpd',
   'httpd_tomcat_data_sources',
   'updates a Tomcat context (webapp) data source',
   '<i>site_name</i> <i>ao_server</i> <i>path</i> <i>old_name</i> <i>new_name</i> <i>driver_class_name</i> <i>url</i> <i>username</i> <i>password</i> <i>max_active</i> <i>max_idle</i> <i>max_wait</i> {""|<i>validation_query</i>}',
@@ -1658,6 +1722,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_httpd_tomcat_parameter',
+  'httpd',
   'httpd_tomcat_parameters',
   'adds a parameter to a Tomcat context (webapp)',
   '<i>site_name</i> <i>ao_server</i> <i>path</i> <i>name</i> <i>value</i> <i>override</i> {""|<i>description</i>}',
@@ -1666,6 +1731,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_httpd_tomcat_parameter',
+  'httpd',
   'httpd_tomcat_parameters',
   'removes a parameter from a Tomcat context (webapp)',
   '<i>pkey</i>',
@@ -1674,6 +1740,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'update_httpd_tomcat_parameter',
+  'httpd',
   'httpd_tomcat_parameters',
   'updates a Tomcat context (webapp) parameter',
   '<i>site_name</i> <i>ao_server</i> <i>path</i> <i>old_name</i> <i>new_name</i> <i>value</i> <i>override</i> {""|<i>description</i>}',
@@ -1682,6 +1749,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_httpd_tomcat_site_jk_mount',
+  'httpd',
   'httpd_tomcat_site_jk_mounts',
   'adds a JkMount or JkUnMount to a Tomcat site',
   '<i>site_name</i> <i>ao_server</i> <i>path</i> <i>mount</i>',
@@ -1690,6 +1758,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_httpd_tomcat_site_jk_mount',
+  'httpd',
   'httpd_tomcat_site_jk_mounts',
   'removes a JkMount or JkUnMount from a Tomcat site',
   '<i>site_name</i> <i>ao_server</i> <i>path</i>',
@@ -1698,6 +1767,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_tomcat_site_use_apache',
+  'httpd',
   'httpd_tomcat_sites',
   'sets the use_apache flag for a Tomcat-enabled web site',
   '<i>site_name</i> <i>ao_server</i> <i>use_apache</i>',
@@ -1706,6 +1776,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_tomcat_site_block_webinf',
+  'httpd',
   'httpd_tomcat_sites',
   'sets the block_webinf flag for a Tomcat-enabled web site',
   '<i>site_name</i> <i>ao_server</i> <i>block_webinf</i>',
@@ -1714,6 +1785,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'start_jvm',
+  'httpd',
   'httpd_tomcat_sites',
   'starts the Java VM',
   '<i>site_name</i> <i>ao_server</i>',
@@ -1722,6 +1794,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'stop_jvm',
+  'httpd',
   'httpd_tomcat_sites',
   'stops the Java VM',
   '<i>site_name</i> <i>ao_server</i>',
@@ -1730,6 +1803,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_httpd_tomcat_shared_site',
+  'httpd',
   'httpd_tomcat_shared_sites',
   'creates a new web site space running a shared Tomcat configuration',
   '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} {""|<i>shared_tomcat_name</i>} {""|<i>tomcat_version</i>} <i>primary_http_hostname</i> {""|<i>content_source</i>} [<i>alternate_http_hostname</i>]...',
@@ -1738,6 +1812,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_httpd_tomcat_shared_site',
+  'httpd',
   'httpd_tomcat_shared_sites',
   'creates a new web site space running a shared Tomcat configuration',
   '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} {""|<i>shared_tomcat_name</i>} {""|<i>tomcat_version</i>} <i>primary_http_hostname</i> {""|<i>content_source</i>} {""|<i>php_version</i>} <i>enable_cgi</i> <i>enable_ssi</i> <i>enable_htaccess</i> <i>enable_indexes</i> <i>enable_follow_symlinks</i> [<i>alternate_http_hostname</i>]...',
@@ -1746,6 +1821,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_httpd_tomcat_shared_site',
+  'httpd',
   'httpd_tomcat_shared_sites',
   'creates a new web site space running a shared Tomcat configuration',
   '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} {""|<i>shared_tomcat_name</i>} {""|<i>tomcat_version</i>} <i>primary_http_hostname</i> {""|<i>content_source</i>} [<i>alternate_http_hostname</i>]...',
@@ -1754,6 +1830,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_httpd_tomcat_shared_site',
+  'httpd',
   'httpd_tomcat_shared_sites',
   'creates a new web site space running a shared Tomcat configuration',
   '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} {<i>shared_tomcat_name</i>} <i>primary_http_hostname</i> [<i>alternate_http_hostname</i>]...',
@@ -1762,6 +1839,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_httpd_tomcat_std_site',
+  'httpd',
   'httpd_tomcat_std_sites',
   'creates a new web site space running a standard Tomcat configuration',
   '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} <i>tomcat_version</i> <i>primary_http_hostname</i> {""|<i>content_source</i>} [<i>alternate_http_hostname</i>]...',
@@ -1770,6 +1848,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_httpd_tomcat_std_site',
+  'httpd',
   'httpd_tomcat_std_sites',
   'creates a new web site space running a standard Tomcat configuration',
   '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} <i>tomcat_version</i> <i>primary_http_hostname</i> {""|<i>content_source</i>} {""|<i>php_version</i>} <i>enable_cgi</i> <i>enable_ssi</i> <i>enable_htaccess</i> <i>enable_indexes</i> <i>enable_follow_symlinks</i> [<i>alternate_http_hostname</i>]...',
@@ -1778,6 +1857,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_httpd_tomcat_std_site',
+  'httpd',
   'httpd_tomcat_std_sites',
   'creates a new web site space running a standard Tomcat configuration',
   '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} <i>tomcat_version</i> <i>primary_http_hostname</i> {""|<i>content_source</i>} [<i>alternate_http_hostname</i>]...',
@@ -1786,6 +1866,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_httpd_tomcat_std_site',
+  'httpd',
   'httpd_tomcat_std_sites',
   'creates a new web site space running a standard Tomcat configuration',
   '<i>ao_server</i> <i>site_name</i> <i>package</i> <i>username</i> <i>group</i> <i>server_admin</i> <i>use_apache</i> {""|<i>ip_address</i>} {""|<i>net_device</i>} <i>tomcat_version</i> <i>primary_http_hostname</i> [<i>alternate_http_hostname</i>]...',
@@ -1794,6 +1875,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_tomcat_std_site_max_post_size',
+  'httpd',
   'httpd_tomcat_std_sites',
   'sets the maximum POST size for a standard Tomcat installation',
   '<i>site_name</i> <i>ao_server</i> {""|<i>max_post_size</i>}',
@@ -1802,6 +1884,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_tomcat_std_site_unpack_wars',
+  'httpd',
   'httpd_tomcat_std_sites',
   'sets the unpackWARs setting for a standard Tomcat installation',
   '<i>site_name</i> <i>ao_server</i> <i>unpack_wars</i>',
@@ -1810,6 +1893,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_tomcat_std_site_auto_deploy',
+  'httpd',
   'httpd_tomcat_std_sites',
   'sets the autoDeploy setting for a standard Tomcat installation',
   '<i>site_name</i> <i>ao_server</i> <i>auto_deploy</i>',
@@ -1818,6 +1902,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_httpd_tomcat_std_site_version',
+  'httpd',
   'httpd_tomcat_std_sites',
   'sets the Tomcat version for a standard Tomcat installation',
   '<i>site_name</i> <i>ao_server</i> <i>series</i>[.<i>major</i>[.<i>minor</i>]]',

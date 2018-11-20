@@ -1,0 +1,6 @@
+select "schema".add_column('httpd', 'httpd_tomcat_parameters', 'pkey', 0, 'pkey', false, true, false, 'a generated unique key', '1.5', null);
+select "schema".add_column('httpd', 'httpd_tomcat_parameters', 'tomcat_context', 1, 'fkey', false, false, false, 'the context this parameter is for', '1.5', null);
+select "schema".add_column('httpd', 'httpd_tomcat_parameters', 'name', 2, 'string', false, false, false, 'the name of the context initialization parameter to be created', '1.5', null);
+select "schema".add_column('httpd', 'httpd_tomcat_parameters', 'value', 3, 'string', false, false, false, 'the parameter value that will be presented to the application when requested by calling ServletContext.getInitParameter()', '1.5', null);
+select "schema".add_column('httpd', 'httpd_tomcat_parameters', 'override', 4, 'boolean', false, false, false, 'set this to false if you do not want a <context-param> for the same parameter name, found in the web application deployment descriptor, to override the value specified here. By default, overrides are allowed.', '1.5', null);
+select "schema".add_column('httpd', 'httpd_tomcat_parameters', 'description', 5, 'string', true, false, false, 'optional, human-readable description of this context initialization parameter', '1.5', null);

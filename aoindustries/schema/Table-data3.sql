@@ -177,7 +177,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'account',
+    'master',
     'business_administrator_permissions',
     'Business Administrator Permissions',
     false,
@@ -213,6 +213,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'profile',
     'client_jvm_profile',
     'Client JVM Profile',
     false,
@@ -283,6 +284,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'profile',
     'daemon_profile',
     'Daemon Profile',
     false,
@@ -1128,6 +1130,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'profile',
     'master_server_profile',
     'Master Server Profile',
     false,

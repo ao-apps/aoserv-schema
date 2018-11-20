@@ -17,6 +17,7 @@ select "schema".add_table(
     '1.43'
 );
 select "schema".add_table(
+    'server',
     'ao_server_daemon_hosts',
     'AOServ Server Daemon Hosts',
     false,
@@ -25,6 +26,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'server',
     'ao_servers',
     'AOServ Servers',
     false,
@@ -201,6 +203,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'server',
     'business_servers',
     'Business Servers',
     false,
@@ -1137,6 +1140,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'server',
     'master_servers',
     'Master Servers',
     false,
@@ -1687,6 +1691,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'server',
     'servers',
     'Servers',
     false,
@@ -2060,6 +2065,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'server',
     'time_zones',
     'Time Zones',
     true,

@@ -1,0 +1,14 @@
+select "schema".add_column('server', 'business_servers', 'pkey', 0, 'pkey', false, true, false, 'a generated primary key', '1.0a100', null);
+select "schema".add_column('server', 'business_servers', 'accounting', 1, 'accounting', false, false, false, 'the business', '1.0a100', null);
+select "schema".add_column('server', 'business_servers', 'server', 2, 'fkey', false, false, false, 'the server', '1.0a100', null);
+select "schema".add_column('server', 'business_servers', 'is_default', 3, 'boolean', false, false, false, 'if <code>true</code>, this is the default server.', '1.0a100', null);
+select "schema".add_column('server', 'business_servers', 'can_configure_backup', 4, 'boolean', false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('server', 'business_servers', 'can_control_apache', 5, 'boolean', false, false, false, '', '1.0a100', null);
+select "schema".add_column('server', 'business_servers', 'can_control_cron', 6, 'boolean', false, false, false, '', '1.0a100', null);
+select "schema".add_column('server', 'business_servers', 'can_control_interbase', 7, 'boolean', false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('server', 'business_servers', 'can_control_mysql', 8, 'boolean', false, false, false, '', '1.0a100', null);
+select "schema".add_column('server', 'business_servers', 'can_control_postgresql', 9, 'boolean', false, false, false, '', '1.0a100', null);
+select "schema".add_column('server', 'business_servers', 'can_control_xfs', 10, 'boolean', false, false, false, '', '1.0a100', null);
+select "schema".add_column('server', 'business_servers', 'can_control_xvfb', 11, 'boolean', false, false, false, '', '1.0a100', null);
+select "schema".add_column('server', 'business_servers', 'can_vnc_console', 12, 'boolean', false, false, false, '', '1.51', null);
+select "schema".add_column('server', 'business_servers', 'can_control_virtual_server', 13, 'boolean', false, false, false, '', '1.64', null);

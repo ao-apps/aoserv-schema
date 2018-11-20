@@ -190,6 +190,15 @@ insert into "schema"."Schema" values(
 );
 insert into "schema"."Schema" values(
     (select count(*) from "schema"."Schema"),
+    'server',
+    '1.0a100',
+    null,
+    'Server',
+    true,
+    null -- Uses pg_catalog.pg_description
+);
+insert into "schema"."Schema" values(
+    (select count(*) from "schema"."Schema"),
     'tls',
     '1.81.10',
     null,

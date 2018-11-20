@@ -1,4 +1,4 @@
-select "schema".add_foreign_key('httpd', 'httpd_shared_tomcats', 'ao_server',               'public',  'ao_servers',            'server',  '1.0a100', null);
+select "schema".add_foreign_key('httpd', 'httpd_shared_tomcats', 'ao_server',               'server',  'ao_servers',            'server',  '1.0a100', null);
 select "schema".add_foreign_key('httpd', 'httpd_shared_tomcats', 'version',                            'httpd_tomcat_versions', 'version', '1.0a100', null);
 select "schema".add_foreign_key('httpd', 'httpd_shared_tomcats', 'linux_server_account',    'linux',   'linux_server_accounts', 'pkey',    '1.0a100', null);
 select "schema".add_foreign_key('httpd', 'httpd_shared_tomcats', 'linux_server_group',      'linux',   'linux_server_groups',   'pkey',    '1.0a100', null);

@@ -8,6 +8,7 @@ create table "schema"."Schema" (
   "lastVersion" text,
   display text
     not null,
+  -- TODO: Does this public flag have any relevance?
   "isPublic" bool
     not null,
   description text,

@@ -190,6 +190,15 @@ insert into "schema"."Schema" values(
 );
 insert into "schema"."Schema" values(
     (select count(*) from "schema"."Schema"),
+    'reseller',
+    '1.0a100',
+    null,
+    'Reseller',
+    true,
+    null -- Uses pg_catalog.pg_description
+);
+insert into "schema"."Schema" values(
+    (select count(*) from "schema"."Schema"),
     'schema',
     '1.0a100',
     null,

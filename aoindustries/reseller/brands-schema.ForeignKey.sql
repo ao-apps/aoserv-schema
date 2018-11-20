@@ -1,0 +1,10 @@
+select "schema".add_foreign_key('reseller', 'brands', 'accounting',                  'account', 'businesses',            'accounting', '1.44', null);
+select "schema".add_foreign_key('reseller', 'brands', 'smtp_linux_server_account',   'linux',   'linux_server_accounts', 'pkey',       '1.44', null);
+select "schema".add_foreign_key('reseller', 'brands', 'imap_linux_server_account',   'linux',   'linux_server_accounts', 'pkey',       '1.44', null);
+select "schema".add_foreign_key('reseller', 'brands', 'support_email_address',       'email',   'email_addresses',       'pkey',       '1.44', null);
+select "schema".add_foreign_key('reseller', 'brands', 'signup_email_address',        'email',   'email_addresses',       'pkey',       '1.44', null);
+select "schema".add_foreign_key('reseller', 'brands', 'ticket_encryption_from',      'account', 'encryption_keys',       'pkey',       '1.44', null);
+select "schema".add_foreign_key('reseller', 'brands', 'ticket_encryption_recipient', 'account', 'encryption_keys',       'pkey',       '1.44', null);
+select "schema".add_foreign_key('reseller', 'brands', 'signup_encryption_from',      'account', 'encryption_keys',       'pkey',       '1.44', null);
+select "schema".add_foreign_key('reseller', 'brands', 'signup_encryption_recipient', 'account', 'encryption_keys',       'pkey',       '1.44', null);
+select "schema".add_foreign_key('reseller', 'brands', 'aoweb_struts_vnc_bind',       'net',     'net_binds',             'pkey',       '1.52', null);

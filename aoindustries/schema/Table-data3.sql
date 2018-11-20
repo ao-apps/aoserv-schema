@@ -160,6 +160,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'reseller',
     'brands',
     'Brands',
     false,
@@ -1592,6 +1593,7 @@ select "schema".add_table(
     '1.0a122'
 );
 select "schema".add_table(
+    'reseller',
     'resellers',
     'Resellers',
     false,

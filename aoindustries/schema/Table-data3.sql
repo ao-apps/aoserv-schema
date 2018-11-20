@@ -614,6 +614,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'ftp',
     'ftp_guest_users',
     'FTP Guest Users',
     false,
@@ -1518,6 +1519,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'ftp',
     'private_ftp_servers',
     'Private FTP Servers',
     false,

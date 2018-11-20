@@ -1,3 +1,4 @@
+-- TODO: Move to tickets schema
 create table languages (
   code text primary key
 );

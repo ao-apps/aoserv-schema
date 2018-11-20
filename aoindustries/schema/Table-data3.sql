@@ -221,6 +221,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'payment',
     'credit_card_processors',
     'Credit Card Processors',
     false,
@@ -229,6 +230,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'payment',
     'credit_card_transactions',
     'Credit Card Transactions',
     false,
@@ -237,6 +239,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'payment',
     'credit_cards',
     'Credit Cards',
     false,
@@ -805,6 +808,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'payment',
     'incoming_payments',
     'Incoming Payments',
     false,
@@ -1374,6 +1378,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'payment',
     'payment_types',
     'Payment Types',
     true,

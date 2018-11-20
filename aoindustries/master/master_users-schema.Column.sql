@@ -1,0 +1,11 @@
+select "schema".add_column('master', 'master_users', 'username',                   0, 'username', false, true, false, 'the unique username of the user', '1.0a100', null);
+select "schema".add_column('master', 'master_users', 'is_active',                  1, 'boolean', false, false, false, 'this level of access may be disabled', '1.0a100', null);
+select "schema".add_column('master', 'master_users', 'can_access_accounting',      2, 'boolean', false, false, false, 'if they can access accounting resources', '1.0a100', null);
+select "schema".add_column('master', 'master_users', 'can_access_bank_accounting', 3, 'boolean', false, false, false, 'if they can access bank account info', '1.0a100', null);
+select "schema".add_column('master', 'master_users', 'can_invalidate_tables',      4, 'boolean', false, false, false, 'if they can invalidate master tables', '1.0a100', null);
+select "schema".add_column('master', 'master_users', 'can_access_admin_web',       5, 'boolean', false, false, false, 'if they can access administrative web pages', '1.0a100', null);
+select "schema".add_column('master', 'master_users', 'is_ticket_admin',            6, 'boolean', false, false, false, 'if they can access ticket admin stuff', '1.0a100', '1.43');
+select "schema".add_column('master', 'master_users', 'is_dns_admin',               7, 'boolean', false, false, false, 'if they can access all DNS stuff', '1.0a100', null);
+select "schema".add_column('master', 'master_users', 'can_switch_users',           8, 'boolean', false, false, false, '', '1.0a100', '1.0a117');
+select "schema".add_column('master', 'master_users', 'is_router',                  9, 'boolean', false, false, false, 'if they read all router stuff', '1.65', null);
+select "schema".add_column('master', 'master_users', 'is_cluster_admin',          10, 'boolean', false, false, false, 'if they can control cluster resources', '1.73', null);

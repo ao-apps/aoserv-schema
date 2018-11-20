@@ -35,6 +35,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'master',
     'aoserv_permissions',
     'AOServ Permissions',
     true,
@@ -176,7 +177,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'account',
+    'master',
     'business_administrator_permissions',
     'Business Administrator Permissions',
     false,
@@ -1100,6 +1101,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'master',
     'master_history',
     'Master History',
     false,
@@ -1108,6 +1110,7 @@ select "schema".add_table(
     '1.76'
 );
 select "schema".add_table(
+    'master',
     'master_hosts',
     'Master Hosts',
     false,
@@ -1116,6 +1119,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'master',
     'master_processes',
     'Master Processes',
     false,
@@ -1132,6 +1136,7 @@ select "schema".add_table(
     '1.76'
 );
 select "schema".add_table(
+    'master',
     'master_server_stats',
     'Master Server Stats',
     false,
@@ -1149,6 +1154,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'master',
     'master_users',
     'Master Users',
     false,

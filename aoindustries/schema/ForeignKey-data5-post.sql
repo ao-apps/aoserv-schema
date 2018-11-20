@@ -1,5 +1,3 @@
-drop function "schema".add_foreign_key (name,name,name,name,text,text);
-drop function "schema".add_foreign_key (name,name,name,name,name,text,text);
 drop function "schema".add_foreign_key (name,name,name,name,name,name,text,text);
 
 analyze "schema"."ForeignKey";

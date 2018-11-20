@@ -1,6 +1,0 @@
-select "schema".add_column('ip_reputation_set_networks', 'pkey',     0, 'long',       false, true,  false, 'a generated, unique key',                                                      '1.65', null);
-select "schema".add_column('ip_reputation_set_networks', 'set_fkey', 1, 'fkey',       false, false, false, 'the IP Reputation Set',                                                        '1.65', '1.65');
-select "schema".add_column('ip_reputation_set_networks', 'set',      2, 'fkey',       false, false, false, 'the IP Reputation Set',                                                        '1.66', null);
-select "schema".add_column('ip_reputation_set_networks', 'network',  3, 'int',        false, false, false, 'the per-set unique 32-bit network address, big-endian with network bits zero', '1.65', '1.66');
-select "schema".add_column('ip_reputation_set_networks', 'network',  4, 'ip_address', false, false, false, 'the per-set unique IPv4 network address, with network bits zero',              '1.67', null);
-select "schema".add_column('ip_reputation_set_networks', 'counter',  5, 'int',        false, false, false, 'the reputation counter',                                                       '1.65', null);

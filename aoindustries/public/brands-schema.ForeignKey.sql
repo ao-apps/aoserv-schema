@@ -7,4 +7,4 @@ select "schema".add_foreign_key(          'brands', 'ticket_encryption_from',   
 select "schema".add_foreign_key(          'brands', 'ticket_encryption_recipient',          'encryption_keys',       'pkey',       '1.44', null);
 select "schema".add_foreign_key(          'brands', 'signup_encryption_from',               'encryption_keys',       'pkey',       '1.44', null);
 select "schema".add_foreign_key(          'brands', 'signup_encryption_recipient',          'encryption_keys',       'pkey',       '1.44', null);
-select "schema".add_foreign_key(          'brands', 'aoweb_struts_vnc_bind',                'net_binds',             'pkey',       '1.52', null);
+select "schema".add_foreign_key('public', 'brands', 'aoweb_struts_vnc_bind',       'net',   'net_binds',             'pkey',       '1.52', null);

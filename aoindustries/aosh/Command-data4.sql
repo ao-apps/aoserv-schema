@@ -2055,6 +2055,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'check_ip_address',
+  'net',
   'ip_addresses',
   'checks the format of an IP address',
   '<i>ip_address</i>',
@@ -2063,6 +2064,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'is_ip_address_used',
+  'net',
   'ip_addresses',
   'determines if an IP address is currently in use',
   '<i>ip_address</i> <i>ao_server</i> <i>net_device</i>',
@@ -2071,6 +2073,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'is_ip_address_used',
+  'net',
   'ip_addresses',
   'determines if an IP address is currently in use',
   '<i>ip_address</i> <i>server</i> <i>net_device</i>',
@@ -2079,6 +2082,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'move_ip_address',
+  'net',
   'ip_addresses',
   'moves an IP address to a new server',
   '<i>ip_address</i> <i>from_server</i> <i>from_net_device</i> <i>to_server</i>',
@@ -2087,6 +2091,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_ip_address_dhcp_address',
+  'net',
   'ip_addresses',
   'sets the new IP address for a DHCP-enabled device',
   '<i>pkey</i> <i>ip_address</i>',
@@ -2095,6 +2100,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_ip_address_hostname',
+  'net',
   'ip_addresses',
   'sets the hostname associated with an IP address',
   '<i>ip_address</i> <i>ao_server</i> <i>net_device</i> <i>hostname</i>',
@@ -2103,6 +2109,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_ip_address_hostname',
+  'net',
   'ip_addresses',
   'sets the hostname associated with an IP address',
   '<i>ip_address</i> <i>server</i> <i>net_device</i> <i>hostname</i>',
@@ -2111,6 +2118,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_ip_address_monitoring_enabled',
+  'net',
   'ip_addresses',
   'enables or disables the monitoring of an IP address',
   '<i>ip_address</i> <i>server</i> <i>net_device</i> <i>enabled</i>',
@@ -2119,6 +2127,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_ip_address_package',
+  'net',
   'ip_addresses',
   'sets the package ownership of an IP address',
   '<i>ip_address</i> <i>ao_server</i> <i>net_device</i> <i>package</i>',
@@ -2127,6 +2136,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_ip_address_package',
+  'net',
   'ip_addresses',
   'sets the package ownership of an IP address',
   '<i>ip_address</i> <i>server</i> <i>net_device</i> <i>package</i>',
@@ -2135,6 +2145,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_ip_reputation',
+  'net',
   'ip_reputation_sets',
   'adds reputation for a host and its network',
   '<i>identifier</i> <i>ip_address</i> {<b>uncertain</b>|<b>definite</b>} {<b>good</b>|<b>bad</b>} <i>score</i>',
@@ -3136,6 +3147,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_net_bind',
+  'net',
   'net_binds',
   'adds a net binds to the system',
   '<i>ao_server</i> <i>package</i> <i>ip_address</i> <i>net_device</i> <i>port</i> <i>net_protocol</i> <i>app_protocol</i> <i>open_firewall</i> {""|<i>monitoring_delay</i>} {""|<i>monitoring_parameter</i>} {""|<i>monitoring_contact</i>} {""|<i>monitoring_info</i>}',
@@ -3144,6 +3156,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_net_bind',
+  'net',
   'net_binds',
   'adds a net binds to the system',
   '<i>ao_server</i> <i>package</i> <i>ip_address</i> <i>net_device</i> <i>port</i> <i>net_protocol</i> <i>app_protocol</i> <i>open_firewall</i> <i>monitoring_enabled</i>',
@@ -3152,6 +3165,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_net_bind',
+  'net',
   'net_binds',
   'adds a net binds to the system',
   '<i>server</i> <i>package</i> <i>ip_address</i> <i>net_device</i> <i>port</i> <i>net_protocol</i> <i>app_protocol</i> <i>open_firewall</i> <i>monitoring_enabled</i>',
@@ -3160,6 +3174,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_net_bind',
+  'net',
   'net_binds',
   'adds a net binds to the system',
   '<i>server</i> <i>package</i> <i>ip_address</i> <i>net_device</i> <i>port</i> <i>net_protocol</i> <i>app_protocol</i> <i>monitoring_enabled</i> [<i>firewalld_zone</i>] [...]',
@@ -3168,6 +3183,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_net_bind',
+  'net',
   'net_binds',
   'removes a net binds from the system',
   '<i>pkey</i>',
@@ -3176,6 +3192,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_net_bind_firewalld_zones',
+  'net',
   'net_binds',
   'sets the enabled firewalld zones for this port',
   '<i>pkey</i> [<i>firewalld_zone</i>] [...]',
@@ -3184,6 +3201,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_net_bind_monitoring_enabled',
+  'net',
   'net_binds',
   'enables or disables the monitoring of this port',
   '<i>pkey</i> <i>enabled</i>',
@@ -3192,6 +3210,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_net_bind_open_firewall',
+  'net',
   'net_binds',
   'opens or closes the firewall filters associated with this port',
   '<i>pkey</i> <i>open_firewall</i>',

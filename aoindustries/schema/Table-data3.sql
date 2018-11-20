@@ -583,6 +583,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'net',
     'firewalld_zones',
     'Firewalld Zones',
     false,
@@ -848,6 +849,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'net',
     'ip_addresses',
     'IP Addresses',
     false,
@@ -856,6 +858,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'net',
     'ip_reputation_limiter_limits',
     'IP Reputation Limiter Limits',
     false,
@@ -864,6 +867,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'net',
     'ip_reputation_limiter_sets',
     'IP Reputation Limiter Sets',
     false,
@@ -872,6 +876,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'net',
     'ip_reputation_limiters',
     'IP Reputation Limiters',
     false,
@@ -880,6 +885,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'net',
     'ip_reputation_set_hosts',
     'IP Reputation Set Hosts',
     false,
@@ -888,6 +894,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'net',
     'ip_reputation_set_networks',
     'IP Reputation Set Networks',
     false,
@@ -896,6 +903,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'net',
     'ip_reputation_sets',
     'IP Reputation Sets',
     false,
@@ -1165,6 +1173,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'net',
     'net_bind_firewalld_zones',
     'Net Bind Firewalld Zones',
     false,
@@ -1173,6 +1182,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'net',
     'net_binds',
     'Net Binds',
     false,
@@ -1200,6 +1210,7 @@ Four types of IP addresses exist:
     null
 );
 select "schema".add_table(
+    'net',
     'net_device_host_routes',
     'Net Device Host Routes',
     false,
@@ -1208,6 +1219,7 @@ select "schema".add_table(
     '1.0a130'
 );
 select "schema".add_table(
+    'net',
     'net_device_ids',
     'Net Device IDs',
     true,
@@ -1216,6 +1228,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'net',
     'net_device_local_routes',
     'Net Device Local Routes',
     false,
@@ -1224,6 +1237,7 @@ select "schema".add_table(
     '1.0a130'
 );
 select "schema".add_table(
+    'net',
     'net_devices',
     'Net Devices',
     false,
@@ -1241,6 +1255,7 @@ select "schema".add_table(
     '1.0a103'
 );
 select "schema".add_table(
+    'net',
     'net_ports',
     'Net Ports',
     true,
@@ -1249,6 +1264,7 @@ select "schema".add_table(
     '1.80'
 );
 select "schema".add_table(
+    'net',
     'net_protocols',
     'Net Protocols',
     true,
@@ -1257,6 +1273,7 @@ select "schema".add_table(
     '1.80'
 );
 select "schema".add_table(
+    'net',
     'net_tcp_redirects',
     'Net TCP Redirects',
     false,
@@ -1445,6 +1462,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'net',
     'protocols',
     'Protocols',
     true,

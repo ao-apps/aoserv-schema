@@ -73,6 +73,15 @@ insert into "schema"."Schema" values(
 );
 insert into "schema"."Schema" values(
     (select count(*) from "schema"."Schema"),
+    'net',
+    '1.0a100',
+    null,
+    'Net',
+    true,
+    null -- Uses pg_catalog.pg_description
+);
+insert into "schema"."Schema" values(
+    (select count(*) from "schema"."Schema"),
     'postgresql',
     '1.0a100',
     null,

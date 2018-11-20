@@ -940,6 +940,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'billing',
     'limits',
     'Limits',
     true,
@@ -1113,6 +1114,7 @@ select "schema".add_table(
     '1.28'
 );
 select "schema".add_table(
+    'billing',
     'monthly_charges',
     'Monthly Charges',
     false,
@@ -1302,6 +1304,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'billing',
     'notice_log',
     'Notice Log',
     false,
@@ -1310,6 +1313,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'billing',
     'notice_types',
     'Notice Types',
     true,
@@ -1334,6 +1338,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'billing',
     'package_categories',
     'Package Categories',
     true,
@@ -1342,6 +1347,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'billing',
     'package_definition_limits',
     'Package Definition Limits',
     false,
@@ -1350,6 +1356,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'billing',
     'package_definitions',
     'Package Definitions',
     false,
@@ -1358,6 +1365,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'billing',
     'packages',
     'Packages',
     false,
@@ -1382,6 +1390,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'billing',
     'phone_numbers',
     'Phone Numbers',
     false,
@@ -1507,6 +1516,7 @@ select "schema".add_table(
     '1.41'
 );
 select "schema".add_table(
+    'billing',
     'rates',
     'Rates',
     true,
@@ -1523,6 +1533,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'billing',
     'resources',
     'Resources',
     true,
@@ -1629,6 +1640,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'billing',
     'service_levels',
     'Service Levels',
     true,
@@ -2000,6 +2012,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'billing',
     'transaction_types',
     'Transaction Types',
     true,
@@ -2008,6 +2021,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'billing',
     'transactions',
     'Transactions',
     false,
@@ -2052,6 +2066,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'billing',
     'whois_history',
     'Whois History',
     false,

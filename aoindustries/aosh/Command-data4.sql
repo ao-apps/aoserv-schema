@@ -3264,6 +3264,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_notice_log',
+  'billing',
   'notice_log',
   'adds a notice log entry to a business',
   '<i>business</i> <i>billing_contact</i> <i>email_address</i> <i>balance</i> <i>type</i> <i>transaction_id</i>',
@@ -3272,6 +3273,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_package',
+  'billing',
   'packages',
   'adds a new package to a business',
   '<i>package</i> <i>business</i> <i>service_level</i> <i>monthly_rate</i> {""|<i>user_limit</i>} <i>additional_user_rate</i> {""|<i>pop_limit</i>} <i>additional_pop_rate</i>',
@@ -3280,6 +3282,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_package',
+  'billing',
   'packages',
   'adds a new package to a business',
   '<i>package</i> <i>business</i> <i>package_definition</i>',
@@ -3288,6 +3291,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'check_package_name',
+  'billing',
   'packages',
   'checks the format of a package name',
   '<i>package</i>',
@@ -3296,6 +3300,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'disable_package',
+  'billing',
   'packages',
   'disables a package and everything in it, except its business administrators',
   '<i>name</i> <i>reason</i>',
@@ -3304,6 +3309,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'enable_package',
+  'billing',
   'packages',
   'enables a package and everything in it',
   '<i>name</i>',
@@ -3312,6 +3318,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'generate_package_name',
+  'billing',
   'packages',
   'generates a unique package name based on a template',
   '<i>template</i>',
@@ -3320,6 +3327,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'is_package_name_available',
+  'billing',
   'packages',
   'checks the availability of a package name',
   '<i>package</i>',
@@ -3839,6 +3847,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_transaction',
+  'billing',
   'transactions',
   'adds a new transaction to a business account',
   '<i>business</i> <i>source_business</i> <i>business_administrator</i> <i>type</i> <i>description</i> <i>quantity</i> <i>rate</i> {""|<i>payment_type</i>} {""|<i>payment_info</i>} {<b>Y</b>|<b>N</b>|<b>W</b>}',
@@ -3847,6 +3856,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_transaction',
+  'billing',
   'transactions',
   'adds a new transaction to a business account',
   '<i>business</i> <i>source_business</i> <i>business_administrator</i> <i>type</i> <i>description</i> <i>quantity</i> <i>rate</i> {""|<i>payment_type</i>} {""|<i>payment_info</i>} {""|<i>processor</i>} {<b>Y</b>|<b>N</b>|<b>W</b>}',
@@ -3855,6 +3865,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'approve_transaction',
+  'billing',
   'transactions',
   'flags a transaction as approved',
   '<i>transaction_id</i> <i>payment_type</i> <i>payment_info</i> <i>merchant_account</i> <i>apr_num</i>',
@@ -3863,6 +3874,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'decline_transaction',
+  'billing',
   'transactions',
   'flags a transaction as declined',
   '<i>transaction_id</i> <i>payment_type</i> <i>payment_info</i> <i>merchant_account</i>',

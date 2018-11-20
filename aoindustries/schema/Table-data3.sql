@@ -165,6 +165,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'account',
     'business_administrators',
     'Business Administrators',
     false,
@@ -173,6 +174,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'account',
     'business_administrator_permissions',
     'Business Administrator Permissions',
     false,
@@ -181,6 +183,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'account',
     'business_profiles',
     'Business Profiles',
     false,
@@ -189,6 +192,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'account',
     'businesses',
     'Businesses',
     false,
@@ -283,6 +287,7 @@ select "schema".add_table(
     '1.76'
 );
 select "schema".add_table(
+    'account',
     'disable_log',
     'Disable Log',
     false,
@@ -507,6 +512,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'account',
     'encryption_keys',
     'Encryption Keys',
     false,

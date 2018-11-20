@@ -311,6 +311,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_business_administrator',
+  'account',
   'business_administrators',
   'adds a business administrator to the list of people who may maintain the account',
   '<i>username</i> <i>full_name</i> {""|<i>title</i>} {""|<i>birthday</i>} <i>is_private</i> <i>work_phone</i> {""|<i>home_phone</i>} {""|<i>cell_phone</i>} {""|<i>fax</i>} <i>email_address</i> {""|<i>address1</i>} {""|<i>address2</i>} {""|<i>city</i>} {""|<i>state</i>} {""|<i>country</i>} {""|<i>zip</i>}',
@@ -319,6 +320,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_business_administrator',
+  'account',
   'business_administrators',
   'adds a business administrator to the list of people who may maintain the account',
   '<i>username</i> <i>full_name</i> {""|<i>title</i>} {""|<i>birthday</i>} <i>is_private</i> <i>work_phone</i> {""|<i>home_phone</i>} {""|<i>cell_phone</i>} {""|<i>fax</i>} <i>email_address</i> {""|<i>address1</i>} {""|<i>address2</i>} {""|<i>city</i>} {""|<i>state</i>} {""|<i>country</i>} {""|<i>zip</i>} <i>enable_email_support</i>',
@@ -327,6 +329,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'check_business_administrator_password',
+  'account',
   'business_administrators',
   'checks the format of a password for a business administrator',
   '<i>username</i> <i>password</i>',
@@ -335,6 +338,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'check_business_administrator_username',
+  'account',
   'business_administrators',
   'checks the format of a business administrator username',
   '<i>username</i>',
@@ -343,6 +347,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'crypt',
+  'account',
   'business_administrators',
   'encrypts a password as used in Apache password lists',
   '<i>password</i> [<i>salt</i>]',
@@ -351,6 +356,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'disable_business_administrator',
+  'account',
   'business_administrators',
   'disables a business administrator account',
   '<i>username</i> <i>reason</i>',
@@ -359,6 +365,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'enable_business_administrator',
+  'account',
   'business_administrators',
   'enables a business administrator account',
   '<i>username</i>',
@@ -367,6 +374,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'is_business_administrator_password_set',
+  'account',
   'business_administrators',
   'determines if a business administrator password is set',
   '<i>username</i>',
@@ -375,6 +383,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_business_administrator',
+  'account',
   'business_administrators',
   'removes the administrative access for a user',
   '<i>username</i>',
@@ -383,6 +392,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_business_administrator_password',
+  'account',
   'business_administrators',
   'sets the password used for administrative access',
   '<i>username</i> <i>password</i>',
@@ -391,6 +401,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_business_administrator_profile',
+  'account',
   'business_administrators',
   'sets the profile associated with a business administrator',
   '<i>username</i> <i>full_name</i> {""|<i>title</i>} {""|<i>birthday</i>} <i>is_private</i> <i>work_phone</i> {""|<i>home_phone</i>} {""|<i>cell_phone</i>} {""|<i>fax</i>} <i>email_address</i> {""|<i>address1</i>} {""|<i>address2</i>} {""|<i>city</i>} {""|<i>state</i>} {""|<i>country</i>} {""|<i>zip</i>}',
@@ -399,6 +410,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_business_profile',
+  'account',
   'business_profiles',
   'adds a new business profile to a business',
   '<i>business</i> <i>name</i> <i>is_private</i> <i>phone</i> {""|<i>fax</i>} <i>address1</i> {""|<i>address2</i>} <i>city</i> {""|<i>state</i>} <i>country</i> {""|<i>zip</i>} <i>send_invoice</i> <i>billing_contact</i> <i>billing_email</i> <i>technical_contact</i> <i>technical_email</i>',
@@ -447,6 +459,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_business',
+  'account',
   'businesses',
   'adds a new business to the system',
   '<i>accounting_code</i> <i>contract_version</i> <i>default_server</i> <i>parent_business</i> <i>can_add_businesses</i> <i>bill_parent</i>',
@@ -455,6 +468,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_business',
+  'account',
   'businesses',
   'adds a new business to the system',
   '<i>accounting_code</i> <i>contract_version</i> <i>default_server</i> <i>parent_business</i> <i>can_add_backup_server</i> <i>can_add_businesses</i> <i>bill_parent</i>',
@@ -463,6 +477,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_business',
+  'account',
   'businesses',
   'adds a new business to the system',
   '<i>accounting_code</i> <i>contract_version</i> <i>default_server</i> <i>parent_business</i> <i>can_add_backup_server</i> <i>can_add_businesses</i> <i>can_see_prices</i> <i>bill_parent</i>',
@@ -471,6 +486,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'cancel_business',
+  'account',
   'businesses',
   'cancels a business',
   '<i>accounting_code</i> <i>cancel_reason</i>',
@@ -479,6 +495,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'check_accounting',
+  'account',
   'businesses',
   'checks the format of an accounting code',
   '<i>accounting_code</i>',
@@ -487,6 +504,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'disable_business',
+  'account',
   'businesses',
   'disables a business and everything in it, except its business administrators',
   '<i>accounting</i> <i>reason</i>',
@@ -495,6 +513,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'enable_business',
+  'account',
   'businesses',
   'enables a business and everything in it',
   '<i>accounting</i>',
@@ -503,6 +522,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'generate_accounting',
+  'account',
   'businesses',
   'generates a unique accounting code based on a template',
   '<i>template</i>',
@@ -511,6 +531,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'get_root_business',
+  'account',
   'businesses',
   'gets the name of the root business in the business tree',
   '',
@@ -519,6 +540,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'is_accounting_available',
+  'account',
   'businesses',
   'checks the availability of an accounting code',
   '<i>accounting_code</i>',
@@ -527,6 +549,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'move_business',
+  'account',
   'businesses',
   'moves all of the resources for one business from one server to another server',
   '<i>business</i> <i>from_ao_server</i> <i>to_ao_server</i>',
@@ -535,6 +558,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_business_accounting',
+  'account',
   'businesses',
   'changes the accounting code that uniquely identifies a business',
   '<i>old_accounting</i> <i>new_accounting</i>',

@@ -12,5 +12,5 @@ select "schema".add_foreign_key('httpd', 'httpd_sites', 'ftp_backup_level',     
 select "schema".add_foreign_key('httpd', 'httpd_sites', 'ftp_backup_retention',    'backup',  'backup_retentions',   'days',     '1.0a100', '1.30');
 select "schema".add_foreign_key('httpd', 'httpd_sites', 'log_backup_level',        'backup',  'backup_levels',       'level',    '1.0a100', '1.30');
 select "schema".add_foreign_key('httpd', 'httpd_sites', 'log_backup_retention',    'backup',  'backup_retentions',   'days',     '1.0a100', '1.30');
-select "schema".add_foreign_key('httpd', 'httpd_sites', 'disable_log',             'public',  'disable_log',         'pkey',     '1.0a100', null);
+select "schema".add_foreign_key('httpd', 'httpd_sites', 'disable_log',             'account', 'disable_log',         'pkey',     '1.0a100', null);
 select "schema".add_foreign_key('httpd', 'httpd_sites', 'php_version',             'public',  'technology_versions', 'pkey',     '1.78',    null);

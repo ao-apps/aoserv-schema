@@ -10,6 +10,15 @@ insert into "schema"."Schema" values(
 );
 insert into "schema"."Schema" values(
     (select count(*) from "schema"."Schema"),
+    'account',
+    '1.0a100',
+    null,
+    'Account',
+    true,
+    null -- Uses pg_catalog.pg_description
+);
+insert into "schema"."Schema" values(
+    (select count(*) from "schema"."Schema"),
     'accounting',
     '1.0a100',
     null,

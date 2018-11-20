@@ -624,6 +624,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'start_distro',
+  'management',
   'distro_files',
   'starts the distribution verification on a server',
   '<i>ao_server</i> <i>include_user</i>',

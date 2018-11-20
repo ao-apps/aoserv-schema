@@ -101,10 +101,10 @@ insert into "schema"."Schema" values(
 insert into "schema"."Schema" values(
     (select count(*) from "schema"."Schema"),
     'management',
-    '1.81.18',
+    '1.0a100',
     null,
     'Management',
-    false,
+    true,
     null -- Uses pg_catalog.pg_description
 );
 insert into "schema"."Schema" values(

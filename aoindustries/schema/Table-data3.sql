@@ -290,6 +290,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'infrastructure',
     'disk_types',
     'Disk Types',
     true,
@@ -1418,6 +1419,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'infrastructure',
     'physical_servers',
     'Physical Servers',
     false,
@@ -1519,6 +1521,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'infrastructure',
     'processor_types',
     'Processor Types',
     true,
@@ -1536,6 +1539,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'infrastructure',
     'racks',
     'Racks',
     false,
@@ -1544,6 +1548,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'infrastructure',
     'raid_types',
     'RAID Types',
     true,
@@ -1651,6 +1656,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'infrastructure',
     'server_farms',
     'Server Farms',
     false,
@@ -2087,6 +2093,7 @@ person or system.',
     null
 );
 select "schema".add_table(
+    'infrastructure',
     'virtual_disks',
     'Virtual Disks',
     false,
@@ -2095,6 +2102,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'infrastructure',
     'virtual_servers',
     'Virtual Servers',
     false,

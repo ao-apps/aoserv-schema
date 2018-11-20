@@ -2307,6 +2307,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_linux_account',
+  'linux',
   'linux_accounts',
   'adds a new Linux account',
   '<i>username</i> <i>primary_group</i> <i>full_name</i> {""|<i>office_location</i>} {""|<i>office_phone</i>} {""|<i>home_phone</i>} <i>type</i> <i>shell</i>',
@@ -2315,6 +2316,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_linux_account',
+  'linux',
   'linux_accounts',
   'adds a new Linux account',
   '<i>username</i> <i>primary_group</i> {""|<i>full_name</i>} {""|<i>office_location</i>} {""|<i>office_phone</i>} {""|<i>home_phone</i>} <i>type</i> <i>shell</i>',
@@ -2323,6 +2325,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'are_linux_account_passwords_set',
+  'linux',
   'linux_accounts',
   'determines if <b>all</b>, <b>some</b>, or <b>none</b> of the passwords for a Linux account are set',
   '<i>username</i>',
@@ -2331,6 +2334,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'check_linux_account_name',
+  'linux',
   'linux_accounts',
   'checks the format of a Linux account full name',
   '<i>full_name</i>',
@@ -2339,6 +2343,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'check_linux_account_password',
+  'linux',
   'linux_accounts',
   'checks the format of a password for a Linux account',
   '<i>username</i> <i>password</i>',
@@ -2347,6 +2352,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'check_linux_account_username',
+  'linux',
   'linux_accounts',
   'checks the format of a Linux account username',
   '<i>username</i>',
@@ -2355,6 +2361,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'disable_linux_account',
+  'linux',
   'linux_accounts',
   'disables a Linux account and removes its access to all servers',
   '<i>username</i> <i>reason</i>',
@@ -2363,6 +2370,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'enable_linux_account',
+  'linux',
   'linux_accounts',
   'enables a Linux account and restores its access to all servers',
   '<i>username</i>',
@@ -2371,6 +2379,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'generate_password',
+  'linux',
   'linux_accounts',
   'generates a random, valid password',
   '',
@@ -2379,6 +2388,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_linux_account',
+  'linux',
   'linux_accounts',
   'removes a Linux account from all servers',
   '<i>username</i>',
@@ -2387,6 +2397,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_linux_account_home_phone',
+  'linux',
   'linux_accounts',
   'sets the home phone number for a Linux account',
   '<i>username</i> {""|<i>phone_number</i>}',
@@ -2395,6 +2406,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_linux_account_name',
+  'linux',
   'linux_accounts',
   'sets the full name for a Linux account',
   '<i>username</i> <i>full_name</i>',
@@ -2403,6 +2415,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_linux_account_name',
+  'linux',
   'linux_accounts',
   'sets the full name for a Linux account',
   '<i>username</i> {""|<i>full_name</i>}',
@@ -2411,6 +2424,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_linux_account_office_location',
+  'linux',
   'linux_accounts',
   'sets the office location for a Linux account',
   '<i>username</i> {""|<i>location</i>}',
@@ -2419,6 +2433,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_linux_account_office_phone',
+  'linux',
   'linux_accounts',
   'sets the office phone number for a Linux account',
   '<i>username</i> {""|<i>phone_number</i>}',
@@ -2427,6 +2442,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_linux_account_password',
+  'linux',
   'linux_accounts',
   'sets the password for a Linux account on all servers',
   '<i>username</i> <i>password</i>',
@@ -2435,6 +2451,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_linux_account_shell',
+  'linux',
   'linux_accounts',
   'sets the shell used by a Linux account',
   '<i>username</i> <i>shell</i>',
@@ -2443,6 +2460,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'wait_for_linux_account_rebuild',
+  'linux',
   'linux_accounts',
   'waits for any pending or current server config rebuild to complete',
   '<i>ao_server</i>',
@@ -2451,6 +2469,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_linux_group_account',
+  'linux',
   'linux_group_accounts',
   'grants a Linux account access to a Linux group',
   '<i>group</i> <i>username</i>',
@@ -2459,6 +2478,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_linux_group_account',
+  'linux',
   'linux_group_accounts',
   'revokes access of a Linux account to a Linux group',
   '<i>group</i> <i>username</i>',
@@ -2467,6 +2487,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_primary_linux_group_account',
+  'linux',
   'linux_group_accounts',
   'sets the primary Linux group associated with a Linux account',
   '<i>group</i> <i>username</i>',
@@ -2475,6 +2496,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_linux_group',
+  'linux',
   'linux_groups',
   'adds a new Linux group',
   '<i>group</i> <i>package</i> <i>type</i>',
@@ -2483,6 +2505,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'check_linux_group_name',
+  'linux',
   'linux_groups',
   'checks validity of a Linux group name',
   '<i>groupname</i>',
@@ -2491,6 +2514,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'is_linux_group_name_available',
+  'linux',
   'linux_groups',
   'check availability Linux group name',
   '<i>groupname</i>',
@@ -2499,6 +2523,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_linux_group',
+  'linux',
   'linux_groups',
   'removes a Linux group',
   '<i>group</i>',
@@ -2507,6 +2532,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_linux_server_account',
+  'linux',
   'linux_server_accounts',
   'grants a Linux account access to a server',
   '<i>username</i> <i>ao_server</i> {""|<i>home_directory</i>}',
@@ -2515,6 +2541,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'compare_linux_server_account_password',
+  'linux',
   'linux_server_accounts',
   'compares the provided password to the password on the server',
   '<i>username</i> <i>ao_server</i> <i>password</i>',
@@ -2523,6 +2550,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'copy_home_directory',
+  'linux',
   'linux_server_accounts',
   'copies the contents of a home directory from one server to another',
   '<i>username</i> <i>from_ao_server</i> <i>to_ao_server</i>',
@@ -2531,6 +2559,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'copy_linux_server_account_password',
+  'linux',
   'linux_server_accounts',
   'copies the password of one Linux account to another account',
   '<i>from_username</i> <i>from_ao_server</i> <i>to_username</i> <i>to_ao_server</i>',
@@ -2539,6 +2568,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'disable_linux_server_account',
+  'linux',
   'linux_server_accounts',
   'disables a Linux account on one server',
   '<i>username</i> <i>ao_server</i> <i>reason</i>',
@@ -2547,6 +2577,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'enable_linux_server_account',
+  'linux',
   'linux_server_accounts',
   'enables a Linux account on one server',
   '<i>username</i> <i>ao_server</i>',
@@ -2555,6 +2586,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'get_autoresponder_content',
+  'linux',
   'linux_server_accounts',
   'gets the message body of an autoresponder',
   '<i>username</i> <i>ao_server</i>',
@@ -2563,6 +2595,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'get_cron_table',
+  'linux',
   'linux_server_accounts',
   'gets the contents of a user cron table',
   '<i>username</i> <i>ao_server</i>',
@@ -2571,6 +2604,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'get_imap_folder_sizes',
+  'linux',
   'linux_server_accounts',
   'gets the file sizes for IMAP folders',
   '<i>username</i> <i>ao_server</i> <i>folder_name</i> [...]',
@@ -2579,6 +2613,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'get_inbox_attributes',
+  'linux',
   'linux_server_accounts',
   'gets the attributes of an email inbox',
   '<i>username</i> <i>ao_server</i>',
@@ -2587,6 +2622,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'is_linux_server_account_password_set',
+  'linux',
   'linux_server_accounts',
   'determines if a Linux account password is set',
   '<i>username</i> <i>ao_server</i>',
@@ -2595,6 +2631,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'is_linux_server_account_procmail_manual',
+  'linux',
   'linux_server_accounts',
   'determines if a Linux account is in manual procmail mode',
   '<i>username</i> <i>ao_server</i>',
@@ -2603,6 +2640,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_linux_server_account',
+  'linux',
   'linux_server_accounts',
   'removes a Linux account from a server',
   '<i>username</i> <i>ao_server</i>',
@@ -2611,6 +2649,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_autoresponder',
+  'linux',
   'linux_server_accounts',
   'configures an autoresponder',
   '<i>username</i> <i>ao_server</i> <i>from_address</i> <i>from_domain</i> <i>subject</i> <i>content</i> <i>enabled</i>',
@@ -2619,6 +2658,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_cron_table',
+  'linux',
   'linux_server_accounts',
   'sets the contents of a user cron table',
   '<i>username</i> <i>ao_server</i> <i>cron_table</i>',
@@ -2627,6 +2667,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_linux_server_account_cron_backup_retention',
+  'linux',
   'linux_server_accounts',
   'sets the cron file backup retention for a Linux account on one server',
   '<i>username</i> <i>ao_server</i> <i>backup_retention</i>',
@@ -2635,6 +2676,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_linux_server_account_home_backup_retention',
+  'linux',
   'linux_server_accounts',
   'sets the home directory backup retention for a Linux account on one server',
   '<i>username</i> <i>ao_server</i> <i>backup_retention</i>',
@@ -2643,6 +2685,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_linux_server_account_inbox_backup_retention',
+  'linux',
   'linux_server_accounts',
   'sets the email inbox directory backup retention for a Linux account on one server',
   '<i>username</i> <i>ao_server</i> <i>backup_retention</i>',
@@ -2651,6 +2694,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_linux_server_account_junk_email_retention',
+  'linux',
   'linux_server_accounts',
   'sets the number of days emails will remain in the Junk folder',
   '<i>username</i> <i>ao_server</i> {""|<i>days</i>}',
@@ -2659,6 +2703,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_linux_server_account_password',
+  'linux',
   'linux_server_accounts',
   'sets the password for a Linux account on one server',
   '<i>username</i> <i>ao_server</i> <i>password</i>',
@@ -2667,6 +2712,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_linux_server_account_spamassassin_integration_mode',
+  'linux',
   'linux_server_accounts',
   'sets the behavior of the SpamAssassin filters',
   '<i>username</i> <i>ao_server</i> <i>mode</i>',
@@ -2675,6 +2721,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_linux_server_account_spamassassin_required_score',
+  'linux',
   'linux_server_accounts',
   'sets the required score for the SpamAssassin filters',
   '<i>username</i> <i>ao_server</i> <i>required_score</i>',
@@ -2683,6 +2730,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_linux_server_account_trash_email_retention',
+  'linux',
   'linux_server_accounts',
   'sets the number of days emails will remain in the Trash folder',
   '<i>username</i> <i>ao_server</i> {""|<i>days</i>}',
@@ -2691,6 +2739,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_linux_server_account_use_inbox',
+  'linux',
   'linux_server_accounts',
   'sets whether or not email will be stored in the inbox',
   '<i>username</i> <i>ao_server</i> <i>use_inbox</i>',
@@ -2699,6 +2748,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_linux_server_group',
+  'linux',
   'linux_server_groups',
   'adds a Linux group to a server',
   '<i>group</i> <i>ao_server</i>',
@@ -2707,6 +2757,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_linux_server_group',
+  'linux',
   'linux_server_groups',
   'removes a Linux group from a server',
   '<i>group</i> <i>ao_server</i>',

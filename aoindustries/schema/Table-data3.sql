@@ -985,6 +985,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'linux',
     'linux_account_types',
     'Linux Account Types',
     true,
@@ -993,6 +994,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'linux',
     'linux_accounts',
     'Linux Accounts',
     false,
@@ -1001,6 +1003,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'linux',
     'linux_group_accounts',
     'Linux Group Accounts',
     false,
@@ -1009,6 +1012,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'linux',
     'linux_group_types',
     'Linux Group Types',
     true,
@@ -1017,6 +1021,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'linux',
     'linux_groups',
     'Linux Groups',
     false,
@@ -1025,6 +1030,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'linux',
     'linux_ids',
     'Linux IDs',
     true,
@@ -1033,6 +1039,7 @@ select "schema".add_table(
     '1.80'
 );
 select "schema".add_table(
+    'linux',
     'linux_server_accounts',
     'Linux Server Accounts',
     false,
@@ -1041,6 +1048,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'linux',
     'linux_server_groups',
     'Linux Server Groups',
     false,
@@ -1677,6 +1685,7 @@ select "schema".add_table(
     '1.0a122'
 );
 select "schema".add_table(
+    'linux',
     'shells',
     'Shells',
     true,

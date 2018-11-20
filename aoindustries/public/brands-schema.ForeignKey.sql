@@ -1,6 +1,6 @@
 select "schema".add_foreign_key(          'brands', 'accounting',                           'businesses',            'accounting', '1.44', null);
-select "schema".add_foreign_key(          'brands', 'smtp_linux_server_account',            'linux_server_accounts', 'pkey',       '1.44', null);
-select "schema".add_foreign_key(          'brands', 'imap_linux_server_account',            'linux_server_accounts', 'pkey',       '1.44', null);
+select "schema".add_foreign_key('public', 'brands', 'smtp_linux_server_account',   'linux', 'linux_server_accounts', 'pkey',       '1.44', null);
+select "schema".add_foreign_key('public', 'brands', 'imap_linux_server_account',   'linux', 'linux_server_accounts', 'pkey',       '1.44', null);
 select "schema".add_foreign_key('public', 'brands', 'support_email_address',       'email', 'email_addresses',       'pkey',       '1.44', null);
 select "schema".add_foreign_key('public', 'brands', 'signup_email_address',        'email', 'email_addresses',       'pkey',       '1.44', null);
 select "schema".add_foreign_key(          'brands', 'ticket_encryption_from',               'encryption_keys',       'pkey',       '1.44', null);

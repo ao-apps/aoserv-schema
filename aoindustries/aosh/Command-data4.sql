@@ -1857,6 +1857,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_interbase_database',
+  'interbase',
   'interbase_databases',
   'creates a new InterBase database',
   '<i>ao_server</i> <i>db_group</i> <i>name</i> <i>datdba</i>',
@@ -1865,6 +1866,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'backup_interbase_database',
+  'interbase',
   'interbase_databases',
   'dumps the contents of a database onto a backup server',
   '<i>ao_server</i> <i>db_group</i> <i>name</i>',
@@ -1873,6 +1875,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'check_interbase_database_name',
+  'interbase',
   'interbase_databases',
   'checks the validity for an InterBase database name',
   '<i>name</i>',
@@ -1881,6 +1884,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'dump_interbase_database',
+  'interbase',
   'interbase_databases',
   'dumps the contents of an InterBase database',
   '<i>ao_server</i> <i>db_group</i> <i>name</i>',
@@ -1889,6 +1893,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'generate_interbase_database_name',
+  'interbase',
   'interbase_databases',
   'generates a per-server and per-group unique InterBase database name',
   '<i>ao_server</i> <i>db_group</i> <i>template_base</i> <i>template_added</i>',
@@ -1897,6 +1902,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'is_interbase_database_name_available',
+  'interbase',
   'interbase_databases',
   'checks the availability of an InterBase database name',
   '<i>ao_server</i> <i>db_group</i> <i>name</i>',
@@ -1905,6 +1911,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_interbase_database',
+  'interbase',
   'interbase_databases',
   'removes an InterBase database from the system',
   '<i>ao_server</i> <i>db_group</i> <i>name</i>',
@@ -1913,6 +1920,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_interbase_db_group',
+  'interbase',
   'interbase_db_groups',
   'adds an InterBase database group to the system',
   '<i>ao_server</i> <i>db_group</i> <i>linux_group</i>',
@@ -1921,6 +1929,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'check_interbase_db_group_name',
+  'interbase',
   'interbase_db_groups',
   'checks for format of an InterBase database group name',
   '<i>name</i>',
@@ -1929,6 +1938,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'generate_interbase_db_group_name',
+  'interbase',
   'interbase_db_groups',
   'generates a per-server unique InterBase database group name',
   '<i>ao_server</i> <i>template_base</i> <i>template_added</i>',
@@ -1937,6 +1947,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'is_interbase_db_group_name_available',
+  'interbase',
   'interbase_db_groups',
   'determines if an InterBase database group name is available',
   '<i>ao_server</i> <i>db_group</i>',
@@ -1945,6 +1956,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_interbase_db_group',
+  'interbase',
   'interbase_db_groups',
   'removes an InterBase database group from the system',
   '<i>ao_server</i> <i>db_group</i>',
@@ -1953,6 +1965,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_interbase_server_user',
+  'interbase',
   'interbase_server_users',
   'grants an InterBase account access to a server',
   '<i>username</i> <i>ao_server</i>',
@@ -1961,6 +1974,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'disable_interbase_server_user',
+  'interbase',
   'interbase_server_users',
   'disables an InterBase account on one server',
   '<i>username</i> <i>ao_server</i> <i>reason</i>',
@@ -1969,6 +1983,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'enable_interbase_server_user',
+  'interbase',
   'interbase_server_users',
   'enables an InterBase account on one server',
   '<i>username</i> <i>ao_server</i>',
@@ -1977,6 +1992,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'is_interbase_server_user_password_set',
+  'interbase',
   'interbase_server_users',
   'determines if an InterBase account password is set',
   '<i>username</i> <i>ao_server</i>',
@@ -1985,6 +2001,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_interbase_server_user',
+  'interbase',
   'interbase_server_users',
   'revokes an InterBase account''s access to a server',
   '<i>username</i> <i>ao_server</i>',
@@ -1993,6 +2010,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_interbase_server_user_password',
+  'interbase',
   'interbase_server_users',
   'sets the password for an InterBase accounts access to one server',
   '<i>username</i> <i>ao_server</i> <i>password</i>',
@@ -2001,6 +2019,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_interbase_user',
+  'interbase',
   'interbase_users',
   'adds an InterBase user to the system',
   '<i>username</i> {""|<i>first_name</i>} {""|<i>middle_name</i>} {""|<i>last_name</i>}',
@@ -2009,6 +2028,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'are_interbase_user_passwords_set',
+  'interbase',
   'interbase_users',
   'determines if <b>all</b>, <b>some</b>, or <b>none</b> of the passwords for an InterBase account are set',
   '<i>username</i>',
@@ -2017,6 +2037,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'check_interbase_password',
+  'interbase',
   'interbase_users',
   'checks the strength of a password that will be used for an InterBase account',
   '<i>username</i> <i>password</i>',
@@ -2025,6 +2046,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'check_interbase_username',
+  'interbase',
   'interbase_users',
   'determines if a username may be used for an InterBase account',
   '<i>username</i>',
@@ -2033,6 +2055,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'disable_interbase_user',
+  'interbase',
   'interbase_users',
   'disables an InterBase account, including its access to all database servers',
   '<i>username</i> <i>reason</i>',
@@ -2041,6 +2064,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'enable_interbase_user',
+  'interbase',
   'interbase_users',
   'enables an InterBase account, including its access to all database servers',
   '<i>username</i>',
@@ -2049,6 +2073,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_interbase_user',
+  'interbase',
   'interbase_users',
   'removes an InterBase user from the system',
   '<i>username</i>',
@@ -2057,6 +2082,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_interbase_user_password',
+  'interbase',
   'interbase_users',
   'sets the password used to access an InterBase user',
   '<i>username</i> {""|<i>password</i>}',
@@ -2065,6 +2091,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'wait_for_interbase_rebuild',
+  'interbase',
   'interbase_users',
   'waits for any pending or processing InterBase server updates to complete',
   '<i>ao_server</i>',

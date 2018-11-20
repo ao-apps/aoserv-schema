@@ -824,6 +824,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'interbase',
     'interbase_databases',
     'InterBase Databases',
     false,
@@ -832,6 +833,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'interbase',
     'interbase_db_groups',
     'InterBase DB Groups',
     false,
@@ -840,6 +842,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'interbase',
     'interbase_reserved_words',
     'InterBase Reserved Words',
     true,
@@ -848,6 +851,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'interbase',
     'interbase_server_users',
     'InterBase Server Users',
     false,
@@ -856,6 +860,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
+    'interbase',
     'interbase_users',
     'InterBase Users',
     false,

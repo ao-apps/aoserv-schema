@@ -25,6 +25,11 @@ cat "${DIR}/aoindustries/schema/ForeignKey-data5-pre.sql"
 		cat "${DIR}/aoindustries/schema/Table-data3-post.sql"
 	# 4
 	cat "${DIR}/aoindustries/aosh/Command-data4.sql"
+	for SQL in "${DIR}/aoindustries"/*/*-aosh.Command.sql "${DIR}/aoindustries"/*/old/*-aosh.Command.sql
+	do
+		echo "\echo $SQL"
+		cat "$SQL"
+	done
 	cat "${DIR}/aoindustries/aosh/Command-data4-post.sql"
 	for SQL in "${DIR}/aoindustries"/*/*-schema.Column.sql "${DIR}/aoindustries"/*/old/*-schema.Column.sql
 	do
@@ -38,6 +43,5 @@ do
 	echo "\echo $SQL"
 	cat "$SQL"
 done
-cat "${DIR}/aoindustries/schema/ForeignKey-data5.sql"
 cat "${DIR}/aoindustries/schema/ForeignKey-data5-post.sql"
 echo "COMMIT;"

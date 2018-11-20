@@ -1,6 +1,7 @@
 -- Depends on:
 -- TODO
 
+-- TODO: Rename to "pki"
 create schema if not exists tls;
 
 comment on schema tls is 'The tls schema contains TLS and SSL configuration';

@@ -2113,6 +2113,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'account',
     'usernames',
     'Usernames',
     false,

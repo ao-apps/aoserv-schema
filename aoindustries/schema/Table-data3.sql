@@ -177,7 +177,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'master',
+    'account',
     'business_administrator_permissions',
     'Business Administrator Permissions',
     false,

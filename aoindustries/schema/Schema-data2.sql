@@ -235,10 +235,10 @@ insert into "schema"."Schema" values(
 );
 insert into "schema"."Schema" values(
     (select count(*) from "schema"."Schema"),
-    'tls',
+    'pki',
     '1.81.10',
     null,
-    'TLS',
+    'PKI',
     true,
     null -- Uses pg_catalog.pg_description
 );

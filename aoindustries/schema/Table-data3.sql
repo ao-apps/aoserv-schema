@@ -1,3 +1,5 @@
+-- TODO: No longer depend on table IDs and order, then move these table
+--       definitions to per-table files.
 select "schema".add_table(
     'ticket',
     'action_types',
@@ -1927,7 +1929,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
-    'tls',
+    'pki',
     'ssl_certificate_names',
     'SSL Certificate Names',
     false,
@@ -1936,7 +1938,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'tls',
+    'pki',
     'ssl_certificate_other_uses',
     'SSL Certificate Other Uses',
     false,
@@ -1945,7 +1947,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'tls',
+    'pki',
     'ssl_certificates',
     'SSL Certificates',
     false,

@@ -961,6 +961,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'ticket',
     'languages',
     'Languages',
     true,

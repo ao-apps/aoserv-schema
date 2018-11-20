@@ -2,7 +2,7 @@ select "schema".add_foreign_key('ticket', 'tickets', 'brand',           'public'
 select "schema".add_foreign_key('ticket', 'tickets', 'reseller',        'public',  'resellers',               'accounting', '1.44',    null);
 select "schema".add_foreign_key('ticket', 'tickets', 'package',         'billing', 'packages',                'name',       '1.0a100', '1.0a125');
 select "schema".add_foreign_key('ticket', 'tickets', 'accounting',      'public',  'businesses',              'accounting', '1.0a126', null);
-select "schema".add_foreign_key('ticket', 'tickets', 'language',        'public',  'languages',               'code',       '1.44',    null);
+select "schema".add_foreign_key('ticket', 'tickets', 'language',                   'languages',               'code',       '1.44',    null);
 select "schema".add_foreign_key('ticket', 'tickets', 'administrator',   'public',  'business_administrators', 'username',   '1.0a100', '1.0a125');
 select "schema".add_foreign_key('ticket', 'tickets', 'created_by',      'public',  'business_administrators', 'username',   '1.0a126', null);
 select "schema".add_foreign_key('ticket', 'tickets', 'category',                   'ticket_categories',       'pkey',       '1.44',    null);

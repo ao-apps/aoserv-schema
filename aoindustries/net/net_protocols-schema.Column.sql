@@ -1,1 +1,1 @@
-select "schema".add_column('net', 'net_protocols', 'protocol', 0, 'string', false, true, true, 'the network protocol', '1.0a100', '1.80');
+select "schema".add_column('net', 'net_protocols', 'protocol', 'string', false, true, true, 'the network protocol', '1.0a100', '1.80');

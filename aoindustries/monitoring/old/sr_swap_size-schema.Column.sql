@@ -1,0 +1,10 @@
+select "schema".add_column('monitoring', 'sr_swap_size', 'pkey',          'pkey',  false,  true, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_swap_size', 'server_report', 'fkey',  false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_swap_size', 'device_major',  'int',   false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_swap_size', 'device_minor',  'int',   false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_swap_size', 'total_min',     'int',   false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_swap_size', 'total_avg',     'float', false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_swap_size', 'total_max',     'int',   false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_swap_size', 'used_min',      'int',   false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_swap_size', 'used_avg',      'float', false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_swap_size', 'used_max',      'int',   false, false, false, '', '1.0a100', '1.30');

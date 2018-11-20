@@ -1,7 +1,5 @@
 drop function "schema".add_column (name,name,name,boolean,boolean,boolean,text,text,text);
-drop function "schema".add_column (name,name,integer,name,boolean,boolean,boolean,text,text,text);
 drop function "schema".add_column (name,name,name,name,boolean,boolean,boolean,text,text,text);
-drop function "schema".add_column (name,name,name,integer,name,boolean,boolean,boolean,text,text,text);
 
 analyze "schema"."Column";
 

@@ -1,0 +1,13 @@
+select "schema".add_column('monitoring', 'sr_net_udp', 'server_report', 'fkey',  false,  true, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_net_udp', 'receive_min',   'float', false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_net_udp', 'receive_avg',   'float', false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_net_udp', 'receive_max',   'float', false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_net_udp', 'unknown_min',   'float', false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_net_udp', 'unknown_avg',   'float', false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_net_udp', 'unknown_max',   'float', false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_net_udp', 'error_min',     'float', false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_net_udp', 'error_avg',     'float', false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_net_udp', 'error_max',     'float', false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_net_udp', 'send_min',      'float', false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_net_udp', 'send_avg',      'float', false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_net_udp', 'send_max',      'float', false, false, false, '', '1.0a100', '1.30');

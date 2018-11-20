@@ -1,0 +1,13 @@
+select "schema".add_column('monitoring', 'sr_disk_space', 'pkey',          'pkey',  false,  true, false, 'a generated pkey', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_disk_space', 'server_report', 'fkey',  false, false, false, 'the report this is part of', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_disk_space', 'device_major',  'int',   false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_disk_space', 'device_minor',  'int',   false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_disk_space', 'total_min',     'long',  false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_disk_space', 'total_avg',     'float', false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_disk_space', 'total_max',     'long',  false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_disk_space', 'used_min',      'long',  false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_disk_space', 'used_avg',      'float', false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_disk_space', 'used_max',      'long',  false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_disk_space', 'free_min',      'long',  false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_disk_space', 'free_avg',      'float', false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_disk_space', 'free_max',      'long',  false, false, false, '', '1.0a100', '1.30');

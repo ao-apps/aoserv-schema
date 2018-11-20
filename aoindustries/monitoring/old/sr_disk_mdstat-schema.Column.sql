@@ -1,0 +1,16 @@
+select "schema".add_column('monitoring', 'sr_disk_mdstat', 'pkey',                  'pkey',  false,  true, false, 'a generated pkey', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_disk_mdstat', 'server_report',         'fkey',  false, false, false, 'the report this is part of', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_disk_mdstat', 'device_major',          'int',   false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_disk_mdstat', 'device_minor',          'int',   false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_disk_mdstat', 'total_partitions_min',  'int',   false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_disk_mdstat', 'total_partitions_avg',  'float', false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_disk_mdstat', 'total_partitions_max',  'int',   false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_disk_mdstat', 'active_partitions_min', 'int',   false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_disk_mdstat', 'active_partitions_avg', 'float', false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_disk_mdstat', 'active_partitions_max', 'int',   false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_disk_mdstat', 'rebuild_percent_min',   'float',  true, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_disk_mdstat', 'rebuild_percent_avg',   'float',  true, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_disk_mdstat', 'rebuild_percent_max',   'float',  true, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_disk_mdstat', 'rebuild_rate_min',      'int',    true, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_disk_mdstat', 'rebuild_rate_avg',      'float',  true, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_disk_mdstat', 'rebuild_rate_max',      'int',    true, false, false, '', '1.0a100', '1.30');

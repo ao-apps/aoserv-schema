@@ -1,0 +1,12 @@
+select "schema".add_column('monitoring', 'sr_cpu', 'pkey',          'pkey',  false,  true, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_cpu', 'server_report', 'fkey',  false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_cpu', 'cpu_number',    'int',   false, false, false, '', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_cpu', 'user_min',      'float', false, false, false, 'minimum user CPU %', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_cpu', 'user_avg',      'float', false, false, false, 'average user CPU %', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_cpu', 'user_max',      'float', false, false, false, 'maximum user CPU %', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_cpu', 'nice_min',      'float', false, false, false, 'minimum nice CPU %', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_cpu', 'nice_avg',      'float', false, false, false, 'average nice CPU %', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_cpu', 'nice_max',      'float', false, false, false, 'maximum nice CPU %', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_cpu', 'sys_min',       'float', false, false, false, 'minimum system CPU %', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_cpu', 'sys_avg',       'float', false, false, false, 'average system CPU %', '1.0a100', '1.30');
+select "schema".add_column('monitoring', 'sr_cpu', 'sys_max',       'float', false, false, false, 'maximum system CPU %', '1.0a100', '1.30');

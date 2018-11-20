@@ -248,6 +248,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'scm',
     'cvs_repositories',
     'CVS Repositories',
     false,

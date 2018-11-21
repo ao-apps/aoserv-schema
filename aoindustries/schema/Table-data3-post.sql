@@ -28,6 +28,8 @@ select
             where
               not st."isPublic"
               and s."isPublic"
+            order by
+              s."name", st."name"
           ),
           E'\n',
           ''
@@ -62,6 +64,8 @@ select
             where
               st."isPublic"
               and not s."isPublic"
+            order by
+              s."name", st."name"
           ),
           E'\n',
           ''

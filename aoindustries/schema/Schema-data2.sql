@@ -77,7 +77,7 @@ insert into "schema"."Schema" values(
     '1.0a100',
     null,
     'FTP',
-    true,
+    false,
     null -- Uses pg_catalog.pg_description
 );
 insert into "schema"."Schema" values(
@@ -185,7 +185,7 @@ insert into "schema"."Schema" values(
     '1.0a100',
     '1.76',
     'Profile',
-    true,
+    false,
     null -- Uses pg_catalog.pg_description
 );
 insert into "schema"."Schema" values(

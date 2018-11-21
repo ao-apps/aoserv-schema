@@ -40,6 +40,9 @@ select
             where
               sc."isPublic"
               and not fc."isPublic"
+            order by
+              ss."name", st."name", sc."name",
+              fs."name", ft."name", fc."name"
           ),
           E'\n',
           ''

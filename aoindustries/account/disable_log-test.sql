@@ -12,4 +12,4 @@ COPY disable_log (pkey, "time", accounting, disabled_by, disable_reason) FROM st
 11	2004-07-02 12:31:56.531809-05	AOINDUSTRIES	orion	\N
 12	2005-06-01 14:22:56.771078-05	TEST	orion	Test disable.
 \.
-SELECT setval ('"disable_log_pkey_seq"', 12, true);
+SELECT setval ('account.disable_log_pkey_seq', 12, true);

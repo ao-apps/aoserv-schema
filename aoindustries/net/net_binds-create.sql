@@ -1,10 +1,10 @@
-create sequence net_binds_pkey_seq cycle;
-grant all            on net_binds_pkey_seq to aoadmin;
-grant select, update on net_binds_pkey_seq to aoserv_app;
+create sequence         net.net_binds_pkey_seq cycle;
+grant all            on net.net_binds_pkey_seq to aoadmin;
+grant select, update on net.net_binds_pkey_seq to aoserv_app;
 
 create table net_binds (
   pkey integer
-    default nextval('net_binds_pkey_seq')
+    default nextval('net.net_binds_pkey_seq')
     primary key,
   package text
     not null,

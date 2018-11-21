@@ -1,10 +1,10 @@
-create sequence failover_mysql_replications_pkey_seq cycle;
-grant all            on failover_mysql_replications_pkey_seq to aoadmin;
-grant select, update on failover_mysql_replications_pkey_seq to aoserv_app;
+create sequence         backup.failover_mysql_replications_pkey_seq cycle;
+grant all            on backup.failover_mysql_replications_pkey_seq to aoadmin;
+grant select, update on backup.failover_mysql_replications_pkey_seq to aoserv_app;
 
 create table failover_mysql_replications (
   pkey integer
-    default nextval('failover_mysql_replications_pkey_seq')
+    default nextval('backup.failover_mysql_replications_pkey_seq')
     primary key,
   ao_server integer,
   replication integer,

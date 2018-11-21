@@ -131,4 +131,4 @@ COPY linux_server_accounts (pkey, username, ao_server, uid, home, autoresponder_
 -- TODO: Add nginx user
 -- TODO: Add memcached user
 
-SELECT setval ('"linux_server_accounts_pkey_seq"', 90, true);
+SELECT setval ('linux.linux_server_accounts_pkey_seq', 90, true);

@@ -1,10 +1,10 @@
-create sequence linux_acc_addresses_pkey_seq cycle;
-grant all            on linux_acc_addresses_pkey_seq to aoadmin;
-grant select, update on linux_acc_addresses_pkey_seq to aoserv_app;
+create sequence         email.linux_acc_addresses_pkey_seq cycle;
+grant all            on email.linux_acc_addresses_pkey_seq to aoadmin;
+grant select, update on email.linux_acc_addresses_pkey_seq to aoserv_app;
 
 create table linux_acc_addresses (
   pkey integer
-    default nextval('linux_acc_addresses_pkey_seq')
+    default nextval('email.linux_acc_addresses_pkey_seq')
     primary key,
   email_address integer
     not null,

@@ -1,10 +1,10 @@
-create sequence distro_files_pkey_seq cycle;
-grant all            on distro_files_pkey_seq to aoadmin;
-grant select, update on distro_files_pkey_seq to aoserv_app;
+create sequence         management.distro_files_pkey_seq cycle;
+grant all            on management.distro_files_pkey_seq to aoadmin;
+grant select, update on management.distro_files_pkey_seq to aoserv_app;
 
 create table distro_files (
   pkey integer
-    default nextval('distro_files_pkey_seq')
+    default nextval('management.distro_files_pkey_seq')
     primary key,
   operating_system_version integer
     not null,

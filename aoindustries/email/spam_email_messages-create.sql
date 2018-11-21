@@ -1,10 +1,10 @@
-create sequence spam_email_messages_pkey_seq cycle;
-grant all            on spam_email_messages_pkey_seq to aoadmin;
-grant select, update on spam_email_messages_pkey_seq to aoserv_app;
+create sequence         email.spam_email_messages_pkey_seq cycle;
+grant all            on email.spam_email_messages_pkey_seq to aoadmin;
+grant select, update on email.spam_email_messages_pkey_seq to aoserv_app;
 
 create table spam_email_messages (
   pkey integer
-    default nextval('spam_email_messages_pkey_seq')
+    default nextval('email.spam_email_messages_pkey_seq')
     primary key,
   email_relay integer
     not null,

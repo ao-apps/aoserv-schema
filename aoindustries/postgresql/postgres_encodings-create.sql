@@ -1,10 +1,10 @@
-create sequence postgres_encodings_pkey_seq cycle;
-grant all            on postgres_encodings_pkey_seq to aoadmin;
-grant select, update on postgres_encodings_pkey_seq to aoserv_app;
+create sequence         postgresql.postgres_encodings_pkey_seq cycle;
+grant all            on postgresql.postgres_encodings_pkey_seq to aoadmin;
+grant select, update on postgresql.postgres_encodings_pkey_seq to aoserv_app;
 
 create table postgres_encodings (
   pkey integer
-    default nextval('postgres_encodings_pkey_seq')
+    default nextval('postgresql.postgres_encodings_pkey_seq')
     primary key,
   encoding text
     not null,

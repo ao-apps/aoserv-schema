@@ -29,5 +29,5 @@ insert into packages values(
 	null,
 	null
 );
-SELECT setval ('"packages_pkey_seq"', 5, true);
+SELECT setval ('billing.packages_pkey_seq', 5, true);
 commit;

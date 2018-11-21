@@ -1,10 +1,10 @@
-create sequence         failover_file_schedule_pkey_seq cycle;
-grant all            on failover_file_schedule_pkey_seq to aoadmin;
-grant select, update on failover_file_schedule_pkey_seq to aoserv_app;
+create sequence         backup.failover_file_schedule_pkey_seq cycle;
+grant all            on backup.failover_file_schedule_pkey_seq to aoadmin;
+grant select, update on backup.failover_file_schedule_pkey_seq to aoserv_app;
 
 create table failover_file_schedule (
   pkey integer
-    default nextval('failover_file_schedule_pkey_seq')
+    default nextval('backup.failover_file_schedule_pkey_seq')
     primary key,
   replication integer
     not null,

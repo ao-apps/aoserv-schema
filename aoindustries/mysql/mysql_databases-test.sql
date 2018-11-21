@@ -4,4 +4,4 @@ COPY mysql_databases (pkey, name, mysql_server, package) FROM stdin;
 3	mysql	1	AOINDUSTRIES
 40	newmediaworks	1	NMW
 \.
-SELECT setval ('"mysql_databases_pkey_seq"', 42, true);
+SELECT setval ('mysql.mysql_databases_pkey_seq', 42, true);

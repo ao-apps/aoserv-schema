@@ -1,10 +1,10 @@
-create sequence mysql_servers_pkey_seq cycle;
-grant all            on mysql_servers_pkey_seq to aoadmin;
-grant select, update on mysql_servers_pkey_seq to aoserv_app;
+create sequence         mysql.mysql_servers_pkey_seq cycle;
+grant all            on mysql.mysql_servers_pkey_seq to aoadmin;
+grant select, update on mysql.mysql_servers_pkey_seq to aoserv_app;
 
 create table mysql_servers (
   pkey integer
-    default nextval('mysql_servers_pkey_seq')
+    default nextval('mysql.mysql_servers_pkey_seq')
     primary key,
   name text
     not null,

@@ -1,10 +1,10 @@
-create sequence         packages_pkey_seq cycle;
-grant all            on packages_pkey_seq to aoadmin;
-grant select, update on packages_pkey_seq to aoserv_app;
+create sequence         billing.packages_pkey_seq cycle;
+grant all            on billing.packages_pkey_seq to aoadmin;
+grant select, update on billing.packages_pkey_seq to aoserv_app;
 
 create table packages (
   pkey integer
-    default nextval('packages_pkey_seq')
+    default nextval('billing.packages_pkey_seq')
     primary key,
   "name" text
     not null

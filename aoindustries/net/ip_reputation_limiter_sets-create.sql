@@ -1,13 +1,13 @@
-create sequence ip_reputation_limiter_sets_pkey_seq cycle;
-grant all            on ip_reputation_limiter_sets_pkey_seq to aoadmin;
---grant select, update on ip_reputation_limiter_sets_pkey_seq to aoserv_app;
+create sequence         net.ip_reputation_limiter_sets_pkey_seq cycle;
+grant all            on net.ip_reputation_limiter_sets_pkey_seq to aoadmin;
+--grant select, update on net.ip_reputation_limiter_sets_pkey_seq to aoserv_app;
 
 -- Each limiter may use one or more sets of reputation.
 -- They are matched in the order listed.
 
 create table ip_reputation_limiter_sets (
   pkey integer
-    default nextval('ip_reputation_limiter_sets_pkey_seq')
+    default nextval('net.ip_reputation_limiter_sets_pkey_seq')
     primary key,
   limiter integer not null,
   "set" integer not null,
@@ -611,5 +611,5 @@ insert into ip_reputation_limiter_sets values (
     (select pkey from ip_reputation_sets where identifier='global'),
     2
 );
-select setval('ip_reputation_limiter_sets_pkey_seq', 95, false);
+select setval('net.ip_reputation_limiter_sets_pkey_seq', 95, false);
 commit;

@@ -1,10 +1,10 @@
-create sequence linux_server_accounts_pkey_seq cycle;
-grant all            on linux_server_accounts_pkey_seq to aoadmin;
-grant select, update on linux_server_accounts_pkey_seq to aoserv_app;
+create sequence         linux.linux_server_accounts_pkey_seq cycle;
+grant all            on linux.linux_server_accounts_pkey_seq to aoadmin;
+grant select, update on linux.linux_server_accounts_pkey_seq to aoserv_app;
 
 create table linux_server_accounts (
   pkey integer
-    default nextval('linux_server_accounts_pkey_seq')
+    default nextval('linux.linux_server_accounts_pkey_seq')
     primary key,
   username text
     not null,

@@ -1,10 +1,10 @@
-create sequence         notice_log_pkey_seq cycle;
-grant all            on notice_log_pkey_seq to aoadmin;
-grant select, update on notice_log_pkey_seq to aoserv_app;
+create sequence         billing.notice_log_pkey_seq cycle;
+grant all            on billing.notice_log_pkey_seq to aoadmin;
+grant select, update on billing.notice_log_pkey_seq to aoserv_app;
 
 create table notice_log (
   pkey integer
-    default nextval('notice_log_pkey_seq')
+    default nextval('billing.notice_log_pkey_seq')
     primary key,  
   create_time timestamp with time zone
     default now()

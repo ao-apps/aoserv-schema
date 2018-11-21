@@ -1,10 +1,10 @@
-create sequence master_hosts_pkey_seq cycle;
-grant all    on master_hosts_pkey_seq to aoadmin;
-grant select on master_hosts_pkey_seq to aoserv_app;
+create sequence master.master_hosts_pkey_seq cycle;
+grant all    on master.master_hosts_pkey_seq to aoadmin;
+grant select on master.master_hosts_pkey_seq to aoserv_app;
 
 create table master_hosts (
   pkey integer
-    default nextval('master_hosts_pkey_seq')
+    default nextval('master.master_hosts_pkey_seq')
     primary key,
   username text
     not null,

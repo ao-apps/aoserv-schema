@@ -1,10 +1,10 @@
-create sequence racks_pkey_seq cycle;
-grant all    on racks_pkey_seq to aoadmin;
-grant select on racks_pkey_seq to aoserv_app;
+create sequence infrastructure.racks_pkey_seq cycle;
+grant all    on infrastructure.racks_pkey_seq to aoadmin;
+grant select on infrastructure.racks_pkey_seq to aoserv_app;
 
 create table racks (
   pkey integer
-    default nextval('racks_pkey_seq')
+    default nextval('infrastructure.racks_pkey_seq')
     primary key,
   farm text
     not null,

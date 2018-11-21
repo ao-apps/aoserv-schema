@@ -1,10 +1,10 @@
-create sequence         monthly_charges_pkey_seq cycle;
-grant all            on monthly_charges_pkey_seq to aoadmin;
-grant select, update on monthly_charges_pkey_seq to aoserv_app;
+create sequence         billing.monthly_charges_pkey_seq cycle;
+grant all            on billing.monthly_charges_pkey_seq to aoadmin;
+grant select, update on billing.monthly_charges_pkey_seq to aoserv_app;
 
 create table monthly_charges (
   pkey integer
-    default nextval('monthly_charges_pkey_seq')
+    default nextval('billing.monthly_charges_pkey_seq')
     primary key,
   accounting text
     not null,

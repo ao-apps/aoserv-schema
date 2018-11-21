@@ -76,4 +76,4 @@ COPY linux_group_accounts (pkey, "group", username, is_primary) FROM stdin;
 77	clamscan	clamscan	t	\N
 78	virusgroup	clamscan	f	\N
 \.
-SELECT setval ('"linux_group_accounts_pkey_seq"', 78, true);
+SELECT setval ('linux.linux_group_accounts_pkey_seq', 78, true);

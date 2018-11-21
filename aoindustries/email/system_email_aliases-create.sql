@@ -1,10 +1,10 @@
-create sequence system_email_aliases_pkey_seq cycle;
-grant all            on system_email_aliases_pkey_seq to aoadmin;
-grant select, update on system_email_aliases_pkey_seq to aoserv_app;
+create sequence         email.system_email_aliases_pkey_seq cycle;
+grant all            on email.system_email_aliases_pkey_seq to aoadmin;
+grant select, update on email.system_email_aliases_pkey_seq to aoserv_app;
 
 create table system_email_aliases (
   pkey integer
-    default nextval('system_email_aliases_pkey_seq')
+    default nextval('email.system_email_aliases_pkey_seq')
     primary key,
   ao_server integer
     not null,

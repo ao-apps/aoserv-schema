@@ -1,10 +1,10 @@
-create sequence whois_history_pkey_seq cycle;
-grant all            on whois_history_pkey_seq to aoadmin;
-grant select, update on whois_history_pkey_seq to aoserv_app;
+create sequence         billing.whois_history_pkey_seq cycle;
+grant all            on billing.whois_history_pkey_seq to aoadmin;
+grant select, update on billing.whois_history_pkey_seq to aoserv_app;
 
 create table whois_history (
   pkey integer
-    default nextval('whois_history_pkey_seq')
+    default nextval('billing.whois_history_pkey_seq')
     primary key,  
   time timestamp with time zone
     default now()

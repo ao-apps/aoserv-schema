@@ -1,10 +1,10 @@
-create sequence httpd_servers_pkey_seq cycle;
-grant all            on httpd_servers_pkey_seq to aoadmin;
-grant select, update on httpd_servers_pkey_seq to aoserv_app;
+create sequence         httpd.httpd_servers_pkey_seq cycle;
+grant all            on httpd.httpd_servers_pkey_seq to aoadmin;
+grant select, update on httpd.httpd_servers_pkey_seq to aoserv_app;
 
 create table httpd_servers (
   pkey integer
-    default nextval('httpd_servers_pkey_seq')
+    default nextval('httpd.httpd_servers_pkey_seq')
     primary key,
   ao_server integer
     not null,

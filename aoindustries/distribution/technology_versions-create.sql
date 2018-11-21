@@ -1,10 +1,10 @@
-create sequence technology_versions_pkey_seq cycle;
-grant all            on technology_versions_pkey_seq to aoadmin;
-grant select, update on technology_versions_pkey_seq to aoserv_app;
+create sequence         distribution.technology_versions_pkey_seq cycle;
+grant all            on distribution.technology_versions_pkey_seq to aoadmin;
+grant select, update on distribution.technology_versions_pkey_seq to aoserv_app;
 
 create table technology_versions (
   pkey integer
-    default nextval('technology_versions_pkey_seq')
+    default nextval('distribution.technology_versions_pkey_seq')
     primary key,
   "name" text
     not null,

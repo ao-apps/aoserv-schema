@@ -1,10 +1,10 @@
-create sequence operating_system_versions_pkey_seq cycle;
-grant all            on operating_system_versions_pkey_seq to aoadmin;
-grant select, update on operating_system_versions_pkey_seq to aoserv_app;
+create sequence         distribution.operating_system_versions_pkey_seq cycle;
+grant all            on distribution.operating_system_versions_pkey_seq to aoadmin;
+grant select, update on distribution.operating_system_versions_pkey_seq to aoserv_app;
 
 create table operating_system_versions (
   pkey integer
-    default nextval('operating_system_versions_pkey_seq')
+    default nextval('distribution.operating_system_versions_pkey_seq')
     primary key,
   operating_system text
     not null,

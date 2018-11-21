@@ -1,9 +1,9 @@
-create sequence ticket_actions_pkey_seq cycle;
-grant all            on ticket_actions_pkey_seq to aoadmin;
-grant select, update on ticket_actions_pkey_seq to aoserv_app;
+create sequence         ticket.ticket_actions_pkey_seq cycle;
+grant all            on ticket.ticket_actions_pkey_seq to aoadmin;
+grant select, update on ticket.ticket_actions_pkey_seq to aoserv_app;
 
 create table ticket_actions (
-    pkey integer default nextval('ticket_actions_pkey_seq') primary key,
+    pkey integer default nextval('ticket.ticket_actions_pkey_seq') primary key,
     ticket integer not null,
     administrator text,
     "time" timestamp with time zone not null default now(),
@@ -625,5 +625,5 @@ from
     order by ticket, pkey
 ;
 
-select setval('ticket_actions_pkey_seq', 14769);
+select setval('ticket.ticket_actions_pkey_seq', 14769);
 */

@@ -1,10 +1,10 @@
-create sequence virtual_disks_pkey_seq cycle;
-grant all    on virtual_disks_pkey_seq to aoadmin;
-grant select on virtual_disks_pkey_seq to aoserv_app;
+create sequence infrastructure.virtual_disks_pkey_seq cycle;
+grant all    on infrastructure.virtual_disks_pkey_seq to aoadmin;
+grant select on infrastructure.virtual_disks_pkey_seq to aoserv_app;
 
 create table virtual_disks (
   pkey integer
-    default nextval('virtual_disks_pkey_seq')
+    default nextval('infrastructure.virtual_disks_pkey_seq')
     primary key,
   virtual_server integer
     not null,

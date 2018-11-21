@@ -1,10 +1,10 @@
-create sequence ip_sets_pkey_seq cycle;
-grant all            on ip_sets_pkey_seq to aoadmin;
---grant select, update on ip_sets_pkey_seq to aoserv_app;
+create sequence         net.ip_sets_pkey_seq cycle;
+grant all            on net.ip_sets_pkey_seq to aoadmin;
+--grant select, update on net.ip_sets_pkey_seq to aoserv_app;
 
 create table ip_sets (
   pkey integer
-    default nextval('ip_sets_pkey_seq')
+    default nextval('net.ip_sets_pkey_seq')
     primary key,
   accounting text
     not null,
@@ -58,5 +58,5 @@ INSERT INTO ip_sets VALUES (
     'Javatator Database Administration Web Interface',
     false
 );
-SELECT setval('ip_sets_pkey_seq', 6, false);
+SELECT setval('net.ip_sets_pkey_seq', 6, false);
 COMMIT;

@@ -15,4 +15,4 @@ COPY postgres_server_users (pkey, username, postgres_server, disable_log, predis
 28	rss_app	1	\N	\N
 29	session_admin	1	\N	\N
 \.
-SELECT setval ('"postgres_server_users_pkey_seq"', 29, true);
+SELECT setval ('postgresql.postgres_server_users_pkey_seq', 29, true);

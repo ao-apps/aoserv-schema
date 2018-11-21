@@ -1,10 +1,10 @@
-create sequence httpd_sites_pkey_seq cycle;
-grant all            on httpd_sites_pkey_seq to aoadmin;
-grant select, update on httpd_sites_pkey_seq to aoserv_app;
+create sequence         httpd.httpd_sites_pkey_seq cycle;
+grant all            on httpd.httpd_sites_pkey_seq to aoadmin;
+grant select, update on httpd.httpd_sites_pkey_seq to aoserv_app;
 
 create table httpd_sites (
   pkey integer
-    default nextval('httpd_sites_pkey_seq')
+    default nextval('httpd.httpd_sites_pkey_seq')
     primary key,
   ao_server integer
     not null,

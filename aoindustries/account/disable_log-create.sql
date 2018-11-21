@@ -1,10 +1,10 @@
-create sequence disable_log_pkey_seq cycle;
-grant all            on disable_log_pkey_seq to aoadmin;
-grant select, update on disable_log_pkey_seq to aoserv_app;
+create sequence         account.disable_log_pkey_seq cycle;
+grant all            on account.disable_log_pkey_seq to aoadmin;
+grant select, update on account.disable_log_pkey_seq to aoserv_app;
 
 create table disable_log (
   pkey integer
-    default nextval('disable_log_pkey_seq')
+    default nextval('account.disable_log_pkey_seq')
     primary key,
   time timestamp with time zone
     not null

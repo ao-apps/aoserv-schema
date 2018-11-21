@@ -10,4 +10,4 @@ COPY "info_categories" FROM stdin;
 9	faq	httpd	8	HTTP Server Frequently Asked Questions (FAQs)	HTTP Server FAQs	HTTP Server	HTTP (Apache) server frequently asked questions	HTTP, Apache, server, frequently, asked, questions, faqs
 10	article	security	1	Security Articles	Security Articles	Security	Articles that help our clients maintain good security practices.	security, articles, client, help
 \.
-SELECT setval ('"info_categories_pkey_seq"', 10, true);
+SELECT setval ('info_categories_pkey_seq', 10, true);

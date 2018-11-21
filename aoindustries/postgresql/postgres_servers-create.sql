@@ -1,10 +1,10 @@
-create sequence postgres_servers_pkey_seq cycle;
-grant all            on postgres_servers_pkey_seq to aoadmin;
-grant select, update on postgres_servers_pkey_seq to aoserv_app;
+create sequence         postgresql.postgres_servers_pkey_seq cycle;
+grant all            on postgresql.postgres_servers_pkey_seq to aoadmin;
+grant select, update on postgresql.postgres_servers_pkey_seq to aoserv_app;
 
 create table postgres_servers (
   pkey integer
-    default nextval('postgres_servers_pkey_seq')
+    default nextval('postgresql.postgres_servers_pkey_seq')
     primary key,
   "name" text
     not null,

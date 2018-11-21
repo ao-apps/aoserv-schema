@@ -231,4 +231,4 @@ values(
     true,
     false
 );
-SELECT setval ('"postgres_databases_pkey_seq"', 17, true);
+SELECT setval ('postgresql.postgres_databases_pkey_seq', 17, true);

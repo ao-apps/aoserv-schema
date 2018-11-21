@@ -1,10 +1,10 @@
-create sequence ip_reputation_limiters_pkey_seq cycle;
-grant all on    ip_reputation_limiters_pkey_seq to aoadmin;
---grant select, update on ip_reputation_limiters_pkey_seq to aoserv_app;
+create sequence net.ip_reputation_limiters_pkey_seq cycle;
+grant all on    net.ip_reputation_limiters_pkey_seq to aoadmin;
+--grant select, update on net.ip_reputation_limiters_pkey_seq to aoserv_app;
 
 create table ip_reputation_limiters (
   pkey integer
-    default nextval('ip_reputation_limiters_pkey_seq')
+    default nextval('net.ip_reputation_limiters_pkey_seq')
     primary key
     check (
       -- Due to encoding of iptables (and hashlimit) names, may not exceed eight characters
@@ -333,5 +333,5 @@ insert into ip_reputation_limiters values (
     'TeamSpeak',
     null
 );
-select setval('ip_reputation_limiters_pkey_seq', 49, false);
+select setval('net.ip_reputation_limiters_pkey_seq', 49, false);
 commit;

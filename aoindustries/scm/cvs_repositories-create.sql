@@ -6,7 +6,7 @@ create table cvs_repositories (
   pkey integer
     default nextval('scm.cvs_repositories_pkey_seq')
     primary key,
-  path text
+  "path" text
     not null,
   linux_server_account integer
     not null,
@@ -15,7 +15,8 @@ create table cvs_repositories (
   mode bigint
     not null,
   created timestamp with time zone
-    not null,
+    not null
+    default now(),
   disable_log integer
 );
 grant all                            on cvs_repositories to aoadmin;

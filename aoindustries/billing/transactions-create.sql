@@ -1,13 +1,13 @@
-create sequence         transactions_transid_seq cycle;
-grant all            on transactions_transid_seq to aoadmin;
-grant select, update on transactions_transid_seq to aoserv_app;
+create sequence         billing.transactions_transid_seq cycle;
+grant all            on billing.transactions_transid_seq to aoadmin;
+grant select, update on billing.transactions_transid_seq to aoserv_app;
 
 create table transactions (
   "time" timestamp with time zone
     default now()
     not null,
   transid integer
-    default nextval('transactions_transid_seq')
+    default nextval('billing.transactions_transid_seq')
     primary key,
   accounting text
     not null,

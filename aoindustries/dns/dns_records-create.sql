@@ -1,10 +1,10 @@
-create sequence dns_records_pkey_seq cycle;
-grant all            on dns_records_pkey_seq to aoadmin;
-grant select, update on dns_records_pkey_seq to aoserv_app;
+create sequence         dns.dns_records_pkey_seq cycle;
+grant all            on dns.dns_records_pkey_seq to aoadmin;
+grant select, update on dns.dns_records_pkey_seq to aoserv_app;
 
 create table dns_records (
   pkey          integer
-    default nextval('dns_records_pkey_seq')
+    default nextval('dns.dns_records_pkey_seq')
     primary key,
   "zone"        text not null,
   "domain"      text not null,

@@ -36,5 +36,5 @@ insert into net_binds values(
   false,
   true
 );
-SELECT setval ('"net_binds_pkey_seq"', 40, true);
+SELECT setval ('net.net_binds_pkey_seq', 40, true);
 commit;

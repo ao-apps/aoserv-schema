@@ -1,10 +1,10 @@
-create sequence linux_group_accounts_pkey_seq cycle;
-grant all            on linux_group_accounts_pkey_seq to aoadmin;
-grant select, update on linux_group_accounts_pkey_seq to aoserv_app;
+create sequence         linux.linux_group_accounts_pkey_seq cycle;
+grant all            on linux.linux_group_accounts_pkey_seq to aoadmin;
+grant select, update on linux.linux_group_accounts_pkey_seq to aoserv_app;
 
 create table linux_group_accounts (
   pkey integer
-    default nextval('linux_group_accounts_pkey_seq')
+    default nextval('linux.linux_group_accounts_pkey_seq')
     primary key,
   "group" text
     not null,

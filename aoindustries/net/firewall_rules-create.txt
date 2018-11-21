@@ -1,6 +1,6 @@
-create sequence firewall_rules_pkey_seq cycle;
-grant all            on firewall_rules_pkey_seq to aoadmin;
---grant select, update on firewall_rules_pkey_seq to aoserv_app;
+create sequence           net.firewall_rules_pkey_seq cycle;
+grant all            on   net.firewall_rules_pkey_seq to aoadmin;
+--grant select, update on net.firewall_rules_pkey_seq to aoserv_app;
 
 --
 -- A firewall rule has:
@@ -19,7 +19,7 @@ grant all            on firewall_rules_pkey_seq to aoadmin;
 /* TODO
 create table firewall_rules (
   pkey integer
-    default nextval('firewall_rules_pkey_seq')
+    default nextval('net.firewall_rules_pkey_seq')
     primary key,
   net_device integer
     not null,

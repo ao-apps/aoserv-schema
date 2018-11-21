@@ -1,10 +1,10 @@
-create sequence         package_definitions_pkey_seq cycle;
-grant all            on package_definitions_pkey_seq to aoadmin;
-grant select, update on package_definitions_pkey_seq to aoserv_app;
+create sequence         billing.package_definitions_pkey_seq cycle;
+grant all            on billing.package_definitions_pkey_seq to aoadmin;
+grant select, update on billing.package_definitions_pkey_seq to aoserv_app;
 
 create table package_definitions (
   pkey integer
-    default nextval('package_definitions_pkey_seq')
+    default nextval('billing.package_definitions_pkey_seq')
     primary key,
   accounting text
     not null,
@@ -25,9 +25,11 @@ create table package_definitions (
   monthly_rate_transaction_type text
     not null,
   active boolean
-    not null,
+    not null
+    default false,
   approved boolean
     not null
+    default false
 );
 
 grant all                            on package_definitions to aoadmin;

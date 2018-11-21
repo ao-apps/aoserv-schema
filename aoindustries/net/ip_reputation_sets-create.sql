@@ -1,6 +1,6 @@
-create sequence ip_reputation_sets_pkey_seq cycle;
-grant all            on ip_reputation_sets_pkey_seq to aoadmin;
---grant select, update on ip_reputation_sets_pkey_seq to aoserv_app;
+create sequence         net.ip_reputation_sets_pkey_seq cycle;
+grant all            on net.ip_reputation_sets_pkey_seq to aoadmin;
+--grant select, update on net.ip_reputation_sets_pkey_seq to aoserv_app;
 
 -- TODO: Move this to ipsets function since it is more general.
 --
@@ -48,7 +48,7 @@ CREATE OR REPLACE FUNCTION net."isValidIpReputationIdentifier"(identifier text)
 -- TODO: Track the last time new reputation data was added, and monitor for failed reputation sources.
 create table ip_reputation_sets (
   pkey integer
-    default nextval('ip_reputation_sets_pkey_seq')
+    default nextval('net.ip_reputation_sets_pkey_seq')
     primary key,
   accounting text
     not null,
@@ -754,5 +754,5 @@ INSERT INTO business_administrators VALUES (
     false,
     null
 );
-SELECT setval('ip_reputation_sets_pkey_seq', 17, false);
+SELECT setval('net.ip_reputation_sets_pkey_seq', 17, false);
 COMMIT;

@@ -1,10 +1,10 @@
-create sequence servers_pkey_seq cycle;
-grant all            on servers_pkey_seq to aoadmin;
-grant select, update on servers_pkey_seq to aoserv_app;
+create sequence         server.servers_pkey_seq cycle;
+grant all            on server.servers_pkey_seq to aoadmin;
+grant select, update on server.servers_pkey_seq to aoserv_app;
 
 create table servers (
   pkey integer
-    default nextval('servers_pkey_seq')
+    default nextval('server.servers_pkey_seq')
     primary key,
   farm text
     not null,

@@ -1,6 +1,9 @@
 -- Depends on:
 -- None
 
+-- TODO: Drop schema once conversion done and unused
+--       And leave drop here, since it will be our standard to not have the default public schema.
+
 create schema if not exists public;
 
 -- Note: This has to be set by the "postgres" superuser

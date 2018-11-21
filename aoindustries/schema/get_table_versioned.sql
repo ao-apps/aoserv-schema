@@ -39,11 +39,11 @@ stable;
 
 -- Examples
 
--- select "schema".get_table_versioned('public', 'action_types', '1.0a100', '1.43');
+-- select "schema".get_table_versioned('ticket', 'action_types', '1.0a100', '1.43');
 -- Expect: 0
 
--- select "schema".get_table_versioned('public', 'ip_reputation_limiter_limits', '1.66', null);
+-- select "schema".get_table_versioned('net', 'ip_reputation_limiter_limits', '1.66', null);
 -- Expect: 102
 
--- select "schema".get_table_versioned('public', 'ip_reputation_limiter_limits', '1.65', null);
+-- select "schema".get_table_versioned('net', 'ip_reputation_limiter_limits', '1.65', null);
 -- Expect: ERROR:  Table not found: public.ip_reputation_limiter_limits, 1.65-NULL

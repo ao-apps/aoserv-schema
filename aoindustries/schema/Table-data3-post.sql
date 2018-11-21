@@ -1,4 +1,3 @@
-drop function "schema".add_table (name,text,boolean,text,text,text);
 drop function "schema".add_table (name,name,text,boolean,text,text,text);
 
 analyze "schema"."Table";

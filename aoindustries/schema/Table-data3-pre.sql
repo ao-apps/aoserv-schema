@@ -28,29 +28,7 @@ as '
     $4 ,
     $5
   );
-  select case when $1 = ''public'' then $2 else $1 || ''.'' || $2 end;
-'
-language 'sql';
-
-create or replace function "schema".add_table (
-  "table" name,
-  display text,
-  "isPublic" boolean,
-  description text,
-  "sinceVersion" text,
-  "lastVersion" text
-)
-returns text
-as '
-  select "schema".add_table (
-    ''public'',
-    $1 ,
-    $2 ,
-    $3 ,
-    $4 ,
-    $5 ,
-    $6
-  );
+  select $1 || ''.'' || $2;
 '
 language 'sql';
 

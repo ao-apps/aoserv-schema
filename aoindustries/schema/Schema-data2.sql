@@ -1,15 +1,6 @@
 -- TODO: Review all "sinceVersion" to best match tables in the schemas
 insert into "schema"."Schema" values(
     (select count(*) from "schema"."Schema"),
-    'public',
-    '1.0a100',
-    null,
-    'Public',
-    true,
-    null -- Uses pg_catalog.pg_description
-);
-insert into "schema"."Schema" values(
-    (select count(*) from "schema"."Schema"),
     'account',
     '1.0a100',
     null,
@@ -50,6 +41,15 @@ insert into "schema"."Schema" values(
     '1.0a100',
     null,
     'Billing',
+    true,
+    null -- Uses pg_catalog.pg_description
+);
+insert into "schema"."Schema" values(
+    (select count(*) from "schema"."Schema"),
+    'distribution',
+    '1.0a100',
+    null,
+    'Distribution',
     true,
     null -- Uses pg_catalog.pg_description
 );

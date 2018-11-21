@@ -37,7 +37,7 @@ stable;
 
 -- Examples
 
--- select "schema".get_schema_versioned('public', '1.0a100', null);
+-- select "schema".get_schema_versioned('distribution', '1.0a100', null);
 -- Expect: 0
 
 -- select "schema".get_schema_versioned('monitoring', '1.81.18', null);

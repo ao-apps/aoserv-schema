@@ -40,35 +40,7 @@ as '
     $7,
     $8
   );
-  select case when $1 = ''public'' then $2 || ''.'' || $3 else $1 || ''.'' || $2 || ''.'' || $3 end;
-'
-language 'sql';
-
-create or replace function "schema".add_column (
-  "table" name,
-  "name" name,
-  "type" name,
-  "isNullable" boolean,
-  "isUnique" boolean,
-  "isPublic" boolean,
-  description text,
-  "sinceVersion" text,
-  "lastVersion" text
-)
-returns text
-as '
-  select "schema".add_column (
-    ''public'',
-    $1 ,
-    $2 ,
-    $3 ,
-    $4 ,
-    $5 ,
-    $6 ,
-    $7 ,
-    $8 ,
-    $9
-  );
+  select $1 || ''.'' || $2 || ''.'' || $3;
 '
 language 'sql';
 

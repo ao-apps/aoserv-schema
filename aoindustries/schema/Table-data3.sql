@@ -64,6 +64,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'distribution',
     'architectures',
     'Architectures',
     true,
@@ -1387,6 +1388,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'distribution',
     'operating_system_versions',
     'Operating System Versions',
     true,
@@ -1395,6 +1397,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'distribution',
     'operating_systems',
     'Operating Systems',
     true,
@@ -1966,6 +1969,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'distribution',
     'technologies',
     'Technologies',
     true,
@@ -1974,6 +1978,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'distribution',
     'technology_classes',
     'Technology Classes',
     true,
@@ -1982,6 +1987,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'distribution',
     'technology_names',
     'Technology Names',
     true,
@@ -1990,6 +1996,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'distribution',
     'technology_versions',
     'Technology Versions',
     true,

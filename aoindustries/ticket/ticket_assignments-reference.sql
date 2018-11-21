@@ -15,7 +15,7 @@ alter table ticket_assignments
 alter table ticket_assignments
   add constraint administrator_fkey
   foreign key (administrator)
-  references business_administrators (username)
+  references account."Administrator" (username)
   on update cascade
   on delete restrict
 ;

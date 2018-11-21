@@ -8,7 +8,7 @@ alter table ticket_actions
 alter table ticket_actions
   add constraint administrator_fkey
   foreign key (administrator)
-  references business_administrators (username)
+  references account."Administrator" (username)
   on update cascade
   on delete restrict
 ;
@@ -78,14 +78,14 @@ alter table ticket_actions
 alter table ticket_actions
   add constraint old_assigned_to_fkey
   foreign key (old_assigned_to)
-  references business_administrators (username)
+  references account."Administrator" (username)
   on update cascade
   on delete restrict
 ;
 alter table ticket_actions
   add constraint new_assigned_to_fkey
   foreign key (new_assigned_to)
-  references business_administrators (username)
+  references account."Administrator" (username)
   on update cascade
   on delete restrict
 ;

@@ -6,7 +6,7 @@ select
   -sum(bt.amount) as total
 from
   accounting."BankTransaction" bt,
-  public.business_administrators ba
+  account."Administrator" ba
 where
   (
     bt."expenseCategory"='salary'

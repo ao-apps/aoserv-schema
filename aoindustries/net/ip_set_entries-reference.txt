@@ -8,7 +8,7 @@ alter table ip_set_entries
 alter table ip_set_entries
   add constraint created_fkey
   foreign key (created_by)
-  references business_administrators (username)
+  references account."Administrator" (username)
   on delete restrict
   on update cascade
 ;

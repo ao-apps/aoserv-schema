@@ -24,7 +24,7 @@
  public | banks                                                     | table | aoadmin
  public | blackhole_email_addresses                                 | table | aoadmin
  public | business_administrator_permissions                        | table | aoadmin
- public | business_administrators                                   | table | aoadmin
+ public | account."Administrator"                                   | table | aoadmin
  public | business_profiles                                         | table | aoadmin
  public | business_servers                                          | table | aoadmin
  public | businesses                                                | table | aoadmin

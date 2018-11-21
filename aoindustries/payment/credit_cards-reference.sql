@@ -22,7 +22,7 @@ alter table credit_cards
 alter table credit_cards
   add constraint created_by_fkey
   foreign key (created_by)
-  references business_administrators (username)
+  references account."Administrator" (username)
   on delete restrict
   on update cascade
 ;

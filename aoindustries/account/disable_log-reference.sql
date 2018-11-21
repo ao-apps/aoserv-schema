@@ -8,7 +8,7 @@ alter table disable_log
 alter table disable_log
   add constraint disabled_by_fkey
   foreign key (disabled_by)
-  references business_administrators (username)
+  references account."Administrator" (username)
   on delete restrict
   on update cascade
 ;

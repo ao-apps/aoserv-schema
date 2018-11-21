@@ -1,4 +1,4 @@
-create table business_administrators (
+create table account."Administrator" (
   username text
     primary key,
   password text
@@ -40,5 +40,5 @@ create table business_administrators (
   can_switch_users boolean not null,
   support_code text -- If null, support requests may not be initiated via email
 );
-grant all                            on business_administrators to aoadmin;
-grant select, insert, update, delete on business_administrators to aoserv_app;
+grant all                            on account."Administrator" to aoadmin;
+grant select, insert, update, delete on account."Administrator" to aoserv_app;

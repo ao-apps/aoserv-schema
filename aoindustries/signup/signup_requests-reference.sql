@@ -43,7 +43,7 @@ alter table signup_requests
 alter table signup_requests
   add constraint completed_by_fkey
   foreign key (completed_by)
-  references business_administrators (username)
+  references account."Administrator" (username)
   on delete restrict
   on update cascade
 ;

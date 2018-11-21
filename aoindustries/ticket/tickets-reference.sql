@@ -29,7 +29,7 @@ alter table tickets
 alter table tickets
   add constraint created_by_fkey
   foreign key (created_by)
-  references business_administrators (username)
+  references account."Administrator" (username)
   on update cascade
   on delete restrict
 ;

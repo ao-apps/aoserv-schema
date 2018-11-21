@@ -22,7 +22,7 @@ alter table monthly_charges
 alter table monthly_charges
   add constraint created_by_fkey
   foreign key (created_by)
-  references business_administrators (username)
+  references account."Administrator" (username)
   on delete restrict
   on update cascade
 ;

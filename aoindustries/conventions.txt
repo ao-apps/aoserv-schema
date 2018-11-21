@@ -3,6 +3,9 @@ Style:
 1) ALL CAPS SQL KEYWORDS.  We have tons of legacy code that doesn't follow this, but
    just convert as you go while not spending much time doing it.
 
+2) lower_case function calls, and value-like keywords like default, true, false
+
+
 Types:
 
 1) Most standard compliant type names, be consistent for easier find/replace.  These
@@ -24,7 +27,8 @@ Types:
 
 4) TODO: Do use "uuid" types instead of our "Identifier" class using two longs?
 
-5) Spell-out "true" or "false" for booleans
+5) Spell-out "true" or "false" for booleans, and leave lowercase.
+
 
 Naming:
 
@@ -49,6 +53,7 @@ Naming:
    as this can save the overhead of manually declaring JavaBeans properties and
    JSP EL expressions such as obj['public'] where obj.public wouldn't work.
 
+
 Inserting:
 
 1) Always specify column names on insert:
@@ -56,6 +61,7 @@ Inserting:
    No:  INSERT INTO example VALUES (val1, val2);
 
    Once again, tons of old code violates this - fix as you go.
+
 
 Generated Keys:
 

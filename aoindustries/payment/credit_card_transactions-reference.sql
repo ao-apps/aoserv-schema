@@ -22,7 +22,7 @@ alter table credit_card_transactions
 alter table credit_card_transactions
   add constraint credit_card_created_by_fkey
   foreign key (credit_card_created_by)
-  references business_administrators (username)
+  references account."Administrator" (username)
   on delete restrict
   on update cascade
 ;
@@ -43,21 +43,21 @@ alter table credit_card_transactions
 alter table credit_card_transactions
   add constraint authorization_username_fkey
   foreign key (authorization_username)
-  references business_administrators (username)
+  references account."Administrator" (username)
   on delete restrict
   on update cascade
 ;
 alter table credit_card_transactions
   add constraint capture_username_fkey
   foreign key (capture_username)
-  references business_administrators (username)
+  references account."Administrator" (username)
   on delete restrict
   on update cascade
 ;
 alter table credit_card_transactions
   add constraint void_username_fkey
   foreign key (void_username)
-  references business_administrators (username)
+  references account."Administrator" (username)
   on delete restrict
   on update cascade
 ;

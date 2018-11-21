@@ -1,5 +1,5 @@
 begin;
--- business_administrators
+-- account.Administrator
 insert into aoserv_permissions values(
     'set_business_administrator_password',
     (select count(*) from aoserv_permissions)

@@ -15,7 +15,7 @@ alter table transactions
 alter table transactions
   add constraint username_fkey
   foreign key (username)
-  references business_administrators (username)
+  references account."Administrator" (username)
   on delete restrict
   on update cascade
 ;

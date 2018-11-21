@@ -26,9 +26,9 @@ union all (select accounting, aosh_command from management."remove-canceled-post
 -- net_binds
 union all (select accounting, aosh_command from management."remove-canceled-net_binds" order by accounting, port)
 -- IPAddress.hostname
-union all (select accounting, aosh_command from management."remove-canceled-IPAddress.hostname" order by accounting, reverse_hostname(hostname), pad_ip_address("inetAddress"))
+union all (select accounting, aosh_command from management."remove-canceled-IPAddress.hostname" order by accounting, reverse_hostname(hostname), "inetAddress")
 -- IPAddress.package
-union all (select accounting, aosh_command from management."remove-canceled-IPAddress.package" order by accounting, reverse_hostname(hostname), pad_ip_address("inetAddress"))
+union all (select accounting, aosh_command from management."remove-canceled-IPAddress.package" order by accounting, reverse_hostname(hostname), "inetAddress")
 -- TODO: ssl_certificates (once have auto-cleanup within aoserv-daemon)
 -- TODO: servers (once a server is owned by a package in the schema)
 -- linux_accounts

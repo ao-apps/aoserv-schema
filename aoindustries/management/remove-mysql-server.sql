@@ -16,7 +16,7 @@ select
     || ' ' || osv.version_number as "OS",
   ms."name" as "NAME",
   substring(tv.version from '^\d+\.\d+') as "VERSION",
-  case when ia."inetAddress"='0.0.0.0' then '*' else ia."inetAddress" end as "BIND_ADDRESS",
+  case when ia."inetAddress"='0.0.0.0' then '*' else host(ia."inetAddress") end as "BIND_ADDRESS",
   nb.port as "PORT",
   case when (
     select ms2.pkey from public.mysql_servers ms2 where

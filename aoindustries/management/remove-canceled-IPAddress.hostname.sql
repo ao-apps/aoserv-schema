@@ -8,14 +8,14 @@ select
   || ' ' || coalesce(ao.hostname, se.pkey::text)
   || ' ' || nd."deviceID"
   || ' ' || case
-    when "inetAddress" like '66.160.183.%' then 
-      'unassigned' || substring("inetAddress" from 12) || '.net1.fc.aoindustries.com'
-    when "inetAddress" like '64.62.174.%' then
-      'unassigned' || substring("inetAddress" from 11) || '.net2.fc.aoindustries.com'
-    when "inetAddress" like '64.71.144.%' then
-      'unassigned' || substring("inetAddress" from 11) || '.net3.fc.aoindustries.com'
+    when inet '66.160.183.0/24' >> "inetAddress" then
+      'unassigned' || split_part(host("inetAddress"), '.', 4) || '.net1.fc.aoindustries.com'
+    when inet '64.62.174.0/24' >> "inetAddress" then
+      'unassigned' || split_part(host("inetAddress"), '.', 4) || '.net2.fc.aoindustries.com'
+    when inet '64.71.144.0/25' >> "inetAddress" then
+      'unassigned' || split_part(host("inetAddress"), '.', 4) || '.net3.fc.aoindustries.com'
     else
-      ('IP pattern unknown: ' || "inetAddress")::integer::text -- Force exception
+      "schema".raise_exception('IP pattern unknown: ' || "inetAddress")
   end as aosh_command,
   ao.hostname,
   ia."inetAddress"

@@ -6,7 +6,7 @@ create table "IPAddress" (
   id integer
     default nextval('"IPAddress_id_seq"')
     primary key,
-  "inetAddress" text
+  "inetAddress" inet
     not null,
   "netDevice" integer,
   "isAlias" boolean
@@ -17,14 +17,15 @@ create table "IPAddress" (
   created timestamp with time zone
     not null
     default now(),
-  available bool
+  available boolean
     not null,
-  "isOverflow" bool
+  "isOverflow" boolean
     not null
     default false,
-  "isDhcp" bool
+  "isDhcp" boolean
     not null
     default false,
+  -- TODO: Change to "inet" type
   "externalInetAddress" text,
   netmask text
     not null,

@@ -13,9 +13,9 @@ create table net_devices (
   description text
     not null,
   delete_route text,
-  gateway text,
-  network text,
-  broadcast text,
+  gateway inet,
+  network inet,
+  broadcast inet,
   mac_address text,
   max_bit_rate bigint,
   monitoring_bit_rate_low bigint,

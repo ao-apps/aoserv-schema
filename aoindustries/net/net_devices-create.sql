@@ -16,7 +16,7 @@ create table net_devices (
   gateway inet,
   network inet,
   broadcast inet,
-  mac_address text,
+  mac_address macaddr,
   max_bit_rate bigint,
   monitoring_bit_rate_low bigint,
   monitoring_bit_rate_medium bigint check (monitoring_bit_rate_medium is null or monitoring_bit_rate_low is not null and monitoring_bit_rate_medium>monitoring_bit_rate_low),

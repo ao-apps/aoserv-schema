@@ -18,10 +18,10 @@ create table signup_requests (
   pkey integer
     default nextval('signup_requests_pkey_seq')
     primary key,
-  time timestamp
+  "time" timestamp
     not null
     default now(),
-  ip_address text
+  ip_address inet
     not null,
   classname text
     not null,

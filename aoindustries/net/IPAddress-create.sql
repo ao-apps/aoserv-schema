@@ -25,8 +25,7 @@ create table "IPAddress" (
   "isDhcp" boolean
     not null
     default false,
-  -- TODO: Change to "inet" type
-  "externalInetAddress" text,
+  "externalInetAddress" inet,
   netmask text
     not null,
   unique("inetAddress", "netDevice"),

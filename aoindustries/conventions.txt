@@ -1,3 +1,28 @@
+Types:
+
+1) Most standard compliant type names, be consistent for easier find/replace.  These
+   should also be what PostgreSQL reports back from the \d commands.
+
+   https://www.postgresql.org/docs/9.4/datatype.html
+
+   bigint             not int8
+   boolean            not bool
+   character          not char
+   integer            not int or int4
+   real               not float4
+   "double precision" not float8
+   numeric            not decimal
+
+2) Use "cidr", "inet", and "macaddr".
+
+3) Use decimal instead of "money", since "money" is locale-sensitive)
+
+4) TODO: Do use "uuid" types instead of our "Identifier" class using two longs?
+
+5) Spell-out "true" or "false" for booleans
+
+Naming:
+
 1) Numeric generated primary keys named "id"
 
 2) Tables named capitalized and singular, matching Java class name

@@ -55,19 +55,19 @@ insert into "schema"."Schema" values(
 );
 insert into "schema"."Schema" values(
     (select count(*) from "schema"."Schema"),
-    'email',
+    'dns',
     '1.0a100',
     null,
-    'Email',
+    'DNS',
     true,
     null -- Uses pg_catalog.pg_description
 );
 insert into "schema"."Schema" values(
     (select count(*) from "schema"."Schema"),
-    'dns',
+    'email',
     '1.0a100',
     null,
-    'DNS',
+    'Email',
     true,
     null -- Uses pg_catalog.pg_description
 );
@@ -122,7 +122,7 @@ insert into "schema"."Schema" values(
     '1.0a100',
     null,
     'Management',
-    true,
+    false,
     null -- Uses pg_catalog.pg_description
 );
 insert into "schema"."Schema" values(

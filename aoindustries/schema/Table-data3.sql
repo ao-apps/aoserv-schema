@@ -318,7 +318,7 @@ select "schema".add_table(
     'management',
     'distro_file_types',
     'Distro File Types',
-    true,
+    false,
     'The distro_file_types stores all of the possible file types.',
     '1.0a100',
     null
@@ -336,7 +336,7 @@ select "schema".add_table(
     'management',
     'distro_report_types',
     'Distro Report Types',
-    true,
+    false,
     'The distro_report_types stores all of the possible report types.',
     '1.70',
     null

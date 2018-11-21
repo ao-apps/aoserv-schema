@@ -2107,6 +2107,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'account',
     'us_states',
     'US States',
     true,

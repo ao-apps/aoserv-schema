@@ -16,7 +16,7 @@ create table ip_reputation_limiters (
     check (
         -- Although this identifier is only used in a directory name at this time,
         -- its rules are defined to be consistent with ip_reputation_sets.
-        isValidIpReputationIdentifier(identifier)
+        net."isValidIpReputationIdentifier"(identifier)
     ),
   unique(net_device, identifier),
   description text

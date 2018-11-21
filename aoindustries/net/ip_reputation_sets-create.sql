@@ -19,7 +19,7 @@ grant all            on ip_reputation_sets_pkey_seq to aoadmin;
 -- length("identifier")>=1 and length("identifier")<=27
 
 -- Be safe by only allowing specific characters, even though ipset probably allows many more, we'll be shell-safe.
-CREATE OR REPLACE FUNCTION isValidIpReputationIdentifier(identifier text)
+CREATE OR REPLACE FUNCTION net."isValidIpReputationIdentifier"(identifier text)
     RETURNS boolean
     AS $$
         BEGIN
@@ -55,7 +55,7 @@ create table ip_reputation_sets (
   identifier text
     not null
     check (
-        isValidIpReputationIdentifier(identifier)
+        net."isValidIpReputationIdentifier"(identifier)
     )
     unique,
   -- Allows a subaccount to use the set.  They cannot query the specific set members, however.

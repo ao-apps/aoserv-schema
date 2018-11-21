@@ -1,6 +1,6 @@
-create sequence ip_reputation_limiter_limits_pkey_seq cycle;
-grant all            on ip_reputation_limiter_limits_pkey_seq to aoadmin;
---grant select, update on ip_reputation_limiter_limits_pkey_seq to aoserv_app;
+create sequence         net.ip_reputation_limiter_limits_pkey_seq cycle;
+grant all            on net.ip_reputation_limiter_limits_pkey_seq to aoadmin;
+--grant select, update on net.ip_reputation_limiter_limits_pkey_seq to aoserv_app;
 
 -- Based on reputation, traffic is divided into six classes:
 --   gm: manual good
@@ -26,7 +26,7 @@ grant all            on ip_reputation_limiter_limits_pkey_seq to aoadmin;
 -- Per-IP limits are added first, so that a massive attack from one IP source will
 -- not block all members of that class.
 
-CREATE OR REPLACE FUNCTION isValidIpReputationLimits(
+CREATE OR REPLACE FUNCTION net."isValidIpReputationLimits"(
     "class"             text,
     syn_per_ip_burst    smallint,
     syn_per_ip_rate     smallint,
@@ -142,7 +142,7 @@ CREATE OR REPLACE FUNCTION isValidIpReputationLimits(
 
 create table ip_reputation_limiter_limits (
   pkey integer
-    default nextval('ip_reputation_limiter_limits_pkey_seq')
+    default nextval('net.ip_reputation_limiter_limits_pkey_seq')
     primary key,
   limiter integer not null,
   "class" text not null
@@ -165,7 +165,7 @@ create table ip_reputation_limiter_limits (
   packet_rate         integer  not null,
   packet_unit         text     not null,
   check (
-    isValidIpReputationLimits(
+    net."isValidIpReputationLimits"(
         "class",
         syn_per_ip_burst,
         syn_per_ip_rate,
@@ -7501,5 +7501,5 @@ insert into ip_reputation_limiter_limits values (
     10000,    -- packet_rate
     'second'  -- packet_unit
 );
-select setval('ip_reputation_limiter_limits_pkey_seq', 409, false);
+select setval('net.ip_reputation_limiter_limits_pkey_seq', 409, false);
 commit;

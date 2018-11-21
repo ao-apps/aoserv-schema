@@ -11,7 +11,7 @@ create table ip_sets (
   identifier text
     not null
     check (
-        isValidIpReputationIdentifier(identifier)
+        net."isValidIpReputationIdentifier"(identifier)
     )
     unique,
   description text not null,

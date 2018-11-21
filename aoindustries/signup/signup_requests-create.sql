@@ -7,7 +7,7 @@ create table signup_requests (
     default nextval('signup_requests_pkey_seq')
     primary key,
   brand text not null,
-  time timestamp with time zone not null default now(),
+  "time" timestamp with time zone not null default now(),
   ip_address text not null,
   package_definition integer not null,
   business_name text not null,

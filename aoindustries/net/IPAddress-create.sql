@@ -1,10 +1,10 @@
-create sequence "IPAddress_id_seq" cycle;
-grant all    on "IPAddress_id_seq" to aoadmin;
-grant select on "IPAddress_id_seq" to aoserv_app;
+create sequence net."IPAddress_id_seq" cycle;
+grant all    on net."IPAddress_id_seq" to aoadmin;
+grant select on net."IPAddress_id_seq" to aoserv_app;
 
 create table "IPAddress" (
   id integer
-    default nextval('"IPAddress_id_seq"')
+    default nextval('net."IPAddress_id_seq"')
     primary key,
   "inetAddress" inet
     not null,

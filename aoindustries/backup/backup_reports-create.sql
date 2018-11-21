@@ -1,10 +1,10 @@
-create sequence backup_reports_pkey_seq cycle;
-grant all            on backup_reports_pkey_seq to aoadmin;
-grant select, update on backup_reports_pkey_seq to aoserv_app;
+create sequence         backup.backup_reports_pkey_seq cycle;
+grant all            on backup.backup_reports_pkey_seq to aoadmin;
+grant select, update on backup.backup_reports_pkey_seq to aoserv_app;
 
 create table backup_reports (
   pkey integer
-    default nextval('backup_reports_pkey_seq')
+    default nextval('backup.backup_reports_pkey_seq')
     primary key,
   server integer
     not null,

@@ -8,4 +8,4 @@ insert into business_administrator_permissions values(7, 'orion', 'edit_ticket')
 insert into business_administrator_permissions values(8, 'aoweb_app', 'add_ticket');
 insert into business_administrator_permissions values(9, 'test_svr', 'add_ticket');
 
-SELECT setval ('"business_administrator_permissions_pkey_seq"', 10, true);
+SELECT setval ('"master.business_administrator_permissions_pkey_seq"', 10, true);

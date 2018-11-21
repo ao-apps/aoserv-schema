@@ -13,4 +13,4 @@ insert into "IPAddress" values (
 	'0.0.0.0'
 );
 
-SELECT setval ('"IPAddress_id_seq"', 1353, true);
+SELECT setval ('net."IPAddress_id_seq"', 1353, true);

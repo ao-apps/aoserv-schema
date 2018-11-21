@@ -1,10 +1,10 @@
-create sequence ao_server_daemon_hosts_pkey_seq cycle;
-grant all    on ao_server_daemon_hosts_pkey_seq to aoadmin;
-grant select on ao_server_daemon_hosts_pkey_seq to aoserv_app;
+create sequence server.ao_server_daemon_hosts_pkey_seq cycle;
+grant all    on server.ao_server_daemon_hosts_pkey_seq to aoadmin;
+grant select on server.ao_server_daemon_hosts_pkey_seq to aoserv_app;
 
 create table ao_server_daemon_hosts (
   pkey integer
-    default nextval('ao_server_daemon_hosts_pkey_seq')
+    default nextval('server.ao_server_daemon_hosts_pkey_seq')
     primary key,
   ao_server integer
     not null,

@@ -3,4 +3,4 @@ COPY business_servers (pkey, accounting, server, is_default, can_control_apache,
 2	NMW	2	t	f	f	f	f	f	f
 3	AOINDUSTRIES	2	t	t	t	t	t	t	t
 \.
-SELECT setval ('"business_servers_pkey_seq"', 6, true);
+SELECT setval ('"server.business_servers_pkey_seq"', 6, true);

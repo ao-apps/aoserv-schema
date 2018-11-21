@@ -1,10 +1,10 @@
-create sequence cvs_repositories_pkey_seq cycle;
-grant all            on cvs_repositories_pkey_seq to aoadmin;
-grant select, update on cvs_repositories_pkey_seq to aoserv_app;
+create sequence         scm.cvs_repositories_pkey_seq cycle;
+grant all            on scm.cvs_repositories_pkey_seq to aoadmin;
+grant select, update on scm.cvs_repositories_pkey_seq to aoserv_app;
 
 create table cvs_repositories (
   pkey integer
-    default nextval('cvs_repositories_pkey_seq')
+    default nextval('scm.cvs_repositories_pkey_seq')
     primary key,
   path text
     not null,

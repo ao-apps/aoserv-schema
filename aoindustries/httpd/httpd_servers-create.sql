@@ -10,20 +10,20 @@ create table httpd_servers (
     not null,
   "name" text
     check ("name" is null or length("name") > 0),
-  can_add_sites bool
+  can_add_sites boolean
     not null,
   linux_server_account integer
     not null,
   linux_server_group integer
     not null,
   mod_php_version integer,
-  use_suexec bool
+  use_suexec boolean
     not null,
   package integer
     not null,
-  is_shared bool
+  is_shared boolean
     not null,
-  use_mod_perl bool
+  use_mod_perl boolean
     not null,
   timeout integer
     not null,

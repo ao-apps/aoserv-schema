@@ -1,7 +1,7 @@
 create table net_device_ids (
   "name" text
     primary key,
-  is_loopback bool
+  is_loopback boolean
     not null
 );
 grant all    on net_device_ids to aoadmin;

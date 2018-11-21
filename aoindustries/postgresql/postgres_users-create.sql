@@ -1,16 +1,16 @@
 create table postgres_users (
   username text
     primary key,
-  createdb bool
+  createdb boolean
     not null
     default false,
-  trace bool
+  trace boolean
     not null
     default false,
-  super bool
+  super boolean
     not null
     default false,
-  catupd bool
+  catupd boolean
     not null
     default false,
   disable_log integer

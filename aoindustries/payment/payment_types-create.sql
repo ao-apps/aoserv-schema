@@ -3,9 +3,9 @@ create table payment_types (
     primary key,
   description text
     not null,
-  active bool
+  active boolean
     not null,
-  allow_web bool
+  allow_web boolean
     not null
 );
 grant all            on payment_types to aoadmin;

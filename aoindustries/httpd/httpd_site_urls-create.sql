@@ -10,7 +10,7 @@ create table httpd_site_urls (
     not null,
   hostname text
     not null,
-  is_primary bool
+  is_primary boolean
     not null,
   unique(hostname, httpd_site_bind)
 );

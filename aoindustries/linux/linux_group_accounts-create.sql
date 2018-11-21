@@ -10,7 +10,7 @@ create table linux_group_accounts (
     not null,
   username text
     not null,
-  is_primary bool
+  is_primary boolean
     not null,
   operating_system_version integer
 );

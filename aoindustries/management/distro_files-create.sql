@@ -14,17 +14,17 @@ create table distro_files (
     not null,
   "type" text
     not null,
-  mode int8
+  mode bigint
     not null,
   linux_account text
     not null,
   linux_group text
     not null,
-  "size" int8,
-  file_sha256_0 int8,
-  file_sha256_1 int8,
-  file_sha256_2 int8,
-  file_sha256_3 int8,
+  "size" bigint,
+  file_sha256_0 bigint,
+  file_sha256_1 bigint,
+  file_sha256_2 bigint,
+  file_sha256_3 bigint,
   symlink_target text,
   unique("path", operating_system_version)
 );

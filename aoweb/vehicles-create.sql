@@ -14,7 +14,7 @@ create table vehicles (
   model text
     not null,
   vin text,
-  license_state char(2)
+  license_state character(2)
     not null,
   license_number text,
   owner_name text
@@ -24,7 +24,7 @@ create table vehicles (
   gross_weight integer,
   tow_weight integer,
   tow_plug_type text,
-  current_odometer_coefficient float4
+  current_odometer_coefficient real
     not null
     default 1.0
 );

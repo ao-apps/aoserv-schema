@@ -1,9 +1,9 @@
-create sequence transactions_transid_seq cycle;
+create sequence         transactions_transid_seq cycle;
 grant all            on transactions_transid_seq to aoadmin;
 grant select, update on transactions_transid_seq to aoserv_app;
 
 create table transactions (
-  time timestamp with time zone
+  "time" timestamp with time zone
     default now()
     not null,
   transid integer
@@ -15,22 +15,22 @@ create table transactions (
     not null,
   username text
     not null,
-  type text
+  "type" text
     not null,
   description text
     not null,
-  quantity decimal(8,3)
+  quantity numeric(8,3)
     not null
     default 1
     constraint quantity_chk
       check (quantity>0),
-  rate decimal(9,2)
+  rate numeric(9,2)
     not null,
   payment_type text,
   payment_info text,
   processor text,
   credit_card_transaction integer,
-  payment_confirmed char(1)
+  payment_confirmed character(1)
     default 'W'
     not null
     constraint payment_confirmed_chk

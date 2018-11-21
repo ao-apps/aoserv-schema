@@ -13,14 +13,14 @@ create table cyrus_imapd_servers (
   allow_plaintext_auth boolean not null
     -- See also CyrusImapdServer.DEFAULT_ALLOW_PLAINTEXT_AUTH
     default false,
-  delete_duration float
+  delete_duration real
     -- See also CyrusImapdServer.DEFAULT_DELETE_DURATION
     default 3
     check (
       delete_duration is null
       or delete_duration > 0
     ),
-  delete_duration_unit char(1)
+  delete_duration_unit character(1)
     -- See also CyrusImapdServer.DEFAULT_DELETE_DURATION_UNIT
     default 'd'
     check (
@@ -30,27 +30,27 @@ create table cyrus_imapd_servers (
         and delete_duration_unit in ('d', 'h', 'm', 's')
       )
     ),
-  expire_duration float not null
+  expire_duration real not null
     -- See also CyrusImapdServer.DEFAULT_EXPIRE_DURATION
     default 3
     check (
       expire_duration > 0
     ),
-  expire_duration_unit char(1)
+  expire_duration_unit character(1)
     -- See also CyrusImapdServer.DEFAULT_EXPIRE_DURATION_UNIT
     default 'd'
     check (
       expire_duration_unit is null
       or expire_duration_unit in ('d', 'h', 'm', 's')
     ),
-  expunge_duration float
+  expunge_duration real
     -- See also CyrusImapdServer.DEFAULT_EXPUNGE_DURATION
     default 3
     check (
       expunge_duration is null
       or expunge_duration > 0
     ),
-  expunge_duration_unit char(1)
+  expunge_duration_unit character(1)
     -- See also CyrusImapdServer.DEFAULT_EXPUNGE_DURATION_UNIT
     default 'd'
     check (

@@ -1,9 +1,9 @@
 create table operating_systems (
-  name text
+  "name" text
     primary key,
   display text
     not null,
-  is_unix bool
+  is_unix boolean
     not null
 );
 grant all    on operating_systems to aoadmin;

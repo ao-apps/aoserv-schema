@@ -1,28 +1,28 @@
 create table master_users (
   username text
     primary key,
-  is_active bool
+  is_active boolean
     default true
     not null,
-  can_access_accounting bool
+  can_access_accounting boolean
     default false
     not null,
-  can_access_bank_account bool
+  can_access_bank_account boolean
     default false
     not null,
-  can_invalidate_tables bool
+  can_invalidate_tables boolean
     default false
     not null,
-  can_access_admin_web bool
+  can_access_admin_web boolean
     default false
     not null,
-  is_dns_admin bool
+  is_dns_admin boolean
     default false
     not null,
-  is_router bool
+  is_router boolean
     default false
     not null,
-  is_cluster_admin bool
+  is_cluster_admin boolean
     default false
     not null
 );

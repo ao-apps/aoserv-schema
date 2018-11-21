@@ -17,7 +17,7 @@ create table linux_server_accounts (
   autoresponder_from integer,
   autoresponder_subject text,
   autoresponder_path text,
-  is_autoresponder_enabled bool
+  is_autoresponder_enabled boolean
     not null
     default false,
   disable_log integer,
@@ -25,7 +25,7 @@ create table linux_server_accounts (
   created timestamp with time zone
     not null
     default now(),
-  use_inbox bool
+  use_inbox boolean
     not null
     default true,
   trash_email_retention integer,
@@ -33,7 +33,7 @@ create table linux_server_accounts (
   sa_integration_mode text
     not null
     default 'none',
-  sa_required_score float4
+  sa_required_score real
     not null
     default 3,
   sa_discard_score integer

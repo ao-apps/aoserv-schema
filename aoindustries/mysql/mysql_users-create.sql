@@ -1,88 +1,88 @@
 create table mysql_users (
   username text
     primary key,
-  select_priv bool
+  select_priv boolean
     not null
     default false,
-  insert_priv bool
+  insert_priv boolean
     not null
     default false,
-  update_priv bool
+  update_priv boolean
     not null
     default false,
-  delete_priv bool
+  delete_priv boolean
     not null
     default false,
-  create_priv bool
+  create_priv boolean
     not null
     default false,
-  drop_priv bool
+  drop_priv boolean
     not null
     default false,
-  reload_priv bool
+  reload_priv boolean
     not null
     default false,
-  shutdown_priv bool
+  shutdown_priv boolean
     not null
     default false,
-  process_priv bool
+  process_priv boolean
     not null
     default false,
-  file_priv bool
+  file_priv boolean
     not null
     default false,
-  grant_priv bool
+  grant_priv boolean
     not null
     default false,
-  references_priv bool
+  references_priv boolean
     not null
     default false,
-  index_priv bool
+  index_priv boolean
     not null
     default false,
-  alter_priv bool
+  alter_priv boolean
     not null
     default false,
-  show_db_priv bool
+  show_db_priv boolean
     not null
     default false,
-  super_priv bool
+  super_priv boolean
     not null
     default false,
-  create_tmp_table_priv bool
+  create_tmp_table_priv boolean
     not null
     default false,
-  lock_tables_priv bool
+  lock_tables_priv boolean
     not null
     default false,
-  execute_priv bool
+  execute_priv boolean
     not null
     default false,
-  repl_slave_priv bool
+  repl_slave_priv boolean
     not null
     default false,
-  repl_client_priv bool
+  repl_client_priv boolean
     not null
     default false,
-  create_view_priv bool
+  create_view_priv boolean
     not null
     default false,
-  show_view_priv bool
+  show_view_priv boolean
     not null
     default false,
-  create_routine_priv bool
+  create_routine_priv boolean
     not null
     default false,
-  alter_routine_priv bool
+  alter_routine_priv boolean
     not null
     default false,
-  create_user_priv bool
+  create_user_priv boolean
     not null
     default false,
-  event_priv bool
+  event_priv boolean
     not null
     default false,
-  trigger_priv bool
+  trigger_priv boolean
     not null
     default false,
   disable_log integer

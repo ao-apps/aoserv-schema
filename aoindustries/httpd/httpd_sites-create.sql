@@ -43,7 +43,7 @@ create table httpd_sites (
   server_admin text
     not null,
   disable_log integer,
-  is_manual bool not null default false,
+  is_manual boolean not null default false,
   awstats_skip_files text,
   php_version integer,
   enable_cgi boolean not null default false,

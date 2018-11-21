@@ -8,7 +8,7 @@ create table credit_card_processors (
   param2 text,
   param3 text,
   param4 text,
-  enabled bool not null,
+  enabled boolean not null,
   weight integer not null,
   description text,
   encryption_from integer,

@@ -10,7 +10,7 @@ create table httpd_site_authenticated_locations (
     not null,
   "path" text
     not null,
-  is_regular_expression bool
+  is_regular_expression boolean
     not null,
   auth_name text
     not null,

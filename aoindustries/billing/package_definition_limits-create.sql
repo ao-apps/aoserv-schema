@@ -1,4 +1,4 @@
-create sequence package_definition_limits_pkey_seq cycle;
+create sequence         package_definition_limits_pkey_seq cycle;
 grant all            on package_definition_limits_pkey_seq to aoadmin;
 grant select, update on package_definition_limits_pkey_seq to aoserv_app;
 
@@ -12,7 +12,7 @@ create table package_definition_limits (
     not null,
   soft_limit integer,
   hard_limit integer,
-  additional_rate decimal(9,2),
+  additional_rate numeric(9,2),
   additional_transaction_type text,
   unique(package_definition, resource)
 );

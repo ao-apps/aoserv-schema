@@ -17,7 +17,7 @@ create table aoserv_howto_categories (
     not null
     constraint aoserv_howto_categories_pkey
       primary key,
-  sort_order float4
+  sort_order real
     not null,
   title text
     not null,

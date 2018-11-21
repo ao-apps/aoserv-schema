@@ -12,7 +12,7 @@ create table cvs_repositories (
     not null,
   linux_server_group integer
     not null,
-  mode int8
+  mode bigint
     not null,
   created timestamp with time zone
     not null,

@@ -4,11 +4,12 @@ grant all            on ip_reputation_set_hosts_pkey_seq to aoadmin;
 grant select, update on ip_reputation_set_hosts_pkey_seq to aoserv_app;
 
 create table ip_reputation_set_hosts (
-  pkey int8
+  pkey bigint
     default nextval('ip_reputation_set_hosts_pkey_seq')
     primary key,
   "set" integer
     not null,
+  -- TODO: Switch to "inet" type
   "host" integer -- The big-endian 32-bit IP address.
     not null
     check ("host"!=0),

@@ -12,7 +12,7 @@ create table httpd_tomcat_parameters (
     not null,
   "value" text
     not null,
-  override bool
+  override boolean
     not null
     default true,
   description text,

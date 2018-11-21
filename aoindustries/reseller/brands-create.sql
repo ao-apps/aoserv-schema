@@ -37,14 +37,14 @@ create table brands (
   support_mailing_address3 text,
   support_mailing_address4 text,
   -- Language control
-  english_enabled bool not null,
-  japanese_enabled bool not null,
+  english_enabled boolean not null,
+  japanese_enabled boolean not null,
   check (english_enabled or japanese_enabled),
   -- aoweb-struts settings
   aoweb_struts_http_url_base text not null,
   aoweb_struts_https_url_base text not null,
   aoweb_struts_google_verify_content text,
-  aoweb_struts_noindex bool not null,
+  aoweb_struts_noindex boolean not null,
   aoweb_struts_google_analytics_new_tracking_code text,
   aoweb_struts_signup_admin_address text not null, -- Notified for each sign-up
   aoweb_struts_vnc_bind integer not null,

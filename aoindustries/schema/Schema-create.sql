@@ -9,7 +9,7 @@ create table "schema"."Schema" (
   display text
     not null,
   -- TODO: Does this public flag have any relevance?
-  "isPublic" bool
+  "isPublic" boolean
     not null,
   description text,
   unique("name", "sinceVersion"),

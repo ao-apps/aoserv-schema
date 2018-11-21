@@ -16,11 +16,11 @@ create table assets (
   date_acquired date
     not null,
   vendor text,
-  cost decimal(9,2)
+  cost numeric(9,2)
     not null,
   date_removed date,
   reason_removed text,
-  is_taxed bool
+  is_taxed boolean
     default true
     not null
 );

@@ -10,11 +10,11 @@ create table backup_reports (
     not null,
   package integer
     not null,
-  date date
+  "date" date
     not null,
   file_count integer
     not null,
-  disk_size int8
+  disk_size bigint
     not null
 );
 grant all                            on backup_reports to aoadmin;

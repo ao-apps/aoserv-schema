@@ -1,9 +1,9 @@
 create table shells (
-  path text
+  "path" text
     primary key,
-  is_login bool
+  is_login boolean
     not null,
-  is_system bool
+  is_system boolean
     not null
 );
 grant all            on shells to aoadmin;

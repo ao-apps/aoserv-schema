@@ -5,7 +5,7 @@ create table server_farms (
     not null,
   owner integer
     not null,
-  use_restricted_smtp_port bool
+  use_restricted_smtp_port boolean
     not null
 );
 grant all    on server_farms to aoadmin;

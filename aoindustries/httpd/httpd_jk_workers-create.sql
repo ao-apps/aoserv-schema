@@ -6,7 +6,7 @@ create table httpd_workers (
   pkey integer
     default nextval('httpd_workers_pkey_seq')
     primary key,
-  code char(2)
+  code character(2)
     not null,
   net_bind integer
     not null

@@ -17,7 +17,7 @@ create table operating_system_versions (
   display text
     not null
     unique,
-  is_aoserv_daemon_supported bool
+  is_aoserv_daemon_supported boolean
     not null,
   sort_order smallint
     not null

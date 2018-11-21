@@ -1,7 +1,7 @@
 create table dns_zones (
-  zone text
+  "zone" text
     primary key,
-  file text
+  "file" text
     not null
     unique,
   package text
@@ -9,7 +9,7 @@ create table dns_zones (
   hostmaster text
     not null
     default 'hostmaster.aoindustries.com.',
-  serial int8
+  serial bigint
     not null,
   ttl integer
     not null

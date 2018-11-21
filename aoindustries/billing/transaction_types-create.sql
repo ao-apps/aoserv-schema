@@ -1,7 +1,7 @@
 create table transaction_types (
-  name text
+  "name" text
     primary key,
-  is_credit bool
+  is_credit boolean
     not null
 );
 grant all    on transaction_types to aoadmin;

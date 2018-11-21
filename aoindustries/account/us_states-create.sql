@@ -1,7 +1,7 @@
 create table us_states (
-  code char(2)
+  code character(2)
     primary key,
-  name text
+  "name" text
     not null
 );
 grant all    on us_states to aoadmin;

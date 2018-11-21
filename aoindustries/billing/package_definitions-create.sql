@@ -1,4 +1,4 @@
-create sequence package_definitions_pkey_seq cycle;
+create sequence         package_definitions_pkey_seq cycle;
 grant all            on package_definitions_pkey_seq to aoadmin;
 grant select, update on package_definitions_pkey_seq to aoserv_app;
 
@@ -10,7 +10,7 @@ create table package_definitions (
     not null,
   category text
     not null,
-  name text
+  "name" text
     not null,
   version text
     not null,
@@ -18,16 +18,17 @@ create table package_definitions (
     not null,
   description text
     not null,
-  setup_fee decimal(9,2),
+  setup_fee numeric(9,2),
   setup_fee_transaction_type text,
-  monthly_rate decimal(9,2)
+  monthly_rate numeric(9,2)
     not null,
   monthly_rate_transaction_type text
     not null,
-  active bool
+  active boolean
     not null,
-  approved bool
+  approved boolean
     not null
 );
+
 grant all                            on package_definitions to aoadmin;
 grant select, insert, update, delete on package_definitions to aoserv_app;

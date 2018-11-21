@@ -4,7 +4,7 @@ create table httpd_tomcat_versions (
       primary key,
   install_dir text
     not null,
-  requires_mod_jk bool
+  requires_mod_jk boolean
     not null
 );
 grant all            on httpd_tomcat_versions to aoadmin;

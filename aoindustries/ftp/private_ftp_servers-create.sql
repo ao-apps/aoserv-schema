@@ -16,7 +16,7 @@ create table private_ftp_servers (
     not null,
   linux_server_group integer
     not null,
-  allow_anonymous bool
+  allow_anonymous boolean
     not null
 );
 grant all            on private_ftp_servers to aoadmin;

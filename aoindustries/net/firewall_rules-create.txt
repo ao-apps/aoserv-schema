@@ -21,7 +21,7 @@ create table firewall_rules (
   pkey integer
     default nextval('firewall_rules_pkey_seq')
     primary key,
-  net_device int
+  net_device integer
     not null,
   sort_order smallint
     not null,

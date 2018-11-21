@@ -24,13 +24,13 @@ create table info_pages (
   pkey integer
     default nextval('info_pages_pkey_seq')
     primary key,
-  enabled bool
+  enabled boolean
     not null
     default true,
   time timestamp
     default now()
     not null,
-  sort_order float4
+  sort_order real
     not null,
   category integer
     not null,

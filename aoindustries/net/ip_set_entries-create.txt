@@ -4,11 +4,12 @@ grant all            on ip_set_entries_pkey_seq to aoadmin;
 grant select, update on ip_set_entries_pkey_seq to aoserv_app;
 
 create table ip_set_entries (
-  pkey int8
+  pkey bigint
     default nextval('ip_set_entries_pkey_seq')
     primary key,
   "set" integer
     not null,
+  -- TODO: Switch to "inet" type
   entry integer -- The big-endian 32-bit IP address/network.
     not null,
   "prefix" smallint

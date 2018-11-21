@@ -1,4 +1,4 @@
-create sequence notice_log_pkey_seq cycle;
+create sequence         notice_log_pkey_seq cycle;
 grant all            on notice_log_pkey_seq to aoadmin;
 grant select, update on notice_log_pkey_seq to aoserv_app;
 
@@ -15,7 +15,7 @@ create table notice_log (
     not null,
   billing_email text
     not null,
-  balance decimal(9,2)
+  balance numeric(9,2)
     not null,
   notice_type text
     not null,

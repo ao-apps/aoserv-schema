@@ -30,20 +30,20 @@ create table nav_images (
     not null,
   family text
     not null,
-  weight float(6)
+  weight real
     not null,
-  font_width float(6)
+  font_width real
     not null,
-  posture float(6)
+  posture real
     not null,
-  size float(6)
+  "size" real
     not null,
   foreground integer
     not null,
   word text
     not null,
   suffix text,
-  highlighted bool
+  highlighted boolean
     not null
 );
 grant all            on nav_images to aoadmin;

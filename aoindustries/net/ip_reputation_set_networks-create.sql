@@ -4,11 +4,12 @@ grant all            on ip_reputation_set_networks_pkey_seq to aoadmin;
 grant select, update on ip_reputation_set_networks_pkey_seq to aoserv_app;
 
 create table ip_reputation_set_networks (
-  pkey int8
+  pkey bigint
     default nextval('ip_reputation_set_networks_pkey_seq')
     primary key,
   "set" integer
     not null,
+  -- TODO: Switch to "cidr" type
   network integer -- The big-endian 32-bit IP address, with zeroes in network range lower bits.
     not null
     check (network!=0),

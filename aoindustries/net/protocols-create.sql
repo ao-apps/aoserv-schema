@@ -3,9 +3,9 @@ create table protocols (
     primary key,
   port integer
     not null,
-  name text
+  "name" text
     not null,
-  is_user_service bool
+  is_user_service boolean
     not null,
   net_protocol text
     not null

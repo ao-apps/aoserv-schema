@@ -21,9 +21,9 @@ create table accounting."BankTransaction" (
   description text
     not null,
   "checkNo" text,
-  amount decimal(9,2)
+  amount numeric(9,2)
     not null,
-  confirmed bool
+  confirmed boolean
     not null
 --  constraint amount_chk
 --    check ( case when ( select is_negative from accounting."BankTransactionType" t1 where t1."name"=type )=true then amount<=0 else amount>=0 end )

@@ -18,7 +18,7 @@ create table net_binds (
     not null,
   app_protocol text
     not null,
-  monitoring_enabled bool
+  monitoring_enabled boolean
     not null
     default true,
   monitoring_parameters text,

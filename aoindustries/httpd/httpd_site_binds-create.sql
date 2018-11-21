@@ -16,13 +16,13 @@ create table httpd_site_binds (
     not null,
   error_log text
     not null,
-  certificate int,
+  certificate integer,
   disable_log integer,
   predisable_config text,
-  is_manual bool
+  is_manual boolean
     not null
     default false,
-  redirect_to_primary_hostname bool
+  redirect_to_primary_hostname boolean
     not null
     default true,
   include_site_config text

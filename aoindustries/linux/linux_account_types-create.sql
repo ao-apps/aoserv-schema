@@ -1,9 +1,9 @@
 create table linux_account_types (
-  name text
+  "name" text
     primary key,
   description text
     not null,
-  is_email bool
+  is_email boolean
     not null
 );
 grant all            on linux_account_types to aoadmin;

@@ -17,9 +17,9 @@ create table failover_file_log (
     not null,
   updated integer
     not null,
-  bytes int8
+  bytes bigint
     not null,
-  is_successful bool
+  is_successful boolean
     not null
 );
 grant all                            on failover_file_log to aoadmin;

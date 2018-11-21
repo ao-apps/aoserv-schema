@@ -10,7 +10,7 @@ create table "schema"."Table" (
   "lastVersion" text,
   display text
     not null,
-  "isPublic" bool
+  "isPublic" boolean
     not null,
   description text,
   unique("schema", "name", "sinceVersion"),

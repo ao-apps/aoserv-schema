@@ -27,7 +27,7 @@ create table aoserv_howtos (
   time timestamp
     default now()
     not null,
-  sort_order float4
+  sort_order real
     not null,
   category text
     not null,

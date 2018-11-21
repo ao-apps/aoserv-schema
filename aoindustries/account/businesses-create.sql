@@ -8,17 +8,17 @@ create table businesses (
   canceled timestamp with time zone,
   cancel_reason text,
   parent text,
-  can_add_backup_server bool
+  can_add_backup_server boolean
     not null,
-  can_add_businesses bool
+  can_add_businesses boolean
     not null,
-  can_see_prices bool
+  can_see_prices boolean
     not null,
   disable_log integer,
   do_not_disable_reason text,
-  auto_enable bool
+  auto_enable boolean
     not null,
-  bill_parent bool
+  bill_parent boolean
     not null
 );
 grant all                            on businesses to aoadmin;
@@ -35,21 +35,21 @@ grant select                         on businesses to kaori;
  *
  *********************************************************************/
 create or replace function is_business_or_parent (text,text)
-  returns bool
+  returns boolean
   as 'select false;'
   language 'sql'
   stable
   with(isstrict)
 ;
 create or replace function is_business_or_parent_recurse (text,text)
-  returns bool
+  returns boolean
   as 'select is_business_or_parent( $1 , $2 );'
   language 'sql'
   stable
   with(isstrict)
 ;
 create or replace function is_business_or_parent (text,text)
-  returns bool
+  returns boolean
   as '
     select
       $1 = $2

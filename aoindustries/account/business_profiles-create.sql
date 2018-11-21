@@ -11,9 +11,9 @@ create table business_profiles (
   priority integer
     default 1
     not null,
-  name text
+  "name" text
     not null,
-  private bool
+  private boolean
     default true
     not null,
   phone text
@@ -24,12 +24,12 @@ create table business_profiles (
   address2 text,
   city text
     not null,
-  state text,
-  country char(2)
+  "state" text,
+  country character(2)
     default 'US'
     not null,
   zip text,
-  send_invoice bool
+  send_invoice boolean
     default false
     not null,
   created timestamp with time zone

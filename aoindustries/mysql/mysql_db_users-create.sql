@@ -10,61 +10,61 @@ create table mysql_db_users (
     not null,
   mysql_server_user integer
     not null,
-  select_priv bool
+  select_priv boolean
     not null
     default false,
-  insert_priv bool
+  insert_priv boolean
     not null
     default false,
-  update_priv bool
+  update_priv boolean
     not null
     default false,
-  delete_priv bool
+  delete_priv boolean
     not null
     default false,
-  create_priv bool
+  create_priv boolean
     not null
     default false,
-  drop_priv bool
+  drop_priv boolean
     not null
     default false,
-  grant_priv bool
+  grant_priv boolean
     not null
     default false,
-  references_priv bool
+  references_priv boolean
     not null
     default false,
-  index_priv bool
+  index_priv boolean
     not null
     default false,
-  alter_priv bool
+  alter_priv boolean
     not null
     default false,
-  create_tmp_table_priv bool
+  create_tmp_table_priv boolean
     not null
     default false,
-  lock_tables_priv bool
+  lock_tables_priv boolean
     not null
     default false,
-  create_view_priv bool
+  create_view_priv boolean
     not null
     default false,
-  show_view_priv bool
+  show_view_priv boolean
     not null
     default false,
-  create_routine_priv bool
+  create_routine_priv boolean
     not null
     default false,
-  alter_routine_priv bool
+  alter_routine_priv boolean
     not null
     default false,
-  execute_priv bool
+  execute_priv boolean
     not null
     default false,
-  event_priv bool
+  event_priv boolean
     not null
     default false,
-  trigger_priv bool
+  trigger_priv boolean
     not null
     default false,
   unique (mysql_database, mysql_server_user)

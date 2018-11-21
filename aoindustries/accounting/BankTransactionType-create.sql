@@ -5,7 +5,7 @@ create table accounting."BankTransactionType" (
     not null,
   description text
     not null,
-  "isNegative" bool
+  "isNegative" boolean
     not null
 );
 grant all    on accounting."BankTransactionType" to aoadmin;

@@ -6,7 +6,7 @@ create table postgres_databases (
   pkey integer
     default nextval('postgres_databases_pkey_seq')
     primary key,
-  name text
+  "name" text
     not null,
   postgres_server integer
     not null,
@@ -14,13 +14,13 @@ create table postgres_databases (
     not null,
   encoding integer
     not null,
-  is_template bool
+  is_template boolean
     not null,
-  allow_conn bool
+  allow_conn boolean
     not null,
-  enable_postgis bool
+  enable_postgis boolean
     not null,
-  unique (name, postgres_server)
+  unique ("name", postgres_server)
 );
 grant all                            on postgres_databases to aoadmin;
 grant select, insert, update, delete on postgres_databases to aoserv_app;

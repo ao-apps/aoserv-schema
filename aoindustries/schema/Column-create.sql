@@ -17,11 +17,11 @@ create table "schema"."Column" (
     not null,
   "type" integer
     not null,
-  "isNullable" bool
+  "isNullable" boolean
     not null,
-  "isUnique" bool
+  "isUnique" boolean
     not null,
-  "isPublic" bool
+  "isPublic" boolean
     not null,
   description text,
   unique(index, "table"),

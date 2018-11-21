@@ -239,17 +239,17 @@ create or replace function pad_ip_address (text)
 ;
 
 create or replace function hexchar_to_int8 (text)
-  returns int8
+  returns bigint
   as '
     select
       case
-        when $1 in (''0'', ''1'', ''2'', ''3'', ''4'', ''5'', ''6'', ''7'', ''8'', ''9'') then $1::int8
-        when $1 in (''a'', ''A'') then 10::int8
-        when $1 in (''b'', ''B'') then 11::int8
-        when $1 in (''c'', ''C'') then 12::int8
-        when $1 in (''d'', ''D'') then 13::int8
-        when $1 in (''e'', ''E'') then 14::int8
-        when $1 in (''f'', ''F'') then 15::int8
+        when $1 in (''0'', ''1'', ''2'', ''3'', ''4'', ''5'', ''6'', ''7'', ''8'', ''9'') then $1::bigint
+        when $1 in (''a'', ''A'') then 10::bigint
+        when $1 in (''b'', ''B'') then 11::bigint
+        when $1 in (''c'', ''C'') then 12::bigint
+        when $1 in (''d'', ''D'') then 13::bigint
+        when $1 in (''e'', ''E'') then 14::bigint
+        when $1 in (''f'', ''F'') then 15::bigint
       end
     ;
   '
@@ -259,7 +259,7 @@ create or replace function hexchar_to_int8 (text)
 ;
 
 create or replace function hex_to_int8 (text)
-  returns int8
+  returns bigint
   as '
     select
       (hexchar_to_int8(substring( $1 from 1 for 1)) << 60)

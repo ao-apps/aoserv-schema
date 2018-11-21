@@ -6,7 +6,7 @@ create table postgres_servers (
   pkey integer
     default nextval('postgres_servers_pkey_seq')
     primary key,
-  name text
+  "name" text
     not null,
   ao_server integer
     not null,
@@ -21,9 +21,9 @@ create table postgres_servers (
     not null,
   shared_buffers integer
     not null,
-  fsync bool
+  fsync boolean
     not null,
-  unique (ao_server, name)
+  unique (ao_server, "name")
 );
 grant all                            on postgres_servers to aoadmin;
 grant select, insert, update, delete on postgres_servers to aoserv_app;

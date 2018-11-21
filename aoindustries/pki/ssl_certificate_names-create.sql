@@ -8,9 +8,9 @@ create table ssl_certificate_names (
     primary key,
   ssl_certificate integer
     not null,
-  is_common_name bool
+  is_common_name boolean
     not null,
-  is_wildcard bool
+  is_wildcard boolean
     not null,
   "domain" text
     not null

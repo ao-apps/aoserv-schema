@@ -36,13 +36,13 @@ create table text_images (
     not null,
   family text
     not null,
-  weight float(6)
+  weight real
     not null,
-  font_width float(6)
+  font_width real
     not null,
-  posture float(6)
+  posture real
     not null,
-  size float(6)
+  "size" real
     not null,
   superscript smallint
     not null,
@@ -50,15 +50,15 @@ create table text_images (
     not null,
   background integer
     not null,
-  underline bool
+  underline boolean
     not null,
-  strikethrough bool
+  strikethrough boolean
     not null,
-  run_direction bool
+  run_direction boolean
     not null,
-  is_transparent bool
+  is_transparent boolean
     not null,
-  use_antialiasing bool
+  use_antialiasing boolean
     not null,
   word text
     not null,

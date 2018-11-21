@@ -9,27 +9,27 @@ create table httpd_tomcat_contexts (
   tomcat_site integer
     not null,
   class_name text,
-  cookies bool
+  cookies boolean
     not null,
-  cross_context bool
+  cross_context boolean
     not null,
   doc_base text
     not null,
-  override bool
+  override boolean
     not null,
   "path" text
     not null,
-  privileged bool
+  privileged boolean
     not null,
-  reloadable bool
+  reloadable boolean
     not null,
-  use_naming bool
+  use_naming boolean
     not null,
   wrapper_class text,
   debug integer
     not null,
   work_dir text,
-  server_xml_configured bool
+  server_xml_configured boolean
     not null,
   unique(tomcat_site, "path")
 );

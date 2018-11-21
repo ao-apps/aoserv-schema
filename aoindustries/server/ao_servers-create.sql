@@ -29,16 +29,16 @@ create table ao_servers (
   daemon_connect_bind integer,
   time_zone text not null default 'Etc/UTC',
   jilter_bind integer,
-  restrict_outbound_email bool not null default true,
+  restrict_outbound_email boolean not null default true,
   daemon_connect_address text,
   failover_batch_size integer not null default 1000,
-  monitoring_load_low float4
+  monitoring_load_low real
     default 1
     check (
       monitoring_load_low is null
       or monitoring_load_low > 0
     ),
-  monitoring_load_medium float4
+  monitoring_load_medium real
     default 2
     check (
       monitoring_load_medium is null or (
@@ -46,7 +46,7 @@ create table ao_servers (
         and monitoring_load_medium > monitoring_load_low
       )
     ),
-  monitoring_load_high float4
+  monitoring_load_high real
     default 4
     check (
       monitoring_load_high is null or (
@@ -54,7 +54,7 @@ create table ao_servers (
         and monitoring_load_high > monitoring_load_medium
       )
     ),
-  monitoring_load_critical float4
+  monitoring_load_critical real
     default 8
     check (
       monitoring_load_critical is null or (
@@ -64,7 +64,7 @@ create table ao_servers (
     ),
   uid_min integer not null check (uid_min >= 500 and uid_min < 60000) default 1000,
   gid_min integer not null check (gid_min >= 500 and gid_min < 60000) default 1000,
-  sftp_umask int8
+  sftp_umask bigint
   check (
     sftp_umask is null
     or sftp_umask between 0 and 511 -- Between 000 and 777 octal

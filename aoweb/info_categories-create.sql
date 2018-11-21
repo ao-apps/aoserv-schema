@@ -26,7 +26,7 @@ create table info_categories (
     not null,
   category text
     not null,
-  sort_order int4
+  sort_order integer
     not null,
   title text
     not null,

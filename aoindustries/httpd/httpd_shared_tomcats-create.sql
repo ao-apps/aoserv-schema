@@ -32,7 +32,7 @@ create table httpd_shared_tomcats (
   tomcat4_shutdown_port integer
     unique,
   tomcat4_shutdown_key text,
-  is_manual bool
+  is_manual boolean
     not null,
   max_post_size integer
     check (max_post_size is null or max_post_size >= 0),

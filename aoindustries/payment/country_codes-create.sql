@@ -1,9 +1,9 @@
 create table country_codes (
-  code char(2)
+  code character(2)
     primary key,
   "name" text
     not null,
-  charge_com_supported bool
+  charge_com_supported boolean
     not null,
   charge_com_name text
 );

@@ -1,4 +1,4 @@
-create sequence email_smtp_relays_pkey_seq cycle;
+create sequence         email_smtp_relays_pkey_seq cycle;
 grant all            on email_smtp_relays_pkey_seq to aoadmin;
 grant select, update on email_smtp_relays_pkey_seq to aoserv_app;
 
@@ -9,9 +9,9 @@ create table email_smtp_relays (
   package text
     not null,
   ao_server integer,
-  host text
+  "host" text
     not null,
-  type text
+  "type" text
     not null,
   created timestamp with time zone
     not null,
@@ -21,7 +21,7 @@ create table email_smtp_relays (
     not null,
   expiration timestamp with time zone,
   disable_log integer,
-  unique(package, ao_server, host)
+  unique(package, ao_server, "host")
 );
 grant all                            on email_smtp_relays to aoadmin;
 grant select, insert, update, delete on email_smtp_relays to aoserv_app;

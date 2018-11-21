@@ -23,7 +23,7 @@ grant select, update on info_pages_pkey_seq to aoweb_app;
 create table info_pages (
   pkey integer
     default nextval('info_pages_pkey_seq')
-    constraint info_pages_pkey primary key,
+    primary key,
   enabled bool
     not null
     default true,

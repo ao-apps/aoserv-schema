@@ -5,7 +5,7 @@ grant select, update on linux_acc_addresses_pkey_seq to aoserv_app;
 create table linux_acc_addresses (
   pkey integer
     default nextval('linux_acc_addresses_pkey_seq')
-    constraint linux_acc_addresses_pkey primary key,
+    primary key,
   email_address integer
     not null,
   linux_server_account integer

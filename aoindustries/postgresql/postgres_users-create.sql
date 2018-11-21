@@ -1,6 +1,6 @@
 create table postgres_users (
   username text
-    constraint postgres_users_pkey primary key,
+    primary key,
   createdb bool
     not null
     default false,

@@ -1,6 +1,6 @@
 create table distro_report_types (
   "name" text
-    constraint distro_report_types_pkey primary key,
+    primary key,
   display text
     not null
 );

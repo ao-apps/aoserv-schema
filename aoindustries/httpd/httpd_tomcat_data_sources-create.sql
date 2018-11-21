@@ -5,7 +5,7 @@ grant select, update on httpd_tomcat_data_sources_pkey_seq to aoserv_app;
 create table httpd_tomcat_data_sources (
   pkey integer
     default nextval('httpd_tomcat_data_sources_pkey_seq')
-    constraint httpd_tomcat_data_sources_pkey primary key,
+    primary key,
   tomcat_context integer
     not null,
   name text

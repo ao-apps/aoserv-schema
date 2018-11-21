@@ -143,7 +143,7 @@ CREATE OR REPLACE FUNCTION isValidIpReputationLimits(
 create table ip_reputation_limiter_limits (
   pkey integer
     default nextval('ip_reputation_limiter_limits_pkey_seq')
-    constraint ip_reputation_limiter_limits_pkey primary key,
+    primary key,
   limiter integer not null,
   "class" text not null
     check (

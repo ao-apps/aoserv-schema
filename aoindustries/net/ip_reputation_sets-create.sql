@@ -49,7 +49,7 @@ CREATE OR REPLACE FUNCTION isValidIpReputationIdentifier(identifier text)
 create table ip_reputation_sets (
   pkey integer
     default nextval('ip_reputation_sets_pkey_seq')
-    constraint ip_reputation_sets_pkey primary key,
+    primary key,
   accounting text
     not null,
   identifier text

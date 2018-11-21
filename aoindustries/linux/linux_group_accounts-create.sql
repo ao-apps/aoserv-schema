@@ -5,7 +5,7 @@ grant select, update on linux_group_accounts_pkey_seq to aoserv_app;
 create table linux_group_accounts (
   pkey integer
     default nextval('linux_group_accounts_pkey_seq')
-    constraint linux_group_accounts_pkey primary key,
+    primary key,
   "group" text
     not null,
   username text

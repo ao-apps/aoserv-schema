@@ -1,6 +1,6 @@
 create table businesses (
   accounting text
-    constraint businesses_pkey primary key,
+    primary key,
   contract_version text,
   created timestamp with time zone
     default now()

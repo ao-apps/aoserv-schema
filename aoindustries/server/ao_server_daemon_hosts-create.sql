@@ -5,7 +5,7 @@ grant select on ao_server_daemon_hosts_pkey_seq to aoserv_app;
 create table ao_server_daemon_hosts (
   pkey integer
     default nextval('ao_server_daemon_hosts_pkey_seq')
-    constraint ao_server_daemon_hosts_pkey primary key,
+    primary key,
   ao_server integer
     not null,
   host text

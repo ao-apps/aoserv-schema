@@ -1,6 +1,6 @@
 create table dns_tlds (
   domain text
-    constraint dns_tlds_pkey primary key,
+    primary key,
   description text
     not null
 );

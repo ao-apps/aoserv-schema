@@ -5,7 +5,7 @@ grant select on virtual_disks_pkey_seq to aoserv_app;
 create table virtual_disks (
   pkey integer
     default nextval('virtual_disks_pkey_seq')
-    constraint virtual_disks_pkey primary key,
+    primary key,
   virtual_server integer
     not null,
   device text

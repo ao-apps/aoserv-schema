@@ -5,7 +5,7 @@ grant select, update on operating_system_versions_pkey_seq to aoserv_app;
 create table operating_system_versions (
   pkey integer
     default nextval('operating_system_versions_pkey_seq')
-    constraint operating_system_versions_pkey primary key,
+    primary key,
   operating_system text
     not null,
   version_number text

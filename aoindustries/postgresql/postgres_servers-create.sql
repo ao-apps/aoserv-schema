@@ -5,7 +5,7 @@ grant select, update on postgres_servers_pkey_seq to aoserv_app;
 create table postgres_servers (
   pkey integer
     default nextval('postgres_servers_pkey_seq')
-    constraint postgres_servers_pkey primary key,
+    primary key,
   name text
     not null,
   ao_server integer

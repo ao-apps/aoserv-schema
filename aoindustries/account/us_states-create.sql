@@ -1,6 +1,6 @@
 create table us_states (
   code char(2)
-    constraint us_states_pkey primary key,
+    primary key,
   name text
     not null
 );

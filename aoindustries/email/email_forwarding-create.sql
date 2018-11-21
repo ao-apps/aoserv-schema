@@ -5,7 +5,7 @@ grant select, update on email_forwarding_pkey_seq to aoserv_app;
 create table email_forwarding (
   pkey integer
     default nextval('email_forwarding_pkey_seq')
-    constraint email_forwarding_pkey primary key,
+    primary key,
   email_address integer
     not null,
   destination text

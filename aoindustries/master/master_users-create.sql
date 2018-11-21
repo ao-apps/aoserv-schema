@@ -1,6 +1,6 @@
 create table master_users (
   username text
-    constraint master_users_pkey primary key,
+    primary key,
   is_active bool
     default true
     not null,

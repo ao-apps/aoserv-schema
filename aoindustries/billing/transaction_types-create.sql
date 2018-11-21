@@ -1,6 +1,6 @@
 create table transaction_types (
   name text
-    constraint transaction_types_pkey primary key,
+    primary key,
   is_credit bool
     not null
 );

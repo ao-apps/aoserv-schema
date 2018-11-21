@@ -1,6 +1,6 @@
 create table net_ports (
   port integer
-    constraint net_ports_pkey primary key,
+    primary key,
  -- TODO: Remove is_user here.  In fact, probable best to remove this table entirely.
   is_user boolean
     not null

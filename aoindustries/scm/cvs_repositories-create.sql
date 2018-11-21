@@ -5,7 +5,7 @@ grant select, update on cvs_repositories_pkey_seq to aoserv_app;
 create table cvs_repositories (
   pkey integer
     default nextval('cvs_repositories_pkey_seq')
-    constraint cvs_repositories_pkey primary key,
+    primary key,
   path text
     not null,
   linux_server_account integer

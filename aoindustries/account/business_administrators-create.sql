@@ -1,6 +1,6 @@
 create table business_administrators (
   username text
-    constraint business_administrators_pkey primary key,
+    primary key,
   password text
     default '*'
     not null,

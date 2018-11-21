@@ -1,6 +1,6 @@
 create table shells (
   path text
-    constraint shells_pkey primary key,
+    primary key,
   is_login bool
     not null,
   is_system bool

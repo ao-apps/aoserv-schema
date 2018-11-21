@@ -5,7 +5,7 @@ grant select, update on net_binds_pkey_seq to aoserv_app;
 create table net_binds (
   pkey integer
     default nextval('net_binds_pkey_seq')
-    constraint net_binds_pkey primary key,
+    primary key,
   package text
     not null,
   server integer

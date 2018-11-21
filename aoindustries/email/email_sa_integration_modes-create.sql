@@ -1,6 +1,6 @@
 create table email_sa_integration_modes (
-  name text
-    constraint email_sa_integration_modes_pkey primary key,
+  "name" text
+    primary key,
   display text
     not null,
   sort_order integer

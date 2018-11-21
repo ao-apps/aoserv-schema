@@ -5,7 +5,7 @@ grant select, update on package_definition_limits_pkey_seq to aoserv_app;
 create table package_definition_limits (
   pkey integer
     default nextval('package_definition_limits_pkey_seq')
-    constraint package_definition_limits_pkey primary key,
+    primary key,
   package_definition integer
     not null,
   resource text

@@ -5,7 +5,7 @@ grant select, update on linux_server_accounts_pkey_seq to aoserv_app;
 create table linux_server_accounts (
   pkey integer
     default nextval('linux_server_accounts_pkey_seq')
-    constraint linux_server_accounts_pkey primary key,
+    primary key,
   username text
     not null,
   ao_server integer

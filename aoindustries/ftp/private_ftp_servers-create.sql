@@ -1,6 +1,6 @@
 create table private_ftp_servers (
   net_bind integer
-    constraint private_ftp_servers_pkey primary key,
+    primary key,
   root text
     not null,
   logfile text

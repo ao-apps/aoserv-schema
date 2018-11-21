@@ -5,7 +5,7 @@ grant select, update on spam_email_messages_pkey_seq to aoserv_app;
 create table spam_email_messages (
   pkey integer
     default nextval('spam_email_messages_pkey_seq')
-    constraint spam_email_messages_pkey primary key,
+    primary key,
   email_relay integer
     not null,
   time timestamp with time zone

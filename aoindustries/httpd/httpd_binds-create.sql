@@ -1,6 +1,6 @@
 create table httpd_binds (
   net_bind integer
-    constraint httpd_binds_pkey primary key,
+    primary key,
   httpd_server integer
     not null
 );

@@ -5,7 +5,7 @@ grant select, update on failover_mysql_replications_pkey_seq to aoserv_app;
 create table failover_mysql_replications (
   pkey integer
     default nextval('failover_mysql_replications_pkey_seq')
-    constraint failover_mysql_replications_pkey primary key,
+    primary key,
   ao_server integer,
   replication integer,
   check ( -- Must be one or the other

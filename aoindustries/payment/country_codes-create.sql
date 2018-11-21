@@ -1,6 +1,6 @@
 create table country_codes (
   code char(2)
-    constraint country_codes_pkey primary key,
+    primary key,
   "name" text
     not null,
   charge_com_supported bool

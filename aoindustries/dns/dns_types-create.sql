@@ -1,6 +1,6 @@
 create table dns_types (
   type text
-    constraint dns_types_pkey primary key,
+    primary key,
   description  text    not null,
   has_priority boolean not null,
   has_weight   boolean not null,

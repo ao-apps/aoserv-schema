@@ -1,6 +1,6 @@
 create table httpd_jboss_sites (
   tomcat_site integer
-    constraint httpd_jboss_sites_pkey primary key,
+    primary key,
   version integer
     not null,
   jnp_bind integer

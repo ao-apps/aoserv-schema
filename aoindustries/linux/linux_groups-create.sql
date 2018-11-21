@@ -1,6 +1,6 @@
 create table linux_groups (
   name text
-    constraint linux_groups_pkey primary key,
+    primary key,
   package text
     not null,
   type text

@@ -1,6 +1,6 @@
 create table httpd_tomcat_std_sites (
   tomcat_site integer
-    constraint httpd_tomcat_std_sites_pkey primary key,
+    primary key,
   tomcat4_shutdown_port integer
     unique,
   tomcat4_shutdown_key text,

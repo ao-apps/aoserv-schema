@@ -1,6 +1,6 @@
 create table usernames (
   username text
-    constraint usernames_pkey primary key
+    primary key
     check (
       -- Control usernames for Cyrus user@domain use in virtdomains
       username not like '@%'            -- Can't start with @

@@ -5,7 +5,7 @@ grant select, update on httpd_site_urls_pkey_seq to aoserv_app;
 create table httpd_site_urls (
   pkey integer
     default nextval('httpd_site_urls_pkey_seq')
-    constraint httpd_site_urls_pkey primary key,
+    primary key,
   httpd_site_bind integer
     not null,
   hostname text

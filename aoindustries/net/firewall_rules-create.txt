@@ -20,7 +20,7 @@ grant all            on firewall_rules_pkey_seq to aoadmin;
 create table firewall_rules (
   pkey integer
     default nextval('firewall_rules_pkey_seq')
-    constraint firewall_rules_pkey primary key,
+    primary key,
   net_device int
     not null,
   sort_order smallint

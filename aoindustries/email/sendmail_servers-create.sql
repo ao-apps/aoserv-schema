@@ -5,7 +5,7 @@ grant select on sendmail_servers_pkey_seq to aoserv_app;
 create table sendmail_servers (
   pkey integer
     default nextval('sendmail_servers_pkey_seq')
-    constraint sendmail_servers_pkey primary key,
+    primary key,
   ao_server integer
     not null,
   "name" text

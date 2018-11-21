@@ -5,7 +5,7 @@ grant select, update on signup_request_options_pkey_seq to aoserv_app;
 create table signup_request_options (
   pkey integer
     default nextval('signup_request_options_pkey_seq')
-    constraint signup_request_options_pkey primary key,
+    primary key,
   request integer
     not null,
   name text

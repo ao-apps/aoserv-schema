@@ -5,7 +5,7 @@ grant select on racks_pkey_seq to aoserv_app;
 create table racks (
   pkey integer
     default nextval('racks_pkey_seq')
-    constraint racks_pkey primary key,
+    primary key,
   farm text
     not null,
   name text

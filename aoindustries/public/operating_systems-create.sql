@@ -1,6 +1,6 @@
 create table operating_systems (
   name text
-    constraint operating_systems_pkey primary key,
+    primary key,
   display text
     not null,
   is_unix bool

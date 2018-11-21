@@ -1,6 +1,6 @@
 create table architectures (
   name text
-    constraint architectures_pkey primary key,
+    primary key,
   bits integer
     not null
 );

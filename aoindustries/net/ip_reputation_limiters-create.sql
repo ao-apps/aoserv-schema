@@ -5,7 +5,7 @@ grant all on    ip_reputation_limiters_pkey_seq to aoadmin;
 create table ip_reputation_limiters (
   pkey integer
     default nextval('ip_reputation_limiters_pkey_seq')
-    constraint ip_reputation_limiters_pkey primary key
+    primary key
     check (
       -- Due to encoding of iptables (and hashlimit) names, may not exceed eight characters
       pkey between 1 and 99999999

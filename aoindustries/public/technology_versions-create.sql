@@ -5,7 +5,7 @@ grant select, update on technology_versions_pkey_seq to aoserv_app;
 create table technology_versions (
   pkey integer
     default nextval('technology_versions_pkey_seq')
-    constraint technology_versions_pkey primary key,
+    primary key,
   "name" text
     not null,
   version text

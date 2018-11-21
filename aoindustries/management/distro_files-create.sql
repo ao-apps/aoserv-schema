@@ -5,7 +5,7 @@ grant select, update on distro_files_pkey_seq to aoserv_app;
 create table distro_files (
   pkey integer
     default nextval('distro_files_pkey_seq')
-    constraint distro_files_pkey primary key,
+    primary key,
   operating_system_version integer
     not null,
   "path" text

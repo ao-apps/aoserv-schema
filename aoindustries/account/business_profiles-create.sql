@@ -5,7 +5,7 @@ grant select, update on business_profiles_pkey_seq to aoserv_app;
 create table business_profiles (
   pkey integer
     default nextval('business_profiles_pkey_seq')
-    constraint business_profiles_pkey primary key,
+    primary key,
   accounting text
     not null,
   priority integer

@@ -5,7 +5,7 @@ grant select, update on httpd_workers_pkey_seq to aoserv_app;
 create table httpd_workers (
   pkey integer
     default nextval('httpd_workers_pkey_seq')
-    constraint httpd_workers_pkey primary key,
+    primary key,
   code char(2)
     not null,
   net_bind integer

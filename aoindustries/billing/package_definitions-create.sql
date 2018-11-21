@@ -5,7 +5,7 @@ grant select, update on package_definitions_pkey_seq to aoserv_app;
 create table package_definitions (
   pkey integer
     default nextval('package_definitions_pkey_seq')
-    constraint package_definitions_pkey primary key,
+    primary key,
   accounting text
     not null,
   category text

@@ -1,6 +1,6 @@
 create table credit_card_processors (
   provider_id text
-    constraint credit_card_processors_pkey primary key,
+    primary key,
   accounting text
     not null,
   class_name text not null,

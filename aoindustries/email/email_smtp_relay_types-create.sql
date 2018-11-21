@@ -1,6 +1,6 @@
 create table email_smtp_relay_types (
-  name text
-    constraint email_smtp_relay_types_pkey primary key,
+  "name" text
+    primary key,
   sendmail_config text
     not null,
   qmail_config text

@@ -15,7 +15,7 @@ grant select, update on signup_request_values_pkey_seq to aoweb_app;
 create table signup_request_values (
   pkey integer
     default nextval('signup_request_values_pkey_seq')
-    constraint signup_request_values_pkey primary key,
+    primary key,
   request integer
     not null,
   name text

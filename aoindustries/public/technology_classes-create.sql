@@ -1,6 +1,6 @@
 create table technology_classes (
   name text
-    constraint technology_classes_pkey primary key,
+    primary key,
   description text
     not null
 );

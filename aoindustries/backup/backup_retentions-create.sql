@@ -1,6 +1,6 @@
 create table backup_retentions (
   days smallint
-    constraint backup_retentions_pkey primary key,
+    primary key,
   display text
     not null
 );

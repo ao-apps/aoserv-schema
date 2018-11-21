@@ -1,6 +1,6 @@
 create table notice_types (
-  type text
-    constraint notice_types_pkey primary key,
+  "type" text
+    primary key,
   description text
     not null
 );

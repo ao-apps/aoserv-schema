@@ -5,7 +5,7 @@ grant all     on firewalld_zones_pkey_seq to aoadmin;
 create table firewalld_zones (
   pkey integer
     default nextval('firewalld_zones_pkey_seq')
-    constraint firewalld_zones_pkey primary key,
+    primary key,
   server integer
     not null,
   "name" text

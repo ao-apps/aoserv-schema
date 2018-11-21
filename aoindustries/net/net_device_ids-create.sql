@@ -1,6 +1,6 @@
 create table net_device_ids (
-  name text
-    constraint net_device_ids_pkey primary key,
+  "name" text
+    primary key,
   is_loopback bool
     not null
 );

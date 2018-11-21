@@ -6,7 +6,7 @@ grant select on httpd_site_bind_headers_pkey_seq to aoserv_app; -- , update
 create table httpd_site_bind_headers (
   pkey            integer
     default nextval('httpd_site_bind_headers_pkey_seq')
-    constraint httpd_site_bind_headers_pkey primary key,
+    primary key,
   httpd_site_bind integer  not null,
   sort_order      smallint not null
   check (

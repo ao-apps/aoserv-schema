@@ -5,7 +5,7 @@ grant select, update on file_backup_settings_pkey_seq to aoserv_app;
 create table file_backup_settings (
   pkey smallint
     default nextval('file_backup_settings_pkey_seq')
-    constraint file_backup_settings_pkey primary key,
+    primary key,
   replication integer
     not null,
   "path" text

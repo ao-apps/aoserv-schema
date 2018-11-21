@@ -5,7 +5,7 @@ grant select, update on credit_card_transactions_pkey_seq to aoserv_app;
 create table credit_card_transactions (
   pkey integer
     default nextval('credit_card_transactions_pkey_seq')
-    constraint credit_card_transactions_pkey primary key,
+    primary key,
   processor_id text not null,
   accounting text not null,
   group_name text,

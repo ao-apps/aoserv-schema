@@ -1,6 +1,6 @@
 create table net_tcp_redirects (
   net_bind integer
-    constraint net_tcp_redirects_pkey primary key,
+    primary key,
   cps integer
     not null,
   cps_overload_sleep_time integer

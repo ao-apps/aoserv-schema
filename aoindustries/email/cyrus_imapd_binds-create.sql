@@ -1,6 +1,6 @@
 create table cyrus_imapd_binds (
   net_bind integer
-    constraint cyrus_imapd_binds_pkey primary key,
+    primary key,
   cyrus_imapd_server integer
     not null,
   servername text

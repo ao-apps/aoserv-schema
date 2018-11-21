@@ -5,7 +5,7 @@ grant select, update on postgres_server_users_pkey_seq to aoserv_app;
 create table postgres_server_users (
   pkey integer
     default nextval('postgres_server_users_pkey_seq')
-    constraint postgres_server_users_pkey primary key,
+    primary key,
   username text
     not null,
   postgres_server integer

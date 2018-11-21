@@ -5,7 +5,7 @@ grant select, update on httpd_shared_tomcats_pkey_seq to aoserv_app;
 create table httpd_shared_tomcats (
   pkey integer
     default nextval('httpd_shared_tomcats_pkey_seq')
-    constraint httpd_shared_tomcats_pkey primary key,
+    primary key,
   "name" text
     not null
     check (

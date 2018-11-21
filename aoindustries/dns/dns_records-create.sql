@@ -5,7 +5,7 @@ grant select, update on dns_records_pkey_seq to aoserv_app;
 create table dns_records (
   pkey          integer
     default nextval('dns_records_pkey_seq')
-    constraint dns_records_pkey primary key,
+    primary key,
   "zone"        text not null,
   "domain"      text not null,
   "type"        text not null,

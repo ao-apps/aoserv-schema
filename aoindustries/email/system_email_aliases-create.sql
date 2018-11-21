@@ -5,7 +5,7 @@ grant select, update on system_email_aliases_pkey_seq to aoserv_app;
 create table system_email_aliases (
   pkey integer
     default nextval('system_email_aliases_pkey_seq')
-    constraint system_email_aliases_pkey primary key,
+    primary key,
   ao_server integer
     not null,
   address text

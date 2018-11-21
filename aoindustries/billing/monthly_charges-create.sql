@@ -5,7 +5,7 @@ grant select, update on monthly_charges_pkey_seq to aoserv_app;
 create table monthly_charges (
   pkey integer
     default nextval('monthly_charges_pkey_seq')
-    constraint monthly_charges_pkey primary key,
+    primary key,
   accounting text
     not null,
   package text

@@ -5,7 +5,7 @@ grant select, update on packages_pkey_seq to aoserv_app;
 create table packages (
   pkey integer
     default nextval('packages_pkey_seq')
-    constraint packages_pkey primary key,
+    primary key,
   name text
     not null
     unique,

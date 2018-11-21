@@ -5,7 +5,7 @@ grant select, update on mysql_server_users_pkey_seq to aoserv_app;
 create table mysql_server_users (
   pkey integer
     default nextval('mysql_server_users_pkey_seq')
-    constraint mysql_server_users_pkey primary key,
+    primary key,
   username text
     not null,
   mysql_server integer

@@ -1,6 +1,6 @@
 create table dns_zones (
   zone text
-    constraint dns_zones_pkey primary key,
+    primary key,
   file text
     not null
     unique,

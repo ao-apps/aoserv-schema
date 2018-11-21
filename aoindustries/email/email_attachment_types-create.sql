@@ -1,6 +1,6 @@
 create table email_attachment_types (
   extension text
-    constraint email_attachment_types_pkey primary key,
+    primary key,
   description text
     not null,
   is_default_block bool

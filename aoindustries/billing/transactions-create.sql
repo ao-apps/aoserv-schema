@@ -8,7 +8,7 @@ create table transactions (
     not null,
   transid integer
     default nextval('transactions_transid_seq')
-    constraint transactions_pkey primary key,
+    primary key,
   accounting text
     not null,
   source_accounting text

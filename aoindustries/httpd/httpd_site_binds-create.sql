@@ -5,7 +5,7 @@ grant select, update on httpd_site_binds_pkey_seq to aoserv_app;
 create table httpd_site_binds (
   pkey integer
     default nextval('httpd_site_binds_pkey_seq')
-    constraint httpd_site_binds_pkey primary key,
+    primary key,
   httpd_site integer
     not null,
   httpd_bind integer

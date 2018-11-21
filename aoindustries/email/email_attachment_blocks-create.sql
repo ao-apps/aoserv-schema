@@ -5,7 +5,7 @@ grant select, update on email_attachment_blocks_pkey_seq to aoserv_app;
 create table email_attachment_blocks (
   pkey integer
     default nextval('email_attachment_blocks_pkey_seq')
-    constraint email_attachment_blocks_pkey primary key,
+    primary key,
   linux_server_account integer
     not null,
   extension text

@@ -5,7 +5,7 @@ grant select, update on whois_history_pkey_seq to aoserv_app;
 create table whois_history (
   pkey integer
     default nextval('whois_history_pkey_seq')
-    constraint whois_history_pkey primary key,  
+    primary key,  
   time timestamp with time zone
     default now()
     not null,

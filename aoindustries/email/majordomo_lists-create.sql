@@ -1,6 +1,6 @@
 create table majordomo_lists (
   email_list integer
-    constraint majordomo_lists_pkey primary key,
+    primary key,
   majordomo_server integer
     not null,
   name text

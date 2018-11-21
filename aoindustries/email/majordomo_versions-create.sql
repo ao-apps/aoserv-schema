@@ -1,6 +1,6 @@
 create table majordomo_versions (
   version text
-    constraint majordomo_version_pkey primary key,
+    primary key,
   created timestamp with time zone
     not null
     default now()

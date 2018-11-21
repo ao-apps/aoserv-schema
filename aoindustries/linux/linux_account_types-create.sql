@@ -1,6 +1,6 @@
 create table linux_account_types (
   name text
-    constraint linux_account_types_pkey primary key,
+    primary key,
   description text
     not null,
   is_email bool

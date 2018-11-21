@@ -1,6 +1,6 @@
 create table majordomo_servers (
   domain integer
-    constraint majordomo_servers_pkey primary key,
+    primary key,
   linux_server_account integer
     not null,
   linux_server_group integer

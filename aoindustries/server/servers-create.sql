@@ -5,7 +5,7 @@ grant select, update on servers_pkey_seq to aoserv_app;
 create table servers (
   pkey integer
     default nextval('servers_pkey_seq')
-    constraint servers_pkey primary key,
+    primary key,
   farm text
     not null,
   description text not null,

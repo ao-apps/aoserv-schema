@@ -5,7 +5,7 @@ grant select, update on httpd_servers_pkey_seq to aoserv_app;
 create table httpd_servers (
   pkey integer
     default nextval('httpd_servers_pkey_seq')
-    constraint httpd_servers_pkey primary key,
+    primary key,
   ao_server integer
     not null,
   "name" text

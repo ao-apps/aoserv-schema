@@ -8,7 +8,7 @@ grant all            on ip_reputation_limiter_sets_pkey_seq to aoadmin;
 create table ip_reputation_limiter_sets (
   pkey integer
     default nextval('ip_reputation_limiter_sets_pkey_seq')
-    constraint ip_reputation_limiter_sets_pkey primary key,
+    primary key,
   limiter integer not null,
   "set" integer not null,
   unique(limiter, "set"),

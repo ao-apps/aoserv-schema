@@ -5,7 +5,7 @@ grant select, update on email_smtp_relays_pkey_seq to aoserv_app;
 create table email_smtp_relays (
   pkey integer
     default nextval('email_smtp_relays_pkey_seq')
-    constraint email_smtp_relays_pkey primary key,
+    primary key,
   package text
     not null,
   ao_server integer,

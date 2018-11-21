@@ -1,6 +1,6 @@
 create table server_farms (
-  name text
-    constraint server_farms_pkey primary key,
+  "name" text
+    primary key,
   description text
     not null,
   owner integer

@@ -5,7 +5,7 @@ grant select on encryption_keys_pkey_seq to aoserv_app;
 create table encryption_keys (
   pkey integer
     default nextval('encryption_keys_pkey_seq')
-    constraint encryption_keys_pkey primary key,
+    primary key,
   accounting text
     not null,
   id text

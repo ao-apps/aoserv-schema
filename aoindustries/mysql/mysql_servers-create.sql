@@ -5,7 +5,7 @@ grant select, update on mysql_servers_pkey_seq to aoserv_app;
 create table mysql_servers (
   pkey integer
     default nextval('mysql_servers_pkey_seq')
-    constraint mysql_servers_pkey primary key,
+    primary key,
   name text
     not null,
   ao_server integer

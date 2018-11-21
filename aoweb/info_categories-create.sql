@@ -21,7 +21,7 @@ grant select, update on info_categories_pkey_seq to aoweb_app;
 create table info_categories (
   pkey integer
     default nextval('info_categories_pkey_seq')
-    constraint info_categories_pkey primary key,
+    primary key,
   type text
     not null,
   category text

@@ -1,6 +1,6 @@
 create table ao_servers (
   server integer
-    constraint ao_servers_pkey primary key,
+    primary key,
   hostname text not null unique
     check(
       hostname=lower(hostname) -- Must be all lowercase

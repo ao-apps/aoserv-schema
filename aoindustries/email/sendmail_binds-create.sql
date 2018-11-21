@@ -1,6 +1,6 @@
 create table sendmail_binds (
   net_bind integer
-    constraint sendmail_binds_pkey primary key,
+    primary key,
   sendmail_server integer
     not null,
   "name" text

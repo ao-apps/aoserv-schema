@@ -5,7 +5,7 @@ grant select, update on failover_file_replications_pkey_seq to aoserv_app;
 create table failover_file_replications (
   pkey integer
     default nextval('failover_file_replications_pkey_seq')
-    constraint failover_file_replications_pk primary key,
+    primary key,
   server integer not null,
   backup_partition integer not null,
   max_bit_rate int8,

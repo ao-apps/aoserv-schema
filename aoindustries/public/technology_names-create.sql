@@ -1,6 +1,6 @@
 create table technology_names (
   name text
-    constraint technology_names_pkey primary key,
+    primary key,
   image_filename text,
   image_width integer,
   image_height integer,

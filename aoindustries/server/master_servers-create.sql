@@ -5,7 +5,7 @@ grant select, update on master_servers_pkey_seq to aoserv_app;
 create table master_servers (
   pkey integer
     default nextval('master_servers_pkey_seq')
-    constraint master_servers_pkey primary key,
+    primary key,
   username text
     not null,
   server integer

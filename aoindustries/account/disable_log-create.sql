@@ -5,7 +5,7 @@ grant select, update on disable_log_pkey_seq to aoserv_app;
 create table disable_log (
   pkey integer
     default nextval('disable_log_pkey_seq')
-    constraint disable_log_pkey primary key,
+    primary key,
   time timestamp with time zone
     not null
     default now(),

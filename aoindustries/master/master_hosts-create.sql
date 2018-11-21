@@ -5,12 +5,12 @@ grant select on master_hosts_pkey_seq to aoserv_app;
 create table master_hosts (
   pkey integer
     default nextval('master_hosts_pkey_seq')
-    constraint master_hosts_pkey primary key,
+    primary key,
   username text
     not null,
-  host text
+  "host" text
     not null,
-  unique(username, host)
+  unique(username, "host")
 );
 grant all    on master_hosts to aoadmin;
 grant select on master_hosts to aoserv_app;

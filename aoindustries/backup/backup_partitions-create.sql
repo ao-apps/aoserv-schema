@@ -5,7 +5,7 @@ grant select, update on backup_partitions_pkey_seq to aoserv_app;
 create table backup_partitions (
   pkey integer
     default nextval('backup_partitions_pkey_seq')
-    constraint backup_partitions_pkey primary key,
+    primary key,
   ao_server integer not null,
   path text not null,
   enabled bool not null,

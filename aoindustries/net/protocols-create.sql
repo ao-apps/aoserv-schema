@@ -1,6 +1,6 @@
 create table protocols (
   protocol text
-    constraint protocols_pkey primary key,
+    primary key,
   port integer
     not null,
   name text

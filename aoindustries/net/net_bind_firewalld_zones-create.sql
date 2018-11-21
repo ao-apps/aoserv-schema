@@ -5,7 +5,7 @@ grant select, update on net_bind_firewalld_zones_pkey_seq to aoserv_app;
 create table net_bind_firewalld_zones (
   pkey integer
     default nextval('net_bind_firewalld_zones_pkey_seq')
-    constraint net_bind_firewalld_zones_pkey primary key,
+    primary key,
   net_bind integer
     not null,
   firewalld_zone integer

@@ -5,7 +5,7 @@ grant select, update on linux_server_groups_pkey_seq to aoserv_app;
 create table linux_server_groups (
   pkey integer
     default nextval('linux_server_groups_pkey_seq')
-    constraint linux_server_groups_pkey primary key,
+    primary key,
   name text
     not null,
   ao_server integer

@@ -5,7 +5,7 @@ grant select, update on failover_file_schedule_pkey_seq to aoserv_app;
 create table failover_file_schedule (
   pkey integer
     default nextval('failover_file_schedule_pkey_seq')
-    constraint failover_file_schedule_pkey primary key,
+    primary key,
   replication integer
     not null,
   hour smallint

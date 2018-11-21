@@ -1,6 +1,6 @@
 create table payment_types (
-  name text
-    constraint payment_types_pkey primary key,
+  "name" text
+    primary key,
   description text
     not null,
   active bool

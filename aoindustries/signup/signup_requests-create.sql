@@ -5,7 +5,7 @@ grant select, update on signup_requests_pkey_seq to aoserv_app;
 create table signup_requests (
   pkey integer
     default nextval('signup_requests_pkey_seq')
-    constraint signup_requests_pkey primary key,
+    primary key,
   brand text not null,
   time timestamp with time zone not null default now(),
   ip_address text not null,

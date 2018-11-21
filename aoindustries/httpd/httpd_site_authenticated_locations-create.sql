@@ -5,7 +5,7 @@ grant select, update on httpd_site_authenticated_locations_pkey_seq to aoserv_ap
 create table httpd_site_authenticated_locations (
   pkey integer
     default nextval('httpd_site_authenticated_locations_pkey_seq')
-    constraint httpd_site_authenticated_locations_pkey primary key,
+    primary key,
   httpd_site integer
     not null,
   "path" text

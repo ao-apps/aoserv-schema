@@ -5,7 +5,7 @@ grant select, update on email_list_addresses_pkey_seq to aoserv_app;
 create table email_list_addresses (
   pkey integer
     default nextval('email_list_addresses_pkey_seq')
-    constraint email_list_addresses_pkey primary key,
+    primary key,
   email_address integer
     not null,
   email_list integer

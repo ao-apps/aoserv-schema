@@ -1,6 +1,6 @@
 create table linux_group_types (
   name text
-    constraint linux_group_types_pkey primary key,
+    primary key,
   description text
     not null
 );

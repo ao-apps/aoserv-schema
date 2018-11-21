@@ -5,7 +5,7 @@ grant all            on ip_sets_pkey_seq to aoadmin;
 create table ip_sets (
   pkey integer
     default nextval('ip_sets_pkey_seq')
-    constraint ip_sets_pkey primary key,
+    primary key,
   accounting text
     not null,
   identifier text

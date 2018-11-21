@@ -6,7 +6,7 @@ grant select, update on ip_reputation_set_hosts_pkey_seq to aoserv_app;
 create table ip_reputation_set_hosts (
   pkey int8
     default nextval('ip_reputation_set_hosts_pkey_seq')
-    constraint ip_reputation_set_hosts_pkey primary key,
+    primary key,
   "set" integer
     not null,
   "host" integer -- The big-endian 32-bit IP address.

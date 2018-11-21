@@ -5,7 +5,7 @@ grant select on ssl_certificates_pkey_seq to aoserv_app;
 create table ssl_certificates (
   pkey integer
     default nextval('ssl_certificates_pkey_seq')
-    constraint ssl_certificates_pkey primary key,
+    primary key,
   ao_server integer
     not null,
   package integer

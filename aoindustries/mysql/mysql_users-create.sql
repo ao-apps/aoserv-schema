@@ -1,6 +1,6 @@
 create table mysql_users (
   username text
-    constraint mysql_users_pkey primary key,
+    primary key,
   select_priv bool
     not null
     default false,

@@ -5,7 +5,7 @@ grant select, update on net_devices_pkey_seq to aoserv_app;
 create table net_devices (
   pkey integer
     default nextval('net_devices_pkey_seq')
-    constraint net_devices_pkey primary key,
+    primary key,
   server integer
     not null,
   "deviceID" text

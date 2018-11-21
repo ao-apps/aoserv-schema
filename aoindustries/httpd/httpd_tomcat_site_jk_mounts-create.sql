@@ -5,7 +5,7 @@ grant select, update on httpd_tomcat_site_jk_mounts_pkey_seq to aoserv_app;
 create table httpd_tomcat_site_jk_mounts (
   pkey              integer
     default nextval('httpd_tomcat_site_jk_mounts_pkey_seq')
-    constraint httpd_tomcat_site_jk_mounts_pkey primary key,
+    primary key,
   httpd_tomcat_site integer  not null,
   "path"            text     not null,
   mount             boolean  not null,

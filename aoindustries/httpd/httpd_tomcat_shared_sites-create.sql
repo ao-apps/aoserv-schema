@@ -1,6 +1,6 @@
 create table httpd_tomcat_shared_sites (
   tomcat_site integer
-    constraint tomcat_site_pkey primary key,
+    primary key,
   httpd_shared_tomcat integer
     not null
 );

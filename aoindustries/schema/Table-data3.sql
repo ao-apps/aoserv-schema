@@ -225,6 +225,7 @@ select "schema".add_table(
     '1.76'
 );
 select "schema".add_table(
+    'payment',
     'country_codes',
     'Country Codes',
     true,

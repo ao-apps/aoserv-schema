@@ -172,6 +172,15 @@ insert into "schema"."Schema" values(
 );
 insert into "schema"."Schema" values(
     (select count(*) from "schema"."Schema"),
+    'pki',
+    '1.81.10',
+    null,
+    'PKI',
+    false,
+    null -- Uses pg_catalog.pg_description
+);
+insert into "schema"."Schema" values(
+    (select count(*) from "schema"."Schema"),
     'postgresql',
     '1.0a100',
     null,
@@ -194,7 +203,7 @@ insert into "schema"."Schema" values(
     '1.0a100',
     null,
     'Reseller',
-    true,
+    false,
     null -- Uses pg_catalog.pg_description
 );
 insert into "schema"."Schema" values(
@@ -212,7 +221,7 @@ insert into "schema"."Schema" values(
     '1.0a100',
     null,
     'SCM',
-    true,
+    false,
     null -- Uses pg_catalog.pg_description
 );
 insert into "schema"."Schema" values(
@@ -230,16 +239,7 @@ insert into "schema"."Schema" values(
     '1.0a100',
     null,
     'Signup',
-    true,
-    null -- Uses pg_catalog.pg_description
-);
-insert into "schema"."Schema" values(
-    (select count(*) from "schema"."Schema"),
-    'pki',
-    '1.81.10',
-    null,
-    'PKI',
-    true,
+    false,
     null -- Uses pg_catalog.pg_description
 );
 insert into "schema"."Schema" values(

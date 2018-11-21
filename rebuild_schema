@@ -44,4 +44,7 @@ do
 	cat "$SQL"
 done
 cat "${DIR}/aoindustries/schema/ForeignKey-data5-post.sql"
+# Verify
+cat "${DIR}/aoindustries/schema/Schema-verify.sql"
+cat "${DIR}/aoindustries/schema/Table-verify.sql"
 echo "COMMIT;"

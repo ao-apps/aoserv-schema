@@ -1,4 +1,4 @@
-COPY "package_definitions" FROM stdin;
+COPY billing."PackageDefinition" FROM stdin;
 18	AOINDUSTRIES	backup	1024	2005-04	1 TB Backup	1 Terabyte Backup Service	\N	\N	570.00	backup	t	t
 19	AOINDUSTRIES	backup	2048	2005-04	2 TB Backup	2 Terabyte Backup Service	\N	\N	860.00	backup	t	t
 20	AOINDUSTRIES	backup	4096	2005-04	4 TB Backup	4 Terabyte Backup Service	\N	\N	1300.00	backup	t	t

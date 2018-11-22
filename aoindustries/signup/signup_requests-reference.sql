@@ -8,7 +8,7 @@ alter table signup_requests
 alter table signup_requests
   add constraint package_definition_fkey
   foreign key (package_definition)
-  references package_definitions (pkey)
+  references billing."PackageDefinition" (pkey)
   on delete restrict
   on update cascade
 ;

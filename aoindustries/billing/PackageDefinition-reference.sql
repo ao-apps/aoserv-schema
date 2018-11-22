@@ -15,14 +15,14 @@ alter table billing."PackageDefinition"
 alter table billing."PackageDefinition"
   add constraint setup_fee_transaction_type_fkey
   foreign key (setup_fee_transaction_type)
-  references transaction_types ("name")
+  references billing."TransactionType" ("name")
   on delete restrict
   on update cascade
 ;
 alter table billing."PackageDefinition"
   add constraint monthly_rate_transaction_type_fkey
   foreign key (monthly_rate_transaction_type)
-  references transaction_types ("name")
+  references billing."TransactionType" ("name")
   on delete restrict
   on update cascade
 ;

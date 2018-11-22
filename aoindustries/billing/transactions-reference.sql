@@ -22,7 +22,7 @@ alter table transactions
 alter table transactions
   add constraint type_fkey
   foreign key (type)
-  references transaction_types ("name")
+  references billing."TransactionType" ("name")
   on delete restrict
   on update cascade
 ;

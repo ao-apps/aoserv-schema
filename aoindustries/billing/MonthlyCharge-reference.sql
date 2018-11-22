@@ -15,7 +15,7 @@ alter table billing."MonthlyCharge"
 alter table billing."MonthlyCharge"
   add constraint type_fkey
   foreign key ("type")
-  references transaction_types ("name")
+  references billing."TransactionType" ("name")
   on delete restrict
   on update cascade
 ;

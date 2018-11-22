@@ -15,7 +15,7 @@ alter table billing."PackageDefinitionLimit"
 alter table billing."PackageDefinitionLimit"
   add constraint additional_transaction_type_fkey
   foreign key (additional_transaction_type)
-  references transaction_types ("name")
+  references billing."TransactionType" ("name")
   on delete restrict
   on update cascade
 ;

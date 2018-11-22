@@ -1,4 +1,4 @@
-COPY "transaction_types" FROM stdin;
+COPY billing."TransactionType" FROM stdin;
 aoserv	f
 backup	f
 bandwidth	f

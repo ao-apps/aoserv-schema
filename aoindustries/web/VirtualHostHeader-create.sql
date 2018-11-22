@@ -1,6 +1,6 @@
 create sequence web."VirtualHostHeader_pkey_seq" cycle;
 grant all    on web."VirtualHostHeader_pkey_seq" to aoadmin;
-grant select on web."VirtualHostHeader_pkey_seq" to aoserv_app; -- , update
+grant select on web."VirtualHostHeader_pkey_seq" to aoserv_app;
 
 -- See https://httpd.apache.org/docs/2.4/mod/mod_headers.html
 create table web."VirtualHostHeader" (

@@ -1,4 +1,4 @@
-COPY "technologies" (name, class) FROM stdin;
+COPY distribution."SoftwareCategorization" ("name", "class") FROM stdin;
 analog	Apache
 which	Linux
 words	Linux

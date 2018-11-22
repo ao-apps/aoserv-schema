@@ -1,4 +1,4 @@
-alter table ftp_guest_users
+alter table ftp."GuestUser"
   add constraint username_fkey
   foreign key (username)
   references linux_accounts (username)

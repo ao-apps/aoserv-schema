@@ -8,7 +8,7 @@ alter table email."SendmailBind"
 alter table email."SendmailBind"
   add constraint sendmail_server_fkey
   foreign key (sendmail_server)
-  references sendmail_servers (pkey)
+  references email."SendmailServer" (pkey)
   on delete restrict
   on update cascade
 ;

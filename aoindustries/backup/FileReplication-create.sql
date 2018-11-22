@@ -1,10 +1,10 @@
-create sequence         backup.failover_file_replications_pkey_seq cycle;
-grant all            on backup.failover_file_replications_pkey_seq to aoadmin;
-grant select, update on backup.failover_file_replications_pkey_seq to aoserv_app;
+create sequence backup."FileReplication_pkey_seq" cycle;
+grant all    on backup."FileReplication_pkey_seq" to aoadmin;
+grant select on backup."FileReplication_pkey_seq" to aoserv_app;
 
-create table failover_file_replications (
+create table backup."FileReplication" (
   pkey integer
-    default nextval('backup.failover_file_replications_pkey_seq')
+    default nextval('backup."FileReplication_pkey_seq"')
     primary key,
   server integer not null,
   backup_partition integer not null,
@@ -20,5 +20,5 @@ create table failover_file_replications (
   -- Failover mirrors (retention=1) may not be on a quota-enabled partition
   check(not(retention=1 and quota_gid is not null))
 );
-grant all            on failover_file_replications to aoadmin;
-grant select, update on failover_file_replications to aoserv_app;
+grant all            on backup."FileReplication" to aoadmin;
+grant select, update on backup."FileReplication" to aoserv_app;

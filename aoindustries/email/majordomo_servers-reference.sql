@@ -1,7 +1,7 @@
 alter table majordomo_servers
   add constraint domain_fkey
   foreign key (domain)
-  references email_domains (pkey)
+  references email."Domain" (pkey)
   on delete restrict
   on update cascade
 ;

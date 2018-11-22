@@ -5,8 +5,8 @@ as
           (select accounting, aosh_command from management."remove-canceled-cvs_repositories" order by accounting, net.reverse_hostname(hostname), "path")
 -- email_lists
 union all (select accounting, aosh_command from management."remove-canceled-email_lists" order by accounting, net.reverse_hostname(hostname), "path")
--- email_domains
-union all (select accounting, aosh_command from management."remove-canceled-email_domains" order by accounting, net.reverse_hostname(hostname), "domain")
+-- email.Domain
+union all (select accounting, aosh_command from management."remove-canceled-email.Domain" order by accounting, net.reverse_hostname(hostname), "domain")
 -- httpd_sites
 union all (select accounting, aosh_command from management."remove-canceled-httpd_sites" order by accounting, net.reverse_hostname(hostname), "name")
 -- httpd_shared_tomcats

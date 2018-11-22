@@ -4,7 +4,7 @@ create or replace view
 as
 -- TODO: email.CyrusImapdServer without any email.CyrusImapdBind
 -- TODO: email_lists with no addresses
--- TODO: email_domains with no addresses
+-- TODO: email.Domain with no addresses
 -- TODO: email_pipes with no addresses
 -- TODO: httpd_shared_tomcats
 -- httpd_servers

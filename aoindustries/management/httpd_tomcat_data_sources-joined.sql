@@ -12,7 +12,7 @@ select
   htds.url
 from
              public.httpd_tomcat_data_sources htds
-  inner join public.httpd_tomcat_contexts      htc on htds.tomcat_context = htc.pkey
+  inner join web."TomcatContext"               htc on htds.tomcat_context = htc.pkey
   inner join web."Site"                         hs on  htc.tomcat_site    =  hs.pkey
   inner join public.ao_servers                  ao on   hs.ao_server      =  ao.server;
 

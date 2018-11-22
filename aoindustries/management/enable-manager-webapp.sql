@@ -4,7 +4,7 @@ create or replace view
 as
 select
   (
-    select count(*) from public.httpd_tomcat_contexts htc
+    select count(*) from web."TomcatContext" htc
     where
       htc.tomcat_site = hts.httpd_site
       and htc.doc_base ~ '^/opt/apache-tomcat-\d+\.\d+/webapps/manager$'

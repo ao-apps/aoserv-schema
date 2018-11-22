@@ -1,0 +1,10 @@
+begin;
+insert into distribution."OperatingSystem" values('centos', 'CentOS Linux', true);
+insert into distribution."OperatingSystem" values('debian', 'Debian Linux', true);
+insert into distribution."OperatingSystem" values('fedora', 'Fedora Linux', true);
+insert into distribution."OperatingSystem" values('gentoo', 'Gentoo Linux', true);
+insert into distribution."OperatingSystem" values('mandrake', 'Mandrake Linux', true);
+insert into distribution."OperatingSystem" values('mandriva', 'Mandriva Linux', true);
+insert into distribution."OperatingSystem" values('redhat', 'RedHat Linux', true);
+insert into distribution."OperatingSystem" values('windows', 'Windows', false);
+commit;

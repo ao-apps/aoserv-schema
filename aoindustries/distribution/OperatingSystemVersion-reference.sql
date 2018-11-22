@@ -1,7 +1,7 @@
 alter table distribution."OperatingSystemVersion"
   add constraint operating_system_fkey
   foreign key (operating_system)
-  references operating_systems ("name")
+  references distribution."OperatingSystem" ("name")
   on delete restrict
   on update cascade
 ;

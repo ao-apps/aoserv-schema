@@ -1,7 +1,7 @@
 alter table distribution."SoftwareVersion"
   add constraint name_fkey
   foreign key ("name")
-  references technology_names ("name")
+  references distribution."Software" ("name")
   on delete restrict
   on update cascade
 ;

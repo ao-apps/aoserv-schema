@@ -1,4 +1,4 @@
-COPY "technology_names" FROM stdin;
+COPY distribution."Software" FROM stdin;
 analog	\N	\N	\N	\N	\N
 anonftp	\N	\N	\N	\N	\N
 Socket	\N	\N	\N	\N	\N

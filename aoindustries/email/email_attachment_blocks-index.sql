@@ -1,1 +1,0 @@
-create index email_attachment_blocks_extension_idx on email_attachment_blocks (extension);

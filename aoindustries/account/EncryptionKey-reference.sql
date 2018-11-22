@@ -1,4 +1,4 @@
-alter table encryption_keys
+alter table account."EncryptionKey"
   add constraint accounting_fkey
   foreign key (accounting)
   references account."Account" (accounting)

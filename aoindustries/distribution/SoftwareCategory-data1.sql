@@ -1,4 +1,4 @@
-COPY "technology_classes" FROM stdin;
+COPY distribution."SoftwareCategory" FROM stdin;
 Apache	The Apache web server and related software
 Encryption	Cryptographic software
 Java	The Java programming language and related software

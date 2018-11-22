@@ -22,7 +22,7 @@ alter table majordomo_servers
 alter table majordomo_servers
   add constraint version_fkey
   foreign key (version)
-  references majordomo_versions (version)
+  references email."MajordomoVersion" (version)
   on delete restrict
   on update cascade
 ;

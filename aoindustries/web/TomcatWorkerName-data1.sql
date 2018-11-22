@@ -1,4 +1,4 @@
-COPY "httpd_jk_codes" FROM stdin;
+COPY web."TomcatWorkerName" FROM stdin;
 a0
 a1
 a2

@@ -1,7 +1,7 @@
 alter table httpd_workers
   add constraint code_fkey
   foreign key (code)
-  references httpd_jk_codes (code)
+  references web."TomcatWorkerName" (code)
   on delete restrict
   on update cascade
 ;

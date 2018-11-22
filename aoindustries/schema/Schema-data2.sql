@@ -72,14 +72,6 @@ select "schema".add_schema(
     null -- Uses pg_catalog.pg_description
 );
 select "schema".add_schema(
-    'httpd',
-    '1.0a100',
-    null,
-    'Httpd',
-    true,
-    null -- Uses pg_catalog.pg_description
-);
-select "schema".add_schema(
     'infrastructure',
     '1.0a100',
     null,
@@ -220,6 +212,14 @@ select "schema".add_schema(
     '1.0a100',
     null,
     'Ticket',
+    true,
+    null -- Uses pg_catalog.pg_description
+);
+select "schema".add_schema(
+    'web',
+    '1.0a100',
+    null,
+    'Web',
     true,
     null -- Uses pg_catalog.pg_description
 );

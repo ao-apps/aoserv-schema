@@ -640,7 +640,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'httpd',
+    'web',
     'httpd_binds',
     'Httpd Binds',
     false,
@@ -649,7 +649,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'httpd',
+    'web',
     'httpd_jboss_sites',
     'Httpd JBoss Sites',
     false,
@@ -658,7 +658,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'httpd',
+    'web',
     'httpd_jboss_versions',
     'Httpd JBoss Versions',
     true,
@@ -667,7 +667,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'httpd',
+    'web',
     'httpd_jk_codes',
     'Httpd JK Codes',
     true,
@@ -678,7 +678,7 @@ in multiple httpd_servers.',
     null
 );
 select "schema".add_table(
-    'httpd',
+    'web',
     'httpd_jk_protocols',
     'Httpd JK Protocols',
     true,
@@ -687,7 +687,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'httpd',
+    'web',
     'httpd_servers',
     'Httpd Servers',
     false,
@@ -696,7 +696,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'httpd',
+    'web',
     'httpd_shared_tomcats',
     'Httpd Shared Tomcats',
     false,
@@ -705,7 +705,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'httpd',
+    'web',
     'httpd_site_authenticated_locations',
     'Httpd Site Authenticated Locations',
     false,
@@ -714,7 +714,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'httpd',
+    'web',
     'httpd_site_bind_headers',
     'Httpd Site Bind Headers',
     false,
@@ -723,7 +723,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'httpd',
+    'web',
     'httpd_site_bind_redirects',
     'Httpd Site Bind Redirects',
     false,
@@ -732,7 +732,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'httpd',
+    'web',
     'httpd_site_binds',
     'Httpd Site Binds',
     false,
@@ -741,7 +741,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'httpd',
+    'web',
     'httpd_site_urls',
     'Httpd Site URLs',
     false,
@@ -750,7 +750,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'httpd',
+    'web',
     'httpd_sites',
     'Httpd Sites',
     false,
@@ -765,7 +765,7 @@ of dedicated machines.',
     null
 );
 select "schema".add_table(
-    'httpd',
+    'web',
     'httpd_static_sites',
     'Httpd Static Sites',
     false,
@@ -774,7 +774,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'httpd',
+    'web',
     'httpd_tomcat_contexts',
     'Httpd Tomcat Contexts',
     false,
@@ -783,7 +783,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'httpd',
+    'web',
     'httpd_tomcat_data_sources',
     'Httpd Tomcat Data Sources',
     false,
@@ -792,7 +792,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'httpd',
+    'web',
     'httpd_tomcat_parameters',
     'Httpd Tomcat Parameters',
     false,
@@ -801,7 +801,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'httpd',
+    'web',
     'httpd_tomcat_site_jk_mounts',
     'Httpd Tomcat Site JK Mounts',
     false,
@@ -810,7 +810,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'httpd',
+    'web',
     'httpd_tomcat_sites',
     'Httpd Tomcat Sites',
     false,
@@ -819,7 +819,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'httpd',
+    'web',
     'httpd_tomcat_shared_sites',
     'Httpd Tomcat Shared Sites',
     false,
@@ -828,7 +828,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'httpd',
+    'web',
     'httpd_tomcat_std_sites',
     'Httpd Tomcat Std Sites',
     false,
@@ -837,7 +837,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'httpd',
+    'web',
     'httpd_tomcat_versions',
     'Httpd Tomcat Versions',
     true,
@@ -846,7 +846,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'httpd',
+    'web',
     'httpd_workers',
     'Httpd Workers',
     false, 'The httpd_workers table contains all of the workers that are registered on each server.',

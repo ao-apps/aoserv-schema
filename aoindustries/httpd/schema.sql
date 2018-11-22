@@ -1,5 +1,4 @@
--- Depends on:
--- TODO
+-- TODO: Delete this schema, updating search_path
 
 create schema if not exists httpd;
 

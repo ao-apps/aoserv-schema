@@ -1,10 +1,10 @@
-create sequence         httpd.httpd_sites_pkey_seq cycle;
-grant all            on httpd.httpd_sites_pkey_seq to aoadmin;
-grant select, update on httpd.httpd_sites_pkey_seq to aoserv_app;
+create sequence         web."Site_pkey_seq" cycle;
+grant all            on web."Site_pkey_seq" to aoadmin;
+grant select, update on web."Site_pkey_seq" to aoserv_app;
 
-create table httpd_sites (
+create table web."Site" (
   pkey integer
-    default nextval('httpd.httpd_sites_pkey_seq')
+    default nextval('web."Site_pkey_seq"')
     primary key,
   ao_server integer
     not null,
@@ -62,5 +62,5 @@ create table httpd_sites (
   block_editor_backups boolean not null default true,
   unique(ao_server, "name")
 );
-grant all                            on httpd_sites to aoadmin;
-grant select, insert, update, delete on httpd_sites to aoserv_app;
+grant all                            on web."Site" to aoadmin;
+grant select, insert, update, delete on web."Site" to aoserv_app;

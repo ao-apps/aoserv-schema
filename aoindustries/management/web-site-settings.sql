@@ -19,7 +19,7 @@ select
   hts.block_webinf
 from
              public.ao_servers              ao
-  inner join public.httpd_sites             hs  on ao.server      = hs.ao_server
+  inner join web."Site"                     hs  on ao.server      = hs.ao_server
   left  join distribution."SoftwareVersion" tv  on hs.php_version = tv.pkey
   left  join public.httpd_tomcat_sites      hts on hs.pkey        = hts.httpd_site;
 

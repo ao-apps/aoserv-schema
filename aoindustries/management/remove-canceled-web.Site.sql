@@ -1,5 +1,5 @@
 create or replace view
-  management."remove-canceled-httpd_sites"
+  management."remove-canceled-web.Site"
 as
 select
   bu.accounting,
@@ -7,12 +7,12 @@ select
   ao.hostname,
   hs."name"
 from
-             public.httpd_sites hs
+             web."Site"         hs
   inner join public.ao_servers  ao on hs.ao_server  = ao.server
   inner join billing."Package"  pk on hs.package    = pk."name"
   inner join account."Account"  bu on pk.accounting = bu.accounting
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 
-revoke all    on management."remove-canceled-httpd_sites" from aoadmin;
-grant  select on management."remove-canceled-httpd_sites" to   aoadmin;
+revoke all    on management."remove-canceled-web.Site" from aoadmin;
+grant  select on management."remove-canceled-web.Site" to   aoadmin;

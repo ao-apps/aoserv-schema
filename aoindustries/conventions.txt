@@ -2,6 +2,11 @@ Source:
 
 1) Two-space indent, do not tab indent because it doesn't copy/paste will into psql
 
+2) Always specify schema
+
+3) Never split schema and table name, even for vertical alignments.  This makes
+   find/replace much easier.
+
 
 Style:
 

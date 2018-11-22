@@ -17,7 +17,7 @@ select
     ','
    ) as "ALT_HOSTNAMES"
 from
-             public.httpd_sites                    hs
+             web."Site"                            hs
   inner join public.ao_servers                     ao on hs.ao_server                =  ao.server
   inner join public.servers                        se on ao.server                   =  se.pkey
   inner join distribution."OperatingSystemVersion" osv on se.operating_system_version = osv.pkey

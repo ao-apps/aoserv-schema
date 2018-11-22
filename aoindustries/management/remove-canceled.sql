@@ -7,8 +7,8 @@ as
 union all (select accounting, aosh_command from management."remove-canceled-email.List" order by accounting, net.reverse_hostname(hostname), "path")
 -- email.Domain
 union all (select accounting, aosh_command from management."remove-canceled-email.Domain" order by accounting, net.reverse_hostname(hostname), "domain")
--- httpd_sites
-union all (select accounting, aosh_command from management."remove-canceled-httpd_sites" order by accounting, net.reverse_hostname(hostname), "name")
+-- web.Site
+union all (select accounting, aosh_command from management."remove-canceled-web.Site" order by accounting, net.reverse_hostname(hostname), "name")
 -- httpd_shared_tomcats
 union all (select accounting, aosh_command from management."remove-canceled-httpd_shared_tomcats" order by accounting, net.reverse_hostname(hostname), "name")
 -- TODO: web.HttpdServer

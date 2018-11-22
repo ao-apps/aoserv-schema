@@ -1,0 +1,18 @@
+begin;
+insert into distribution."Architecture" values('alpha', 64);
+insert into distribution."Architecture" values('amd64', 64);
+insert into distribution."Architecture" values('hppa', 64);
+insert into distribution."Architecture" values('i286', 16);
+insert into distribution."Architecture" values('i386', 32);
+insert into distribution."Architecture" values('i486', 32);
+insert into distribution."Architecture" values('i586', 32);
+insert into distribution."Architecture" values('i686', 32);
+insert into distribution."Architecture" values('i686,x86_64', 32);
+insert into distribution."Architecture" values('m68k', 32);
+insert into distribution."Architecture" values('mips32', 32);
+insert into distribution."Architecture" values('mips64', 64);
+insert into distribution."Architecture" values('ppc', 64);
+insert into distribution."Architecture" values('sparc', 32);
+insert into distribution."Architecture" values('sparc64', 64);
+insert into distribution."Architecture" values('x86_64', 64);
+commit;

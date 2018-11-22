@@ -1,4 +1,4 @@
-alter table spam_email_messages
+alter table email."SpamMessage"
   add constraint email_relay_fkey
   foreign key (email_relay)
   references email."SmtpRelay" (pkey)

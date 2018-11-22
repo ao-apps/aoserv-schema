@@ -1,10 +1,10 @@
-create sequence         web.httpd_site_binds_pkey_seq cycle;
-grant all            on web.httpd_site_binds_pkey_seq to aoadmin;
-grant select, update on web.httpd_site_binds_pkey_seq to aoserv_app;
+create sequence         web."VirtualHost_pkey_seq" cycle;
+grant all            on web."VirtualHost_pkey_seq" to aoadmin;
+grant select, update on web."VirtualHost_pkey_seq" to aoserv_app;
 
-create table httpd_site_binds (
+create table web."VirtualHost" (
   pkey integer
-    default nextval('web.httpd_site_binds_pkey_seq')
+    default nextval('web."VirtualHost_pkey_seq"')
     primary key,
   httpd_site integer
     not null,
@@ -33,5 +33,5 @@ create table httpd_site_binds (
       or include_site_config like 'IfModule %'
     )
 );
-grant all                            on httpd_site_binds to aoadmin;
-grant select, insert, update, delete on httpd_site_binds to aoserv_app;
+grant all                            on web."VirtualHost" to aoadmin;
+grant select, insert, update, delete on web."VirtualHost" to aoserv_app;

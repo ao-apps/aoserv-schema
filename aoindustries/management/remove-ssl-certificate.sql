@@ -5,7 +5,7 @@ as
 select
   (select count(*) from email."CyrusImapdBind"   cib where cib.certificate       = sc.pkey) as num_cyrus_imapd_binds,
   (select count(*) from email."CyrusImapdServer" cis where cis.certificate       = sc.pkey) as num_cyrus_imapd_servers,
-  (select count(*) from public.httpd_site_binds  hsb where hsb.certificate       = sc.pkey) as num_httpd_site_binds,
+  (select count(*) from web."VirtualHost"        hsb where hsb.certificate       = sc.pkey) as num_httpd_site_binds,
   (select count(*) from email."SendmailServer"   ss  where ss.server_certificate = sc.pkey
                                                           or ss.client_certificate = sc.pkey) as num_sendmail_servers,
   coalesce((select sum("count") from public.ssl_certificate_other_uses scou where scou.ssl_certificate  = sc.pkey), 0) as num_other_uses,

@@ -5,8 +5,8 @@ as
 select
   (
     select count(*) from
-                 web."HttpdBind"         hb
-      inner join public.httpd_site_binds hsb on hb.net_bind = hsb.httpd_bind
+                 web."HttpdBind"   hb
+      inner join web."VirtualHost" hsb on hb.net_bind = hsb.httpd_bind
     where
       hs.pkey = hb.httpd_server
   ) as num_site_binds,

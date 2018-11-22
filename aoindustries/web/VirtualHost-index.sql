@@ -1,8 +1,8 @@
-create unique index httpd_site_binds_noname_uni on httpd_site_binds (
+create unique index "VirtualHost_noname_uni" on web."VirtualHost" (
   httpd_site,
   httpd_bind
 ) where "name" is null;
-create unique index httpd_site_binds_name_uni on httpd_site_binds (
+create unique index "VirtualHost_name_uni" on web."VirtualHost" (
   httpd_site,
   httpd_bind,
   "name"
@@ -15,24 +15,24 @@ create unique index httpd_site_binds_name_uni on httpd_site_binds (
 --
 -- See https://www.freedesktop.org/software/systemd/man/systemd.unit.html
 -- See HttpdSiteBind.getSystemdEscapedName()
---create unique index httpd_site_binds_name_encoded_uni on httpd_site_binds (
+--create unique index "VirtualHost_name_encoded_uni" on web."VirtualHost" (
 --  httpd_site,
 --  httpd_bind,
 --  convert_to(replace("name", '/', '-'), 'UTF8') -- replace before convert_to is OK since UTF-8 encoding never encodes into ASCII space
 --) where "name" is not null;
 -- Conversion to UTF-8 bytea is unnecessary:
-create unique index httpd_site_binds_name_encoded_uni on httpd_site_binds (
+create unique index "VirtualHost_name_encoded_uni" on web."VirtualHost" (
   httpd_site,
   httpd_bind,
   replace("name", '/', '-')
 ) where "name" is not null;
 
-create index httpd_site_binds_httpd_bind_idx on httpd_site_binds (
+create index "VirtualHost_httpd_bind_fkey" on web."VirtualHost" (
   httpd_bind
 );
-create index httpd_site_binds_certificate_idx on httpd_site_binds (
+create index "VirtualHost_certificate_fkey" on web."VirtualHost" (
   certificate
 );
-create index httpd_site_binds_disable_log_idx on httpd_site_binds (
+create index "VirtualHost_disable_log_fkey" on web."VirtualHost" (
   disable_log
 );

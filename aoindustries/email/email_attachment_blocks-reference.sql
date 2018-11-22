@@ -8,7 +8,7 @@ alter table email_attachment_blocks
 alter table email_attachment_blocks
   add constraint extension_fkey
   foreign key (extension)
-  references email_attachment_types (extension)
+  references email."AttachmentType" (extension)
   on delete restrict
   on update cascade
 ;

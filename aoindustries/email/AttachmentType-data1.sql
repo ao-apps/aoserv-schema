@@ -1,4 +1,4 @@
-COPY "email_attachment_types" FROM stdin;
+COPY email."AttachmentType" FROM stdin;
 ade	Microsoft Access project extension	t
 adp	Microsoft Access project	t
 msp	Microsoft Windows Installer Patch	t

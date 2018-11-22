@@ -8,7 +8,7 @@ alter table mysql_users
 alter table mysql_users
   add constraint disable_log_fkey
   foreign key (disable_log)
-  references disable_log (pkey)
+  references account."DisableLog" (pkey)
   on delete restrict
   on update cascade
 ;

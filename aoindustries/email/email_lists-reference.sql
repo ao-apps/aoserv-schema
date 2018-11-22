@@ -15,7 +15,7 @@ alter table email_lists
 alter table email_lists
   add constraint disable_log_fkey
   foreign key (disable_log)
-  references disable_log (pkey)
+  references account."DisableLog" (pkey)
   on delete restrict
   on update cascade
 ;

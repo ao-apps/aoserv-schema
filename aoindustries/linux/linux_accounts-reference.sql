@@ -22,7 +22,7 @@ alter table linux_accounts
 alter table linux_accounts
   add constraint disable_log_fkey
   foreign key (disable_log)
-  references disable_log (pkey)
+  references account."DisableLog" (pkey)
   on delete restrict
   on update cascade
 ;

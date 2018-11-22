@@ -15,7 +15,7 @@ alter table failover_file_replications
 alter table failover_file_replications
   add constraint retention_fkey
   foreign key (retention)
-  references backup_retentions (days)
+  references backup."BackupRetention" (days)
   on delete restrict
   on update cascade
 ;

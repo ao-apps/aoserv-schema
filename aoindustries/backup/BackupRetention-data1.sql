@@ -1,4 +1,4 @@
-COPY "backup_retentions" FROM stdin;
+COPY backup."BackupRetention" FROM stdin;
 1	1 day
 2	2 days
 3	3 days

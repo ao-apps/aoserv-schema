@@ -1,5 +1,5 @@
 create or replace view
-  management."remove-canceled-httpd_shared_tomcats"
+  management."remove-canceled-web.SharedTomcat"
 as
 select
   bu.accounting,
@@ -7,7 +7,7 @@ select
   ao.hostname,
   hst."name"
 from
-             public.httpd_shared_tomcats  hst
+             web."SharedTomcat"           hst
   inner join public.ao_servers             ao on hst.ao_server            =  ao.server
   inner join public.linux_server_accounts lsa on hst.linux_server_account = lsa.pkey
   inner join account."Username"            un on lsa.username             =  un.username
@@ -16,5 +16,5 @@ from
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 
-revoke all    on management."remove-canceled-httpd_shared_tomcats" from aoadmin;
-grant  select on management."remove-canceled-httpd_shared_tomcats" to   aoadmin;
+revoke all    on management."remove-canceled-web.SharedTomcat" from aoadmin;
+grant  select on management."remove-canceled-web.SharedTomcat" to   aoadmin;

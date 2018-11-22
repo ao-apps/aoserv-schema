@@ -1,10 +1,10 @@
-create sequence         web.httpd_shared_tomcats_pkey_seq cycle;
-grant all            on web.httpd_shared_tomcats_pkey_seq to aoadmin;
-grant select, update on web.httpd_shared_tomcats_pkey_seq to aoserv_app;
+create sequence         web."SharedTomcat_pkey_seq" cycle;
+grant all            on web."SharedTomcat_pkey_seq" to aoadmin;
+grant select, update on web."SharedTomcat_pkey_seq" to aoserv_app;
 
-create table httpd_shared_tomcats (
+create table web."SharedTomcat" (
   pkey integer
-    default nextval('web.httpd_shared_tomcats_pkey_seq')
+    default nextval('web."SharedTomcat_pkey_seq"')
     primary key,
   "name" text
     not null
@@ -40,5 +40,5 @@ create table httpd_shared_tomcats (
   auto_deploy boolean not null,
   unique (ao_server, "name")
 );
-grant all                            on httpd_shared_tomcats to aoadmin;
-grant select, insert, update, delete on httpd_shared_tomcats to aoserv_app;
+grant all                            on web."SharedTomcat" to aoadmin;
+grant select, insert, update, delete on web."SharedTomcat" to aoserv_app;

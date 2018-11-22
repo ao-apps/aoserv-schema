@@ -8,7 +8,7 @@ alter table httpd_tomcat_shared_sites
 alter table httpd_tomcat_shared_sites
   add constraint httpd_shared_tomcat_fkey
   foreign key (httpd_shared_tomcat)
-  references httpd_shared_tomcats (pkey)
+  references web."SharedTomcat" (pkey)
   on delete restrict
   on update cascade
 ;

@@ -25,7 +25,7 @@ from
   inner join web."TomcatSite"                  hts on   hs.pkey                =  hts.httpd_site
   inner join distribution."SoftwareVersion"     tv on  hts.version             =   tv.pkey
   left  join public.httpd_tomcat_shared_sites htss on  hts.httpd_site          = htss.tomcat_site
-  left  join public.httpd_shared_tomcats       hst on htss.httpd_shared_tomcat =  hst.pkey;
+  left  join web."SharedTomcat"                hst on htss.httpd_shared_tomcat =  hst.pkey;
 
 revoke all    on management."enable-manager-webapp" from aoadmin;
 grant  select on management."enable-manager-webapp" to   aoadmin;

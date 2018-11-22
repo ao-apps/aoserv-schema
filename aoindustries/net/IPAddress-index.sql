@@ -1,9 +1,6 @@
-create index "IPAddress_package_idx" on "IPAddress" (
-  package
-);
-create index "IPAddress_netDevice_idx" on "IPAddress" (
+create index "IPAddress_netDevice_fkey" on "IPAddress" (
   "netDevice"
 );
-create index "IPAddress_inetAddress_idx" on "IPAddress" (
-  "inetAddress"
+create index "IPAddress_package_fkey" on "IPAddress" (
+  package
 );

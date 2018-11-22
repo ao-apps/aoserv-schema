@@ -1,3 +1,3 @@
-create index "AccountProfile_country_idx" on account."AccountProfile" (
+create index "AccountProfile_country_fkey" on account."AccountProfile" (
   country
 );

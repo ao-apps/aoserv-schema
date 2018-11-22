@@ -1,3 +1,3 @@
-create index "BankAccount_bank_idx" on accounting."BankAccount" (
+create index "BankAccount_bank_fkey" on accounting."BankAccount" (
   bank
 );

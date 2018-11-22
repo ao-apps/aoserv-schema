@@ -22,7 +22,7 @@ alter table majordomo_lists
 alter table majordomo_lists
   add constraint listname_list_add_fkey
   foreign key (listname_list_add)
-  references email_list_addresses (pkey)
+  references email."ListAddress" (pkey)
   on delete restrict
   on update cascade
 ;

@@ -1,4 +1,4 @@
-alter table email_smtp_smart_hosts
+alter table email."SmtpSmartHost"
   add constraint net_bind_fkey
   foreign key (net_bind)
   references net_binds (pkey)

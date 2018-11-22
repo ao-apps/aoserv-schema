@@ -1,10 +1,10 @@
-create sequence         dns.dns_records_pkey_seq cycle;
-grant all            on dns.dns_records_pkey_seq to aoadmin;
-grant select, update on dns.dns_records_pkey_seq to aoserv_app;
+create sequence         dns."Record_pkey_seq" cycle;
+grant all            on dns."Record_pkey_seq" to aoadmin;
+grant select, update on dns."Record_pkey_seq" to aoserv_app;
 
-create table dns_records (
+create table dns."Record" (
   pkey          integer
-    default nextval('dns.dns_records_pkey_seq')
+    default nextval('dns."Record_pkey_seq"')
     primary key,
   "zone"        text not null,
   "domain"      text not null,
@@ -18,5 +18,5 @@ create table dns_records (
   ttl           integer,
   unique("zone", "domain", "type", destination)
 );
-grant all                            on dns_records to aoadmin;
-grant select, insert, update, delete on dns_records to aoserv_app;
+grant all                            on dns."Record" to aoadmin;
+grant select, insert, update, delete on dns."Record" to aoserv_app;

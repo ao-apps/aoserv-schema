@@ -22,7 +22,7 @@ alter table linux_server_accounts
 alter table linux_server_accounts
   add constraint autoresponder_from_fkey
   foreign key (autoresponder_from)
-  references linux_acc_addresses (pkey)
+  references email."InboxAddress" (pkey)
   on delete restrict
   on update cascade
 ;

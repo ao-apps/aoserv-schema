@@ -8,7 +8,7 @@ alter table email."CyrusImapdBind"
 alter table email."CyrusImapdBind"
   add constraint cyrus_imapd_server_fkey
   foreign key (cyrus_imapd_server)
-  references cyrus_imapd_servers (ao_server)
+  references email."CyrusImapdServer" (ao_server)
   on delete restrict
   on update cascade
 ;

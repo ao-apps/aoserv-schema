@@ -3,10 +3,10 @@ create or replace view
   management."remove-ssl-certificate"
 as
 select
-  (select count(*) from email."CyrusImapdBind"     cib where cib.certificate       = sc.pkey) as num_cyrus_imapd_binds,
-  (select count(*) from public.cyrus_imapd_servers cis where cis.certificate       = sc.pkey) as num_cyrus_imapd_servers,
-  (select count(*) from public.httpd_site_binds    hsb where hsb.certificate       = sc.pkey) as num_httpd_site_binds,
-  (select count(*) from public.sendmail_servers    ss  where ss.server_certificate = sc.pkey
+  (select count(*) from email."CyrusImapdBind"   cib where cib.certificate       = sc.pkey) as num_cyrus_imapd_binds,
+  (select count(*) from email."CyrusImapdServer" cis where cis.certificate       = sc.pkey) as num_cyrus_imapd_servers,
+  (select count(*) from public.httpd_site_binds  hsb where hsb.certificate       = sc.pkey) as num_httpd_site_binds,
+  (select count(*) from public.sendmail_servers  ss  where ss.server_certificate = sc.pkey
                                                           or ss.client_certificate = sc.pkey) as num_sendmail_servers,
   coalesce((select sum("count") from public.ssl_certificate_other_uses scou where scou.ssl_certificate  = sc.pkey), 0) as num_other_uses,
   ao.hostname as "SERVER",

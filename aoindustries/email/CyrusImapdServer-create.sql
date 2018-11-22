@@ -1,4 +1,4 @@
-create table cyrus_imapd_servers (
+create table email."CyrusImapdServer" (
   ao_server integer primary key,
   sieve_net_bind integer unique,
   servername text
@@ -61,5 +61,5 @@ create table cyrus_imapd_servers (
       )
     )
 );
-grant all    on cyrus_imapd_servers to aoadmin;
-grant select on cyrus_imapd_servers to aoserv_app;
+grant all    on email."CyrusImapdServer" to aoadmin;
+grant select on email."CyrusImapdServer" to aoserv_app;

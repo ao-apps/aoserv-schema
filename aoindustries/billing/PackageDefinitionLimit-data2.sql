@@ -1,4 +1,4 @@
-COPY "package_definition_limits" FROM stdin;
+COPY billing."PackageDefinitionLimit" FROM stdin;
 1484	121	bandwidth	40	\N	1.00	bandwidth
 1485	121	consulting	0	\N	120.00	consulting
 1489	121	hardware_processor_xeon_e5335	2	2	\N	\N

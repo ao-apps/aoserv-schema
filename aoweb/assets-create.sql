@@ -5,8 +5,7 @@ grant select, update on assets_pkey_seq to aoweb_app;
 create table assets (
   pkey integer
     default nextval('assets_pkey_seq')
-    constraint assets_pkey
-      primary key,
+    primary key,
   label text
     unique,
   contained_by integer,

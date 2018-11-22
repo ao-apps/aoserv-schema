@@ -23,9 +23,7 @@ grant select, update on nav_images_imageid_seq to aoweb_app;
 create table nav_images (
   imageid integer
     default nextval('nav_images_imageid_seq')
-    not null
-    constraint nav_images_pkey
-      primary key,
+    primary key,
   hostname text
     not null,
   family text

@@ -4,10 +4,9 @@
  *
  *********************************************************************/
 create table vehicles (
-  name text
-    constraint travel_vehicles_pkey
-      primary key,
-  year integer
+  "name" text
+    primary key,
+  "year" integer
     not null,
   make text
     not null,

@@ -1,7 +1,6 @@
 create table asset_vendors (
-  name text
-    constraint asset_vendors_pkey
-      primary key,
+  "name" text
+    primary key,
   full_name text
     not null,
   url text,

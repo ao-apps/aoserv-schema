@@ -1,7 +1,6 @@
 create table postgres_versions (
   version integer
-    constraint postgres_versions_pkey
-      primary key,
+    primary key,
   minor_version text
     not null,
   postgis_version integer

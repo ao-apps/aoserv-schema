@@ -20,10 +20,8 @@
  *
  *********************************************************************/
 create table aoserv_howtos (
-  name text
-    not null
-    constraint aoserv_howtos_pkey
-      primary key,
+  "name" text
+    primary key,
   time timestamp
     default now()
     not null,

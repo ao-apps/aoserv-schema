@@ -14,9 +14,7 @@
  *********************************************************************/
 create table aoserv_howto_categories (
   category text
-    not null
-    constraint aoserv_howto_categories_pkey
-      primary key,
+    primary key,
   sort_order real
     not null,
   title text

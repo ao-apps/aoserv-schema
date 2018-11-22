@@ -1,7 +1,6 @@
 create table httpd_tomcat_versions (
   version integer
-    constraint httpd_tomcat_versions_pkey
-      primary key,
+    primary key,
   install_dir text
     not null,
   requires_mod_jk boolean

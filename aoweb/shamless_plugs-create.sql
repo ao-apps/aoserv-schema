@@ -21,9 +21,8 @@ grant select, update on shameless_plus_pkey_seq to aoweb_app;
 create table shameless_plugs (
   pkey integer
     default nextval('shameless_plus_pkey_seq')
-    constraint shameless_plugs_pkey
-      primary key,
-  time timestamp
+    primary key,
+  "time" timestamp
     not null
     default now(),
   accounting text

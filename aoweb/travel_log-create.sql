@@ -5,8 +5,7 @@ grant select, update on travel_log_pkey_seq to aoweb_app;
 create table travel_log (
   pkey integer
     default nextval('travel_log_pkey_seq')
-    constraint travel_log_pkey
-      primary key,
+    primary key,
   traveler_name text not null,
   traveler_phone text not null,
   start_date date not null,

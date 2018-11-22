@@ -12,10 +12,8 @@
  *
  *********************************************************************/
 create table info_types (
-  type text
-    not null
-    constraint info_types_pkey
-      primary key,
+  "type" text
+    primary key,
   title text
     not null,
   short_title text

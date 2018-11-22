@@ -30,8 +30,7 @@ grant select, update on text_images_imageid_seq to aoweb_app;
 create table text_images (
   imageid integer
     default nextval('text_images_imageid_seq')
-    constraint text_images_pkey
-      primary key,
+    primary key,
   hostname text
     not null,
   family text

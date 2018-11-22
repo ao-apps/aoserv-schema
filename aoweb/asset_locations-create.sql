@@ -4,9 +4,8 @@
  *
  *********************************************************************/
 create table asset_locations (
-  name text
-    constraint asset_locations_pkey
-      primary key,
+  "name" text
+    primary key,
   address1 text
     not null,
   address2 text

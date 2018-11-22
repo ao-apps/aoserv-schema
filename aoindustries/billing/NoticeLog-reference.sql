@@ -8,7 +8,7 @@ alter table billing."NoticeLog"
 alter table billing."NoticeLog"
   add constraint notice_type_fkey
   foreign key (notice_type)
-  references notice_types ("type")
+  references billing."NoticeType" ("type")
   on delete restrict
   on update cascade
 ;

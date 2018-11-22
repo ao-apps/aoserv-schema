@@ -1,4 +1,4 @@
-COPY "notice_types" FROM stdin;
+COPY billing."NoticeType" FROM stdin;
 nonpay	Late or non-payment notification
 badcard	Credit card was declined during transaction attempt
 disable_warning	Warned that account will be disabled soon

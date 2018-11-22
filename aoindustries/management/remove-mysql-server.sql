@@ -31,7 +31,7 @@ select
 from
              public.ao_servers                     ao
   inner join public.mysql_servers                  ms  on ao.server                   =  ms.ao_server
-  inner join public.technology_versions            tv  on ms.version                  =  tv.pkey
+  inner join distribution."SoftwareVersion"        tv  on ms.version                  =  tv.pkey
   inner join distribution."OperatingSystemVersion" osv on tv.operating_system_version = osv.pkey
   inner join public.net_binds                      nb  on ms.net_bind                 =  nb.pkey
   inner join public."IPAddress"                    ia  on nb."ipAddress"              =  ia.id;

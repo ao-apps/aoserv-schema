@@ -1,10 +1,10 @@
-create sequence         distribution.technology_versions_pkey_seq cycle;
-grant all            on distribution.technology_versions_pkey_seq to aoadmin;
-grant select, update on distribution.technology_versions_pkey_seq to aoserv_app;
+create sequence distribution."SoftwareVersion_pkey_seq" cycle;
+grant all    on distribution."SoftwareVersion_pkey_seq" to aoadmin;
+grant select on distribution."SoftwareVersion_pkey_seq" to aoserv_app;
 
-create table technology_versions (
+create table distribution."SoftwareVersion" (
   pkey integer
-    default nextval('distribution.technology_versions_pkey_seq')
+    default nextval('distribution."SoftwareVersion_pkey_seq"')
     primary key,
   "name" text
     not null,
@@ -26,5 +26,5 @@ create table technology_versions (
   ),
   unique("name", version, operating_system_version)
 );
-grant all    on technology_versions to aoadmin;
-grant select on technology_versions to aoserv_app;
+grant all    on distribution."SoftwareVersion" to aoadmin;
+grant select on distribution."SoftwareVersion" to aoserv_app;

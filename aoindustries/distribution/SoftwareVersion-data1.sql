@@ -1,4 +1,4 @@
-COPY "technology_versions" FROM stdin;
+COPY distribution."SoftwareVersion" FROM stdin;
 2574	jakarta-velocity-tools	1.1	2005-04-22 16:10:29.10134-05	orion	14
 2575	forrest	0.6	2005-04-22 16:49:23.277779-05	orion	14
 2576	lucene	1.4.3	2005-04-22 16:52:33.085247-05	orion	14
@@ -1429,4 +1429,4 @@ COPY "technology_versions" FROM stdin;
 3357	MySQL	5.7.17	2017-04-03 04:06:29.419632+00	orion	70
 3372	MySQL	8.0.0	2018-07-15 19:32:37.066566+00	orion	70
 \.
-SELECT setval ('distribution.technology_versions_pkey_seq', 3381, true);
+SELECT setval ('distribution."SoftwareVersion_pkey_seq"', 3381, true);

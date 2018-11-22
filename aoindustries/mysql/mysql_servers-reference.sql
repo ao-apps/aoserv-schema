@@ -8,7 +8,7 @@ alter table mysql_servers
 alter table mysql_servers
   add constraint version_fkey
   foreign key (version)
-  references technology_versions (pkey)
+  references distribution."SoftwareVersion" (pkey)
   on delete restrict
   on update cascade
 ;

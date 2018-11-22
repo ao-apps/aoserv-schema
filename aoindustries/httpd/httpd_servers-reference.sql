@@ -22,7 +22,7 @@ alter table httpd_servers
 alter table httpd_servers
   add constraint mod_php_version_fkey
   foreign key (mod_php_version)
-  references technology_versions (pkey)
+  references distribution."SoftwareVersion" (pkey)
   on delete restrict
   on update cascade
 ;

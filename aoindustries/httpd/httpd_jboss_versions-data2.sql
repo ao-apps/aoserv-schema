@@ -6,8 +6,8 @@ select
   tv2.pkey,
   '/usr/aoserv/templates/jboss-2.2.2'
 from
-  technology_versions tv1,
-  technology_versions tv2
+  distribution."SoftwareVersion" tv1,
+  distribution."SoftwareVersion" tv2
 where
   tv1.name='JBoss'
   and tv1.version='2.2.2'

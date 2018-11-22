@@ -6,7 +6,7 @@ insert into postgres_servers values(
         select
             pkey
         from
-            technology_versions
+            distribution."SoftwareVersion"
         where
             name='postgresql'
             and version like '8.1.%'

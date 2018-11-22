@@ -6,7 +6,7 @@ insert into mysql_servers values(
         select
             pkey
         from
-            technology_versions
+            distribution."SoftwareVersion"
         where
             name='MySQL'
             and version like '4.1.%'
@@ -26,7 +26,7 @@ insert into mysql_servers values(
         select
             pkey
         from
-            technology_versions
+            distribution."SoftwareVersion"
         where
             name='MySQL'
             and version like '5.0.%'

@@ -30,7 +30,7 @@ select
 from
              public.ao_servers                      ao
   inner join public.postgres_servers                ps on ao.server                   =  ps.ao_server
-  inner join public.technology_versions             tv on ps.version                  =  tv.pkey
+  inner join distribution."SoftwareVersion"         tv on ps.version                  =  tv.pkey
   inner join distribution."OperatingSystemVersion" osv on tv.operating_system_version = osv.pkey
   inner join public.net_binds                       nb on ps.net_bind                 =  nb.pkey;
 

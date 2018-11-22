@@ -36,7 +36,7 @@ alter table httpd_sites
 alter table httpd_sites
   add constraint php_version_fkey
   foreign key (php_version)
-  references technology_versions (pkey)
+  references distribution."SoftwareVersion" (pkey)
   on delete restrict
   on update cascade
 ;

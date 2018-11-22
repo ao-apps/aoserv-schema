@@ -1,5 +1,5 @@
-create table majordomo_servers (
-  domain integer
+create table email."MajordomoServer" (
+  "domain" integer
     primary key,
   linux_server_account integer
     not null,
@@ -14,5 +14,5 @@ create table majordomo_servers (
   majordomo_owner_add integer
     not null
 );
-grant all                    on majordomo_servers to aoadmin;
-grant select, insert, delete on majordomo_servers to aoserv_app;
+grant all                    on email."MajordomoServer" to aoadmin;
+grant select, insert, delete on email."MajordomoServer" to aoserv_app;

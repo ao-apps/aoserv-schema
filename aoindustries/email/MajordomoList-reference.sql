@@ -8,7 +8,7 @@ alter table email."MajordomoList"
 alter table email."MajordomoList"
   add constraint majordomo_server_fkey
   foreign key (majordomo_server)
-  references majordomo_servers ("domain")
+  references email."MajordomoServer" ("domain")
   on delete restrict
   on update cascade
 ;

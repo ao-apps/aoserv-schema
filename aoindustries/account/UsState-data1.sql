@@ -1,4 +1,4 @@
-COPY "us_states" FROM stdin;
+COPY account."UsState" FROM stdin;
 AL	Alabama
 AK	Alaska
 AZ	Arizona

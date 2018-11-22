@@ -1,4 +1,4 @@
-create table cyrus_imapd_binds (
+create table email."CyrusImapdBind" (
   net_bind integer
     primary key,
   cyrus_imapd_server integer
@@ -14,5 +14,5 @@ create table cyrus_imapd_binds (
   certificate integer,
   allow_plaintext_auth boolean
 );
-grant all            on cyrus_imapd_binds to aoadmin;
-grant select, delete on cyrus_imapd_binds to aoserv_app;
+grant all            on email."CyrusImapdBind" to aoadmin;
+grant select, delete on email."CyrusImapdBind" to aoserv_app;

@@ -1,11 +1,11 @@
-create sequence web."VirtualHostHeader_pkey_seq" cycle;
-grant all    on web."VirtualHostHeader_pkey_seq" to aoadmin;
-grant select on web."VirtualHostHeader_pkey_seq" to aoserv_app;
+create sequence web."Header_pkey_seq" cycle;
+grant all    on web."Header_pkey_seq" to aoadmin;
+grant select on web."Header_pkey_seq" to aoserv_app;
 
 -- See https://httpd.apache.org/docs/2.4/mod/mod_headers.html
-create table web."VirtualHostHeader" (
+create table web."Header" (
   pkey            integer
-    default nextval('web."VirtualHostHeader_pkey_seq"')
+    default nextval('web."Header_pkey_seq"')
     primary key,
   -- TODO: Allow a Header to be attached to either a site or a virtualHost
   httpd_site_bind integer  not null,
@@ -35,5 +35,5 @@ create table web."VirtualHostHeader" (
   comment         text,
   unique(httpd_site_bind, sort_order)
 );
-grant all            on web."VirtualHostHeader" to aoadmin;
-grant select, delete on web."VirtualHostHeader" to aoserv_app; -- , insert, update
+grant all            on web."Header" to aoadmin;
+grant select, delete on web."Header" to aoserv_app; -- , insert, update

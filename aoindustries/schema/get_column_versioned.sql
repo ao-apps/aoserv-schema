@@ -46,8 +46,8 @@ stable;
 -- select "schema".get_column_versioned('ticket', 'action_types', 'type', '1.0a100', '1.44');
 -- Expect: ERROR:  Table not found: public.action_types, 1.0a100-1.44
 
--- select "schema".get_column_versioned('billing', 'transactions', 'merchant_account', '1.28', '1.28');
+-- select "schema".get_column_versioned('billing', 'Transaction', 'merchant_account', '1.28', '1.28');
 -- Expect: 2340
 
--- select "schema".get_column_versioned('billing', 'transactions', 'merchant_account', '1.28', '1.29');
--- ERROR:  Column not found: public.transactions.merchant_account, 1.28-1.29
+-- select "schema".get_column_versioned('billing', 'Transaction', 'merchant_account', '1.28', '1.29');
+-- ERROR:  Column not found: billing.Transaction.merchant_account, 1.28-1.29

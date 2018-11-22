@@ -15,7 +15,7 @@ alter table billing."NoticeLog"
 alter table billing."NoticeLog"
   add constraint transid_fkey
   foreign key (transid)
-  references transactions (transid)
+  references billing."Transaction" (transid)
   on delete restrict
   on update cascade
 ;

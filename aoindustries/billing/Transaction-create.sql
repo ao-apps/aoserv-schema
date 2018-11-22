@@ -1,13 +1,13 @@
-create sequence         billing.transactions_transid_seq cycle;
-grant all            on billing.transactions_transid_seq to aoadmin;
-grant select, update on billing.transactions_transid_seq to aoserv_app;
+create sequence         billing."Transaction_transid_seq" cycle;
+grant all            on billing."Transaction_transid_seq" to aoadmin;
+grant select, update on billing."Transaction_transid_seq" to aoserv_app;
 
-create table transactions (
+create table billing."Transaction" (
   "time" timestamp with time zone
     default now()
     not null,
   transid integer
-    default nextval('billing.transactions_transid_seq')
+    default nextval('billing."Transaction_transid_seq"')
     primary key,
   accounting text
     not null,
@@ -36,6 +36,7 @@ create table transactions (
     constraint payment_confirmed_chk
       check (payment_confirmed='W' or payment_confirmed='Y' or payment_confirmed='N')
 );
-grant all                            on transactions to aoadmin;
-grant select, insert, update, delete on transactions to aoserv_app;
-grant select, update, delete         on transactions to kaori;
+grant all                            on billing."Transaction" to aoadmin;
+-- TODO: delete required?
+grant select, insert, update, delete on billing."Transaction" to aoserv_app;
+grant select, update, delete         on billing."Transaction" to kaori;

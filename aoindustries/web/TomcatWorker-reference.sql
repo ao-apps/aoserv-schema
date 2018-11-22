@@ -1,20 +1,20 @@
 alter table web."TomcatWorker"
-  add constraint code_fkey
-  foreign key (code)
-  references web."TomcatWorkerName" (code)
-  on delete restrict
-  on update cascade
-;
-alter table web."TomcatWorker"
-  add constraint net_bind_fkey
-  foreign key (net_bind)
+  add constraint bind_fkey
+  foreign key (bind)
   references net_binds (pkey)
   on delete restrict
   on update cascade
 ;
 alter table web."TomcatWorker"
-  add constraint tomcat_site_fkey
-  foreign key (tomcat_site)
+  add constraint name_fkey
+  foreign key ("name")
+  references web."TomcatWorkerName" (code)
+  on delete restrict
+  on update cascade
+;
+alter table web."TomcatWorker"
+  add constraint "tomcatSite_fkey"
+  foreign key ("tomcatSite")
   references web."TomcatSite" (httpd_site)
   on delete restrict
   on update cascade

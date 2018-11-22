@@ -36,7 +36,7 @@ alter table web."SharedTomcat"
 alter table web."SharedTomcat"
   add constraint tomcat4_worker_fkey
   foreign key (tomcat4_worker)
-  references web."TomcatWorker" (pkey)
+  references web."TomcatWorker" (bind)
   on delete restrict
   on update cascade
 ;

@@ -1,6 +1,6 @@
-create index "TomcatWorker_code_fkey" on web."TomcatWorker" (
-  code
+create index "TomcatWorker_name_fkey" on web."TomcatWorker" (
+  "name"
 );
-create index "TomcatWorker_tomcat_site_fkey" on web."TomcatWorker" (
-  tomcat_site
+create index "TomcatWorker_tomcatSite_fkey" on web."TomcatWorker" (
+  "tomcatSite"
 );

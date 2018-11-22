@@ -8,7 +8,7 @@ alter table email_pipe_addresses
 alter table email_pipe_addresses
   add constraint email_pipe_fkey
   foreign key (email_pipe)
-  references email_pipes (pkey)
+  references email."Pipe" (pkey)
   on delete restrict
   on update cascade
 ;

@@ -5,7 +5,7 @@ as
 -- TODO: email.CyrusImapdServer without any email.CyrusImapdBind
 -- TODO: email.List with no addresses
 -- TODO: email.Domain with no addresses
--- TODO: email_pipes with no addresses
+-- TODO: email.Pipe with no addresses
 -- TODO: httpd_shared_tomcats
 -- httpd_servers
           (select 'httpd'::name as "schema", 'httpd_servers'::name as "table", count(*) as unused from management."remove-httpd-server"

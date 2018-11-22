@@ -1,4 +1,4 @@
-COPY "dns_forbidden_zones" FROM stdin;
+COPY dns."ForbiddenZone" FROM stdin;
 apple.com.
 cnet.com.
 google.com.

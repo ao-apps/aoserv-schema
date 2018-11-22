@@ -11,7 +11,7 @@ union all (select accounting, aosh_command from management."remove-canceled-emai
 union all (select accounting, aosh_command from management."remove-canceled-httpd_sites" order by accounting, net.reverse_hostname(hostname), "name")
 -- httpd_shared_tomcats
 union all (select accounting, aosh_command from management."remove-canceled-httpd_shared_tomcats" order by accounting, net.reverse_hostname(hostname), "name")
--- TODO: httpd_servers
+-- TODO: httpd.HttpdServer
 -- mysql_databases
 union all (select accounting, aosh_command from management."remove-canceled-mysql_databases" order by accounting, mysql_server, "name")
 -- mysql_users

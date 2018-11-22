@@ -1,3 +1,8 @@
+Source:
+
+1) Two-space indent, do not tab indent because it doesn't copy/paste will into psql
+
+
 Style:
 
 1) ALL CAPS SQL KEYWORDS.  We have tons of legacy code that doesn't follow this, but

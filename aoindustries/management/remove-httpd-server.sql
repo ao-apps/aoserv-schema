@@ -15,7 +15,7 @@ select
     || ' ' || osv.version_number as "OS",
   hs."name" as "NAME",
   case when exists(
-    select hs2.pkey from public.httpd_servers hs2 where
+    select hs2.pkey from httpd."HttpdServer" hs2 where
       hs2.ao_server=hs.ao_server and hs2.pkey!=hs.pkey
   ) then 'Yes' else 'No' end as "HAS_OTHER",
   -- Find all ports that were associated with this server but will now be unused, used for managed firewall
@@ -47,7 +47,7 @@ select
   ) as "PORTS_NOW_UNUSED"
 from
              public.ao_servers                     ao
-  inner join public.httpd_servers                  hs  on ao.server                   =  hs.ao_server
+  inner join httpd."HttpdServer"                   hs  on ao.server                   =  hs.ao_server
   inner join public.servers                        se  on ao.server                   =  se.pkey
   inner join distribution."OperatingSystemVersion" osv on se.operating_system_version = osv.pkey;
 

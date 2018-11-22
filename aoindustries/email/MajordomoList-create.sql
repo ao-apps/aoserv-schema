@@ -1,9 +1,9 @@
-create table majordomo_lists (
+create table email."MajordomoList" (
   email_list integer
     primary key,
   majordomo_server integer
     not null,
-  name text
+  "name" text
     not null,
   listname_pipe_add integer
     not null
@@ -23,7 +23,7 @@ create table majordomo_lists (
   listname_request_pipe_add integer
     not null
     unique,
-  unique (majordomo_server, name)
+  unique (majordomo_server, "name")
 );
-grant all                    on majordomo_lists to aoadmin;
-grant select, insert, delete on majordomo_lists to aoserv_app;
+grant all                    on email."MajordomoList" to aoadmin;
+grant select, insert, delete on email."MajordomoList" to aoserv_app;

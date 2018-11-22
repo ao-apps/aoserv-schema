@@ -15,7 +15,7 @@ alter table email_smtp_relays
 alter table email_smtp_relays
   add constraint type_fkey
   foreign key ("type")
-  references email_smtp_relay_types ("name")
+  references email."SmtpRelayType" ("name")
   on delete restrict
   on update cascade
 ;

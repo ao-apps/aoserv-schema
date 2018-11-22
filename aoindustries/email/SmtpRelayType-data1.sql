@@ -1,4 +1,4 @@
-COPY "email_smtp_relay_types" FROM stdin;
+COPY email."SmtpRelayType" FROM stdin;
 allow	OK	allow
 allow_relay	RELAY	allow,RELAYCLIENT=""
 deny	REJECT	deny

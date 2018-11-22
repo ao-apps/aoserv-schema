@@ -1,4 +1,4 @@
-alter table web."VirtualHostRedirect"
+alter table web."Redirect"
   add constraint httpd_site_bind_fkey
   foreign key (httpd_site_bind)
   references web."VirtualHost" (pkey)

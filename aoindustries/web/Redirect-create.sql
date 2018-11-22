@@ -1,10 +1,10 @@
-create sequence web."VirtualHostRedirect_pkey_seq" cycle;
-grant all    on web."VirtualHostRedirect_pkey_seq" to aoadmin;
-grant select on web."VirtualHostRedirect_pkey_seq" to aoserv_app;
+create sequence web."Redirect_pkey_seq" cycle;
+grant all    on web."Redirect_pkey_seq" to aoadmin;
+grant select on web."Redirect_pkey_seq" to aoserv_app;
 
-create table web."VirtualHostRedirect" (
+create table web."Redirect" (
   pkey            integer
-    default nextval('web."VirtualHostRedirect_pkey_seq"')
+    default nextval('web."Redirect_pkey_seq"')
     primary key,
   -- TODO: Allow a Redirect to be attached to either a site or a virtualHost
   httpd_site_bind integer  not null,
@@ -19,5 +19,5 @@ create table web."VirtualHostRedirect" (
   unique(httpd_site_bind, sort_order),
   unique(pattern, httpd_site_bind)
 );
-grant all            on web."VirtualHostRedirect" to aoadmin;
-grant select, delete on web."VirtualHostRedirect" to aoserv_app;
+grant all            on web."Redirect" to aoadmin;
+grant select, delete on web."Redirect" to aoserv_app;

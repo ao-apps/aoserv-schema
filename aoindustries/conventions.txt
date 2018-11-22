@@ -53,6 +53,8 @@ Naming:
    as this can save the overhead of manually declaring JavaBeans properties and
    JSP EL expressions such as obj['public'] where obj.public wouldn't work.
 
+8) Indexes that exist primarily to align to foreign keys should be named
+   "Table_column_fkey"
 
 Inserting:
 

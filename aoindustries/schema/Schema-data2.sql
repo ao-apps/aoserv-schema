@@ -1,6 +1,5 @@
 -- TODO: Review all "sinceVersion" to best match tables in the schemas
-insert into "schema"."Schema" values(
-    (select count(*) from "schema"."Schema"),
+select "schema".add_schema(
     'account',
     '1.0a100',
     null,
@@ -8,8 +7,7 @@ insert into "schema"."Schema" values(
     true,
     null -- Uses pg_catalog.pg_description
 );
-insert into "schema"."Schema" values(
-    (select count(*) from "schema"."Schema"),
+select "schema".add_schema(
     'accounting',
     '1.0a100',
     null,
@@ -17,8 +15,7 @@ insert into "schema"."Schema" values(
     false,
     null -- Uses pg_catalog.pg_description
 );
-insert into "schema"."Schema" values(
-    (select count(*) from "schema"."Schema"),
+select "schema".add_schema(
     'aosh',
     '1.0a100',
     null,
@@ -26,8 +23,7 @@ insert into "schema"."Schema" values(
     true,
     null -- Uses pg_catalog.pg_description
 );
-insert into "schema"."Schema" values(
-    (select count(*) from "schema"."Schema"),
+select "schema".add_schema(
     'backup',
     '1.0a100',
     null,
@@ -35,8 +31,7 @@ insert into "schema"."Schema" values(
     true,
     null -- Uses pg_catalog.pg_description
 );
-insert into "schema"."Schema" values(
-    (select count(*) from "schema"."Schema"),
+select "schema".add_schema(
     'billing',
     '1.0a100',
     null,
@@ -44,8 +39,7 @@ insert into "schema"."Schema" values(
     true,
     null -- Uses pg_catalog.pg_description
 );
-insert into "schema"."Schema" values(
-    (select count(*) from "schema"."Schema"),
+select "schema".add_schema(
     'distribution',
     '1.0a100',
     null,
@@ -53,8 +47,7 @@ insert into "schema"."Schema" values(
     true,
     null -- Uses pg_catalog.pg_description
 );
-insert into "schema"."Schema" values(
-    (select count(*) from "schema"."Schema"),
+select "schema".add_schema(
     'dns',
     '1.0a100',
     null,
@@ -62,8 +55,7 @@ insert into "schema"."Schema" values(
     true,
     null -- Uses pg_catalog.pg_description
 );
-insert into "schema"."Schema" values(
-    (select count(*) from "schema"."Schema"),
+select "schema".add_schema(
     'email',
     '1.0a100',
     null,
@@ -71,8 +63,7 @@ insert into "schema"."Schema" values(
     true,
     null -- Uses pg_catalog.pg_description
 );
-insert into "schema"."Schema" values(
-    (select count(*) from "schema"."Schema"),
+select "schema".add_schema(
     'ftp',
     '1.0a100',
     null,
@@ -80,8 +71,7 @@ insert into "schema"."Schema" values(
     false,
     null -- Uses pg_catalog.pg_description
 );
-insert into "schema"."Schema" values(
-    (select count(*) from "schema"."Schema"),
+select "schema".add_schema(
     'httpd',
     '1.0a100',
     null,
@@ -89,8 +79,7 @@ insert into "schema"."Schema" values(
     true,
     null -- Uses pg_catalog.pg_description
 );
-insert into "schema"."Schema" values(
-    (select count(*) from "schema"."Schema"),
+select "schema".add_schema(
     'infrastructure',
     '1.0a100',
     null,
@@ -98,8 +87,7 @@ insert into "schema"."Schema" values(
     true,
     null -- Uses pg_catalog.pg_description
 );
-insert into "schema"."Schema" values(
-    (select count(*) from "schema"."Schema"),
+select "schema".add_schema(
     'interbase',
     '1.0a100',
     '1.30',
@@ -107,8 +95,7 @@ insert into "schema"."Schema" values(
     true,
     null -- Uses pg_catalog.pg_description
 );
-insert into "schema"."Schema" values(
-    (select count(*) from "schema"."Schema"),
+select "schema".add_schema(
     'linux',
     '1.0a100',
     null,
@@ -116,8 +103,7 @@ insert into "schema"."Schema" values(
     true,
     null -- Uses pg_catalog.pg_description
 );
-insert into "schema"."Schema" values(
-    (select count(*) from "schema"."Schema"),
+select "schema".add_schema(
     'management',
     '1.0a100',
     null,
@@ -125,8 +111,7 @@ insert into "schema"."Schema" values(
     false,
     null -- Uses pg_catalog.pg_description
 );
-insert into "schema"."Schema" values(
-    (select count(*) from "schema"."Schema"),
+select "schema".add_schema(
     'master',
     '1.0a100',
     null,
@@ -134,8 +119,7 @@ insert into "schema"."Schema" values(
     true,
     null -- Uses pg_catalog.pg_description
 );
-insert into "schema"."Schema" values(
-    (select count(*) from "schema"."Schema"),
+select "schema".add_schema(
     'monitoring',
     '1.0a100',
     null,
@@ -143,8 +127,7 @@ insert into "schema"."Schema" values(
     true,
     null -- Uses pg_catalog.pg_description
 );
-insert into "schema"."Schema" values(
-    (select count(*) from "schema"."Schema"),
+select "schema".add_schema(
     'mysql',
     '1.0a100',
     null,
@@ -152,8 +135,7 @@ insert into "schema"."Schema" values(
     true,
     null -- Uses pg_catalog.pg_description
 );
-insert into "schema"."Schema" values(
-    (select count(*) from "schema"."Schema"),
+select "schema".add_schema(
     'net',
     '1.0a100',
     null,
@@ -161,8 +143,7 @@ insert into "schema"."Schema" values(
     true,
     null -- Uses pg_catalog.pg_description
 );
-insert into "schema"."Schema" values(
-    (select count(*) from "schema"."Schema"),
+select "schema".add_schema(
     'payment',
     '1.0a100',
     null,
@@ -170,8 +151,7 @@ insert into "schema"."Schema" values(
     true,
     null -- Uses pg_catalog.pg_description
 );
-insert into "schema"."Schema" values(
-    (select count(*) from "schema"."Schema"),
+select "schema".add_schema(
     'pki',
     '1.81.10',
     null,
@@ -179,8 +159,7 @@ insert into "schema"."Schema" values(
     false,
     null -- Uses pg_catalog.pg_description
 );
-insert into "schema"."Schema" values(
-    (select count(*) from "schema"."Schema"),
+select "schema".add_schema(
     'postgresql',
     '1.0a100',
     null,
@@ -188,8 +167,7 @@ insert into "schema"."Schema" values(
     true,
     null -- Uses pg_catalog.pg_description
 );
-insert into "schema"."Schema" values(
-    (select count(*) from "schema"."Schema"),
+select "schema".add_schema(
     'profile',
     '1.0a100',
     '1.76',
@@ -197,8 +175,7 @@ insert into "schema"."Schema" values(
     false,
     null -- Uses pg_catalog.pg_description
 );
-insert into "schema"."Schema" values(
-    (select count(*) from "schema"."Schema"),
+select "schema".add_schema(
     'reseller',
     '1.0a100',
     null,
@@ -206,8 +183,7 @@ insert into "schema"."Schema" values(
     false,
     null -- Uses pg_catalog.pg_description
 );
-insert into "schema"."Schema" values(
-    (select count(*) from "schema"."Schema"),
+select "schema".add_schema(
     'schema',
     '1.0a100',
     null,
@@ -215,8 +191,7 @@ insert into "schema"."Schema" values(
     true,
     null -- Uses pg_catalog.pg_description
 );
-insert into "schema"."Schema" values(
-    (select count(*) from "schema"."Schema"),
+select "schema".add_schema(
     'scm',
     '1.0a100',
     null,
@@ -224,8 +199,7 @@ insert into "schema"."Schema" values(
     false,
     null -- Uses pg_catalog.pg_description
 );
-insert into "schema"."Schema" values(
-    (select count(*) from "schema"."Schema"),
+select "schema".add_schema(
     'server',
     '1.0a100',
     null,
@@ -233,8 +207,7 @@ insert into "schema"."Schema" values(
     true,
     null -- Uses pg_catalog.pg_description
 );
-insert into "schema"."Schema" values(
-    (select count(*) from "schema"."Schema"),
+select "schema".add_schema(
     'signup',
     '1.0a100',
     null,
@@ -242,8 +215,7 @@ insert into "schema"."Schema" values(
     false,
     null -- Uses pg_catalog.pg_description
 );
-insert into "schema"."Schema" values(
-    (select count(*) from "schema"."Schema"),
+select "schema".add_schema(
     'ticket',
     '1.0a100',
     null,

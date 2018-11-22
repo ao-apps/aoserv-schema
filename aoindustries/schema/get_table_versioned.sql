@@ -1,8 +1,8 @@
 create or replace function "schema".get_table_versioned (
-  "schema" name,
-  "name" name,
+  "schema"       name,
+  "name"         name,
   "sinceVersion" text,
-  "lastVersion" text
+  "lastVersion"  text
 )
 returns integer
 as '

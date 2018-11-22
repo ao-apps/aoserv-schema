@@ -1,7 +1,7 @@
 create or replace function "schema".get_type_versioned (
-  "name" name,
+  "name"         name,
   "sinceVersion" text,
-  "lastVersion" text
+  "lastVersion"  text
 )
 returns integer
 as '

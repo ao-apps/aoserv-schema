@@ -1,11 +1,11 @@
 create or replace function aosh.add_command (
-  command name,
-  "schema" name,
-  "table" name,
-  description text,
-  syntax text,
+  command        name,
+  "schema"       name,
+  "table"        name,
+  description    text,
+  syntax         text,
   "sinceVersion" text,
-  "lastVersion" text
+  "lastVersion"  text
 )
 returns name
 as '
@@ -32,12 +32,12 @@ as '
 language 'sql';
 
 create or replace function aosh.add_command (
-  command name,
-  "table" name,
-  description text,
-  syntax text,
+  command        name,
+  "table"        name,
+  description    text,
+  syntax         text,
   "sinceVersion" text,
-  "lastVersion" text
+  "lastVersion"  text
 )
 returns name
 as '

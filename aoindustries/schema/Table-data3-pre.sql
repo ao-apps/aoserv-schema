@@ -1,11 +1,11 @@
 create or replace function "schema".add_table (
-  "schema" name,
-  "table" name,
-  display text,
-  "isPublic" boolean,
-  description text,
+  "schema"       name,
+  "table"        name,
+  display        text,
+  "isPublic"     boolean,
+  description    text,
   "sinceVersion" text,
-  "lastVersion" text
+  "lastVersion"  text
 )
 returns text
 as '
@@ -19,7 +19,7 @@ as '
     "isPublic",
     description
   ) values(
-    (select count(*) from "schema"."Table"),
+    (select coalesce(max(id), 0) + 1 from "schema"."Table"),
     "schema".get_schema_versioned( $1 , $6 , $7),
     $2 ,
     $6 ,

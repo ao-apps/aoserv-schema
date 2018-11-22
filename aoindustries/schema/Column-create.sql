@@ -1,10 +1,5 @@
-create sequence "schema"."Column_id_seq" cycle;
-grant all    on "schema"."Column_id_seq" to aoadmin;
-grant select on "schema"."Column_id_seq" to aoserv_app;
-
 create table "schema"."Column" (
   id integer
-    default nextval('"schema"."Column_id_seq"')
     primary key,
   "table" integer
     not null,

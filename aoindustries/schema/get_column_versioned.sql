@@ -1,9 +1,9 @@
 create or replace function "schema".get_column_versioned (
-  "schema" name,
-  "table" name,
-  "name" name,
+  "schema"       name,
+  "table"        name,
+  "name"         name,
   "sinceVersion" text,
-  "lastVersion" text
+  "lastVersion"  text
 )
 returns integer
 as '

@@ -10,7 +10,7 @@ insert into postgres_servers values(
         where
             name='postgresql'
             and version like '8.1.%'
-            and operating_system_version=(select pkey from operating_system_versions where operating_system='centos' and version_number='5')
+            and operating_system_version=(select pkey from distribution."OperatingSystemVersion" where operating_system='centos' and version_number='5')
     ),
     128,
     15,

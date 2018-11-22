@@ -17,10 +17,10 @@ select
     ','
    ) as "ALT_HOSTNAMES"
 from
-             public.httpd_sites                hs
-  inner join public.ao_servers                 ao on hs.ao_server                =  ao.server
-  inner join public.servers                    se on ao.server                   =  se.pkey
-  inner join public.operating_system_versions osv on se.operating_system_version = osv.pkey
+             public.httpd_sites                    hs
+  inner join public.ao_servers                     ao on hs.ao_server                =  ao.server
+  inner join public.servers                        se on ao.server                   =  se.pkey
+  inner join distribution."OperatingSystemVersion" osv on se.operating_system_version = osv.pkey
   left  join (
     select hsb_80.pkey, hsb_80.httpd_site, hsb_80."name", hsb_80.disable_log, hsu_80.hostname from
                  public.httpd_site_binds hsb_80

@@ -12,7 +12,7 @@ insert into mysql_servers values(
             and version like '4.1.%'
             and version not like '4.1.%-max'
             and version not like '4.1.%-source'
-            and operating_system_version=(select pkey from operating_system_versions where operating_system='centos' and version_number='5')
+            and operating_system_version=(select pkey from distribution."OperatingSystemVersion" where operating_system='centos' and version_number='5')
     ),
     1000,
     1,
@@ -32,7 +32,7 @@ insert into mysql_servers values(
             and version like '5.0.%'
             and version not like '5.0.%-max'
             and version not like '5.0.%-source'
-            and operating_system_version=(select pkey from operating_system_versions where operating_system='centos' and version_number='5')
+            and operating_system_version=(select pkey from distribution."OperatingSystemVersion" where operating_system='centos' and version_number='5')
     ),
     1000,
     2,

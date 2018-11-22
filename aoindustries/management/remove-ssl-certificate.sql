@@ -33,10 +33,10 @@ select
   case when sc.certbot_name is null then sc.cert_file  else null end as "CERT_FILE",
   case when sc.certbot_name is null then sc.chain_file else null end as "CHAIN_FILE"
 from
-             public.ssl_certificates          sc
-  inner join public.ao_servers                ao  on sc.ao_server                = ao.server
-  inner join public.servers                   se  on ao.server                   = se.pkey
-  inner join public.operating_system_versions osv on se.operating_system_version = osv.pkey;
+             public.ssl_certificates               sc
+  inner join public.ao_servers                     ao  on sc.ao_server                = ao.server
+  inner join public.servers                        se  on ao.server                   = se.pkey
+  inner join distribution."OperatingSystemVersion" osv on se.operating_system_version = osv.pkey;
 
 revoke all    on management."remove-ssl-certificate" from aoadmin;
 grant  select on management."remove-ssl-certificate" to   aoadmin;

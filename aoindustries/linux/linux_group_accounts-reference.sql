@@ -15,7 +15,7 @@ alter table linux_group_accounts
 alter table linux_group_accounts
   add constraint operating_system_version_fkey
   foreign key (operating_system_version)
-  references operating_system_versions (pkey)
+  references distribution."OperatingSystemVersion" (pkey)
   on delete restrict
   on update cascade
 ;

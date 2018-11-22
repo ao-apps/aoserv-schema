@@ -46,10 +46,10 @@ select
     ), ' '
   ) as "PORTS_NOW_UNUSED"
 from
-             public.ao_servers                ao
-  inner join public.httpd_servers             hs  on ao.server                   =  hs.ao_server
-  inner join public.servers                   se  on ao.server                   =  se.pkey
-  inner join public.operating_system_versions osv on se.operating_system_version = osv.pkey;
+             public.ao_servers                     ao
+  inner join public.httpd_servers                  hs  on ao.server                   =  hs.ao_server
+  inner join public.servers                        se  on ao.server                   =  se.pkey
+  inner join distribution."OperatingSystemVersion" osv on se.operating_system_version = osv.pkey;
 
 revoke all    on management."remove-httpd-server" from aoadmin;
 grant  select on management."remove-httpd-server" to   aoadmin;

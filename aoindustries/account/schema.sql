@@ -7,3 +7,4 @@ comment on schema account is 'The account schema is used for AO account configur
 
 grant all   on schema account to aoadmin;
 grant usage on schema account to aoserv_app;
+grant usage on schema account to kaori;

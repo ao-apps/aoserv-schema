@@ -7,3 +7,4 @@ comment on schema server is 'The server schema contains server configuration';
 
 grant all   on schema server to aoadmin;
 grant usage on schema server to aoserv_app;
+grant usage on schema server to kaori;

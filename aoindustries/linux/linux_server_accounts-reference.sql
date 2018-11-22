@@ -36,7 +36,7 @@ alter table linux_server_accounts
 alter table linux_server_accounts
   add constraint sa_integration_mode_fkey
   foreign key (sa_integration_mode)
-  references email_sa_integration_modes (name)
+  references email."SpamAssassinMode" ("name")
   on delete restrict
   on update cascade
 ;

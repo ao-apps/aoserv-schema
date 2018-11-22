@@ -1,4 +1,4 @@
-alter table httpd_site_authenticated_locations
+alter table web."Location"
   add constraint httpd_site_fkey
   foreign key (httpd_site)
   references web."Site" (pkey)

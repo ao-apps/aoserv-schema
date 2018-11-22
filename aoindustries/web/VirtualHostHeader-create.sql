@@ -7,6 +7,7 @@ create table web."VirtualHostHeader" (
   pkey            integer
     default nextval('web."VirtualHostHeader_pkey_seq"')
     primary key,
+  -- TODO: Allow a Header to be attached to either a site or a virtualHost
   httpd_site_bind integer  not null,
   sort_order      smallint not null
   check (

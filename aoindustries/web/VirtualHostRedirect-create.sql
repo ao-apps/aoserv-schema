@@ -6,6 +6,7 @@ create table web."VirtualHostRedirect" (
   pkey            integer
     default nextval('web."VirtualHostRedirect_pkey_seq"')
     primary key,
+  -- TODO: Allow a Redirect to be attached to either a site or a virtualHost
   httpd_site_bind integer  not null,
   sort_order      smallint not null
   check (

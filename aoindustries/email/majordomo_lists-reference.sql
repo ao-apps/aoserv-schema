@@ -15,7 +15,7 @@ alter table majordomo_lists
 alter table majordomo_lists
   add constraint listname_pipe_add_fkey
   foreign key (listname_pipe_add)
-  references email_pipe_addresses (pkey)
+  references email."PipeAddress" (pkey)
   on delete restrict
   on update cascade
 ;
@@ -50,7 +50,7 @@ alter table majordomo_lists
 alter table majordomo_lists
   add constraint listname_request_pipe_add_fkey
   foreign key (listname_request_pipe_add)
-  references email_pipe_addresses (pkey)
+  references email."PipeAddress" (pkey)
   on delete restrict
   on update cascade
 ;

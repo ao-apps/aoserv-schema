@@ -29,7 +29,7 @@ alter table majordomo_servers
 alter table majordomo_servers
   add constraint majordomo_pipe_address_fkey
   foreign key (majordomo_pipe_address)
-  references email_pipe_addresses (pkey)
+  references email."PipeAddress" (pkey)
   on delete restrict
   on update cascade
 ;

@@ -1,4 +1,4 @@
-COPY "resources" FROM stdin;
+COPY billing."Resource" FROM stdin;
 aoserv_daemon
 aoserv_master
 backup_disk

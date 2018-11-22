@@ -8,7 +8,7 @@ alter table billing."PackageDefinitionLimit"
 alter table billing."PackageDefinitionLimit"
   add constraint resource_fkey
   foreign key (resource)
-  references resources ("name")
+  references billing."Resource" ("name")
   on delete restrict
   on update cascade
 ;

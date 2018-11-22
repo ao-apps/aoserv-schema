@@ -1,4 +1,4 @@
-alter table system_email_aliases
+alter table email."SystemAlias"
   add constraint ao_server_fkey
   foreign key (ao_server)
   references ao_servers (server)

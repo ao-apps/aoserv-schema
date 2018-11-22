@@ -1,4 +1,4 @@
-create table dns_zones (
+create table dns."Zone" (
   "zone" text
     primary key,
   "file" text
@@ -14,5 +14,5 @@ create table dns_zones (
   ttl integer
     not null
 );
-grant all                            on dns_zones to aoadmin;
-grant select, insert, update, delete on dns_zones to aoserv_app;
+grant all                            on dns."Zone" to aoadmin;
+grant select, insert, update, delete on dns."Zone" to aoserv_app;

@@ -1,4 +1,4 @@
-alter table dns_zones
+alter table dns."Zone"
   add constraint package_fkey
   foreign key (package)
   references billing."Package" ("name")

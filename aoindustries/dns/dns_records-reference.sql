@@ -1,14 +1,14 @@
 alter table dns_records
   add constraint zone_fkey
   foreign key (zone)
-  references dns_zones (zone)
+  references dns."Zone" ("zone")
   on delete restrict
   on update cascade
 ;
 alter table dns_records
   add constraint type_fkey
-  foreign key (type)
-  references dns_types (type)
+  foreign key ("type")
+  references dns_types ("type")
   on delete restrict
   on update cascade
 ;

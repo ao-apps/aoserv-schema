@@ -8,7 +8,7 @@ alter table httpd_site_binds
 alter table httpd_site_binds
   add constraint httpd_bind_fkey
   foreign key (httpd_bind)
-  references httpd_binds (net_bind)
+  references httpd."HttpdBind" (net_bind)
   on delete restrict
   on update cascade
 ;

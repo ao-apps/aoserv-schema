@@ -3,7 +3,7 @@ create or replace view
   management."remove-unused"
 as
 -- TODO: email.CyrusImapdServer without any email.CyrusImapdBind
--- TODO: email_lists with no addresses
+-- TODO: email.List with no addresses
 -- TODO: email.Domain with no addresses
 -- TODO: email_pipes with no addresses
 -- TODO: httpd_shared_tomcats

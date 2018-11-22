@@ -1,5 +1,5 @@
 create or replace view
-  management."remove-canceled-email_lists"
+  management."remove-canceled-email.List"
 as
 select
   bu.accounting,
@@ -7,7 +7,7 @@ select
   ao.hostname,
   el."path"
 from
-             public.email_lists          el
+             email."List"                el
   inner join public.linux_server_groups lsg on  el.linux_server_group = lsg.pkey
   inner join public.ao_servers           ao on lsg.ao_server          =  ao.server
   inner join public.linux_groups         lg on lsg."name"             =  lg."name"
@@ -16,5 +16,5 @@ from
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 
-revoke all    on management."remove-canceled-email_lists" from aoadmin;
-grant  select on management."remove-canceled-email_lists" to   aoadmin;
+revoke all    on management."remove-canceled-email.List" from aoadmin;
+grant  select on management."remove-canceled-email.List" to   aoadmin;

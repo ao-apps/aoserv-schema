@@ -8,7 +8,7 @@ alter table email."ListAddress"
 alter table email."ListAddress"
   add constraint email_list_fkey
   foreign key (email_list)
-  references email_lists (pkey)
+  references email."List" (pkey)
   on delete restrict
   on update cascade
 ;

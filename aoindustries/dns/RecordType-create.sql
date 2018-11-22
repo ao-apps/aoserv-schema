@@ -1,5 +1,5 @@
-create table dns_types (
-  type text
+create table dns."RecordType" (
+  "type" text
     primary key,
   description  text    not null,
   has_priority boolean not null,
@@ -7,5 +7,5 @@ create table dns_types (
   has_port     boolean not null,
   param_ip     boolean not null
 );
-grant all            on dns_types to aoadmin;
-grant select, update on dns_types to aoserv_app;
+grant all    on dns."RecordType" to aoadmin;
+grant select on dns."RecordType" to aoserv_app;

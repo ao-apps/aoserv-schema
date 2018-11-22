@@ -8,7 +8,7 @@ alter table dns."Record"
 alter table dns."Record"
   add constraint type_fkey
   foreign key ("type")
-  references dns_types ("type")
+  references dns."RecordType" ("type")
   on delete restrict
   on update cascade
 ;

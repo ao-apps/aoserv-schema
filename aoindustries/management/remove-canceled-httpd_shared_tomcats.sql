@@ -11,7 +11,7 @@ from
   inner join public.ao_servers             ao on hst.ao_server            =  ao.server
   inner join public.linux_server_accounts lsa on hst.linux_server_account = lsa.pkey
   inner join account."Username"            un on lsa.username             =  un.username
-  inner join public.packages               pk on  un.package              =  pk."name"
+  inner join billing."Package"             pk on  un.package              =  pk."name"
   inner join account."Account"             bu on  pk.accounting           =  bu.accounting
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);

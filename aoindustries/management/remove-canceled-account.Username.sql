@@ -7,7 +7,7 @@ select
   un.username
 from
              account."Username"      un
-  inner join public.packages         pk on un.package    = pk."name"
+  inner join billing."Package"       pk on un.package    = pk."name"
   inner join account."Account"       bu on pk.accounting = bu.accounting
   -- business_administrators remain even after canceled
   left  join account."Administrator" ba on un.username   = ba.username

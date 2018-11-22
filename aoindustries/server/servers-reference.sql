@@ -15,7 +15,7 @@ alter table servers
 alter table servers
   add constraint package_fkey
   foreign key (package)
-  references packages (pkey)
+  references billing."Package" (pkey)
   on delete restrict
   on update cascade
 ;

@@ -8,7 +8,7 @@ alter table backup."BackupReport"
 alter table backup."BackupReport"
   add constraint package_fkey
   foreign key (package)
-  references packages (pkey)
+  references billing."Package" (pkey)
   on delete restrict
   on update cascade
 ;

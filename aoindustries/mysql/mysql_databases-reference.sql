@@ -8,7 +8,7 @@ alter table mysql_databases
 alter table mysql_databases
   add constraint package_fkey
   foreign key (package)
-  references packages (name)
+  references billing."Package" ("name")
   on delete restrict
   on update cascade
 ;

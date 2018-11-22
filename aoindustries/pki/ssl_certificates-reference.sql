@@ -8,7 +8,7 @@ alter table ssl_certificates
 alter table ssl_certificates
   add constraint package_fkey
   foreign key (package)
-  references packages (pkey)
+  references billing."Package" (pkey)
   on delete restrict
   on update cascade
 ;

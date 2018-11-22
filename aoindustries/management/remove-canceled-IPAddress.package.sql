@@ -12,7 +12,7 @@ select
   ia."inetAddress"
 from
              public."IPAddress" ia
-  inner join public.packages    pk on ia.package     = pk.pkey
+  inner join billing."Package"  pk on ia.package     = pk.pkey
   inner join account."Account"  bu on pk.accounting  = bu.accounting
   inner join public.net_devices nd on ia."netDevice" = nd.pkey
   inner join public.servers     se on nd.server      = se.pkey

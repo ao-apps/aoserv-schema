@@ -29,7 +29,7 @@ alter table httpd_servers
 alter table httpd_servers
   add constraint package_fkey
   foreign key (package)
-  references packages (pkey)
+  references billing."Package" (pkey)
   on delete restrict
   on update cascade
 ;

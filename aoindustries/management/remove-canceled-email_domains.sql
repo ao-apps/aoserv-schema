@@ -9,7 +9,7 @@ select
 from
              public.email_domains ed
   inner join public.ao_servers    ao on ed.ao_server  = ao.server
-  inner join public.packages      pk on ed.package    = pk."name"
+  inner join billing."Package"    pk on ed.package    = pk."name"
   inner join account."Account"    bu on pk.accounting = bu.accounting
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);

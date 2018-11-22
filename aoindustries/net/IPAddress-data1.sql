@@ -4,7 +4,7 @@ insert into "IPAddress" values (
 	null,
 	false,
 	null,
-	(select pkey from packages where name='AOINDUSTRIES'),
+	(select pkey from billing."Package" where name='AOINDUSTRIES'),
 	'2001-08-23 18:51:03-05',
 	false,
 	false,

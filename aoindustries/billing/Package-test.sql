@@ -1,5 +1,5 @@
 begin;
-insert into packages values(
+insert into billing."Package" values(
     2,
 	'TEST',
 	'TEST',
@@ -14,7 +14,7 @@ insert into packages values(
 	null,
 	null
 );
-insert into packages values(
+insert into billing."Package" values(
     4,
 	'NMW',
 	'NMW',
@@ -29,5 +29,5 @@ insert into packages values(
 	null,
 	null
 );
-SELECT setval ('billing.packages_pkey_seq', 5, true);
+SELECT setval ('billing."Package_pkey_seq"', 5, true);
 commit;

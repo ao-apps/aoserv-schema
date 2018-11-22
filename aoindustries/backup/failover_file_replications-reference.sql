@@ -8,7 +8,7 @@ alter table failover_file_replications
 alter table failover_file_replications
   add constraint backup_partition_fkey
   foreign key (backup_partition)
-  references backup_partitions (pkey)
+  references backup."BackupPartition" (pkey)
   on delete restrict
   on update cascade
 ;

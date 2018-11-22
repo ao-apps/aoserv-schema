@@ -1,11 +1,11 @@
-create sequence httpd.httpd_site_bind_headers_pkey_seq cycle;
-grant all    on httpd.httpd_site_bind_headers_pkey_seq to aoadmin;
-grant select on httpd.httpd_site_bind_headers_pkey_seq to aoserv_app; -- , update
+create sequence web.httpd_site_bind_headers_pkey_seq cycle;
+grant all    on web.httpd_site_bind_headers_pkey_seq to aoadmin;
+grant select on web.httpd_site_bind_headers_pkey_seq to aoserv_app; -- , update
 
 -- See https://httpd.apache.org/docs/2.4/mod/mod_headers.html
 create table httpd_site_bind_headers (
   pkey            integer
-    default nextval('httpd.httpd_site_bind_headers_pkey_seq')
+    default nextval('web.httpd_site_bind_headers_pkey_seq')
     primary key,
   httpd_site_bind integer  not null,
   sort_order      smallint not null

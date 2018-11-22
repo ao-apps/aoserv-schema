@@ -1,7 +1,7 @@
-create unique index "HttpdServer_noname_uni" on httpd."HttpdServer" (
+create unique index "HttpdServer_noname_uni" on web."HttpdServer" (
   ao_server
 ) where "name" is null;
-create unique index "HttpdServer_name_uni" on httpd."HttpdServer" (
+create unique index "HttpdServer_name_uni" on web."HttpdServer" (
   ao_server,
   "name"
 ) where "name" is not null;
@@ -13,25 +13,25 @@ create unique index "HttpdServer_name_uni" on httpd."HttpdServer" (
 --
 -- See https://www.freedesktop.org/software/systemd/man/systemd.unit.html
 -- See HttpdServer.getSystemdEscapedName()
---create unique index "HttpdServer_name_encoded_uni" on httpd."HttpdServer" (
+--create unique index "HttpdServer_name_encoded_uni" on web."HttpdServer" (
 --  ao_server,
 --  convert_to(replace("name", '/', '-'), 'UTF8') -- replace before convert_to is OK since UTF-8 encoding never encodes into ASCII space
 --) where "name" is not null;
 -- Conversion to UTF-8 bytea is unnecessary:
-create unique index "HttpdServer_name_encoded_uni" on httpd."HttpdServer" (
+create unique index "HttpdServer_name_encoded_uni" on web."HttpdServer" (
   ao_server,
   replace("name", '/', '-')
 ) where "name" is not null;
 
-create index "HttpdServer_linux_server_account_fkey" on httpd."HttpdServer" (
+create index "HttpdServer_linux_server_account_fkey" on web."HttpdServer" (
   linux_server_account
 );
-create index "HttpdServer_linux_server_group_fkey" on httpd."HttpdServer" (
+create index "HttpdServer_linux_server_group_fkey" on web."HttpdServer" (
   linux_server_group
 );
-create index "HttpdServer_mod_php_version_fkey" on httpd."HttpdServer" (
+create index "HttpdServer_mod_php_version_fkey" on web."HttpdServer" (
   mod_php_version
 );
-create index "HttpdServer_package_fkey" on httpd."HttpdServer" (
+create index "HttpdServer_package_fkey" on web."HttpdServer" (
   package
 );

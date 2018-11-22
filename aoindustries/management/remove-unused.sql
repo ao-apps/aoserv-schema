@@ -7,8 +7,8 @@ as
 -- TODO: email.Domain with no addresses
 -- TODO: email.Pipe with no addresses
 -- TODO: httpd_shared_tomcats
--- httpd.HttpdServer
-          (select 'httpd'::name as "schema", 'HttpdServer'::name as "table", count(*) as unused from management."remove-httpd-server"
+-- web.HttpdServer
+          (select 'web'::name as "schema", 'HttpdServer'::name as "table", count(*) as unused from management."remove-httpd-server"
            where num_site_binds=0)
 -- TODO: mysql_databases (without any mysql_db_users)
 -- TODO: mysql_server_users (without any mysql_db_users)

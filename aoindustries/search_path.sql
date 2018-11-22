@@ -23,7 +23,6 @@ ALTER ROLE aoadmin SET search_path TO
   dns,
   email,
   ftp,
-  httpd,
   infrastructure,
   linux,
   management,
@@ -40,6 +39,7 @@ ALTER ROLE aoadmin SET search_path TO
   server,
   signup,
   ticket,
+  web,
   public;
 
 -- aoserv_app is used by the master server.  For maximum reliability as schemas

@@ -1,10 +1,10 @@
-create sequence         httpd.httpd_shared_tomcats_pkey_seq cycle;
-grant all            on httpd.httpd_shared_tomcats_pkey_seq to aoadmin;
-grant select, update on httpd.httpd_shared_tomcats_pkey_seq to aoserv_app;
+create sequence         web.httpd_shared_tomcats_pkey_seq cycle;
+grant all            on web.httpd_shared_tomcats_pkey_seq to aoadmin;
+grant select, update on web.httpd_shared_tomcats_pkey_seq to aoserv_app;
 
 create table httpd_shared_tomcats (
   pkey integer
-    default nextval('httpd.httpd_shared_tomcats_pkey_seq')
+    default nextval('web.httpd_shared_tomcats_pkey_seq')
     primary key,
   "name" text
     not null

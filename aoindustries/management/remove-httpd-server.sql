@@ -5,7 +5,7 @@ as
 select
   (
     select count(*) from
-                 httpd."HttpdBind"       hb
+                 web."HttpdBind"         hb
       inner join public.httpd_site_binds hsb on hb.net_bind = hsb.httpd_bind
     where
       hs.pkey = hb.httpd_server
@@ -15,7 +15,7 @@ select
     || ' ' || osv.version_number as "OS",
   hs."name" as "NAME",
   case when exists(
-    select hs2.pkey from httpd."HttpdServer" hs2 where
+    select hs2.pkey from web."HttpdServer" hs2 where
       hs2.ao_server=hs.ao_server and hs2.pkey!=hs.pkey
   ) then 'Yes' else 'No' end as "HAS_OTHER",
   -- Find all ports that were associated with this server but will now be unused, used for managed firewall
@@ -23,8 +23,8 @@ select
     array(
       select unused_ports.port || '/' || unused_ports.net_protocol from (
         select distinct nb.port, nb.net_protocol from
-                     httpd."HttpdBind" hb
-          inner join public.net_binds  nb on hb.net_bind = nb.pkey
+                     web."HttpdBind"  hb
+          inner join public.net_binds nb on hb.net_bind = nb.pkey
         where
           hs.pkey = hb.httpd_server
           -- Remove ports that are on the server but not part of this server
@@ -35,8 +35,8 @@ select
               hs.ao_server = nb2.server
               and nb2.pkey not in (
                 select nb3.pkey from
-                             httpd."HttpdBind" hb3
-                  inner join public.net_binds  nb3 on hb3.net_bind = nb3.pkey
+                             web."HttpdBind"  hb3
+                  inner join public.net_binds nb3 on hb3.net_bind = nb3.pkey
                 where
                   hs.pkey = hb3.httpd_server
               )
@@ -47,7 +47,7 @@ select
   ) as "PORTS_NOW_UNUSED"
 from
              public.ao_servers                     ao
-  inner join httpd."HttpdServer"                   hs  on ao.server                   =  hs.ao_server
+  inner join web."HttpdServer"                     hs  on ao.server                   =  hs.ao_server
   inner join public.servers                        se  on ao.server                   =  se.pkey
   inner join distribution."OperatingSystemVersion" osv on se.operating_system_version = osv.pkey;
 

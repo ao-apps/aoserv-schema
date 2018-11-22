@@ -1,10 +1,10 @@
-create sequence         httpd."HttpdServer_pkey_seq" cycle;
-grant all            on httpd."HttpdServer_pkey_seq" to aoadmin;
-grant select, update on httpd."HttpdServer_pkey_seq" to aoserv_app;
+create sequence         web."HttpdServer_pkey_seq" cycle;
+grant all            on web."HttpdServer_pkey_seq" to aoadmin;
+grant select, update on web."HttpdServer_pkey_seq" to aoserv_app;
 
-create table httpd."HttpdServer" (
+create table web."HttpdServer" (
   pkey integer
-    default nextval('httpd."HttpdServer_pkey_seq"')
+    default nextval('web."HttpdServer_pkey_seq"')
     primary key,
   ao_server integer
     not null,
@@ -96,5 +96,5 @@ create table httpd."HttpdServer" (
   mod_status boolean,
   mod_wsgi boolean
 );
-grant all            on httpd."HttpdServer" to aoadmin;
-grant select, delete on httpd."HttpdServer" to aoserv_app;
+grant all            on web."HttpdServer" to aoadmin;
+grant select, delete on web."HttpdServer" to aoserv_app;

@@ -1,7 +1,7 @@
 alter table account."Administrator"
   add constraint username_fkey
   foreign key (username)
-  references usernames (username)
+  references account."Username" (username)
   on delete restrict
   on update cascade
 ;

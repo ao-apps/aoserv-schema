@@ -7,7 +7,7 @@ select
   pu.username
 from
              public.postgres_users pu
-  inner join public.usernames      un on pu.username   = un.username
+  inner join account."Username"    un on pu.username   = un.username
   inner join public.packages       pk on un.package    = pk."name"
   inner join account."Account"     bu on pk.accounting = bu.accounting
 where

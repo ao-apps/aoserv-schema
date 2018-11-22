@@ -33,7 +33,7 @@ union all (select 'pki'::name as "schema", 'ssl_certificates'::name as "table", 
 -- TODO: linux_accounts (orphaned)
 -- TODO: linux_server_groups (orphaned or with no linux_group_accounts)
 -- TODO: linux_groups (orphaned or with no linux_group_accounts)
--- TODO: usernames (orphaned)
+-- TODO: account.Username (orphaned)
 -- TODO: business_servers (access to a server but without any resources - useful?)
 ;
 

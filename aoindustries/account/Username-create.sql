@@ -1,9 +1,9 @@
-create table usernames (
+create table account."Username" (
   username text
     primary key
     check (
-      -- Control usernames for Cyrus user@domain use in virtdomains
-      username not like '@%'            -- Can't start with @
+      -- Control account.Username for Cyrus user@domain use in virtdomains
+          username not like '@%'        -- Can't start with @
       and username not like '%@'        -- Can't end with @
       and username not like '%@%@%'     -- Can't have more than one @
       and username not like 'cyrus@%'   -- Can't start with cyrus
@@ -13,5 +13,5 @@ create table usernames (
     not null,
   disable_log integer
 );
-grant all                            on usernames to aoadmin;
-grant select, insert, update, delete on usernames to aoserv_app;
+grant all                            on account."Username" to aoadmin;
+grant select, insert, update, delete on account."Username" to aoserv_app;

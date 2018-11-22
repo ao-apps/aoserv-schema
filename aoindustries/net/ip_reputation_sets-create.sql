@@ -141,7 +141,7 @@ INSERT INTO ip_reputation_sets VALUES (
     '2012-08-13 05:47:37.638487-05',
     '2012-08-13 05:47:37.638487-05'
 );
-INSERT INTO usernames VALUES ('xlite_ipreputation', 'XLITE667', null);
+INSERT INTO account."Username" VALUES ('xlite_ipreputation', 'XLITE667', null);
 INSERT INTO account."Administrator" VALUES (
     'xlite_ipreputation',
     '9Knpnj2HM4JcW+XkMXcSWBcL1l8=',
@@ -183,7 +183,7 @@ INSERT INTO ip_reputation_sets VALUES (
     '2012-10-08 19:11:22.781276-05',
     '2012-10-08 19:11:22.781276-05'
 );
-INSERT INTO usernames VALUES ('emortalz_ipreputation', 'EMORTALZ', null);
+INSERT INTO account."Username" VALUES ('emortalz_ipreputation', 'EMORTALZ', null);
 INSERT INTO account."Administrator" VALUES (
     'emortalz_ipreputation',
     '3P046fBA7XbUyPwQnLXavb66OkE=', -- 95ShelshBrin
@@ -225,7 +225,7 @@ INSERT INTO ip_reputation_sets VALUES (
     '2012-10-08 19:12:02.405987-05',
     '2012-10-08 19:12:02.405987-05'
 );
-INSERT INTO usernames VALUES ('pla_ipreputation', 'PROJECT_LA', null);
+INSERT INTO account."Username" VALUES ('pla_ipreputation', 'PROJECT_LA', null);
 INSERT INTO account."Administrator" VALUES (
     'pla_ipreputation',
     'nBtCz/A4hzfMroXSRvIR3j7sI8k=', -- Clerd7Ejar4
@@ -267,7 +267,7 @@ INSERT INTO ip_reputation_sets VALUES (
     '2012-10-08 19:12:46.554972-05',
     '2012-10-08 19:12:46.554972-05'
 );
-INSERT INTO usernames VALUES ('runerebe_ipreputation', 'RUNEREBE', null);
+INSERT INTO account."Username" VALUES ('runerebe_ipreputation', 'RUNEREBE', null);
 INSERT INTO account."Administrator" VALUES (
     'runerebe_ipreputation',
     'r3Qcv7WrPdlaEy7B9xK6JwOWrpg=', -- HonarUslah83
@@ -309,7 +309,7 @@ INSERT INTO ip_reputation_sets VALUES (
     '2012-10-08 19:13:17.79102-05',
     '2012-10-08 19:13:17.79102-05'
 );
-INSERT INTO usernames VALUES ('weblara_ipreputation', 'WEBLARA', null);
+INSERT INTO account."Username" VALUES ('weblara_ipreputation', 'WEBLARA', null);
 INSERT INTO account."Administrator" VALUES (
     'weblara_ipreputation',
     'vZs0tdZY1bcc+sbPqsOf7SrqBZc=', -- Dwex8Oloh7
@@ -351,7 +351,7 @@ INSERT INTO ip_reputation_sets VALUES (
     '2012-10-08 22:07:20.030039-05',
     '2012-10-08 22:07:20.030039-05'
 );
-INSERT INTO usernames VALUES ('losthopersps_ipreputation', 'LOSTHOPERSPS', null);
+INSERT INTO account."Username" VALUES ('losthopersps_ipreputation', 'LOSTHOPERSPS', null);
 INSERT INTO account."Administrator" VALUES (
     'losthopersps_ipreputation',
     'FuMGKMko4XiRnW+E5YOPTtOIq48=', -- 7Gworvyo4Ajo
@@ -393,7 +393,7 @@ INSERT INTO ip_reputation_sets VALUES (
     '2012-10-09 00:12:35.149496-05',
     '2012-10-09 00:12:35.149496-05'
 );
-INSERT INTO usernames VALUES ('gtapolicemods_ipreputation', 'GTAPOLICEMODS', null);
+INSERT INTO account."Username" VALUES ('gtapolicemods_ipreputation', 'GTAPOLICEMODS', null);
 INSERT INTO account."Administrator" VALUES (
     'gtapolicemods_ipreputation',
     'phJUN8xiPPc/nwPl+wEu2gQPVcA=', -- 2Swuss2Siveor
@@ -435,7 +435,7 @@ INSERT INTO ip_reputation_sets VALUES (
     '2012-12-13 14:06:00.037015-06',
     '2012-12-13 14:06:00.037015-06'
 );
-INSERT INTO usernames VALUES ('server9803_ipreputation', 'SERVER9803', null);
+INSERT INTO account."Username" VALUES ('server9803_ipreputation', 'SERVER9803', null);
 INSERT INTO account."Administrator" VALUES (
     'server9803_ipreputation',
     '/JyltqZ7EK/26', -- Cuxio7Igrio2
@@ -477,7 +477,7 @@ INSERT INTO ip_reputation_sets VALUES (
     '2013-01-17 15:47:52.959342-06',
     '2013-01-17 15:47:52.959342-06'
 );
-INSERT INTO usernames VALUES ('gatewayns_ipreputation', 'GATEWAYNS_COM_2', null);
+INSERT INTO account."Username" VALUES ('gatewayns_ipreputation', 'GATEWAYNS_COM_2', null);
 INSERT INTO account."Administrator" VALUES (
     'gatewayns_ipreputation',
     'DY.7ZiblIt/ok', -- Ceg37Oskarth
@@ -519,7 +519,7 @@ INSERT INTO ip_reputation_sets VALUES (
     '2013-02-09 14:43:49.508057-06',
     '2013-02-09 14:43:49.508057-06'
 );
-INSERT INTO usernames VALUES ('mcrp_ipreputation', 'MCRP', null);
+INSERT INTO account."Username" VALUES ('mcrp_ipreputation', 'MCRP', null);
 INSERT INTO account."Administrator" VALUES (
     'mcrp_ipreputation',
     'E5hAHvDg8bvFQK82CWSa7O32044=', -- 4ChirthScrilk3
@@ -561,7 +561,7 @@ INSERT INTO ip_reputation_sets VALUES (
     '2013-02-10 17:14:49.552482-06',
     '2013-02-10 17:14:49.552482-06'
 );
-INSERT INTO usernames VALUES ('napihost_ipreputation', 'NAPIHOST_COM', null);
+INSERT INTO account."Username" VALUES ('napihost_ipreputation', 'NAPIHOST_COM', null);
 INSERT INTO account."Administrator" VALUES (
     'napihost_ipreputation',
     'AwT6AxtZ0GV5V9XAZskauog9gGA=', -- Splifar98Orchya
@@ -603,7 +603,7 @@ INSERT INTO ip_reputation_sets VALUES (
     '2013-02-13 17:19:01.883687-06',
     '2013-02-13 17:19:01.883687-06'
 );
-INSERT INTO usernames VALUES ('web_mcrp_ipreputation', 'WEB_MCRP', null);
+INSERT INTO account."Username" VALUES ('web_mcrp_ipreputation', 'WEB_MCRP', null);
 INSERT INTO account."Administrator" VALUES (
     'web_mcrp_ipreputation',
     '25hTwYzQJrCSGnahmhxV44Xu63c=', -- 9Caphoy4Cralp
@@ -645,7 +645,7 @@ INSERT INTO ip_reputation_sets VALUES (
     '2013-02-17 19:33:54.40538-06',
     '2013-02-17 19:33:54.40538-06'
 );
-INSERT INTO usernames VALUES ('vhf_ipreputation', 'VHF', null);
+INSERT INTO account."Username" VALUES ('vhf_ipreputation', 'VHF', null);
 INSERT INTO account."Administrator" VALUES (
     'vhf_ipreputation',
     'osg3q3B+NNQTRRTNibeCApLzL/g=', -- 2UthreyUsnirf7
@@ -687,7 +687,7 @@ INSERT INTO ip_reputation_sets VALUES (
     '2013-04-10 05:11:55.219715-05',
     '2013-04-10 05:11:55.219715-05'
 );
-INSERT INTO usernames VALUES ('ck101_ipreputation', 'LB3_CK101_COM', null);
+INSERT INTO account."Username" VALUES ('ck101_ipreputation', 'LB3_CK101_COM', null);
 INSERT INTO account."Administrator" VALUES (
     'ck101_ipreputation',
     '1lFAa9daKmvAmpuxqt8onMmEOkE=', -- CavyDrilt59
@@ -729,7 +729,7 @@ INSERT INTO ip_reputation_sets VALUES (
     '2014-03-14 02:44:30.853719-05',
     '2014-03-14 02:44:30.853719-05'
 );
-INSERT INTO usernames VALUES ('changeme_ipreputation', 'CHANGEME_COM', null);
+INSERT INTO account."Username" VALUES ('changeme_ipreputation', 'CHANGEME_COM', null);
 INSERT INTO account."Administrator" VALUES (
     'changeme_ipreputation',
     'aqDRzNnooeETghd5N6vt7duBZeo=', -- Shok86Unkave

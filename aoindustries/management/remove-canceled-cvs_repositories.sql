@@ -10,7 +10,7 @@ from
              public.cvs_repositories       cr
   inner join public.linux_server_accounts lsa on  cr.linux_server_account = lsa.pkey
   inner join public.ao_servers             ao on lsa.ao_server            =  ao.server
-  inner join public.usernames              un on lsa.username             =  un.username
+  inner join account."Username"            un on lsa.username             =  un.username
   inner join public.packages               pk on  un.package              =  pk."name"
   inner join account."Account"             bu on  pk.accounting           =  bu.accounting
 where

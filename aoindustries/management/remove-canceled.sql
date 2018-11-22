@@ -35,8 +35,8 @@ union all (select accounting, aosh_command from management."remove-canceled-IPAd
 union all (select accounting, aosh_command from management."remove-canceled-linux_accounts" order by accounting, username)
 -- linux_groups
 union all (select accounting, aosh_command from management."remove-canceled-linux_groups" order by accounting, "name")
--- usernames
-union all (select accounting, aosh_command from management."remove-canceled-usernames" order by accounting, username)
+-- account."Username"
+union all (select accounting, aosh_command from management."remove-canceled-account.Username" order by accounting, username)
 -- business_servers
 union all (select accounting, aosh_command from management."remove-canceled-business_servers" order by accounting, is_default)
 ;

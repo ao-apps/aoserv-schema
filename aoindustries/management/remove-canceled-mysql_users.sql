@@ -7,7 +7,7 @@ select
   mu.username
 from
              public.mysql_users mu
-  inner join public.usernames   un on mu.username   = un.username
+  inner join account."Username" un on mu.username   = un.username
   inner join public.packages    pk on un.package    = pk."name"
   inner join account."Account"  bu on pk.accounting = bu.accounting
 where

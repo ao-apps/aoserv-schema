@@ -22,7 +22,7 @@ union all (select 'mysql'::name as "schema", 'mysql_servers'::name as "table", c
 -- postgres_servers
 union all (select 'postgresql'::name as "schema", 'postgres_servers'::name as "table", count(*) as unused from management."remove-postgresql-server"
            where num_databases=0 or num_users=0)
--- TODO: sendmail_servers without any sendmail_binds
+-- TODO: sendmail_servers without any email.SendmailBind
 -- TODO: firewalld_zones
 union all (select 'net'::name as "schema", 'IPAddress'::name as "table", count(*) as unused from management."release-IPAddress"
            where num_binds=0 and "AO_SERVER" is not null)

@@ -22,7 +22,7 @@ union all (select accounting, aosh_command from management."remove-canceled-post
 -- postgres_users
 union all (select accounting, aosh_command from management."remove-canceled-postgres_users" order by accounting, username)
 -- TODO: postgres_servers
--- TODO: sendmail_servers without any sendmail_binds
+-- TODO: sendmail_servers without any email.SendmailBind
 -- net_binds
 union all (select accounting, aosh_command from management."remove-canceled-net_binds" order by accounting, port)
 -- IPAddress.hostname

@@ -1,4 +1,4 @@
-create table sendmail_binds (
+create table email."SendmailBind" (
   net_bind integer
     primary key,
   sendmail_server integer
@@ -10,5 +10,5 @@ create table sendmail_binds (
       or "name" not like '% %'
     )
 );
-grant all            on sendmail_binds to aoadmin;
-grant select, delete on sendmail_binds to aoserv_app;
+grant all            on email."SendmailBind" to aoadmin;
+grant select, delete on email."SendmailBind" to aoserv_app;

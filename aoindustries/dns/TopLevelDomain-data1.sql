@@ -1,4 +1,4 @@
-COPY "dns_tlds" FROM stdin;
+COPY dns."TopLevelDomain" FROM stdin;
 com	Commerce
 lu	Luxembourg
 org	Organization

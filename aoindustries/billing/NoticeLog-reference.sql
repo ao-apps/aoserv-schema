@@ -1,18 +1,18 @@
-alter table notice_log
+alter table billing."NoticeLog"
   add constraint accounting_fkey
   foreign key (accounting)
   references account."Account" (accounting)
   on delete restrict
   on update cascade
 ;
-alter table notice_log
+alter table billing."NoticeLog"
   add constraint notice_type_fkey
   foreign key (notice_type)
   references notice_types ("type")
   on delete restrict
   on update cascade
 ;
-alter table notice_log
+alter table billing."NoticeLog"
   add constraint transid_fkey
   foreign key (transid)
   references transactions (transid)

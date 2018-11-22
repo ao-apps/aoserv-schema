@@ -1,0 +1,13 @@
+begin;
+insert into billing."PackageCategory" values('aoserv');
+insert into billing."PackageCategory" values('application');
+insert into billing."PackageCategory" values('backup');
+insert into billing."PackageCategory" values('colocation');
+insert into billing."PackageCategory" values('dedicated');
+insert into billing."PackageCategory" values('managed');
+insert into billing."PackageCategory" values('reseller');
+insert into billing."PackageCategory" values('sysadmin');
+insert into billing."PackageCategory" values('virtual');
+insert into billing."PackageCategory" values('virtual_dedicated');
+insert into billing."PackageCategory" values('virtual_managed');
+commit;

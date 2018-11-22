@@ -1,7 +1,7 @@
 alter table package_definitions
   add constraint category_fkey
   foreign key (category)
-  references package_categories ("name")
+  references billing."PackageCategory" ("name")
   on delete restrict
   on update cascade
 ;

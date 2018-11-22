@@ -1,7 +1,7 @@
 alter table httpd_site_binds
   add constraint httpd_site_fkey
   foreign key (httpd_site)
-  references web."Site" (pkey)
+  references httpd_sites (pkey)
   on delete restrict
   on update cascade
 ;

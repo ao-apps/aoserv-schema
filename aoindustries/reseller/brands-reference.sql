@@ -22,14 +22,14 @@ alter table brands
 alter table brands
   add constraint support_email_address_fkey
   foreign key (support_email_address)
-  references email_addresses (pkey)
+  references email."Address" (pkey)
   on update cascade
   on delete restrict
 ;
 alter table brands
   add constraint signup_email_address_fkey
   foreign key (signup_email_address)
-  references email_addresses (pkey)
+  references email."Address" (pkey)
   on update cascade
   on delete restrict
 ;

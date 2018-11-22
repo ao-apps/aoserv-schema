@@ -36,14 +36,14 @@ alter table majordomo_servers
 alter table majordomo_servers
   add constraint owner_majordomo_add_fkey
   foreign key (owner_majordomo_add)
-  references email_addresses (pkey)
+  references email."Address" (pkey)
   on delete restrict
   on update cascade
 ;
 alter table majordomo_servers
   add constraint majordomo_owner_add_fkey
   foreign key (majordomo_owner_add)
-  references email_addresses (pkey)
+  references email."Address" (pkey)
   on delete restrict
   on update cascade
 ;

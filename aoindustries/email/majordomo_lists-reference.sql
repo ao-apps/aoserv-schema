@@ -8,7 +8,7 @@ alter table majordomo_lists
 alter table majordomo_lists
   add constraint majordomo_server_fkey
   foreign key (majordomo_server)
-  references majordomo_servers (domain)
+  references majordomo_servers ("domain")
   on delete restrict
   on update cascade
 ;
@@ -29,21 +29,21 @@ alter table majordomo_lists
 alter table majordomo_lists
   add constraint owner_listname_add_fkey
   foreign key (owner_listname_add)
-  references email_addresses (pkey)
+  references email."Address" (pkey)
   on delete restrict
   on update cascade
 ;
 alter table majordomo_lists
   add constraint listname_owner_add_fkey
   foreign key (listname_owner_add)
-  references email_addresses (pkey)
+  references email."Address" (pkey)
   on delete restrict
   on update cascade
 ;
 alter table majordomo_lists
   add constraint listname_approval_add_fkey
   foreign key (listname_approval_add)
-  references email_addresses (pkey)
+  references email."Address" (pkey)
   on delete restrict
   on update cascade
 ;

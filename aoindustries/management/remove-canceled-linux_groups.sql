@@ -8,7 +8,7 @@ select
 from
              public.linux_groups lg
   inner join public.packages     pk on lg.package    = pk."name"
-  inner join public.businesses   bu on pk.accounting = bu.accounting
+  inner join account."Account"   bu on pk.accounting = bu.accounting
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 

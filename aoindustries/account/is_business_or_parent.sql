@@ -14,11 +14,11 @@ create or replace function account.is_business_or_parent (text,text)
       $1 = $2
       or (
         case when
-          (select parent from businesses where accounting = $2 ) is null
+          (select parent from account."Account" where accounting = $2 ) is null
         then
           false
         else
-          account.is_business_or_parent( $1 , (select parent from businesses where accounting = $2 ))
+          account.is_business_or_parent( $1 , (select parent from account."Account" where accounting = $2 ))
         end
       )
     ;

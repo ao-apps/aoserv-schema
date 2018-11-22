@@ -8,7 +8,7 @@ select
 from
              public.usernames        un
   inner join public.packages         pk on un.package    = pk."name"
-  inner join public.businesses       bu on pk.accounting = bu.accounting
+  inner join account."Account"       bu on pk.accounting = bu.accounting
   -- business_administrators remain even after canceled
   left  join account."Administrator" ba on un.username   = ba.username
 where

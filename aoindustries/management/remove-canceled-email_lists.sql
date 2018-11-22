@@ -12,7 +12,7 @@ from
   inner join public.ao_servers           ao on lsg.ao_server          =  ao.server
   inner join public.linux_groups         lg on lsg."name"             =  lg."name"
   inner join public.packages             pk on  lg.package            =  pk."name"
-  inner join public.businesses           bu on  pk.accounting         =  bu.accounting
+  inner join account."Account"           bu on  pk.accounting         =  bu.accounting
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 

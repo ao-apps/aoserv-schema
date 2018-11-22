@@ -13,7 +13,7 @@ select
 from
              public."IPAddress" ia
   inner join public.packages    pk on ia.package     = pk.pkey
-  inner join public.businesses  bu on pk.accounting  = bu.accounting
+  inner join account."Account"  bu on pk.accounting  = bu.accounting
   inner join public.net_devices nd on ia."netDevice" = nd.pkey
   inner join public.servers     se on nd.server      = se.pkey
   left  join public.ao_servers  ao on se.pkey        = ao.server

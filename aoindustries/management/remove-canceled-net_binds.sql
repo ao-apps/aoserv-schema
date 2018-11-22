@@ -11,7 +11,7 @@ remove_net_bind ' || nb.pkey as aosh_command,
 from
              public.net_binds  nb
   inner join public.packages   pk on nb.package    = pk."name"
-  inner join public.businesses bu on pk.accounting = bu.accounting
+  inner join account."Account" bu on pk.accounting = bu.accounting
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 

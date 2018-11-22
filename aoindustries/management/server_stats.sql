@@ -9,7 +9,7 @@ as
           count(*)
         from
           public.business_servers bs,
-          public.businesses bu
+          account."Account" bu
         where
           se.pkey=bs.server
           and bs.is_default
@@ -37,7 +37,7 @@ as
       select
         count(*)
       from
-        public.businesses
+        account."Account"
       where
         canceled is null
         and parent='AOINDUSTRIES'

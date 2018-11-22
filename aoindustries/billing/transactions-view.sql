@@ -1,7 +1,7 @@
 /**********************************************************************
  *
  * The account_balances view provides the account balance for each
- * accounting code found in businesses.
+ * accounting code found in account.Account.
  *
  * accounting  the accounting code
  * balance     the account balance, negative means credit

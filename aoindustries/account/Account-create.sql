@@ -1,4 +1,4 @@
-create table businesses (
+create table account."Account" (
   accounting text
     primary key,
   contract_version text,
@@ -21,6 +21,6 @@ create table businesses (
   bill_parent boolean
     not null
 );
-grant all                            on businesses to aoadmin;
-grant select, insert, update, delete on businesses to aoserv_app;
-grant select                         on businesses to kaori;
+grant all                    on account."Account" to aoadmin;
+grant select, insert, update on account."Account" to aoserv_app;
+grant select                 on account."Account" to kaori;

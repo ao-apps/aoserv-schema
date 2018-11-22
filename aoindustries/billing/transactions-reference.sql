@@ -1,14 +1,14 @@
 alter table transactions
   add constraint accounting_fkey
   foreign key (accounting)
-  references businesses (accounting)
+  references account."Account" (accounting)
   on delete restrict
   on update cascade
 ;
 alter table transactions
   add constraint source_accounting_fkey
   foreign key (source_accounting)
-  references businesses (accounting)
+  references account."Account" (accounting)
   on delete restrict
   on update cascade
 ;
@@ -22,7 +22,7 @@ alter table transactions
 alter table transactions
   add constraint type_fkey
   foreign key (type)
-  references transaction_types (name)
+  references transaction_types ("name")
   on delete restrict
   on update cascade
 ;

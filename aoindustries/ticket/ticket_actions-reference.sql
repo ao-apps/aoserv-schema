@@ -15,21 +15,21 @@ alter table ticket_actions
 alter table ticket_actions
   add constraint action_type_fkey
   foreign key (action_type)
-  references ticket_action_types (type)
+  references ticket_action_types ("type")
   on update cascade
   on delete restrict
 ;
 alter table ticket_actions
   add constraint old_accounting_fkey
   foreign key (old_accounting)
-  references businesses (accounting)
+  references account."Account" (accounting)
   on update cascade
   on delete restrict
 ;
 alter table ticket_actions
   add constraint new_accounting_fkey
   foreign key (new_accounting)
-  references businesses (accounting)
+  references account."Account" (accounting)
   on update cascade
   on delete restrict
 ;

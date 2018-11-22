@@ -8,7 +8,7 @@ alter table credit_card_transactions
 alter table credit_card_transactions
   add constraint accounting_fkey
   foreign key (accounting)
-  references businesses (accounting)
+  references account."Account" (accounting)
   on delete restrict
   on update cascade
 ;
@@ -29,7 +29,7 @@ alter table credit_card_transactions
 alter table credit_card_transactions
   add constraint credit_card_accounting_fkey
   foreign key (credit_card_accounting)
-  references businesses (accounting)
+  references account."Account" (accounting)
   on delete restrict
   on update cascade
 ;

@@ -1,7 +1,7 @@
 alter table brands
   add constraint accounting_fkey
   foreign key (accounting)
-  references businesses (accounting)
+  references account."Account" (accounting)
   on update cascade
   on delete restrict
 ;

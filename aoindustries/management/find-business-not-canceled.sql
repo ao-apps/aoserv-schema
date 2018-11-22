@@ -11,9 +11,9 @@ create or replace function management."find-business-not-canceled" (text)
   as '
     select
       case
-        when (select canceled is null from public.businesses where accounting = $1 ) then $1
-        when (select parent is null from public.businesses where accounting = $1 ) then null
-        else management."find-business-not-canceled"( (select parent from businesses where accounting = $1 ))
+        when (select canceled is null from account."Account" where accounting = $1 ) then $1
+        when (select parent is null from account."Account" where accounting = $1 ) then null
+        else management."find-business-not-canceled"( (select parent from account."Account" where accounting = $1 ))
       end
     ;
   '

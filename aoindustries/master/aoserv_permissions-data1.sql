@@ -4,7 +4,7 @@ insert into aoserv_permissions values(
     'set_business_administrator_password',
     (select count(*) from aoserv_permissions)
 );
--- businesses
+-- account.Account
 insert into aoserv_permissions values(
     'cancel_business',
     (select count(*) from aoserv_permissions)

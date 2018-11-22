@@ -12,7 +12,7 @@ from
   inner join public.mysql_servers   ms on md.mysql_server = ms.pkey
   inner join public.ao_servers      ao on ms.ao_server    = ao.server
   inner join public.packages        pk on md.package      = pk."name"
-  inner join public.businesses      bu on pk.accounting   = bu.accounting
+  inner join account."Account"      bu on pk.accounting   = bu.accounting
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 

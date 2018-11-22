@@ -1,4 +1,4 @@
-create table private_ftp_servers (
+create table ftp."PrivateServer" (
   net_bind integer
     primary key,
   root text
@@ -14,10 +14,8 @@ create table private_ftp_servers (
     not null,
   linux_server_account integer
     not null,
-  linux_server_group integer
-    not null,
   allow_anonymous boolean
     not null
 );
-grant all            on private_ftp_servers to aoadmin;
-grant select, delete on private_ftp_servers to aoserv_app;
+grant all            on ftp."PrivateServer" to aoadmin;
+grant select, delete on ftp."PrivateServer" to aoserv_app;

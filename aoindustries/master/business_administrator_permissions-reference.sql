@@ -8,7 +8,7 @@ alter table business_administrator_permissions
 alter table business_administrator_permissions
   add constraint permission_fkey
   foreign key ("permission")
-  references aoserv_permissions ("name")
+  references master."Permission" ("name")
   on delete restrict
   on update cascade
 ;

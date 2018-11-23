@@ -62,7 +62,7 @@ insert into master."Permission" values(
     'get_mysql_table_status',
     (select count(*) from master."Permission")
 );
--- mysql_server_users
+-- mysql.MysqlServerUser
 insert into master."Permission" values(
     'set_mysql_server_user_password',
     (select count(*) from master."Permission")

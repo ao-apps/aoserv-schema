@@ -22,6 +22,5 @@ create table mysql."MysqlServer" (
     not null,
   unique (ao_server, "name")
 );
-grant all                            on mysql."MysqlServer" to aoadmin;
--- TODO: insert, update, delete used at this time?
-grant select, insert, update, delete on mysql."MysqlServer" to aoserv_app;
+grant all    on mysql."MysqlServer" to aoadmin;
+grant select on mysql."MysqlServer" to aoserv_app;

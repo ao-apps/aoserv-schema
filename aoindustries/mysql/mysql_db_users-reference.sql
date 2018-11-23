@@ -1,7 +1,7 @@
 alter table mysql_db_users
   add constraint mysql_database_fkey
   foreign key (mysql_database)
-  references mysql_databases (pkey)
+  references mysql."MysqlDatabase" (pkey)
   on delete restrict
   on update cascade
 ;

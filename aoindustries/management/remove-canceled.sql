@@ -12,8 +12,8 @@ union all (select accounting, aosh_command from management."remove-canceled-web.
 -- web.SharedTomcat
 union all (select accounting, aosh_command from management."remove-canceled-web.SharedTomcat" order by accounting, net.reverse_hostname(hostname), "name")
 -- TODO: web.HttpdServer
--- mysql_databases
-union all (select accounting, aosh_command from management."remove-canceled-mysql_databases" order by accounting, mysql_server, "name")
+-- mysql.MysqlDatabase
+union all (select accounting, aosh_command from management."remove-canceled-mysql.MysqlDatabase" order by accounting, mysql_server, "name")
 -- mysql_users
 union all (select accounting, aosh_command from management."remove-canceled-mysql_users" order by accounting, username)
 -- TODO: mysql.MysqlServer

@@ -53,7 +53,7 @@ insert into master."Permission" values(
     'set_linux_server_account_password',
     (select count(*) from master."Permission")
 );
--- mysql_databases
+-- mysql.MysqlDatabase
 insert into master."Permission" values(
     'check_mysql_tables',
     (select count(*) from master."Permission")

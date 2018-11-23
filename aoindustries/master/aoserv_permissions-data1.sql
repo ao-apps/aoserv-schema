@@ -90,7 +90,7 @@ insert into aoserv_permissions values(
     'edit_ticket',
     (select count(*) from aoserv_permissions)
 );
--- virtual_servers
+-- infrastructure.VirtualServer
 insert into aoserv_permissions values(
     'control_virtual_server',
     (select count(*) from aoserv_permissions)

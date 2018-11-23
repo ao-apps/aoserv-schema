@@ -1,4 +1,4 @@
-create table virtual_servers (
+create table infrastructure."VirtualServer" (
   server integer primary key,
   primary_ram integer
     not null
@@ -43,5 +43,5 @@ create table virtual_servers (
     unique
     check (length(vnc_password)>=8) -- Must be at least 8 characters
 );
-grant all    on virtual_servers to aoadmin;
-grant select on virtual_servers to aoserv_app;
+grant all    on infrastructure."VirtualServer" to aoadmin;
+grant select on infrastructure."VirtualServer" to aoserv_app;

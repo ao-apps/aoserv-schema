@@ -1,7 +1,7 @@
 alter table servers
   add constraint farm_fkey
   foreign key (farm)
-  references server_farms ("name")
+  references infrastructure."ServerFarm" ("name")
   on delete restrict
   on update cascade
 ;

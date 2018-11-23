@@ -1,4 +1,4 @@
-alter table server_farms
+alter table infrastructure."ServerFarm"
   add constraint owner_fkey
   foreign key (owner)
   references billing."Package" (pkey)

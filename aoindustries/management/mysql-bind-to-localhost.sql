@@ -19,10 +19,10 @@ select
   ) as "ZONES",
   (select (regexp_matches(nb.monitoring_parameters, '(?:^|&)password=([^&]*)(?:&|$)'))[1]) as "OLD_MONITORING_PASSWORD"
 from
-             public.ao_servers    ao
-  inner join public.mysql_servers ms on ao.server      = ms.ao_server
-  inner join public.net_binds     nb on ms.net_bind    = nb.pkey
-  inner join public."IPAddress"   ia on nb."ipAddress" = ia.id
+             public.ao_servers   ao
+  inner join mysql."MysqlServer" ms on ao.server      = ms.ao_server
+  inner join public.net_binds    nb on ms.net_bind    = nb.pkey
+  inner join public."IPAddress"  ia on nb."ipAddress" = ia.id
 where
   ia."inetAddress" != '127.0.0.1';
 

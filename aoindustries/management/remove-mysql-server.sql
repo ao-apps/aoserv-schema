@@ -19,18 +19,18 @@ select
   case when ia."inetAddress"='0.0.0.0' then '*' else host(ia."inetAddress") end as "BIND_ADDRESS",
   nb.port as "PORT",
   case when (
-    select ms2.pkey from public.mysql_servers ms2 where
+    select ms2.pkey from mysql."MysqlServer" ms2 where
       ms2.ao_server=ms.ao_server and ms2.version=ms.version and ms2.pkey!=ms.pkey
     limit 1
   ) is not null then 'Yes' else 'No' end as "HAS_OTHER_SAME_VERSION",
   case when (
-    select ms2.pkey from public.mysql_servers ms2 where
+    select ms2.pkey from mysql."MysqlServer" ms2 where
       ms2.ao_server=ms.ao_server and ms2.pkey!=ms.pkey
     limit 1
   ) is not null then 'Yes' else 'No' end as "HAS_OTHER_ANY_VERSION"
 from
              public.ao_servers                     ao
-  inner join public.mysql_servers                  ms  on ao.server                   =  ms.ao_server
+  inner join mysql."MysqlServer"                   ms  on ao.server                   =  ms.ao_server
   inner join distribution."SoftwareVersion"        tv  on ms.version                  =  tv.pkey
   inner join distribution."OperatingSystemVersion" osv on tv.operating_system_version = osv.pkey
   inner join public.net_binds                      nb  on ms.net_bind                 =  nb.pkey

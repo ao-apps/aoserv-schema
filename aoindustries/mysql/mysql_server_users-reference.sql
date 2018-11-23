@@ -8,7 +8,7 @@ alter table mysql_server_users
 alter table mysql_server_users
   add constraint mysql_server_fkey
   foreign key (mysql_server)
-  references mysql_servers (pkey)
+  references mysql."MysqlServer" (pkey)
   on delete restrict
   on update cascade
 ;

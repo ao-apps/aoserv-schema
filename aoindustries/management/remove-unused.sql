@@ -13,8 +13,8 @@ as
 -- TODO: mysql_databases (without any mysql_db_users)
 -- TODO: mysql_server_users (without any mysql_db_users)
 -- TODO: mysql_users (orphaned)
--- mysql_servers
-union all (select 'mysql'::name as "schema", 'mysql_servers'::name as "table", count(*) as unused from management."remove-mysql-server"
+-- mysql.MysqlServer
+union all (select 'mysql'::name as "schema", 'MysqlServer'::name as "table", count(*) as unused from management."remove-mysql-server"
            where num_databases=0 or num_users=0)
 -- TODO: postgres_databases (without any postgres_users in same business?/package?)
 -- TODO: postgres_server_users (without any postgres_databases in same business?/package?)

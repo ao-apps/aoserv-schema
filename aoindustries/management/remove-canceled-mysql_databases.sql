@@ -9,7 +9,7 @@ select
   md."name"
 from
              public.mysql_databases md
-  inner join public.mysql_servers   ms on md.mysql_server = ms.pkey
+  inner join mysql."MysqlServer"    ms on md.mysql_server = ms.pkey
   inner join public.ao_servers      ao on ms.ao_server    = ao.server
   inner join billing."Package"      pk on md.package      = pk."name"
   inner join account."Account"      bu on pk.accounting   = bu.accounting

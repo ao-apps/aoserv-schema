@@ -15,14 +15,14 @@ alter table email."SendmailServer"
 alter table email."SendmailServer"
   add constraint server_certificate_fkey
   foreign key (server_certificate)
-  references ssl_certificates (pkey)
+  references pki."Certificate" (pkey)
   on delete restrict
   on update cascade
 ;
 alter table email."SendmailServer"
   add constraint client_certificate_fkey
   foreign key (client_certificate)
-  references ssl_certificates (pkey)
+  references pki."Certificate" (pkey)
   on delete restrict
   on update cascade
 ;

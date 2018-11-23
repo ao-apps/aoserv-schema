@@ -15,7 +15,7 @@ alter table web."VirtualHost"
 alter table web."VirtualHost"
   add constraint certificate_fkey
   foreign key (certificate)
-  references ssl_certificates (pkey)
+  references pki."Certificate" (pkey)
   on delete restrict
   on update cascade
 ;

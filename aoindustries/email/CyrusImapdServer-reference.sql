@@ -15,7 +15,7 @@ alter table email."CyrusImapdServer"
 alter table email."CyrusImapdServer"
   add constraint certificate_fkey
   foreign key (certificate)
-  references ssl_certificates (pkey)
+  references pki."Certificate" (pkey)
   on delete restrict
   on update cascade
 ;

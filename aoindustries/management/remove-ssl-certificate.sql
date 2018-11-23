@@ -24,7 +24,7 @@ select
   ) as "COMMON_NAME",
   sc.certbot_name as "CERTBOT_NAME",
   case when (
-    select sc2.pkey from public.ssl_certificates sc2 where
+    select sc2.pkey from pki."Certificate" sc2 where
       sc2.ao_server=sc.ao_server and sc2.pkey!=sc.pkey and sc2.certbot_name is not null
     limit 1
   ) is not null then 'Yes' else 'No' end as "HAS_OTHER_CERTBOT",
@@ -33,7 +33,7 @@ select
   case when sc.certbot_name is null then sc.cert_file  else null end as "CERT_FILE",
   case when sc.certbot_name is null then sc.chain_file else null end as "CHAIN_FILE"
 from
-             public.ssl_certificates               sc
+             pki."Certificate"                     sc
   inner join public.ao_servers                     ao  on sc.ao_server                = ao.server
   inner join public.servers                        se  on ao.server                   = se.pkey
   inner join distribution."OperatingSystemVersion" osv on se.operating_system_version = osv.pkey;

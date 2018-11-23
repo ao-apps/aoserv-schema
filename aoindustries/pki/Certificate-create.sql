@@ -1,10 +1,10 @@
-create sequence pki.ssl_certificates_pkey_seq cycle;
-grant all    on pki.ssl_certificates_pkey_seq to aoadmin;
-grant select on pki.ssl_certificates_pkey_seq to aoserv_app;
+create sequence pki."Certificate_pkey_seq" cycle;
+grant all    on pki."Certificate_pkey_seq" to aoadmin;
+grant select on pki."Certificate_pkey_seq" to aoserv_app;
 
-create table ssl_certificates (
+create table pki."Certificate" (
   pkey integer
-    default nextval('pki.ssl_certificates_pkey_seq')
+    default nextval('pki."Certificate_pkey_seq"')
     primary key,
   ao_server integer
     not null,
@@ -40,5 +40,5 @@ create table ssl_certificates (
       )
     )
 );
-grant all    on ssl_certificates to aoadmin;
-grant select on ssl_certificates to aoserv_app;
+grant all    on pki."Certificate" to aoadmin;
+grant select on pki."Certificate" to aoserv_app;

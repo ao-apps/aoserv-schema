@@ -523,7 +523,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'account',
+    'pki',
     'encryption_keys',
     'Encryption Keys',
     false,

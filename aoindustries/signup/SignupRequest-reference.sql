@@ -29,14 +29,14 @@ alter table signup."SignupRequest"
 alter table signup."SignupRequest"
   add constraint encryption_from_fkey
   foreign key (encryption_from)
-  references account."EncryptionKey" (pkey)
+  references pki."EncryptionKey" (pkey)
   on delete restrict
   on update cascade
 ;
 alter table signup."SignupRequest"
   add constraint encryption_recipient_fkey
   foreign key (encryption_recipient)
-  references account."EncryptionKey" (pkey)
+  references pki."EncryptionKey" (pkey)
   on delete restrict
   on update cascade
 ;

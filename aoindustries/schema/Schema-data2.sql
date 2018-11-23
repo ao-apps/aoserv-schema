@@ -145,7 +145,7 @@ select "schema".add_schema(
 );
 select "schema".add_schema(
     'pki',
-    '1.81.10',
+    '1.23',
     null,
     'PKI',
     false,

@@ -36,28 +36,28 @@ alter table brands
 alter table brands
   add constraint ticket_encryption_from_fkey
   foreign key (ticket_encryption_from)
-  references account."EncryptionKey" (pkey)
+  references pki."EncryptionKey" (pkey)
   on update cascade
   on delete restrict
 ;
 alter table brands
   add constraint ticket_encryption_recipient_fkey
   foreign key (ticket_encryption_recipient)
-  references account."EncryptionKey" (pkey)
+  references pki."EncryptionKey" (pkey)
   on update cascade
   on delete restrict
 ;
 alter table brands
   add constraint signup_encryption_from_fkey
   foreign key (signup_encryption_from)
-  references account."EncryptionKey" (pkey)
+  references pki."EncryptionKey" (pkey)
   on update cascade
   on delete restrict
 ;
 alter table brands
   add constraint signup_encryption_recipient_fkey
   foreign key (signup_encryption_recipient)
-  references account."EncryptionKey" (pkey)
+  references pki."EncryptionKey" (pkey)
   on update cascade
   on delete restrict
 ;

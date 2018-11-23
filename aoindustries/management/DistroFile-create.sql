@@ -1,10 +1,10 @@
-create sequence         management.distro_files_pkey_seq cycle;
-grant all            on management.distro_files_pkey_seq to aoadmin;
-grant select, update on management.distro_files_pkey_seq to aoserv_app;
+create sequence         management."DistroFile_pkey_seq" cycle;
+grant all            on management."DistroFile_pkey_seq" to aoadmin;
+grant select, update on management."DistroFile_pkey_seq" to aoserv_app;
 
-create table distro_files (
+create table management."DistroFile" (
   pkey integer
-    default nextval('management.distro_files_pkey_seq')
+    default nextval('management."DistroFile_pkey_seq"')
     primary key,
   operating_system_version integer
     not null,
@@ -28,5 +28,5 @@ create table distro_files (
   symlink_target text,
   unique("path", operating_system_version)
 );
-grant all    on distro_files to aoadmin;
-grant select on distro_files to aoserv_app;
+grant all    on management."DistroFile" to aoadmin;
+grant select on management."DistroFile" to aoserv_app;

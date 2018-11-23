@@ -8,7 +8,7 @@ alter table web."SharedTomcat"
 alter table web."SharedTomcat"
   add constraint version_fkey
   foreign key (version)
-  references httpd_tomcat_versions (version)
+  references web."TomcatVersion" (version)
   on delete restrict
   on update cascade
 ;

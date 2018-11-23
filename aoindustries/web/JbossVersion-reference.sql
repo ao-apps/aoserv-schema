@@ -8,7 +8,7 @@ alter table web."JbossVersion"
 alter table web."JbossVersion"
   add constraint tomcat_version_fkey
   foreign key (tomcat_version)
-  references httpd_tomcat_versions (version)
+  references web."TomcatVersion" (version)
   on delete restrict
   on update cascade
 ;

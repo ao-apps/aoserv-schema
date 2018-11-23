@@ -1,4 +1,4 @@
-alter table httpd_tomcat_versions
+alter table web."TomcatVersion"
   add constraint version_fkey
   foreign key (version)
   references distribution."SoftwareVersion" (pkey)

@@ -30,6 +30,7 @@ create table billing."Transaction" (
   payment_info text,
   processor text,
   credit_card_transaction integer,
+  -- TODO: Make an enum both in PostgreSQL and Java?
   payment_confirmed character(1)
     default 'W'
     not null

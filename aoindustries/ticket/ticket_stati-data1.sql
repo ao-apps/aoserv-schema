@@ -1,3 +1,4 @@
+-- TODO: Make an enum both in PostgreSQL and Java
 begin;
 insert into ticket_stati values('junk', 0);
 insert into ticket_stati values('deleted', 1);

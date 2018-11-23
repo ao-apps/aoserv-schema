@@ -7,7 +7,7 @@ create table account."Administrator" (
   "name" text
     not null
     constraint name_chk
-      check (length(name)>0),
+      check (length("name")>0),
   title text,
   birthday date,
   is_preferred boolean

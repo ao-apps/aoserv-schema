@@ -20,6 +20,7 @@ create table email."CyrusImapdServer" (
       delete_duration is null
       or delete_duration > 0
     ),
+  -- TODO: Make an enum both in PostgreSQL and Java
   delete_duration_unit character(1)
     -- See also CyrusImapdServer.DEFAULT_DELETE_DURATION_UNIT
     default 'd'
@@ -36,6 +37,7 @@ create table email."CyrusImapdServer" (
     check (
       expire_duration > 0
     ),
+  -- TODO: Make an enum both in PostgreSQL and Java (same enum as above)
   expire_duration_unit character(1)
     -- See also CyrusImapdServer.DEFAULT_EXPIRE_DURATION_UNIT
     default 'd'

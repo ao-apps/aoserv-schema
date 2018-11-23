@@ -13,7 +13,7 @@ create table infrastructure."VirtualServer" (
   minimum_processor_type text,
   minimum_processor_architecture text
     not null
-    default 'i686',
+    default 'i686', -- TODO: 64-bit now a better default?
   minimum_processor_speed integer
     check (minimum_processor_speed is null or minimum_processor_speed>0),
   minimum_processor_speed_target integer
@@ -24,6 +24,7 @@ create table infrastructure."VirtualServer" (
   processor_cores_target smallint
     not null
     check (processor_cores_target>0),
+  -- TODO: Make an enum both in PostgreSQL and Java somehow?
   processor_weight smallint
     not null
     check (processor_weight in (1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024)),

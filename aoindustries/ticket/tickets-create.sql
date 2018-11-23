@@ -14,6 +14,7 @@ create table tickets (
   open_date timestamp with time zone not null,
   client_priority text not null,
   admin_priority text,
+  -- TODO: Make an enum both in PostgreSQL and Java
   status text not null,
   status_timeout timestamp with time zone, -- Will change back to "open" at this time
   contact_emails text not null, -- Comma/space-separated, populated to include cc

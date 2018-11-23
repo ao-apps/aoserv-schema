@@ -1,3 +1,4 @@
+-- TODO: sinceVersion and lastVersion here, too.  Filter actions of types unknown to client version?
 create table ticket_action_types (
   "type" text
     primary key,

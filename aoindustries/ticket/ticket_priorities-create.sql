@@ -1,3 +1,4 @@
+-- TODO: Make an enum both in PostgreSQL and Java
 create table ticket_priorities (
   priority text
     primary key

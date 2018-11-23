@@ -18,6 +18,7 @@ create table infrastructure."VirtualDisk" (
   extents integer
     not null
     check (extents>0),
+  -- TODO: Make an enum both in PostgreSQL and Java somehow?
   weight smallint
     not null
     check (weight in (1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024)),

@@ -23,6 +23,7 @@ create table web."Location" (
     not null,
   require text
     not null,
+  -- TODO: Make an enum both in PostgreSQL and Java?  What to do with values unknown to client?  Make a lookup table instead?
   "handler" text
     check ("handler" is null or "handler" in ('server-status')),
   unique(httpd_site, "path")

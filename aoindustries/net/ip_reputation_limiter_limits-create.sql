@@ -48,6 +48,7 @@ CREATE OR REPLACE FUNCTION net."isValidIpReputationLimits"(
         BEGIN
             -- Check bounds for each parameter
             -- syn_per_ip
+            -- TODO: Make an enum both in PostgreSQL and Java
             IF syn_per_ip_unit NOT IN ('second', 'minute', 'hour', 'day') THEN
                 RAISE EXCEPTION '% time unit invalid for syn/IP, must be one of ''second'', ''minute'', ''hour'', or ''day'': %', "class", syn_per_ip_unit;
             END IF;
@@ -61,6 +62,7 @@ CREATE OR REPLACE FUNCTION net."isValidIpReputationLimits"(
                 RAISE EXCEPTION '% syn/%/IP size outside of range, must be 0 or between 10 and 10000: %', "class", syn_per_ip_unit, syn_per_ip_size;
             END IF;
             -- syn
+            -- TODO: Make an enum both in PostgreSQL and Java
             IF syn_unit NOT IN ('second', 'minute', 'hour', 'day') THEN
                 RAISE EXCEPTION '% time unit invalid for syn, must be one of ''second'', ''minute'', ''hour'', or ''day'': %', "class", syn_unit;
             END IF;
@@ -84,6 +86,7 @@ CREATE OR REPLACE FUNCTION net."isValidIpReputationLimits"(
                 RAISE EXCEPTION '% packet/%/IP size outside of range, must be 0 or between 10 and 10000: %', "class", packet_per_ip_unit, packet_per_ip_size;
             END IF;
             -- packet
+            -- TODO: Make an enum both in PostgreSQL and Java
             IF packet_unit NOT IN ('second', 'minute', 'hour', 'day') THEN
                 RAISE EXCEPTION '% time unit invalid for packet, must be one of ''second'', ''minute'', ''hour'', or ''day'': %', "class", packet_unit;
             END IF;

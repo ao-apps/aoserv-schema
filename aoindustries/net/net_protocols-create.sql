@@ -1,3 +1,4 @@
+-- TODO: Make an enum both in PostgreSQL and Java
 create table net_protocols (
   protocol text
     primary key

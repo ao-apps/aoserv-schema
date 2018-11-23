@@ -8,7 +8,7 @@ select
   (select count(*) from web."VirtualHost"        hsb where hsb.certificate       = sc.pkey) as num_httpd_site_binds,
   (select count(*) from email."SendmailServer"   ss  where ss.server_certificate = sc.pkey
                                                           or ss.client_certificate = sc.pkey) as num_sendmail_servers,
-  coalesce((select sum("count") from public.ssl_certificate_other_uses scou where scou.ssl_certificate  = sc.pkey), 0) as num_other_uses,
+  coalesce((select sum("count") from pki."CertificateOtherUse" scou where scou.ssl_certificate  = sc.pkey), 0) as num_other_uses,
   ao.hostname as "SERVER",
   case when osv.operating_system='centos' then 'CentOS' else osv.operating_system end
     || ' ' || osv.version_number as "OS",

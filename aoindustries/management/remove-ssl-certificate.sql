@@ -17,7 +17,7 @@ select
       case when scn.is_wildcard then '*.' else '' end
       || scn."domain"
     from
-      ssl_certificate_names scn
+      pki."CertificateName" scn
     where
       scn.ssl_certificate=sc.pkey
       and scn.is_common_name

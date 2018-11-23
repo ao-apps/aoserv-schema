@@ -1,4 +1,4 @@
-alter table ssl_certificate_names
+alter table pki."CertificateName"
   add constraint ssl_certificate_fkey
   foreign key (ssl_certificate)
   references pki."Certificate" (pkey)

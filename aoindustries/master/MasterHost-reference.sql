@@ -1,4 +1,4 @@
-alter table master_hosts
+alter table master."MasterHost"
   add constraint username_fkey
   foreign key (username)
   references master."MasterUser" (username)

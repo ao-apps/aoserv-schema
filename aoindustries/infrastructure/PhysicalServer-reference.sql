@@ -15,7 +15,7 @@ alter table infrastructure."PhysicalServer"
 alter table infrastructure."PhysicalServer"
   add constraint processor_type_fkey
   foreign key (processor_type)
-  references processor_types ("type")
+  references infrastructure."ProcessorType" ("type")
   on delete restrict
   on update cascade
 ;

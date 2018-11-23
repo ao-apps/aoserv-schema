@@ -8,7 +8,7 @@ alter table virtual_servers
 alter table virtual_servers
   add constraint minimum_processor_type_fkey
   foreign key (minimum_processor_type)
-  references processor_types ("type")
+  references infrastructure."ProcessorType" ("type")
   on delete restrict
   on update cascade
 ;

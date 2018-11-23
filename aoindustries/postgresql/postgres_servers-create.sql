@@ -14,6 +14,7 @@ create table postgres_servers (
     not null,
   max_connections integer
     not null,
+  -- TODO: net_bind is non-null and unique, use it instead of pkey
   net_bind integer
     not null
     unique,

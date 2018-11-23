@@ -8,7 +8,7 @@ alter table distro_files
 alter table distro_files
   add constraint type_fkey
   foreign key ("type")
-  references distro_file_types ("type")
+  references management."DistroFileType" ("type")
   on delete restrict
   on update cascade
 ;

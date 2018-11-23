@@ -1,4 +1,4 @@
-COPY "linux_account_types" FROM stdin;
+COPY linux."LinuxUserType" FROM stdin;
 user	Normal User Account	t
 email	E-Mail Only Account	t
 ftponly	FTP Only Account	f

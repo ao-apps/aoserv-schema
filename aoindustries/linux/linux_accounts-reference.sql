@@ -8,14 +8,14 @@ alter table linux_accounts
 alter table linux_accounts
   add constraint shell_fkey
   foreign key (shell)
-  references shells (path)
+  references shells ("path")
   on delete restrict
   on update cascade
 ;
 alter table linux_accounts
   add constraint type_fkey
   foreign key (type)
-  references linux_account_types (name)
+  references linux."LinuxUserType" ("name")
   on delete restrict
   on update cascade
 ;

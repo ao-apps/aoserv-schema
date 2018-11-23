@@ -1,7 +1,7 @@
 alter table mysql_databases
   add constraint mysql_server_fkey
   foreign key (mysql_server)
-  references mysql."MysqlServer" (pkey)
+  references mysql."MysqlServer" (net_bind)
   on delete restrict
   on update cascade
 ;

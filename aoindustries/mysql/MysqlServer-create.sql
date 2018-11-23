@@ -1,11 +1,5 @@
-create sequence         mysql."MysqlServer_pkey_seq" cycle;
-grant all            on mysql."MysqlServer_pkey_seq" to aoadmin;
-grant select, update on mysql."MysqlServer_pkey_seq" to aoserv_app;
-
 create table mysql."MysqlServer" (
-  -- TODO: net_bind is both non-null and unique, so this pkey is unnecessary
-  pkey integer
-    default nextval('mysql."MysqlServer_pkey_seq"')
+  net_bind integer
     primary key,
   "name" text
     not null,
@@ -15,9 +9,7 @@ create table mysql."MysqlServer" (
     not null,
   max_connections integer
     not null,
-  net_bind integer
-    not null
-    unique,
+  -- TODO: The package of the net_bind could be used - this column required?
   package text
     not null,
   unique (ao_server, "name")

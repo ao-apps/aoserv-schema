@@ -15,7 +15,6 @@ insert into mysql."MysqlServer" values(
             and operating_system_version=(select pkey from distribution."OperatingSystemVersion" where operating_system='centos' and version_number='5')
     ),
     1000,
-    1,
     'AOINDUSTRIES'
 );
 insert into mysql."MysqlServer" values(
@@ -35,6 +34,5 @@ insert into mysql."MysqlServer" values(
             and operating_system_version=(select pkey from distribution."OperatingSystemVersion" where operating_system='centos' and version_number='5')
     ),
     1000,
-    2,
     'AOINDUSTRIES'
 );

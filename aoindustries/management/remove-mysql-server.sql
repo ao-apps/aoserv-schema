@@ -4,11 +4,11 @@ create or replace view
 as
 select
   (select count(*) from public.mysql_databases md where
-    md.mysql_server=ms.pkey and md."name" not in (
+    md.mysql_server=ms.net_bind and md."name" not in (
       'mysql', 'information_schema', 'performance_schema', 'sys', 'mysqlmon'
   )) as num_databases,
   (select count(*) from public.mysql_server_users msu where
-    msu.mysql_server=ms.pkey and msu.username not in (
+    msu.mysql_server=ms.net_bind and msu.username not in (
       'root', 'mysql.session', 'mysql.sys', 'mysqlmon'
   )) as num_users,
   ao.hostname as "SERVER",
@@ -19,13 +19,13 @@ select
   case when ia."inetAddress"='0.0.0.0' then '*' else host(ia."inetAddress") end as "BIND_ADDRESS",
   nb.port as "PORT",
   case when (
-    select ms2.pkey from mysql."MysqlServer" ms2 where
-      ms2.ao_server=ms.ao_server and ms2.version=ms.version and ms2.pkey!=ms.pkey
+    select ms2.net_bind from mysql."MysqlServer" ms2 where
+      ms2.ao_server=ms.ao_server and ms2.version=ms.version and ms2.net_bind!=ms.net_bind
     limit 1
   ) is not null then 'Yes' else 'No' end as "HAS_OTHER_SAME_VERSION",
   case when (
-    select ms2.pkey from mysql."MysqlServer" ms2 where
-      ms2.ao_server=ms.ao_server and ms2.pkey!=ms.pkey
+    select ms2.net_bind from mysql."MysqlServer" ms2 where
+      ms2.ao_server=ms.ao_server and ms2.net_bind!=ms.net_bind
     limit 1
   ) is not null then 'Yes' else 'No' end as "HAS_OTHER_ANY_VERSION"
 from

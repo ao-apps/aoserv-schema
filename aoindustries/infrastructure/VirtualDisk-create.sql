@@ -1,10 +1,10 @@
-create sequence infrastructure.virtual_disks_pkey_seq cycle;
-grant all    on infrastructure.virtual_disks_pkey_seq to aoadmin;
-grant select on infrastructure.virtual_disks_pkey_seq to aoserv_app;
+create sequence infrastructure."VirtualDisk_pkey_seq" cycle;
+grant all    on infrastructure."VirtualDisk_pkey_seq" to aoadmin;
+grant select on infrastructure."VirtualDisk_pkey_seq" to aoserv_app;
 
-create table virtual_disks (
+create table infrastructure."VirtualDisk" (
   pkey integer
-    default nextval('infrastructure.virtual_disks_pkey_seq')
+    default nextval('infrastructure."VirtualDisk_pkey_seq"')
     primary key,
   virtual_server integer
     not null,
@@ -32,5 +32,5 @@ create table virtual_disks (
     default 1, -- 1:00 AM
   unique(virtual_server, device)
 );
-grant all    on virtual_disks to aoadmin;
-grant select on virtual_disks to aoserv_app;
+grant all    on infrastructure."VirtualDisk" to aoadmin;
+grant select on infrastructure."VirtualDisk" to aoserv_app;

@@ -1,4 +1,4 @@
-create table httpd_tomcat_std_sites (
+create table web."PrivateTomcatSite" (
   tomcat_site integer
     primary key,
   tomcat4_shutdown_port integer
@@ -9,5 +9,5 @@ create table httpd_tomcat_std_sites (
   unpack_wars boolean not null,
   auto_deploy boolean not null
 );
-grant all                            on httpd_tomcat_std_sites to aoadmin;
-grant select, insert, update, delete on httpd_tomcat_std_sites to aoserv_app;
+grant all                            on web."PrivateTomcatSite" to aoadmin;
+grant select, insert, update, delete on web."PrivateTomcatSite" to aoserv_app;

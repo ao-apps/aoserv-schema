@@ -1,7 +1,7 @@
 alter table linux_groups
   add constraint type_fkey
   foreign key (type)
-  references linux_group_types ("name")
+  references linux."LinuxGroupType" ("name")
   on delete restrict
   on update cascade
 ;

@@ -1,4 +1,4 @@
-COPY "linux_group_types" FROM stdin;
+COPY linux."LinuxGroupType" FROM stdin;
 user	Normal User Group
 email	E-Mail Only Group
 ftponly	FTP Only Group

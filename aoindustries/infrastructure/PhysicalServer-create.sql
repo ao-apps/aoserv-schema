@@ -1,5 +1,6 @@
-create table physical_servers (
-  server integer primary key,
+create table infrastructure."PhysicalServer" (
+  server integer
+    primary key,
   rack integer,
   rack_units smallint
     check (rack_units is null or rack_units > 0),
@@ -13,7 +14,8 @@ create table physical_servers (
   max_power real
     check (max_power is null or max_power > 0),
   supports_hvm boolean,
+  -- TODO: Make a UpsType table
   ups_type text not null check (ups_type in ('none', 'datacenter', 'apc')) default 'none'
 );
-grant all    on physical_servers to aoadmin;
-grant select on physical_servers to aoserv_app;
+grant all    on infrastructure."PhysicalServer" to aoadmin;
+grant select on infrastructure."PhysicalServer" to aoserv_app;

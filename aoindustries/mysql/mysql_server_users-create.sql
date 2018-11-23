@@ -10,7 +10,7 @@ create table mysql_server_users (
     not null,
   mysql_server integer
     not null,
-  host text,
+  "host" text,
   disable_log integer,
   predisable_password text,
   max_questions integer

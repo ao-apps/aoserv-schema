@@ -12,7 +12,7 @@ as
            where num_site_binds=0)
 -- TODO: mysql.MysqlDatabase (without any mysql_db_users)
 -- TODO: mysql_server_users (without any mysql_db_users)
--- TODO: mysql_users (orphaned)
+-- TODO: mysql.MysqlUser (orphaned)
 -- mysql.MysqlServer
 union all (select 'mysql'::name as "schema", 'MysqlServer'::name as "table", count(*) as unused from management."remove-mysql-server"
            where num_databases=0 or num_users=0)

@@ -1,6 +1,6 @@
-create sequence         master.master_servers_pkey_seq cycle;
-grant all            on master.master_servers_pkey_seq to aoadmin;
-grant select, update on master.master_servers_pkey_seq to aoserv_app;
+create sequence         server.master_servers_pkey_seq cycle;
+grant all            on server.master_servers_pkey_seq to aoadmin;
+grant select, update on server.master_servers_pkey_seq to aoserv_app;
 
 /*
 TODO: When a master.MasterUser has no servers listed, it is considered a
@@ -11,7 +11,7 @@ in master.MasterUser.
  */
 create table master_servers (
   pkey integer
-    default nextval('master.master_servers_pkey_seq')
+    default nextval('server.master_servers_pkey_seq')
     primary key,
   username text
     not null,

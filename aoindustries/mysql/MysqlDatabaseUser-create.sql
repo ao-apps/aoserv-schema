@@ -1,10 +1,10 @@
-create sequence         mysql.mysql_db_users_pkey_seq cycle;
-grant all            on mysql.mysql_db_users_pkey_seq to aoadmin;
-grant select, update on mysql.mysql_db_users_pkey_seq to aoserv_app;
+create sequence         mysql."MysqlDatabaseUser_pkey_seq" cycle;
+grant all            on mysql."MysqlDatabaseUser_pkey_seq" to aoadmin;
+grant select, update on mysql."MysqlDatabaseUser_pkey_seq" to aoserv_app;
 
-create table mysql_db_users (
+create table mysql."MysqlDatabaseUser" (
   pkey integer
-    default nextval('mysql.mysql_db_users_pkey_seq')
+    default nextval('mysql."MysqlDatabaseUser_pkey_seq"')
     primary key,
   mysql_database integer
     not null,
@@ -69,5 +69,5 @@ create table mysql_db_users (
     default false,
   unique (mysql_database, mysql_server_user)
 );
-grant all                            on mysql_db_users to aoadmin;
-grant select, update, insert, delete on mysql_db_users to aoserv_app;
+grant all                            on mysql."MysqlDatabaseUser" to aoadmin;
+grant select, update, insert, delete on mysql."MysqlDatabaseUser" to aoserv_app;

@@ -1,4 +1,4 @@
-alter table signup_request_options
+alter table signup."SignupOption"
   add constraint request_fkey
   foreign key (request)
   references signup."SignupRequest" (pkey)

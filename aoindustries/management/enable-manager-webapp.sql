@@ -14,7 +14,7 @@ select
   hst."name" as "SHARED_TOMCAT",
   substring(tv.version from '^\d+\.\d+') as "VERSION",
   case when exists (
-    select * from public.httpd_tomcat_site_jk_mounts htsjm where
+    select * from web."TomcatJkMount" htsjm where
       htsjm.httpd_tomcat_site = hts.httpd_site
       and "path"='/*'
       and mount

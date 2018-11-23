@@ -8,7 +8,7 @@ alter table infrastructure."PhysicalServer"
 alter table infrastructure."PhysicalServer"
   add constraint rack_fkey
   foreign key (rack)
-  references racks (pkey)
+  references infrastructure."Rack" (pkey)
   on delete restrict
   on update cascade
 ;

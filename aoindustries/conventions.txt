@@ -39,7 +39,8 @@ Types:
 
 5) Spell-out "true" or "false" for booleans, and leave lowercase.
 
-6) Do use ENUM types where appropriate.
+6) Do use ENUM types where appropriate, but do not abuse them in an attempt to
+   save space.
 
 
 Naming:

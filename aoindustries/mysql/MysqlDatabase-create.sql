@@ -12,12 +12,9 @@ create table mysql."MysqlDatabase" (
     not null,
   package text
     not null,
-  max_check_table_alert_level text
+  max_check_table_alert_level monitoring."AlertLevel"
     not null
-    default 'UNKNOWN'
-    check (
-      max_check_table_alert_level in ('NONE', 'LOW', 'MEDIUM', 'HIGH', 'CRITICAL', 'UNKNOWN')
-    ),
+    default 'UNKNOWN',
   unique (mysql_server, "name")
 );
 grant all                            on mysql."MysqlDatabase" to aoadmin;

@@ -1,4 +1,4 @@
-alter table master_users
+alter table master."MasterUser"
   add constraint username_fkey
   foreign key (username)
   references account."Administrator" (username)

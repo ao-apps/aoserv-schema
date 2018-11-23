@@ -1,7 +1,7 @@
 alter table master_servers
   add constraint username_fkey
   foreign key (username)
-  references master_users (username)
+  references master."MasterUser" (username)
   on delete restrict
   on update cascade
 ;

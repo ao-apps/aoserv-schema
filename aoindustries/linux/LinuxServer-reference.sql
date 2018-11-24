@@ -36,7 +36,7 @@ alter table linux."LinuxServer"
 alter table linux."LinuxServer"
   add constraint time_zone_fkey
   foreign key (time_zone)
-  references time_zones ("name")
+  references linux."TimeZone" ("name")
   on delete restrict
   on update cascade
 ;

@@ -1,4 +1,4 @@
-COPY "time_zones" FROM stdin;
+COPY linux."TimeZone" FROM stdin;
 Africa/Abidjan
 Africa/Accra
 Africa/Addis_Ababa

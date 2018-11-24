@@ -2088,7 +2088,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'server',
+    'linux',
     'time_zones',
     'Time Zones',
     true,

@@ -33,7 +33,7 @@ from
   inner join mysql."MysqlServer"                   ms  on ao.server                   =  ms.ao_server
   inner join distribution."SoftwareVersion"        tv  on ms.version                  =  tv.pkey
   inner join distribution."OperatingSystemVersion" osv on tv.operating_system_version = osv.pkey
-  inner join public.net_binds                      nb  on ms.net_bind                 =  nb.pkey
+  inner join net."Bind"                            nb  on ms.net_bind                 =  nb.pkey
   inner join net."IpAddress"                       ia  on nb."ipAddress"              =  ia.id;
 
 revoke all    on management."remove-mysql-server" from aoadmin;

@@ -8,7 +8,7 @@ alter table web."PrivateTomcatSite"
 alter table web."PrivateTomcatSite"
   add constraint tomcat4_shutdown_port_fkey
   foreign key (tomcat4_shutdown_port)
-  references net_binds (pkey)
+  references net."Bind" (pkey)
   on delete restrict
   on update cascade
 ;

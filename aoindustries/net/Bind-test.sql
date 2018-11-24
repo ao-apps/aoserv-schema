@@ -1,5 +1,5 @@
 begin;
-COPY net_binds (pkey, package, server, "ipAddress", port, net_protocol, app_protocol, open_firewall, monitoring_enabled) FROM stdin;
+COPY net."Bind" (pkey, package, server, "ipAddress", port, net_protocol, app_protocol, open_firewall, monitoring_enabled) FROM stdin;
 1	AOINDUSTRIES	2	1	3306	tcp	MySQL	t	t
 2	AOINDUSTRIES	2	1	3307	tcp	MySQL	t	t
 15	AOINDUSTRIES	2	1	5433	tcp	PostgreSQL	f	t
@@ -25,7 +25,7 @@ COPY net_binds (pkey, package, server, "ipAddress", port, net_protocol, app_prot
 4	AOINDUSTRIES	2	5	5900	tcp	RFB	t	t
 \.
 -- sieve
-insert into net_binds values(
+insert into net."Bind" values(
   3,
   'AOINDUSTRIES',
   2,
@@ -36,5 +36,5 @@ insert into net_binds values(
   false,
   true
 );
-SELECT setval ('net.net_binds_pkey_seq', 40, true);
+SELECT setval ('net."Bind_pkey_seq"', 40, true);
 commit;

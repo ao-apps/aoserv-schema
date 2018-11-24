@@ -1,5 +1,5 @@
 create or replace view
-  management."remove-canceled-net_binds"
+  management."remove-canceled-net.Bind"
 as
 select
   bu.accounting,
@@ -9,11 +9,11 @@ select
 remove_net_bind ' || nb.pkey as aosh_command,
   nb.port
 from
-             public.net_binds  nb
+             net."Bind"        nb
   inner join billing."Package" pk on nb.package    = pk."name"
   inner join account."Account" bu on pk.accounting = bu.accounting
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 
-revoke all    on management."remove-canceled-net_binds" from aoadmin;
-grant  select on management."remove-canceled-net_binds" to   aoadmin;
+revoke all    on management."remove-canceled-net.Bind" from aoadmin;
+grant  select on management."remove-canceled-net.Bind" to   aoadmin;

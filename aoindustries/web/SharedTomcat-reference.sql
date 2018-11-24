@@ -43,7 +43,7 @@ alter table web."SharedTomcat"
 alter table web."SharedTomcat"
   add constraint tomcat4_shutdown_port_fkey
   foreign key (tomcat4_shutdown_port)
-  references net_binds (pkey)
+  references net."Bind" (pkey)
   on delete restrict
   on update cascade
 ;

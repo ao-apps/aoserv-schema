@@ -15,35 +15,35 @@ alter table web."JbossSite"
 alter table web."JbossSite"
   add constraint jnp_bind_fkey
   foreign key (jnp_bind)
-  references net_binds (pkey)
+  references net."Bind" (pkey)
   on delete restrict
   on update cascade
 ;
 alter table web."JbossSite"
   add constraint webserver_bind_fkey
   foreign key (webserver_bind)
-  references net_binds (pkey)
+  references net."Bind" (pkey)
   on delete restrict
   on update cascade
 ;
 alter table web."JbossSite"
   add constraint rmi_bind_fkey
   foreign key (rmi_bind)
-  references net_binds (pkey)
+  references net."Bind" (pkey)
   on delete restrict
   on update cascade
 ;
 alter table web."JbossSite"
   add constraint hypersonic_bind_fkey
   foreign key (hypersonic_bind)
-  references net_binds (pkey)
+  references net."Bind" (pkey)
   on delete restrict
   on update cascade
 ;
 alter table web."JbossSite"
   add constraint jmx_bind_fkey
   foreign key (jmx_bind)
-  references net_binds (pkey)
+  references net."Bind" (pkey)
   on delete restrict
   on update cascade
 ;

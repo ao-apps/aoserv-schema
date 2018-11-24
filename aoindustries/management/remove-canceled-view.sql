@@ -23,8 +23,8 @@ union all (select accounting, aosh_command from management."remove-canceled-post
 union all (select accounting, aosh_command from management."remove-canceled-postgres_users" order by accounting, username)
 -- TODO: postgres_servers
 -- TODO: email.SendmailServer without any email.SendmailBind
--- net_binds
-union all (select accounting, aosh_command from management."remove-canceled-net_binds" order by accounting, port)
+-- net.Bind
+union all (select accounting, aosh_command from management."remove-canceled-net.Bind" order by accounting, port)
 -- net.IpAddress.hostname
 union all (select accounting, aosh_command from management."remove-canceled-net.IpAddress.hostname" order by accounting, net.reverse_hostname(hostname), "inetAddress")
 -- net.IpAddress.package

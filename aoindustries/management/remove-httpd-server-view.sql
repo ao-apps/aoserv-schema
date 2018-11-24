@@ -23,20 +23,20 @@ select
     array(
       select unused_ports.port || '/' || unused_ports.net_protocol from (
         select distinct nb.port, nb.net_protocol from
-                     web."HttpdBind"  hb
-          inner join public.net_binds nb on hb.net_bind = nb.pkey
+                     web."HttpdBind" hb
+          inner join net."Bind"      nb on hb.net_bind = nb.pkey
         where
           hs.pkey = hb.httpd_server
           -- Remove ports that are on the server but not part of this server
           and (nb.port, nb.net_protocol) not in (
             select nb2.port, nb2.net_protocol from
-              public.net_binds nb2
+              net."Bind" nb2
             where
               hs.ao_server = nb2.server
               and nb2.pkey not in (
                 select nb3.pkey from
-                             web."HttpdBind"  hb3
-                  inner join public.net_binds nb3 on hb3.net_bind = nb3.pkey
+                             web."HttpdBind" hb3
+                  inner join net."Bind"      nb3 on hb3.net_bind = nb3.pkey
                 where
                   hs.pkey = hb3.httpd_server
               )

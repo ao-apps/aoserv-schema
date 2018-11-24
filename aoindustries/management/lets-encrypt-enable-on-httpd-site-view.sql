@@ -23,14 +23,14 @@ from
   inner join distribution."OperatingSystemVersion" osv on se.operating_system_version = osv.pkey
   left  join (
     select hsb_80.pkey, hsb_80.httpd_site, hsb_80."name", hsb_80.disable_log, hsu_80.hostname from
-                 web."VirtualHost"       hsb_80
-      inner join public.net_binds         nb_80 on hsb_80.httpd_bind =  nb_80.pkey            and  nb_80.port = 80
-      inner join web."VirtualHostName"   hsu_80 on hsb_80.pkey       = hsu_80.httpd_site_bind and hsu_80.is_primary
+                 web."VirtualHost"     hsb_80
+      inner join net."Bind"             nb_80 on hsb_80.httpd_bind =  nb_80.pkey            and  nb_80.port = 80
+      inner join web."VirtualHostName" hsu_80 on hsb_80.pkey       = hsu_80.httpd_site_bind and hsu_80.is_primary
   ) is_80 on hs.pkey=is_80.httpd_site
   left  join (
     select hsb_443.pkey, hsb_443.httpd_site, hsb_443."name", hsb_443.disable_log, hsu_443.hostname, sc_443.cert_file as ssl_cert_file from
                  web."VirtualHost"     hsb_443
-      inner join public.net_binds       nb_443 on hsb_443.httpd_bind  =  nb_443.pkey            and  nb_443.port = 443
+      inner join net."Bind"             nb_443 on hsb_443.httpd_bind  =  nb_443.pkey            and  nb_443.port = 443
       inner join web."VirtualHostName" hsu_443 on hsb_443.pkey        = hsu_443.httpd_site_bind and hsu_443.is_primary
       left  join pki."Certificate"      sc_443 on hsb_443.certificate =  sc_443.pkey
   ) is_443 on hs.pkey=is_443.httpd_site and coalesce(is_80."name", '')=coalesce(is_443."name", '')

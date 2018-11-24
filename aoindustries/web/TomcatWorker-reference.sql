@@ -1,7 +1,7 @@
 alter table web."TomcatWorker"
   add constraint bind_fkey
   foreign key (bind)
-  references net_binds (pkey)
+  references net."Bind" (pkey)
   on delete restrict
   on update cascade
 ;

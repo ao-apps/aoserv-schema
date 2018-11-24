@@ -3,7 +3,7 @@ create or replace view
   management."release-net.IpAddress"
 as
 select
-  (select count(*) from public.net_binds nb where nb."ipAddress" = ia.id) as num_binds,
+  (select count(*) from net."Bind" nb where nb."ipAddress" = ia.id) as num_binds,
   se."name" as "SERVER",
   sepk."name" as "SERVER_PACKAGE",
   ao.hostname as "AO_SERVER",

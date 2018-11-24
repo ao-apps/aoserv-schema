@@ -1,7 +1,7 @@
 alter table email."CyrusImapdBind"
   add constraint net_bind_fkey
   foreign key (net_bind)
-  references net_binds (pkey)
+  references net."Bind" (pkey)
   on delete cascade
   on update cascade
 ;

@@ -8,7 +8,7 @@ alter table linux."LinuxServer"
 alter table linux."LinuxServer"
   add constraint daemon_bind_fkey
   foreign key (daemon_bind)
-  references net_binds (pkey)
+  references net."Bind" (pkey)
   on delete restrict
   on update cascade
 ;
@@ -29,7 +29,7 @@ alter table linux."LinuxServer"
 alter table linux."LinuxServer"
   add constraint daemon_connect_bind_fkey
   foreign key (daemon_connect_bind)
-  references net_binds (pkey)
+  references net."Bind" (pkey)
   on delete restrict
   on update cascade
 ;
@@ -43,7 +43,7 @@ alter table linux."LinuxServer"
 alter table linux."LinuxServer"
   add constraint jilter_bind_fkey
   foreign key (jilter_bind)
-  references net_binds (pkey)
+  references net."Bind" (pkey)
   on delete restrict
   on update cascade
 ;

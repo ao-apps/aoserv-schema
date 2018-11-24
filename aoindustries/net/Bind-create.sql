@@ -1,10 +1,10 @@
-create sequence         net.net_binds_pkey_seq cycle;
-grant all            on net.net_binds_pkey_seq to aoadmin;
-grant select, update on net.net_binds_pkey_seq to aoserv_app;
+create sequence         net."Bind_pkey_seq" cycle;
+grant all            on net."Bind_pkey_seq" to aoadmin;
+grant select, update on net."Bind_pkey_seq" to aoserv_app;
 
-create table net_binds (
+create table net."Bind" (
   pkey integer
-    default nextval('net.net_binds_pkey_seq')
+    default nextval('net."Bind_pkey_seq"')
     primary key,
   package text
     not null,
@@ -24,5 +24,5 @@ create table net_binds (
   monitoring_parameters text,
   unique(server, "ipAddress", port, net_protocol)
 );
-grant all                            on net_binds to aoadmin;
-grant select, insert, update, delete on net_binds to aoserv_app;
+grant all                            on net."Bind" to aoadmin;
+grant select, insert, update, delete on net."Bind" to aoserv_app;

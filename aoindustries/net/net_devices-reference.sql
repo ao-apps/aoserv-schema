@@ -8,7 +8,7 @@ alter table net_devices
 alter table net_devices
   add constraint "deviceID_fkey"
   foreign key ("deviceID")
-  references net_device_ids ("name")
+  references net."DeviceId" ("name")
   on delete restrict
   on update cascade
 ;

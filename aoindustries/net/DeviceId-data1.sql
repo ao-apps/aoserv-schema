@@ -1,4 +1,4 @@
-COPY "net_device_ids" FROM stdin;
+COPY net."DeviceId" FROM stdin;
 lo	t
 bmc	f
 bond0	f

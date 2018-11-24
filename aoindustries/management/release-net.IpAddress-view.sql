@@ -20,7 +20,7 @@ select
 from
              net."IpAddress"                       ia
   inner join public.net_devices                    nd   on ia."netDevice"              =   nd.pkey
-  inner join public.net_device_ids                 ndi  on nd."deviceID"               =  ndi."name"
+  inner join net."DeviceId"                        ndi  on nd."deviceID"               =  ndi."name"
   inner join public.servers                        se   on nd.server                   =   se.pkey
   inner join billing."Package"                     sepk on se.package                  = sepk.pkey
   left  join distribution."OperatingSystemVersion" osv  on se.operating_system_version =  osv.pkey

@@ -22,7 +22,7 @@ alter table linux."LinuxServer"
 alter table linux."LinuxServer"
   add constraint "daemonDeviceID_fkey"
   foreign key ("daemonDeviceID")
-  references net_device_ids ("name")
+  references net."DeviceId" ("name")
   on delete restrict
   on update cascade
 ;

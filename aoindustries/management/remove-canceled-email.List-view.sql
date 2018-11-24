@@ -7,12 +7,12 @@ select
   ao.hostname,
   el."path"
 from
-             email."List"                el
-  inner join linux."LinuxGroupAoServer" lsg on  el.linux_server_group = lsg.pkey
-  inner join linux."LinuxServer"         ao on lsg.ao_server          =  ao.server
-  inner join linux."LinuxGroup"          lg on lsg."name"             =  lg."name"
-  inner join billing."Package"           pk on  lg.package            =  pk."name"
-  inner join account."Account"           bu on  pk.accounting         =  bu.accounting
+             email."List"              el
+  inner join linux."LinuxGroupServer" lsg on  el.linux_server_group = lsg.pkey
+  inner join linux."LinuxServer"       ao on lsg.ao_server          =  ao.server
+  inner join linux."LinuxGroup"        lg on lsg."name"             =  lg."name"
+  inner join billing."Package"         pk on  lg.package            =  pk."name"
+  inner join account."Account"         bu on  pk.accounting         =  bu.accounting
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 

@@ -38,7 +38,7 @@ create table web."Site" (
     not null,
   linux_account text -- TODO: This should go to linux_server_accounts.pkey on the same server
     not null,
-  linux_group text -- TODO: This should go to linux.LinuxGroupAoServer.pkey on the same server
+  linux_group text -- TODO: This should go to linux.LinuxGroupServer.pkey on the same server
     not null,
   server_admin text
     not null,

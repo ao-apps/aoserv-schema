@@ -1,5 +1,5 @@
 begin;
-COPY linux."LinuxGroupAoServer" (pkey, "name", ao_server, gid, created) FROM stdin;
+COPY linux."LinuxGroupServer" (pkey, "name", ao_server, gid, created) FROM stdin;
 1	awstats	2	78	2009-07-26 08:29:14.890907-05
 62	root	2	0	2004-12-16 20:01:58.522214-06
 63	bin	2	1	2004-12-16 20:01:58.983424-06
@@ -40,105 +40,105 @@ COPY linux."LinuxGroupAoServer" (pkey, "name", ao_server, gid, created) FROM std
 234	aoadmin	2	502	2004-12-16 20:27:13.373372-06
 235	ftpmon	2	503	2004-12-16 20:27:19.14166-06
 \.
-insert into linux."LinuxGroupAoServer" values(
+insert into linux."LinuxGroupServer" values(
   2,
   'avahi',
   2,
   70,
   '2009-07-26 08:32:18.307947-05'
 );
-insert into linux."LinuxGroupAoServer" values(
+insert into linux."LinuxGroupServer" values(
   3,
   'dbus',
   2,
   81,
   '2009-07-26 08:32:25.884859-05'
 );
-insert into linux."LinuxGroupAoServer" values(
+insert into linux."LinuxGroupServer" values(
   4,
   'dip',
   2,
   40,
   '2009-07-26 08:32:36.173815-05'
 );
-insert into linux."LinuxGroupAoServer" values(
+insert into linux."LinuxGroupServer" values(
   5,
   'distcache',
   2,
   94,
   '2009-07-26 08:32:44.804511-05'
 );
-insert into linux."LinuxGroupAoServer" values(
+insert into linux."LinuxGroupServer" values(
   6,
   'gopher',
   2,
   30,
   '2009-07-26 08:32:53.517199-05'
 );
-insert into linux."LinuxGroupAoServer" values(
+insert into linux."LinuxGroupServer" values(
   7,
   'haldaemon',
   2,
   68,
   '2009-07-26 08:33:01.245011-05'
 );
-insert into linux."LinuxGroupAoServer" values(
+insert into linux."LinuxGroupServer" values(
   8,
   'nfsnobody',
   2,
   65534,
   '2009-07-26 08:33:08.013226-05'
 );
-insert into linux."LinuxGroupAoServer" values(
+insert into linux."LinuxGroupServer" values(
   9,
   'nobody',
   2,
   99,
   '2009-07-26 08:33:14.877389-05'
 );
-insert into linux."LinuxGroupAoServer" values(
+insert into linux."LinuxGroupServer" values(
   10,
   'ntp',
   2,
   38,
   '2009-07-26 08:33:22.349015-05'
 );
-insert into linux."LinuxGroupAoServer" values(
+insert into linux."LinuxGroupServer" values(
   11,
   'pcap',
   2,
   77,
   '2009-07-26 08:33:30.494944-05'
 );
-insert into linux."LinuxGroupAoServer" values(
+insert into linux."LinuxGroupServer" values(
   12,
   'rpcuser',
   2,
   29,
   '2009-07-26 08:33:37.786426-05'
 );
-insert into linux."LinuxGroupAoServer" values(
+insert into linux."LinuxGroupServer" values(
   13,
   'saslauth',
   2,
   76,
   '2009-07-26 08:33:47.629459-05'
 );
-insert into linux."LinuxGroupAoServer" values(
+insert into linux."LinuxGroupServer" values(
   14,
   'screen',
   2,
   84,
   '2009-07-26 08:33:55.81438-05'
 );
-insert into linux."LinuxGroupAoServer" values(
+insert into linux."LinuxGroupServer" values(
   15,
   'utempter',
   2,
   35,
   '2009-07-26 08:34:05.101825-05'
 );
-insert into linux."LinuxGroupAoServer" values(
+insert into linux."LinuxGroupServer" values(
   16,
   'named',
   2,

@@ -2,6 +2,7 @@ create sequence         mysql."MysqlServerUser_pkey_seq" cycle;
 grant all            on mysql."MysqlServerUser_pkey_seq" to aoadmin;
 grant select, update on mysql."MysqlServerUser_pkey_seq" to aoserv_app;
 
+-- TODO: Rename "MysqlUserServer"
 create table mysql."MysqlServerUser" (
   pkey integer
     default nextval('mysql."MysqlServerUser_pkey_seq"')

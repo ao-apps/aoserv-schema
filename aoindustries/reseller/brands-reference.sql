@@ -8,14 +8,14 @@ alter table brands
 alter table brands
   add constraint smtp_linux_server_account_fkey
   foreign key (smtp_linux_server_account)
-  references linux_server_accounts (pkey)
+  references linux."LinuxUserServer" (pkey)
   on update cascade
   on delete restrict
 ;
 alter table brands
   add constraint imap_linux_server_account_fkey
   foreign key (imap_linux_server_account)
-  references linux_server_accounts (pkey)
+  references linux."LinuxUserServer" (pkey)
   on update cascade
   on delete restrict
 ;

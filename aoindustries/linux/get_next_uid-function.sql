@@ -20,7 +20,7 @@ BEGIN
       _uid := _min_uid;
     END IF;
     IF NOT EXISTS (
-      SELECT lsa.uid FROM linux_server_accounts lsa WHERE
+      SELECT lsa.uid FROM linux."LinuxUserServer" lsa WHERE
         lsa.ao_server = _ao_server
         AND lsa.uid = _uid
     ) THEN

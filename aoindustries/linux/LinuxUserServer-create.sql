@@ -1,10 +1,10 @@
-create sequence         linux.linux_server_accounts_pkey_seq cycle;
-grant all            on linux.linux_server_accounts_pkey_seq to aoadmin;
-grant select, update on linux.linux_server_accounts_pkey_seq to aoserv_app;
+create sequence         linux."LinuxUserServer_pkey_seq" cycle;
+grant all            on linux."LinuxUserServer_pkey_seq" to aoadmin;
+grant select, update on linux."LinuxUserServer_pkey_seq" to aoserv_app;
 
-create table linux_server_accounts (
+create table linux."LinuxUserServer" (
   pkey integer
-    default nextval('linux.linux_server_accounts_pkey_seq')
+    default nextval('linux."LinuxUserServer_pkey_seq"')
     primary key,
   username text
     not null,
@@ -42,5 +42,5 @@ create table linux_server_accounts (
   sudo text,
   unique (username, ao_server)
 );
-grant all                            on linux_server_accounts to aoadmin;
-grant select, insert, update, delete on linux_server_accounts to aoserv_app;
+grant all                            on linux."LinuxUserServer" to aoadmin;
+grant select, insert, update, delete on linux."LinuxUserServer" to aoserv_app;

@@ -8,7 +8,7 @@ alter table email."MajordomoServer"
 alter table email."MajordomoServer"
   add constraint linux_server_account_fkey
   foreign key (linux_server_account)
-  references linux_server_accounts (pkey)
+  references linux."LinuxUserServer" (pkey)
   on delete restrict
   on update cascade
 ;

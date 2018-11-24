@@ -1,4 +1,4 @@
-insert into linux_server_accounts values(
+insert into linux."LinuxUserServer" values(
   1,
   'awstats',
   2,
@@ -6,7 +6,7 @@ insert into linux_server_accounts values(
   '/var/opt/awstats-6',
   null, null, null, false, null, null, '2009-07-26 08:13:49.184532-05', true, null, null, 'none', 3.0, 20
 );
-insert into linux_server_accounts values(
+insert into linux."LinuxUserServer" values(
   2,
   'avahi',
   2,
@@ -14,7 +14,7 @@ insert into linux_server_accounts values(
   '/',
   null, null, null, false, null, null, '2009-07-26 08:18:56.536705-05', true, null, null, 'none', 3.0, 20
 );
-insert into linux_server_accounts values(
+insert into linux."LinuxUserServer" values(
   3,
   'cyrus',
   2,
@@ -22,7 +22,7 @@ insert into linux_server_accounts values(
   '/var/lib/imap',
   null, null, null, false, null, null, '2009-07-26 08:25:08.677996-05', true, null, null, 'none', 3.0, 20
 );
-insert into linux_server_accounts values(
+insert into linux."LinuxUserServer" values(
   4,
   'dbus',
   2,
@@ -30,7 +30,7 @@ insert into linux_server_accounts values(
   '/',
   null, null, null, false, null, null, '2009-07-26 08:25:19.303223-05', true, null, null, 'none', 3.0, 20
 );
-insert into linux_server_accounts values(
+insert into linux."LinuxUserServer" values(
   5,
   'distcache',
   2,
@@ -38,7 +38,7 @@ insert into linux_server_accounts values(
   '/',
   null, null, null, false, null, null, '2009-07-26 08:25:26.342702-05', true, null, null, 'none', 3.0, 20
 );
-insert into linux_server_accounts values(
+insert into linux."LinuxUserServer" values(
   6,
   'gopher',
   2,
@@ -46,7 +46,7 @@ insert into linux_server_accounts values(
   '/var/gopher',
   null, null, null, false, null, null, '2009-07-26 08:25:33.406133-05', true, null, null, 'none', 3.0, 20
 );
-insert into linux_server_accounts values(
+insert into linux."LinuxUserServer" values(
   7,
   'haldaemon',
   2,
@@ -54,7 +54,7 @@ insert into linux_server_accounts values(
   '/',
   null, null, null, false, null, null, '2009-07-26 08:25:43.48652-05', true, null, null, 'none', 3.0, 20
 );
-insert into linux_server_accounts values(
+insert into linux."LinuxUserServer" values(
   8,
   'nfsnobody',
   2,
@@ -62,7 +62,7 @@ insert into linux_server_accounts values(
   '/var/lib/nfs',
   null, null, null, false, null, null, '2009-07-26 08:25:50.768494-05', true, null, null, 'none', 3.0, 20
 );
-insert into linux_server_accounts values(
+insert into linux."LinuxUserServer" values(
   9,
   'ntp',
   2,
@@ -70,7 +70,7 @@ insert into linux_server_accounts values(
   '/etc/ntp',
   null, null, null, false, null, null, '2009-07-26 08:25:58.068168-05', true, null, null, 'none', 3.0, 20
 );
-insert into linux_server_accounts values(
+insert into linux."LinuxUserServer" values(
   10,
   'pcap',
   2,
@@ -78,7 +78,7 @@ insert into linux_server_accounts values(
   '/var/arpwatch',
   null, null, null, false, null, null, '2009-07-26 08:26:05.840879-05', true, null, null, 'none', 3.0, 20
 );
-insert into linux_server_accounts values(
+insert into linux."LinuxUserServer" values(
   11,
   'rpcuser',
   2,
@@ -86,7 +86,7 @@ insert into linux_server_accounts values(
   '/var/lib/nfs',
   null, null, null, false, null, null, '2009-07-26 08:26:13.19232-05', true, null, null, 'none', 3.0, 20
 );
-insert into linux_server_accounts values(
+insert into linux."LinuxUserServer" values(
   12,
   'named',
   2,
@@ -95,7 +95,7 @@ insert into linux_server_accounts values(
   null, null, null, false, null, null, '2009-07-26 10:08:17.011332-05', true, null, null, 'none', 3.0, 20
 );
 
-COPY linux_server_accounts (pkey, username, ao_server, uid, home, autoresponder_from, autoresponder_subject, autoresponder_path, is_autoresponder_enabled, disable_log, predisable_password, created, use_inbox, trash_email_retention, junk_email_retention, sa_integration_mode, sa_required_score) FROM stdin;
+COPY linux."LinuxUserServer" (pkey, username, ao_server, uid, home, autoresponder_from, autoresponder_subject, autoresponder_path, is_autoresponder_enabled, disable_log, predisable_password, created, use_inbox, trash_email_retention, junk_email_retention, sa_integration_mode, sa_required_score) FROM stdin;
 73	apache	2	48	/var/www	\N	\N	\N	f	\N	\N	2004-12-16 22:04:08.645501-06	t	\N	31	pop3	3
 74	vcsa	2	69	/dev	\N	\N	\N	f	\N	\N	2004-12-16 22:04:11.305596-06	t	\N	31	pop3	3
 75	rpc	2	32	/	\N	\N	\N	f	\N	\N	2004-12-16 22:04:16.446429-06	t	\N	31	pop3	3
@@ -131,4 +131,4 @@ COPY linux_server_accounts (pkey, username, ao_server, uid, home, autoresponder_
 -- TODO: Add nginx user
 -- TODO: Add memcached user
 
-SELECT setval ('linux.linux_server_accounts_pkey_seq', 90, true);
+SELECT setval ('linux."LinuxUserServer_pkey_seq"', 90, true);

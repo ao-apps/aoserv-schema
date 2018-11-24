@@ -1,4 +1,4 @@
-COPY "linux_groups" FROM stdin;
+COPY linux."LinuxGroup" FROM stdin;
 news	AOINDUSTRIES	system
 root	AOINDUSTRIES	system
 bin	AOINDUSTRIES	system

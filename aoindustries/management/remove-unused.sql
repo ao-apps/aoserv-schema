@@ -32,7 +32,7 @@ union all (select 'pki'::name as "schema", 'Certificate'::name as "table", count
 -- TODO: ftp.GuestUser
 -- TODO: linux.LinuxUser (orphaned)
 -- TODO: linux_server_groups (orphaned or with no linux_group_accounts)
--- TODO: linux_groups (orphaned or with no linux_group_accounts)
+-- TODO: linux.LinuxGroup (orphaned or with no linux_group_accounts)
 -- TODO: account.Username (orphaned)
 -- TODO: business_servers (access to a server but without any resources - useful?)
 ;

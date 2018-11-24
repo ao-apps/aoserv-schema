@@ -22,7 +22,7 @@ alter table management."DistroFile"
 alter table management."DistroFile"
   add constraint linux_group_fkey
   foreign key (linux_group)
-  references linux_groups ("name")
+  references linux."LinuxGroup" ("name")
   on delete restrict
   on update cascade
 ;

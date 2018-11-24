@@ -33,8 +33,8 @@ union all (select accounting, aosh_command from management."remove-canceled-IPAd
 -- TODO: servers (once a server is owned by a package in the schema)
 -- linux.LinuxUser
 union all (select accounting, aosh_command from management."remove-canceled-linux.LinuxUser" order by accounting, username)
--- linux_groups
-union all (select accounting, aosh_command from management."remove-canceled-linux_groups" order by accounting, "name")
+-- linux.LinuxGroup
+union all (select accounting, aosh_command from management."remove-canceled-linux.LinuxGroup" order by accounting, "name")
 -- account."Username"
 union all (select accounting, aosh_command from management."remove-canceled-account.Username" order by accounting, username)
 -- business_servers

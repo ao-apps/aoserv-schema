@@ -1,14 +1,14 @@
 alter table linux_server_groups
   add constraint name_fkey
-  foreign key (name)
-  references linux_groups (name)
+  foreign key ("name")
+  references linux."LinuxGroup" ("name")
   on delete restrict
   on update cascade
 ;
 alter table linux_server_groups
   add constraint ao_server_fkey
   foreign key (ao_server)
-  references ao_servers (server)
+  references server."AoServer" (server)
   on delete restrict
   on update cascade
 ;

@@ -35,13 +35,6 @@ $$ LANGUAGE plpgsql
 VOLATILE
 RETURNS NULL ON NULL INPUT;
 
-COMMENT ON FUNCTION linux.get_next_gid (integer) IS 'Gets the next available GID in the range minGid through maxGid, starting the
-search at lastGid + 1 (or minGid when lastGid is null).
-
-Updates lastGid to the GID located.
-
-Raises an exception when no GID can be allocated.';
-
 CREATE OR REPLACE FUNCTION linux.get_next_gid (_ao_server text)
 RETURNS linux."LinuxId" AS $$
   SELECT linux.get_next_gid(
@@ -50,5 +43,3 @@ RETURNS linux."LinuxId" AS $$
 $$ LANGUAGE 'sql'
 VOLATILE
 RETURNS NULL ON NULL INPUT;
-
-COMMENT ON FUNCTION linux.get_next_gid (text) IS 'Resolves the server id from hostname and calls linux.get_next_gid(integer).';

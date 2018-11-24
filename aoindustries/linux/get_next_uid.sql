@@ -1,3 +1,11 @@
+/*
+Gets the next available UID in the range minUid through maxUid, starting the
+search at lastUid + 1 (or minUid when lastUid is null).
+
+Updates lastUid to the UID located.
+
+Raises an exception when no UID can be allocated.
+ */
 CREATE OR REPLACE FUNCTION linux.get_next_uid (_ao_server integer)
 RETURNS linux."LinuxId" AS $$
 DECLARE

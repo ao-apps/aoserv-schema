@@ -14,7 +14,7 @@ create table net_binds (
     not null,
   port integer
     not null,
-  net_protocol text
+  net_protocol net."NetProtocol"
     not null,
   app_protocol text
     not null,

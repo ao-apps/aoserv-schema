@@ -27,13 +27,6 @@ alter table net_binds
   on update cascade
 ;
 alter table net_binds
-  add constraint net_protocol_fkey
-  foreign key (net_protocol)
-  references net_protocols (protocol)
-  on delete restrict
-  on update cascade
-;
-alter table net_binds
   add constraint app_protocol_fkey
   foreign key (app_protocol)
   references protocols (protocol)

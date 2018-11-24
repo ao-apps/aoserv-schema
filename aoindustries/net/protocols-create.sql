@@ -7,7 +7,7 @@ create table protocols (
     not null,
   is_user_service boolean
     not null,
-  net_protocol text
+  net_protocol net."NetProtocol"
     not null
 );
 grant all            on protocols to aoadmin;

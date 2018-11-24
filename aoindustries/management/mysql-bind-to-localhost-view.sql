@@ -11,7 +11,7 @@ select
     array(
       select fz."name" from
                   public.net_bind_firewalld_zones nbfz
-        left join public.firewalld_zones            fz on nbfz.firewalld_zone = fz.pkey
+        left join net."FirewallZone"              fz   on nbfz.firewalld_zone = fz.pkey
       where
         nb.pkey=nbfz.net_bind
       order by fz."name"

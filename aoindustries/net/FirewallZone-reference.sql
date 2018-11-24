@@ -1,4 +1,4 @@
-alter table firewalld_zones
+alter table net."FirewallZone"
   add constraint server_fkey
   foreign key (server)
   references servers (pkey)

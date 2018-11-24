@@ -8,7 +8,7 @@ alter table net_bind_firewalld_zones
 alter table net_bind_firewalld_zones
   add constraint firewalld_zone_fkey
   foreign key (firewalld_zone)
-  references firewalld_zones (pkey)
+  references net."FirewallZone" (pkey)
   on delete restrict
   on update cascade
 ;

@@ -8,7 +8,7 @@ alter table linux."LinuxUser"
 alter table linux."LinuxUser"
   add constraint shell_fkey
   foreign key (shell)
-  references shells ("path")
+  references linux."Shell" ("path")
   on delete restrict
   on update cascade
 ;

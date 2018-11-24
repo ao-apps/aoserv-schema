@@ -1,4 +1,4 @@
-COPY "shells" FROM stdin;
+COPY linux."Shell" FROM stdin;
 /bin/bash	t	f
 /bin/false	f	t
 /bin/ksh	t	f

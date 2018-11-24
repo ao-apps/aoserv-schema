@@ -29,14 +29,14 @@ alter table email."SendmailServer"
 alter table email."SendmailServer"
   add constraint "clientAddrInet_fkey"
   foreign key ("clientAddrInet")
-  references "IPAddress" (id)
+  references net."IpAddress" (id)
   on delete restrict
   on update cascade
 ;
 alter table email."SendmailServer"
   add constraint "clientAddrInet6_fkey"
   foreign key ("clientAddrInet6")
-  references "IPAddress" (id)
+  references net."IpAddress" (id)
   on delete restrict
   on update cascade
 ;

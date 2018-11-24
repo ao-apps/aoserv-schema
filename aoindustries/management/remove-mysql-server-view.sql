@@ -34,7 +34,7 @@ from
   inner join distribution."SoftwareVersion"        tv  on ms.version                  =  tv.pkey
   inner join distribution."OperatingSystemVersion" osv on tv.operating_system_version = osv.pkey
   inner join public.net_binds                      nb  on ms.net_bind                 =  nb.pkey
-  inner join public."IPAddress"                    ia  on nb."ipAddress"              =  ia.id;
+  inner join net."IpAddress"                       ia  on nb."ipAddress"              =  ia.id;
 
 revoke all    on management."remove-mysql-server" from aoadmin;
 grant  select on management."remove-mysql-server" to   aoadmin;

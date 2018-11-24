@@ -25,10 +25,10 @@ union all (select accounting, aosh_command from management."remove-canceled-post
 -- TODO: email.SendmailServer without any email.SendmailBind
 -- net_binds
 union all (select accounting, aosh_command from management."remove-canceled-net_binds" order by accounting, port)
--- IPAddress.hostname
-union all (select accounting, aosh_command from management."remove-canceled-IPAddress.hostname" order by accounting, net.reverse_hostname(hostname), "inetAddress")
--- IPAddress.package
-union all (select accounting, aosh_command from management."remove-canceled-IPAddress.package" order by accounting, net.reverse_hostname(hostname), "inetAddress")
+-- net.IpAddress.hostname
+union all (select accounting, aosh_command from management."remove-canceled-net.IpAddress.hostname" order by accounting, net.reverse_hostname(hostname), "inetAddress")
+-- net.IpAddress.package
+union all (select accounting, aosh_command from management."remove-canceled-net.IpAddress.package" order by accounting, net.reverse_hostname(hostname), "inetAddress")
 -- TODO: pki.Certificate (once have auto-cleanup within aoserv-daemon)
 -- TODO: servers (once a server is owned by a package in the schema)
 -- linux.LinuxUser

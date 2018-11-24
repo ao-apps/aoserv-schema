@@ -15,7 +15,7 @@ alter table dns."Record"
 alter table dns."Record"
   add constraint "dhcpAddress_fkey"
   foreign key ("dhcpAddress")
-  references "IPAddress" (id)
+  references net."IpAddress" (id)
   on delete restrict
   on update cascade
 ;

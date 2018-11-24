@@ -24,7 +24,7 @@ union all (select 'postgresql'::name as "schema", 'postgres_servers'::name as "t
            where num_databases=0 or num_users=0)
 -- TODO: email.SendmailServer without any email.SendmailBind
 -- TODO: firewalld_zones
-union all (select 'net'::name as "schema", 'IPAddress'::name as "table", count(*) as unused from management."release-IPAddress"
+union all (select 'net'::name as "schema", 'IpAddress'::name as "table", count(*) as unused from management."release-net.IpAddress"
            where num_binds=0 and "AO_SERVER" is not null)
 -- pki.Certificate
 union all (select 'pki'::name as "schema", 'Certificate'::name as "table", count(*) as unused from management."remove-ssl-certificate"

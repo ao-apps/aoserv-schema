@@ -22,7 +22,7 @@ from
              linux."LinuxServer" ao
   inner join mysql."MysqlServer" ms on ao.server      = ms.ao_server
   inner join public.net_binds    nb on ms.net_bind    = nb.pkey
-  inner join public."IPAddress"  ia on nb."ipAddress" = ia.id
+  inner join net."IpAddress"     ia on nb."ipAddress" = ia.id
 where
   ia."inetAddress" != '127.0.0.1';
 

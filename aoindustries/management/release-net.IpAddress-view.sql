@@ -1,6 +1,6 @@
--- See http://localhost:8080/docs/ao/management/ip-addresses/release-IPAddress#procedure
+-- See http://localhost:8080/docs/ao/management/ip-addresses/release-net.IpAddress#procedure
 create or replace view
-  management."release-IPAddress"
+  management."release-net.IpAddress"
 as
 select
   (select count(*) from public.net_binds nb where nb."ipAddress" = ia.id) as num_binds,
@@ -18,7 +18,7 @@ select
   nd."deviceID" as "DEVICE_ID",
   ia."inetAddress" as "IP_ADDRESS"
 from
-             public."IPAddress"                    ia
+             net."IpAddress"                       ia
   inner join public.net_devices                    nd   on ia."netDevice"              =   nd.pkey
   inner join public.net_device_ids                 ndi  on nd."deviceID"               =  ndi."name"
   inner join public.servers                        se   on nd.server                   =   se.pkey
@@ -31,5 +31,5 @@ where
   -- Do not release loopback IPs
   and not ndi.is_loopback;
 
-revoke all    on management."release-IPAddress" from aoadmin;
-grant  select on management."release-IPAddress" to   aoadmin;
+revoke all    on management."release-net.IpAddress" from aoadmin;
+grant  select on management."release-net.IpAddress" to   aoadmin;

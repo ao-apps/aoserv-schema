@@ -1,5 +1,5 @@
 create or replace view
-  management."remove-canceled-IPAddress.hostname"
+  management."remove-canceled-net.IpAddress.hostname"
 as
 select
   bu.accounting,
@@ -20,7 +20,7 @@ select
   ao.hostname,
   ia."inetAddress"
 from
-             public."IPAddress"  ia
+             net."IpAddress"     ia
   inner join billing."Package"   pk on ia.package     = pk.pkey
   inner join account."Account"   bu on pk.accounting  = bu.accounting
   inner join public.net_devices  nd on ia."netDevice" = nd.pkey
@@ -29,5 +29,5 @@ from
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 
-revoke all    on management."remove-canceled-IPAddress.hostname" from aoadmin;
-grant  select on management."remove-canceled-IPAddress.hostname" to   aoadmin;
+revoke all    on management."remove-canceled-net.IpAddress.hostname" from aoadmin;
+grant  select on management."remove-canceled-net.IpAddress.hostname" to   aoadmin;

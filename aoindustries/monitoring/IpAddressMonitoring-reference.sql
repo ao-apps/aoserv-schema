@@ -1,7 +1,7 @@
 alter table monitoring."IpAddressMonitoring"
   add constraint id_fkey
   foreign key (id)
-  references public."IPAddress" (id)
+  references net."IpAddress" (id)
   on delete cascade
   on update cascade
 ;

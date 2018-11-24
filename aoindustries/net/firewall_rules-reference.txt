@@ -1,5 +1,5 @@
 /* TODO
-alter table "IPAddress"
+alter table net."IpAddress"
   add constraint net_device_fkey
   foreign key (net_device)
   references net_devices (pkey)

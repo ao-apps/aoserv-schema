@@ -49,25 +49,37 @@ Naming:
 
 2) Tables named capitalized and singular, matching Java class name
 
-3) Tables names never all caps for word, "IpAddress" instead of "IPAddress".
+3) Table names never all caps for first word, so that the table
+   name matches the column names that refer to it, except the capitalization of the
+   first character.  This makes for simple, predictable, and bidirectionally unambiguous
+   lowerCamelCase to UpperCamelCase conversions.  So "IpAddress" instead of "IPAddress".
+
+   Additional words may maintain their capitalization, such as "DnsTLD", but the
+   trend is going more to avoiding this: "DnsTld".
+
+4) Column names never all caps for first word, "IpAddress" instead of "IPAddress".
    "IPAddress" becomes bean "iPAddress".
 
-4) Non-foreign key columns lower camelCase, matching Java field and JavaBeans getters.
+   Additional words may maintain their capitalization, such as "dnsTLD", but the
+   trend is going more to avoiding this: "dnsTld".
 
-5) Foreign key columns named capital, matching the name of the table they reference.
+5) Non-foreign key columns lower camelCase, matching Java field and JavaBeans getters.
+
+6) Foreign key columns named capital, matching the name of the table they reference.
    This connects well to AOSH dot-join syntax:
        select Package.name from Username
 
-6) Boolean columns should be "isSomething", matching the Java conventions.
+7) Boolean columns should be "isSomething", matching the Java conventions.
    On the Java side, the field should also be "isSomething", with a getter
    "isSomething()" and setter of "setSomething(boolean isSomething)".
 
-7) Not strictly required, but good idea to avoid Java keywords in column names,
+8) Not strictly required, but good idea to avoid Java keywords in column names,
    as this can save the overhead of manually declaring JavaBeans properties and
    JSP EL expressions such as obj['public'] where obj.public wouldn't work.
 
-8) Indexes that exist primarily to align to foreign keys should be named
+9) Indexes that exist primarily to align to foreign keys should be named
    "Table_column_fkey"
+
 
 Inserting:
 

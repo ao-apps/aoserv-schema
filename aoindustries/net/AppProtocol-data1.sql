@@ -1,4 +1,4 @@
-COPY "protocols" FROM stdin;
+COPY net."AppProtocol" FROM stdin;
 submission	587	Mail Message Submission	t	tcp
 NTP	123	Network Time Protocol	f	udp
 SMTP	25	Simple Mail Transport Protocol	t	tcp
@@ -52,9 +52,9 @@ milter	12000	Sendmail Milter	f	tcp
 sieve	4190	timsieved	f	tcp
 RFB	5900	RFB used by VNC	f	tcp
 \.
-insert into protocols values ('SMTPS', 465, 'SMTP SSL', false, 'tcp');
-insert into protocols values ('spamd', 783, 'SpamAssassin Daemon', false, 'tcp');
--- TODO: memcached also listens on UDP, how to represent in protocols table?
-insert into protocols values ('memcached', 11211, 'Memcached', false, 'tcp');
-insert into protocols values ('csync2', 30865, 'Csync2 Daemon', false, 'tcp');
-insert into protocols values ('elasticsearch', 9200, 'Elasticsearch', false, 'tcp');
+insert into net."AppProtocol" values ('SMTPS', 465, 'SMTP SSL', false, 'tcp');
+insert into net."AppProtocol" values ('spamd', 783, 'SpamAssassin Daemon', false, 'tcp');
+-- TODO: memcached also listens on UDP, how to represent in net.AppProtocol table?
+insert into net."AppProtocol" values ('memcached', 11211, 'Memcached', false, 'tcp');
+insert into net."AppProtocol" values ('csync2', 30865, 'Csync2 Daemon', false, 'tcp');
+insert into net."AppProtocol" values ('elasticsearch', 9200, 'Elasticsearch', false, 'tcp');

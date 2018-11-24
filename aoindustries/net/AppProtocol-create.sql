@@ -1,4 +1,4 @@
-create table protocols (
+create table net."AppProtocol" (
   protocol text
     primary key,
   port integer
@@ -10,5 +10,5 @@ create table protocols (
   net_protocol net."NetProtocol"
     not null
 );
-grant all            on protocols to aoadmin;
-grant select, update on protocols to aoserv_app;
+grant all    on net."AppProtocol" to aoadmin;
+grant select on net."AppProtocol" to aoserv_app;

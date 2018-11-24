@@ -1,11 +1,10 @@
-create sequence         mysql."MysqlServerUser_pkey_seq" cycle;
-grant all            on mysql."MysqlServerUser_pkey_seq" to aoadmin;
-grant select, update on mysql."MysqlServerUser_pkey_seq" to aoserv_app;
+create sequence         mysql."MysqlUserServer_pkey_seq" cycle;
+grant all            on mysql."MysqlUserServer_pkey_seq" to aoadmin;
+grant select, update on mysql."MysqlUserServer_pkey_seq" to aoserv_app;
 
--- TODO: Rename "MysqlUserServer"
-create table mysql."MysqlServerUser" (
+create table mysql."MysqlUserServer" (
   pkey integer
-    default nextval('mysql."MysqlServerUser_pkey_seq"')
+    default nextval('mysql."MysqlUserServer_pkey_seq"')
     primary key,
   username text
     not null,
@@ -36,5 +35,5 @@ create table mysql."MysqlServerUser" (
     default 0,
   unique (mysql_server, username)
 );
-grant all                            on mysql."MysqlServerUser" to aoadmin;
-grant select, insert, update, delete on mysql."MysqlServerUser" to aoserv_app;
+grant all                            on mysql."MysqlUserServer" to aoadmin;
+grant select, insert, update, delete on mysql."MysqlUserServer" to aoserv_app;

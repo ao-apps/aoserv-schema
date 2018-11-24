@@ -11,7 +11,7 @@ as
           (select 'web'::name as "schema", 'HttpdServer'::name as "table", count(*) as unused from management."remove-httpd-server"
            where num_site_binds=0)
 -- TODO: mysql.MysqlDatabase (without any mysql.MysqlDatabaseUser)
--- TODO: mysql.MysqlServerUser (without any mysql.MysqlDatabaseUser)
+-- TODO: mysql.MysqlUserServer (without any mysql.MysqlDatabaseUser)
 -- TODO: mysql.MysqlUser (orphaned)
 -- mysql.MysqlServer
 union all (select 'mysql'::name as "schema", 'MysqlServer'::name as "table", count(*) as unused from management."remove-mysql-server"

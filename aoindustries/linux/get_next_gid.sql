@@ -20,7 +20,7 @@ BEGIN
       _gid := _min_gid;
     END IF;
     IF NOT EXISTS (
-      SELECT lsg.gid FROM linux_server_groups lsg WHERE
+      SELECT lsg.gid FROM linux."LinuxGroupAoServer" lsg WHERE
         lsg.ao_server = _ao_server
         AND lsg.gid = _gid
     ) THEN

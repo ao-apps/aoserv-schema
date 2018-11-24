@@ -22,7 +22,7 @@ alter table web."SharedTomcat"
 alter table web."SharedTomcat"
   add constraint linux_server_group_fkey
   foreign key (linux_server_group)
-  references linux_server_groups (pkey)
+  references linux."LinuxGroupAoServer" (pkey)
   on delete restrict
   on update cascade
 ;

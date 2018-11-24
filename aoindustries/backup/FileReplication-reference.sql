@@ -19,10 +19,3 @@ alter table backup."FileReplication"
   on delete restrict
   on update cascade
 ;
-alter table backup."FileReplication"
-  add constraint quota_gid_fkey
-  foreign key (quota_gid)
-  references linux_ids (id)
-  on delete restrict
-  on update cascade
-;

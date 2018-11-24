@@ -14,7 +14,7 @@ create table backup."FileReplication" (
   connect_address text,
   connect_from inet,
   enabled boolean not null default true,
-  quota_gid integer,
+  quota_gid linux."LinuxId",
   unique(server, backup_partition),
   unique(backup_partition, quota_gid),
   -- Failover mirrors (retention=1) may not be on a quota-enabled partition

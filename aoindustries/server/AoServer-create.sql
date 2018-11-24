@@ -1,4 +1,4 @@
-create table ao_servers (
+create table server."AoServer" (
   server integer
     primary key,
   hostname text not null unique
@@ -62,13 +62,43 @@ create table ao_servers (
         and monitoring_load_critical > monitoring_load_high
       )
     ),
-  uid_min integer not null check (uid_min >= 500 and uid_min < 60000) default 1000,
-  gid_min integer not null check (gid_min >= 500 and gid_min < 60000) default 1000,
+  "uidMin" linux."LinuxId"
+    not null
+    check ("uidMin" >= 500)
+    default 1000,
+  "gidMin" linux."LinuxId"
+    not null
+    check ("gidMin" >= 500)
+    default 1000,
+  "uidMax" linux."LinuxId"
+    not null
+    check ("uidMax" >= "uidMin")
+    default 60000,
+  "gidMax" linux."LinuxId"
+    not null
+    check ("gidMax" >= "gidMin")
+    default 60000,
+  "lastUid" linux."LinuxId"
+    check (
+      "lastUid" is null
+      or "lastUid" between "uidMin" and "uidMax"
+    ),
+  "lastGid" linux."LinuxId"
+    check (
+      "lastGid" is null
+      or "lastGid" between "gidMin" and "gidMax"
+    ),
   sftp_umask bigint
   check (
     sftp_umask is null
     or sftp_umask between 0 and 511 -- Between 000 and 777 octal
   )
 );
-grant all            on ao_servers to aoadmin;
-grant select, update on ao_servers to aoserv_app;
+
+comment on column server."AoServer"."uidMin" is 'The min value for automatic uid selection in useradd';
+comment on column server."AoServer"."uidMax" is 'The max value for automatic uid selection in useradd';
+comment on column server."AoServer"."gidMin" is 'The min value for automatic uid selection in groupadd';
+comment on column server."AoServer"."gidMax" is 'The max value for automatic uid selection in groupadd';
+
+grant all            on server."AoServer" to aoadmin;
+grant select, update on server."AoServer" to aoserv_app;

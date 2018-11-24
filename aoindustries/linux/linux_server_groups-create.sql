@@ -6,16 +6,16 @@ create table linux_server_groups (
   pkey integer
     default nextval('linux.linux_server_groups_pkey_seq')
     primary key,
-  name text
+  "name" text
     not null,
   ao_server integer
     not null,
-  gid integer
+  gid linux."LinuxId"
     not null,
   created timestamp with time zone
     not null
     default now(),
-  unique(name, ao_server),
+  unique("name", ao_server),
   unique(ao_server, gid)
 );
 grant all                            on linux_server_groups to aoadmin;

@@ -28,7 +28,7 @@ select
     limit 1
   ) is not null then 'Yes' else 'No' end as "HAS_OTHER_ANY_VERSION"
 from
-             public.ao_servers                      ao
+             server."AoServer"                      ao
   inner join public.postgres_servers                ps on ao.server                   =  ps.ao_server
   inner join distribution."SoftwareVersion"         tv on ps.version                  =  tv.pkey
   inner join distribution."OperatingSystemVersion" osv on tv.operating_system_version = osv.pkey

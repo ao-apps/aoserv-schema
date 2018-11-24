@@ -25,7 +25,7 @@ as
 --      ao.disk
     from
       public.servers se,
-      public.ao_servers ao
+      server."AoServer" ao
     where
       se.pkey=ao.server
     order by
@@ -49,7 +49,7 @@ as
 --    sum(coalesce(rack, 0)),
 --    sum(disk)
 --  from
---    public.ao_servers
+--    server."AoServer"
 ;
 
 revoke all    on management.server_stats from aoadmin;

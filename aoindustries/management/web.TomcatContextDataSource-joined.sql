@@ -14,7 +14,7 @@ from
              web."TomcatContextDataSource" htds
   inner join web."TomcatContext"           htc on htds.tomcat_context = htc.pkey
   inner join web."Site"                    hs  on  htc.tomcat_site    =  hs.pkey
-  inner join public.ao_servers             ao  on   hs.ao_server      =  ao.server;
+  inner join server."AoServer"             ao  on   hs.ao_server      =  ao.server;
 
 revoke all    on management."web.TomcatContextDataSource-joined" from aoadmin;
 grant  select on management."web.TomcatContextDataSource-joined" to   aoadmin;

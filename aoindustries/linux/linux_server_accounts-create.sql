@@ -10,7 +10,7 @@ create table linux_server_accounts (
     not null,
   ao_server integer
     not null,
-  uid integer
+  uid linux."LinuxId"
     not null,
   home text
     not null,

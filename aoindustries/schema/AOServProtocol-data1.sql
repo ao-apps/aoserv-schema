@@ -1543,7 +1543,8 @@ TODO: Nullable descriptions instead of where we have ''?
 TODO: filter schema.Type by only those matching current protocol, including id non-breaking sequence starting at 0
 TODO: Remove unused email_attachment_blocks
 TODO: Is net_devices.delete_route still used?
-TODO: failover_file_replications.connect_address should be a hostaddress type?'
+TODO: failover_file_replications.connect_address should be a hostaddress type?
+TODO: uidMax, ... on ao_servers'
 );
 -- TODO added ip_sets table
 -- TODO added ip_set_entries table

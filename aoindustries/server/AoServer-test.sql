@@ -1,4 +1,4 @@
-insert into ao_servers values(
+insert into server."AoServer" values(
     2,
     'test.aoindustries.com',
 	26,

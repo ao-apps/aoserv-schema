@@ -9,7 +9,7 @@ select
 from
              email."List"                el
   inner join public.linux_server_groups lsg on  el.linux_server_group = lsg.pkey
-  inner join public.ao_servers           ao on lsg.ao_server          =  ao.server
+  inner join server."AoServer"           ao on lsg.ao_server          =  ao.server
   inner join public.linux_groups         lg on lsg."name"             =  lg."name"
   inner join billing."Package"           pk on  lg.package            =  pk."name"
   inner join account."Account"           bu on  pk.accounting         =  bu.accounting

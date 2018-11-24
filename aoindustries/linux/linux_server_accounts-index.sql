@@ -1,5 +1,6 @@
-create index linux_server_accounts_ao_server_idx on linux_server_accounts (
-  ao_server
+create index linux_server_accounts_ao_server_uid_idx on linux_server_accounts (
+  ao_server,
+  uid
 );
 create index linux_server_accounts_uid_idx on linux_server_accounts (
   uid

@@ -10,7 +10,7 @@ select
 from
              mysql."MysqlDatabase" md
   inner join mysql."MysqlServer"   ms on md.mysql_server = ms.net_bind
-  inner join public.ao_servers     ao on ms.ao_server    = ao.server
+  inner join server."AoServer"     ao on ms.ao_server    = ao.server
   inner join billing."Package"     pk on md.package      = pk."name"
   inner join account."Account"     bu on pk.accounting   = bu.accounting
 where

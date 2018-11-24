@@ -1,10 +1,10 @@
-create sequence         net.net_devices_pkey_seq cycle;
-grant all            on net.net_devices_pkey_seq to aoadmin;
-grant select, update on net.net_devices_pkey_seq to aoserv_app;
+create sequence         net."Device_pkey_seq" cycle;
+grant all            on net."Device_pkey_seq" to aoadmin;
+grant select, update on net."Device_pkey_seq" to aoserv_app;
 
-create table net_devices (
+create table net."Device" (
   pkey integer
-    default nextval('net.net_devices_pkey_seq')
+    default nextval('net."Device_pkey_seq"')
     primary key,
   server integer
     not null,
@@ -27,5 +27,5 @@ create table net_devices (
     default true,
   unique(server, "deviceID")
 );
-grant all    on net_devices to aoadmin;
-grant select on net_devices to aoserv_app;
+grant all    on net."Device" to aoadmin;
+grant select on net."Device" to aoserv_app;

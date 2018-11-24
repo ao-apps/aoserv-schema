@@ -1,5 +1,5 @@
 begin;
-insert into net_devices values(
+insert into net."Device" values(
     3,
 	2,
 	'lo',
@@ -15,7 +15,7 @@ insert into net_devices values(
     null, -- monitoring_bit_rate_high
     null  -- monitoring_bit_rate_critical
 );
-insert into net_devices values(
+insert into net."Device" values(
     4,
 	2,
 	'eth0',

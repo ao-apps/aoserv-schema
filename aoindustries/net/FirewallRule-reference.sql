@@ -2,7 +2,7 @@
 alter table net."FirewallRule"
   add constraint net_device_fkey
   foreign key (net_device)
-  references net_devices (pkey)
+  references net."Device" (pkey)
   on delete restrict
   on update cascade
 ;

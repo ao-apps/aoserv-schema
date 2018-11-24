@@ -19,7 +19,7 @@ select
   ia."inetAddress" as "IP_ADDRESS"
 from
              net."IpAddress"                       ia
-  inner join public.net_devices                    nd   on ia."netDevice"              =   nd.pkey
+  inner join net."Device"                          nd   on ia."netDevice"              =   nd.pkey
   inner join net."DeviceId"                        ndi  on nd."deviceID"               =  ndi."name"
   inner join public.servers                        se   on nd.server                   =   se.pkey
   inner join billing."Package"                     sepk on se.package                  = sepk.pkey

@@ -1,7 +1,7 @@
 alter table net."IpAddress"
   add constraint "netDevice_fkey"
   foreign key ("netDevice")
-  references net_devices (pkey)
+  references net."Device" (pkey)
   on delete restrict
   on update cascade
 ;

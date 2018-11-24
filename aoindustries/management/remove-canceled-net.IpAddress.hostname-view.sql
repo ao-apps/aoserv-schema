@@ -23,7 +23,7 @@ from
              net."IpAddress"     ia
   inner join billing."Package"   pk on ia.package     = pk.pkey
   inner join account."Account"   bu on pk.accounting  = bu.accounting
-  inner join public.net_devices  nd on ia."netDevice" = nd.pkey
+  inner join net."Device"        nd on ia."netDevice" = nd.pkey
   inner join public.servers      se on nd.server      = se.pkey
   left  join linux."LinuxServer" ao on se.pkey        = ao.server
 where

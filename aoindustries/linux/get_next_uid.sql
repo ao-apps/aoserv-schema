@@ -1,18 +1,10 @@
-/*
-Gets the next available UID in the range minUid through maxUid, starting the
-search at lastUid + 1 (or minUid when lastUid is null).
-
-Updates lastUid to the UID located.
-
-Raises an exception when no UID can be allocated.
- */
 CREATE OR REPLACE FUNCTION linux.get_next_uid (_ao_server integer)
 RETURNS linux."LinuxId" AS $$
 DECLARE
   _min_uid  CONSTANT linux."LinuxId" := (SELECT "uidMin" FROM server."AoServer" WHERE server = _ao_server);
   _max_uid  CONSTANT linux."LinuxId" := (SELECT "uidMax" FROM server."AoServer" WHERE server = _ao_server);
   _last_uid CONSTANT linux."LinuxId" := coalesce(
-    (SELECT "lastUid" FROM server."AoServer" WHERE server = _ao_server),
+    (SELECT "lastUid" FROM server."AoServer" WHERE server = _ao_server FOR UPDATE),
     _max_uid
   );
   _uid linux."LinuxId" := _last_uid;
@@ -43,6 +35,13 @@ $$ LANGUAGE plpgsql
 VOLATILE
 RETURNS NULL ON NULL INPUT;
 
+COMMENT ON FUNCTION linux.get_next_uid (integer) IS 'Gets the next available UID in the range minUid through maxUid, starting the
+search at lastUid + 1 (or minUid when lastUid is null).
+
+Updates lastUid to the UID located.
+
+Raises an exception when no UID can be allocated.';
+
 CREATE OR REPLACE FUNCTION linux.get_next_uid (_ao_server text)
 RETURNS linux."LinuxId" AS $$
   SELECT linux.get_next_uid(
@@ -51,3 +50,5 @@ RETURNS linux."LinuxId" AS $$
 $$ LANGUAGE 'sql'
 VOLATILE
 RETURNS NULL ON NULL INPUT;
+
+COMMENT ON FUNCTION linux.get_next_uid (text) IS 'Resolves the server id from hostname and calls linux.get_next_uid(integer).';

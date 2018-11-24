@@ -4,7 +4,7 @@ DECLARE
   _min_gid  CONSTANT linux."LinuxId" := (SELECT "gidMin" FROM server."AoServer" WHERE server = _ao_server);
   _max_gid  CONSTANT linux."LinuxId" := (SELECT "gidMax" FROM server."AoServer" WHERE server = _ao_server);
   _last_gid CONSTANT linux."LinuxId" := coalesce(
-    (SELECT "lastGid" FROM server."AoServer" WHERE server = _ao_server),
+    (SELECT "lastGid" FROM server."AoServer" WHERE server = _ao_server FOR UPDATE),
     _max_gid
   );
   _gid linux."LinuxId" := _last_gid;
@@ -35,6 +35,13 @@ $$ LANGUAGE plpgsql
 VOLATILE
 RETURNS NULL ON NULL INPUT;
 
+COMMENT ON FUNCTION linux.get_next_gid (integer) IS 'Gets the next available GID in the range minGid through maxGid, starting the
+search at lastGid + 1 (or minGid when lastGid is null).
+
+Updates lastGid to the GID located.
+
+Raises an exception when no GID can be allocated.';
+
 CREATE OR REPLACE FUNCTION linux.get_next_gid (_ao_server text)
 RETURNS linux."LinuxId" AS $$
   SELECT linux.get_next_gid(
@@ -43,3 +50,5 @@ RETURNS linux."LinuxId" AS $$
 $$ LANGUAGE 'sql'
 VOLATILE
 RETURNS NULL ON NULL INPUT;
+
+COMMENT ON FUNCTION linux.get_next_gid (text) IS 'Resolves the server id from hostname and calls linux.get_next_gid(integer).';

@@ -1,6 +1,8 @@
-create sequence           net.firewall_rules_pkey_seq cycle;
-grant all            on   net.firewall_rules_pkey_seq to aoadmin;
---grant select, update on net.firewall_rules_pkey_seq to aoserv_app;
+/* TODO
+create sequence net."FirewallRule_pkey_seq" cycle;
+grant all    on net."FirewallRule_pkey_seq" to aoadmin;
+grant select on net."FirewallRule_pkey_seq" to aoserv_app;
+ */
 
 --
 -- A firewall rule has:
@@ -17,9 +19,9 @@ grant all            on   net.firewall_rules_pkey_seq to aoadmin;
 -- 11) Optional limiter (accept only)
 -- 12) Mandatory - rule may not be removed, edited, or reordered
 /* TODO
-create table firewall_rules (
+create table net."FirewallRule" (
   pkey integer
-    default nextval('net.firewall_rules_pkey_seq')
+    default nextval('net."FirewallRule_pkey_seq"')
     primary key,
   net_device integer
     not null,
@@ -38,6 +40,6 @@ create table firewall_rules (
   ),
   description text not null
 );
-grant all    on firewall_rules to aoadmin;
-grant select on firewall_rules to aoserv_app;
-*/
+grant all    on net."FirewallRule" to aoadmin;
+grant select on net."FirewallRule" to aoserv_app;
+ */

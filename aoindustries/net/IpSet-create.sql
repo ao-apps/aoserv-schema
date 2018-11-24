@@ -1,10 +1,11 @@
-create sequence         net.ip_sets_pkey_seq cycle;
-grant all            on net.ip_sets_pkey_seq to aoadmin;
---grant select, update on net.ip_sets_pkey_seq to aoserv_app;
+/* TODO
+create sequence         net."IpSet_pkey_seq" cycle;
+grant all            on net."IpSet_pkey_seq" to aoadmin;
+grant select, update on net."IpSet_pkey_seq" to aoserv_app;
 
-create table ip_sets (
+create table net."IpSet" (
   pkey integer
-    default nextval('net.ip_sets_pkey_seq')
+    default nextval('net."IpSet_pkey_seq"')
     primary key,
   accounting text
     not null,
@@ -19,44 +20,45 @@ create table ip_sets (
   allow_subaccount_use boolean
     not null
 );
-grant all    on ip_sets to aoadmin;
-grant select on ip_sets to aoserv_app;
+grant all    on net."IpSet" to aoadmin;
+grant select on net."IpSet" to aoserv_app;
 
 BEGIN;
-INSERT INTO ip_sets VALUES (
+INSERT INTO net."IpSet" VALUES (
     1,
     'AOINDUSTRIES',
     'admins',
     'Service Provider Administrators',
     true
 );
-INSERT INTO ip_sets VALUES (
+INSERT INTO net."IpSet" VALUES (
     2,
     'AOINDUSTRIES',
     'nameservers',
     'Service Provider Name Servers',
     true
 );
-INSERT INTO ip_sets VALUES (
+INSERT INTO net."IpSet" VALUES (
     3,
     'AOINDUSTRIES',
     'master',
     'Service Provider Master Servers',
     true
 );
-INSERT INTO ip_sets VALUES (
+INSERT INTO net."IpSet" VALUES (
     4,
     'AOINDUSTRIES',
     'monitoring',
     'Service Provider Monitoring Servers',
     true
 );
-INSERT INTO ip_sets VALUES (
+INSERT INTO net."IpSet" VALUES (
     5,
     'AOINDUSTRIES',
     'javatator',
     'Javatator Database Administration Web Interface',
     false
 );
-SELECT setval('net.ip_sets_pkey_seq', 6, false);
+SELECT setval('net."IpSet_pkey_seq"', 6, false);
 COMMIT;
+ */

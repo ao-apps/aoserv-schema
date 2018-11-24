@@ -1546,6 +1546,6 @@ TODO: Is net_devices.delete_route still used?
 TODO: failover_file_replications.connect_address should be a hostaddress type?
 TODO: uidMax, ... on ao_servers'
 );
--- TODO added ip_sets table
--- TODO added ip_set_entries table
+-- TODO added net.IpSet table
+-- TODO added net.IpSetEntry table
 -- TODO added ip_reputation_limiter_manual_sets table

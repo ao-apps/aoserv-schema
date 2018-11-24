@@ -1,14 +1,16 @@
-alter table ip_set_entries
+/* TODO
+alter table net."IpSetEntry"
   add constraint set_fkey
   foreign key ("set")
-  references ip_sets (pkey)
+  references net."IpSet" (pkey)
   on delete restrict
   on update cascade
 ;
-alter table ip_set_entries
+alter table net."IpSetEntry"
   add constraint created_fkey
   foreign key (created_by)
   references account."Administrator" (username)
   on delete restrict
   on update cascade
 ;
+ */

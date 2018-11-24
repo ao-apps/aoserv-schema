@@ -15,7 +15,7 @@ alter table web."Site"
 alter table web."Site"
   add constraint linux_account_fkey
   foreign key (linux_account)
-  references linux_accounts (username)
+  references linux."LinuxUser" (username)
   on delete restrict
   on update cascade
 ;

@@ -1,14 +1,14 @@
 alter table linux_server_accounts
   add constraint username_fkey
   foreign key (username)
-  references linux_accounts (username)
+  references linux."LinuxUser" (username)
   on delete restrict
   on update cascade
 ;
 alter table linux_server_accounts
   add constraint ao_server_fkey
   foreign key (ao_server)
-  references ao_servers (server)
+  references server."AoServer" (server)
   on delete restrict
   on update cascade
 ;

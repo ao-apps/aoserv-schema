@@ -8,7 +8,7 @@ alter table linux_group_accounts
 alter table linux_group_accounts
   add constraint username_fkey
   foreign key (username)
-  references linux_accounts (username)
+  references linux."LinuxUser" (username)
   on delete restrict
   on update cascade
 ;

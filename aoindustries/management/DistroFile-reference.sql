@@ -15,7 +15,7 @@ alter table management."DistroFile"
 alter table management."DistroFile"
   add constraint linux_account_fkey
   foreign key (linux_account)
-  references linux_accounts (username)
+  references linux."LinuxUser" (username)
   on delete restrict
   on update cascade
 ;

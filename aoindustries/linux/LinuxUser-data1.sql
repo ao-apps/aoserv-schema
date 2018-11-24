@@ -1,4 +1,4 @@
-COPY linux_accounts (username, name, office_location, office_phone, home_phone, "type", shell, created, disable_log) FROM stdin;
+COPY linux."LinuxUser" (username, "name", office_location, office_phone, home_phone, "type", shell, created, disable_log) FROM stdin;
 xvfb	Xvfb Process	\N	\N	\N	application	/bin/bash	2001-09-04 12:01:43-05	\N
 bin	bin	\N	\N	\N	system	/sbin/nologin	2001-09-03 13:49:10-05	\N
 daemon	daemon	\N	\N	\N	system	/sbin/nologin	2001-09-03 13:49:23-05	\N

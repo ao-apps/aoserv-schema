@@ -1,4 +1,4 @@
-create table linux_accounts (
+create table linux."LinuxUser" (
   username text
     primary key,
   "name" text,
@@ -14,5 +14,5 @@ create table linux_accounts (
     default now(),
   disable_log integer
 );
-grant all                            on linux_accounts to aoadmin;
-grant select, insert, update, delete on linux_accounts to aoserv_app;
+grant all                            on linux."LinuxUser" to aoadmin;
+grant select, insert, update, delete on linux."LinuxUser" to aoserv_app;

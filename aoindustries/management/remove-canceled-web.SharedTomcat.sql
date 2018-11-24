@@ -8,7 +8,7 @@ select
   hst."name"
 from
              web."SharedTomcat"           hst
-  inner join server."AoServer"             ao on hst.ao_server            =  ao.server
+  inner join linux."LinuxServer"           ao on hst.ao_server            =  ao.server
   inner join public.linux_server_accounts lsa on hst.linux_server_account = lsa.pkey
   inner join account."Username"            un on lsa.username             =  un.username
   inner join billing."Package"             pk on  un.package              =  pk."name"

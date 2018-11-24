@@ -1,4 +1,4 @@
-create table server."AoServer" (
+create table linux."LinuxServer" (
   server integer
     primary key,
   hostname text not null unique
@@ -95,10 +95,10 @@ create table server."AoServer" (
   )
 );
 
-comment on column server."AoServer"."uidMin" is 'The min value for automatic uid selection in useradd';
-comment on column server."AoServer"."uidMax" is 'The max value for automatic uid selection in useradd';
-comment on column server."AoServer"."gidMin" is 'The min value for automatic uid selection in groupadd';
-comment on column server."AoServer"."gidMax" is 'The max value for automatic uid selection in groupadd';
+comment on column linux."LinuxServer"."uidMin" is 'The min value for automatic uid selection in useradd';
+comment on column linux."LinuxServer"."uidMax" is 'The max value for automatic uid selection in useradd';
+comment on column linux."LinuxServer"."gidMin" is 'The min value for automatic uid selection in groupadd';
+comment on column linux."LinuxServer"."gidMax" is 'The max value for automatic uid selection in groupadd';
 
-grant all            on server."AoServer" to aoadmin;
-grant select, update on server."AoServer" to aoserv_app;
+grant all            on linux."LinuxServer" to aoadmin;
+grant select, update on linux."LinuxServer" to aoserv_app;

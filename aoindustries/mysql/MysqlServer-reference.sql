@@ -8,7 +8,7 @@ alter table mysql."MysqlServer"
 alter table mysql."MysqlServer"
   add constraint ao_server_fkey
   foreign key (ao_server)
-  references server."AoServer" (server)
+  references linux."LinuxServer" (server)
   on delete restrict
   on update cascade
 ;

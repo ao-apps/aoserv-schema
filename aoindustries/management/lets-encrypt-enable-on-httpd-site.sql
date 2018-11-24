@@ -18,7 +18,7 @@ select
    ) as "ALT_HOSTNAMES"
 from
              web."Site"                            hs
-  inner join server."AoServer"                     ao on hs.ao_server                =  ao.server
+  inner join linux."LinuxServer"                   ao on hs.ao_server                =  ao.server
   inner join public.servers                        se on ao.server                   =  se.pkey
   inner join distribution."OperatingSystemVersion" osv on se.operating_system_version = osv.pkey
   left  join (

@@ -1,5 +1,5 @@
 select "schema".add_foreign_key('linux', 'linux_server_accounts', 'username',               'linux',   'linux_accounts',             'username', '1.0a100', null);
-select "schema".add_foreign_key('linux', 'linux_server_accounts', 'ao_server',              'server',  'ao_servers',                 'server',   '1.0a100', null);
+select "schema".add_foreign_key('linux', 'linux_server_accounts', 'ao_server',              'linux',   'ao_servers',                 'server',   '1.0a100', null);
 select "schema".add_foreign_key('linux', 'linux_server_accounts', 'uid',                    'linux',   'linux_ids',                  'id',       '1.0a100', '1.68');
 select "schema".add_foreign_key('linux', 'linux_server_accounts', 'uid',                    'linux',   'linux_ids',                  'id',       '1.69',    '1.80');
 select "schema".add_foreign_key('linux', 'linux_server_accounts', 'cron_backup_level',      'backup',  'backup_levels',              'level',    '1.0a100', '1.30');

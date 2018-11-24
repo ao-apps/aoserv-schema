@@ -1,4 +1,4 @@
-insert into server."AoServer" values(
+insert into linux."LinuxServer" values(
     2,
     'test.aoindustries.com',
 	26,

@@ -25,7 +25,7 @@ from
   inner join account."Account"   bu on pk.accounting  = bu.accounting
   inner join public.net_devices  nd on ia."netDevice" = nd.pkey
   inner join public.servers      se on nd.server      = se.pkey
-  left  join server."AoServer"   ao on se.pkey        = ao.server
+  left  join linux."LinuxServer" ao on se.pkey        = ao.server
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 

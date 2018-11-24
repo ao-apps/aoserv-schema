@@ -1,10 +1,10 @@
 CREATE OR REPLACE FUNCTION linux.get_next_gid (_ao_server integer)
 RETURNS linux."LinuxId" AS $$
 DECLARE
-  _min_gid  CONSTANT linux."LinuxId" := (SELECT "gidMin" FROM server."AoServer" WHERE server = _ao_server);
-  _max_gid  CONSTANT linux."LinuxId" := (SELECT "gidMax" FROM server."AoServer" WHERE server = _ao_server);
+  _min_gid  CONSTANT linux."LinuxId" := (SELECT "gidMin" FROM linux."LinuxServer" WHERE server = _ao_server);
+  _max_gid  CONSTANT linux."LinuxId" := (SELECT "gidMax" FROM linux."LinuxServer" WHERE server = _ao_server);
   _last_gid CONSTANT linux."LinuxId" := coalesce(
-    (SELECT "lastGid" FROM server."AoServer" WHERE server = _ao_server FOR UPDATE),
+    (SELECT "lastGid" FROM linux."LinuxServer" WHERE server = _ao_server FOR UPDATE),
     _max_gid
   );
   _gid linux."LinuxId" := _last_gid;
@@ -24,7 +24,7 @@ BEGIN
         lsg.ao_server = _ao_server
         AND lsg.gid = _gid
     ) THEN
-      UPDATE server."AoServer" SET "lastGid" = _gid WHERE server = _ao_server;
+      UPDATE linux."LinuxServer" SET "lastGid" = _gid WHERE server = _ao_server;
       RETURN _gid;
     END IF;
     EXIT WHEN _gid = _last_gid;
@@ -45,7 +45,7 @@ Raises an exception when no GID can be allocated.';
 CREATE OR REPLACE FUNCTION linux.get_next_gid (_ao_server text)
 RETURNS linux."LinuxId" AS $$
   SELECT linux.get_next_gid(
-    (SELECT server FROM server."AoServer" where hostname = _ao_server)
+    (SELECT server FROM linux."LinuxServer" where hostname = _ao_server)
   );
 $$ LANGUAGE 'sql'
 VOLATILE

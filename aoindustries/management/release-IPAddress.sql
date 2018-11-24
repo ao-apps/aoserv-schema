@@ -24,7 +24,7 @@ from
   inner join public.servers                        se   on nd.server                   =   se.pkey
   inner join billing."Package"                     sepk on se.package                  = sepk.pkey
   left  join distribution."OperatingSystemVersion" osv  on se.operating_system_version =  osv.pkey
-  left  join server."AoServer"                     ao   on se.pkey                     =   ao.server
+  left  join linux."LinuxServer"                   ao   on se.pkey                     =   ao.server
 where
   -- May only release alias IPs
   ia."isAlias"

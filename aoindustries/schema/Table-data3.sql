@@ -28,7 +28,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'server',
+    'linux',
     'ao_servers',
     'AOServ Servers',
     false,

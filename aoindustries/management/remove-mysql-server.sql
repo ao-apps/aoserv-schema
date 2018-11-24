@@ -29,7 +29,7 @@ select
     limit 1
   ) is not null then 'Yes' else 'No' end as "HAS_OTHER_ANY_VERSION"
 from
-             server."AoServer"                     ao
+             linux."LinuxServer"                   ao
   inner join mysql."MysqlServer"                   ms  on ao.server                   =  ms.ao_server
   inner join distribution."SoftwareVersion"        tv  on ms.version                  =  tv.pkey
   inner join distribution."OperatingSystemVersion" osv on tv.operating_system_version = osv.pkey

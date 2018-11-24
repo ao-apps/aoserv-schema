@@ -7,10 +7,10 @@ select
   ao.hostname,
   ed."domain"
 from
-             email."Domain"    ed
-  inner join server."AoServer" ao on ed.ao_server  = ao.server
-  inner join billing."Package" pk on ed.package    = pk."name"
-  inner join account."Account" bu on pk.accounting = bu.accounting
+             email."Domain"      ed
+  inner join linux."LinuxServer" ao on ed.ao_server  = ao.server
+  inner join billing."Package"   pk on ed.package    = pk."name"
+  inner join account."Account"   bu on pk.accounting = bu.accounting
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 

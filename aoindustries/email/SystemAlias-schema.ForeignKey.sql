@@ -1,1 +1,1 @@
-select "schema".add_foreign_key('email', 'system_email_aliases', 'ao_server', 'server', 'ao_servers', 'server', '1.0a100', null);
+select "schema".add_foreign_key('email', 'system_email_aliases', 'ao_server', 'linux', 'ao_servers', 'server', '1.0a100', null);

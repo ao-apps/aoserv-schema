@@ -20,7 +20,7 @@ select
       and mount
   ) then 'Yes' else 'No' end as "HAS_JK_MOUNT_ALL"
 from
-             server."AoServer"                 ao
+             linux."LinuxServer"               ao
   inner join web."Site"                        hs on   ao.server              =   hs.ao_server
   inner join web."TomcatSite"                 hts on   hs.pkey                =  hts.httpd_site
   inner join distribution."SoftwareVersion"    tv on  hts.version             =   tv.pkey

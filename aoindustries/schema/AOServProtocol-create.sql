@@ -1,3 +1,4 @@
+-- TODO: Move to master schema?
 create table "schema"."AOServProtocol" (
   version text
     primary key,

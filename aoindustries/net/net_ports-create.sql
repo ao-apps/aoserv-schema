@@ -1,3 +1,4 @@
+-- TODO: Remove this table, make it a domain like LinuxId
 create table net_ports (
   port integer
     primary key,

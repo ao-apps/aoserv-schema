@@ -9,7 +9,7 @@ as
           count(*)
         from
           public.business_servers bs,
-          public.businesses bu
+          account."Account" bu
         where
           se.pkey=bs.server
           and bs.is_default
@@ -25,11 +25,11 @@ as
 --      ao.disk
     from
       public.servers se,
-      public.ao_servers ao
+      linux."LinuxServer" ao
     where
       se.pkey=ao.server
     order by
-      reverse_hostname(ao.hostname)
+      net.reverse_hostname(ao.hostname)
   )
   union all select
     'Total:',
@@ -37,7 +37,7 @@ as
       select
         count(*)
       from
-        public.businesses
+        account."Account"
       where
         canceled is null
         and parent='AOINDUSTRIES'
@@ -49,8 +49,8 @@ as
 --    sum(coalesce(rack, 0)),
 --    sum(disk)
 --  from
---    public.ao_servers
+--    linux."LinuxServer"
 ;
 
-revoke all on management.server_stats from aoadmin;
-grant select on management.server_stats to aoadmin;
+revoke all    on management.server_stats from aoadmin;
+grant  select on management.server_stats to   aoadmin;

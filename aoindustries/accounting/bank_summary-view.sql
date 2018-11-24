@@ -1,14 +1,14 @@
 create or replace view accounting.bank_summary as
 select
-  bt.expense_code,
+  bt."expenseCategory",
   substring(bt."time"::text from 1 for 7) as "month",
   sum(bt.amount)
 from
-  public.bank_transactions bt,
-  public.expense_categories ec
+  accounting."BankTransaction" bt,
+  accounting."ExpenseCategory" ec
 where
-  bt.expense_code=ec.expense_code
-group by bt.expense_code, "month";
+  bt."expenseCategory"=ec."name"
+group by bt."expenseCategory", "month";
 
-revoke all on accounting.bank_summary from aoadmin;
-grant select on accounting.bank_summary to aoadmin;
+revoke all    on accounting.bank_summary from aoadmin;
+grant  select on accounting.bank_summary to   aoadmin;

@@ -1,7 +1,8 @@
--- See http://localhost:8080/docs/ao/software/3rd-party/postgresql/remove-postgresql-server#procedure
+-- See http://localhost:8080/docs/ao/management/postgresql/remove-postgresql-server#procedure
 create or replace view
   management."remove-postgresql-server"
-as select
+as
+select
   (select count(*) from public.postgres_databases pd where
     pd.postgres_server=ps.pkey and pd."name" not in (
       'template0', 'template1', 'aoserv'
@@ -27,11 +28,11 @@ as select
     limit 1
   ) is not null then 'Yes' else 'No' end as "HAS_OTHER_ANY_VERSION"
 from
-  public.ao_servers ao
-  inner join public.postgres_servers ps on ao.server=ps.ao_server
-  inner join public.technology_versions tv on ps.version=tv.pkey
-  inner join public.operating_system_versions osv on tv.operating_system_version=osv.pkey
-  inner join public.net_binds nb on ps.net_bind=nb.pkey;
+             linux."LinuxServer"                    ao
+  inner join public.postgres_servers                ps on ao.server                   =  ps.ao_server
+  inner join distribution."SoftwareVersion"         tv on ps.version                  =  tv.pkey
+  inner join distribution."OperatingSystemVersion" osv on tv.operating_system_version = osv.pkey
+  inner join public.net_binds                       nb on ps.net_bind                 =  nb.pkey;
 
-revoke all on management."remove-postgresql-server" from aoadmin;
-grant select on management."remove-postgresql-server" to aoadmin;
+revoke all    on management."remove-postgresql-server" from aoadmin;
+grant  select on management."remove-postgresql-server" to   aoadmin;

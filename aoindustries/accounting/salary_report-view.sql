@@ -1,22 +1,22 @@
 create or replace view accounting.salary_report as
 select
   substring(bt."time"::text from 1 for 7) as "month",
-  bt.expense_code as "type",
+  bt."expenseCategory" as "type",
   ba."name",
   -sum(bt.amount) as total
 from
-  public.bank_transactions bt,
-  public.business_administrators ba
+  accounting."BankTransaction" bt,
+  account."Administrator" ba
 where
   (
-    bt.expense_code='salary'
-    or bt.expense_code='dividend'
+    bt."expenseCategory"='salary'
+    or bt."expenseCategory"='dividend'
   ) and bt.administrator=ba.username
 group by
   "month",
-  bt.expense_code,
+  bt."expenseCategory",
   "name"
 ;
 
-revoke all on accounting.salary_report from aoadmin;
-grant select on accounting.salary_report to aoadmin;
+revoke all    on accounting.salary_report from aoadmin;
+grant  select on accounting.salary_report to   aoadmin;

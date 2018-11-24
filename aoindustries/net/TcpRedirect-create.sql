@@ -1,4 +1,4 @@
-create table net_tcp_redirects (
+create table net."TcpRedirect" (
   net_bind integer
     primary key,
   cps integer
@@ -10,5 +10,5 @@ create table net_tcp_redirects (
   destination_port integer
     not null
 );
-grant all                            on net_tcp_redirects to aoadmin;
-grant select, insert, update, delete on net_tcp_redirects to aoserv_app;
+grant all            on net."TcpRedirect" to aoadmin;
+grant select, delete on net."TcpRedirect" to aoserv_app;

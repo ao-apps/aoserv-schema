@@ -5,10 +5,3 @@ alter table net."TcpRedirect"
   on delete restrict
   on update cascade
 ;
-alter table net."TcpRedirect"
-  add constraint destination_port_fkey
-  foreign key (destination_port)
-  references net_ports (port)
-  on delete restrict
-  on update cascade
-;

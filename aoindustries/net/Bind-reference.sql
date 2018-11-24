@@ -20,13 +20,6 @@ alter table net."Bind"
   on update cascade
 ;
 alter table net."Bind"
-  add constraint port_fkey
-  foreign key (port)
-  references net_ports (port)
-  on delete restrict
-  on update cascade
-;
-alter table net."Bind"
   add constraint app_protocol_fkey
   foreign key (app_protocol)
   references net."AppProtocol" (protocol)

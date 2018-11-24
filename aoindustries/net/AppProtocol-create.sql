@@ -1,7 +1,7 @@
 create table net."AppProtocol" (
   protocol text
     primary key,
-  port integer
+  port net."Port"
     not null,
   "name" text
     not null,

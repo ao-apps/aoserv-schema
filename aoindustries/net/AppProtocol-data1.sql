@@ -24,11 +24,11 @@ ozone	3333	Ozone	f	tcp
 bootpc	68	BOOTP Client	f	udp
 bootps	67	BOOTP Server	f	udp
 irc	6565	IRC	f	tcp
-aoserv-daemon-ssl	1022	AO Serv Daemon (SSL)	f	tcp
+aoserv-daemon-ssl	984	AO Serv Daemon (SSL)	f	tcp
 rquotad	805	rpc.rquotad	f	tcp
 unknown	1024	Unknown	f	tcp
 aoserv-master-ssl	4583	AO Serv Master (SSL)	f	tcp
-aoserv-daemon	1023	AO Serv Daemon	f	tcp
+aoserv-daemon	985	AO Serv Daemon	f	tcp
 aoserv-master	4582	AO Serv Master	f	tcp
 FTP	21	File Transfer Protocol	t	tcp
 SSH	22	Secure Shell	t	tcp

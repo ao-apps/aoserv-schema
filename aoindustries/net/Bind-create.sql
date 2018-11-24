@@ -12,7 +12,7 @@ create table net."Bind" (
     not null,
   "ipAddress" integer
     not null,
-  port integer
+  port net."Port"
     not null,
   net_protocol net."NetProtocol"
     not null,

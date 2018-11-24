@@ -8,7 +8,7 @@ alter table linux_server_accounts
 alter table linux_server_accounts
   add constraint ao_server_fkey
   foreign key (ao_server)
-  references server."AoServer" (server)
+  references ao_servers (server)
   on delete restrict
   on update cascade
 ;

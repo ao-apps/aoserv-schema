@@ -19,7 +19,7 @@ select "schema".add_table(
     '1.43'
 );
 select "schema".add_table(
-    'server',
+    'linux',
     'ao_server_daemon_hosts',
     'AOServ Server Daemon Hosts',
     false,

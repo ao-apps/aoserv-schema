@@ -1,4 +1,4 @@
-alter table ao_server_daemon_hosts
+alter table linux."LinuxServerDaemonHost"
   add constraint ao_server_fkey
   foreign key (ao_server)
   references linux."LinuxServer" (server)

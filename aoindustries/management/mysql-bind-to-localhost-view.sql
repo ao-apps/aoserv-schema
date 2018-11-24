@@ -10,8 +10,8 @@ select
   array_to_string(
     array(
       select fz."name" from
-                  public.net_bind_firewalld_zones nbfz
-        left join net."FirewallZone"              fz   on nbfz.firewalld_zone = fz.pkey
+                  net."BindFirewallZone" nbfz
+        left join net."FirewallZone"     fz   on nbfz.firewalld_zone = fz.pkey
       where
         nb.pkey=nbfz.net_bind
       order by fz."name"

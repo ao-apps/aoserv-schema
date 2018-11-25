@@ -64,7 +64,7 @@ alter table tickets
 alter table tickets
   add constraint status_fkey
   foreign key (status)
-  references ticket_stati (status)
+  references ticket."Status" (status)
   on update cascade
   on delete restrict
 ;

@@ -7,7 +7,7 @@ create table "net/reputation"."LimiterClass" (
     default nextval('"net/reputation"."LimiterClass_pkey_seq"')
     primary key,
   limiter integer not null,
-  "class" "net/reputation"."LimiterClass.Class" not null,
+  "class" "net/reputation"."Class" not null,
   unique(limiter, "class"),
   syn_per_ip_burst    smallint not null,
   syn_per_ip_rate     smallint not null,

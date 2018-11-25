@@ -29,7 +29,7 @@ Per-IP limits are added first, so that a massive attack from one IP source will
 not block all members of that class.
  */
 CREATE OR REPLACE FUNCTION "net/reputation"."LimiterClass.validateLimits" (
-  "class"             "net/reputation"."LimiterClass.Class",
+  "class"             "net/reputation"."Class",
   syn_per_ip_burst    smallint,
   syn_per_ip_rate     smallint,
   syn_per_ip_unit     "net/reputation"."LimiterClass.TimeUnit",

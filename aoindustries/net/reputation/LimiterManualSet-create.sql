@@ -12,7 +12,7 @@ create table "net/reputation"."LimiterManualSet" (
     primary key,
   limiter integer not null,
   "set" integer not null,
-  "class" "net/reputation"."LimiterClass.Class" not null
+  "class" "net/reputation"."Class" not null
     check ("class" in ('gm', 'bm')),
   unique(limiter, "set")
 );

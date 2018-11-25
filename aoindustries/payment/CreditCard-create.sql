@@ -1,10 +1,10 @@
-create sequence         payment.credit_cards_pkey_seq cycle;
-grant all            on payment.credit_cards_pkey_seq to aoadmin;
-grant select, update on payment.credit_cards_pkey_seq to aoserv_app;
+create sequence         payment."CreditCard_pkey_seq" cycle;
+grant all            on payment."CreditCard_pkey_seq" to aoadmin;
+grant select, update on payment."CreditCard_pkey_seq" to aoserv_app;
 
-create table credit_cards (
+create table payment."CreditCard" (
   pkey integer
-    default nextval('payment.credit_cards_pkey_seq')
+    default nextval('payment."CreditCard_pkey_seq"')
     primary key,
   processor_id text not null,
   accounting text not null,
@@ -48,5 +48,5 @@ create table credit_cards (
     )
   )
 );
-grant all                            on credit_cards to aoadmin;
-grant select, insert, update, delete on credit_cards to aoserv_app;
+grant all                            on payment."CreditCard" to aoadmin;
+grant select, insert, update, delete on payment."CreditCard" to aoserv_app;

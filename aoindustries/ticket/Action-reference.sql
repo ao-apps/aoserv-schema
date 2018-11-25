@@ -36,28 +36,28 @@ alter table ticket."Action"
 alter table ticket."Action"
   add constraint old_priority_fkey
   foreign key (old_priority)
-  references ticket_priorities (priority)
+  references ticket."Priority" (priority)
   on update cascade
   on delete restrict
 ;
 alter table ticket."Action"
   add constraint new_priority_fkey
   foreign key (new_priority)
-  references ticket_priorities (priority)
+  references ticket."Priority" (priority)
   on update cascade
   on delete restrict
 ;
 alter table ticket."Action"
   add constraint old_type_fkey
   foreign key (old_type)
-  references ticket_types ("type")
+  references ticket."TicketType" ("type")
   on update cascade
   on delete restrict
 ;
 alter table ticket."Action"
   add constraint new_type_fkey
   foreign key (new_type)
-  references ticket_types ("type")
+  references ticket."TicketType" ("type")
   on update cascade
   on delete restrict
 ;
@@ -92,14 +92,14 @@ alter table ticket."Action"
 alter table ticket."Action"
   add constraint old_category_fkey
   foreign key (old_category)
-  references ticket_categories (pkey)
+  references ticket."Category" (pkey)
   on update cascade
   on delete restrict
 ;
 alter table ticket."Action"
   add constraint new_category_fkey
   foreign key (new_category)
-  references ticket_categories (pkey)
+  references ticket."Category" (pkey)
   on update cascade
   on delete restrict
 ;

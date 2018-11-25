@@ -408,7 +408,7 @@ from
                 select new_accounting_possibilities.new_accounting from (
                     -- Use the next old_value from set_business with same ticket and higher pkey
                     select ac2.pkey, ac2.old_value as new_accounting from actions_20090611 ac2 where ac.ticket=ac2.ticket and ac2.action_type='SB' and ac2.pkey>ac.pkey
-                    union all select 1000000, accounting from ticket."Ticket" ti where ac.ticket=ti.pkey
+                    union all select 1000000, accounting from tickets ti where ac.ticket=ti.pkey
                 ) new_accounting_possibilities order by new_accounting_possibilities.pkey limit 1
             ) else null end as new_accounting,
             -- set_client_priority and set_admin_priority
@@ -418,14 +418,14 @@ from
                     select new_priority_possibilities.new_priority from (
                         -- Use the next old_value from set_business with same ticket and higher pkey
                         select ac2.pkey, ac2.old_value as new_priority from actions_20090611 ac2 where ac.ticket=ac2.ticket and ac2.action_type='CP' and ac2.pkey>ac.pkey
-                        union all select 1000000, client_priority from ticket."Ticket" ti where ac.ticket=ti.pkey
+                        union all select 1000000, client_priority from tickets ti where ac.ticket=ti.pkey
                     ) new_priority_possibilities order by new_priority_possibilities.pkey limit 1
                 )
                 when ac.action_type='AP' then (
                     select new_priority_possibilities.new_priority from (
                         -- Use the next old_value from set_business with same ticket and higher pkey
                         select ac2.pkey, ac2.old_value as new_priority from actions_20090611 ac2 where ac.ticket=ac2.ticket and ac2.action_type='AP' and ac2.pkey>ac.pkey
-                        union all select 1000000, admin_priority from ticket."Ticket" ti where ac.ticket=ti.pkey
+                        union all select 1000000, admin_priority from tickets ti where ac.ticket=ti.pkey
                     ) new_priority_possibilities order by new_priority_possibilities.pkey limit 1
                 )
                 else null
@@ -553,7 +553,7 @@ from
                         end :: integer as new_category
                     from actions_20090611 ac2
                     where ac.ticket=ac2.ticket and ac2.action_type='TY' and ac2.pkey>ac.pkey
-                    union all select 1000000, category from ticket."Ticket" ti where ac.ticket=ti.pkey
+                    union all select 1000000, category from tickets ti where ac.ticket=ti.pkey
                 ) new_category_possibilities order by new_category_possibilities.pkey limit 1
             ) else null end as new_category,
             -- any others
@@ -563,14 +563,14 @@ from
                     select new_value_possibilities.new_value from (
                         -- Use the next old_value from set_business with same ticket and higher pkey
                         select ac2.pkey, ac2.old_value as new_value from actions_20090611 ac2 where ac.ticket=ac2.ticket and ac2.action_type='SE' and ac2.pkey>ac.pkey
-                        union all select 1000000, contact_emails from ticket."Ticket" ti where ac.ticket=ti.pkey
+                        union all select 1000000, contact_emails from tickets ti where ac.ticket=ti.pkey
                     ) new_value_possibilities order by new_value_possibilities.pkey limit 1
                 )
                 when ac.action_type='SP' then (
                     select new_value_possibilities.new_value from (
                         -- Use the next old_value from set_business with same ticket and higher pkey
                         select ac2.pkey, ac2.old_value as new_value from actions_20090611 ac2 where ac.ticket=ac2.ticket and ac2.action_type='SP' and ac2.pkey>ac.pkey
-                        union all select 1000000, contact_phone_numbers from ticket."Ticket" ti where ac.ticket=ti.pkey
+                        union all select 1000000, contact_phone_numbers from tickets ti where ac.ticket=ti.pkey
                     ) new_value_possibilities order by new_value_possibilities.pkey limit 1
                 )
                 else null

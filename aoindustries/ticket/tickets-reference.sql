@@ -22,7 +22,7 @@ alter table tickets
 alter table tickets
   add constraint language_fkey
   foreign key (language)
-  references languages (code)
+  references ticket."Language" (code)
   on update cascade
   on delete restrict
 ;

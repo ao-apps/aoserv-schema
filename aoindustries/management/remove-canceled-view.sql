@@ -1,8 +1,8 @@
 create or replace view
   management."remove-canceled"
 as
--- cvs_repositories
-          (select accounting, aosh_command from management."remove-canceled-cvs_repositories" order by accounting, net.reverse_hostname(hostname), "path")
+-- scm.CvsRepository
+          (select accounting, aosh_command from management."remove-canceled-scm.CvsRepository" order by accounting, net.reverse_hostname(hostname), "path")
 -- email.List
 union all (select accounting, aosh_command from management."remove-canceled-email.List" order by accounting, net.reverse_hostname(hostname), "path")
 -- email.Domain

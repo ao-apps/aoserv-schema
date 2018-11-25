@@ -3,7 +3,7 @@ create or replace view
   management."remove-mysql-server"
 as
 select
-  (select count(*) from mysql."MysqlDatabase" md where
+  (select count(*) from mysql."Database" md where
     md.mysql_server=ms.net_bind and md."name" not in (
       'mysql', 'information_schema', 'performance_schema', 'sys', 'mysqlmon'
   )) as num_databases,

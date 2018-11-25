@@ -1,45 +1,45 @@
-create unique index brands_smtp_uni on brands (
+create unique index "Brand_smtp_uni" on reseller."Brand" (
     smtp_linux_server_account
 );
-create unique index brands_imap_uni on brands (
+create unique index "Brand_imap_uni" on reseller."Brand" (
     imap_linux_server_account
 );
-create unique index brands_support_email_address_uni on brands (
+create unique index "Brand_support_email_address_uni" on reseller."Brand" (
     support_email_address
 );
-create unique index brands_support_email_display_uni on brands (
+create unique index "Brand_support_email_display_uni" on reseller."Brand" (
     support_email_display
 );
-create unique index brands_signup_email_address_uni on brands (
+create unique index "Brand_signup_email_address_uni" on reseller."Brand" (
     signup_email_address
 );
-create unique index brands_signup_email_display_uni on brands (
+create unique index "Brand_signup_email_display_uni" on reseller."Brand" (
     signup_email_display
 );
-create unique index brands_aoweb_struts_http_url_base_uni on brands (
+create unique index "Brand_aoweb_struts_http_url_base_uni" on reseller."Brand" (
     aoweb_struts_http_url_base
 );
-create unique index brands_aoweb_struts_https_url_base_uni on brands (
+create unique index "Brand_aoweb_struts_https_url_base_uni" on reseller."Brand" (
     aoweb_struts_https_url_base
 );
-create unique index brands_aoweb_struts_google_verify_content_uni on brands (
+create unique index "Brand_aoweb_struts_google_verify_content_uni" on reseller."Brand" (
     aoweb_struts_google_verify_content
 );
-create unique index brands_aoweb_struts_google_analytics_new_tracking_code_uni on brands (
+create unique index "Brand_aoweb_struts_google_analytics_new_tracking_code_uni" on reseller."Brand" (
     aoweb_struts_google_analytics_new_tracking_code
 );
-create index brands_ticket_encryption_from_idx on brands (
+create index "Brand_ticket_encryption_from_fkey" on reseller."Brand" (
     ticket_encryption_from
 );
-create index brands_ticket_encryption_recipient_idx on brands (
+create index "Brand_ticket_encryption_recipient_fkey" on reseller."Brand" (
     ticket_encryption_recipient
 );
-create index brands_signup_encryption_from_idx on brands (
+create index "Brand_signup_encryption_from_fkey" on reseller."Brand" (
     signup_encryption_from
 );
-create index brands_signup_encryption_recipient_idx on brands (
+create index "Brand_signup_encryption_recipient_fkey" on reseller."Brand" (
     signup_encryption_recipient
 );
-create unique index brands_aoweb_struts_vnc_bind_idx on brands (
+create unique index "Brand_aoweb_struts_vnc_bind_uni" on reseller."Brand" (
     aoweb_struts_vnc_bind
 );

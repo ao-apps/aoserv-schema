@@ -1,4 +1,4 @@
-create table brands (
+create table reseller."Brand" (
   accounting text primary key,
   -- Name server settings
   nameserver1 text not null,
@@ -51,5 +51,5 @@ create table brands (
   aoweb_struts_keystore_type text not null,
   aoweb_struts_keystore_password text not null
 );
-grant all    on brands to aoadmin;
-grant select on brands to aoserv_app;
+grant all    on reseller."Brand" to aoadmin;
+grant select on reseller."Brand" to aoserv_app;

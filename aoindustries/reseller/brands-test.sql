@@ -1,5 +1,5 @@
 begin;
-insert into brands values(
+insert into reseller."Brand" values(
   'AOINDUSTRIES', -- accounting
   -- Name server settings
   'ns1.aoindustries.com', -- nameserver1

@@ -1,7 +1,7 @@
 /* TODO
-create sequence         net."IpSet_pkey_seq" cycle;
-grant all            on net."IpSet_pkey_seq" to aoadmin;
-grant select, update on net."IpSet_pkey_seq" to aoserv_app;
+create sequence net."IpSet_pkey_seq" cycle;
+grant all       on net."IpSet_pkey_seq" to aoadmin;
+grant select    on net."IpSet_pkey_seq" to aoserv_app;
 
 create table net."IpSet" (
   pkey integer
@@ -12,7 +12,7 @@ create table net."IpSet" (
   identifier text
     not null
     check (
-        net."isValidIpReputationIdentifier"(identifier)
+      net."validateIpSetIdentifier"(identifier) IS NULL
     )
     unique,
   description text not null,

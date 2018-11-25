@@ -1,4 +1,4 @@
-insert into mysql."MysqlServer" values(
+insert into mysql."Server" values(
     1,
     '4.1',
     2,
@@ -16,7 +16,7 @@ insert into mysql."MysqlServer" values(
     ),
     1000
 );
-insert into mysql."MysqlServer" values(
+insert into mysql."Server" values(
     2,
     '5.0',
     2,

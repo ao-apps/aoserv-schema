@@ -1,4 +1,4 @@
-create table mysql."MysqlServer" (
+create table mysql."Server" (
   net_bind integer
     primary key,
   "name" text
@@ -11,5 +11,5 @@ create table mysql."MysqlServer" (
     not null,
   unique (ao_server, "name")
 );
-grant all    on mysql."MysqlServer" to aoadmin;
-grant select on mysql."MysqlServer" to aoserv_app;
+grant all    on mysql."Server" to aoadmin;
+grant select on mysql."Server" to aoserv_app;

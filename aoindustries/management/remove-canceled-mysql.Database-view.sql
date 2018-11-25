@@ -9,7 +9,7 @@ select
   md."name"
 from
              mysql."Database"    md
-  inner join mysql."MysqlServer" ms on md.mysql_server = ms.net_bind
+  inner join mysql."Server"      ms on md.mysql_server = ms.net_bind
   inner join linux."LinuxServer" ao on ms.ao_server    = ao.server
   inner join billing."Package"   pk on md.package      = pk."name"
   inner join account."Account"   bu on pk.accounting   = bu.accounting

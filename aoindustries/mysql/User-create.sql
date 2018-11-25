@@ -1,4 +1,4 @@
-create table mysql."MysqlUser" (
+create table mysql."User" (
   username text
     primary key,
   select_priv boolean
@@ -87,5 +87,5 @@ create table mysql."MysqlUser" (
     default false,
   disable_log integer
 );
-grant all                            on mysql."MysqlUser" to aoadmin;
-grant select, insert, update, delete on mysql."MysqlUser" to aoserv_app;
+grant all                            on mysql."User" to aoadmin;
+grant select, insert, update, delete on mysql."User" to aoserv_app;

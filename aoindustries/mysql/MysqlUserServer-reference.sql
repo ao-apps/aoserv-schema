@@ -1,7 +1,7 @@
 alter table mysql."MysqlUserServer"
   add constraint username_fkey
   foreign key (username)
-  references mysql."MysqlUser" (username)
+  references mysql."User" (username)
   on delete restrict
   on update cascade
 ;

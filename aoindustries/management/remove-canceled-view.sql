@@ -14,8 +14,8 @@ union all (select accounting, aosh_command from management."remove-canceled-web.
 -- TODO: web.HttpdServer
 -- mysql.Database
 union all (select accounting, aosh_command from management."remove-canceled-mysql.Database" order by accounting, mysql_server, "name")
--- mysql.MysqlUser
-union all (select accounting, aosh_command from management."remove-canceled-mysql.MysqlUser" order by accounting, username)
+-- mysql.User
+union all (select accounting, aosh_command from management."remove-canceled-mysql.User" order by accounting, username)
 -- TODO: mysql.Server
 -- postgresql.Database
 union all (select accounting, aosh_command from management."remove-canceled-postgresql.Database" order by accounting, postgres_server, "name")

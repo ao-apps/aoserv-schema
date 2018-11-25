@@ -8,7 +8,7 @@ alter table credit_cards
 alter table credit_cards
   add constraint processor_id_fkey
   foreign key (processor_id)
-  references credit_card_processors (provider_id)
+  references payment."PaymentProcessor" (provider_id)
   on delete restrict
   on update cascade
 ;

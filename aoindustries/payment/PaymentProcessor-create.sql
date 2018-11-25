@@ -1,4 +1,4 @@
-create table credit_card_processors (
+create table payment."PaymentProcessor" (
   provider_id text
     primary key,
   accounting text
@@ -18,5 +18,5 @@ create table credit_card_processors (
     or (encryption_from is not null and encryption_recipient is not null)
   )
 );
-grant all    on credit_card_processors to aoadmin;
-grant select on credit_card_processors to aoserv_app;
+grant all    on payment."PaymentProcessor" to aoadmin;
+grant select on payment."PaymentProcessor" to aoserv_app;

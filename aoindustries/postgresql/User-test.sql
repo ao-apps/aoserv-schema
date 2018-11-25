@@ -1,4 +1,4 @@
-COPY postgres_users (username, "createdb", trace, super, catupd, disable_log) FROM stdin;
+COPY postgresql."User" (username, "createdb", trace, super, catupd, disable_log) FROM stdin;
 postgres	t	t	t	t	\N
 aoadmin	f	f	f	f	\N
 aoweb_app	f	f	f	f	\N

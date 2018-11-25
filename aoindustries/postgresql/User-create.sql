@@ -1,4 +1,4 @@
-create table postgres_users (
+create table postgresql."User" (
   username text
     primary key,
   createdb boolean
@@ -15,5 +15,5 @@ create table postgres_users (
     default false,
   disable_log integer
 );
-grant all                            on postgres_users to aoadmin;
-grant select, insert, update, delete on postgres_users to aoserv_app;
+grant all                            on postgresql."User" to aoadmin;
+grant select, insert, update, delete on postgresql."User" to aoserv_app;

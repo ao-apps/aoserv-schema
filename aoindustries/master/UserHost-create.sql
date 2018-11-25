@@ -1,6 +1,6 @@
-create sequence master."MasterHost_pkey_seq" cycle;
-grant all    on master."MasterHost_pkey_seq" to aoadmin;
-grant select on master."MasterHost_pkey_seq" to aoserv_app;
+create sequence master."UserHost_pkey_seq" cycle;
+grant all    on master."UserHost_pkey_seq" to aoadmin;
+grant select on master."UserHost_pkey_seq" to aoserv_app;
 
 /*
 TODO: When a User has no hosts, it is allowed to connect from anywhere.
@@ -8,9 +8,9 @@ While convenient, this might be too easy to make a configuration mistake.
 Instead, support network ranges (cidr), and allow "0.0.0.0/32" and "::/128".
 Then grant only when a match is found, and deny when none found.
  */
-create table master."MasterHost" (
+create table master."UserHost" (
   pkey integer
-    default nextval('master."MasterHost_pkey_seq"')
+    default nextval('master."UserHost_pkey_seq"')
     primary key,
   username text
     not null,
@@ -18,5 +18,5 @@ create table master."MasterHost" (
     not null,
   unique(username, "host")
 );
-grant all    on master."MasterHost" to aoadmin;
-grant select on master."MasterHost" to aoserv_app;
+grant all    on master."UserHost" to aoadmin;
+grant select on master."UserHost" to aoserv_app;

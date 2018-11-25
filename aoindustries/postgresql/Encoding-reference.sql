@@ -1,4 +1,4 @@
-alter table postgres_encodings
+alter table postgresql."Encoding"
   add constraint postgres_version_fkey
   foreign key (postgres_version)
   references postgres_versions (version)

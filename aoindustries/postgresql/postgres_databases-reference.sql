@@ -15,7 +15,7 @@ alter table postgres_databases
 alter table postgres_databases
   add constraint encoding_fkey
   foreign key (encoding)
-  references postgres_encodings (pkey)
+  references postgresql."Encoding" (pkey)
   on delete restrict
   on update cascade
 ;

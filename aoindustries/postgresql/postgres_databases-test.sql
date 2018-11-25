@@ -10,7 +10,7 @@ values(
         select
             pkey
         from
-            postgres_encodings
+            postgresql."Encoding"
         where
             encoding='LATIN1'
             and postgres_version=(
@@ -39,7 +39,7 @@ values(
         select
             pkey
         from
-            postgres_encodings
+            postgresql."Encoding"
         where
             encoding='LATIN1'
             and postgres_version=(
@@ -68,7 +68,7 @@ values(
         select
             pkey
         from
-            postgres_encodings
+            postgresql."Encoding"
         where
             encoding='SQL_ASCII'
             and postgres_version=(
@@ -97,7 +97,7 @@ values(
         select
             pkey
         from
-            postgres_encodings
+            postgresql."Encoding"
         where
             encoding='UTF8'
             and postgres_version=(
@@ -126,7 +126,7 @@ values(
         select
             pkey
         from
-            postgres_encodings
+            postgresql."Encoding"
         where
             encoding='SQL_ASCII'
             and postgres_version=(
@@ -155,7 +155,7 @@ values(
         select
             pkey
         from
-            postgres_encodings
+            postgresql."Encoding"
         where
             encoding='UTF8'
             and postgres_version=(
@@ -184,7 +184,7 @@ values(
         select
             pkey
         from
-            postgres_encodings
+            postgresql."Encoding"
         where
             encoding='SQL_ASCII'
             and postgres_version=(
@@ -213,7 +213,7 @@ values(
         select
             pkey
         from
-            postgres_encodings
+            postgresql."Encoding"
         where
             encoding='SQL_ASCII'
             and postgres_version=(

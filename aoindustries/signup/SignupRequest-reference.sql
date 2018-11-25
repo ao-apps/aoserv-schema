@@ -15,14 +15,14 @@ alter table signup."SignupRequest"
 alter table signup."SignupRequest"
   add constraint business_country_fkey
   foreign key (business_country)
-  references country_codes (code)
+  references payment."CountryCode" (code)
   on delete restrict
   on update cascade
 ;
 alter table signup."SignupRequest"
   add constraint ba_country_fkey
   foreign key (ba_country)
-  references country_codes (code)
+  references payment."CountryCode" (code)
   on delete restrict
   on update cascade
 ;

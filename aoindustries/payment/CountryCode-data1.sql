@@ -1,4 +1,4 @@
-COPY "country_codes" FROM stdin;
+COPY payment."CountryCode" FROM stdin;
 AF	Afghanistan	f	\N
 AL	Albania	t	\N
 DZ	Algeria	t	\N

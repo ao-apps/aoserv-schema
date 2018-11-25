@@ -8,7 +8,7 @@ alter table account."AccountProfile"
 alter table account."AccountProfile"
   add constraint country_fkey
   foreign key (country)
-  references country_codes (code)
+  references payment."CountryCode" (code)
   on delete restrict
   on update cascade
 ;

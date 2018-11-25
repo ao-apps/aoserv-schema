@@ -15,7 +15,7 @@ alter table credit_cards
 alter table credit_cards
   add constraint country_code_fkey
   foreign key (country_code)
-  references country_codes (code)
+  references payment."CountryCode" (code)
   on delete restrict
   on update cascade
 ;

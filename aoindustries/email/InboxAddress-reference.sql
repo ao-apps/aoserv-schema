@@ -8,7 +8,7 @@ alter table email."InboxAddress"
 alter table email."InboxAddress"
   add constraint linux_server_account_fkey
   foreign key (linux_server_account)
-  references linux."LinuxUserServer" (pkey)
+  references linux."UserServer" (pkey)
   on delete restrict
   on update cascade
 ;

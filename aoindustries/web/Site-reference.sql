@@ -1,7 +1,7 @@
 alter table web."Site"
   add constraint ao_server_fkey
   foreign key (ao_server)
-  references linux."LinuxServer" (server)
+  references linux."Server" (server)
   on delete restrict
   on update cascade
 ;
@@ -15,14 +15,14 @@ alter table web."Site"
 alter table web."Site"
   add constraint linux_account_fkey
   foreign key (linux_account)
-  references linux."LinuxUser" (username)
+  references linux."User" (username)
   on delete restrict
   on update cascade
 ;
 alter table web."Site"
   add constraint linux_group_fkey
   foreign key (linux_group)
-  references linux."LinuxGroup" ("name")
+  references linux."Group" ("name")
   on delete restrict
   on update cascade
 ;

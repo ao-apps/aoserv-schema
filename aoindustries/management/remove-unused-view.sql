@@ -30,9 +30,9 @@ union all (select 'net'::name as "schema", 'IpAddress'::name as "table", count(*
 union all (select 'pki'::name as "schema", 'Certificate'::name as "table", count(*) as unused from management."remove-ssl-certificate"
            where num_cyrus_imapd_binds=0 and num_cyrus_imapd_servers=0 and num_httpd_site_binds=0 and num_sendmail_servers=0 and num_other_uses=0)
 -- TODO: ftp.GuestUser
--- TODO: linux.LinuxUser (orphaned)
--- TODO: linux.LinuxGroupServer (orphaned or with no linux.LinuxGroupUser)
--- TODO: linux.LinuxGroup (orphaned or with no linux.LinuxGroupUser)
+-- TODO: linux.User (orphaned)
+-- TODO: linux.GroupServer (orphaned or with no linux.GroupUser)
+-- TODO: linux.Group (orphaned or with no linux.GroupUser)
 -- TODO: account.Username (orphaned)
 -- TODO: business_servers (access to a server but without any resources - useful?)
 ;

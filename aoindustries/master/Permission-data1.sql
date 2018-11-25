@@ -48,7 +48,7 @@ insert into master."Permission" values(
     'edit_credit_card',
     (select count(*) from master."Permission")
 );
--- linux.LinuxUserServer
+-- linux.UserServer
 insert into master."Permission" values(
     'set_linux_server_account_password',
     (select count(*) from master."Permission")

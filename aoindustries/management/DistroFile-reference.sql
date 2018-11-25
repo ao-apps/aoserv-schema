@@ -15,14 +15,14 @@ alter table management."DistroFile"
 alter table management."DistroFile"
   add constraint linux_account_fkey
   foreign key (linux_account)
-  references linux."LinuxUser" (username)
+  references linux."User" (username)
   on delete restrict
   on update cascade
 ;
 alter table management."DistroFile"
   add constraint linux_group_fkey
   foreign key (linux_group)
-  references linux."LinuxGroup" ("name")
+  references linux."Group" ("name")
   on delete restrict
   on update cascade
 ;

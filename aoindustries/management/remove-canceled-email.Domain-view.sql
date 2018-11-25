@@ -8,7 +8,7 @@ select
   ed."domain"
 from
              email."Domain"      ed
-  inner join linux."LinuxServer" ao on ed.ao_server  = ao.server
+  inner join linux."Server"      ao on ed.ao_server  = ao.server
   inner join billing."Package"   pk on ed.package    = pk."name"
   inner join account."Account"   bu on pk.accounting = bu.accounting
 where

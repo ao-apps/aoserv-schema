@@ -1,10 +1,10 @@
 CREATE OR REPLACE FUNCTION linux.get_next_uid (_ao_server integer)
 RETURNS linux."LinuxId" AS $$
 DECLARE
-  _min_uid  CONSTANT linux."LinuxId" := (SELECT "uidMin" FROM linux."LinuxServer" WHERE server = _ao_server);
-  _max_uid  CONSTANT linux."LinuxId" := (SELECT "uidMax" FROM linux."LinuxServer" WHERE server = _ao_server);
+  _min_uid  CONSTANT linux."LinuxId" := (SELECT "uidMin" FROM linux."Server" WHERE server = _ao_server);
+  _max_uid  CONSTANT linux."LinuxId" := (SELECT "uidMax" FROM linux."Server" WHERE server = _ao_server);
   _last_uid CONSTANT linux."LinuxId" := coalesce(
-    (SELECT "lastUid" FROM linux."LinuxServer" WHERE server = _ao_server FOR UPDATE),
+    (SELECT "lastUid" FROM linux."Server" WHERE server = _ao_server FOR UPDATE),
     _max_uid
   );
   _uid linux."LinuxId" := _last_uid;
@@ -20,11 +20,11 @@ BEGIN
       _uid := _min_uid;
     END IF;
     IF NOT EXISTS (
-      SELECT lsa.uid FROM linux."LinuxUserServer" lsa WHERE
+      SELECT lsa.uid FROM linux."UserServer" lsa WHERE
         lsa.ao_server = _ao_server
         AND lsa.uid = _uid
     ) THEN
-      UPDATE linux."LinuxServer" SET "lastUid" = _uid WHERE server = _ao_server;
+      UPDATE linux."Server" SET "lastUid" = _uid WHERE server = _ao_server;
       RETURN _uid;
     END IF;
     EXIT WHEN _uid = _last_uid;
@@ -45,7 +45,7 @@ Raises an exception when no UID can be allocated.';
 CREATE OR REPLACE FUNCTION linux.get_next_uid (_ao_server text)
 RETURNS linux."LinuxId" AS $$
   SELECT linux.get_next_uid(
-    (SELECT server FROM linux."LinuxServer" where hostname = _ao_server)
+    (SELECT server FROM linux."Server" where hostname = _ao_server)
   );
 $$ LANGUAGE 'sql'
 VOLATILE

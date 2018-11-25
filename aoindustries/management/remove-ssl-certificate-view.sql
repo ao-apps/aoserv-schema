@@ -34,7 +34,7 @@ select
   case when sc.certbot_name is null then sc.chain_file else null end as "CHAIN_FILE"
 from
              pki."Certificate"                     sc
-  inner join linux."LinuxServer"                   ao  on sc.ao_server                = ao.server
+  inner join linux."Server"                        ao  on sc.ao_server                = ao.server
   inner join public.servers                        se  on ao.server                   = se.pkey
   inner join distribution."OperatingSystemVersion" osv on se.operating_system_version = osv.pkey;
 

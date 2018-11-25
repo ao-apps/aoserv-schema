@@ -18,7 +18,7 @@ select
   hs.enable_anonymous_ftp as anon_ftp,
   hts.block_webinf
 from
-             linux."LinuxServer"            ao
+             linux."Server"                 ao
   inner join web."Site"                     hs  on ao.server      = hs.ao_server
   left  join distribution."SoftwareVersion" tv  on hs.php_version = tv.pkey
   left  join web."TomcatSite"               hts on hs.pkey        = hts.httpd_site;

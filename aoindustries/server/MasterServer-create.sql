@@ -1,6 +1,6 @@
-create sequence         server.master_servers_pkey_seq cycle;
-grant all            on server.master_servers_pkey_seq to aoadmin;
-grant select, update on server.master_servers_pkey_seq to aoserv_app;
+create sequence         server."MasterServer_pkey_seq" cycle;
+grant all            on server."MasterServer_pkey_seq" to aoadmin;
+grant select, update on server."MasterServer_pkey_seq" to aoserv_app;
 
 /*
 TODO: When a master.User has no server.Server listed, it is considered a
@@ -9,9 +9,9 @@ is clever in the way a SQL DELETE will remove all data when you forget the
 WHERE clause.  This is too risky.  Find a better way, roles or another flag
 in master.User.
  */
-create table master_servers (
+create table server."MasterServer" (
   pkey integer
-    default nextval('server.master_servers_pkey_seq')
+    default nextval('server."MasterServer_pkey_seq"')
     primary key,
   username text
     not null,
@@ -19,5 +19,6 @@ create table master_servers (
     not null,
   unique(username, server)
 );
-grant all            on master_servers to aoadmin;
-grant select, insert on master_servers to aoserv_app;
+grant all            on server."MasterServer" to aoadmin;
+-- TODO: Is insert required?
+grant select, insert on server."MasterServer" to aoserv_app;

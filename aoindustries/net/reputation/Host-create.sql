@@ -1,11 +1,11 @@
 -- Tracks the per-host reputation for one set.
-create sequence         "net/reputation"."SetHost_pkey_seq" cycle;
-grant all            on "net/reputation"."SetHost_pkey_seq" to aoadmin;
-grant select, update on "net/reputation"."SetHost_pkey_seq" to aoserv_app;
+create sequence         "net/reputation"."Host_pkey_seq" cycle;
+grant all            on "net/reputation"."Host_pkey_seq" to aoadmin;
+grant select, update on "net/reputation"."Host_pkey_seq" to aoserv_app;
 
-create table "net/reputation"."SetHost" (
+create table "net/reputation"."Host" (
   pkey bigint
-    default nextval('"net/reputation"."SetHost_pkey_seq"')
+    default nextval('"net/reputation"."Host_pkey_seq"')
     primary key,
   "set" integer
     not null,
@@ -32,5 +32,5 @@ create table "net/reputation"."SetHost" (
   ),
   unique("set", "host")
 );
-grant all                            on "net/reputation"."SetHost" to aoadmin;
-grant select, insert, update, delete on "net/reputation"."SetHost" to aoserv_app;
+grant all                            on "net/reputation"."Host" to aoadmin;
+grant select, insert, update, delete on "net/reputation"."Host" to aoserv_app;

@@ -928,7 +928,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'net',
+    'net/reputation',
     'ip_reputation_limiter_limits',
     'IP Reputation Limiter Limits',
     false,
@@ -937,7 +937,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'net',
+    'net/reputation',
     'ip_reputation_limiter_sets',
     'IP Reputation Limiter Sets',
     false,
@@ -946,7 +946,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'net',
+    'net/reputation',
     'ip_reputation_limiters',
     'IP Reputation Limiters',
     false,
@@ -955,7 +955,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'net',
+    'net/reputation',
     'ip_reputation_set_hosts',
     'IP Reputation Set Hosts',
     false,
@@ -964,7 +964,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'net',
+    'net/reputation',
     'ip_reputation_set_networks',
     'IP Reputation Set Networks',
     false,
@@ -973,7 +973,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'net',
+    'net/reputation',
     'ip_reputation_sets',
     'IP Reputation Sets',
     false,

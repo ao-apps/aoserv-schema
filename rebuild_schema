@@ -1,4 +1,6 @@
 #!/bin/bash
+shopt -s nullglob
+
 DIR="${BASH_SOURCE%/*}"
 echo "BEGIN;"
 # 5
@@ -25,20 +27,29 @@ cat "${DIR}/aoindustries/schema/ForeignKey-data5-pre.sql"
 		cat "${DIR}/aoindustries/schema/Table-data3-post.sql"
 	# 4
 	cat "${DIR}/aoindustries/aosh/Command-data4.sql"
-	for SQL in "${DIR}/aoindustries"/*/*-aosh.Command.sql "${DIR}/aoindustries"/*/old/*-aosh.Command.sql
+	for SQL in \
+      "${DIR}/aoindustries"/*/*-aosh.Command.sql \
+      "${DIR}/aoindustries"/*/*/*-aosh.Command.sql \
+      "${DIR}/aoindustries"/*/*/*/*-aosh.Command.sql
 	do
 		echo "\echo $SQL"
 		cat "$SQL"
 	done
 	cat "${DIR}/aoindustries/aosh/Command-data4-post.sql"
-	for SQL in "${DIR}/aoindustries"/*/*-schema.Column.sql "${DIR}/aoindustries"/*/old/*-schema.Column.sql
+	for SQL in \
+      "${DIR}/aoindustries"/*/*-schema.Column.sql \
+      "${DIR}/aoindustries"/*/*/*-schema.Column.sql \
+      "${DIR}/aoindustries"/*/*/*/*-schema.Column.sql
 	do
 		echo "\echo $SQL"
 		cat "$SQL"
 	done
 	cat "${DIR}/aoindustries/schema/Column-data4-post.sql"
 # 5
-for SQL in "${DIR}/aoindustries"/*/*-schema.ForeignKey.sql "${DIR}/aoindustries"/*/old/*-schema.ForeignKey.sql
+for SQL in \
+  "${DIR}/aoindustries"/*/*-schema.ForeignKey.sql \
+  "${DIR}/aoindustries"/*/*/*-schema.ForeignKey.sql \
+  "${DIR}/aoindustries"/*/*/*/*-schema.ForeignKey.sql
 do
 	echo "\echo $SQL"
 	cat "$SQL"

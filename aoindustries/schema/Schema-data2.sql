@@ -136,6 +136,14 @@ select "schema".add_schema(
     null -- Uses pg_catalog.pg_description
 );
 select "schema".add_schema(
+    'net/reputation',
+    '1.65',
+    null,
+    'Net',
+    false,
+    null -- Uses pg_catalog.pg_description
+);
+select "schema".add_schema(
     'payment',
     '1.0a100',
     null,

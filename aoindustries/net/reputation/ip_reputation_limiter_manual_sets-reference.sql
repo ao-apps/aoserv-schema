@@ -1,3 +1,4 @@
+/* TODO
 alter table ip_reputation_limiter_manual_sets
   add constraint limiter_fkey
   foreign key (limiter)
@@ -8,7 +9,8 @@ alter table ip_reputation_limiter_manual_sets
 alter table ip_reputation_limiter_manual_sets
   add constraint set_fkey
   foreign key ("set")
-  references ip_sets (pkey)
+  references net."IpSet" (pkey)
   on delete restrict
   on update cascade
 ;
+ */

@@ -8,12 +8,13 @@ To see who has access to which schema:
 \dn+
 
 The schemas are added to the search path in the same order as reported by \dn+,
-but with "public" always last.
+but with "public" always first.
  */
 
 -- TODO: Remove "public" entirely once nothing in it or it is gone
 
 ALTER ROLE aoadmin SET search_path TO
+  public,
   account,
   accounting,
   aosh,
@@ -30,6 +31,7 @@ ALTER ROLE aoadmin SET search_path TO
   monitoring,
   mysql,
   net,
+  "net/reputation",
   payment,
   pki,
   postgresql,
@@ -39,15 +41,14 @@ ALTER ROLE aoadmin SET search_path TO
   server,
   signup,
   ticket,
-  web,
-  public;
+  web;
 
 -- aoserv_app is used by the master server.  For maximum reliability as schemas
 -- change over time, it does not have any special search_path.
 ALTER ROLE aoserv_app SET search_path TO public;
 
 ALTER ROLE kaori SET search_path TO
+  public,
   account,
   billing,
-  server,
-  public;
+  server;

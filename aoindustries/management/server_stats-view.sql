@@ -8,7 +8,7 @@ as
         select
           count(*)
         from
-          public.business_servers bs,
+          server."AccountServer" bs,
           account."Account" bu
         where
           se.pkey=bs.server

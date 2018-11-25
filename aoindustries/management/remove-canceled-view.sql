@@ -35,10 +35,10 @@ union all (select accounting, aosh_command from management."remove-canceled-net.
 union all (select accounting, aosh_command from management."remove-canceled-linux.User" order by accounting, username)
 -- linux.Group
 union all (select accounting, aosh_command from management."remove-canceled-linux.Group" order by accounting, "name")
--- account."Username"
+-- account.Username
 union all (select accounting, aosh_command from management."remove-canceled-account.Username" order by accounting, username)
--- business_servers
-union all (select accounting, aosh_command from management."remove-canceled-business_servers" order by accounting, is_default)
+-- server.AccountServer
+union all (select accounting, aosh_command from management."remove-canceled-server.AccountServer" order by accounting, is_default)
 ;
 
 revoke all    on management."remove-canceled" from aoadmin;

@@ -1,10 +1,10 @@
-create sequence         server.business_servers_pkey_seq cycle;
-grant all            on server.business_servers_pkey_seq to aoadmin;
-grant select, update on server.business_servers_pkey_seq to aoserv_app;
+create sequence         server."AccountServer_pkey_seq" cycle;
+grant all            on server."AccountServer_pkey_seq" to aoadmin;
+grant select, update on server."AccountServer_pkey_seq" to aoserv_app;
 
-create table business_servers (
+create table server."AccountServer" (
   pkey integer
-    default nextval('server.business_servers_pkey_seq')
+    default nextval('server."AccountServer_pkey_seq"')
     primary key,
   accounting text not null,
   server integer not null,
@@ -19,5 +19,5 @@ create table business_servers (
   can_control_virtual_server boolean not null default false,
   unique(accounting, server)
 );
-grant all                            on business_servers to aoadmin;
-grant select, update, insert, delete on business_servers to aoserv_app;
+grant all                            on server."AccountServer" to aoadmin;
+grant select, update, insert, delete on server."AccountServer" to aoserv_app;

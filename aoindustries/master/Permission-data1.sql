@@ -14,7 +14,7 @@ insert into master."Permission" values(
     'get_credit_card_processors',
     (select count(*) from master."Permission")
 );
--- credit_card_transactions
+-- payment.Payment
 insert into master."Permission" values(
     'add_credit_card_transaction',
     (select count(*) from master."Permission")

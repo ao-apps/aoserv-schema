@@ -1,10 +1,10 @@
-create sequence         payment.credit_card_transactions_pkey_seq cycle;
-grant all            on payment.credit_card_transactions_pkey_seq to aoadmin;
-grant select, update on payment.credit_card_transactions_pkey_seq to aoserv_app;
+create sequence         payment."Payment_pkey_seq" cycle;
+grant all            on payment."Payment_pkey_seq" to aoadmin;
+grant select, update on payment."Payment_pkey_seq" to aoserv_app;
 
-create table credit_card_transactions (
+create table payment."Payment" (
   pkey integer
-    default nextval('payment.credit_card_transactions_pkey_seq')
+    default nextval('payment."Payment_pkey_seq"')
     primary key,
   processor_id text not null,
   accounting text not null,
@@ -32,6 +32,8 @@ create table credit_card_transactions (
   invoice_number text,
   purchase_order_number text,
   description text,
+  -- TODO: This table has a lot of columns that are null depending on status:
+  -- TOOD: Consider making a TransactionCreditCard table, especially if we handle other types of payments
   credit_card_created_by text not null,
   credit_card_principal_name text,
   credit_card_accounting text not null,
@@ -52,45 +54,52 @@ create table credit_card_transactions (
   credit_card_postal_code text,
   credit_card_country_code character(2) not null,
   credit_card_comments text,
+  -- TODO: This table has a lot of columns that are null depending on status:
+  -- TOOD: Consider making an AuthorizationResult table,
+  -- TODO: and we could add a new status where we log the transaction before contacting the processor
   authorization_time timestamp with time zone not null,
   authorization_username text not null,
   authorization_principal_name text,
-  authorization_communication_result text,
+  authorization_communication_result payment."TransactionResult.CommunicationResult",
   authorization_provider_error_code text,
-  authorization_error_code text,
+  authorization_error_code payment."TransactionResult.ErrorCode",
   authorization_provider_error_message text,
   authorization_provider_unique_id text,
   authorization_provider_approval_result text,
-  authorization_approval_result text,
+  authorization_approval_result payment."AuthorizationResult.ApprovalResult",
   authorization_provider_decline_reason text,
-  authorization_decline_reason text,
+  authorization_decline_reason payment."AuthorizationResult.DeclineReason",
   authorization_provider_review_reason text,
-  authorization_review_reason text,
+  authorization_review_reason payment."AuthorizationResult.ReviewReason",
   authorization_provider_cvv_result text,
-  authorization_cvv_result text,
+  authorization_cvv_result payment."AuthorizationResult.CvvResult",
   authorization_provider_avs_result text,
-  authorization_avs_result text,
+  authorization_avs_result payment."AuthorizationResult.AvsResult",
   authorization_approval_code text,
+  -- TODO: This table has a lot of columns that are null depending on status:
+  -- TOOD: Consider making a CaptureResult table
   capture_time timestamp with time zone,
   capture_username text,
   capture_principal_name text,
-  capture_communication_result text,
+  capture_communication_result payment."TransactionResult.CommunicationResult",
   capture_provider_error_code text,
-  capture_error_code text,
+  capture_error_code payment."TransactionResult.ErrorCode",
   capture_provider_error_message text,
   capture_provider_unique_id text,
+  -- TODO: This table has a lot of columns that are null depending on status:
+  -- TOOD: Consider making a VoidResult table
   void_time timestamp with time zone,
   void_username text,
   void_principal_name text,
-  void_communication_result text,
+  void_communication_result payment."TransactionResult.CommunicationResult",
   void_provider_error_code text,
-  void_error_code text,
+  void_error_code payment."TransactionResult.ErrorCode",
   void_provider_error_message text,
   void_provider_unique_id text,
-  status text not null,
+  status payment."Transaction.Status" not null,
   unique(processor_id, authorization_provider_unique_id),
   unique(processor_id, capture_provider_unique_id),
   unique(processor_id, void_provider_unique_id)
 );
-grant all                    on credit_card_transactions to aoadmin;
-grant select, insert, update on credit_card_transactions to aoserv_app;
+grant all                    on payment."Payment" to aoadmin;
+grant select, insert, update on payment."Payment" to aoserv_app;

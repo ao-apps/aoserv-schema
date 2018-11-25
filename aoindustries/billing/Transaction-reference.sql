@@ -43,7 +43,7 @@ alter table billing."Transaction"
 alter table billing."Transaction"
   add constraint credit_card_transaction_fkey
   foreign key (credit_card_transaction)
-  references credit_card_transactions (pkey)
+  references payment."Payment" (pkey)
   on delete restrict
   on update cascade
 ;

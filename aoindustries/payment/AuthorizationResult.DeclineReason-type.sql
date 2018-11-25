@@ -1,4 +1,3 @@
--- Matches enum com.aoindustries.creditcards.AuthorizationResult.DeclineReason
 CREATE TYPE payment."AuthorizationResult.DeclineReason" AS ENUM (
   'NO_SPECIFIC',
   'EXPIRED_CARD',
@@ -24,3 +23,5 @@ CREATE TYPE payment."AuthorizationResult.DeclineReason" AS ENUM (
   'NOT_PROVIDED',
   'UNKNOWN'
 );
+COMMENT ON TYPE payment."AuthorizationResult.DeclineReason"
+IS 'Matches enum com.aoindustries.creditcards.AuthorizationResult.DeclineReason';

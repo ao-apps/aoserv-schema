@@ -1,4 +1,3 @@
--- Matches enum com.aoindustries.creditcards.AuthorizationResult.AvsResult
 CREATE TYPE payment."AuthorizationResult.AvsResult" AS ENUM (
   'ADDRESS_NOT_PROVIDED',
   'ADDRESS_Y_ZIP_9',
@@ -15,3 +14,5 @@ CREATE TYPE payment."AuthorizationResult.AvsResult" AS ENUM (
   'NOT_APPLICABLE',
   'UNKNOWN'
 );
+COMMENT ON TYPE payment."AuthorizationResult.AvsResult"
+IS 'Matches enum com.aoindustries.creditcards.AuthorizationResult.AvsResult';

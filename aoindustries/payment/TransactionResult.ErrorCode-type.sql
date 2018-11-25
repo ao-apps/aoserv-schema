@@ -1,4 +1,3 @@
--- Matches enum com.aoindustries.creditcards.TransactionResult.ErrorCode
 CREATE TYPE payment."TransactionResult.ErrorCode" AS ENUM (
   -- ALL
   'UNKNOWN',
@@ -62,3 +61,5 @@ CREATE TYPE payment."TransactionResult.ErrorCode" AS ENUM (
   'INVALID_SHIPPING_COUNTRY_CODE',
   'CURRENCY_NOT_SUPPORTED'
 );
+COMMENT ON TYPE payment."TransactionResult.ErrorCode"
+IS 'Matches enum com.aoindustries.creditcards.TransactionResult.ErrorCode';

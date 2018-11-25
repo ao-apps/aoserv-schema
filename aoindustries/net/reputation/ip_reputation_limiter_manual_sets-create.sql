@@ -12,7 +12,7 @@ create table ip_reputation_limiter_manual_sets (
     primary key,
   limiter integer not null,
   "set" integer not null,
-  "class" text not null check ("class" in ('gm', 'bm')), -- values match ip_reputation_limiter_limits
+  "class" text not null check ("class" in ('gm', 'bm')), -- values match net/reputation.ReputationLimiterClass
   unique(limiter, "set")
 );
 grant all    on ip_reputation_limiter_manual_sets to aoadmin;

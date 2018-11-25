@@ -1,12 +1,13 @@
-create sequence         "net/reputation".ip_reputation_limiter_limits_pkey_seq cycle;
-grant all            on "net/reputation".ip_reputation_limiter_limits_pkey_seq to aoadmin;
---grant select, update on "net/reputation".ip_reputation_limiter_limits_pkey_seq to aoserv_app;
+create sequence         "net/reputation"."ReputationLimiterClass_pkey_seq" cycle;
+grant all            on "net/reputation"."ReputationLimiterClass_pkey_seq" to aoadmin;
+--grant select, update on "net/reputation"."ReputationLimiterClass_pkey_seq" to aoserv_app;
 
-create table ip_reputation_limiter_limits (
+create table "net/reputation"."ReputationLimiterClass" (
   pkey integer
-    default nextval('"net/reputation".ip_reputation_limiter_limits_pkey_seq')
+    default nextval('"net/reputation"."ReputationLimiterClass_pkey_seq"')
     primary key,
   limiter integer not null,
+  -- TODO: Enum in PostgreSQL and Java
   "class" text not null
     check (
       "class" in ('gm', 'bm', 'bd', 'bu', 'gu', 'gd', 'gn', 'uu')
@@ -46,5 +47,5 @@ create table ip_reputation_limiter_limits (
     ) IS NULL
   )
 );
-grant all    on ip_reputation_limiter_limits to aoadmin;
-grant select on ip_reputation_limiter_limits to aoserv_app;
+grant all    on "net/reputation"."ReputationLimiterClass" to aoadmin;
+grant select on "net/reputation"."ReputationLimiterClass" to aoserv_app;

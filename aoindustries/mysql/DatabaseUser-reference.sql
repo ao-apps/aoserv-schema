@@ -8,7 +8,7 @@ alter table mysql."DatabaseUser"
 alter table mysql."DatabaseUser"
   add constraint mysql_server_user_fkey
   foreign key (mysql_server_user)
-  references mysql."MysqlUserServer" (pkey)
+  references mysql."UserServer" (pkey)
   on delete restrict
   on update cascade
 ;

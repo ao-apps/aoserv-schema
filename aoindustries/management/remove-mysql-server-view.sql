@@ -7,7 +7,7 @@ select
     md.mysql_server=ms.net_bind and md."name" not in (
       'mysql', 'information_schema', 'performance_schema', 'sys', 'mysqlmon'
   )) as num_databases,
-  (select count(*) from mysql."MysqlUserServer" msu where
+  (select count(*) from mysql."UserServer" msu where
     msu.mysql_server=ms.net_bind and msu.username not in (
       'root', 'mysql.session', 'mysql.sys', 'mysqlmon'
   )) as num_users,

@@ -1,7 +1,7 @@
-alter table signup."SignupOption"
+alter table signup."Option"
   add constraint request_fkey
   foreign key (request)
-  references signup."SignupRequest" (pkey)
+  references signup."Request" (pkey)
   on delete cascade
   on update cascade
 ;

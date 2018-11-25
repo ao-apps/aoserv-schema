@@ -29,7 +29,7 @@ alter table billing."Transaction"
 alter table billing."Transaction"
   add constraint payment_type_fkey
   foreign key (payment_type)
-  references payment_types ("name")
+  references payment."PaymentType" ("name")
   on delete restrict
   on update cascade
 ;

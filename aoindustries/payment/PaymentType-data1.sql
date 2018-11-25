@@ -1,0 +1,11 @@
+begin;
+insert into payment."PaymentType" values('check', 'Check', true, false);
+insert into payment."PaymentType" values('money_order', 'Money Order', true, false);
+insert into payment."PaymentType" values('visa', 'Visa', true, true);
+insert into payment."PaymentType" values('mastercard', 'MasterCard', true, true);
+insert into payment."PaymentType" values('discover', 'Discover', true, true);
+insert into payment."PaymentType" values('cash', 'Cash', true, false);
+insert into payment."PaymentType" values('amex', 'American Express', true, true);
+insert into payment."PaymentType" values('paypal', 'PayPal', true, false);
+insert into payment."PaymentType" values('wire', 'Wire Transfer', true, false);
+commit;

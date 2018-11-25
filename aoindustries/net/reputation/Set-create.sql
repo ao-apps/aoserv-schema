@@ -1,19 +1,19 @@
-create sequence "net/reputation"."ReputationSet_pkey_seq" cycle;
-grant all    on "net/reputation"."ReputationSet_pkey_seq" to aoadmin;
-grant select on "net/reputation"."ReputationSet_pkey_seq" to aoserv_app;
+create sequence "net/reputation"."Set_pkey_seq" cycle;
+grant all    on "net/reputation"."Set_pkey_seq" to aoadmin;
+grant select on "net/reputation"."Set_pkey_seq" to aoserv_app;
 
 -- TODO: Track the last time new reputation data was added, and monitor for failed reputation sources.
-create table "net/reputation"."ReputationSet" (
+create table "net/reputation"."Set" (
   -- identifier is non-null and unique, but this primary key exists for more compact foreign keys to this table
   pkey integer
-    default nextval('"net/reputation"."ReputationSet_pkey_seq"')
+    default nextval('"net/reputation"."Set_pkey_seq"')
     primary key,
   accounting text
     not null,
   identifier text
     not null
     check (
-      "net/reputation"."ReputationSet.identifier.validate"(identifier) IS NULL
+      "net/reputation"."Set.identifier.validate"(identifier) IS NULL
     )
     unique,
   -- Allows a subaccount to use the set.  They cannot query the specific set members, however.
@@ -62,5 +62,5 @@ create table "net/reputation"."ReputationSet" (
     not null
     default now()
 );
-grant all            on "net/reputation"."ReputationSet" to aoadmin;
-grant select, update on "net/reputation"."ReputationSet" to aoserv_app;
+grant all            on "net/reputation"."Set" to aoadmin;
+grant select, update on "net/reputation"."Set" to aoserv_app;

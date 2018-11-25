@@ -1,5 +1,5 @@
 BEGIN;
-INSERT INTO ip_reputation_sets VALUES (
+INSERT INTO "net/reputation"."ReputationSet" VALUES (
     1,
     'AOINDUSTRIES',
     'global',
@@ -16,7 +16,7 @@ INSERT INTO ip_reputation_sets VALUES (
     '2012-08-13 05:45:38.629683-05',
 );
 -- XLITE667
-INSERT INTO ip_reputation_sets VALUES (
+INSERT INTO "net/reputation"."ReputationSet" VALUES (
     2,
     'XLITE667',
     'xlite_users_43594',
@@ -58,7 +58,7 @@ INSERT INTO account."Administrator" VALUES (
     null
 );
 -- EMORTALZ
-INSERT INTO ip_reputation_sets VALUES (
+INSERT INTO "net/reputation"."ReputationSet" VALUES (
     3,
     'EMORTALZ',
     'emortalz',
@@ -100,7 +100,7 @@ INSERT INTO account."Administrator" VALUES (
     null
 );
 -- PROJECT_LA
-INSERT INTO ip_reputation_sets VALUES (
+INSERT INTO "net/reputation"."ReputationSet" VALUES (
     4,
     'PROJECT_LA',
     'pla',
@@ -142,7 +142,7 @@ INSERT INTO account."Administrator" VALUES (
     null
 );
 -- RUNEREBE
-INSERT INTO ip_reputation_sets VALUES (
+INSERT INTO "net/reputation"."ReputationSet" VALUES (
     5,
     'RUNEREBE',
     'runerebe',
@@ -184,7 +184,7 @@ INSERT INTO account."Administrator" VALUES (
     null
 );
 -- WEBLARA
-INSERT INTO ip_reputation_sets VALUES (
+INSERT INTO "net/reputation"."ReputationSet" VALUES (
     6,
     'WEBLARA',
     'weblara',
@@ -226,7 +226,7 @@ INSERT INTO account."Administrator" VALUES (
     null
 );
 -- LOSTHOPERSPS
-INSERT INTO ip_reputation_sets VALUES (
+INSERT INTO "net/reputation"."ReputationSet" VALUES (
     7,
     'LOSTHOPERSPS',
     'losthopersps',
@@ -268,7 +268,7 @@ INSERT INTO account."Administrator" VALUES (
     null
 );
 -- GTAPOLICEMODS
-INSERT INTO ip_reputation_sets VALUES (
+INSERT INTO "net/reputation"."ReputationSet" VALUES (
     8,
     'GTAPOLICEMODS',
     'gtapolicemods',
@@ -310,7 +310,7 @@ INSERT INTO account."Administrator" VALUES (
     null
 );
 -- SERVER9803
-INSERT INTO ip_reputation_sets VALUES (
+INSERT INTO "net/reputation"."ReputationSet" VALUES (
     9,
     'SERVER9803',
     'server9803',
@@ -352,7 +352,7 @@ INSERT INTO account."Administrator" VALUES (
     null
 );
 -- GATEWAYNS_COM_2
-INSERT INTO ip_reputation_sets VALUES (
+INSERT INTO "net/reputation"."ReputationSet" VALUES (
     10,
     'GATEWAYNS_COM_2',
     'gatewayns',
@@ -394,7 +394,7 @@ INSERT INTO account."Administrator" VALUES (
     null
 );
 -- MCRP
-INSERT INTO ip_reputation_sets VALUES (
+INSERT INTO "net/reputation"."ReputationSet" VALUES (
     11,
     'MCRP',
     'mcrp',
@@ -436,7 +436,7 @@ INSERT INTO account."Administrator" VALUES (
     null
 );
 -- NAPIHOST_COM
-INSERT INTO ip_reputation_sets VALUES (
+INSERT INTO "net/reputation"."ReputationSet" VALUES (
     12,
     'NAPIHOST_COM',
     'napihost',
@@ -478,7 +478,7 @@ INSERT INTO account."Administrator" VALUES (
     null
 );
 -- WEB_MCRP
-INSERT INTO ip_reputation_sets VALUES (
+INSERT INTO "net/reputation"."ReputationSet" VALUES (
     13,
     'WEB_MCRP',
     'web_mcrp',
@@ -520,7 +520,7 @@ INSERT INTO account."Administrator" VALUES (
     null
 );
 -- VHF
-INSERT INTO ip_reputation_sets VALUES (
+INSERT INTO "net/reputation"."ReputationSet" VALUES (
     14,
     'VHF',
     'vhf',
@@ -562,7 +562,7 @@ INSERT INTO account."Administrator" VALUES (
     null
 );
 -- LB3_CK101_COM
-INSERT INTO ip_reputation_sets VALUES (
+INSERT INTO "net/reputation"."ReputationSet" VALUES (
     15,
     'LB3_CK101_COM',
     'ck101',
@@ -604,7 +604,7 @@ INSERT INTO account."Administrator" VALUES (
     null
 );
 -- CHANGEME_COM
-INSERT INTO ip_reputation_sets VALUES (
+INSERT INTO "net/reputation"."ReputationSet" VALUES (
     16,
     'CHANGEME_COM',
     'changeme',
@@ -645,5 +645,5 @@ INSERT INTO account."Administrator" VALUES (
     false,
     null
 );
-SELECT setval('"net/reputation".ip_reputation_sets_pkey_seq', 17, false);
+SELECT setval('"net/reputation"."ReputationSet_pkey_seq"', 17, false);
 COMMIT;

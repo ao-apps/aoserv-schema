@@ -8,7 +8,7 @@ alter table ip_reputation_limiter_sets
 alter table ip_reputation_limiter_sets
   add constraint set_fkey
   foreign key ("set")
-  references ip_reputation_sets (pkey)
+  references "net/reputation"."ReputationSet" (pkey)
   on delete restrict
   on update cascade
 ;

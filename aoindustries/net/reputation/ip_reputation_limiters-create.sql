@@ -15,7 +15,7 @@ create table ip_reputation_limiters (
     not null
     check (
         -- Although this identifier is only used in a directory name at this time,
-        -- its rules are defined to be consistent with ip_reputation_sets.
+        -- its rules are defined to be consistent with net/reputation.ReputationSet.
         "net/reputation"."validateReputationIdentifier"(identifier) IS NULL
     ),
   unique(net_device, identifier),

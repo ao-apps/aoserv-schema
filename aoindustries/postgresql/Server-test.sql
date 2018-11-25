@@ -1,4 +1,4 @@
-insert into postgres_servers values(
+insert into postgresql."Server" values(
     1,
     '8.1',
     2,

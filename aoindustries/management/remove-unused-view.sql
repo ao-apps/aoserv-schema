@@ -19,8 +19,8 @@ union all (select 'mysql'::name as "schema", 'MysqlServer'::name as "table", cou
 -- TODO: postgres_databases (without any postgres_users in same business?/package?)
 -- TODO: postgres_server_users (without any postgres_databases in same business?/package?)
 -- TODO: postgres_users (orphaned)
--- postgres_servers
-union all (select 'postgresql'::name as "schema", 'postgres_servers'::name as "table", count(*) as unused from management."remove-postgresql-server"
+-- postgresql.Server
+union all (select 'postgresql'::name as "schema", 'Server'::name as "table", count(*) as unused from management."remove-postgresql-server"
            where num_databases=0 or num_users=0)
 -- TODO: email.SendmailServer without any email.SendmailBind
 -- TODO: net.FirewallZone

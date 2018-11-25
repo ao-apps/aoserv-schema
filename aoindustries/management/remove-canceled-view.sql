@@ -21,7 +21,7 @@ union all (select accounting, aosh_command from management."remove-canceled-mysq
 union all (select accounting, aosh_command from management."remove-canceled-postgres_databases" order by accounting, postgres_server, "name")
 -- postgres_users
 union all (select accounting, aosh_command from management."remove-canceled-postgres_users" order by accounting, username)
--- TODO: postgres_servers
+-- TODO: postgresql.Server
 -- TODO: email.SendmailServer without any email.SendmailBind
 -- net.Bind
 union all (select accounting, aosh_command from management."remove-canceled-net.Bind" order by accounting, port)

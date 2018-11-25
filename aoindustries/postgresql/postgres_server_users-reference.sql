@@ -8,7 +8,7 @@ alter table postgres_server_users
 alter table postgres_server_users
   add constraint postgres_server_fkey
   foreign key (postgres_server)
-  references postgres_servers (pkey)
+  references postgresql."Server" (pkey)
   on delete restrict
   on update cascade
 ;

@@ -18,18 +18,18 @@ select
   substring(tv.version from '^\d+\.\d+') as "VERSION",
   nb.port as "PORT",
   case when (
-    select ps2.pkey from public.postgres_servers ps2 where
+    select ps2.pkey from postgresql."Server" ps2 where
       ps2.ao_server=ps.ao_server and ps2.version=ps.version and ps2.pkey!=ps.pkey
     limit 1
   ) is not null then 'Yes' else 'No' end as "HAS_OTHER_SAME_VERSION",
   case when (
-    select ps2.pkey from public.postgres_servers ps2 where
+    select ps2.pkey from postgresql."Server" ps2 where
       ps2.ao_server=ps.ao_server and ps2.pkey!=ps.pkey
     limit 1
   ) is not null then 'Yes' else 'No' end as "HAS_OTHER_ANY_VERSION"
 from
              linux."LinuxServer"                    ao
-  inner join public.postgres_servers                ps on ao.server                   =  ps.ao_server
+  inner join postgresql."Server"                    ps on ao.server                   =  ps.ao_server
   inner join distribution."SoftwareVersion"         tv on ps.version                  =  tv.pkey
   inner join distribution."OperatingSystemVersion" osv on tv.operating_system_version = osv.pkey
   inner join net."Bind"                             nb on ps.net_bind                 =  nb.pkey;

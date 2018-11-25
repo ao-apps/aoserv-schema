@@ -8,7 +8,7 @@ alter table ticket."Ticket"
 alter table ticket."Ticket"
   add constraint reseller_fkey
   foreign key (reseller)
-  references resellers (accounting)
+  references reseller."Reseller" (accounting)
   on update cascade
   on delete restrict
 ;

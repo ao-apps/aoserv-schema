@@ -1,5 +1,5 @@
 begin;
-insert into resellers values(
+insert into reseller."Reseller" values(
   'AOINDUSTRIES',
   false
 );

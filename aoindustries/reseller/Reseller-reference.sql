@@ -1,4 +1,4 @@
-alter table resellers
+alter table reseller."Reseller"
   add constraint accounting_fkey
   foreign key (accounting)
   references reseller."Brand" (accounting)

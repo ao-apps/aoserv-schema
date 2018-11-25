@@ -1,4 +1,4 @@
-COPY postgres_server_users (pkey, username, postgres_server, disable_log, predisable_password) FROM stdin;
+COPY postgresql."UserServer" (pkey, username, postgres_server, disable_log, predisable_password) FROM stdin;
 14	privatecart_app	1	\N	\N
 15	ptms_app	1	\N	\N
 16	postgres	1	\N	\N
@@ -15,4 +15,4 @@ COPY postgres_server_users (pkey, username, postgres_server, disable_log, predis
 28	rss_app	1	\N	\N
 29	session_admin	1	\N	\N
 \.
-SELECT setval ('postgresql.postgres_server_users_pkey_seq', 29, true);
+SELECT setval ('postgresql."UserServer_pkey_seq"', 29, true);

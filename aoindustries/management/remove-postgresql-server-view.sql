@@ -7,7 +7,7 @@ select
     pd.postgres_server=ps.pkey and pd."name" not in (
       'template0', 'template1', 'aoserv'
   )) as num_databases,
-  (select count(*) from public.postgres_server_users psu where
+  (select count(*) from postgresql."UserServer" psu where
     psu.postgres_server=ps.pkey and psu.username not in (
       'postgres', 'postgresmon'
   )) as num_users,

@@ -76,7 +76,7 @@ insert into master."Permission" values(
     'get_mysql_slave_status',
     (select count(*) from master."Permission")
 );
--- postgres_server_users
+-- postgresql.UserServer
 insert into master."Permission" values(
     'set_postgres_server_user_password',
     (select count(*) from master."Permission")

@@ -8,13 +8,13 @@ select
   ps."name" as postgres_server,
   pd."name"
 from
-             postgresql."Database"        pd
-  inner join public.postgres_server_users psu on  pd.datdba          = psu.pkey
-  inner join account."Username"           un  on psu.username        =  un.username
-  inner join billing."Package"            pk  on  un.package         =  pk."name"
-  inner join account."Account"            bu  on  pk.accounting      =  bu.accounting
-  inner join postgresql."Server"          ps  on  pd.postgres_server =  ps.pkey
-  inner join linux."LinuxServer"          ao  on  ps.ao_server       =  ao.server
+             postgresql."Database"   pd
+  inner join postgresql."UserServer" psu on  pd.datdba          = psu.pkey
+  inner join account."Username"      un  on psu.username        =  un.username
+  inner join billing."Package"       pk  on  un.package         =  pk."name"
+  inner join account."Account"       bu  on  pk.accounting      =  bu.accounting
+  inner join postgresql."Server"     ps  on  pd.postgres_server =  ps.pkey
+  inner join linux."LinuxServer"     ao  on  ps.ao_server       =  ao.server
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 

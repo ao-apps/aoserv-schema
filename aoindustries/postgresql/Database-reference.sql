@@ -8,7 +8,7 @@ alter table postgresql."Database"
 alter table postgresql."Database"
   add constraint datdba_fkey
   foreign key (datdba)
-  references postgres_server_users (pkey)
+  references postgresql."UserServer" (pkey)
   on delete restrict
   on update cascade
 ;

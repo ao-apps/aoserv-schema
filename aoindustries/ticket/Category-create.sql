@@ -1,3 +1,4 @@
+-- TODO: Move to "reseller" schema
 create table ticket."Category" (
   pkey integer
     primary key,

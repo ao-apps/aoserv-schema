@@ -1,0 +1,18 @@
+create index "Action_ticket_fkey" on ticket."Action" (ticket);
+create index "Action_administrator_fkey" on ticket."Action" (administrator);
+create index "Action_time_fkey" on ticket."Action" ("time");
+create index "Action_action_type_fkey" on ticket."Action" (action_type);
+create index "Action_old_accounting_fkey" on ticket."Action" (old_accounting);
+create index "Action_new_accounting_fkey" on ticket."Action" (new_accounting);
+create index "Action_old_priority_fkey" on ticket."Action" (old_priority);
+create index "Action_new_priority_fkey" on ticket."Action" (new_priority);
+create index "Action_old_type_fkey" on ticket."Action" (old_type);
+create index "Action_new_type_fkey" on ticket."Action" (new_type);
+create index "Action_old_status_fkey" on ticket."Action" (old_status);
+create index "Action_new_status_fkey" on ticket."Action" (new_status);
+create index "Action_old_assigned_to_fkey" on ticket."Action" (old_assigned_to);
+create index "Action_new_assigned_to_fkey" on ticket."Action" (new_assigned_to);
+create index "Action_old_category_fkey" on ticket."Action" (old_category);
+create index "Action_new_category_fkey" on ticket."Action" (new_category);
+cluster ticket."Action" using "Action_ticket_fkey";
+analyze ticket."Action";

@@ -1,7 +1,7 @@
 alter table ticket."Action"
   add constraint ticket_fkey
   foreign key (ticket)
-  references tickets (pkey)
+  references ticket."Ticket" (pkey)
   on update cascade
   on delete restrict
 ;
@@ -50,14 +50,14 @@ alter table ticket."Action"
 alter table ticket."Action"
   add constraint old_type_fkey
   foreign key (old_type)
-  references ticket_types ("type")
+  references ticket."TicketType" ("type")
   on update cascade
   on delete restrict
 ;
 alter table ticket."Action"
   add constraint new_type_fkey
   foreign key (new_type)
-  references ticket_types ("type")
+  references ticket."TicketType" ("type")
   on update cascade
   on delete restrict
 ;

@@ -1,9 +1,9 @@
-create table tickets (
+create table ticket."Ticket" (
   pkey integer primary key,
   brand text not null, -- The brand that the ticket originated from
   reseller text not null, -- The currently allocated reseller (escalataion level) - should never be allocated to a auto-escelate reseller - how to enforce in PostgreSQL?
   accounting text, -- The accounting code that submitted the ticket, if available
-  language text not null,
+  "language" text not null,
   created_by text, -- The business_administrator who created the ticket, if available
   category integer, -- An optional category
   ticket_type text not null,
@@ -30,15 +30,15 @@ create table tickets (
   -- Enforce time consistency
   check (status_timeout is null or status_timeout>=open_date)
 );
-grant all                            on tickets to aoadmin;
-grant select, insert, update, delete on tickets to aoserv_app;
+grant all                            on ticket."Ticket" to aoadmin;
+grant select, insert, update, delete on ticket."Ticket" to aoserv_app;
 
 
 
 
 /* Conversion:
 insert into
-    tickets
+    ticket."Ticket"
 select
     pkey,
     'AOINDUSTRIES',

@@ -1,7 +1,7 @@
-alter table ticket_categories
+alter table ticket."Category"
   add constraint parent_fkey
   foreign key (parent)
-  references ticket_categories (pkey)
+  references ticket."Category" (pkey)
   on update cascade
   on delete restrict
 ;

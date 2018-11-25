@@ -81,7 +81,7 @@ insert into master."Permission" values(
     'set_postgres_server_user_password',
     (select count(*) from master."Permission")
 );
--- tickets
+-- ticket.Ticket
 insert into master."Permission" values(
     'add_ticket',
     (select count(*) from master."Permission")

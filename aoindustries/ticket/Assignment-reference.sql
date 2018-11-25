@@ -1,7 +1,7 @@
 alter table ticket."Assignment"
   add constraint tickets_fkey
   foreign key (ticket)
-  references tickets (pkey)
+  references ticket."Ticket" (pkey)
   on update cascade
   on delete restrict
 ;

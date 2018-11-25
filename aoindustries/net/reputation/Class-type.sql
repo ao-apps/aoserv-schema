@@ -1,7 +1,9 @@
 CREATE TYPE "net/reputation"."Class" AS ENUM (
   -- Manual Good
+  -- TODO: Rename "gi" for "Good IpSet"
   'gm',
   -- Manual Bad
+  -- TODO: Rename "bi" for "Bad IpSet"
   'bm',
   -- Definite Bad
   'bd',

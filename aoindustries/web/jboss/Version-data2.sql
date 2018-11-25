@@ -1,6 +1,6 @@
 begin;
 insert into
-  "web/jboss"."JbossVersion"
+  "web/jboss"."Version"
 select
   tv1.pkey,
   tv2.pkey,

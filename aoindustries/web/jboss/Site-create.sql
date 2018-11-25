@@ -1,4 +1,4 @@
-create table "web/jboss"."JbossSite" (
+create table "web/jboss"."Site" (
   tomcat_site integer
     primary key,
   version integer
@@ -14,5 +14,5 @@ create table "web/jboss"."JbossSite" (
   jmx_bind integer -- TODO: Should this be unique?
     not null
 );
-grant all                            on "web/jboss"."JbossSite" to aoadmin;
-grant select, insert, update, delete on "web/jboss"."JbossSite" to aoserv_app;
+grant all                            on "web/jboss"."Site" to aoadmin;
+grant select, insert, update, delete on "web/jboss"."Site" to aoserv_app;

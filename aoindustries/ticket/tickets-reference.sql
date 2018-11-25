@@ -50,14 +50,14 @@ alter table tickets
 alter table tickets
   add constraint client_priority_fkey
   foreign key (client_priority)
-  references ticket."Priority" (priority)
+  references ticket_priorities (priority)
   on update cascade
   on delete restrict
 ;
 alter table tickets
   add constraint admin_priority_fkey
   foreign key (admin_priority)
-  references ticket."Priority" (priority)
+  references ticket_priorities (priority)
   on update cascade
   on delete restrict
 ;

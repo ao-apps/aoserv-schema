@@ -13,7 +13,7 @@ create table "net/reputation"."ReputationSet" (
   identifier text
     not null
     check (
-      "net/reputation"."validateReputationIdentifier"(identifier) IS NULL
+      "net/reputation"."ReputationSet.identifier.validate"(identifier) IS NULL
     )
     unique,
   -- Allows a subaccount to use the set.  They cannot query the specific set members, however.

@@ -7,20 +7,20 @@ Returns a description when invalid.
 ipset has maximum name length of 31.
 Be safe by only allowing specific characters, even though ipset probably allows many more, we'll be shell-safe.
  */
-CREATE OR REPLACE FUNCTION net."validateIpSetIdentifier" (identifier text)
+CREATE OR REPLACE FUNCTION net."IpSet.identifier.validate" (identifier text)
 RETURNS text AS $$
 BEGIN
   IF identifier IS NULL THEN
-    RETURN 'IpSet identifiers may not be null';
+    RETURN 'IpSet.identifier may not be null';
   END IF;
   IF NOT LENGTH(identifier) BETWEEN 1 AND 31 THEN
-    RETURN 'IpSet identifiers must have between 1 and 31 characters: ''' || identifier || '''';
+    RETURN 'IpSet.identifier must have between 1 and 31 characters: ''' || identifier || '''';
   END IF;
   IF identifier !~ E'^[a-zA-Z0-9_]' THEN
-    RETURN 'IpSet identifiers may only start with a-z, A-Z, 0-9, or _: ''' || identifier || '''';
+    RETURN 'IpSet.identifier may only start with a-z, A-Z, 0-9, or _: ''' || identifier || '''';
   END IF;
   IF identifier !~ E'^.[a-zA-Z0-9_\.-]*$' THEN
-    RETURN 'IpSet identifiers may only contain a-z, A-Z, 0-9, ''.'', _, or -: ''' || identifier || '''';
+    RETURN 'IpSet.identifier may only contain a-z, A-Z, 0-9, ''.'', _, or -: ''' || identifier || '''';
   END IF;
   -- All is OK
   RETURN null;

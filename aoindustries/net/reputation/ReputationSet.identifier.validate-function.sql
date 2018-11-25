@@ -17,13 +17,13 @@ ipset has maximum name length of 31, and we prefix four characters, leaving 27 c
       character 2: '_': Reserved
       character 3: '_': Separator, 'N': New list (for loading while old copy active)
  */
-CREATE OR REPLACE FUNCTION "net/reputation"."validateReputationIdentifier" (identifier text)
+CREATE OR REPLACE FUNCTION "net/reputation"."ReputationSet.identifier.validate" (identifier text)
 RETURNS text AS $$
 DECLARE
-  _validate_ipset_result text := (SELECT net."validateIpSetIdentifier"(identifier));
+  _validate_ipset_result text := (SELECT net."IpSet.identifier.validate"(identifier));
 BEGIN
   IF NOT LENGTH(identifier) BETWEEN 1 AND 31 THEN
-    RETURN 'Reputation identifiers must have between 1 and 27 characters: ''' || identifier || '''';
+    RETURN 'ReputationSet.identifier must have between 1 and 27 characters: ''' || identifier || '''';
   END IF;
   IF _validate_ipset_result IS NOT NULL THEN
     RETURN _validate_ipset_result;

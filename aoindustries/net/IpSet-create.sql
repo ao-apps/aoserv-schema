@@ -12,7 +12,7 @@ create table net."IpSet" (
   identifier text
     not null
     check (
-      net."validateIpSetIdentifier"(identifier) IS NULL
+      net."IpSet.identifier.validate"(identifier) IS NULL
     )
     unique,
   description text not null,

@@ -1,4 +1,4 @@
-CREATE TYPE payment."Transaction.Status" AS ENUM (
+CREATE TYPE payment."Payment.Status" AS ENUM (
   'PROCESSING',
   'LOCAL_ERROR',
   'IO_ERROR',
@@ -10,5 +10,5 @@ CREATE TYPE payment."Transaction.Status" AS ENUM (
   'VOID',
   'CHARGEBACK'
 );
-COMMENT ON TYPE payment."Transaction.Status"
+COMMENT ON TYPE payment."Payment.Status"
 IS 'Matches enum com.aoindustries.creditcards.Transaction.Status';

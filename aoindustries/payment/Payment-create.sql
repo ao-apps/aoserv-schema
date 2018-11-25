@@ -96,7 +96,7 @@ create table payment."Payment" (
   void_error_code payment."TransactionResult.ErrorCode",
   void_provider_error_message text,
   void_provider_unique_id text,
-  status payment."Transaction.Status" not null,
+  status payment."Payment.Status" not null,
   unique(processor_id, authorization_provider_unique_id),
   unique(processor_id, capture_provider_unique_id),
   unique(processor_id, void_provider_unique_id)

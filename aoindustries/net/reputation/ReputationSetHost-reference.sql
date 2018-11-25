@@ -1,4 +1,4 @@
-alter table ip_reputation_set_hosts
+alter table "net/reputation"."ReputationSetHost"
   add constraint set_fkey
   foreign key ("set")
   references "net/reputation"."ReputationSet" (pkey)

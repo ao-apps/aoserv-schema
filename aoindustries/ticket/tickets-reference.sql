@@ -36,28 +36,28 @@ alter table tickets
 alter table tickets
   add constraint category_fkey
   foreign key (category)
-  references ticket_categories (pkey)
+  references ticket."Category" (pkey)
   on update cascade
   on delete restrict
 ;
 alter table tickets
   add constraint ticket_type_fkey
   foreign key (ticket_type)
-  references ticket_types (type)
+  references ticket."TicketType" ("type")
   on update cascade
   on delete restrict
 ;
 alter table tickets
   add constraint client_priority_fkey
   foreign key (client_priority)
-  references ticket_priorities (priority)
+  references ticket."Priority" (priority)
   on update cascade
   on delete restrict
 ;
 alter table tickets
   add constraint admin_priority_fkey
   foreign key (admin_priority)
-  references ticket_priorities (priority)
+  references ticket."Priority" (priority)
   on update cascade
   on delete restrict
 ;

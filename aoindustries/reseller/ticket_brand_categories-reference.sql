@@ -8,7 +8,7 @@ alter table ticket_brand_categories
 alter table ticket_brand_categories
   add constraint category_fkey
   foreign key (category)
-  references ticket."Category" (pkey)
+  references reseller."Category" (pkey)
   on update cascade
   on delete restrict
 ;

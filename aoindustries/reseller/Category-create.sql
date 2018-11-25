@@ -1,5 +1,4 @@
--- TODO: Move to "reseller" schema
-create table ticket."Category" (
+create table reseller."Category" (
   pkey integer
     primary key,
   parent integer, -- top-level categories have null parents
@@ -9,5 +8,5 @@ create table ticket."Category" (
         and ("name" not like '%/%') -- For "/ path"
     )
 );
-grant all    on ticket."Category" to aoadmin;
-grant select on ticket."Category" to aoserv_app;
+grant all    on reseller."Category" to aoadmin;
+grant select on reseller."Category" to aoserv_app;

@@ -2034,7 +2034,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'ticket',
+    'reseller',
     'ticket_brand_categories',
     'Ticket Brand Categories',
     false,
@@ -2043,7 +2043,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'ticket',
+    'reseller',
     'ticket_categories',
     'Ticket Categories',
     false,

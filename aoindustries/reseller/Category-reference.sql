@@ -1,7 +1,7 @@
-alter table ticket."Category"
+alter table reseller."Category"
   add constraint parent_fkey
   foreign key (parent)
-  references ticket."Category" (pkey)
+  references reseller."Category" (pkey)
   on update cascade
   on delete restrict
 ;

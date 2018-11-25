@@ -1,4 +1,3 @@
--- TODO: Move to "reseller" schema
 create table ticket_brand_categories (
   pkey integer primary key,
   brand text not null,

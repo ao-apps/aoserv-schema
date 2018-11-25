@@ -21,7 +21,7 @@ from
              linux."Server"                 ao
   inner join web."Site"                     hs  on ao.server      = hs.ao_server
   left  join distribution."SoftwareVersion" tv  on hs.php_version = tv.pkey
-  left  join "web/tomcat"."TomcatSite"      hts on hs.pkey        = hts.httpd_site;
+  left  join "web/tomcat"."Site"            hts on hs.pkey        = hts.httpd_site;
 
 revoke all    on management."web-site-settings" from aoadmin;
 grant  select on management."web-site-settings" to   aoadmin;

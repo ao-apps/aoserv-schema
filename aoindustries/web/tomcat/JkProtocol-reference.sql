@@ -1,4 +1,4 @@
-alter table "web/tomcat"."TomcatJkProtocol"
+alter table "web/tomcat"."JkProtocol"
   add constraint protocol_fkey
   foreign key (protocol)
   references protocols (protocol)

@@ -2,9 +2,9 @@
 --       Alternatively, allow named workers, but with careful naming constraints.
 --       The auto-generation of these worker names could simply use the same algorithm
 --       Used to initially populate this table.
-create table "web/tomcat"."TomcatWorkerName" (
+create table "web/tomcat"."WorkerName" (
   code character(2)
     primary key
 );
-grant all    on "web/tomcat"."TomcatWorkerName" to aoadmin;
-grant select on "web/tomcat"."TomcatWorkerName" to aoserv_app;
+grant all    on "web/tomcat"."WorkerName" to aoadmin;
+grant select on "web/tomcat"."WorkerName" to aoserv_app;

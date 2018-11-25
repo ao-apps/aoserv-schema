@@ -1,10 +1,10 @@
-create sequence         "web/tomcat"."TomcatContext_pkey_seq" cycle;
-grant all            on "web/tomcat"."TomcatContext_pkey_seq" to aoadmin;
-grant select, update on "web/tomcat"."TomcatContext_pkey_seq" to aoserv_app;
+create sequence         "web/tomcat"."Context_pkey_seq" cycle;
+grant all            on "web/tomcat"."Context_pkey_seq" to aoadmin;
+grant select, update on "web/tomcat"."Context_pkey_seq" to aoserv_app;
 
-create table "web/tomcat"."TomcatContext" (
+create table "web/tomcat"."Context" (
   pkey integer
-    default nextval('"web/tomcat"."TomcatContext_pkey_seq"')
+    default nextval('"web/tomcat"."Context_pkey_seq"')
     primary key,
   tomcat_site integer
     not null,
@@ -34,5 +34,5 @@ create table "web/tomcat"."TomcatContext" (
     not null,
   unique(tomcat_site, "path")
 );
-grant all                            on "web/tomcat"."TomcatContext" to aoadmin;
-grant select, insert, update, delete on "web/tomcat"."TomcatContext" to aoserv_app;
+grant all                            on "web/tomcat"."Context" to aoadmin;
+grant select, insert, update, delete on "web/tomcat"."Context" to aoserv_app;

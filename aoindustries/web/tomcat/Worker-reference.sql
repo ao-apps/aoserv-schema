@@ -15,7 +15,7 @@ alter table "web/tomcat"."Worker"
 alter table "web/tomcat"."Worker"
   add constraint "tomcatSite_fkey"
   foreign key ("tomcatSite")
-  references "web/tomcat"."TomcatSite" (httpd_site)
+  references "web/tomcat"."Site" (httpd_site)
   on delete restrict
   on update cascade
 ;

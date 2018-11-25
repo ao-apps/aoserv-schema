@@ -1,4 +1,3 @@
--- Matches enum com.aoindustries.aoserv.client.IpReputationLimiterLimit.LimiterClass
 CREATE TYPE "net/reputation"."ReputationLimiterClass.LimiterClass" AS ENUM (
   -- Manual Good
   'gm',
@@ -17,3 +16,5 @@ CREATE TYPE "net/reputation"."ReputationLimiterClass.LimiterClass" AS ENUM (
   -- Unknown
   'uu'
 );
+COMMENT ON TYPE "net/reputation"."ReputationLimiterClass.LimiterClass"
+IS 'Matches enum com.aoindustries.aoserv.client.IpReputationLimiterLimit.LimiterClass';

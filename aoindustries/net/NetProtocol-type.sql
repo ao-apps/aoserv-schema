@@ -1,6 +1,3 @@
--- Matches com.aoindustries.net.Protocol
--- Using enum name
--- Does not include "UNASSIGNED".
 CREATE TYPE net."NetProtocol" AS ENUM (
   'HOPOPT',
   'ICMP',
@@ -151,3 +148,5 @@ CREATE TYPE net."NetProtocol" AS ENUM (
   'EXPERIMENTATION_AND_TESTING_2',
   'RESERVED'
 );
+COMMENT ON TYPE net."NetProtocol"
+IS 'Matches enum com.aoindustries.net.Protocol, not including "UNASSIGNED"';

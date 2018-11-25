@@ -139,7 +139,7 @@ select "schema".add_schema(
     'net/reputation',
     '1.65',
     null,
-    'Net',
+    'Reputation',
     false,
     null -- Uses pg_catalog.pg_description
 );
@@ -228,6 +228,22 @@ select "schema".add_schema(
     '1.0a100',
     null,
     'Web',
+    false,
+    null -- Uses pg_catalog.pg_description
+);
+select "schema".add_schema(
+    'web/jboss',
+    '1.0a100',
+    null,
+    'JBoss',
+    true,
+    null -- Uses pg_catalog.pg_description
+);
+select "schema".add_schema(
+    'web/tomcat',
+    '1.0a100',
+    null,
+    'Tomcat',
     true,
     null -- Uses pg_catalog.pg_description
 );

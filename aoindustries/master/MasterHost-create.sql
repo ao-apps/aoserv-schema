@@ -3,7 +3,7 @@ grant all    on master."MasterHost_pkey_seq" to aoadmin;
 grant select on master."MasterHost_pkey_seq" to aoserv_app;
 
 /*
-TODO: When a MasterUser has no hosts, it is allowed to connect from anywhere.
+TODO: When a User has no hosts, it is allowed to connect from anywhere.
 While convenient, this might be too easy to make a configuration mistake.
 Instead, support network ranges (cidr), and allow "0.0.0.0/32" and "::/128".
 Then grant only when a match is found, and deny when none found.

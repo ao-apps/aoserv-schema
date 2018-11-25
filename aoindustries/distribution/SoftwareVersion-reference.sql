@@ -8,7 +8,7 @@ alter table distribution."SoftwareVersion"
 alter table distribution."SoftwareVersion"
   add constraint owner_fkey
   foreign key (owner)
-  references master."MasterUser" (username)
+  references master."User" (username)
   on delete restrict
   on update cascade
 ;

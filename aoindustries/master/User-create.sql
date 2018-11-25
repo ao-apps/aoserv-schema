@@ -1,5 +1,5 @@
 -- TODO: aoserv_roles from aortd are a better approach - more manageable
-create table master."MasterUser" (
+create table master."User" (
   username text
     primary key,
   is_active boolean
@@ -27,5 +27,5 @@ create table master."MasterUser" (
     default false
     not null
 );
-grant all    on master."MasterUser" to aoadmin;
-grant select on master."MasterUser" to aoserv_app;
+grant all    on master."User" to aoadmin;
+grant select on master."User" to aoserv_app;

@@ -15,7 +15,7 @@ alter table accounting."BankTransaction"
 alter table accounting."BankTransaction"
   add constraint administrator_fkey
   foreign key (administrator)
-  references master."MasterUser" (username)
+  references master."User" (username)
   on delete restrict
   on update cascade
 ;

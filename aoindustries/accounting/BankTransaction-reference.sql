@@ -8,7 +8,7 @@ alter table accounting."BankTransaction"
 alter table accounting."BankTransaction"
   add constraint processor_fkey
   foreign key (processor)
-  references payment."PaymentProcessor" (provider_id)
+  references payment."Processor" (provider_id)
   on delete restrict
   on update cascade
 ;

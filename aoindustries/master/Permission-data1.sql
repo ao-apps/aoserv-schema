@@ -9,7 +9,7 @@ insert into master."Permission" values(
     'cancel_business',
     (select count(*) from master."Permission")
 );
--- payment.PaymentProcessor
+-- payment.Processor
 insert into master."Permission" values(
     'get_credit_card_processors',
     (select count(*) from master."Permission")

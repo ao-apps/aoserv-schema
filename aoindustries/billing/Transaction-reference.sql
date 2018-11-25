@@ -36,7 +36,7 @@ alter table billing."Transaction"
 alter table billing."Transaction"
   add constraint processor_fkey
   foreign key (processor)
-  references payment."PaymentProcessor" (provider_id)
+  references payment."Processor" (provider_id)
   on delete restrict
   on update cascade
 ;

@@ -1,4 +1,4 @@
-create table payment."PaymentProcessor" (
+create table payment."Processor" (
   provider_id text
     primary key,
   accounting text
@@ -18,5 +18,5 @@ create table payment."PaymentProcessor" (
     or (encryption_from is not null and encryption_recipient is not null)
   )
 );
-grant all    on payment."PaymentProcessor" to aoadmin;
-grant select on payment."PaymentProcessor" to aoserv_app;
+grant all    on payment."Processor" to aoadmin;
+grant select on payment."Processor" to aoserv_app;

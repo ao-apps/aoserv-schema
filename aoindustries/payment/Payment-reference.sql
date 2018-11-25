@@ -1,7 +1,7 @@
 alter table payment."Payment"
   add constraint processor_id_fkey
   foreign key (processor_id)
-  references payment."PaymentProcessor" (provider_id)
+  references payment."Processor" (provider_id)
   on delete restrict
   on update cascade
 ;

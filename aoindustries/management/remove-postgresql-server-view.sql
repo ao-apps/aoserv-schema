@@ -3,7 +3,7 @@ create or replace view
   management."remove-postgresql-server"
 as
 select
-  (select count(*) from public.postgres_databases pd where
+  (select count(*) from postgresql."Database" pd where
     pd.postgres_server=ps.pkey and pd."name" not in (
       'template0', 'template1', 'aoserv'
   )) as num_databases,

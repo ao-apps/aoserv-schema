@@ -16,8 +16,8 @@ as
 -- mysql.MysqlServer
 union all (select 'mysql'::name as "schema", 'MysqlServer'::name as "table", count(*) as unused from management."remove-mysql-server"
            where num_databases=0 or num_users=0)
--- TODO: postgres_databases (without any postgres_users in same business?/package?)
--- TODO: postgres_server_users (without any postgres_databases in same business?/package?)
+-- TODO: postgresql.Database (without any postgres_users in same business?/package?)
+-- TODO: postgres_server_users (without any postgresql.Database in same business?/package?)
 -- TODO: postgres_users (orphaned)
 -- postgresql.Server
 union all (select 'postgresql'::name as "schema", 'Server'::name as "table", count(*) as unused from management."remove-postgresql-server"

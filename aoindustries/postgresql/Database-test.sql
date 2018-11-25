@@ -1,6 +1,6 @@
 -- 8.1
 insert into
-    postgres_databases
+    postgresql."Database"
 values(
     9,
     'template0',
@@ -29,7 +29,7 @@ values(
     false
 );
 insert into
-    postgres_databases
+    postgresql."Database"
 values(
     10,
     'template1',
@@ -58,7 +58,7 @@ values(
     false
 );
 insert into
-    postgres_databases
+    postgresql."Database"
 values(
     11,
     'aoindustries',
@@ -87,7 +87,7 @@ values(
     false
 );
 insert into
-    postgres_databases
+    postgresql."Database"
 values(
     13,
     'aoweb',
@@ -116,7 +116,7 @@ values(
     false
 );
 insert into
-    postgres_databases
+    postgresql."Database"
 values(
     14,
     'aoserv',
@@ -145,7 +145,7 @@ values(
     false
 );
 insert into
-    postgres_databases
+    postgresql."Database"
 values(
     17,
     'edrugstore',
@@ -174,7 +174,7 @@ values(
     false
 );
 insert into
-    postgres_databases
+    postgresql."Database"
 values(
     18,
     'edrugstore_sessions',
@@ -203,7 +203,7 @@ values(
     false
 );
 insert into
-    postgres_databases
+    postgresql."Database"
 values(
     16,
     'danshome',
@@ -231,4 +231,4 @@ values(
     true,
     false
 );
-SELECT setval ('postgresql.postgres_databases_pkey_seq', 17, true);
+SELECT setval ('postgresql."Database_pkey_seq"', 17, true);

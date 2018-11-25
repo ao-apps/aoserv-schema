@@ -1,18 +1,18 @@
-alter table postgres_databases
+alter table postgresql."Database"
   add constraint postgres_server_fkey
   foreign key (postgres_server)
   references postgresql."Server" (pkey)
   on delete restrict
   on update cascade
 ;
-alter table postgres_databases
+alter table postgresql."Database"
   add constraint datdba_fkey
   foreign key (datdba)
   references postgres_server_users (pkey)
   on delete restrict
   on update cascade
 ;
-alter table postgres_databases
+alter table postgresql."Database"
   add constraint encoding_fkey
   foreign key (encoding)
   references postgresql."Encoding" (pkey)

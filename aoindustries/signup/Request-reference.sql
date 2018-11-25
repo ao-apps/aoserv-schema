@@ -1,7 +1,7 @@
 alter table signup."Request"
   add constraint brand_fkey
   foreign key (brand)
-  references brands (accounting)
+  references reseller."Brand" (accounting)
   on delete restrict
   on update cascade
 ;

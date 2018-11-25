@@ -1,7 +1,7 @@
 alter table ticket."Ticket"
   add constraint brand_fkey
   foreign key (brand)
-  references brands (accounting)
+  references reseller."Brand" (accounting)
   on update cascade
   on delete restrict
 ;

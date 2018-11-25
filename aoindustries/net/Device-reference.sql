@@ -1,7 +1,7 @@
 alter table net."Device"
   add constraint server_fkey
   foreign key (server)
-  references servers (pkey)
+  references server."Server" (pkey)
   on delete restrict
   on update cascade
 ;

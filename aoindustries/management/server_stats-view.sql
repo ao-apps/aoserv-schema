@@ -24,7 +24,7 @@ as
 --      ao.rack,
 --      ao.disk
     from
-      public.servers se,
+      server."Server" se,
       linux."Server" ao
     where
       se.pkey=ao.server

@@ -19,7 +19,7 @@ select
 from
              web."Site"                            hs
   inner join linux."Server"                        ao on hs.ao_server                =  ao.server
-  inner join public.servers                        se on ao.server                   =  se.pkey
+  inner join server."Server"                       se on ao.server                   =  se.pkey
   inner join distribution."OperatingSystemVersion" osv on se.operating_system_version = osv.pkey
   left  join (
     select hsb_80.pkey, hsb_80.httpd_site, hsb_80."name", hsb_80.disable_log, hsu_80.hostname from

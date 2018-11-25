@@ -1,5 +1,5 @@
 begin;
-insert into servers values(
+insert into server."Server" values(
     2,
 	'freedom',
 	'Nested Test Server',

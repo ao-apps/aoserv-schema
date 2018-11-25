@@ -30,7 +30,7 @@ union all (select accounting, aosh_command from management."remove-canceled-net.
 -- net.IpAddress.package
 union all (select accounting, aosh_command from management."remove-canceled-net.IpAddress.package" order by accounting, net.reverse_hostname(hostname), "inetAddress")
 -- TODO: pki.Certificate (once have auto-cleanup within aoserv-daemon)
--- TODO: servers (once a server is owned by a package in the schema)
+-- TODO: server.Server (once a server is owned by a package in the schema)
 -- linux.User
 union all (select accounting, aosh_command from management."remove-canceled-linux.User" order by accounting, username)
 -- linux.Group

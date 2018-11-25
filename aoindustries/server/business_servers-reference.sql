@@ -8,7 +8,7 @@ alter table business_servers
 alter table business_servers
   add constraint server_fkey
   foreign key (server)
-  references servers (pkey)
+  references server."Server" (pkey)
   on delete restrict
   on update cascade
 ;

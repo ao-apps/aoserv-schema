@@ -11,8 +11,6 @@ The schemas are added to the search path in the same order as reported by \dn+,
 but with "public" always first.
  */
 
--- TODO: Remove "public" entirely once nothing in it or it is gone
-
 ALTER ROLE aoadmin SET search_path TO
   public,
   account,
@@ -52,5 +50,4 @@ ALTER ROLE aoserv_app SET search_path TO public;
 ALTER ROLE kaori SET search_path TO
   public,
   account,
-  billing,
-  server;
+  billing;

@@ -16,4 +16,3 @@ create table server."Server" (
 );
 grant all                    on server."Server" to aoadmin;
 grant select, insert, update on server."Server" to aoserv_app;
-grant select                 on server."Server" to kaori;

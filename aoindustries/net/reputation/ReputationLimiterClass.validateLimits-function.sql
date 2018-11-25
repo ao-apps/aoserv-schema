@@ -28,31 +28,27 @@ for non-syn (established connections) within the same class.
 Per-IP limits are added first, so that a massive attack from one IP source will
 not block all members of that class.
  */
-CREATE OR REPLACE FUNCTION "net/reputation"."validateReputationLimits" (
-  "class"             text,
+CREATE OR REPLACE FUNCTION "net/reputation"."ReputationLimiterClass.validateLimits" (
+  "class"             "net/reputation"."ReputationLimiterClass.LimiterClass",
   syn_per_ip_burst    smallint,
   syn_per_ip_rate     smallint,
-  syn_per_ip_unit     text,
+  syn_per_ip_unit     "net/reputation"."ReputationLimiterClass.TimeUnit",
   syn_per_ip_size     smallint,
   syn_burst           smallint,
   syn_rate            smallint,
-  syn_unit            text,
+  syn_unit            "net/reputation"."ReputationLimiterClass.TimeUnit",
   packet_per_ip_burst integer,
   packet_per_ip_rate  integer,
-  packet_per_ip_unit  text,
+  packet_per_ip_unit  "net/reputation"."ReputationLimiterClass.TimeUnit",
   packet_per_ip_size  integer,
   packet_burst        integer,
   packet_rate         integer,
-  packet_unit         text
+  packet_unit         "net/reputation"."ReputationLimiterClass.TimeUnit"
 )
 RETURNS text AS $$
 BEGIN
   -- Check bounds for each parameter
   -- syn_per_ip
-  -- TODO: Make an enum both in PostgreSQL and Java
-  IF syn_per_ip_unit NOT IN ('second', 'minute', 'hour', 'day') THEN
-    RETURN "class" || ' time unit invalid for syn/IP, must be one of ''second'', ''minute'', ''hour'', or ''day'': ' || syn_per_ip_unit;
-  END IF;
   IF NOT syn_per_ip_burst BETWEEN 0 AND 10000 THEN
     RETURN "class" || ' syn/' || syn_per_ip_unit || '/IP burst outside of range, must be between 0 and 10000: ' || syn_per_ip_burst;
   END IF;
@@ -63,10 +59,6 @@ BEGIN
     RETURN "class" || ' syn/' || syn_per_ip_unit || '/IP size outside of range, must be 0 or between 10 and 10000: ' || syn_per_ip_size;
   END IF;
   -- syn
-  -- TODO: Make an enum both in PostgreSQL and Java
-  IF syn_unit NOT IN ('second', 'minute', 'hour', 'day') THEN
-    RETURN "class" || ' time unit invalid for syn, must be one of ''second'', ''minute'', ''hour'', or ''day'': ' || syn_unit;
-  END IF;
   IF NOT syn_burst BETWEEN 0 AND 10000 THEN
     RETURN "class" || ' syn/' || syn_unit || ' burst outside of range, must be between 0 and 10000: ' || syn_burst;
   END IF;
@@ -74,9 +66,6 @@ BEGIN
     RETURN "class" || ' syn/' || syn_unit || ' outside of range, must be between 0 and 10000: ' || syn_rate;
   END IF;
   -- packet_per_ip
-  IF packet_per_ip_unit NOT IN ('second', 'minute', 'hour', 'day') THEN
-    RETURN "class" || ' time unit invalid for packet/IP, must be one of ''second'', ''minute'', ''hour'', or ''day'': ' || packet_per_ip_unit;
-  END IF;
   IF NOT packet_per_ip_burst BETWEEN 0 AND 100000 THEN
     RETURN "class" || ' packet/' || packet_per_ip_unit || '/IP burst outside of range, must be between 0 and 100000: ' || packet_per_ip_burst;
   END IF;
@@ -87,10 +76,6 @@ BEGIN
     RETURN "class" || ' packet/' || packet_per_ip_unit || '/IP size outside of range, must be 0 or between 10 and 10000: ' || packet_per_ip_size;
   END IF;
   -- packet
-  -- TODO: Make an enum both in PostgreSQL and Java
-  IF packet_unit NOT IN ('second', 'minute', 'hour', 'day') THEN
-    RETURN "class" || ' time unit invalid for packet, must be one of ''second'', ''minute'', ''hour'', or ''day'': ' || packet_unit;
-  END IF;
   IF NOT packet_burst BETWEEN 0 AND 100000 THEN
     RETURN "class" || ' packet/' || packet_unit || ' burst outside of range, must be between 0 and 100000: ' || packet_burst;
   END IF;

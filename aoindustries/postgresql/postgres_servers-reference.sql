@@ -8,7 +8,7 @@ alter table postgres_servers
 alter table postgres_servers
   add constraint version_fkey
   foreign key (version)
-  references postgres_versions (version)
+  references postgresql."Version" (version)
   on delete restrict
   on update cascade
 ;

@@ -1,4 +1,4 @@
-alter table ip_reputation_limiters
+alter table "net/reputation"."ReputationLimiter"
   add constraint net_device_fkey
   foreign key (net_device)
   references net."Device" (pkey)

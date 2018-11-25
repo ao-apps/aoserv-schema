@@ -1,10 +1,10 @@
-create sequence "net/reputation".ip_reputation_limiters_pkey_seq cycle;
-grant all on    "net/reputation".ip_reputation_limiters_pkey_seq to aoadmin;
---grant select, update on "net/reputation".ip_reputation_limiters_pkey_seq to aoserv_app;
+create sequence "net/reputation"."ReputationLimiter_pkey_seq" cycle;
+grant all on    "net/reputation"."ReputationLimiter_pkey_seq" to aoadmin;
+--grant select, update on "net/reputation"."ReputationLimiter_pkey_seq" to aoserv_app;
 
-create table ip_reputation_limiters (
+create table "net/reputation"."ReputationLimiter" (
   pkey integer
-    default nextval('"net/reputation".ip_reputation_limiters_pkey_seq')
+    default nextval('"net/reputation"."ReputationLimiter_pkey_seq"')
     primary key
     check (
       -- Due to encoding of iptables (and hashlimit) names, may not exceed eight characters
@@ -25,5 +25,5 @@ create table ip_reputation_limiters (
         or (description=trim(description) and length(description)>0)
     )
 );
-grant all    on ip_reputation_limiters to aoadmin;
-grant select on ip_reputation_limiters to aoserv_app;
+grant all    on "net/reputation"."ReputationLimiter" to aoadmin;
+grant select on "net/reputation"."ReputationLimiter" to aoserv_app;

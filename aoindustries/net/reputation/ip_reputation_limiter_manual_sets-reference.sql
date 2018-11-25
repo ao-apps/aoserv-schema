@@ -2,7 +2,7 @@
 alter table ip_reputation_limiter_manual_sets
   add constraint limiter_fkey
   foreign key (limiter)
-  references ip_reputation_limiters (pkey)
+  references "net/reputation"."ReputationLimiter" (pkey)
   on delete restrict
   on update cascade
 ;

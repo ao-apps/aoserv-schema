@@ -1,6 +1,3 @@
--- Depends on:
--- TODO
-
 create schema if not exists "web/tomcat";
 
 comment on schema "web/tomcat" is 'The web/tomcat schema contains Tomcat configuration';

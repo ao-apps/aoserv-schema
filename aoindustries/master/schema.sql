@@ -1,6 +1,3 @@
--- Depends on:
--- TODO
-
 create schema if not exists master;
 
 comment on schema master is 'The master schema regulates access to AOServ Master';

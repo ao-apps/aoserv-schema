@@ -1,6 +1,3 @@
--- Depends on:
--- TODO
-
 create schema if not exists "net.reputation";
 
 comment on schema "net.reputation" is 'The "net.reputation" schema contains IP reputation tracking configuration and data';

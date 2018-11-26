@@ -1,6 +1,3 @@
--- Depends on:
--- None
-
 -- TODO: Drop schema once conversion done and unused
 --       And leave drop here, since it will be our standard to not have the default public schema.
 

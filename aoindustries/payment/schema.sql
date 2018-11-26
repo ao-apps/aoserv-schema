@@ -1,6 +1,3 @@
--- Depends on:
--- TODO
-
 create schema if not exists payment;
 
 comment on schema payment is 'The payment schema supports payment processing';

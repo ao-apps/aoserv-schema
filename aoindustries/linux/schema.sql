@@ -1,6 +1,3 @@
--- Depends on:
--- TODO
-
 create schema if not exists linux;
 
 comment on schema linux is 'The linux schema contains Linux user and group configuration';

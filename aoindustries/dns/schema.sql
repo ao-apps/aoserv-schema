@@ -1,6 +1,3 @@
--- Depends on:
--- TODO
-
 create schema if not exists dns;
 
 comment on schema dns is 'The dns schema contains DNS configuration';

@@ -1,6 +1,3 @@
--- Depends on:
--- TODO
-
 create schema if not exists pki;
 
 comment on schema pki is 'The pki schema contains public key infrastructure configuration';

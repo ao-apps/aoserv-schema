@@ -1,6 +1,3 @@
--- Depends on:
--- TODO
-
 create schema if not exists mysql;
 
 comment on schema mysql is 'The mysql schema contains MySQL configuration';

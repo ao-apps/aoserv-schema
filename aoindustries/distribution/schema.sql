@@ -1,6 +1,3 @@
--- Depends on:
--- TODO
-
 create schema if not exists distribution;
 
 comment on schema distribution is 'The distribution schema contains information about Linux distributions managed by the AOServ Platform';

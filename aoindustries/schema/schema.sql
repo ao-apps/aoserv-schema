@@ -1,6 +1,3 @@
--- Depends on:
--- None
-
 create schema if not exists "schema";
 
 comment on schema "schema" is 'The "schema" schema contains the definitions of the AOServ data structions over time';

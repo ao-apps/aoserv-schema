@@ -1,6 +1,3 @@
--- Depends on:
--- TODO
-
 create schema if not exists "net.monitoring";
 
 comment on schema "net.monitoring" is 'The "net.monitoring" schema contains network monitoring configuration';

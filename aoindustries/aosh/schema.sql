@@ -1,6 +1,3 @@
--- Depends on:
--- schema
-
 create schema if not exists aosh;
 
 comment on schema aosh is 'The aosh schema is used for the AOSH command line interface';

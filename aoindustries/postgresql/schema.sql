@@ -1,6 +1,3 @@
--- Depends on:
--- TODO
-
 create schema if not exists postgresql;
 
 comment on schema postgresql is 'The postgresql schema contains PostgreSQL configuration';

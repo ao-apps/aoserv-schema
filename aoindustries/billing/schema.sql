@@ -1,6 +1,3 @@
--- Depends on:
--- TODO
-
 create schema if not exists billing;
 
 comment on schema billing is 'The billing schema contains billing configuration and history';

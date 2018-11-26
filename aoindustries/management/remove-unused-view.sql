@@ -8,7 +8,7 @@ as
 -- TODO: email.Pipe with no addresses
 -- TODO: web.tomcat.SharedTomcat
 -- web.HttpdServer
-          (select 'web'::name as "schema", 'HttpdServer'::name as "table", count(*) as unused from management."remove-httpd-server"
+          (select 'web'::name as "schema", 'HttpdServer'::name as "table", count(*) as unused from "web.management"."HttpdServer.remove"
            where num_site_binds=0)
 -- TODO: mysql.Database (without any mysql.DatabaseUser)
 -- TODO: mysql.UserServer (without any mysql.DatabaseUser)
@@ -24,7 +24,7 @@ union all (select 'postgresql'::name as "schema", 'Server'::name as "table", cou
            where num_databases=0 or num_users=0)
 -- TODO: email.SendmailServer without any email.SendmailBind
 -- TODO: net.FirewallZone
-union all (select 'net'::name as "schema", 'IpAddress'::name as "table", count(*) as unused from management."release-net.IpAddress"
+union all (select 'net'::name as "schema", 'IpAddress'::name as "table", count(*) as unused from "net.management"."IpAddress.release"
            where num_binds=0 and "AO_SERVER" is not null)
 -- pki.Certificate
 union all (select 'pki'::name as "schema", 'Certificate'::name as "table", count(*) as unused from "pki.management"."Certificate.remove"

@@ -25,7 +25,7 @@ union all (select 'postgresql'::name as "schema", 'Server'::name as "table", cou
 -- TODO: email.SendmailServer without any email.SendmailBind
 -- TODO: net.FirewallZone
 union all (select 'net'::name as "schema", 'IpAddress'::name as "table", count(*) as unused from "net.management"."IpAddress.release"
-           where num_binds=0 and "AO_SERVER" is not null)
+           where num_justifying_binds=0 and "AO_SERVER" is not null)
 -- pki.Certificate
 union all (select 'pki'::name as "schema", 'Certificate'::name as "table", count(*) as unused from "pki.management"."Certificate.remove"
            where num_cyrus_imapd_binds=0 and num_cyrus_imapd_servers=0 and num_httpd_site_binds=0 and num_sendmail_servers=0 and num_other_uses=0)

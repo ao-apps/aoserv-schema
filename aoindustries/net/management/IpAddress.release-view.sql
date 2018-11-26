@@ -3,19 +3,19 @@ create or replace view
   "net.management"."IpAddress.release"
 as
 select
-  (
-    select
-      count(*)
-    from
-      net."Bind" nb
-      left join "net.management"."IpAddressJustifyingProtocol" ijp on nb.app_protocol = ijp."appProtocol"
-    where
-      nb."ipAddress" = ia.id
-      and coalesce(
-        ijp.justied,
+  (select count(*) from net."Bind" nb where nb."ipAddress" = ia.id) as num_binds,
+  (select
+    count(*)
+  from
+    net."Bind" nb
+    left join "net.management"."IpAddressJustifyingProtocol" ijp on nb.app_protocol = ijp."appProtocol"
+  where
+    nb."ipAddress" = ia.id
+    and coalesce(
+      ijp.justied,
       true -- Default to justified when not specified
     )
-  ) as num_binds,
+  ) as num_justifying_binds,
   se."name" as "SERVER",
   sepk."name" as "SERVER_PACKAGE",
   ao.hostname as "AO_SERVER",

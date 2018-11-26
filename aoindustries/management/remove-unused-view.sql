@@ -14,20 +14,20 @@ as
 -- TODO: mysql.UserServer (without any mysql.DatabaseUser)
 -- TODO: mysql.User (orphaned)
 -- mysql.Server
-union all (select 'mysql'::name as "schema", 'Server'::name as "table", count(*) as unused from management."remove-mysql-server"
+union all (select 'mysql'::name as "schema", 'Server'::name as "table", count(*) as unused from "mysql.management"."Server.remove"
            where num_databases=0 or num_users=0)
 -- TODO: postgresql.Database (without any postgresql.User in same business?/package?)
 -- TODO: postgresql.UserServer (without any postgresql.Database in same business?/package?)
 -- TODO: postgresql.User (orphaned)
 -- postgresql.Server
-union all (select 'postgresql'::name as "schema", 'Server'::name as "table", count(*) as unused from management."remove-postgresql-server"
+union all (select 'postgresql'::name as "schema", 'Server'::name as "table", count(*) as unused from "postgresql.management"."Server.remove"
            where num_databases=0 or num_users=0)
 -- TODO: email.SendmailServer without any email.SendmailBind
 -- TODO: net.FirewallZone
-union all (select 'net'::name as "schema", 'IpAddress'::name as "table", count(*) as unused from management."release-net.IpAddress"
+union all (select 'net'::name as "schema", 'IpAddress'::name as "table", count(*) as unused from "net/management"."IpAddress.release"
            where num_binds=0 and "AO_SERVER" is not null)
 -- pki.Certificate
-union all (select 'pki'::name as "schema", 'Certificate'::name as "table", count(*) as unused from management."remove-ssl-certificate"
+union all (select 'pki'::name as "schema", 'Certificate'::name as "table", count(*) as unused from "pki.management"."Certificate.remove"
            where num_cyrus_imapd_binds=0 and num_cyrus_imapd_servers=0 and num_httpd_site_binds=0 and num_sendmail_servers=0 and num_other_uses=0)
 -- TODO: ftp.GuestUser
 -- TODO: linux.User (orphaned)

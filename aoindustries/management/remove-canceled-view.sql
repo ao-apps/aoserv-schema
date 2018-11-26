@@ -24,11 +24,11 @@ union all (select accounting, aosh_command from "postgresql.management"."User.re
 -- TODO: postgresql.Server
 -- TODO: email.SendmailServer without any email.SendmailBind
 -- net.Bind
-union all (select accounting, aosh_command from management."remove-canceled-net.Bind" order by accounting, port)
+union all (select accounting, aosh_command from "net.management"."Bind.remove-canceled" order by accounting, port)
 -- net.IpAddress.hostname
-union all (select accounting, aosh_command from management."remove-canceled-net.IpAddress.hostname" order by accounting, net.reverse_hostname(hostname), "inetAddress")
+union all (select accounting, aosh_command from "net.management"."IpAddress.hostname.remove-canceled" order by accounting, net.reverse_hostname(hostname), "inetAddress")
 -- net.IpAddress.package
-union all (select accounting, aosh_command from management."remove-canceled-net.IpAddress.package" order by accounting, net.reverse_hostname(hostname), "inetAddress")
+union all (select accounting, aosh_command from "net.management"."IpAddress.package.remove-canceled" order by accounting, net.reverse_hostname(hostname), "inetAddress")
 -- TODO: pki.Certificate (once have auto-cleanup within aoserv-daemon)
 -- TODO: net.Host (once a server is owned by a package in the schema)
 -- linux.User

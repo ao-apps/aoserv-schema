@@ -1,6 +1,6 @@
 select aosh.add_command(
   'add_backup_server',
-  'server',
+  'net',
   'servers',
   'adds a new backup server',
   '<i>hostname</i> <i>farm</i> <i>owner</i> <i>description</i> <i>architecture</i> <i>backup_hour</i> <i>os_type</i> <i>os_version</i> <i>username</i> <i>password</i> <i>contact_phone</i> <i>contact_email</i>',
@@ -9,7 +9,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_backup_server',
-  'server',
+  'net',
   'servers',
   'adds a new backup server',
   '<i>hostname</i> <i>farm</i> <i>owner</i> <i>description</i> <i>backup_hour</i> <i>os_type</i> <i>os_version</i> <i>architecture</i> <i>username</i> <i>password</i> <i>contact_phone</i> <i>contact_email</i>',

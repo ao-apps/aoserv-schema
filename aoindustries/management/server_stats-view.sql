@@ -24,7 +24,7 @@ as
 --      ao.rack,
 --      ao.disk
     from
-      server."Server" se,
+      net."Host" se,
       linux."Server" ao
     where
       se.id=ao.server

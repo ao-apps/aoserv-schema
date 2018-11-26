@@ -48,7 +48,7 @@ select
 from
              linux."Server"                        ao
   inner join web."HttpdServer"                     hs  on ao.server                   =  hs.ao_server
-  inner join server."Server"                       se  on ao.server                   =  se.id
+  inner join net."Host"                       se  on ao.server                   =  se.id
   inner join distribution."OperatingSystemVersion" osv on se.operating_system_version = osv.id;
 
 revoke all    on management."remove-httpd-server" from aoadmin;

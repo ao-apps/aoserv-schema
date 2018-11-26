@@ -1,4 +1,4 @@
-select "schema".add_foreign_key('backup', 'file_backups', 'server',           'server',  'servers',             'pkey',  '1.0a100', '1.30');
+select "schema".add_foreign_key('backup', 'file_backups', 'server',           'net',     'servers',             'pkey',  '1.0a100', '1.30');
 select "schema".add_foreign_key('backup', 'file_backups', 'device',           'backup',  'file_backup_devices', 'pkey',  '1.0a100', '1.0a106');
 select "schema".add_foreign_key('backup', 'file_backups', 'device',           'backup',  'file_backup_devices', 'pkey',  '1.0a107', '1.30');
 select "schema".add_foreign_key('backup', 'file_backups', 'package',          'billing', 'packages',            'pkey',  '1.0a100', '1.30');

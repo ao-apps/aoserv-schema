@@ -8,7 +8,7 @@ alter table master."UserHost"
 alter table master."UserHost"
   add constraint server_fkey
   foreign key (server)
-  references server."Server" (id)
+  references net."Host" (id)
   on delete restrict
   on update cascade
 ;

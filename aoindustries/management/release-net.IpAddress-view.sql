@@ -21,7 +21,7 @@ from
              net."IpAddress"                       ia
   inner join net."Device"                          nd   on ia."netDevice"              =   nd.id
   inner join net."DeviceId"                        ndi  on nd."deviceID"               =  ndi."name"
-  inner join server."Server"                       se   on nd.server                   =   se.id
+  inner join net."Host"                       se   on nd.server                   =   se.id
   inner join billing."Package"                     sepk on se.package                  = sepk.id
   left  join distribution."OperatingSystemVersion" osv  on se.operating_system_version =  osv.id
   left  join linux."Server"                        ao   on se.id                       =   ao.server

@@ -1708,7 +1708,7 @@ select "schema".add_table(
     '1.30'
 );
 select "schema".add_table(
-    'server',
+    'net',
     'servers',
     'Servers',
     false,

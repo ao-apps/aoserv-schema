@@ -1,5 +1,5 @@
 begin;
-insert into server."Server" values(
+insert into net."Host" values(
     2,
 	'freedom',
 	'Nested Test Server',

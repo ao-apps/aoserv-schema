@@ -35,7 +35,7 @@ select
 from
              pki."Certificate"                     sc
   inner join linux."Server"                        ao  on sc.ao_server                = ao.server
-  inner join server."Server"                       se  on ao.server                   = se.id
+  inner join net."Host"                       se  on ao.server                   = se.id
   inner join distribution."OperatingSystemVersion" osv on se.operating_system_version = osv.id;
 
 revoke all    on management."remove-ssl-certificate" from aoadmin;

@@ -200,14 +200,6 @@ select "schema".add_schema(
     null -- Uses pg_catalog.pg_description
 );
 select "schema".add_schema(
-    'server',
-    '1.0a100',
-    null,
-    'Server',
-    false,
-    null -- Uses pg_catalog.pg_description
-);
-select "schema".add_schema(
     'signup',
     '1.0a100',
     null,

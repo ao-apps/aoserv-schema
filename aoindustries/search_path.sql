@@ -36,7 +36,6 @@ ALTER ROLE aoadmin SET search_path TO
   reseller,
   "schema",
   scm,
-  server,
   signup,
   ticket,
   web,

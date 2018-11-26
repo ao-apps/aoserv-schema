@@ -1,12 +1,12 @@
 /* TODO
 -- Tracks the entries for ip sets
-create sequence         net."IpSetEntry_pkey_seq" cycle;
-grant all            on net."IpSetEntry_pkey_seq" to aoadmin;
-grant select, update on net."IpSetEntry_pkey_seq" to aoserv_app;
+create sequence         net."IpSetEntry_id_seq" cycle;
+grant all            on net."IpSetEntry_id_seq" to aoadmin;
+grant select, update on net."IpSetEntry_id_seq" to aoserv_app;
 
 create table net."IpSetEntry" (
-  pkey bigint
-    default nextval('net."IpSetEntry_pkey_seq"')
+  id bigint
+    default nextval('net."IpSetEntry_id_seq"')
     primary key,
   "set" integer
     not null,

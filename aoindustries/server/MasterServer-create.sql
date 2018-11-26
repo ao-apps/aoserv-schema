@@ -1,6 +1,6 @@
-create sequence         server."MasterServer_pkey_seq" cycle;
-grant all            on server."MasterServer_pkey_seq" to aoadmin;
-grant select, update on server."MasterServer_pkey_seq" to aoserv_app;
+create sequence         server."MasterServer_id_seq" cycle;
+grant all            on server."MasterServer_id_seq" to aoadmin;
+grant select, update on server."MasterServer_id_seq" to aoserv_app;
 
 /*
 TODO: When a master.User has no server.Server listed, it is considered a
@@ -10,8 +10,8 @@ WHERE clause.  This is too risky.  Find a better way, roles or another flag
 in master.User.
  */
 create table server."MasterServer" (
-  pkey integer
-    default nextval('server."MasterServer_pkey_seq"')
+  id integer
+    default nextval('server."MasterServer_id_seq"')
     primary key,
   username text
     not null,

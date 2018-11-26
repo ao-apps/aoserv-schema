@@ -1,10 +1,10 @@
-create sequence         email."SmtpRelay_pkey_seq" cycle;
-grant all            on email."SmtpRelay_pkey_seq" to aoadmin;
-grant select, update on email."SmtpRelay_pkey_seq" to aoserv_app;
+create sequence         email."SmtpRelay_id_seq" cycle;
+grant all            on email."SmtpRelay_id_seq" to aoadmin;
+grant select, update on email."SmtpRelay_id_seq" to aoserv_app;
 
 create table email."SmtpRelay" (
-  pkey integer
-    default nextval('email."SmtpRelay_pkey_seq"')
+  id integer
+    default nextval('email."SmtpRelay_id_seq"')
     primary key,
   package text
     not null,

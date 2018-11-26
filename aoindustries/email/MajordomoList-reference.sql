@@ -1,7 +1,7 @@
 alter table email."MajordomoList"
   add constraint email_list_fkey
   foreign key (email_list)
-  references email."List" (pkey)
+  references email."List" (id)
   on delete restrict
   on update cascade
 ;
@@ -15,42 +15,42 @@ alter table email."MajordomoList"
 alter table email."MajordomoList"
   add constraint listname_pipe_add_fkey
   foreign key (listname_pipe_add)
-  references email."PipeAddress" (pkey)
+  references email."PipeAddress" (id)
   on delete restrict
   on update cascade
 ;
 alter table email."MajordomoList"
   add constraint listname_list_add_fkey
   foreign key (listname_list_add)
-  references email."ListAddress" (pkey)
+  references email."ListAddress" (id)
   on delete restrict
   on update cascade
 ;
 alter table email."MajordomoList"
   add constraint owner_listname_add_fkey
   foreign key (owner_listname_add)
-  references email."Address" (pkey)
+  references email."Address" (id)
   on delete restrict
   on update cascade
 ;
 alter table email."MajordomoList"
   add constraint listname_owner_add_fkey
   foreign key (listname_owner_add)
-  references email."Address" (pkey)
+  references email."Address" (id)
   on delete restrict
   on update cascade
 ;
 alter table email."MajordomoList"
   add constraint listname_approval_add_fkey
   foreign key (listname_approval_add)
-  references email."Address" (pkey)
+  references email."Address" (id)
   on delete restrict
   on update cascade
 ;
 alter table email."MajordomoList"
   add constraint listname_request_pipe_add_fkey
   foreign key (listname_request_pipe_add)
-  references email."PipeAddress" (pkey)
+  references email."PipeAddress" (id)
   on delete restrict
   on update cascade
 ;

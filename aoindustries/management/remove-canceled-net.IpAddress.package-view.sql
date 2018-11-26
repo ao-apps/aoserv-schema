@@ -5,18 +5,18 @@ select
   bu.accounting,
   'set_ip_address_package '
   || ia."inetAddress"
-  || ' ' || coalesce(ao.hostname, se.pkey::text)
+  || ' ' || coalesce(ao.hostname, se.id::text)
   || ' ' || nd."deviceID"
   || ' ' || management."find-business-not-canceled"(bu.parent) as aosh_command,
   ao.hostname,
   ia."inetAddress"
 from
              net."IpAddress"   ia
-  inner join billing."Package" pk on ia.package     = pk.pkey
+  inner join billing."Package" pk on ia.package     = pk.id
   inner join account."Account" bu on pk.accounting  = bu.accounting
-  inner join net."Device"      nd on ia."netDevice" = nd.pkey
-  inner join server."Server"   se on nd.server      = se.pkey
-  left  join linux."Server"    ao on se.pkey        = ao.server
+  inner join net."Device"      nd on ia."netDevice" = nd.id
+  inner join server."Server"   se on nd.server      = se.id
+  left  join linux."Server"    ao on se.id          = ao.server
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 

@@ -8,28 +8,28 @@ alter table web."HttpdServer"
 alter table web."HttpdServer"
   add constraint linux_server_account_fkey
   foreign key (linux_server_account)
-  references linux."UserServer" (pkey)
+  references linux."UserServer" (id)
   on delete restrict
   on update cascade
 ;
 alter table web."HttpdServer"
   add constraint linux_server_group_fkey
   foreign key (linux_server_group)
-  references linux."GroupServer" (pkey)
+  references linux."GroupServer" (id)
   on delete restrict
   on update cascade
 ;
 alter table web."HttpdServer"
   add constraint mod_php_version_fkey
   foreign key (mod_php_version)
-  references distribution."SoftwareVersion" (pkey)
+  references distribution."SoftwareVersion" (id)
   on delete restrict
   on update cascade
 ;
 alter table web."HttpdServer"
   add constraint package_fkey
   foreign key (package)
-  references billing."Package" (pkey)
+  references billing."Package" (id)
   on delete restrict
   on update cascade
 ;

@@ -1,10 +1,10 @@
-create sequence         "web/tomcat"."ContextDataSource_pkey_seq" cycle;
-grant all            on "web/tomcat"."ContextDataSource_pkey_seq" to aoadmin;
-grant select, update on "web/tomcat"."ContextDataSource_pkey_seq" to aoserv_app;
+create sequence         "web/tomcat"."ContextDataSource_id_seq" cycle;
+grant all            on "web/tomcat"."ContextDataSource_id_seq" to aoadmin;
+grant select, update on "web/tomcat"."ContextDataSource_id_seq" to aoserv_app;
 
 create table "web/tomcat"."ContextDataSource" (
-  pkey integer
-    default nextval('"web/tomcat"."ContextDataSource_pkey_seq"')
+  id integer
+    default nextval('"web/tomcat"."ContextDataSource_id_seq"')
     primary key,
   tomcat_context integer
     not null,

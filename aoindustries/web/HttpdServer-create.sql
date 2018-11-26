@@ -1,10 +1,10 @@
-create sequence         web."HttpdServer_pkey_seq" cycle;
-grant all            on web."HttpdServer_pkey_seq" to aoadmin;
-grant select, update on web."HttpdServer_pkey_seq" to aoserv_app;
+create sequence         web."HttpdServer_id_seq" cycle;
+grant all            on web."HttpdServer_id_seq" to aoadmin;
+grant select, update on web."HttpdServer_id_seq" to aoserv_app;
 
 create table web."HttpdServer" (
-  pkey integer
-    default nextval('web."HttpdServer_pkey_seq"')
+  id integer
+    default nextval('web."HttpdServer_id_seq"')
     primary key,
   ao_server integer
     not null,

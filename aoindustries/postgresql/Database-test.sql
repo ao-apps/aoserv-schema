@@ -8,20 +8,20 @@ values(
     16,
     (
         select
-            pkey
+            id
         from
             postgresql."Encoding"
         where
             encoding='LATIN1'
             and postgres_version=(
                 select
-                    pkey
+                    id
                 from
                     distribution."SoftwareVersion"
                 where
                     name='postgresql'
                     and version like '8.1.%'
-                    and operating_system_version=(select pkey from distribution."OperatingSystemVersion" where operating_system='centos' and version_number='5')
+                    and operating_system_version=(select id from distribution."OperatingSystemVersion" where operating_system='centos' and version_number='5')
             )
     ),
     true,
@@ -37,20 +37,20 @@ values(
     16,
     (
         select
-            pkey
+            id
         from
             postgresql."Encoding"
         where
             encoding='LATIN1'
             and postgres_version=(
                 select
-                    pkey
+                    id
                 from
                     distribution."SoftwareVersion"
                 where
                     name='postgresql'
                     and version like '8.1.%'
-                    and operating_system_version=(select pkey from distribution."OperatingSystemVersion" where operating_system='centos' and version_number='5')
+                    and operating_system_version=(select id from distribution."OperatingSystemVersion" where operating_system='centos' and version_number='5')
             )
     ),
     true,
@@ -66,20 +66,20 @@ values(
     17,
     (
         select
-            pkey
+            id
         from
             postgresql."Encoding"
         where
             encoding='SQL_ASCII'
             and postgres_version=(
                 select
-                    pkey
+                    id
                 from
                     distribution."SoftwareVersion"
                 where
                     name='postgresql'
                     and version like '8.1.%'
-                    and operating_system_version=(select pkey from distribution."OperatingSystemVersion" where operating_system='centos' and version_number='5')
+                    and operating_system_version=(select id from distribution."OperatingSystemVersion" where operating_system='centos' and version_number='5')
             )
     ),
     false,
@@ -95,20 +95,20 @@ values(
     17,
     (
         select
-            pkey
+            id
         from
             postgresql."Encoding"
         where
             encoding='UTF8'
             and postgres_version=(
                 select
-                    pkey
+                    id
                 from
                     distribution."SoftwareVersion"
                 where
                     name='postgresql'
                     and version like '8.1.%'
-                    and operating_system_version=(select pkey from distribution."OperatingSystemVersion" where operating_system='centos' and version_number='5')
+                    and operating_system_version=(select id from distribution."OperatingSystemVersion" where operating_system='centos' and version_number='5')
             )
     ),
     false,
@@ -124,20 +124,20 @@ values(
     16,
     (
         select
-            pkey
+            id
         from
             postgresql."Encoding"
         where
             encoding='SQL_ASCII'
             and postgres_version=(
                 select
-                    pkey
+                    id
                 from
                     distribution."SoftwareVersion"
                 where
                     name='postgresql'
                     and version like '8.1.%'
-                    and operating_system_version=(select pkey from distribution."OperatingSystemVersion" where operating_system='centos' and version_number='5')
+                    and operating_system_version=(select id from distribution."OperatingSystemVersion" where operating_system='centos' and version_number='5')
             )
     ),
     false,
@@ -153,20 +153,20 @@ values(
     27,
     (
         select
-            pkey
+            id
         from
             postgresql."Encoding"
         where
             encoding='UTF8'
             and postgres_version=(
                 select
-                    pkey
+                    id
                 from
                     distribution."SoftwareVersion"
                 where
                     name='postgresql'
                     and version like '8.1.%'
-                    and operating_system_version=(select pkey from distribution."OperatingSystemVersion" where operating_system='centos' and version_number='5')
+                    and operating_system_version=(select id from distribution."OperatingSystemVersion" where operating_system='centos' and version_number='5')
             )
     ),
     false,
@@ -182,20 +182,20 @@ values(
     27,
     (
         select
-            pkey
+            id
         from
             postgresql."Encoding"
         where
             encoding='SQL_ASCII'
             and postgres_version=(
                 select
-                    pkey
+                    id
                 from
                     distribution."SoftwareVersion"
                 where
                     name='postgresql'
                     and version like '8.1.%'
-                    and operating_system_version=(select pkey from distribution."OperatingSystemVersion" where operating_system='centos' and version_number='5')
+                    and operating_system_version=(select id from distribution."OperatingSystemVersion" where operating_system='centos' and version_number='5')
             )
     ),
     false,
@@ -211,24 +211,24 @@ values(
     24,
     (
         select
-            pkey
+            id
         from
             postgresql."Encoding"
         where
             encoding='SQL_ASCII'
             and postgres_version=(
                 select
-                    pkey
+                    id
                 from
                     distribution."SoftwareVersion"
                 where
                     name='postgresql'
                     and version like '8.1.%'
-                    and operating_system_version=(select pkey from distribution."OperatingSystemVersion" where operating_system='centos' and version_number='5')
+                    and operating_system_version=(select id from distribution."OperatingSystemVersion" where operating_system='centos' and version_number='5')
             )
     ),
     false,
     true,
     false
 );
-SELECT setval ('postgresql."Database_pkey_seq"', 17, true);
+SELECT setval ('postgresql."Database_id_seq"', 17, true);

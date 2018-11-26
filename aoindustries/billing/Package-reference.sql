@@ -8,7 +8,7 @@ alter table billing."Package"
 alter table billing."Package"
   add constraint package_definition_fkey
   foreign key (package_definition)
-  references billing."PackageDefinition" (pkey)
+  references billing."PackageDefinition" (id)
   on delete restrict
   on update cascade
 ;
@@ -22,7 +22,7 @@ alter table billing."Package"
 alter table billing."Package"
   add constraint disable_log_fkey
   foreign key (disable_log)
-  references account."DisableLog" (pkey)
+  references account."DisableLog" (id)
   on delete restrict
   on update cascade
 ;

@@ -1,7 +1,7 @@
 alter table management."DistroFile"
   add constraint operating_system_version_fkey
   foreign key (operating_system_version)
-  references distribution."OperatingSystemVersion" (pkey)
+  references distribution."OperatingSystemVersion" (id)
   on delete restrict
   on update cascade
 ;

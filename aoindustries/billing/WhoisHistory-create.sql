@@ -1,10 +1,10 @@
-create sequence         billing."WhoisHistory_pkey_seq" cycle;
-grant all            on billing."WhoisHistory_pkey_seq" to aoadmin;
-grant select, update on billing."WhoisHistory_pkey_seq" to aoserv_app;
+create sequence         billing."WhoisHistory_id_seq" cycle;
+grant all            on billing."WhoisHistory_id_seq" to aoadmin;
+grant select, update on billing."WhoisHistory_id_seq" to aoserv_app;
 
 create table billing."WhoisHistory" (
-  pkey integer
-    default nextval('billing."WhoisHistory_pkey_seq"')
+  id integer
+    default nextval('billing."WhoisHistory_id_seq"')
     primary key,  
   "time" timestamp with time zone
     default now()

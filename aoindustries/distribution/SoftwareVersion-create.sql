@@ -1,10 +1,10 @@
-create sequence distribution."SoftwareVersion_pkey_seq" cycle;
-grant all    on distribution."SoftwareVersion_pkey_seq" to aoadmin;
-grant select on distribution."SoftwareVersion_pkey_seq" to aoserv_app;
+create sequence distribution."SoftwareVersion_id_seq" cycle;
+grant all    on distribution."SoftwareVersion_id_seq" to aoadmin;
+grant select on distribution."SoftwareVersion_id_seq" to aoserv_app;
 
 create table distribution."SoftwareVersion" (
-  pkey integer
-    default nextval('distribution."SoftwareVersion_pkey_seq"')
+  id integer
+    default nextval('distribution."SoftwareVersion_id_seq"')
     primary key,
   "name" text
     not null,

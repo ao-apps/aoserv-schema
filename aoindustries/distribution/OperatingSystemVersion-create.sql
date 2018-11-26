@@ -1,10 +1,10 @@
-create sequence distribution."OperatingSystemVersion_pkey_seq" cycle;
-grant all    on distribution."OperatingSystemVersion_pkey_seq" to aoadmin;
-grant select on distribution."OperatingSystemVersion_pkey_seq" to aoserv_app;
+create sequence distribution."OperatingSystemVersion_id_seq" cycle;
+grant all    on distribution."OperatingSystemVersion_id_seq" to aoadmin;
+grant select on distribution."OperatingSystemVersion_id_seq" to aoserv_app;
 
 create table distribution."OperatingSystemVersion" (
-  pkey integer
-    default nextval('distribution."OperatingSystemVersion_pkey_seq"')
+  id integer
+    default nextval('distribution."OperatingSystemVersion_id_seq"')
     primary key,
   operating_system text
     not null,

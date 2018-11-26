@@ -1,7 +1,7 @@
 alter table billing."PackageDefinitionLimit"
   add constraint package_definition_fkey
   foreign key (package_definition)
-  references billing."PackageDefinition" (pkey)
+  references billing."PackageDefinition" (id)
   on delete restrict
   on update cascade
 ;

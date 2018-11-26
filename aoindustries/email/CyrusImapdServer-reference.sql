@@ -8,14 +8,14 @@ alter table email."CyrusImapdServer"
 alter table email."CyrusImapdServer"
   add constraint sieve_net_bind_fkey
   foreign key (sieve_net_bind)
-  references net."Bind" (pkey)
+  references net."Bind" (id)
   on delete restrict
   on update cascade
 ;
 alter table email."CyrusImapdServer"
   add constraint certificate_fkey
   foreign key (certificate)
-  references pki."Certificate" (pkey)
+  references pki."Certificate" (id)
   on delete restrict
   on update cascade
 ;

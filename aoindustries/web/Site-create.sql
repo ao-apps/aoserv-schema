@@ -1,10 +1,10 @@
-create sequence         web."Site_pkey_seq" cycle;
-grant all            on web."Site_pkey_seq" to aoadmin;
-grant select, update on web."Site_pkey_seq" to aoserv_app;
+create sequence         web."Site_id_seq" cycle;
+grant all            on web."Site_id_seq" to aoadmin;
+grant select, update on web."Site_id_seq" to aoserv_app;
 
 create table web."Site" (
-  pkey integer
-    default nextval('web."Site_pkey_seq"')
+  id integer
+    default nextval('web."Site_id_seq"')
     primary key,
   ao_server integer
     not null,
@@ -36,9 +36,9 @@ create table web."Site" (
     not null,
   package text
     not null,
-  linux_account text -- TODO: This should go to linux.UserServer.pkey on the same server
+  linux_account text -- TODO: This should go to linux.UserServer.id on the same server
     not null,
-  linux_group text -- TODO: This should go to linux.GroupServer.pkey on the same server
+  linux_group text -- TODO: This should go to linux.GroupServer.id on the same server
     not null,
   server_admin text
     not null,

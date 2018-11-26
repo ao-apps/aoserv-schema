@@ -1,10 +1,10 @@
-create sequence infrastructure."VirtualDisk_pkey_seq" cycle;
-grant all    on infrastructure."VirtualDisk_pkey_seq" to aoadmin;
-grant select on infrastructure."VirtualDisk_pkey_seq" to aoserv_app;
+create sequence infrastructure."VirtualDisk_id_seq" cycle;
+grant all    on infrastructure."VirtualDisk_id_seq" to aoadmin;
+grant select on infrastructure."VirtualDisk_id_seq" to aoserv_app;
 
 create table infrastructure."VirtualDisk" (
-  pkey integer
-    default nextval('infrastructure."VirtualDisk_pkey_seq"')
+  id integer
+    default nextval('infrastructure."VirtualDisk_id_seq"')
     primary key,
   virtual_server integer
     not null,

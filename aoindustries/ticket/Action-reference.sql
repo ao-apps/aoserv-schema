@@ -1,7 +1,7 @@
 alter table ticket."Action"
   add constraint ticket_fkey
   foreign key (ticket)
-  references ticket."Ticket" (pkey)
+  references ticket."Ticket" (id)
   on update cascade
   on delete restrict
 ;
@@ -92,14 +92,14 @@ alter table ticket."Action"
 alter table ticket."Action"
   add constraint old_category_fkey
   foreign key (old_category)
-  references reseller."Category" (pkey)
+  references reseller."Category" (id)
   on update cascade
   on delete restrict
 ;
 alter table ticket."Action"
   add constraint new_category_fkey
   foreign key (new_category)
-  references reseller."Category" (pkey)
+  references reseller."Category" (id)
   on update cascade
   on delete restrict
 ;

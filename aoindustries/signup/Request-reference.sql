@@ -8,7 +8,7 @@ alter table signup."Request"
 alter table signup."Request"
   add constraint package_definition_fkey
   foreign key (package_definition)
-  references billing."PackageDefinition" (pkey)
+  references billing."PackageDefinition" (id)
   on delete restrict
   on update cascade
 ;
@@ -29,14 +29,14 @@ alter table signup."Request"
 alter table signup."Request"
   add constraint encryption_from_fkey
   foreign key (encryption_from)
-  references pki."EncryptionKey" (pkey)
+  references pki."EncryptionKey" (id)
   on delete restrict
   on update cascade
 ;
 alter table signup."Request"
   add constraint encryption_recipient_fkey
   foreign key (encryption_recipient)
-  references pki."EncryptionKey" (pkey)
+  references pki."EncryptionKey" (id)
   on delete restrict
   on update cascade
 ;

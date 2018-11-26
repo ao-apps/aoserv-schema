@@ -1,14 +1,14 @@
-create sequence "net/reputation"."Limiter_pkey_seq" cycle;
-grant all on    "net/reputation"."Limiter_pkey_seq" to aoadmin;
---grant select, update on "net/reputation"."Limiter_pkey_seq" to aoserv_app;
+create sequence "net/reputation"."Limiter_id_seq" cycle;
+grant all on    "net/reputation"."Limiter_id_seq" to aoadmin;
+--grant select, update on "net/reputation"."Limiter_id_seq" to aoserv_app;
 
 create table "net/reputation"."Limiter" (
-  pkey integer
-    default nextval('"net/reputation"."Limiter_pkey_seq"')
+  id integer
+    default nextval('"net/reputation"."Limiter_id_seq"')
     primary key
     check (
       -- Due to encoding of iptables (and hashlimit) names, may not exceed eight characters
-      pkey between 1 and 99999999
+      id between 1 and 99999999
     ),
   net_device integer not null,
   identifier text

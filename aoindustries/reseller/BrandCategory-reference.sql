@@ -8,7 +8,7 @@ alter table reseller."BrandCategory"
 alter table reseller."BrandCategory"
   add constraint category_fkey
   foreign key (category)
-  references reseller."Category" (pkey)
+  references reseller."Category" (id)
   on update cascade
   on delete restrict
 ;

@@ -1,10 +1,10 @@
-create sequence         web."VirtualHost_pkey_seq" cycle;
-grant all            on web."VirtualHost_pkey_seq" to aoadmin;
-grant select, update on web."VirtualHost_pkey_seq" to aoserv_app;
+create sequence         web."VirtualHost_id_seq" cycle;
+grant all            on web."VirtualHost_id_seq" to aoadmin;
+grant select, update on web."VirtualHost_id_seq" to aoserv_app;
 
 create table web."VirtualHost" (
-  pkey integer
-    default nextval('web."VirtualHost_pkey_seq"')
+  id integer
+    default nextval('web."VirtualHost_id_seq"')
     primary key,
   httpd_site integer
     not null,

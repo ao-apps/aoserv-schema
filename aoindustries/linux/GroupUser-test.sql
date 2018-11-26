@@ -1,4 +1,4 @@
-COPY linux."GroupUser" (pkey, "group", username, is_primary) FROM stdin;
+COPY linux."GroupUser" (id, "group", username, is_primary) FROM stdin;
 60	mailonly	testimap	t
 \.
-SELECT setval ('linux."GroupUser_pkey_seq"', 61, true);
+SELECT setval ('linux."GroupUser_id_seq"', 61, true);

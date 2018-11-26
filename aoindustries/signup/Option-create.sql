@@ -1,10 +1,10 @@
-create sequence         signup."Option_pkey_seq" cycle;
-grant all            on signup."Option_pkey_seq" to aoadmin;
-grant select, update on signup."Option_pkey_seq" to aoserv_app;
+create sequence         signup."Option_id_seq" cycle;
+grant all            on signup."Option_id_seq" to aoadmin;
+grant select, update on signup."Option_id_seq" to aoserv_app;
 
 create table signup."Option" (
-  pkey integer
-    default nextval('signup."Option_pkey_seq"')
+  id integer
+    default nextval('signup."Option_id_seq"')
     primary key,
   request integer
     not null,

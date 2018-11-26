@@ -8,7 +8,7 @@ alter table pki."Certificate"
 alter table pki."Certificate"
   add constraint package_fkey
   foreign key (package)
-  references billing."Package" (pkey)
+  references billing."Package" (id)
   on delete restrict
   on update cascade
 ;

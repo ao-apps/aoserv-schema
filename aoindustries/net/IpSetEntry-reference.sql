@@ -2,7 +2,7 @@
 alter table net."IpSetEntry"
   add constraint set_fkey
   foreign key ("set")
-  references net."IpSet" (pkey)
+  references net."IpSet" (id)
   on delete restrict
   on update cascade
 ;

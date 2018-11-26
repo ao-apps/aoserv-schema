@@ -1,10 +1,10 @@
-create sequence         postgresql."Database_pkey_seq" cycle;
-grant all            on postgresql."Database_pkey_seq" to aoadmin;
-grant select, update on postgresql."Database_pkey_seq" to aoserv_app;
+create sequence         postgresql."Database_id_seq" cycle;
+grant all            on postgresql."Database_id_seq" to aoadmin;
+grant select, update on postgresql."Database_id_seq" to aoserv_app;
 
 create table postgresql."Database" (
-  pkey integer
-    default nextval('postgresql."Database_pkey_seq"')
+  id integer
+    default nextval('postgresql."Database_id_seq"')
     primary key,
   "name" text
     not null,

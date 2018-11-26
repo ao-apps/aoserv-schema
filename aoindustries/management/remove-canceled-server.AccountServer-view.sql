@@ -8,7 +8,7 @@ select
 from
              server."AccountServer" bs
   inner join account."Account"      bu on bs.accounting = bu.accounting
-  inner join server."Server"        se on bs.server     = se.pkey
+  inner join server."Server"        se on bs.server     = se.id
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 

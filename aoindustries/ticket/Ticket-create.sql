@@ -1,5 +1,5 @@
 create table ticket."Ticket" (
-  pkey integer primary key,
+  id integer primary key,
   brand text not null, -- The brand that the ticket originated from
   reseller text not null, -- The currently allocated reseller (escalataion level) - should never be allocated to a auto-escelate reseller - how to enforce in PostgreSQL?
   accounting text, -- The accounting code that submitted the ticket, if available
@@ -40,7 +40,7 @@ grant select, insert, update, delete on ticket."Ticket" to aoserv_app;
 insert into
     ticket."Ticket"
 select
-    pkey,
+    id,
     'AOINDUSTRIES',
     accounting,
     'en',

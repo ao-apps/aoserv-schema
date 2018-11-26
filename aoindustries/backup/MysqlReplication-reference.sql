@@ -8,7 +8,7 @@ alter table backup."MysqlReplication"
 alter table backup."MysqlReplication"
   add constraint replication_fkey
   foreign key (replication)
-  references backup."FileReplication" (pkey)
+  references backup."FileReplication" (id)
   on delete restrict
   on update cascade
 ;

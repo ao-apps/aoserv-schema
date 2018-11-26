@@ -19,12 +19,12 @@ select
   ia."inetAddress" as "IP_ADDRESS"
 from
              net."IpAddress"                       ia
-  inner join net."Device"                          nd   on ia."netDevice"              =   nd.pkey
+  inner join net."Device"                          nd   on ia."netDevice"              =   nd.id
   inner join net."DeviceId"                        ndi  on nd."deviceID"               =  ndi."name"
-  inner join server."Server"                       se   on nd.server                   =   se.pkey
-  inner join billing."Package"                     sepk on se.package                  = sepk.pkey
-  left  join distribution."OperatingSystemVersion" osv  on se.operating_system_version =  osv.pkey
-  left  join linux."Server"                        ao   on se.pkey                     =   ao.server
+  inner join server."Server"                       se   on nd.server                   =   se.id
+  inner join billing."Package"                     sepk on se.package                  = sepk.id
+  left  join distribution."OperatingSystemVersion" osv  on se.operating_system_version =  osv.id
+  left  join linux."Server"                        ao   on se.id                       =   ao.server
 where
   -- May only release alias IPs
   ia."isAlias"

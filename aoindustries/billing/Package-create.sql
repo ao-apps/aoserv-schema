@@ -1,10 +1,10 @@
-create sequence         billing."Package_pkey_seq" cycle;
-grant all            on billing."Package_pkey_seq" to aoadmin;
-grant select, update on billing."Package_pkey_seq" to aoserv_app;
+create sequence         billing."Package_id_seq" cycle;
+grant all            on billing."Package_id_seq" to aoadmin;
+grant select, update on billing."Package_id_seq" to aoserv_app;
 
 create table billing."Package" (
-  pkey integer
-    default nextval('billing."Package_pkey_seq"')
+  id integer
+    default nextval('billing."Package_id_seq"')
     primary key,
   "name" text
     not null

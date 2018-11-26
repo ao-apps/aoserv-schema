@@ -22,10 +22,10 @@ select
 from
              linux."Server"                    ao
   inner join web."Site"                        hs on   ao.server              =   hs.ao_server
-  inner join "web/tomcat"."Site"              hts on   hs.pkey                =  hts.httpd_site
-  inner join distribution."SoftwareVersion"    tv on  hts.version             =   tv.pkey
+  inner join "web/tomcat"."Site"              hts on   hs.id                  =  hts.httpd_site
+  inner join distribution."SoftwareVersion"    tv on  hts.version             =   tv.id
   left  join "web/tomcat"."SharedTomcatSite" htss on  hts.httpd_site          = htss.tomcat_site
-  left  join "web/tomcat"."SharedTomcat"      hst on htss.httpd_shared_tomcat =  hst.pkey;
+  left  join "web/tomcat"."SharedTomcat"      hst on htss.httpd_shared_tomcat =  hst.id;
 
 revoke all    on management."enable-manager-webapp" from aoadmin;
 grant  select on management."enable-manager-webapp" to   aoadmin;

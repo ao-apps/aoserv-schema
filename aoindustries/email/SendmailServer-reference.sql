@@ -8,21 +8,21 @@ alter table email."SendmailServer"
 alter table email."SendmailServer"
   add constraint package_fkey
   foreign key (package)
-  references billing."Package" (pkey)
+  references billing."Package" (id)
   on delete restrict
   on update cascade
 ;
 alter table email."SendmailServer"
   add constraint server_certificate_fkey
   foreign key (server_certificate)
-  references pki."Certificate" (pkey)
+  references pki."Certificate" (id)
   on delete restrict
   on update cascade
 ;
 alter table email."SendmailServer"
   add constraint client_certificate_fkey
   foreign key (client_certificate)
-  references pki."Certificate" (pkey)
+  references pki."Certificate" (id)
   on delete restrict
   on update cascade
 ;

@@ -1,14 +1,14 @@
 alter table linux."Server"
   add constraint server_fkey
   foreign key (server)
-  references server."Server" (pkey)
+  references server."Server" (id)
   on delete restrict
   on update cascade
 ;
 alter table linux."Server"
   add constraint daemon_bind_fkey
   foreign key (daemon_bind)
-  references net."Bind" (pkey)
+  references net."Bind" (id)
   on delete restrict
   on update cascade
 ;
@@ -29,7 +29,7 @@ alter table linux."Server"
 alter table linux."Server"
   add constraint daemon_connect_bind_fkey
   foreign key (daemon_connect_bind)
-  references net."Bind" (pkey)
+  references net."Bind" (id)
   on delete restrict
   on update cascade
 ;
@@ -43,7 +43,7 @@ alter table linux."Server"
 alter table linux."Server"
   add constraint jilter_bind_fkey
   foreign key (jilter_bind)
-  references net."Bind" (pkey)
+  references net."Bind" (id)
   on delete restrict
   on update cascade
 ;

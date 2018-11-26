@@ -1,10 +1,10 @@
-create sequence         master."AdministratorPermission_pkey_seq" cycle;   
-grant all            on master."AdministratorPermission_pkey_seq" to aoadmin;
-grant select, update on master."AdministratorPermission_pkey_seq" to aoserv_app;
+create sequence         master."AdministratorPermission_id_seq" cycle;   
+grant all            on master."AdministratorPermission_id_seq" to aoadmin;
+grant select, update on master."AdministratorPermission_id_seq" to aoserv_app;
 
 create table master."AdministratorPermission" (
-  pkey integer
-    default nextval('master."AdministratorPermission_pkey_seq"')
+  id integer
+    default nextval('master."AdministratorPermission_id_seq"')
     primary key,
   username text
     not null,

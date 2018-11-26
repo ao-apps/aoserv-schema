@@ -1,10 +1,10 @@
-create sequence         mysql."Database_pkey_seq" cycle;
-grant all            on mysql."Database_pkey_seq" to aoadmin;
-grant select, update on mysql."Database_pkey_seq" to aoserv_app;
+create sequence         mysql."Database_id_seq" cycle;
+grant all            on mysql."Database_id_seq" to aoadmin;
+grant select, update on mysql."Database_id_seq" to aoserv_app;
 
 create table mysql."Database" (
-  pkey integer
-    default nextval('mysql."Database_pkey_seq"')
+  id integer
+    default nextval('mysql."Database_id_seq"')
     primary key,
   "name" text
     not null,

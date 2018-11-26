@@ -1,10 +1,10 @@
-create sequence billing."MonthlyCharge_pkey_seq" cycle;
-grant all    on billing."MonthlyCharge_pkey_seq" to aoadmin;
-grant select on billing."MonthlyCharge_pkey_seq" to aoserv_app;
+create sequence billing."MonthlyCharge_id_seq" cycle;
+grant all    on billing."MonthlyCharge_id_seq" to aoadmin;
+grant select on billing."MonthlyCharge_id_seq" to aoserv_app;
 
 create table billing."MonthlyCharge" (
-  pkey integer
-    default nextval('billing."MonthlyCharge_pkey_seq"')
+  id integer
+    default nextval('billing."MonthlyCharge_id_seq"')
     primary key,
   accounting text
     not null,

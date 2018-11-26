@@ -29,28 +29,28 @@ alter table payment."CreditCard"
 alter table payment."CreditCard"
   add constraint encryption_card_number_from_fkey
   foreign key (encryption_card_number_from)
-  references pki."EncryptionKey" (pkey)
+  references pki."EncryptionKey" (id)
   on delete restrict
   on update cascade
 ;
 alter table payment."CreditCard"
   add constraint encryption_card_number_recipient_fkey
   foreign key (encryption_card_number_recipient)
-  references pki."EncryptionKey" (pkey)
+  references pki."EncryptionKey" (id)
   on delete restrict
   on update cascade
 ;
 alter table payment."CreditCard"
   add constraint encryption_expiration_from_fkey
   foreign key (encryption_expiration_from)
-  references pki."EncryptionKey" (pkey)
+  references pki."EncryptionKey" (id)
   on delete restrict
   on update cascade
 ;
 alter table payment."CreditCard"
   add constraint encryption_expiration_recipient_fkey
   foreign key (encryption_expiration_recipient)
-  references pki."EncryptionKey" (pkey)
+  references pki."EncryptionKey" (id)
   on delete restrict
   on update cascade
 ;

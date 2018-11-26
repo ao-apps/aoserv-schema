@@ -1,10 +1,10 @@
-create sequence         linux."UserServer_pkey_seq" cycle;
-grant all            on linux."UserServer_pkey_seq" to aoadmin;
-grant select, update on linux."UserServer_pkey_seq" to aoserv_app;
+create sequence         linux."UserServer_id_seq" cycle;
+grant all            on linux."UserServer_id_seq" to aoadmin;
+grant select, update on linux."UserServer_id_seq" to aoserv_app;
 
 create table linux."UserServer" (
-  pkey integer
-    default nextval('linux."UserServer_pkey_seq"')
+  id integer
+    default nextval('linux."UserServer_id_seq"')
     primary key,
   username text
     not null,

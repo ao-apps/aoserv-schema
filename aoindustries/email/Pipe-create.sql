@@ -1,10 +1,10 @@
-create sequence         email."Pipe_pkey_seq" cycle;
-grant all            on email."Pipe_pkey_seq" to aoadmin;
-grant select, update on email."Pipe_pkey_seq" to aoserv_app;
+create sequence         email."Pipe_id_seq" cycle;
+grant all            on email."Pipe_id_seq" to aoadmin;
+grant select, update on email."Pipe_id_seq" to aoserv_app;
 
 create table email."Pipe" (
-  pkey integer
-    default nextval('email."Pipe_pkey_seq"')
+  id integer
+    default nextval('email."Pipe_id_seq"')
     primary key,
   ao_server integer
     not null,

@@ -1,5 +1,5 @@
 begin;
-COPY linux."GroupServer" (pkey, "name", ao_server, gid, created) FROM stdin;
+COPY linux."GroupServer" (id, "name", ao_server, gid, created) FROM stdin;
 1	awstats	2	78	2009-07-26 08:29:14.890907-05
 62	root	2	0	2004-12-16 20:01:58.522214-06
 63	bin	2	1	2004-12-16 20:01:58.983424-06

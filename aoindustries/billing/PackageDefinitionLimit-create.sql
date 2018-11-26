@@ -1,10 +1,10 @@
-create sequence         billing."PackageDefinitionLimit_pkey_seq" cycle;
-grant all            on billing."PackageDefinitionLimit_pkey_seq" to aoadmin;
-grant select, update on billing."PackageDefinitionLimit_pkey_seq" to aoserv_app;
+create sequence         billing."PackageDefinitionLimit_id_seq" cycle;
+grant all            on billing."PackageDefinitionLimit_id_seq" to aoadmin;
+grant select, update on billing."PackageDefinitionLimit_id_seq" to aoserv_app;
 
 create table billing."PackageDefinitionLimit" (
-  pkey integer
-    default nextval('billing."PackageDefinitionLimit_pkey_seq"')
+  id integer
+    default nextval('billing."PackageDefinitionLimit_id_seq"')
     primary key,
   package_definition integer
     not null,

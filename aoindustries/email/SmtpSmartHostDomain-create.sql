@@ -1,10 +1,10 @@
-create sequence email."SmtpSmartHostDomain_pkey_seq" cycle;
-grant all    on email."SmtpSmartHostDomain_pkey_seq" to aoadmin;
-grant select on email."SmtpSmartHostDomain_pkey_seq" to aoserv_app;
+create sequence email."SmtpSmartHostDomain_id_seq" cycle;
+grant all    on email."SmtpSmartHostDomain_id_seq" to aoadmin;
+grant select on email."SmtpSmartHostDomain_id_seq" to aoserv_app;
 
 create table email."SmtpSmartHostDomain" (
-  pkey integer
-    default nextval('email."SmtpSmartHostDomain_pkey_seq"')
+  id integer
+    default nextval('email."SmtpSmartHostDomain_id_seq"')
     primary key,
   smart_host integer not null,
   "domain" text not null

@@ -4,7 +4,7 @@ insert into net."IpAddress" values (
 	null,
 	false,
 	null,
-	(select pkey from billing."Package" where name='AOINDUSTRIES'),
+	(select id from billing."Package" where name='AOINDUSTRIES'),
 	'2001-08-23 18:51:03-05',
 	false,
 	false,

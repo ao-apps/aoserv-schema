@@ -8,7 +8,7 @@ select
   el."path"
 from
              email."List"        el
-  inner join linux."GroupServer" lsg on  el.linux_server_group = lsg.pkey
+  inner join linux."GroupServer" lsg on  el.linux_server_group = lsg.id
   inner join linux."Server"      ao  on lsg.ao_server          =  ao.server
   inner join linux."Group"       lg  on lsg."name"             =  lg."name"
   inner join billing."Package"   pk  on  lg.package            =  pk."name"

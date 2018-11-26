@@ -1,3 +1,3 @@
-COPY email."InboxAddress" (pkey, email_address, linux_server_account) FROM stdin;
+COPY email."InboxAddress" (id, email_address, linux_server_account) FROM stdin;
 1	9	89
 \.

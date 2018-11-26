@@ -1,11 +1,11 @@
 /* TODO
-create sequence net."IpSet_pkey_seq" cycle;
-grant all       on net."IpSet_pkey_seq" to aoadmin;
-grant select    on net."IpSet_pkey_seq" to aoserv_app;
+create sequence net."IpSet_id_seq" cycle;
+grant all       on net."IpSet_id_seq" to aoadmin;
+grant select    on net."IpSet_id_seq" to aoserv_app;
 
 create table net."IpSet" (
-  pkey integer
-    default nextval('net."IpSet_pkey_seq"')
+  id integer
+    default nextval('net."IpSet_id_seq"')
     primary key,
   accounting text
     not null,
@@ -59,6 +59,6 @@ INSERT INTO net."IpSet" VALUES (
     'Javatator Database Administration Web Interface',
     false
 );
-SELECT setval('net."IpSet_pkey_seq"', 6, false);
+SELECT setval('net."IpSet_id_seq"', 6, false);
 COMMIT;
  */

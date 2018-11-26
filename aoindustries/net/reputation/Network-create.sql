@@ -1,11 +1,11 @@
 -- Tracks the per-network reputation for one set.
-create sequence         "net/reputation"."Network_pkey_seq" cycle;
-grant all            on "net/reputation"."Network_pkey_seq" to aoadmin;
-grant select, update on "net/reputation"."Network_pkey_seq" to aoserv_app;
+create sequence         "net/reputation"."Network_id_seq" cycle;
+grant all            on "net/reputation"."Network_id_seq" to aoadmin;
+grant select, update on "net/reputation"."Network_id_seq" to aoserv_app;
 
 create table "net/reputation"."Network" (
-  pkey bigint
-    default nextval('"net/reputation"."Network_pkey_seq"')
+  id bigint
+    default nextval('"net/reputation"."Network_id_seq"')
     primary key,
   "set" integer
     not null,

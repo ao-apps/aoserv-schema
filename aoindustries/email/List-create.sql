@@ -1,10 +1,10 @@
-create sequence         email."List_pkey_seq" cycle;
-grant all            on email."List_pkey_seq" to aoadmin;
-grant select, update on email."List_pkey_seq" to aoserv_app;
+create sequence         email."List_id_seq" cycle;
+grant all            on email."List_id_seq" to aoadmin;
+grant select, update on email."List_id_seq" to aoserv_app;
 
 create table email."List" (
-  pkey integer
-    default nextval('email."List_pkey_seq"')
+  id integer
+    default nextval('email."List_id_seq"')
     primary key,
   "path" text
     not null,

@@ -11,7 +11,7 @@ as
           server."AccountServer" bs,
           account."Account" bu
         where
-          se.pkey=bs.server
+          se.id=bs.server
           and bs.is_default
           and bs.accounting=bu.accounting
           and bu.canceled is null
@@ -27,7 +27,7 @@ as
       server."Server" se,
       linux."Server" ao
     where
-      se.pkey=ao.server
+      se.id=ao.server
     order by
       net.reverse_hostname(ao.hostname)
   )

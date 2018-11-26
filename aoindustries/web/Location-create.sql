@@ -1,10 +1,10 @@
-create sequence         web."Location_pkey_seq" cycle;
-grant all            on web."Location_pkey_seq" to aoadmin;
-grant select, update on web."Location_pkey_seq" to aoserv_app;
+create sequence         web."Location_id_seq" cycle;
+grant all            on web."Location_id_seq" to aoadmin;
+grant select, update on web."Location_id_seq" to aoserv_app;
 
 create table web."Location" (
-  pkey integer
-    default nextval('web."Location_pkey_seq"')
+  id integer
+    default nextval('web."Location_id_seq"')
     primary key,
   -- TODO: Allow a Location to be attached to either a site or a virtualHost
   httpd_site integer

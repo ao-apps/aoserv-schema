@@ -1,7 +1,7 @@
 alter table email."AttachmentBlocks"
   add constraint linux_server_account_fkey
   foreign key (linux_server_account)
-  references linux."UserServer" (pkey)
+  references linux."UserServer" (id)
   on delete restrict
   on update cascade
 ;

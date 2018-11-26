@@ -1,10 +1,10 @@
-create sequence distribution."SoftwareCategorization_pkey_seq" cycle;
-grant all    on distribution."SoftwareCategorization_pkey_seq" to aoadmin;
-grant select on distribution."SoftwareCategorization_pkey_seq" to aoserv_app;
+create sequence distribution."SoftwareCategorization_id_seq" cycle;
+grant all    on distribution."SoftwareCategorization_id_seq" to aoadmin;
+grant select on distribution."SoftwareCategorization_id_seq" to aoserv_app;
 
 create table distribution."SoftwareCategorization" (
-  pkey integer
-    default nextval('distribution."SoftwareCategorization_pkey_seq"')
+  id integer
+    default nextval('distribution."SoftwareCategorization_id_seq"')
     primary key,
   "name" text
     not null,

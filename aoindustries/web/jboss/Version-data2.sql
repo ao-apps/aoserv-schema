@@ -2,8 +2,8 @@ begin;
 insert into
   "web/jboss"."Version"
 select
-  tv1.pkey,
-  tv2.pkey,
+  tv1.id,
+  tv2.id,
   '/usr/aoserv/templates/jboss-2.2.2'
 from
   distribution."SoftwareVersion" tv1,

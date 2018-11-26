@@ -1,10 +1,10 @@
-create sequence         server."AccountServer_pkey_seq" cycle;
-grant all            on server."AccountServer_pkey_seq" to aoadmin;
-grant select, update on server."AccountServer_pkey_seq" to aoserv_app;
+create sequence         server."AccountServer_id_seq" cycle;
+grant all            on server."AccountServer_id_seq" to aoadmin;
+grant select, update on server."AccountServer_id_seq" to aoserv_app;
 
 create table server."AccountServer" (
-  pkey integer
-    default nextval('server."AccountServer_pkey_seq"')
+  id integer
+    default nextval('server."AccountServer_id_seq"')
     primary key,
   accounting text not null,
   server integer not null,

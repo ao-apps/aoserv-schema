@@ -36,7 +36,7 @@ alter table ticket."Ticket"
 alter table ticket."Ticket"
   add constraint category_fkey
   foreign key (category)
-  references reseller."Category" (pkey)
+  references reseller."Category" (id)
   on update cascade
   on delete restrict
 ;

@@ -8,14 +8,14 @@ alter table postgresql."UserServer"
 alter table postgresql."UserServer"
   add constraint postgres_server_fkey
   foreign key (postgres_server)
-  references postgresql."Server" (pkey)
+  references postgresql."Server" (id)
   on delete restrict
   on update cascade
 ;
 alter table postgresql."UserServer"
   add constraint disable_log_fkey
   foreign key (disable_log)
-  references account."DisableLog" (pkey)
+  references account."DisableLog" (id)
   on delete restrict
   on update cascade
 ;

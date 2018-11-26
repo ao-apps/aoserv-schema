@@ -15,14 +15,14 @@ alter table linux."UserServer"
 alter table linux."UserServer"
   add constraint autoresponder_from_fkey
   foreign key (autoresponder_from)
-  references email."InboxAddress" (pkey)
+  references email."InboxAddress" (id)
   on delete restrict
   on update cascade
 ;
 alter table linux."UserServer"
   add constraint disable_log_fkey
   foreign key (disable_log)
-  references account."DisableLog" (pkey)
+  references account."DisableLog" (id)
   on delete restrict
   on update cascade
 ;

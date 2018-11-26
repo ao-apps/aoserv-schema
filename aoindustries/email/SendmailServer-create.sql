@@ -1,10 +1,10 @@
-create sequence email."SendmailServer_pkey_seq" cycle;
-grant all    on email."SendmailServer_pkey_seq" to aoadmin;
-grant select on email."SendmailServer_pkey_seq" to aoserv_app;
+create sequence email."SendmailServer_id_seq" cycle;
+grant all    on email."SendmailServer_id_seq" to aoadmin;
+grant select on email."SendmailServer_id_seq" to aoserv_app;
 
 create table email."SendmailServer" (
-  pkey integer
-    default nextval('email."SendmailServer_pkey_seq"')
+  id integer
+    default nextval('email."SendmailServer_id_seq"')
     primary key,
   ao_server integer
     not null,

@@ -1,5 +1,5 @@
 create table reseller."BrandCategory" (
-  pkey integer primary key,
+  id integer primary key,
   brand text not null,
   category integer not null,
   enabled boolean not null

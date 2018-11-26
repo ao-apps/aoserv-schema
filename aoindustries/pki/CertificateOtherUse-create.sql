@@ -1,10 +1,10 @@
-create sequence pki."CertificateOtherUse_pkey_seq" cycle;
-grant all    on pki."CertificateOtherUse_pkey_seq" to aoadmin;
-grant select on pki."CertificateOtherUse_pkey_seq" to aoserv_app;
+create sequence pki."CertificateOtherUse_id_seq" cycle;
+grant all    on pki."CertificateOtherUse_id_seq" to aoadmin;
+grant select on pki."CertificateOtherUse_id_seq" to aoserv_app;
 
 create table pki."CertificateOtherUse" (
-  pkey integer
-    default nextval('pki."CertificateOtherUse_pkey_seq"')
+  id integer
+    default nextval('pki."CertificateOtherUse_id_seq"')
     primary key,
   ssl_certificate integer
     not null,

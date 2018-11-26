@@ -3,7 +3,7 @@ create or replace view
   management."web-site-settings"
 as
 select
-  hs.pkey,
+  hs.id,
   hs.ao_server,
   ao.hostname,
   hs."name",
@@ -20,8 +20,8 @@ select
 from
              linux."Server"                 ao
   inner join web."Site"                     hs  on ao.server      = hs.ao_server
-  left  join distribution."SoftwareVersion" tv  on hs.php_version = tv.pkey
-  left  join "web/tomcat"."Site"            hts on hs.pkey        = hts.httpd_site;
+  left  join distribution."SoftwareVersion" tv  on hs.php_version = tv.id
+  left  join "web/tomcat"."Site"            hts on hs.id        = hts.httpd_site;
 
 revoke all    on management."web-site-settings" from aoadmin;
 grant  select on management."web-site-settings" to   aoadmin;

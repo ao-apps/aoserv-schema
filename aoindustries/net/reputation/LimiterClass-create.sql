@@ -1,10 +1,10 @@
-create sequence         "net/reputation"."LimiterClass_pkey_seq" cycle;
-grant all            on "net/reputation"."LimiterClass_pkey_seq" to aoadmin;
---grant select, update on "net/reputation"."LimiterClass_pkey_seq" to aoserv_app;
+create sequence         "net/reputation"."LimiterClass_id_seq" cycle;
+grant all            on "net/reputation"."LimiterClass_id_seq" to aoadmin;
+--grant select, update on "net/reputation"."LimiterClass_id_seq" to aoserv_app;
 
 create table "net/reputation"."LimiterClass" (
-  pkey integer
-    default nextval('"net/reputation"."LimiterClass_pkey_seq"')
+  id integer
+    default nextval('"net/reputation"."LimiterClass_id_seq"')
     primary key,
   limiter integer not null,
   "class" "net/reputation"."Class" not null,

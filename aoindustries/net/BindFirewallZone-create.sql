@@ -1,10 +1,10 @@
-create sequence         net."BindFirewallZone_pkey_seq" cycle;
-grant all            on net."BindFirewallZone_pkey_seq" to aoadmin;
-grant select, update on net."BindFirewallZone_pkey_seq" to aoserv_app;
+create sequence         net."BindFirewallZone_id_seq" cycle;
+grant all            on net."BindFirewallZone_id_seq" to aoadmin;
+grant select, update on net."BindFirewallZone_id_seq" to aoserv_app;
 
 create table net."BindFirewallZone" (
-  pkey integer
-    default nextval('net."BindFirewallZone_pkey_seq"')
+  id integer
+    default nextval('net."BindFirewallZone_id_seq"')
     primary key,
   net_bind integer
     not null,

@@ -15,7 +15,7 @@ alter table email."Pipe"
 alter table email."Pipe"
   add constraint disable_log_fkey
   foreign key (disable_log)
-  references account."DisableLog" (pkey)
+  references account."DisableLog" (id)
   on delete restrict
   on update cascade
 ;

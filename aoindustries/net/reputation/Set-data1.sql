@@ -645,5 +645,5 @@ INSERT INTO account."Administrator" VALUES (
     false,
     null
 );
-SELECT setval('"net/reputation"."Set_pkey_seq"', 17, false);
+SELECT setval('"net/reputation"."Set_id_seq"', 17, false);
 COMMIT;

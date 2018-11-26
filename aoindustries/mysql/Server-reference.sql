@@ -1,7 +1,7 @@
 alter table mysql."Server"
   add constraint net_bind_fkey
   foreign key (net_bind)
-  references net."Bind" (pkey)
+  references net."Bind" (id)
   on delete restrict
   on update cascade
 ;
@@ -15,7 +15,7 @@ alter table mysql."Server"
 alter table mysql."Server"
   add constraint version_fkey
   foreign key (version)
-  references distribution."SoftwareVersion" (pkey)
+  references distribution."SoftwareVersion" (id)
   on delete restrict
   on update cascade
 ;

@@ -1,14 +1,14 @@
 alter table infrastructure."PhysicalServer"
   add constraint server_fkey
   foreign key (server)
-  references server."Server" (pkey)
+  references server."Server" (id)
   on delete restrict
   on update cascade
 ;
 alter table infrastructure."PhysicalServer"
   add constraint rack_fkey
   foreign key (rack)
-  references infrastructure."Rack" (pkey)
+  references infrastructure."Rack" (id)
   on delete restrict
   on update cascade
 ;

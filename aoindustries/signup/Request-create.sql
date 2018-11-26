@@ -1,10 +1,10 @@
-create sequence         signup."Request_pkey_seq" cycle;
-grant all            on signup."Request_pkey_seq" to aoadmin;
-grant select, update on signup."Request_pkey_seq" to aoserv_app;
+create sequence         signup."Request_id_seq" cycle;
+grant all            on signup."Request_id_seq" to aoadmin;
+grant select, update on signup."Request_id_seq" to aoserv_app;
 
 create table signup."Request" (
-  pkey integer
-    default nextval('signup."Request_pkey_seq"')
+  id integer
+    default nextval('signup."Request_id_seq"')
     primary key,
   brand text not null,
   "time" timestamp with time zone not null default now(),

@@ -1,10 +1,10 @@
-create sequence         account."Profile_pkey_seq" cycle;
-grant all            on account."Profile_pkey_seq" to aoadmin;
-grant select, update on account."Profile_pkey_seq" to aoserv_app;
+create sequence         account."Profile_id_seq" cycle;
+grant all            on account."Profile_id_seq" to aoadmin;
+grant select, update on account."Profile_id_seq" to aoserv_app;
 
 create table account."Profile" (
-  pkey integer
-    default nextval('account."Profile_pkey_seq"')
+  id integer
+    default nextval('account."Profile_id_seq"')
     primary key,
   accounting text
     not null,

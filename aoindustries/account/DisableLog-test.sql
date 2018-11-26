@@ -1,4 +1,4 @@
-COPY account."DisableLog" (pkey, "time", accounting, disabled_by, disable_reason) FROM stdin;
+COPY account."DisableLog" (id, "time", accounting, disabled_by, disable_reason) FROM stdin;
 1	2004-07-02 02:22:29.03074-05	AOINDUSTRIES	orion	\N
 2	2004-07-02 03:11:44.570874-05	AOINDUSTRIES	orion	\N
 3	2004-07-02 04:36:19.754471-05	AOINDUSTRIES	orion	\N
@@ -12,4 +12,4 @@ COPY account."DisableLog" (pkey, "time", accounting, disabled_by, disable_reason
 11	2004-07-02 12:31:56.531809-05	AOINDUSTRIES	orion	\N
 12	2005-06-01 14:22:56.771078-05	TEST	orion	Test disable.
 \.
-SELECT setval ('account."DisableLog_pkey_seq"', 12, true);
+SELECT setval ('account."DisableLog_id_seq"', 12, true);

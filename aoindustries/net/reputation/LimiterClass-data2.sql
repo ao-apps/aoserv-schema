@@ -7312,5 +7312,5 @@ insert into "net/reputation"."LimiterClass" values (
     10000,    -- packet_rate
     'second'  -- packet_unit
 );
-select setval('"net/reputation"."net/reputation"."LimiterClass"_pkey_seq', 409, false);
+select setval('"net/reputation"."net/reputation"."LimiterClass"_id_seq', 409, false);
 commit;

@@ -15,21 +15,21 @@ alter table "web/tomcat"."SharedTomcat"
 alter table "web/tomcat"."SharedTomcat"
   add constraint linux_server_account_fkey
   foreign key (linux_server_account)
-  references linux."UserServer" (pkey)
+  references linux."UserServer" (id)
   on delete restrict
   on update cascade
 ;
 alter table "web/tomcat"."SharedTomcat"
   add constraint linux_server_group_fkey
   foreign key (linux_server_group)
-  references linux."GroupServer" (pkey)
+  references linux."GroupServer" (id)
   on delete restrict
   on update cascade
 ;
 alter table "web/tomcat"."SharedTomcat"
   add constraint disable_log_fkey
   foreign key (disable_log)
-  references account."DisableLog" (pkey)
+  references account."DisableLog" (id)
   on delete restrict
   on update cascade
 ;
@@ -43,7 +43,7 @@ alter table "web/tomcat"."SharedTomcat"
 alter table "web/tomcat"."SharedTomcat"
   add constraint tomcat4_shutdown_port_fkey
   foreign key (tomcat4_shutdown_port)
-  references net."Bind" (pkey)
+  references net."Bind" (id)
   on delete restrict
   on update cascade
 ;

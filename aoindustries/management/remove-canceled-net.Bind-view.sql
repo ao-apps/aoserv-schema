@@ -3,10 +3,10 @@ create or replace view
 as
 select
   bu.accounting,
-  -- TODO: A non-pkey selector might be more helpful, like done for the remove_dns_record command
+  -- TODO: A non-id selector might be more helpful, like done for the remove_dns_record command
   -- TODO: Would be based on matching the add_net_bind command, but for unique set of columns, currently (server, ip_address, port, net_protocol)
   'echo "' || nb.package || '"
-remove_net_bind ' || nb.pkey as aosh_command,
+remove_net_bind ' || nb.id as aosh_command,
   nb.port
 from
              net."Bind"        nb

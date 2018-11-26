@@ -29,14 +29,14 @@ alter table web."Site"
 alter table web."Site"
   add constraint disable_log_fkey
   foreign key (disable_log)
-  references account."DisableLog" (pkey)
+  references account."DisableLog" (id)
   on delete restrict
   on update cascade
 ;
 alter table web."Site"
   add constraint php_version_fkey
   foreign key (php_version)
-  references distribution."SoftwareVersion" (pkey)
+  references distribution."SoftwareVersion" (id)
   on delete restrict
   on update cascade
 ;

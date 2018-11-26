@@ -1,10 +1,10 @@
-create sequence         net."Bind_pkey_seq" cycle;
-grant all            on net."Bind_pkey_seq" to aoadmin;
-grant select, update on net."Bind_pkey_seq" to aoserv_app;
+create sequence         net."Bind_id_seq" cycle;
+grant all            on net."Bind_id_seq" to aoadmin;
+grant select, update on net."Bind_id_seq" to aoserv_app;
 
 create table net."Bind" (
-  pkey integer
-    default nextval('net."Bind_pkey_seq"')
+  id integer
+    default nextval('net."Bind_id_seq"')
     primary key,
   package text
     not null,

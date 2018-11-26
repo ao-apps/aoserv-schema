@@ -1,12 +1,12 @@
-create sequence "net/reputation"."Set_pkey_seq" cycle;
-grant all    on "net/reputation"."Set_pkey_seq" to aoadmin;
-grant select on "net/reputation"."Set_pkey_seq" to aoserv_app;
+create sequence "net/reputation"."Set_id_seq" cycle;
+grant all    on "net/reputation"."Set_id_seq" to aoadmin;
+grant select on "net/reputation"."Set_id_seq" to aoserv_app;
 
 -- TODO: Track the last time new reputation data was added, and monitor for failed reputation sources.
 create table "net/reputation"."Set" (
   -- identifier is non-null and unique, but this primary key exists for more compact foreign keys to this table
-  pkey integer
-    default nextval('"net/reputation"."Set_pkey_seq"')
+  id integer
+    default nextval('"net/reputation"."Set_id_seq"')
     primary key,
   accounting text
     not null,

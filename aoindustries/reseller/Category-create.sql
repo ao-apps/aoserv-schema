@@ -1,5 +1,5 @@
 create table reseller."Category" (
-  pkey integer
+  id integer
     primary key,
   parent integer, -- top-level categories have null parents
   "name" text not null

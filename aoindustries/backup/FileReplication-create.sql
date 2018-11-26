@@ -1,10 +1,10 @@
-create sequence backup."FileReplication_pkey_seq" cycle;
-grant all    on backup."FileReplication_pkey_seq" to aoadmin;
-grant select on backup."FileReplication_pkey_seq" to aoserv_app;
+create sequence backup."FileReplication_id_seq" cycle;
+grant all    on backup."FileReplication_id_seq" to aoadmin;
+grant select on backup."FileReplication_id_seq" to aoserv_app;
 
 create table backup."FileReplication" (
-  pkey integer
-    default nextval('backup."FileReplication_pkey_seq"')
+  id integer
+    default nextval('backup."FileReplication_id_seq"')
     primary key,
   server integer not null,
   backup_partition integer not null,

@@ -1,10 +1,10 @@
-create sequence         email."AttachmentBlock_pkey_seq" cycle;
-grant all            on email."AttachmentBlock_pkey_seq" to aoadmin;
-grant select, update on email."AttachmentBlock_pkey_seq" to aoserv_app;
+create sequence         email."AttachmentBlock_id_seq" cycle;
+grant all            on email."AttachmentBlock_id_seq" to aoadmin;
+grant select, update on email."AttachmentBlock_id_seq" to aoserv_app;
 
 create table email."AttachmentBlocks" (
-  pkey integer
-    default nextval('email."AttachmentBlock_pkey_seq"')
+  id integer
+    default nextval('email."AttachmentBlock_id_seq"')
     primary key,
   linux_server_account integer
     not null,

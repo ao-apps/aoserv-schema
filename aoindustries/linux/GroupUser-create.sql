@@ -1,10 +1,10 @@
-create sequence         linux."GroupUser_pkey_seq" cycle;
-grant all            on linux."GroupUser_pkey_seq" to aoadmin;
-grant select, update on linux."GroupUser_pkey_seq" to aoserv_app;
+create sequence         linux."GroupUser_id_seq" cycle;
+grant all            on linux."GroupUser_id_seq" to aoadmin;
+grant select, update on linux."GroupUser_id_seq" to aoserv_app;
 
 create table linux."GroupUser" (
-  pkey integer
-    default nextval('linux."GroupUser_pkey_seq"')
+  id integer
+    default nextval('linux."GroupUser_id_seq"')
     primary key,
   "group" text
     not null,

@@ -1,10 +1,10 @@
-create sequence net."FirewallZone_pkey_seq" cycle;
-grant all    on net."FirewallZone_pkey_seq" to aoadmin;
--- grant select on net."FirewallZone_pkey_seq" to aoserv_app;
+create sequence net."FirewallZone_id_seq" cycle;
+grant all    on net."FirewallZone_id_seq" to aoadmin;
+-- grant select on net."FirewallZone_id_seq" to aoserv_app;
 
 create table net."FirewallZone" (
-  pkey integer
-    default nextval('net."FirewallZone_pkey_seq"')
+  id integer
+    default nextval('net."FirewallZone_id_seq"')
     primary key,
   -- TODO: Should we allow zones to span multiple servers?
   --       A zone exists, and servers are added to it, versus a zone being duplicated across servers?

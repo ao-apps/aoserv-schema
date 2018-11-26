@@ -4,7 +4,7 @@ create or replace view
 as
 select
   ao.hostname,
-  htds.pkey,
+  htds.id,
   hs."name" as site_name,
   htc."path",
   htds."name",
@@ -12,8 +12,8 @@ select
   htds.url
 from
              "web/tomcat"."ContextDataSource" htds
-  inner join "web/tomcat"."Context"           htc on htds.tomcat_context = htc.pkey
-  inner join web."Site"                       hs  on  htc.tomcat_site    =  hs.pkey
+  inner join "web/tomcat"."Context"           htc on htds.tomcat_context = htc.id
+  inner join web."Site"                       hs  on  htc.tomcat_site    =  hs.id
   inner join linux."Server"                    ao  on   hs.ao_server      =  ao.server;
 
 revoke all    on management."web/tomcat.ContextDataSource-joined" from aoadmin;

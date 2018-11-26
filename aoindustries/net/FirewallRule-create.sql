@@ -1,7 +1,7 @@
 /* TODO
-create sequence net."FirewallRule_pkey_seq" cycle;
-grant all    on net."FirewallRule_pkey_seq" to aoadmin;
-grant select on net."FirewallRule_pkey_seq" to aoserv_app;
+create sequence net."FirewallRule_id_seq" cycle;
+grant all    on net."FirewallRule_id_seq" to aoadmin;
+grant select on net."FirewallRule_id_seq" to aoserv_app;
  */
 
 --
@@ -20,8 +20,8 @@ grant select on net."FirewallRule_pkey_seq" to aoserv_app;
 -- 12) Mandatory - rule may not be removed, edited, or reordered
 /* TODO
 create table net."FirewallRule" (
-  pkey integer
-    default nextval('net."FirewallRule_pkey_seq"')
+  id integer
+    default nextval('net."FirewallRule_id_seq"')
     primary key,
   net_device integer
     not null,

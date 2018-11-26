@@ -9,5 +9,5 @@ insert into master."AdministratorPermission" values(7, 'orion', 'edit_ticket');
 insert into master."AdministratorPermission" values(8, 'aoweb_app', 'add_ticket');
 insert into master."AdministratorPermission" values(9, 'test_svr', 'add_ticket');
 
-SELECT setval ('master."AdministratorPermission_pkey_seq"', 10, true);
+SELECT setval ('master."AdministratorPermission_id_seq"', 10, true);
 commit;

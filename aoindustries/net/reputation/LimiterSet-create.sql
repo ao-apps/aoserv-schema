@@ -1,13 +1,13 @@
-create sequence         "net/reputation"."LimiterSet_pkey_seq" cycle;
-grant all            on "net/reputation"."LimiterSet_pkey_seq" to aoadmin;
---grant select, update on "net/reputation"."LimiterSet_pkey_seq" to aoserv_app;
+create sequence         "net/reputation"."LimiterSet_id_seq" cycle;
+grant all            on "net/reputation"."LimiterSet_id_seq" to aoadmin;
+--grant select, update on "net/reputation"."LimiterSet_id_seq" to aoserv_app;
 
 -- Each limiter may use one or more sets of reputation.
 -- They are matched in the order listed.
 
 create table "net/reputation"."LimiterSet" (
-  pkey integer
-    default nextval('"net/reputation"."LimiterSet_pkey_seq"')
+  id integer
+    default nextval('"net/reputation"."LimiterSet_id_seq"')
     primary key,
   limiter integer not null,
   "set" integer not null,

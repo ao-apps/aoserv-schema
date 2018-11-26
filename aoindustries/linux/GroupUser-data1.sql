@@ -1,4 +1,4 @@
-COPY linux."GroupUser" (pkey, "group", username, is_primary) FROM stdin;
+COPY linux."GroupUser" (id, "group", username, is_primary) FROM stdin;
 1	root	root	t	\N
 2	avahi	avahi	t	\N
 3	bin	bin	t	\N
@@ -76,4 +76,4 @@ COPY linux."GroupUser" (pkey, "group", username, is_primary) FROM stdin;
 77	clamscan	clamscan	t	\N
 78	virusgroup	clamscan	f	\N
 \.
-SELECT setval ('linux."GroupUser_pkey_seq"', 78, true);
+SELECT setval ('linux."GroupUser_id_seq"', 78, true);

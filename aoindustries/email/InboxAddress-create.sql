@@ -1,10 +1,10 @@
-create sequence         email."InboxAddress_pkey_seq" cycle;
-grant all            on email."InboxAddress_pkey_seq" to aoadmin;
-grant select, update on email."InboxAddress_pkey_seq" to aoserv_app;
+create sequence         email."InboxAddress_id_seq" cycle;
+grant all            on email."InboxAddress_id_seq" to aoadmin;
+grant select, update on email."InboxAddress_id_seq" to aoserv_app;
 
 create table email."InboxAddress" (
-  pkey integer
-    default nextval('email."InboxAddress_pkey_seq"')
+  id integer
+    default nextval('email."InboxAddress_id_seq"')
     primary key,
   email_address integer
     not null,

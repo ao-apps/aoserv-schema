@@ -1,10 +1,10 @@
-create sequence         "web/tomcat"."Context_pkey_seq" cycle;
-grant all            on "web/tomcat"."Context_pkey_seq" to aoadmin;
-grant select, update on "web/tomcat"."Context_pkey_seq" to aoserv_app;
+create sequence         "web/tomcat"."Context_id_seq" cycle;
+grant all            on "web/tomcat"."Context_id_seq" to aoadmin;
+grant select, update on "web/tomcat"."Context_id_seq" to aoserv_app;
 
 create table "web/tomcat"."Context" (
-  pkey integer
-    default nextval('"web/tomcat"."Context_pkey_seq"')
+  id integer
+    default nextval('"web/tomcat"."Context_id_seq"')
     primary key,
   tomcat_site integer
     not null,

@@ -1,7 +1,7 @@
 alter table web."VirtualHost"
   add constraint httpd_site_fkey
   foreign key (httpd_site)
-  references web."Site" (pkey)
+  references web."Site" (id)
   on delete restrict
   on update cascade
 ;
@@ -15,14 +15,14 @@ alter table web."VirtualHost"
 alter table web."VirtualHost"
   add constraint certificate_fkey
   foreign key (certificate)
-  references pki."Certificate" (pkey)
+  references pki."Certificate" (id)
   on delete restrict
   on update cascade
 ;
 alter table web."VirtualHost"
   add constraint disable_log_fkey
   foreign key (disable_log)
-  references account."DisableLog" (pkey)
+  references account."DisableLog" (id)
   on delete restrict
   on update cascade
 ;

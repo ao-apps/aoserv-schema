@@ -18,9 +18,9 @@ union all (select accounting, aosh_command from "mysql.management"."Database.rem
 union all (select accounting, aosh_command from "mysql.management"."User.remove-canceled" order by accounting, username)
 -- TODO: mysql.Server
 -- postgresql.Database
-union all (select accounting, aosh_command from management."remove-canceled-postgresql.Database" order by accounting, postgres_server, "name")
+union all (select accounting, aosh_command from "postgresql.management"."Database.remove-canceled" order by accounting, postgres_server, "name")
 -- postgresql.User
-union all (select accounting, aosh_command from management."remove-canceled-postgresql.User" order by accounting, username)
+union all (select accounting, aosh_command from "postgresql.management"."User.remove-canceled" order by accounting, username)
 -- TODO: postgresql.Server
 -- TODO: email.SendmailServer without any email.SendmailBind
 -- net.Bind

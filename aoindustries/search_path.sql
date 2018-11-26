@@ -29,6 +29,7 @@ ALTER ROLE aoadmin SET search_path TO
   monitoring,
   mysql,
   net,
+  "net.monitoring",
   "net.reputation",
   payment,
   pki,

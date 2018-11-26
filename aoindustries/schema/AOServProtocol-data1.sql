@@ -1527,13 +1527,13 @@ renamed column aosh.Command.short_desc to description
 renamed column aosh.Command.since_version to sinceVersion
 renamed column aosh.Command.last_version to lastVersion
 
-added schema monitoring
-added table monitoring.IpAddressMonitoring
-moved column IPAddress.monitoring_enabled to monitoring.IpAddressMonitoring.enabled
-moved column IPAddress.ping_monitor_enabled to monitoring.IpAddressMonitoring.pingMonitorEnabled
-moved column IPAddress.check_blacklists_over_smtp to monitoring.IpAddressMonitoring.checkBlacklistsOverSmtp
-added column monitoring.IpAddressMonitoring.verifyDnsPtr
-added column monitoring.IpAddressMonitoring.verifyDnsA
+added schema net.monitoring
+added table net.monitoring.IpAddressMonitoring
+moved column IPAddress.monitoring_enabled to net.monitoring.IpAddressMonitoring.enabled
+moved column IPAddress.ping_monitor_enabled to net.monitoring.IpAddressMonitoring.pingMonitorEnabled
+moved column IPAddress.check_blacklists_over_smtp to net.monitoring.IpAddressMonitoring.checkBlacklistsOverSmtp
+added column net.monitoring.IpAddressMonitoring.verifyDnsPtr
+added column net.monitoring.IpAddressMonitoring.verifyDnsA
 changed column type IPAddress.package from string to fkey, referencing packages.pkey
 
 added schema management

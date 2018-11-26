@@ -1,4 +1,4 @@
-alter table monitoring."IpAddressMonitoring"
+alter table "net.monitoring"."IpAddressMonitoring"
   add constraint id_fkey
   foreign key (id)
   references net."IpAddress" (id)

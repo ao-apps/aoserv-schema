@@ -1,4 +1,4 @@
-create table monitoring."IpAddressMonitoring" (
+create table "net.monitoring"."IpAddressMonitoring" (
   id integer
     primary key,
   enabled boolean
@@ -18,5 +18,5 @@ create table monitoring."IpAddressMonitoring" (
     default true
 );
 
-grant all            on monitoring."IpAddressMonitoring" to aoadmin;
-grant select, update on monitoring."IpAddressMonitoring" to aoserv_app;
+grant all            on "net.monitoring"."IpAddressMonitoring" to aoadmin;
+grant select, update on "net.monitoring"."IpAddressMonitoring" to aoserv_app;

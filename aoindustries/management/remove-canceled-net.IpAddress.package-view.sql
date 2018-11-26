@@ -7,7 +7,7 @@ select
   || ia."inetAddress"
   || ' ' || coalesce(ao.hostname, se.id::text)
   || ' ' || nd."deviceID"
-  || ' ' || management."find-business-not-canceled"(bu.parent) as aosh_command,
+  || ' ' || "account.management"."Account.findBusinessNotCanceled"(bu.parent) as aosh_command,
   ao.hostname,
   ia."inetAddress"
 from
@@ -15,7 +15,7 @@ from
   inner join billing."Package" pk on ia.package     = pk.id
   inner join account."Account" bu on pk.accounting  = bu.accounting
   inner join net."Device"      nd on ia."netDevice" = nd.id
-  inner join net."Host"   se on nd.server      = se.id
+  inner join net."Host"        se on nd.server      = se.id
   left  join linux."Server"    ao on se.id          = ao.server
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);

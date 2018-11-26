@@ -135,14 +135,16 @@ select "schema".add_schema(
     true,
     null -- Uses pg_catalog.pg_description
 );
+/*
 select "schema".add_schema(
     'net.monitoring',
     '1.0a100',
     null,
     'Monitoring',
-    true,
+    false,
     null -- Uses pg_catalog.pg_description
 );
+ */
 select "schema".add_schema(
     'net.reputation',
     '1.65',
@@ -247,5 +249,3 @@ select "schema".add_schema(
     true,
     null -- Uses pg_catalog.pg_description
 );
-
--- TODO: Error schema with no tables?

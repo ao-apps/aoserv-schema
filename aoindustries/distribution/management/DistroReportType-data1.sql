@@ -1,0 +1,16 @@
+begin;
+insert into "distribution.management"."DistroReportType" values('BD', 'Big Directory');
+insert into "distribution.management"."DistroReportType" values('DI', 'Digest');
+insert into "distribution.management"."DistroReportType" values('EX', 'Extra');
+insert into "distribution.management"."DistroReportType" values('GR', 'Group Mismatch');
+insert into "distribution.management"."DistroReportType" values('HI', 'Hidden');
+insert into "distribution.management"."DistroReportType" values('LN', 'Length');
+insert into "distribution.management"."DistroReportType" values('MI', 'Missing');
+insert into "distribution.management"."DistroReportType" values('OW', 'Owner Mismatch');
+insert into "distribution.management"."DistroReportType" values('NO', 'No Owner');
+insert into "distribution.management"."DistroReportType" values('NG', 'No Group');
+insert into "distribution.management"."DistroReportType" values('PR', 'Permissions');
+insert into "distribution.management"."DistroReportType" values('SU', 'SetUID');
+insert into "distribution.management"."DistroReportType" values('SY', 'Symlink');
+insert into "distribution.management"."DistroReportType" values('TY', 'Type');
+commit;

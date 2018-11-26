@@ -1,6 +1,6 @@
-create sequence         server."MasterServer_id_seq" cycle;
-grant all            on server."MasterServer_id_seq" to aoadmin;
-grant select, update on server."MasterServer_id_seq" to aoserv_app;
+create sequence         master."UserHost_id_seq" cycle;
+grant all            on master."UserHost_id_seq" to aoadmin;
+grant select, update on master."UserHost_id_seq" to aoserv_app;
 
 /*
 TODO: When a master.User has no server.Server listed, it is considered a
@@ -9,10 +9,9 @@ is clever in the way a SQL DELETE will remove all data when you forget the
 WHERE clause.  This is too risky.  Find a better way, roles or another flag
 in master.User.
  */
--- TODO: Rename to master.UserHost
-create table server."MasterServer" (
+create table master."UserHost" (
   id integer
-    default nextval('server."MasterServer_id_seq"')
+    default nextval('master."UserHost_id_seq"')
     primary key,
   username text
     not null,
@@ -20,6 +19,6 @@ create table server."MasterServer" (
     not null,
   unique(username, server)
 );
-grant all            on server."MasterServer" to aoadmin;
+grant all            on master."UserHost" to aoadmin;
 -- TODO: Is insert required?
-grant select, insert on server."MasterServer" to aoserv_app;
+grant select, insert on master."UserHost" to aoserv_app;

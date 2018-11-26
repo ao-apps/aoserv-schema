@@ -1153,7 +1153,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'server',
+    'master',
     'master_servers',
     'Master Servers',
     false,

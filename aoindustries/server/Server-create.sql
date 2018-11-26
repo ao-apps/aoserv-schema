@@ -2,6 +2,9 @@ create sequence         server."Server_id_seq" cycle;
 grant all            on server."Server_id_seq" to aoadmin;
 grant select, update on server."Server_id_seq" to aoserv_app;
 
+-- TODO: Rename "host", since "server" is used all over, and "host" better
+--       represents any network-connected device, such as switches and PDUs.
+--       Rename existing *Host tables to something like *Source, *AccessControl, or *Acl
 create table server."Server" (
   id integer
     default nextval('server."Server_id_seq"')

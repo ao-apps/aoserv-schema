@@ -9,6 +9,7 @@ is clever in the way a SQL DELETE will remove all data when you forget the
 WHERE clause.  This is too risky.  Find a better way, roles or another flag
 in master.User.
  */
+-- TODO: Rename to master.UserHost
 create table server."MasterServer" (
   id integer
     default nextval('server."MasterServer_id_seq"')

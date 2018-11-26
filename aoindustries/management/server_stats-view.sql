@@ -8,7 +8,7 @@ as
         select
           count(*)
         from
-          server."AccountServer" bs,
+          account."AccountHost" bs,
           account."Account" bu
         where
           se.id=bs.server

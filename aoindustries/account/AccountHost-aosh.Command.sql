@@ -1,6 +1,6 @@
 select aosh.add_command(
   'add_business_server',
-  'server',
+  'account',
   'business_servers',
   'grants a business access to a server',
   '<i>business</i> <i>server</i>',
@@ -9,7 +9,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_business_server',
-  'server',
+  'account',
   'business_servers',
   'grants a business access to a server',
   '<i>business</i> <i>server</i> <i>can_configure_backup</i>',
@@ -18,7 +18,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'add_business_server',
-  'server',
+  'account',
   'business_servers',
   'grants a business access to a server',
   '<i>business</i> <i>server</i>',
@@ -27,7 +27,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'remove_business_server',
-  'server',
+  'account',
   'business_servers',
   'removes a business'' access to a server',
   '<i>business</i> <i>server</i>',
@@ -36,7 +36,7 @@ select aosh.add_command(
 );
 select aosh.add_command(
   'set_default_business_server',
-  'server',
+  'account',
   'business_servers',
   'sets the default server for a business',
   '<i>business</i> <i>server</i>',

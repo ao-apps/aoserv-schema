@@ -1,10 +1,10 @@
-create sequence         server."AccountServer_id_seq" cycle;
-grant all            on server."AccountServer_id_seq" to aoadmin;
-grant select, update on server."AccountServer_id_seq" to aoserv_app;
+create sequence         account."AccountHost_id_seq" cycle;
+grant all            on account."AccountHost_id_seq" to aoadmin;
+grant select, update on account."AccountHost_id_seq" to aoserv_app;
 
-create table server."AccountServer" (
+create table account."AccountHost" (
   id integer
-    default nextval('server."AccountServer_id_seq"')
+    default nextval('account."AccountHost_id_seq"')
     primary key,
   accounting text not null,
   server integer not null,
@@ -19,5 +19,5 @@ create table server."AccountServer" (
   can_control_virtual_server boolean not null default false,
   unique(accounting, server)
 );
-grant all                            on server."AccountServer" to aoadmin;
-grant select, update, insert, delete on server."AccountServer" to aoserv_app;
+grant all                            on account."AccountHost" to aoadmin;
+grant select, update, insert, delete on account."AccountHost" to aoserv_app;

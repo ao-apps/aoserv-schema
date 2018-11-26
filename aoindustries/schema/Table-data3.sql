@@ -208,7 +208,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'server',
+    'account',
     'business_servers',
     'Business Servers',
     false,

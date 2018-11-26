@@ -42,7 +42,7 @@ ALTER ROLE aoadmin SET search_path TO
   ticket,
   web,
   "web.jboss",
-  "web/tomcat";
+  "web.tomcat";
 
 -- aoserv_app is used by the master server.  For maximum reliability as schemas
 -- change over time, it does not have any special search_path.

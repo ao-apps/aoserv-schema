@@ -1,4 +1,4 @@
-create table "web/tomcat"."Version" (
+create table "web.tomcat"."Version" (
   version integer
     primary key,
   install_dir text
@@ -6,5 +6,5 @@ create table "web/tomcat"."Version" (
   requires_mod_jk boolean
     not null
 );
-grant all    on "web/tomcat"."Version" to aoadmin;
-grant select on "web/tomcat"."Version" to aoserv_app;
+grant all    on "web.tomcat"."Version" to aoadmin;
+grant select on "web.tomcat"."Version" to aoserv_app;

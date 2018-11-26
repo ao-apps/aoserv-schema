@@ -242,7 +242,7 @@ select "schema".add_schema(
     null -- Uses pg_catalog.pg_description
 );
 select "schema".add_schema(
-    'web/tomcat',
+    'web.tomcat',
     '1.0a100',
     null,
     'Tomcat',

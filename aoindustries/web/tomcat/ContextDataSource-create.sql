@@ -1,10 +1,10 @@
-create sequence         "web/tomcat"."ContextDataSource_id_seq" cycle;
-grant all            on "web/tomcat"."ContextDataSource_id_seq" to aoadmin;
-grant select, update on "web/tomcat"."ContextDataSource_id_seq" to aoserv_app;
+create sequence         "web.tomcat"."ContextDataSource_id_seq" cycle;
+grant all            on "web.tomcat"."ContextDataSource_id_seq" to aoadmin;
+grant select, update on "web.tomcat"."ContextDataSource_id_seq" to aoserv_app;
 
-create table "web/tomcat"."ContextDataSource" (
+create table "web.tomcat"."ContextDataSource" (
   id integer
-    default nextval('"web/tomcat"."ContextDataSource_id_seq"')
+    default nextval('"web.tomcat"."ContextDataSource_id_seq"')
     primary key,
   tomcat_context integer
     not null,
@@ -27,5 +27,5 @@ create table "web/tomcat"."ContextDataSource" (
   validation_query text,
   unique(tomcat_context, "name")
 );
-grant all                            on "web/tomcat"."ContextDataSource" to aoadmin;
-grant select, insert, update, delete on "web/tomcat"."ContextDataSource" to aoserv_app;
+grant all                            on "web.tomcat"."ContextDataSource" to aoadmin;
+grant select, insert, update, delete on "web.tomcat"."ContextDataSource" to aoserv_app;

@@ -1,10 +1,10 @@
-create sequence         "web/tomcat"."SharedTomcat_id_seq" cycle;
-grant all            on "web/tomcat"."SharedTomcat_id_seq" to aoadmin;
-grant select, update on "web/tomcat"."SharedTomcat_id_seq" to aoserv_app;
+create sequence         "web.tomcat"."SharedTomcat_id_seq" cycle;
+grant all            on "web.tomcat"."SharedTomcat_id_seq" to aoadmin;
+grant select, update on "web.tomcat"."SharedTomcat_id_seq" to aoserv_app;
 
-create table "web/tomcat"."SharedTomcat" (
+create table "web.tomcat"."SharedTomcat" (
   id integer
-    default nextval('"web/tomcat"."SharedTomcat_id_seq"')
+    default nextval('"web.tomcat"."SharedTomcat_id_seq"')
     primary key,
   "name" text
     not null
@@ -40,5 +40,5 @@ create table "web/tomcat"."SharedTomcat" (
   auto_deploy boolean not null,
   unique (ao_server, "name")
 );
-grant all                            on "web/tomcat"."SharedTomcat" to aoadmin;
-grant select, insert, update, delete on "web/tomcat"."SharedTomcat" to aoserv_app;
+grant all                            on "web.tomcat"."SharedTomcat" to aoadmin;
+grant select, insert, update, delete on "web.tomcat"."SharedTomcat" to aoserv_app;

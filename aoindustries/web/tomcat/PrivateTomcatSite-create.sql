@@ -1,4 +1,4 @@
-create table "web/tomcat"."PrivateTomcatSite" (
+create table "web.tomcat"."PrivateTomcatSite" (
   tomcat_site integer
     primary key,
   tomcat4_shutdown_port integer
@@ -9,5 +9,5 @@ create table "web/tomcat"."PrivateTomcatSite" (
   unpack_wars boolean not null,
   auto_deploy boolean not null
 );
-grant all                            on "web/tomcat"."PrivateTomcatSite" to aoadmin;
-grant select, insert, update, delete on "web/tomcat"."PrivateTomcatSite" to aoserv_app;
+grant all                            on "web.tomcat"."PrivateTomcatSite" to aoadmin;
+grant select, insert, update, delete on "web.tomcat"."PrivateTomcatSite" to aoserv_app;

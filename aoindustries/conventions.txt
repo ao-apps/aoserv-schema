@@ -1,6 +1,6 @@
 Source:
 
-1) Two-space indent, do not tab indent because it doesn't copy/paste will into psql
+1) Two-space indent, do not tab indent because it doesn't copy/paste well into psql
 
 2) Always specify schema
 
@@ -65,19 +65,34 @@ Naming:
 
 5) Non-foreign key columns lower camelCase, matching Java field and JavaBeans getters.
 
-6) Foreign key columns named capital, matching the name of the table they reference.
+6) Foreign key columns lowerCamelCase name, based on the name of the table they reference.
    This connects well to AOSH dot-join syntax:
-       select Package.name from Username
+       select package.name from account.Username
+
+   Here "based on" prefer short versions within a schema, while schema-prefixed
+   outside the schema.  Example:
+       # Selects the MysqlUser for a UserServer, just "user" since in same schema
+       select user.TODO from mysql.UserServer
+
+       # Consider finding which farm a HttpdBind is in (preferred):
+       select httpServer.linuxServer.server.farm from web.HttpdBind
+
+       # Consider what would be without schema prefixes (boo):
+       select server.server.server.farm from web.HttpdBind
 
 7) Boolean columns should be "isSomething", matching the Java conventions.
    On the Java side, the field should also be "isSomething", with a getter
    "isSomething()" and setter of "setSomething(boolean isSomething)".
 
+   However, when using a non-is boolean, where is more logical, the field should
+   be named just "something", with a getter "getSomething()" and a setter of
+   "setSomething(boolean something)".
+
 8) Not strictly required, but good idea to avoid Java keywords in column names,
    as this can save the overhead of manually declaring JavaBeans properties and
    JSP EL expressions such as obj['public'] where obj.public wouldn't work.
 
-9) Indexes that exist primarily to align to foreign keys should be named
+9) Indexes that exist primarily to support foreign keys should be named
    "Table_column_fkey"
 
 

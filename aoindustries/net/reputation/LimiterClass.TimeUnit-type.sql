@@ -1,8 +1,8 @@
-CREATE TYPE "net/reputation"."LimiterClass.TimeUnit" AS ENUM (
+CREATE TYPE "net.reputation"."LimiterClass.TimeUnit" AS ENUM (
   'second',
   'minute',
   'hour',
   'day'
 );
-COMMENT ON TYPE "net/reputation"."LimiterClass.TimeUnit"
+COMMENT ON TYPE "net.reputation"."LimiterClass.TimeUnit"
 IS 'Matches enum com.aoindustries.aoserv.client.IpReputationLimiterLimit.TimeUnit';

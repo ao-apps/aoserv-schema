@@ -136,7 +136,7 @@ select "schema".add_schema(
     null -- Uses pg_catalog.pg_description
 );
 select "schema".add_schema(
-    'net/reputation',
+    'net.reputation',
     '1.65',
     null,
     'Reputation',

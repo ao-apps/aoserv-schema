@@ -1,5 +1,5 @@
 /* TODO
-create index "LimiterManualSet_set_fkey" on "net/reputation"."LimiterIpSet" (
+create index "LimiterIpSet_set_fkey" on "net.reputation"."LimiterIpSet" (
   "set"
 );
  */

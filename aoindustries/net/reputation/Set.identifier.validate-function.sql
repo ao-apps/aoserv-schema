@@ -17,7 +17,7 @@ ipset has maximum name length of 31, and we prefix four characters, leaving 27 c
       character 2: '_': Reserved
       character 3: '_': Separator, 'N': New list (for loading while old copy active)
  */
-CREATE OR REPLACE FUNCTION "net/reputation"."Set.identifier.validate" (identifier text)
+CREATE OR REPLACE FUNCTION "net.reputation"."Set.identifier.validate" (identifier text)
 RETURNS text AS $$
 DECLARE
   _validate_ipset_result text := (SELECT net."IpSet.identifier.validate"(identifier));

@@ -28,22 +28,22 @@ for non-syn (established connections) within the same class.
 Per-IP limits are added first, so that a massive attack from one IP source will
 not block all members of that class.
  */
-CREATE OR REPLACE FUNCTION "net/reputation"."LimiterClass.validateLimits" (
-  "class"             "net/reputation"."Class",
+CREATE OR REPLACE FUNCTION "net.reputation"."LimiterClass.validateLimits" (
+  "class"             "net.reputation"."Class",
   syn_per_ip_burst    smallint,
   syn_per_ip_rate     smallint,
-  syn_per_ip_unit     "net/reputation"."LimiterClass.TimeUnit",
+  syn_per_ip_unit     "net.reputation"."LimiterClass.TimeUnit",
   syn_per_ip_size     smallint,
   syn_burst           smallint,
   syn_rate            smallint,
-  syn_unit            "net/reputation"."LimiterClass.TimeUnit",
+  syn_unit            "net.reputation"."LimiterClass.TimeUnit",
   packet_per_ip_burst integer,
   packet_per_ip_rate  integer,
-  packet_per_ip_unit  "net/reputation"."LimiterClass.TimeUnit",
+  packet_per_ip_unit  "net.reputation"."LimiterClass.TimeUnit",
   packet_per_ip_size  integer,
   packet_burst        integer,
   packet_rate         integer,
-  packet_unit         "net/reputation"."LimiterClass.TimeUnit"
+  packet_unit         "net.reputation"."LimiterClass.TimeUnit"
 )
 RETURNS text AS $$
 BEGIN

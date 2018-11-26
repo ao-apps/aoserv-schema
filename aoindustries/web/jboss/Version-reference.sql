@@ -1,11 +1,11 @@
-alter table "web/jboss"."Version"
+alter table "web.jboss"."Version"
   add constraint version_fkey
   foreign key (version)
   references distribution."SoftwareVersion" (id)
   on delete restrict
   on update cascade
 ;
-alter table "web/jboss"."Version"
+alter table "web.jboss"."Version"
   add constraint tomcat_version_fkey
   foreign key (tomcat_version)
   references "web/tomcat"."Version" (version)

@@ -649,7 +649,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'web/jboss',
+    'web.jboss',
     'httpd_jboss_sites',
     'Httpd JBoss Sites',
     false,
@@ -658,7 +658,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'web/jboss',
+    'web.jboss',
     'httpd_jboss_versions',
     'Httpd JBoss Versions',
     true,

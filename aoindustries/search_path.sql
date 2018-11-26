@@ -41,7 +41,7 @@ ALTER ROLE aoadmin SET search_path TO
   signup,
   ticket,
   web,
-  "web/jboss",
+  "web.jboss",
   "web/tomcat";
 
 -- aoserv_app is used by the master server.  For maximum reliability as schemas

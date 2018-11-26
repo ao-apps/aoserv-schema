@@ -1,4 +1,4 @@
-create table "web/jboss"."Version" (
+create table "web.jboss"."Version" (
   version integer
     primary key,
   tomcat_version integer
@@ -6,5 +6,5 @@ create table "web/jboss"."Version" (
   template_dir text
     not null
 );
-grant all    on "web/jboss"."Version" to aoadmin;
-grant select on "web/jboss"."Version" to aoserv_app;
+grant all    on "web.jboss"."Version" to aoadmin;
+grant select on "web.jboss"."Version" to aoserv_app;

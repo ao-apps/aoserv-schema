@@ -1,6 +1,6 @@
 begin;
 insert into
-  "web/jboss"."Version"
+  "web.jboss"."Version"
 select
   tv1.id,
   tv2.id,

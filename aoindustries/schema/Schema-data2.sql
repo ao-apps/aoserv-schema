@@ -234,7 +234,7 @@ select "schema".add_schema(
     null -- Uses pg_catalog.pg_description
 );
 select "schema".add_schema(
-    'web/jboss',
+    'web.jboss',
     '1.0a100',
     null,
     'JBoss',

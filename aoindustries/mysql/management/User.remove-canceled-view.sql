@@ -1,5 +1,5 @@
 create or replace view
-  management."remove-canceled-mysql.User"
+  "mysql.management"."User.remove-canceled"
 as
 select
   bu.accounting,
@@ -13,5 +13,5 @@ from
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 
-revoke all    on management."remove-canceled-mysql.User" from aoadmin;
-grant  select on management."remove-canceled-mysql.User" to   aoadmin;
+revoke all    on "mysql.management"."User.remove-canceled" from aoadmin;
+grant  select on "mysql.management"."User.remove-canceled" to   aoadmin;

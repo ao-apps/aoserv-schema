@@ -1,5 +1,5 @@
 create or replace view
-  management."remove-canceled-web.Site"
+  "web.management"."Site.remove-canceled"
 as
 select
   bu.accounting,
@@ -14,5 +14,5 @@ from
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 
-revoke all    on management."remove-canceled-web.Site" from aoadmin;
-grant  select on management."remove-canceled-web.Site" to   aoadmin;
+revoke all    on "web.management"."Site.remove-canceled" from aoadmin;
+grant  select on "web.management"."Site.remove-canceled" to   aoadmin;

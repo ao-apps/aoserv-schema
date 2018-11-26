@@ -1,6 +1,6 @@
 -- See http://localhost:8080/docs/ao/management/postgresql/remove-postgresql-server#procedure
 create or replace view
-  management."remove-postgresql-server"
+  "postgresql.management"."Server.remove"
 as
 select
   (select count(*) from postgresql."Database" pd where
@@ -34,5 +34,5 @@ from
   inner join distribution."OperatingSystemVersion" osv on tv.operating_system_version = osv.id
   inner join net."Bind"                             nb on ps.net_bind                 =  nb.id;
 
-revoke all    on management."remove-postgresql-server" from aoadmin;
-grant  select on management."remove-postgresql-server" to   aoadmin;
+revoke all    on "postgresql.management"."Server.remove" from aoadmin;
+grant  select on "postgresql.management"."Server.remove" to   aoadmin;

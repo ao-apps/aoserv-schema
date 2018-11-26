@@ -1,6 +1,6 @@
 -- See http://localhost:8080/docs/ao/management/httpd/remove-httpd-server#procedure
 create or replace view
-  management."remove-httpd-server"
+  "web.management"."HttpdServer.remove"
 as
 select
   (
@@ -48,8 +48,8 @@ select
 from
              linux."Server"                        ao
   inner join web."HttpdServer"                     hs  on ao.server                   =  hs.ao_server
-  inner join net."Host"                       se  on ao.server                   =  se.id
+  inner join net."Host"                            se  on ao.server                   =  se.id
   inner join distribution."OperatingSystemVersion" osv on se.operating_system_version = osv.id;
 
-revoke all    on management."remove-httpd-server" from aoadmin;
-grant  select on management."remove-httpd-server" to   aoadmin;
+revoke all    on "web.management"."HttpdServer.remove" from aoadmin;
+grant  select on "web.management"."HttpdServer.remove" to   aoadmin;

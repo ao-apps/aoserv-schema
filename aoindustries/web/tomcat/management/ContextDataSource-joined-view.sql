@@ -1,6 +1,6 @@
 -- See http://localhost:8080/docs/ao/software/3rd-party/mysql/bind-to-localhost#procedure
 create or replace view
-  management."web.tomcat.ContextDataSource-joined"
+  "web.tomcat.management"."ContextDataSource-joined"
 as
 select
   ao.hostname,
@@ -16,5 +16,5 @@ from
   inner join web."Site"                       hs  on  htc.tomcat_site    =  hs.id
   inner join linux."Server"                   ao  on   hs.ao_server      =  ao.server;
 
-revoke all    on management."web.tomcat.ContextDataSource-joined" from aoadmin;
-grant  select on management."web.tomcat.ContextDataSource-joined" to   aoadmin;
+revoke all    on "web.tomcat.management"."ContextDataSource-joined" from aoadmin;
+grant  select on "web.tomcat.management"."ContextDataSource-joined" to   aoadmin;

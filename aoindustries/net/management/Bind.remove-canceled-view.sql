@@ -1,5 +1,5 @@
 create or replace view
-  management."remove-canceled-net.Bind"
+  "net.management"."Bind.remove-canceled"
 as
 select
   bu.accounting,
@@ -15,5 +15,5 @@ from
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 
-revoke all    on management."remove-canceled-net.Bind" from aoadmin;
-grant  select on management."remove-canceled-net.Bind" to   aoadmin;
+revoke all    on "net.management"."Bind.remove-canceled" from aoadmin;
+grant  select on "net.management"."Bind.remove-canceled" to   aoadmin;

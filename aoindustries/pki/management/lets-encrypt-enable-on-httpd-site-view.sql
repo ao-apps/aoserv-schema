@@ -1,6 +1,6 @@
 -- See http://localhost:8080/docs/ao/certificate-authorities/lets-encrypt/enable-on-httpd-site
 create or replace view
-  management."lets-encrypt-enable-on-httpd-site"
+  "pki.management"."lets-encrypt-enable-on-httpd-site"
 as
 select
   ao.hostname as "SERVER",
@@ -39,5 +39,5 @@ where
   (osv.operating_system, osv.version_number)!=('centos', '5')
   and (is_443.ssl_cert_file is null or is_443.ssl_cert_file not like '/etc/letsencrypt/%');
 
-revoke all    on management."lets-encrypt-enable-on-httpd-site" from aoadmin;
-grant  select on management."lets-encrypt-enable-on-httpd-site" to   aoadmin;
+revoke all    on "pki.management"."lets-encrypt-enable-on-httpd-site" from aoadmin;
+grant  select on "pki.management"."lets-encrypt-enable-on-httpd-site" to   aoadmin;

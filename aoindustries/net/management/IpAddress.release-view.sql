@@ -1,6 +1,6 @@
 -- See http://localhost:8080/docs/ao/management/ip-addresses/release-net.IpAddress#procedure
 create or replace view
-  management."release-net.IpAddress"
+  "net/management"."IpAddress.release"
 as
 select
   (select count(*) from net."Bind" nb where nb."ipAddress" = ia.id) as num_binds,
@@ -31,5 +31,5 @@ where
   -- Do not release loopback IPs
   and not ndi.is_loopback;
 
-revoke all    on management."release-net.IpAddress" from aoadmin;
-grant  select on management."release-net.IpAddress" to   aoadmin;
+revoke all    on "net/management"."IpAddress.release" from aoadmin;
+grant  select on "net/management"."IpAddress.release" to   aoadmin;

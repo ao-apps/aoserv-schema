@@ -1,5 +1,5 @@
 create or replace view
-  management."remove-canceled-web.tomcat.SharedTomcat"
+  "web.tomcat.management"."SharedTomcat.remove-canceled"
 as
 select
   bu.accounting,
@@ -16,5 +16,5 @@ from
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 
-revoke all    on management."remove-canceled-web.tomcat.SharedTomcat" from aoadmin;
-grant  select on management."remove-canceled-web.tomcat.SharedTomcat" to   aoadmin;
+revoke all    on "web.tomcat.management"."SharedTomcat.remove-canceled" from aoadmin;
+grant  select on "web.tomcat.management"."SharedTomcat.remove-canceled" to   aoadmin;

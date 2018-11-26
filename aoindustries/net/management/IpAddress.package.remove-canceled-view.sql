@@ -1,5 +1,5 @@
 create or replace view
-  management."remove-canceled-net.IpAddress.package"
+  "net.management"."IpAddress.package.remove-canceled"
 as
 select
   bu.accounting,
@@ -20,5 +20,5 @@ from
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 
-revoke all    on management."remove-canceled-net.IpAddress.package" from aoadmin;
-grant  select on management."remove-canceled-net.IpAddress.package" to   aoadmin;
+revoke all    on "net.management"."IpAddress.package.remove-canceled" from aoadmin;
+grant  select on "net.management"."IpAddress.package.remove-canceled" to   aoadmin;

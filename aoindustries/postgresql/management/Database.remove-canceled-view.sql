@@ -1,5 +1,5 @@
 create or replace view
-  management."remove-canceled-postgresql.Database"
+  "postgresql.management"."Database.remove-canceled"
 as
 select
   bu.accounting,
@@ -18,5 +18,5 @@ from
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 
-revoke all    on management."remove-canceled-postgresql.Database" from aoadmin;
-grant  select on management."remove-canceled-postgresql.Database" to   aoadmin;
+revoke all    on "postgresql.management"."Database.remove-canceled" from aoadmin;
+grant  select on "postgresql.management"."Database.remove-canceled" to   aoadmin;

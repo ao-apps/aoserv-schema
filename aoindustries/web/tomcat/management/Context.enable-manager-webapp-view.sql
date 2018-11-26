@@ -1,6 +1,6 @@
 -- See http://localhost:8080/docs/ao/management/apache-tomcat/enable-manager-webapp#procedure
 create or replace view
-  "web.tomcat.management"."enable-manager-webapp"
+  "web.tomcat.management"."Context.enable-manager-webapp"
 as
 select
   (
@@ -27,5 +27,5 @@ from
   left  join "web.tomcat"."SharedTomcatSite" htss on  hts.httpd_site          = htss.tomcat_site
   left  join "web.tomcat"."SharedTomcat"      hst on htss.httpd_shared_tomcat =  hst.id;
 
-revoke all    on "web.tomcat.management"."enable-manager-webapp" from aoadmin;
-grant  select on "web.tomcat.management"."enable-manager-webapp" to   aoadmin;
+revoke all    on "web.tomcat.management"."Context.enable-manager-webapp" from aoadmin;
+grant  select on "web.tomcat.management"."Context.enable-manager-webapp" to   aoadmin;

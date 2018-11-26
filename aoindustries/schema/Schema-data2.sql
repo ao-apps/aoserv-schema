@@ -48,6 +48,14 @@ select "schema".add_schema(
     null -- Uses pg_catalog.pg_description
 );
 select "schema".add_schema(
+    'distribution.management',
+    '1.0a100',
+    null,
+    'Management',
+    false,
+    null -- Uses pg_catalog.pg_description
+);
+select "schema".add_schema(
     'dns',
     '1.0a100',
     null,
@@ -93,14 +101,6 @@ select "schema".add_schema(
     null,
     'Linux',
     true,
-    null -- Uses pg_catalog.pg_description
-);
-select "schema".add_schema(
-    'management',
-    '1.0a100',
-    null,
-    'Management',
-    false,
     null -- Uses pg_catalog.pg_description
 );
 select "schema".add_schema(

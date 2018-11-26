@@ -1,5 +1,5 @@
 create or replace view
-  management."remove-canceled-scm.CvsRepository"
+  "scm.management"."CvsRepository.remove-canceled"
 as
 select
   bu.accounting,
@@ -16,5 +16,5 @@ from
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 
-revoke all    on management."remove-canceled-scm.CvsRepository" from aoadmin;
-grant  select on management."remove-canceled-scm.CvsRepository" to   aoadmin;
+revoke all    on "scm.management"."CvsRepository.remove-canceled" from aoadmin;
+grant  select on "scm.management"."CvsRepository.remove-canceled" to   aoadmin;

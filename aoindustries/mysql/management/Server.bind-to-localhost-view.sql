@@ -1,6 +1,6 @@
 -- See http://localhost:8080/docs/ao/software/3rd-party/mysql/bind-to-localhost#procedure
 create or replace view
-  management."mysql-bind-to-localhost"
+  "mysql.management"."Server.bind-to-localhost"
 as
 select
   ia."inetAddress",
@@ -26,5 +26,5 @@ from
 where
   ia."inetAddress" != '127.0.0.1';
 
-revoke all    on management."mysql-bind-to-localhost" from aoadmin;
-grant  select on management."mysql-bind-to-localhost" to   aoadmin;
+revoke all    on "mysql.management"."Server.bind-to-localhost" from aoadmin;
+grant  select on "mysql.management"."Server.bind-to-localhost" to   aoadmin;

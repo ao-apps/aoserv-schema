@@ -1,6 +1,6 @@
 -- See http://localhost:8080/docs/ao/management/mysql/remove-mysql-server#procedure
 create or replace view
-  management."remove-mysql-server"
+  "mysql.management"."Server.remove"
 as
 select
   (select count(*) from mysql."Database" md where
@@ -36,5 +36,5 @@ from
   inner join net."Bind"                            nb  on ms.net_bind                 =  nb.id
   inner join net."IpAddress"                       ia  on nb."ipAddress"              =  ia.id;
 
-revoke all    on management."remove-mysql-server" from aoadmin;
-grant  select on management."remove-mysql-server" to   aoadmin;
+revoke all    on "mysql.management"."Server.remove" from aoadmin;
+grant  select on "mysql.management"."Server.remove" to   aoadmin;

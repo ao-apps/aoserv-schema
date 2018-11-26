@@ -1,6 +1,6 @@
 -- See http://localhost:8080/docs/ao/management/ssl-certificates/remove-ssl-certificate#procedure
 create or replace view
-  management."remove-ssl-certificate"
+  "pki.management"."Certificate.remove"
 as
 select
   (select count(*) from email."CyrusImapdBind"   cib where cib.certificate       = sc.id) as num_cyrus_imapd_binds,
@@ -38,5 +38,5 @@ from
   inner join net."Host"                       se  on ao.server                   = se.id
   inner join distribution."OperatingSystemVersion" osv on se.operating_system_version = osv.id;
 
-revoke all    on management."remove-ssl-certificate" from aoadmin;
-grant  select on management."remove-ssl-certificate" to   aoadmin;
+revoke all    on "pki.management"."Certificate.remove" from aoadmin;
+grant  select on "pki.management"."Certificate.remove" to   aoadmin;

@@ -316,7 +316,7 @@ select "schema".add_table(
     '1.41'
 );
 select "schema".add_table(
-    'management',
+    'distribution.management',
     'distro_file_types',
     'Distro File Types',
     false,
@@ -325,7 +325,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'management',
+    'distribution.management',
     'distro_files',
     'Distro Files',
     false,
@@ -334,7 +334,7 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
-    'management',
+    'distribution.management',
     'distro_report_types',
     'Distro Report Types',
     false,

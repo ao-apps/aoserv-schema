@@ -29,6 +29,7 @@ ALTER ROLE aoadmin SET search_path TO
   master,
   monitoring,
   mysql,
+  "mysql.management",
   net,
   "net.monitoring",
   "net.reputation",

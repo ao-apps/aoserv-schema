@@ -4,9 +4,9 @@ as
 -- scm.CvsRepository
           (select accounting, aosh_command from "scm.management"."CvsRepository.remove-canceled" order by accounting, net.reverse_hostname(hostname), "path")
 -- email.List
-union all (select accounting, aosh_command from "email.management"."List.remove-canceled" order by accounting, net.reverse_hostname(hostname), "path")
+union all (select accounting, aosh_command from management."remove-canceled-email.List" order by accounting, net.reverse_hostname(hostname), "path")
 -- email.Domain
-union all (select accounting, aosh_command from "email.management"."Domain.remove-canceled" order by accounting, net.reverse_hostname(hostname), "domain")
+union all (select accounting, aosh_command from management."remove-canceled-email.Domain" order by accounting, net.reverse_hostname(hostname), "domain")
 -- web.Site
 union all (select accounting, aosh_command from "web.management"."Site.remove-canceled" order by accounting, net.reverse_hostname(hostname), "name")
 -- web.tomcat.SharedTomcat

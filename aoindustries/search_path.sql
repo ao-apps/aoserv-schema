@@ -14,6 +14,7 @@ but with "public" always first.
 ALTER ROLE aoadmin SET search_path TO
   public,
   account,
+  "account/management",
   accounting,
   aosh,
   backup,

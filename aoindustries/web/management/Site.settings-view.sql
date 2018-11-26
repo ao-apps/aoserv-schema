@@ -1,6 +1,6 @@
 -- See http://localhost:8080/docs/ao/software/aoserv/aoserv-master#view-web-site-settings
 create or replace view
-  management."web-site-settings"
+  "web.management"."Site.settings"
 as
 select
   hs.id,
@@ -21,7 +21,7 @@ from
              linux."Server"                 ao
   inner join web."Site"                     hs  on ao.server      = hs.ao_server
   left  join distribution."SoftwareVersion" tv  on hs.php_version = tv.id
-  left  join "web.tomcat"."Site"            hts on hs.id        = hts.httpd_site;
+  left  join "web.tomcat"."Site"            hts on hs.id          = hts.httpd_site;
 
-revoke all    on management."web-site-settings" from aoadmin;
-grant  select on management."web-site-settings" to   aoadmin;
+revoke all    on "web.management"."Site.settings" from aoadmin;
+grant  select on "web.management"."Site.settings" to   aoadmin;

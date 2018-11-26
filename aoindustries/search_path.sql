@@ -46,6 +46,7 @@ ALTER ROLE aoadmin SET search_path TO
   ticket,
   web,
   "web.jboss",
+  "web.management",
   "web.tomcat",
   "web.tomcat.management";
 

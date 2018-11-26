@@ -1,4 +1,4 @@
-COPY email."AttachmentBlocks" (id, linux_server_account, extension) FROM stdin;
+COPY email."AttachmentBlock" (id, linux_server_account, extension) FROM stdin;
 1471	89	ade
 1472	89	adp
 1473	89	asd

@@ -15,7 +15,7 @@ create table "net.reputation"."Limiter" (
     not null
     check (
         -- Although this identifier is only used in a directory name at this time,
-        -- its rules are defined to be consistent with net/reputation.Set.
+        -- its rules are defined to be consistent with net.reputation.Set.
         "net.reputation"."Set.identifier.validate"(identifier) IS NULL
     ),
   unique(net_device, identifier),

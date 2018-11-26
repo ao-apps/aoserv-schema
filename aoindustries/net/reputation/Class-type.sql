@@ -1,4 +1,4 @@
-CREATE TYPE "net/reputation"."Class" AS ENUM (
+CREATE TYPE "net.reputation"."Class" AS ENUM (
   -- Manual Good
   -- TODO: Rename "gi" for "Good IpSet"
   'gm',
@@ -18,5 +18,5 @@ CREATE TYPE "net/reputation"."Class" AS ENUM (
   -- Unknown
   'uu'
 );
-COMMENT ON TYPE "net/reputation"."Class"
+COMMENT ON TYPE "net.reputation"."Class"
 IS 'Matches enum com.aoindustries.aoserv.client.IpReputationLimiterLimit.LimiterClass';

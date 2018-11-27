@@ -88,10 +88,12 @@ ALTER ROLE management SET search_path TO
   public,
   account,
   "account.management",
+  billing,
   linux,
   management,
   mysql,
   net,
+  web,
   "web.tomcat.management";
 
 ALTER ROLE monitoring SET search_path TO

@@ -79,6 +79,7 @@ ALTER ROLE distribution SET search_path TO
 ALTER ROLE infrastructure SET search_path TO
   public,
   infrastructure,
+  linux,
   net;
 
 ALTER ROLE management SET search_path TO

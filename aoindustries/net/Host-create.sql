@@ -1,7 +1,6 @@
 create sequence         net."Host_id_seq" cycle;
 grant all            on net."Host_id_seq" to aoadmin;
 grant select, update on net."Host_id_seq" to aoserv_app;
-grant select, update on net."Host_id_seq" to infrastructure;
 
 create table net."Host" (
   id integer
@@ -18,4 +17,4 @@ create table net."Host" (
 grant all                    on net."Host" to aoadmin;
 grant select, insert, update on net."Host" to aoserv_app;
 grant select, update         on net."Host" to billing; -- TODO: Access is for update net.Host.monitoring_enabled only
-grant select, insert, update on net."Host" to infrastructure;
+grant select                 on net."Host" to infrastructure;

@@ -11,6 +11,6 @@ create table mysql."Server" (
     not null,
   unique (ao_server, "name")
 );
-grant all                    on mysql."Server" to aoadmin;
-grant select                 on mysql."Server" to aoserv_app;
-grant select, insert, delete on mysql."Server" to management;
+grant all    on mysql."Server" to aoadmin;
+grant select on mysql."Server" to aoserv_app;
+grant select on mysql."Server" to management;

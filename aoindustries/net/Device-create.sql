@@ -30,3 +30,4 @@ create table net."Device" (
 grant all    on net."Device" to aoadmin;
 grant select on net."Device" to aoserv_app;
 grant select on net."Device" to infrastructure;
+grant select on net."Device" to monitoring;

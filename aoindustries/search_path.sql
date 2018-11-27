@@ -60,7 +60,9 @@ ALTER ROLE aoserv_app SET search_path TO public;
 
 ALTER ROLE accounting SET search_path TO
   public,
+  account,
   accounting,
+  billing,
   master,
   payment;
 

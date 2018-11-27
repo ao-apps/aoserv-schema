@@ -1,7 +1,6 @@
 create sequence         mysql."Database_id_seq" cycle;
 grant all            on mysql."Database_id_seq" to aoadmin;
 grant select, update on mysql."Database_id_seq" to aoserv_app;
-grant select, update on mysql."Database_id_seq" to management;
 
 create table mysql."Database" (
   id integer
@@ -20,4 +19,4 @@ create table mysql."Database" (
 );
 grant all                            on mysql."Database" to aoadmin;
 grant select, insert, update, delete on mysql."Database" to aoserv_app;
-grant select, insert, delete         on mysql."Database" to management;
+grant select                         on mysql."Database" to management;

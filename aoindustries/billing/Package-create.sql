@@ -1,7 +1,6 @@
 create sequence         billing."Package_id_seq" cycle;
 grant all            on billing."Package_id_seq" to aoadmin;
 grant select, update on billing."Package_id_seq" to aoserv_app;
-grant select, update on billing."Package_id_seq" to billing;
 
 create table billing."Package" (
   id integer
@@ -30,6 +29,4 @@ create table billing."Package" (
 grant all                            on billing."Package" to aoadmin;
 -- TODO: Is delete used?
 grant select, insert, update, delete on billing."Package" to aoserv_app;
-grant select, insert, update         on billing."Package" to billing;
-grant select                         on billing."Package" to infrastructure;
-grant select                         on billing."Package" to management;
+grant select, update                 on billing."Package" to billing;

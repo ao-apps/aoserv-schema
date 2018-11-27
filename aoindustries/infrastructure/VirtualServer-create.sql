@@ -44,6 +44,6 @@ create table infrastructure."VirtualServer" (
     unique
     check (length(vnc_password)>=8) -- Must be at least 8 characters
 );
-grant all    on infrastructure."VirtualServer" to aoadmin;
-grant select on infrastructure."VirtualServer" to aoserv_app;
-grant select on infrastructure."VirtualServer" to infrastructure;
+grant all            on infrastructure."VirtualServer" to aoadmin;
+grant select         on infrastructure."VirtualServer" to aoserv_app;
+grant select, update on infrastructure."VirtualServer" to infrastructure;

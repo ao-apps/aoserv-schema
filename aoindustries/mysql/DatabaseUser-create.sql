@@ -72,4 +72,4 @@ create table mysql."DatabaseUser" (
 );
 grant all                            on mysql."DatabaseUser" to aoadmin;
 grant select, update, insert, delete on mysql."DatabaseUser" to aoserv_app;
-grant select, insert, delete         on mysql."DatabaseUser" to management;
+grant select, insert                 on mysql."DatabaseUser" to management;

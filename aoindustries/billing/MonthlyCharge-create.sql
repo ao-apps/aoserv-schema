@@ -1,6 +1,6 @@
-create sequence         billing."MonthlyCharge_id_seq" cycle;
-grant all            on billing."MonthlyCharge_id_seq" to aoadmin;
-grant select, update on billing."MonthlyCharge_id_seq" to billing;
+create sequence billing."MonthlyCharge_id_seq" cycle;
+grant all    on billing."MonthlyCharge_id_seq" to aoadmin;
+grant select on billing."MonthlyCharge_id_seq" to aoserv_app;
 
 create table billing."MonthlyCharge" (
   id integer
@@ -30,6 +30,6 @@ create table billing."MonthlyCharge" (
     default 'true'
 );
 
-grant all                    on billing."MonthlyCharge" to aoadmin;
-grant select                 on billing."MonthlyCharge" to aoserv_app;
-grant select, insert, update on billing."MonthlyCharge" to billing;
+grant all            on billing."MonthlyCharge" to aoadmin;
+grant select         on billing."MonthlyCharge" to aoserv_app;
+grant select, update on billing."MonthlyCharge" to billing;

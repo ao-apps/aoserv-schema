@@ -6,4 +6,4 @@ create table net."DeviceId" (
 );
 grant all    on net."DeviceId" to aoadmin;
 grant select on net."DeviceId" to aoserv_app;
-grant select on net."DeviceId" to infrastructure;
+grant select on net."DeviceId" to monitoring;

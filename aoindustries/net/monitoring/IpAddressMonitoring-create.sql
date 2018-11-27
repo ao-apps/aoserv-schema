@@ -20,4 +20,4 @@ create table "net.monitoring"."IpAddressMonitoring" (
 
 grant all            on "net.monitoring"."IpAddressMonitoring" to aoadmin;
 grant select, update on "net.monitoring"."IpAddressMonitoring" to aoserv_app;
-grant select, update on "net.monitoring"."IpAddressMonitoring" to infrastructure;
+grant select, update on "net.monitoring"."IpAddressMonitoring" to monitoring;

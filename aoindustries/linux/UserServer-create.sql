@@ -44,4 +44,4 @@ create table linux."UserServer" (
 );
 grant all                            on linux."UserServer" to aoadmin;
 grant select, insert, update, delete on linux."UserServer" to aoserv_app;
-grant select, delete                 on linux."UserServer" to management;
+grant select                         on linux."UserServer" to management;

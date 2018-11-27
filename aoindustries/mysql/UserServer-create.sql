@@ -38,4 +38,4 @@ create table mysql."UserServer" (
 );
 grant all                            on mysql."UserServer" to aoadmin;
 grant select, insert, update, delete on mysql."UserServer" to aoserv_app;
-grant select, insert, delete         on mysql."UserServer" to management;
+grant select, insert                 on mysql."UserServer" to management;

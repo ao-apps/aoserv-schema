@@ -58,7 +58,18 @@ ALTER ROLE aoadmin SET search_path TO
 -- change over time, it does not have any special search_path.
 ALTER ROLE aoserv_app SET search_path TO public;
 
-ALTER ROLE kaori SET search_path TO
+ALTER ROLE accounting SET search_path TO
+  public,
+  accounting,
+  master,
+  payment;
+
+ALTER ROLE billing SET search_path TO
   public,
   account,
-  billing;
+  billing,
+  net; -- TODO: Access is for update net.Host.monitoring_enabled only
+
+ALTER ROLE reseller SET search_path TO
+  public,
+  reseller;

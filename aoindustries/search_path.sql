@@ -78,6 +78,7 @@ ALTER ROLE distribution SET search_path TO
 
 ALTER ROLE infrastructure SET search_path TO
   public,
+  account,
   billing,
   infrastructure,
   linux,
@@ -90,7 +91,8 @@ ALTER ROLE management SET search_path TO
   linux,
   management,
   mysql,
-  net;
+  net,
+  "web.tomcat.management";
 
 ALTER ROLE monitoring SET search_path TO
   public,

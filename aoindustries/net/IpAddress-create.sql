@@ -37,5 +37,4 @@ create table net."IpAddress" (
 
 grant all            on net."IpAddress" to aoadmin;
 grant select, update on net."IpAddress" to aoserv_app;
-grant select, update on net."IpAddress" to infrastructure;
-grant select         on net."IpAddress" to management;
+grant select         on net."IpAddress" to monitoring;

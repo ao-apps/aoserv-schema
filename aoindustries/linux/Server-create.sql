@@ -102,5 +102,5 @@ comment on column linux."Server"."gidMax" is 'The max value for automatic uid se
 
 grant all            on linux."Server" to aoadmin;
 grant select, update on linux."Server" to aoserv_app;
-grant select, update on linux."Server" to infrastructure;
+grant select         on linux."Server" to infrastructure;
 grant select         on linux."Server" to management;

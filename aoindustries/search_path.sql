@@ -74,6 +74,11 @@ ALTER ROLE distribution SET search_path TO
   public,
   distribution;
 
+ALTER ROLE management SET search_path TO
+  public,
+  linux,
+  mysql;
+
 ALTER ROLE reseller SET search_path TO
   public,
   reseller;

@@ -70,6 +70,10 @@ ALTER ROLE billing SET search_path TO
   billing,
   net; -- TODO: Access is for update net.Host.monitoring_enabled only
 
+ALTER ROLE distribution SET search_path TO
+  public,
+  distribution;
+
 ALTER ROLE reseller SET search_path TO
   public,
   reseller;

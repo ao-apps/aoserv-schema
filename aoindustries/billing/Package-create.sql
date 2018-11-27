@@ -29,4 +29,4 @@ create table billing."Package" (
 grant all                            on billing."Package" to aoadmin;
 -- TODO: Is delete used?
 grant select, insert, update, delete on billing."Package" to aoserv_app;
-grant select                         on billing."Package" to kaori;
+grant select                         on billing."Package" to billing;

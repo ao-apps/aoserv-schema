@@ -26,5 +26,6 @@ create table distribution."SoftwareVersion" (
   ),
   unique("name", version, operating_system_version)
 );
-grant all    on distribution."SoftwareVersion" to aoadmin;
-grant select on distribution."SoftwareVersion" to aoserv_app;
+grant all            on distribution."SoftwareVersion" to aoadmin;
+grant select         on distribution."SoftwareVersion" to aoserv_app;
+grant select, update on distribution."SoftwareVersion" to distribution;

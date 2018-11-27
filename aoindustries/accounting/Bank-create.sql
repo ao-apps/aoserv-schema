@@ -6,3 +6,4 @@ create table accounting."Bank" (
 );
 grant all    on accounting."Bank" to aoadmin;
 grant select on accounting."Bank" to aoserv_app;
+grant select on accounting."Bank" to accounting;

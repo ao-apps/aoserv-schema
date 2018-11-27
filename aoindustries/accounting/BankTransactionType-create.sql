@@ -10,3 +10,4 @@ create table accounting."BankTransactionType" (
 );
 grant all    on accounting."BankTransactionType" to aoadmin;
 grant select on accounting."BankTransactionType" to aoserv_app;
+grant select on accounting."BankTransactionType" to accounting;

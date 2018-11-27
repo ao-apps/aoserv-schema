@@ -11,4 +11,4 @@ create table accounting."BankAccount" (
     not null
 );
 grant all    on accounting."BankAccount" to aoadmin;
-grant select on accounting."BankAccount" to aoserv_app;
+grant select on accounting."BankAccount" to accounting;

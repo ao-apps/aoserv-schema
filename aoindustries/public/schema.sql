@@ -9,4 +9,3 @@ comment on schema public is 'The default schema used for things not otherwise cl
 
 grant  all    on schema public to aoadmin;
 grant  usage  on schema public to aoserv_app;
-grant  usage  on schema public to kaori;

@@ -16,3 +16,4 @@ create table net."Host" (
 );
 grant all                    on net."Host" to aoadmin;
 grant select, insert, update on net."Host" to aoserv_app;
+grant select, update         on net."Host" to billing; -- TODO: Access is for update net.Host.monitoring_enabled only

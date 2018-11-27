@@ -4,3 +4,4 @@ create table accounting."ExpenseCategory" (
 );
 grant all    on accounting."ExpenseCategory" to aoadmin;
 grant select on accounting."ExpenseCategory" to aoserv_app;
+grant select on accounting."ExpenseCategory" to accounting;

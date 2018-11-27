@@ -20,3 +20,4 @@ create table payment."Processor" (
 );
 grant all    on payment."Processor" to aoadmin;
 grant select on payment."Processor" to aoserv_app;
+grant select on payment."Processor" to accounting;

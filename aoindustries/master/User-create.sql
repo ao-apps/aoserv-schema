@@ -29,3 +29,4 @@ create table master."User" (
 );
 grant all    on master."User" to aoadmin;
 grant select on master."User" to aoserv_app;
+grant select on master."User" to accounting;

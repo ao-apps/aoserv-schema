@@ -53,3 +53,4 @@ create table reseller."Brand" (
 );
 grant all    on reseller."Brand" to aoadmin;
 grant select on reseller."Brand" to aoserv_app;
+grant select on reseller."Brand" to reseller;

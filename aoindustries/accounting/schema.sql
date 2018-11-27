@@ -4,3 +4,4 @@ comment on schema accounting is 'AO Industries, Inc. internal accounting process
 	
 grant all   on schema accounting to aoadmin;
 grant usage on schema accounting to aoserv_app;
+grant usage on schema accounting to accounting;

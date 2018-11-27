@@ -4,3 +4,4 @@ comment on schema net is 'Networking configuration';
 
 grant all   on schema net to aoadmin;
 grant usage on schema net to aoserv_app;
+grant usage on schema net to billing; -- TODO: Access is for update net.Host.monitoring_enabled only

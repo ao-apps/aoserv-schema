@@ -40,4 +40,4 @@ create table billing."Transaction" (
 grant all                            on billing."Transaction" to aoadmin;
 -- TODO: delete required?
 grant select, insert, update, delete on billing."Transaction" to aoserv_app;
-grant select, update, delete         on billing."Transaction" to kaori;
+grant select, update                 on billing."Transaction" to billing;

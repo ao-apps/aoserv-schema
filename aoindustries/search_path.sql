@@ -80,7 +80,8 @@ ALTER ROLE infrastructure SET search_path TO
   public,
   infrastructure,
   linux,
-  net;
+  net,
+  "net.monitoring";
 
 ALTER ROLE management SET search_path TO
   public,

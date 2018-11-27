@@ -79,7 +79,6 @@ ALTER ROLE distribution SET search_path TO
 ALTER ROLE infrastructure SET search_path TO
   public,
   infrastructure,
-  linux,
   net;
 
 ALTER ROLE management SET search_path TO
@@ -90,12 +89,6 @@ ALTER ROLE management SET search_path TO
   management,
   mysql,
   net;
-
-ALTER ROLE monitoring SET search_path TO
-  public,
-  linux,
-  net,
-  "net.monitoring";
 
 ALTER ROLE reseller SET search_path TO
   public,

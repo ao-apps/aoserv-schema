@@ -15,6 +15,12 @@ Style:
 
 2) lower_case function calls, and value-like keywords like default, true, false
 
+3) Spaces around operators like id = 1 or size < 100.  Don't get too cramped.
+
+4) No space between function and parenthesis: SELECT coalesce(...)
+
+5) Lower-case function calls (or case-sensitive quoted), including standard SQL: SELECT coalesce(...)
+
 
 Types:
 

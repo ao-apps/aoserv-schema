@@ -82,25 +82,28 @@ ALTER ROLE infrastructure SET search_path TO
   billing,
   infrastructure,
   linux,
-  net;
+  net,
+  "net.monitoring";
 
 ALTER ROLE management SET search_path TO
   public,
   account,
   "account.management",
   billing,
+  distribution,
+  dns,
   linux,
   management,
   mysql,
+  "mysql.management",
   net,
+  "net.management",
   web,
+  "web.management",
   "web.tomcat.management";
 
 ALTER ROLE monitoring SET search_path TO
-  public,
-  linux,
-  net,
-  "net.monitoring";
+  public;
 
 ALTER ROLE reseller SET search_path TO
   public,

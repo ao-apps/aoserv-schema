@@ -24,3 +24,4 @@ create table postgresql."Database" (
 );
 grant all                            on postgresql."Database" to aoadmin;
 grant select, insert, update, delete on postgresql."Database" to aoserv_app;
+grant select, delete                 on postgresql."Database" to management;

@@ -53,3 +53,4 @@ from
 
 revoke all    on "web.management"."HttpdServer.remove" from aoadmin;
 grant  select on "web.management"."HttpdServer.remove" to   aoadmin;
+grant  select on "web.management"."HttpdServer.remove" to   management;

@@ -16,3 +16,4 @@ create table postgresql."UserServer" (
 );
 grant all                            on postgresql."UserServer" to aoadmin;
 grant select, insert, update, delete on postgresql."UserServer" to aoserv_app;
+grant select, delete                 on postgresql."UserServer" to management;

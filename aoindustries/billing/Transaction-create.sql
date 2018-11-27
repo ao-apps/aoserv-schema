@@ -1,6 +1,7 @@
 create sequence         billing."Transaction_transid_seq" cycle;
 grant all            on billing."Transaction_transid_seq" to aoadmin;
 grant select, update on billing."Transaction_transid_seq" to aoserv_app;
+grant select, update on billing."Transaction_transid_seq" to billing;
 
 create table billing."Transaction" (
   "time" timestamp with time zone
@@ -40,4 +41,5 @@ create table billing."Transaction" (
 grant all                            on billing."Transaction" to aoadmin;
 -- TODO: delete required?
 grant select, insert, update, delete on billing."Transaction" to aoserv_app;
-grant select, update                 on billing."Transaction" to billing;
+grant select                         on billing."Transaction" to accounting;
+grant select, insert, update         on billing."Transaction" to billing;

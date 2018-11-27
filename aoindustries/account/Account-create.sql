@@ -24,3 +24,4 @@ create table account."Account" (
 grant all                    on account."Account" to aoadmin;
 grant select, insert, update on account."Account" to aoserv_app;
 grant select                 on account."Account" to billing;
+grant select                 on account."Account" to infrastructure;

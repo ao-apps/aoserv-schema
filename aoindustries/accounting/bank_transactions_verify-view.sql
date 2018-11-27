@@ -33,3 +33,4 @@ order by
 
 revoke all    on accounting.bank_transactions_verify from aoadmin;
 grant  select on accounting.bank_transactions_verify to   aoadmin;
+grant  select on accounting.bank_transactions_verify to   accounting;

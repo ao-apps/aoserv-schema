@@ -1,6 +1,6 @@
 create sequence         web."HttpdServer_id_seq" cycle;
 grant all            on web."HttpdServer_id_seq" to aoadmin;
-grant select, update on web."HttpdServer_id_seq" to aoserv_app;
+grant select, update on web."HttpdServer_id_seq" to management;
 
 create table web."HttpdServer" (
   id integer
@@ -96,5 +96,6 @@ create table web."HttpdServer" (
   mod_status boolean,
   mod_wsgi boolean
 );
-grant all            on web."HttpdServer" to aoadmin;
-grant select, delete on web."HttpdServer" to aoserv_app;
+grant all                    on web."HttpdServer" to aoadmin;
+grant select, delete         on web."HttpdServer" to aoserv_app;
+grant select, insert, delete on web."HttpdServer" to management;

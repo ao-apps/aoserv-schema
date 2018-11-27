@@ -26,5 +26,6 @@ create table postgresql."Server" (
     not null,
   unique (ao_server, "name")
 );
-grant all    on postgresql."Server" to aoadmin;
-grant select on postgresql."Server" to aoserv_app;
+grant all            on postgresql."Server" to aoadmin;
+grant select         on postgresql."Server" to aoserv_app;
+grant select, delete on postgresql."Server" to management;

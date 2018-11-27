@@ -38,3 +38,4 @@ from
 
 revoke all    on "mysql.management"."Server.remove" from aoadmin;
 grant  select on "mysql.management"."Server.remove" to   aoadmin;
+grant  select on "mysql.management"."Server.remove" to   management;

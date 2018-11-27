@@ -21,3 +21,4 @@ create table dns."Record" (
 );
 grant all                            on dns."Record" to aoadmin;
 grant select, insert, update, delete on dns."Record" to aoserv_app;
+grant select                         on dns."Record" to management;

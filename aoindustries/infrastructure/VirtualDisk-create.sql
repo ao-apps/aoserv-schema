@@ -1,6 +1,6 @@
-create sequence infrastructure."VirtualDisk_id_seq" cycle;
-grant all    on infrastructure."VirtualDisk_id_seq" to aoadmin;
-grant select on infrastructure."VirtualDisk_id_seq" to aoserv_app;
+create sequence         infrastructure."VirtualDisk_id_seq" cycle;
+grant all            on infrastructure."VirtualDisk_id_seq" to aoadmin;
+grant select, update on infrastructure."VirtualDisk_id_seq" to infrastructure;
 
 create table infrastructure."VirtualDisk" (
   id integer
@@ -18,7 +18,7 @@ create table infrastructure."VirtualDisk" (
   extents integer
     not null
     check (extents>0),
-  -- TODO: Make an enum both in PostgreSQL and Java somehow?
+  -- TODO: Make an enum both in PostgreSQL and Java somehow?  Or a DOMAIN is better?
   weight smallint
     not null
     check (weight in (1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024)),
@@ -33,5 +33,6 @@ create table infrastructure."VirtualDisk" (
     default 1, -- 1:00 AM
   unique(virtual_server, device)
 );
-grant all    on infrastructure."VirtualDisk" to aoadmin;
-grant select on infrastructure."VirtualDisk" to aoserv_app;
+grant all                    on infrastructure."VirtualDisk" to aoadmin;
+grant select                 on infrastructure."VirtualDisk" to aoserv_app;
+grant select, insert, update on infrastructure."VirtualDisk" to infrastructure;

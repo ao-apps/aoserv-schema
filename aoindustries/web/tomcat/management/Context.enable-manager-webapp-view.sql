@@ -29,3 +29,4 @@ from
 
 revoke all    on "web.tomcat.management"."Context.enable-manager-webapp" from aoadmin;
 grant  select on "web.tomcat.management"."Context.enable-manager-webapp" to   aoadmin;
+grant  select on "web.tomcat.management"."Context.enable-manager-webapp" to   management;

@@ -12,3 +12,4 @@ group by bt."expenseCategory", "month";
 
 revoke all    on accounting.bank_summary from aoadmin;
 grant  select on accounting.bank_summary to   aoadmin;
+grant  select on accounting.bank_summary to   accounting;

@@ -1,6 +1,7 @@
 create sequence         mysql."UserServer_id_seq" cycle;
 grant all            on mysql."UserServer_id_seq" to aoadmin;
 grant select, update on mysql."UserServer_id_seq" to aoserv_app;
+grant select, update on mysql."UserServer_id_seq" to management;
 
 create table mysql."UserServer" (
   id integer
@@ -37,3 +38,4 @@ create table mysql."UserServer" (
 );
 grant all                            on mysql."UserServer" to aoadmin;
 grant select, insert, update, delete on mysql."UserServer" to aoserv_app;
+grant select, insert, delete         on mysql."UserServer" to management;

@@ -39,3 +39,4 @@ union all (select 'pki'::name as "schema", 'Certificate'::name as "table", count
 
 revoke all    on management."remove-unused" from aoadmin;
 grant  select on management."remove-unused" to   aoadmin;
+grant  select on management."remove-unused" to   management;

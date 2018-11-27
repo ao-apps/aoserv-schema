@@ -1,6 +1,7 @@
 create sequence         mysql."DatabaseUser_id_seq" cycle;
 grant all            on mysql."DatabaseUser_id_seq" to aoadmin;
 grant select, update on mysql."DatabaseUser_id_seq" to aoserv_app;
+grant select, update on mysql."DatabaseUser_id_seq" to management;
 
 create table mysql."DatabaseUser" (
   id integer
@@ -71,3 +72,4 @@ create table mysql."DatabaseUser" (
 );
 grant all                            on mysql."DatabaseUser" to aoadmin;
 grant select, update, insert, delete on mysql."DatabaseUser" to aoserv_app;
+grant select, insert, delete         on mysql."DatabaseUser" to management;

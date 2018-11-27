@@ -20,5 +20,6 @@ create table net."FirewallZone" (
     default "name" in ('dmz', 'external', 'public'),
   unique(server, "name")
 );
-grant all    on net."FirewallZone" to aoadmin;
-grant select on net."FirewallZone" to aoserv_app;
+grant all            on net."FirewallZone" to aoadmin;
+grant select         on net."FirewallZone" to aoserv_app;
+grant select, delete on net."FirewallZone" to management;

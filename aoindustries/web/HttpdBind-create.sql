@@ -6,3 +6,4 @@ create table web."HttpdBind" (
 );
 grant all                            on web."HttpdBind" to aoadmin;
 grant select, insert, update, delete on web."HttpdBind" to aoserv_app;
+grant select, insert                 on web."HttpdBind" to management;

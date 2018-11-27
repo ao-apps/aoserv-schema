@@ -20,3 +20,4 @@ create table linux."GroupServer" (
 );
 grant all                            on linux."GroupServer" to aoadmin;
 grant select, insert, update, delete on linux."GroupServer" to aoserv_app;
+grant select, delete                 on linux."GroupServer" to management;

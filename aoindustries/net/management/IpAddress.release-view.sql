@@ -45,3 +45,4 @@ where
 
 revoke all    on "net.management"."IpAddress.release" from aoadmin;
 grant  select on "net.management"."IpAddress.release" to   aoadmin;
+grant  select on "net.management"."IpAddress.release" to   management;

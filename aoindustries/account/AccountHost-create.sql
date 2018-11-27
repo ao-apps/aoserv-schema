@@ -1,6 +1,7 @@
 create sequence         account."AccountHost_id_seq" cycle;
 grant all            on account."AccountHost_id_seq" to aoadmin;
 grant select, update on account."AccountHost_id_seq" to aoserv_app;
+grant select, update on account."AccountHost_id_seq" to infrastructure;
 
 create table account."AccountHost" (
   id integer
@@ -21,3 +22,5 @@ create table account."AccountHost" (
 );
 grant all                            on account."AccountHost" to aoadmin;
 grant select, update, insert, delete on account."AccountHost" to aoserv_app;
+grant select, insert                 on account."AccountHost" to infrastructure;
+grant select, update                 on account."AccountHost" to management;

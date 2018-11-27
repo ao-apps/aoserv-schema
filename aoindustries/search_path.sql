@@ -60,7 +60,9 @@ ALTER ROLE aoserv_app SET search_path TO public;
 
 ALTER ROLE accounting SET search_path TO
   public,
+  account,
   accounting,
+  billing,
   master,
   payment;
 
@@ -74,10 +76,33 @@ ALTER ROLE distribution SET search_path TO
   public,
   distribution;
 
+ALTER ROLE infrastructure SET search_path TO
+  public,
+  account,
+  billing,
+  infrastructure,
+  linux,
+  net,
+  "net.monitoring";
+
 ALTER ROLE management SET search_path TO
   public,
+  account,
+  "account.management",
+  billing,
+  distribution,
+  dns,
   linux,
-  mysql;
+  management,
+  mysql,
+  net,
+  "net.management",
+  web,
+  "web.management",
+  "web.tomcat.management";
+
+ALTER ROLE monitoring SET search_path TO
+  public;
 
 ALTER ROLE reseller SET search_path TO
   public,

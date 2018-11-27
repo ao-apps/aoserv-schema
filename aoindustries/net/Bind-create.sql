@@ -1,6 +1,7 @@
 create sequence         net."Bind_id_seq" cycle;
 grant all            on net."Bind_id_seq" to aoadmin;
 grant select, update on net."Bind_id_seq" to aoserv_app;
+grant select, update on net."Bind_id_seq" to management;
 
 create table net."Bind" (
   id integer
@@ -26,3 +27,4 @@ create table net."Bind" (
 );
 grant all                            on net."Bind" to aoadmin;
 grant select, insert, update, delete on net."Bind" to aoserv_app;
+grant select, insert, delete         on net."Bind" to management;

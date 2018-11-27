@@ -29,3 +29,4 @@ create table distribution."SoftwareVersion" (
 grant all            on distribution."SoftwareVersion" to aoadmin;
 grant select         on distribution."SoftwareVersion" to aoserv_app;
 grant select, update on distribution."SoftwareVersion" to distribution;
+grant select         on distribution."SoftwareVersion" to management;

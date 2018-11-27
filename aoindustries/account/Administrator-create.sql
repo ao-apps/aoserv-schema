@@ -42,3 +42,4 @@ create table account."Administrator" (
 );
 grant all                            on account."Administrator" to aoadmin;
 grant select, insert, update, delete on account."Administrator" to aoserv_app;
+grant select                         on account."Administrator" to accounting;

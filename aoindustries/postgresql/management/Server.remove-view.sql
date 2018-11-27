@@ -36,3 +36,4 @@ from
 
 revoke all    on "postgresql.management"."Server.remove" from aoadmin;
 grant  select on "postgresql.management"."Server.remove" to   aoadmin;
+grant  select on "postgresql.management"."Server.remove" to   management;

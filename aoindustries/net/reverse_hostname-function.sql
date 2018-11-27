@@ -8,6 +8,7 @@
  * returns a text with the name parts reversed
  *
  *********************************************************************/
+-- TODO: Rename to "Host.reverse_hostname"?
 create or replace function net.reverse_hostname (text)
   returns text
   as '

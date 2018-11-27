@@ -12,3 +12,4 @@ create table net."AppProtocol" (
 );
 grant all    on net."AppProtocol" to aoadmin;
 grant select on net."AppProtocol" to aoserv_app;
+grant select on net."AppProtocol" to management;

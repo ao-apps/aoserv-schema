@@ -128,7 +128,5 @@ COPY linux."UserServer" (id, username, ao_server, uid, home, autoresponder_from,
 63	interbase	2	27	/opt/interbase	\N	\N	\N	f	\N	\N	2004-12-16 22:03:45.068771-06	t	\N	31	pop3	3
 64	mysql	2	31	/var/lib/mysql	\N	\N	\N	f	\N	\N	2004-12-16 22:03:47.769904-06	t	\N	31	pop3	3
 \.
--- TODO: Add nginx user
--- TODO: Add memcached user
 
 SELECT setval ('linux."UserServer_id_seq"', 90, true);

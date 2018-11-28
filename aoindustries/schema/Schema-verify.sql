@@ -30,7 +30,6 @@ select
     end;
 
 -- Error if public schema has no public tables.
--- TODO: Implement as trigger better?
 select
   case when exists (
     select

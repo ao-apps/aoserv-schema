@@ -8,7 +8,8 @@ While convenient, this might be too easy to make a configuration mistake.
 Instead, support network ranges (cidr), and allow "0.0.0.0/32" and "::/128".
 Then grant only when a match is found, and deny when none found.
  */
--- TODO: Move to "account" and rename to "AdministratorAcl"?
+-- TODO: Move to "account" and rename to "AdministratorAcl"?  This would allow this restriction for any user.
+-- TODO: This restriction could also be enforced at higher levels, like aoweb/aoweb-struts.
 -- TOOD: Or, is there any benefit to having a separatation of Administrator and ApiUser?
 create table master."UserAcl" (
   id integer

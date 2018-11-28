@@ -17,13 +17,13 @@ create table "net.reputation"."Host" (
     not null
     check (
         good_reputation>=0
-        -- and good_reputation<=1023: TODO: Less than max_definite_reputation
+        -- and good_reputation<=1023: TODO: Less than max_definite_reputation, as a DOMAIN type?
     ),
   bad_reputation smallint
     not null
     check (
         bad_reputation>=0
-        -- and bad_reputation<=1023: TODO: Less than max_definite_reputation
+        -- and bad_reputation<=1023: TODO: Less than max_definite_reputation, as a DOMAIN type?
     ),
   check (
     -- Will be deleted once both decay back to zero

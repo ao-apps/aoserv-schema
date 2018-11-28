@@ -13,7 +13,7 @@ create table infrastructure."VirtualServer" (
   minimum_processor_type text,
   minimum_processor_architecture text
     not null
-    default 'i686', -- TODO: 64-bit now a better default?
+    default 'x86_64',
   minimum_processor_speed integer
     check (minimum_processor_speed is null or minimum_processor_speed > 0),
   minimum_processor_speed_target integer

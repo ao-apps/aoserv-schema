@@ -1,5 +1,4 @@
 -- Error if public table has no public columns.
--- TODO: Implement as trigger better?
 select
   case when exists (
     select

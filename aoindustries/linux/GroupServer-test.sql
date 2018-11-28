@@ -145,6 +145,4 @@ insert into linux."GroupServer" values(
   25,
   '2009-07-26 10:09:47.138126-05'
 );
--- TODO: Add nginx group
--- TODO: Add memcached group
 commit;

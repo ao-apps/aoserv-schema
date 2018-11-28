@@ -10,5 +10,5 @@ CREATE TYPE payment."Payment.Status" AS ENUM (
   'VOID',
   'CHARGEBACK'
 );
-COMMENT ON TYPE payment."Payment.Status"
-IS 'Matches enum com.aoindustries.creditcards.Transaction.Status';
+COMMENT ON TYPE payment."Payment.Status" IS
+'Matches enum com.aoindustries.creditcards.Transaction.Status';

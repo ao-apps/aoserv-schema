@@ -61,5 +61,5 @@ CREATE TYPE payment."TransactionResult.ErrorCode" AS ENUM (
   'INVALID_SHIPPING_COUNTRY_CODE',
   'CURRENCY_NOT_SUPPORTED'
 );
-COMMENT ON TYPE payment."TransactionResult.ErrorCode"
-IS 'Matches enum com.aoindustries.creditcards.TransactionResult.ErrorCode';
+COMMENT ON TYPE payment."TransactionResult.ErrorCode" IS
+'Matches enum com.aoindustries.creditcards.TransactionResult.ErrorCode';

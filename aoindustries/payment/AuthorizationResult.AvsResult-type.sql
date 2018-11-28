@@ -14,5 +14,5 @@ CREATE TYPE payment."AuthorizationResult.AvsResult" AS ENUM (
   'NOT_APPLICABLE',
   'UNKNOWN'
 );
-COMMENT ON TYPE payment."AuthorizationResult.AvsResult"
-IS 'Matches enum com.aoindustries.creditcards.AuthorizationResult.AvsResult';
+COMMENT ON TYPE payment."AuthorizationResult.AvsResult" IS
+'Matches enum com.aoindustries.creditcards.AuthorizationResult.AvsResult';

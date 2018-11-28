@@ -1,22 +1,23 @@
 CREATE TYPE "net.reputation"."Class" AS ENUM (
-  -- Manual Good
   -- TODO: Rename "gi" for "Good IpSet"
   'gm',
-  -- Manual Bad
   -- TODO: Rename "bi" for "Bad IpSet"
   'bm',
-  -- Definite Bad
   'bd',
-  -- Uncertain Bad
   'bu',
-  -- Uncertain Good
   'gu',
-  -- Definite Good
   'gd',
-  -- Network Good
   'gn',
-  -- Unknown
   'uu'
 );
-COMMENT ON TYPE "net.reputation"."Class"
-IS 'Matches enum com.aoindustries.aoserv.client.IpReputationLimiterLimit.LimiterClass';
+COMMENT ON TYPE "net.reputation"."Class" IS
+'gm : Manual Good
+bm : Manual Bad
+bd : Definite Bad
+bu : Uncertain Bad
+gu : Uncertain Good
+gd : Definite Good
+gn : Network Good
+uu : Unknown
+
+Matches enum com.aoindustries.aoserv.client.IpReputationLimiterLimit.LimiterClass';

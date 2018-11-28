@@ -4,5 +4,5 @@ CREATE TYPE payment."TransactionResult.CommunicationResult" AS ENUM (
   'GATEWAY_ERROR',
   'SUCCESS'
 );
-COMMENT ON TYPE payment."TransactionResult.CommunicationResult"
-IS 'Matches enum com.aoindustries.creditcards.TransactionResult.CommunicationResult';
+COMMENT ON TYPE payment."TransactionResult.CommunicationResult" IS
+'Matches enum com.aoindustries.creditcards.TransactionResult.CommunicationResult';

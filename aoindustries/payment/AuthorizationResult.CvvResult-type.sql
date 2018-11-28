@@ -6,5 +6,5 @@ CREATE TYPE payment."AuthorizationResult.CvvResult" AS ENUM (
   'NOT_SUPPORTED_BY_ISSUER',
   'UNKNOWN'
 );
-COMMENT ON TYPE payment."AuthorizationResult.CvvResult"
-IS 'Matches enum com.aoindustries.creditcards.AuthorizationResult.CvvResult';
+COMMENT ON TYPE payment."AuthorizationResult.CvvResult" IS
+'Matches enum com.aoindustries.creditcards.AuthorizationResult.CvvResult';

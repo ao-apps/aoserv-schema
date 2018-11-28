@@ -3,5 +3,5 @@ CREATE TYPE payment."AuthorizationResult.ReviewReason" AS ENUM (
   'ACCEPTED_MERCHANT_REVIEW',
   'ACCEPTED_AUTHORIZED_MERCHANT_REVIEW'
 );
-COMMENT ON TYPE payment."AuthorizationResult.ReviewReason"
-IS 'Matches enum com.aoindustries.creditcards.AuthorizationResult.ReviewReason';
+COMMENT ON TYPE payment."AuthorizationResult.ReviewReason" IS
+'Matches enum com.aoindustries.creditcards.AuthorizationResult.ReviewReason';

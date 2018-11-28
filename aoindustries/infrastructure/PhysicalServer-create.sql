@@ -14,8 +14,9 @@ create table infrastructure."PhysicalServer" (
   max_power real
     check (max_power is null or max_power > 0),
   supports_hvm boolean,
-  -- TODO: Make a UpsType table
-  ups_type text not null check (ups_type in ('none', 'datacenter', 'apc')) default 'none'
+  ups_type infrastructure."PhysicalServer.UpsType"
+    not null
+    default 'none'
 );
 grant all    on infrastructure."PhysicalServer" to aoadmin;
 grant select on infrastructure."PhysicalServer" to aoserv_app;

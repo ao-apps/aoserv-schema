@@ -20,16 +20,12 @@ create table email."CyrusImapdServer" (
       delete_duration is null
       or delete_duration > 0
     ),
-  -- TODO: Make an enum both in PostgreSQL and Java
-  delete_duration_unit character(1)
+  delete_duration_unit email."CyrusImapdServer.TimeUnit"
     -- See also CyrusImapdServer.DEFAULT_DELETE_DURATION_UNIT
     default 'd'
     check (
       delete_duration_unit is null
-      or (
-        delete_duration is not null
-        and delete_duration_unit in ('d', 'h', 'm', 's')
-      )
+      or delete_duration is not null
     ),
   expire_duration real not null
     -- See also CyrusImapdServer.DEFAULT_EXPIRE_DURATION
@@ -37,13 +33,12 @@ create table email."CyrusImapdServer" (
     check (
       expire_duration > 0
     ),
-  -- TODO: Make an enum both in PostgreSQL and Java (same enum as above)
-  expire_duration_unit character(1)
+  expire_duration_unit email."CyrusImapdServer.TimeUnit"
     -- See also CyrusImapdServer.DEFAULT_EXPIRE_DURATION_UNIT
     default 'd'
     check (
       expire_duration_unit is null
-      or expire_duration_unit in ('d', 'h', 'm', 's')
+      or expire_duration is not null
     ),
   expunge_duration real
     -- See also CyrusImapdServer.DEFAULT_EXPUNGE_DURATION
@@ -52,15 +47,12 @@ create table email."CyrusImapdServer" (
       expunge_duration is null
       or expunge_duration > 0
     ),
-  expunge_duration_unit character(1)
+  expunge_duration_unit email."CyrusImapdServer.TimeUnit"
     -- See also CyrusImapdServer.DEFAULT_EXPUNGE_DURATION_UNIT
     default 'd'
     check (
       expunge_duration_unit is null
-      or (
-        expunge_duration is not null
-        and expunge_duration_unit in ('d', 'h', 'm', 's')
-      )
+      or expunge_duration is not null
     )
 );
 grant all    on email."CyrusImapdServer" to aoadmin;

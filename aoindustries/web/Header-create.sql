@@ -13,9 +13,9 @@ create table web."Header" (
   check (
     sort_order >= 0
   ),
-  -- TODO: Make an enum both in PostgreSQL and Java
-  "type"          text     not null default 'Header'
-                           check ("type" in ('Header', 'RequestHeader')),
+  "type" web."Header.Type"
+    not null
+    default 'Header',
   always          boolean  not null default false,
   -- TODO: Make an enum both in PostgreSQL and Java??? What happens if new values appear in the future?
   "action"        text     not null default 'set'

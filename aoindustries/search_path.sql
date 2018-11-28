@@ -26,6 +26,7 @@ ALTER ROLE aoadmin SET search_path TO
   "email.management",
   ftp,
   infrastructure,
+  "java.util",
   linux,
   "linux.management",
   management,

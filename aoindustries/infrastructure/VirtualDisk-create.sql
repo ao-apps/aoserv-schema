@@ -22,13 +22,11 @@ create table infrastructure."VirtualDisk" (
     not null,
   weight_target infrastructure."Weight"
     not null,
-  verify_day_of_week integer
+  verify_day_of_week "java.util"."Calendar.DAY_OF_WEEK"
     not null
-    -- TODO: Why no range constraints or domain here?  Why integer instead of smallint?
     default 7, -- Calendar.SATURDAY
-  verify_hour_of_day integer
+  verify_hour_of_day "java.util"."Calendar.HOUR_OF_DAY"
     not null
-    -- TODO: Why no range constraints or domain here?  Why integer instead of smallint?
     default 1, -- 1:00 AM
   unique(virtual_server, device)
 );

@@ -27,8 +27,8 @@ create table billing."Package" (
   email_relay_burst integer,
   email_relay_rate real
 );
-grant all                            on billing."Package" to aoadmin;
--- TODO: Is delete used?
-grant select, insert, update, delete on billing."Package" to aoserv_app;
-grant select, insert, update         on billing."Package" to billing;
-grant select                         on billing."Package" to infrastructure;
+grant all                    on billing."Package" to aoadmin;
+grant select, insert, update on billing."Package" to aoserv_app;
+grant select, insert, update on billing."Package" to billing;
+grant select                 on billing."Package" to infrastructure;
+grant select                 on billing."Package" to management;

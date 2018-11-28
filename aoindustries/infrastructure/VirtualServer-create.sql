@@ -2,35 +2,32 @@ create table infrastructure."VirtualServer" (
   server integer primary key,
   primary_ram integer
     not null
-    check (primary_ram>0),
+    check (primary_ram > 0),
   primary_ram_target integer
     not null
-    check (primary_ram_target>0),
+    check (primary_ram_target > 0),
   secondary_ram integer
-    check (secondary_ram is null or secondary_ram>0),
+    check (secondary_ram is null or secondary_ram > 0),
   secondary_ram_target integer
-    check (secondary_ram_target is null or secondary_ram_target>0),
+    check (secondary_ram_target is null or secondary_ram_target > 0),
   minimum_processor_type text,
   minimum_processor_architecture text
     not null
     default 'i686', -- TODO: 64-bit now a better default?
   minimum_processor_speed integer
-    check (minimum_processor_speed is null or minimum_processor_speed>0),
+    check (minimum_processor_speed is null or minimum_processor_speed > 0),
   minimum_processor_speed_target integer
-    check (minimum_processor_speed_target is null or minimum_processor_speed_target>0),
+    check (minimum_processor_speed_target is null or minimum_processor_speed_target > 0),
   processor_cores smallint
     not null
-    check (processor_cores>0),
+    check (processor_cores > 0),
   processor_cores_target smallint
     not null
-    check (processor_cores_target>0),
-  -- TODO: Make an enum both in PostgreSQL and Java somehow?
-  processor_weight smallint
-    not null
-    check (processor_weight in (1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024)),
-  processor_weight_target smallint
-    not null
-    check (processor_weight_target in (1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024)),
+    check (processor_cores_target > 0),
+  processor_weight infrastructure."Weight"
+    not null,
+  processor_weight_target infrastructure."Weight"
+    not null,
   primary_physical_server_locked boolean
     not null
     default false,
@@ -42,8 +39,8 @@ create table infrastructure."VirtualServer" (
     default false,
   vnc_password text
     unique
-    check (length(vnc_password)>=8) -- Must be at least 8 characters
+    check (length(vnc_password) >= 8) -- Must be at least 8 characters
 );
-grant all            on infrastructure."VirtualServer" to aoadmin;
-grant select         on infrastructure."VirtualServer" to aoserv_app;
-grant select, update on infrastructure."VirtualServer" to infrastructure;
+grant all                    on infrastructure."VirtualServer" to aoadmin;
+grant select                 on infrastructure."VirtualServer" to aoserv_app;
+grant select, insert, update on infrastructure."VirtualServer" to infrastructure;

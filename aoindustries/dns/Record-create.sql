@@ -11,9 +11,7 @@ create table dns."Record" (
   "type" text not null,
   priority integer,
   weight integer,
-  -- TODO: NetPort domain
-  port integer
-    check (port is null or port between 1 and 65535),
+  port net."Port",
   destination text not null,
   "dhcpAddress" integer,
   ttl integer,

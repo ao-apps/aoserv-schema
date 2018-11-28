@@ -98,6 +98,8 @@ ALTER ROLE management SET search_path TO
   "mysql.management",
   net,
   "net.management",
+  postgresql,
+  "postgresql.management",
   web,
   "web.management",
   "web.tomcat.management";

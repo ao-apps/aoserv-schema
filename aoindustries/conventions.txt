@@ -13,7 +13,7 @@ Style:
 1) ALL CAPS SQL KEYWORDS.  We have tons of legacy code that doesn't follow this, but
    just convert as you go while not spending much time doing it.
 
-2) lower_case function calls, and value-like keywords like default, true, false
+2) Capitalize SQL keyword literals: DEFAULT, TRUE, FALSE, NULL
 
 3) Spaces around operators like id = 1 or size < 100.  Don't get too cramped.
 

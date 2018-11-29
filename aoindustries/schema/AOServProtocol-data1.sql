@@ -1538,7 +1538,8 @@ changed column type IPAddress.package from string to fkey, referencing packages.
 
 added schema management
 
-
+mysql_servers.net_bind instead of pkey
+postgresql_servers.bind instead of pkey
 TODO: Nullable descriptions instead of where we have ''?
 TODO: filter schema.Type by only those matching current protocol, including id non-breaking sequence starting at 0
 TODO: Remove unused email_attachment_blocks

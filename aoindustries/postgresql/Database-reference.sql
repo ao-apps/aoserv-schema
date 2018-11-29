@@ -1,7 +1,7 @@
 alter table postgresql."Database"
   add constraint postgres_server_fkey
   foreign key (postgres_server)
-  references postgresql."Server" (id)
+  references postgresql."Server" (bind)
   on delete restrict
   on update cascade
 ;

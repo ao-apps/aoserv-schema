@@ -2,15 +2,15 @@ create or replace view
   management."remove-canceled"
 as
 -- scm.CvsRepository
-          (select accounting, aosh_command from "scm.management"."CvsRepository.remove-canceled" order by accounting, net.reverse_hostname(hostname), "path")
+          (select accounting, aosh_command from "scm.management"."CvsRepository.remove-canceled" order by accounting, net."Host.reverseFqdn"(hostname), "path")
 -- email.List
-union all (select accounting, aosh_command from "email.management"."List.remove-canceled" order by accounting, net.reverse_hostname(hostname), "path")
+union all (select accounting, aosh_command from "email.management"."List.remove-canceled" order by accounting, net."Host.reverseFqdn"(hostname), "path")
 -- email.Domain
-union all (select accounting, aosh_command from "email.management"."Domain.remove-canceled" order by accounting, net.reverse_hostname(hostname), "domain")
+union all (select accounting, aosh_command from "email.management"."Domain.remove-canceled" order by accounting, net."Host.reverseFqdn"(hostname), "domain")
 -- web.Site
-union all (select accounting, aosh_command from "web.management"."Site.remove-canceled" order by accounting, net.reverse_hostname(hostname), "name")
+union all (select accounting, aosh_command from "web.management"."Site.remove-canceled" order by accounting, net."Host.reverseFqdn"(hostname), "name")
 -- web.tomcat.SharedTomcat
-union all (select accounting, aosh_command from "web.tomcat.management"."SharedTomcat.remove-canceled" order by accounting, net.reverse_hostname(hostname), "name")
+union all (select accounting, aosh_command from "web.tomcat.management"."SharedTomcat.remove-canceled" order by accounting, net."Host.reverseFqdn"(hostname), "name")
 -- TODO: web.HttpdServer
 -- mysql.Database
 union all (select accounting, aosh_command from "mysql.management"."Database.remove-canceled" order by accounting, mysql_server, "name")
@@ -26,9 +26,9 @@ union all (select accounting, aosh_command from "postgresql.management"."User.re
 -- net.Bind
 union all (select accounting, aosh_command from "net.management"."Bind.remove-canceled" order by accounting, port)
 -- net.IpAddress.hostname
-union all (select accounting, aosh_command from "net.management"."IpAddress.hostname.remove-canceled" order by accounting, net.reverse_hostname(hostname), "inetAddress")
+union all (select accounting, aosh_command from "net.management"."IpAddress.hostname.remove-canceled" order by accounting, net."Host.reverseFqdn"(hostname), "inetAddress")
 -- net.IpAddress.package
-union all (select accounting, aosh_command from "net.management"."IpAddress.package.remove-canceled" order by accounting, net.reverse_hostname(hostname), "inetAddress")
+union all (select accounting, aosh_command from "net.management"."IpAddress.package.remove-canceled" order by accounting, net."Host.reverseFqdn"(hostname), "inetAddress")
 -- TODO: pki.Certificate (once have auto-cleanup within aoserv-daemon)
 -- TODO: net.Host (once a server is owned by a package in the schema)
 -- linux.User

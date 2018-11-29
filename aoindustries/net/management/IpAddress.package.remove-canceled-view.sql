@@ -12,11 +12,11 @@ select
   ia."inetAddress"
 from
              net."IpAddress"   ia
-  inner join billing."Package" pk on ia.package    = pk.id
-  inner join account."Account" bu on pk.accounting = bu.accounting
-  inner join net."Device"      nd on ia.device     = nd.id
-  inner join net."Host"        se on nd.server     = se.id
-  left  join linux."Server"    ao on se.id         = ao.server
+  inner join billing."Package" pk on ia.package     = pk.id
+  inner join account."Account" bu on pk.accounting  = bu.accounting
+  inner join net."Device"      nd on ia."netDevice" = nd.id
+  inner join net."Host"        se on nd.server      = se.id
+  left  join linux."Server"    ao on se.id          = ao.server
 where
   bu.canceled is not null and bu.canceled < (now()-'30 days'::interval);
 

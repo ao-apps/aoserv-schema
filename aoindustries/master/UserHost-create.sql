@@ -1,6 +1,5 @@
-create sequence         master."UserHost_id_seq" cycle;
-grant all            on master."UserHost_id_seq" to aoadmin;
-grant select, update on master."UserHost_id_seq" to aoserv_app;
+create sequence master."UserHost_id_seq" cycle;
+grant all    on master."UserHost_id_seq" to aoadmin;
 
 /*
 TODO: When a master.User has no net.Host listed, it is considered a
@@ -19,6 +18,5 @@ create table master."UserHost" (
     not null,
   unique(username, server)
 );
-grant all            on master."UserHost" to aoadmin;
--- TODO: Is insert required?
-grant select, insert on master."UserHost" to aoserv_app;
+grant all    on master."UserHost" to aoadmin;
+grant select on master."UserHost" to aoserv_app;

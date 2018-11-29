@@ -1,4 +1,3 @@
--- TODO: Review all "sinceVersion" to best match tables in the schemas
 select "schema".add_schema(
     'account',
     '1.0a100',
@@ -114,7 +113,7 @@ select "schema".add_schema(
 select "schema".add_schema(
     'monitoring',
     '1.0a100',
-    null,
+    '1.30',
     'Monitoring',
     true,
     null -- Uses pg_catalog.pg_description
@@ -138,7 +137,7 @@ select "schema".add_schema(
 /*
 select "schema".add_schema(
     'net.monitoring',
-    '1.0a100',
+    '1.81.18',
     null,
     'Monitoring',
     false,
@@ -187,7 +186,7 @@ select "schema".add_schema(
 );
 select "schema".add_schema(
     'reseller',
-    '1.0a100',
+    '1.44',
     null,
     'Reseller',
     false,
@@ -211,7 +210,7 @@ select "schema".add_schema(
 );
 select "schema".add_schema(
     'signup',
-    '1.0a100',
+    '1.23',
     null,
     'Signup',
     false,

@@ -1,6 +1,8 @@
-select "schema".add_column('web', 'httpd_sites', 'pkey',                    'pkey',       false,  true, false, 'a generated primary key', '1.0a100', null);
+select "schema".add_column('web', 'httpd_sites', 'pkey',                    'pkey',       false,  true, false, 'a generated primary key', '1.0a100', '1.81.17');
+select "schema".add_column('web', 'httpd_sites', 'id',                      'pkey',       false,  true, false, 'a generated primary key', '1.81.18', null);
 select "schema".add_column('web', 'httpd_sites', 'ao_server',               'fkey',       false, false, false, 'the pkey of the server the site is hosted on', '1.0a100', null);
-select "schema".add_column('web', 'httpd_sites', 'site_name',               'string',     false, false, false, 'the name of the site, as used in the /www directory.', '1.0a100', null);
+select "schema".add_column('web', 'httpd_sites', 'site_name',               'string',     false, false, false, 'the name of the site, as used in the /www directory.', '1.0a100', '1.81.17');
+select "schema".add_column('web', 'httpd_sites', 'name',                    'string',     false, false, false, 'the name of the site, as used in the /var/www directory.', '1.81.18', null);
 select "schema".add_column('web', 'httpd_sites', 'list_first',              'boolean',    false, false, false, 'if <code>true</code>, this site will be listed first in the Apache configs.  This is normally used only for the "not found" site for each httpd_server.', '1.0a100', null);
 select "schema".add_column('web', 'httpd_sites', 'package',                 'package',    false, false, false, 'the package that the site is part of', '1.0a100', '1.80');
 select "schema".add_column('web', 'httpd_sites', 'package',                 'accounting', false, false, false, 'the package that the site is part of', '1.80.0', null);

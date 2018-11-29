@@ -20,8 +20,8 @@ alter table linux."Server"
   on update cascade
 ;
 alter table linux."Server"
-  add constraint "daemonDeviceID_fkey"
-  foreign key ("daemonDeviceID")
+  add constraint "daemonDeviceId_fkey"
+  foreign key ("daemonDeviceId")
   references net."DeviceId" ("name")
   on delete restrict
   on update cascade

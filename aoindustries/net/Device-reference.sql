@@ -6,8 +6,8 @@ alter table net."Device"
   on update cascade
 ;
 alter table net."Device"
-  add constraint "deviceID_fkey"
-  foreign key ("deviceID")
+  add constraint "deviceId_fkey"
+  foreign key ("deviceId")
   references net."DeviceId" ("name")
   on delete restrict
   on update cascade

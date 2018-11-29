@@ -8,7 +8,7 @@ create table net."Device" (
     primary key,
   server integer
     not null,
-  "deviceID" text
+  "deviceId" text
     not null,
   description text
     not null,
@@ -25,9 +25,8 @@ create table net."Device" (
   monitoring_enabled boolean
     not null
     default true,
-  unique(server, "deviceID")
+  unique(server, "deviceId")
 );
 grant all                    on net."Device" to aoadmin;
 grant select                 on net."Device" to aoserv_app;
 grant select, insert, update on net."Device" to infrastructure;
-grant select                 on net."Device" to monitoring;

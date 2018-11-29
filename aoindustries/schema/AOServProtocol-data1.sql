@@ -1450,103 +1450,134 @@ added set_ip_address_monitoring_enabled AOSH command'
 );
 insert into "schema"."AOServProtocol" values(
   '1.81.18',
-  '2018-11-17',
-  'added schema public
-renamed column ao_servers.daemon_device_id to daemonDeviceID
-renamed column dns_records.dhcp_address to dhcpAddress
-renamed column httpd_sites.site_name to name
-renamed table ip_addresses to IPAddress
-renamed column IPAddress.pkey to id
-renamed column IPAddress.ip_address to inetAddress
-renamed column IPAddress.net_device to netDevice
-renamed column IPAddress.is_alias to isAlias
-renamed column IPAddress.is_overflow to isOverflow
-renamed column IPAddress.is_dhcp to isDhcp
-renamed column IPAddress.external_ip_address to externalInetAddress
-renamed column linux_group_accounts.group_name to group
-renamed column net_binds.ip_address to ipAddress
-renamed column net_devices.device_id to deviceID
-renamed column sendmail_servers.client_addr_inet to clientAddrInet
-renamed column sendmail_servers.client_addr_inet6 to clientAddrInet6
+  '2018-11-29',
+  'Renamed all columns since_version to sinceVersion
+Renamed all columns last_version to lastVersion
+Moved sinceVersion and lastVersion columns to lower column indexes
 
-added schema accounting
-renamed table banks to accounting.Bank
-renamed table bank_accounts to accounting.BankAccount
-renamed column accounting.BankAccount.deposit_delay to depositDelay
-renamed column accounting.BankAccount.withdrawal_delay to withdrawalDelay
-renamed table bank_transaction_types to accounting.BankTransactionType
-renamed column accounting.BankTransactionType.type to name
-renamed column accounting.BankTransactionType.is_negative to isNegative
-renamed table expense_categories to accounting.ExpenseCategory
-renamed column accounting.ExpenseCategory.expense_code to name
-renamed table bank_transactions to accounting.BankTransaction
-renamed column accounting.BankTransaction.transid to id and moved to first column
-renamed column accounting.BankTransaction.bank_account to account
-renamed column accounting.BankTransaction.expense_code to expenseCategory
-renamed column accounting.BankTransaction.check_no to checkNo
+aosh_command table:
+  renamed table_name to table
+  renamed short_desc to description
 
-added schema schema
-renamed table aoserv_protocols to schema.AOServProtocol
-renamed column schema.AOServProtocol.last_used to lastUsed
-renamed table schema_types to schema.Type
-renamed column schema.Type.since_version to sinceVersion
-renamed column schema.Type.last_version to lastVersion
-renamed column schema.Type.type to name
-renamed column schema.Type.num to id
-renamed table schema_tables to schema.Table
-renamed column schema.Table.table_id to id
-renamed column schema.Table.is_public to isPublic
-renamed column schema.Table.since_version to sinceVersion
-renamed column schema.Table.last_version to lastVersion
-renamed table schema_columns to schema.Column
-renamed column schema.Column.pkey to id
-renamed column schema.Column.table_name to table
-changed column type schema.Column.table from string to fkey, referencing schema.Table.id
-changed column type schema.Column.index from int to short
-changed column type schema.Column.type from string to fkey, referencing schema.Type.id
-renamed column schema.Column.column_name to name
-renamed column schema.Column.is_nullable to isNullable
-renamed column schema.Column.is_unique to isUnique
-renamed column schema.Column.is_public to isPublic
-renamed column schema.Column.since_version to sinceVersion
-renamed column schema.Column.last_version to lastVersion
-renamed table schema_foreign_keys to schema.ForeignKey
-renamed column schema.ForeignKey.pkey to id
-renamed column schema.ForeignKey.key_column to column
-renamed column schema.ForeignKey.foreign_column to foreignColumn
-renamed column schema.ForeignKey.since_version to sinceVersion
-renamed column schema.ForeignKey.last_version to lastVersion
-added table schema.Schema
-added column schema.Table.schema
+schema_columns table:
+  renamed pkey to id
+  renamed table_name to table
+  renamed column_name to column
+  changed index type from int to short
+  renamed is_nullable to isNullable
+  renamed is_unique to isUnique
+  renamed is_public to isPublic
 
-added schema aosh
-renamed table aosh_commands to aosh.Command
-renamed column aosh.Command.table_name to table
-changed column type aosh.Command.table from string to fkey, referencing schema.Table.id
-renamed column aosh.Command.short_desc to description
-renamed column aosh.Command.since_version to sinceVersion
-renamed column aosh.Command.last_version to lastVersion
+schema_foreign_keys table:
+  renamed pkey to id
+  renamed key_column to column
+  renamed foreign_column to foreignColumn
 
-added schema net.monitoring
-added table net.monitoring.IpAddressMonitoring
-moved column IPAddress.monitoring_enabled to net.monitoring.IpAddressMonitoring.enabled
-moved column IPAddress.ping_monitor_enabled to net.monitoring.IpAddressMonitoring.pingMonitorEnabled
-moved column IPAddress.check_blacklists_over_smtp to net.monitoring.IpAddressMonitoring.checkBlacklistsOverSmtp
-added column net.monitoring.IpAddressMonitoring.verifyDnsPtr
-added column net.monitoring.IpAddressMonitoring.verifyDnsA
-changed column type IPAddress.package from string to fkey, referencing packages.pkey
+schema_tables table:
+  renamed table_id to id, and moved to index 0
+  renamed is_public to isPublic
 
-added schema management
+schema_types table:
+  renamed num to id, changed type from int to pkey, and moved to index 0
+  renamed type to name
 
-mysql_servers.net_bind instead of pkey
-postgresql_servers.bind instead of pkey
-TODO: Nullable descriptions instead of where we have ''?
-TODO: filter schema.Type by only those matching current protocol, including id non-breaking sequence starting at 0
-TODO: Remove unused email_attachment_blocks
-TODO: Is net_devices.delete_route still used?
-TODO: failover_file_replications.connect_address should be a hostaddress type?
-TODO: uidMax, ... on ao_servers'
+httpd_workers table:
+  removed pkey column
+  renamed net_bind to bind as primary key
+  renamed code to name
+  renamed tomcat_siite to tomcatSite
+
+ip_addresses table:
+  renamed pkey to id
+  renamed ip_address to inetAddress
+  renamed net_device to device
+  renamed is_alias to isAlias
+  changed package type to fkey as reference to packages.pkey
+  renamed available to isAvailable
+  renamed is_overflow to isOverflow
+  renamed is_dhcp to isDhcp
+  removed ping_monitor_enabled
+  renamed external_ip_address to externalInetAddress
+  removed check_blacklists_over_smtp
+  removed monitoring_enabled
+
+mysql_servers table:
+  removed pkey column
+  renamed net_bind to bind as primary key
+  removed package column
+
+net_devices:
+  renamed device_id to deviceId
+
+ao_servers:
+  renamed daemon_device_id to daemonDeviceId
+  renamed uid_min to uidMin
+  renamed gid_min to gidMin
+  added uidMax
+  added gidMax
+  added lastUid
+  added lastGid
+
+dns_records:
+  renamed dhcp_address to dhcpAddress
+
+httpd_sites:
+  renamed pkey to id
+  renamed site_name to name
+
+linux_group_accounts:
+  renamed pkey to id
+  renamed group_name to group
+  renamed username to user
+  renamed operating_system_version to operatingSystemVersion
+
+postgres_servers table:
+  removed pkey column
+  renamed net_bind to bind as primary key
+
+net_binds:
+  renamed pkey to id
+  renamed ip_address to ipAddress
+
+sendmail_servers:
+  renamed pkey to id
+  renamed client_addr_inet to clientAddrInet
+  renamed client_addr_inet6 to clientAddrInet6
+
+aoserv_protocols:
+  renamed last_used to lastUsed
+
+bank_accounts:
+  renamed deposit_delay to depositDelay
+  renamed withdrawal_delay to withdrawalDelay
+
+bank_transaction_types:
+  renamed type to name
+  renamed is_negative to isNegative
+
+expense_categories:
+  renamed expense_code to name
+
+bank_transactions:
+  renamed transid to id and moved to first column
+  renamed bank_account to account
+  renamed expense_code to expenseCategory
+  renamed check_no to checkNo
+
+added table IpAddressMonitoring:
+  moved column IPAddress.monitoring_enabled to IpAddressMonitoring.enabled
+  moved column IPAddress.ping_monitor_enabled to IpAddressMonitoring.pingMonitorEnabled
+  moved column IPAddress.check_blacklists_over_smtp to IpAddressMonitoring.checkBlacklistsOverSmtp
+  added column IpAddressMonitoring.verifyDnsPtr
+  added column IpAddressMonitoring.verifyDnsA'
 );
+-- TODO: added table schema.Schema
+-- TODO: added column schema.Table.schema
+-- TODO: Nullable descriptions instead of where we have ''?
+-- TODO: filter schema.Type by only those matching current protocol, including id non-breaking sequence starting at 0, then no longer send Ids at all
+-- TODO: Remove unused email_attachment_blocks
+-- TODO: Is net_devices.delete_route still used?
+-- TODO: failover_file_replications.connect_address should be a hostaddress type?
 -- TODO added net.IpSet table
 -- TODO added net.IpSetEntry table
 -- TODO added net.reputation.LimiterIpSet table

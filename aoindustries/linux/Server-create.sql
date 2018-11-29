@@ -23,7 +23,7 @@ create table linux."Server" (
       check (distro_hour>=0 and distro_hour<=23),
   last_distro_time timestamp with time zone,
   failover_server integer,
-  "daemonDeviceID" text
+  "daemonDeviceId" text
     not null
     default 'eth0',
   daemon_connect_bind integer,
@@ -104,4 +104,3 @@ grant all            on linux."Server" to aoadmin;
 grant select, update on linux."Server" to aoserv_app;
 grant select, update on linux."Server" to infrastructure;
 grant select         on linux."Server" to management;
-grant select         on linux."Server" to monitoring;

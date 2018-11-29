@@ -8,7 +8,7 @@ create table net."IpAddress" (
     primary key,
   "inetAddress" inet
     not null,
-  "netDevice" integer,
+  device integer,
   "isAlias" boolean
     not null,
   hostname text,
@@ -17,7 +17,7 @@ create table net."IpAddress" (
   created timestamp with time zone
     not null
     default now(),
-  available boolean
+  "isAvailable" boolean
     not null,
   "isOverflow" boolean
     not null
@@ -28,7 +28,7 @@ create table net."IpAddress" (
   "externalInetAddress" inet,
   netmask text
     not null,
-  unique("inetAddress", "netDevice"),
+  unique("inetAddress", device),
   check (
     -- Only the unspecified IP addresses may have a null hostname
     ("inetAddress" = '0.0.0.0') = (hostname is null)
@@ -39,4 +39,3 @@ grant all            on net."IpAddress" to aoadmin;
 grant select, update on net."IpAddress" to aoserv_app;
 grant select, update on net."IpAddress" to infrastructure;
 grant select         on net."IpAddress" to management;
-grant select         on net."IpAddress" to monitoring;

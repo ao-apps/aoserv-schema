@@ -22,7 +22,8 @@ select "schema".add_column('linux', 'ao_servers', 'failover_server',          'f
 select "schema".add_column('linux', 'ao_servers', 'server_report_delay',      'int',             false, false, false, 'the number of milliseconds between system resource polls', '1.0a100', '1.30');
 select "schema".add_column('linux', 'ao_servers', 'server_report_interval',   'int',             false, false, false, 'the number of polls between database update', '1.0a100', '1.30');
 select "schema".add_column('linux', 'ao_servers', 'is_qmail',                 'boolean',         false, false, false, 'indicates that this server runs qmail, not sendmail', '1.0a100', '1.30');
-select "schema".add_column('linux', 'ao_servers', 'daemon_device_id',         'string',          false, false, false, 'the device name the master connects to', '1.0a100', null);
+select "schema".add_column('linux', 'ao_servers', 'daemon_device_id',         'string',          false, false, false, 'the device name the master connects to', '1.0a100', '1.81.17');
+select "schema".add_column('linux', 'ao_servers', 'daemonDeviceId',           'string',          false, false, false, 'the device name the master connects to', '1.81.18', null);
 select "schema".add_column('linux', 'ao_servers', 'xeroscape_name',           'string',           true,  true, false, '', '1.0a100', '1.30');
 select "schema".add_column('linux', 'ao_servers', 'value',                    'decimal_2',       false, false, false, '', '1.0a100', '1.30');
 select "schema".add_column('linux', 'ao_servers', 'monitoring_enabled',       'boolean',         false, false, false, 'indicates that this server should be monitored', '1.0a100', '1.30');
@@ -41,6 +42,12 @@ select "schema".add_column('linux', 'ao_servers', 'monitoring_load_low',      'f
 select "schema".add_column('linux', 'ao_servers', 'monitoring_load_medium',   'float',            true, false, false, 'the 5-minute load average that will trigger a medium-level alert', '1.35', null);
 select "schema".add_column('linux', 'ao_servers', 'monitoring_load_high',     'float',            true, false, false, 'the 5-minute load average that will trigger a high-level alert', '1.35', null);
 select "schema".add_column('linux', 'ao_servers', 'monitoring_load_critical', 'float',            true, false, false, 'the 5-minute load average that will trigger a critical-level alert', '1.35', null);
-select "schema".add_column('linux', 'ao_servers', 'uid_min',                  'linux_id',        false, false, false, 'the min value for automatic uid selection in useradd', '1.80', null);
-select "schema".add_column('linux', 'ao_servers', 'gid_min',                  'linux_id',        false, false, false, 'the min value for automatic gid selection in groupadd', '1.80', null);
+select "schema".add_column('linux', 'ao_servers', 'uid_min',                  'linux_id',        false, false, false, 'the min value for automatic uid selection in useradd', '1.80', '1.81.17');
+select "schema".add_column('linux', 'ao_servers', 'uidMin',                   'linux_id',        false, false, false, 'the min value for automatic uid selection in useradd', '1.81.18', null);
+select "schema".add_column('linux', 'ao_servers', 'gid_min',                  'linux_id',        false, false, false, 'the min value for automatic gid selection in groupadd', '1.80', '1.81.17');
+select "schema".add_column('linux', 'ao_servers', 'gidMin',                   'linux_id',        false, false, false, 'the min value for automatic gid selection in groupadd', '1.81.18', null);
+select "schema".add_column('linux', 'ao_servers', 'uidMax',                   'linux_id',        false, false, false, 'the max value for automatic uid selection in useradd', '1.81.18', null);
+select "schema".add_column('linux', 'ao_servers', 'gidMax',                   'linux_id',        false, false, false, 'the max value for automatic gid selection in groupadd', '1.81.18', null);
+select "schema".add_column('linux', 'ao_servers', 'lastUid',                  'linux_id',         true, false, false, 'the last value for automatic uid selection in useradd, if any', '1.81.18', null);
+select "schema".add_column('linux', 'ao_servers', 'lastGid',                  'linux_id',         true, false, false, 'the last value for automatic gid selection in groupadd, if any', '1.81.18', null);
 select "schema".add_column('linux', 'ao_servers', 'sftp_umask',               'octal_long',       true, false, false, 'the optional umask for the sftp-server', '1.81.5', null);

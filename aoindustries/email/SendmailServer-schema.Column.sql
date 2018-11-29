@@ -1,4 +1,5 @@
-select "schema".add_column('email', 'sendmail_servers', 'pkey',                     'pkey',        false,  true, false, 'a generated unique number',                                             '1.81.10', null);
+select "schema".add_column('email', 'sendmail_servers', 'pkey',                     'pkey',        false,  true, false, 'a generated unique number',                                             '1.81.10', '1.81.17');
+select "schema".add_column('email', 'sendmail_servers', 'id',                       'pkey',        false,  true, false, 'a generated unique number',                                             '1.81.18', null);
 select "schema".add_column('email', 'sendmail_servers', 'ao_server',                'fkey',        false, false, false, 'the pkey of the server that runs this sendmail instance',               '1.81.10', null);
 select "schema".add_column('email', 'sendmail_servers', 'name',                     'string',       true, false, false, 'the name of the instance on the server, null for the default instance', '1.81.10', null);
 select "schema".add_column('email', 'sendmail_servers', 'package',                  'fkey',        false, false, false, 'the package that owns the SSL certificate',                             '1.81.10', null);
@@ -16,5 +17,7 @@ select "schema".add_column('email', 'sendmail_servers', 'bad_rcpt_throttle',    
 select "schema".add_column('email', 'sendmail_servers', 'connection_rate_throttle', 'int',          true, false, false, 'the value for confCONNECTION_RATE_THROTTLE',                            '1.81.10', null);
 select "schema".add_column('email', 'sendmail_servers', 'max_message_size',         'int',          true, false, false, 'the value for confMAX_MESSAGE_SIZE',                                    '1.81.10', null);
 select "schema".add_column('email', 'sendmail_servers', 'min_free_blocks',          'int',          true, false, false, 'the value for confMIN_FREE_BLOCKS',                                     '1.81.10', null);
-select "schema".add_column('email', 'sendmail_servers', 'client_addr_inet',         'fkey',         true, false, false, 'the Addr for ClientPortOptions with Family=inet',                       '1.81.10', null);
-select "schema".add_column('email', 'sendmail_servers', 'client_addr_inet6',        'fkey',         true, false, false, 'the Addr for ClientPortOptions with Family=inet6',                      '1.81.10', null);
+select "schema".add_column('email', 'sendmail_servers', 'client_addr_inet',         'fkey',         true, false, false, 'the Addr for ClientPortOptions with Family=inet',                       '1.81.10', '1.81.17');
+select "schema".add_column('email', 'sendmail_servers', 'clientAddrInet',           'fkey',         true, false, false, 'the Addr for ClientPortOptions with Family=inet',                       '1.81.18', null);
+select "schema".add_column('email', 'sendmail_servers', 'client_addr_inet6',        'fkey',         true, false, false, 'the Addr for ClientPortOptions with Family=inet6',                      '1.81.10', '1.81.17');
+select "schema".add_column('email', 'sendmail_servers', 'clientAddrInet6',          'fkey',         true, false, false, 'the Addr for ClientPortOptions with Family=inet6',                      '1.81.18', null);

@@ -8,7 +8,7 @@ alter table mysql."UserServer"
 alter table mysql."UserServer"
   add constraint mysql_server_fkey
   foreign key (mysql_server)
-  references mysql."Server" (net_bind)
+  references mysql."Server" (bind)
   on delete restrict
   on update cascade
 ;

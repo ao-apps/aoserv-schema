@@ -4,11 +4,11 @@ create or replace view
 as
 select
   (select count(*) from mysql."Database" md where
-    md.mysql_server=ms.net_bind and md."name" not in (
+    md.mysql_server=ms.bind and md."name" not in (
       'mysql', 'information_schema', 'performance_schema', 'sys', 'mysqlmon'
   )) as num_databases,
   (select count(*) from mysql."UserServer" msu where
-    msu.mysql_server=ms.net_bind and msu.username not in (
+    msu.mysql_server=ms.bind and msu.username not in (
       'root', 'mysql.session', 'mysql.sys', 'mysqlmon'
   )) as num_users,
   ao.hostname as "SERVER",
@@ -19,13 +19,13 @@ select
   case when ia."inetAddress"='0.0.0.0' then '*' else host(ia."inetAddress") end as "BIND_ADDRESS",
   nb.port as "PORT",
   case when (
-    select ms2.net_bind from mysql."Server" ms2 where
-      ms2.ao_server=ms.ao_server and ms2.version=ms.version and ms2.net_bind!=ms.net_bind
+    select ms2.bind from mysql."Server" ms2 where
+      ms2.ao_server=ms.ao_server and ms2.version=ms.version and ms2.bind!=ms.bind
     limit 1
   ) is not null then 'Yes' else 'No' end as "HAS_OTHER_SAME_VERSION",
   case when (
-    select ms2.net_bind from mysql."Server" ms2 where
-      ms2.ao_server=ms.ao_server and ms2.net_bind!=ms.net_bind
+    select ms2.bind from mysql."Server" ms2 where
+      ms2.ao_server=ms.ao_server and ms2.bind!=ms.bind
     limit 1
   ) is not null then 'Yes' else 'No' end as "HAS_OTHER_ANY_VERSION"
 from
@@ -33,7 +33,7 @@ from
   inner join mysql."Server"                        ms  on ao.server                   =  ms.ao_server
   inner join distribution."SoftwareVersion"        tv  on ms.version                  =  tv.id
   inner join distribution."OperatingSystemVersion" osv on tv.operating_system_version = osv.id
-  inner join net."Bind"                            nb  on ms.net_bind                 =  nb.id
+  inner join net."Bind"                            nb  on ms.bind                     =  nb.id
   inner join net."IpAddress"                       ia  on nb."ipAddress"              =  ia.id;
 
 revoke all    on "mysql.management"."Server.remove" from aoadmin;

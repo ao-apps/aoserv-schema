@@ -4,8 +4,8 @@ create index "Server_daemon_bind_fkey" on linux."Server" (
 create index "Server_failover_server_fkey" on linux."Server" (
   failover_server
 );
-create index "Server_daemonDeviceID_fkey" on linux."Server" (
-  "daemonDeviceID"
+create index "Server_daemonDeviceId_fkey" on linux."Server" (
+  "daemonDeviceId"
 );
 create index "Server_daemon_connect_bind_fkey" on linux."Server" (
   daemon_connect_bind

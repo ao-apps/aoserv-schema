@@ -6,15 +6,15 @@ alter table linux."GroupUser"
   on update cascade
 ;
 alter table linux."GroupUser"
-  add constraint username_fkey
-  foreign key (username)
+  add constraint user_fkey
+  foreign key ("user")
   references linux."User" (username)
   on delete restrict
   on update cascade
 ;
 alter table linux."GroupUser"
-  add constraint operating_system_version_fkey
-  foreign key (operating_system_version)
+  add constraint "operatingSystemVersion_fkey"
+  foreign key ("operatingSystemVersion")
   references distribution."OperatingSystemVersion" (id)
   on delete restrict
   on update cascade

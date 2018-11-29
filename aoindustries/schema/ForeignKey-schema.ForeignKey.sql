@@ -1,5 +1,9 @@
-select "schema".add_foreign_key('schema', 'schema_foreign_keys', 'key_column',     'schema', 'schema_columns',      'pkey',    '1.0a100', null);
-select "schema".add_foreign_key('schema', 'schema_foreign_keys', 'foreign_column', 'schema', 'schema_columns',      'pkey',    '1.0a100', null);
+select "schema".add_foreign_key('schema', 'schema_foreign_keys', 'key_column',     'schema', 'schema_columns',      'pkey',    '1.0a100', '1.81.17');
+select "schema".add_foreign_key('schema', 'schema_foreign_keys', 'column',         'schema', 'schema_columns',      'id',      '1.81.18', null);
+select "schema".add_foreign_key('schema', 'schema_foreign_keys', 'foreign_column', 'schema', 'schema_columns',      'pkey',    '1.0a100', '1.81.17');
+select "schema".add_foreign_key('schema', 'schema_foreign_keys', 'foreignColumn',  'schema', 'schema_columns',      'id',      '1.81.18', null);
 select "schema".add_foreign_key('schema', 'schema_foreign_keys', 'tied_bridge',    'schema', 'schema_foreign_keys', 'pkey',    '1.0a100', '1.30');
-select "schema".add_foreign_key('schema', 'schema_foreign_keys', 'since_version',  'schema', 'aoserv_protocols',    'version', '1.0a101', null);
-select "schema".add_foreign_key('schema', 'schema_foreign_keys', 'last_version',   'schema', 'aoserv_protocols',    'version', '1.0a104', null);
+select "schema".add_foreign_key('schema', 'schema_foreign_keys', 'since_version',  'schema', 'aoserv_protocols',    'version', '1.0a101', '1.81.17');
+select "schema".add_foreign_key('schema', 'schema_foreign_keys', 'sinceVersion',   'schema', 'aoserv_protocols',    'version', '1.81.18', null);
+select "schema".add_foreign_key('schema', 'schema_foreign_keys', 'last_version',   'schema', 'aoserv_protocols',    'version', '1.0a104', '1.81.17');
+select "schema".add_foreign_key('schema', 'schema_foreign_keys', 'lastVersion',    'schema', 'aoserv_protocols',    'version', '1.81.18', null);

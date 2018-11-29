@@ -8,11 +8,11 @@ create table linux."GroupUser" (
     primary key,
   "group" text
     not null,
-  username text
+  "user" text
     not null,
-  is_primary boolean
+  "isPrimary" boolean
     not null,
-  operating_system_version integer
+  "operatingSystemVersion" integer
 );
 
 grant all                            on linux."GroupUser" to aoadmin;

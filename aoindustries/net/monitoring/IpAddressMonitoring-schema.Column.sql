@@ -1,0 +1,6 @@
+select "schema".add_column('net.monitoring', 'IpAddressMonitoring', 'id',                      'fkey',       false,  true, false, 'id of ip_addresses',                                                '1.81.18', null);
+select "schema".add_column('net.monitoring', 'IpAddressMonitoring', 'enabled',                 'boolean',    false, false, false, 'indicates that this IP address should be monitored',                '1.81.18', null);
+select "schema".add_column('net.monitoring', 'IpAddressMonitoring', 'pingMonitorEnabled',      'boolean',    false, false, false, 'if ping (ICMP ECHO) is available for monitoring, defaults to true', '1.81.18', null);
+select "schema".add_column('net.monitoring', 'IpAddressMonitoring', 'checkBlacklistsOverSmtp', 'boolean',    false, false, false, 'allows determining some types of blacklists over SMTP protocol',    '1.81.18', null);
+select "schema".add_column('net.monitoring', 'IpAddressMonitoring', 'verifyDnsPtr',            'boolean',    false, false, false, 'enables monitoring of reverse DNS',                                 '1.81.18', null);
+select "schema".add_column('net.monitoring', 'IpAddressMonitoring', 'verifyDnsA',              'boolean',    false, false, false, 'enables monitoring of forward DNS',                                 '1.81.18', null);

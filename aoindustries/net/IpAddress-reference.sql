@@ -1,6 +1,6 @@
 alter table net."IpAddress"
-  add constraint "netDevice_fkey"
-  foreign key ("netDevice")
+  add constraint device_fkey
+  foreign key (device)
   references net."Device" (id)
   on delete restrict
   on update cascade

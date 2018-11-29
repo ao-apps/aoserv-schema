@@ -1,7 +1,8 @@
 select "schema".add_column('net', 'net_devices', 'pkey',                         'pkey',        false,  true, false, 'a unique, generated pkey', '1.0a100', null);
 select "schema".add_column('net', 'net_devices', 'ao_server',                    'fkey',        false, false, false, 'the pkey of the server that contains the device', '1.0a100', '1.32');
 select "schema".add_column('net', 'net_devices', 'server',                       'fkey',        false, false, false, 'the pkey of the server that contains the device', '1.33', null);
-select "schema".add_column('net', 'net_devices', 'device_id',                    'string',      false, false, false, 'the name of the device', '1.0a100', null);
+select "schema".add_column('net', 'net_devices', 'device_id',                    'string',      false, false, false, 'the name of the device', '1.0a100', '1.81.17');
+select "schema".add_column('net', 'net_devices', 'deviceId',                     'string',      false, false, false, 'the name of the device', '1.81.18', null);
 select "schema".add_column('net', 'net_devices', 'description',                  'string',      false, false, false, 'a description of the device', '1.0a100', null);
 select "schema".add_column('net', 'net_devices', 'delete_redhat_route',          'string',       true, false, false, 'the default routing from the network scripts that should be removed', '1.0a100', '1.0a111');
 select "schema".add_column('net', 'net_devices', 'delete_route',                 'string',       true, false, false, 'the default routing from the network scripts that should be removed', '1.0a112', null);

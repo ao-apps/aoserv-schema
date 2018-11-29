@@ -1,4 +1,4 @@
-COPY linux."GroupUser" (id, "group", username, is_primary) FROM stdin;
+COPY linux."GroupUser" (id, "group", "user", "isPrimary") FROM stdin;
 1	root	root	t	\N
 2	avahi	avahi	t	\N
 3	bin	bin	t	\N

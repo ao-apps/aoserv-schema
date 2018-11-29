@@ -21,7 +21,7 @@ select
 from
              linux."Server"  ao
   inner join mysql."Server"  ms on ao.server      = ms.ao_server
-  inner join net."Bind"      nb on ms.net_bind    = nb.id
+  inner join net."Bind"      nb on ms.bind        = nb.id
   inner join net."IpAddress" ia on nb."ipAddress" = ia.id
 where
   ia."inetAddress" != '127.0.0.1';

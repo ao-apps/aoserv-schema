@@ -1,6 +1,6 @@
 alter table mysql."Server"
-  add constraint net_bind_fkey
-  foreign key (net_bind)
+  add constraint bind_fkey
+  foreign key (bind)
   references net."Bind" (id)
   on delete restrict
   on update cascade

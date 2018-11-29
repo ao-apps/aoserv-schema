@@ -68,7 +68,7 @@ select aosh.add_command(
   'enables or disables the monitoring of an IP address',
   '<i>ip_address</i> <i>server</i> <i>net_device</i> <i>enabled</i>',
   '1.81.17',
-  null
+  '1.81.17'
 );
 select aosh.add_command(
   'set_ip_address_package',

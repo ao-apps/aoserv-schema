@@ -1,6 +1,9 @@
-select "schema".add_foreign_key('accounting', 'bank_transactions', 'bank_account',     'accounting', 'bank_accounts',          'name',         '1.0a100', null);
+select "schema".add_foreign_key('accounting', 'bank_transactions', 'bank_account',     'accounting', 'bank_accounts',          'name',         '1.0a100', '1.81.17');
+select "schema".add_foreign_key('accounting', 'bank_transactions', 'account',          'accounting', 'bank_accounts',          'name',         '1.81.18', null);
 select "schema".add_foreign_key('accounting', 'bank_transactions', 'merchant_account', 'accounting', 'merchant_accounts',      'name',         '1.0a100', '1.28');
 select "schema".add_foreign_key('accounting', 'bank_transactions', 'processor',        'payment',    'credit_card_processors', 'provider_id',  '1.29',    null);
 select "schema".add_foreign_key('accounting', 'bank_transactions', 'administrator',    'master',     'master_users',           'username',     '1.0a100', null);
-select "schema".add_foreign_key('accounting', 'bank_transactions', 'type',             'accounting', 'bank_transaction_types', 'type',         '1.0a100', null);
-select "schema".add_foreign_key('accounting', 'bank_transactions', 'expense_code',     'accounting', 'expense_categories',     'expense_code', '1.0a100', null);
+select "schema".add_foreign_key('accounting', 'bank_transactions', 'type',             'accounting', 'bank_transaction_types', 'type',         '1.0a100', '1.81.17');
+select "schema".add_foreign_key('accounting', 'bank_transactions', 'type',             'accounting', 'bank_transaction_types', 'name',         '1.81.18', null);
+select "schema".add_foreign_key('accounting', 'bank_transactions', 'expense_code',     'accounting', 'expense_categories',     'expense_code', '1.0a100', '1.81.17');
+select "schema".add_foreign_key('accounting', 'bank_transactions', 'expenseCategory',  'accounting', 'expense_categories',     'name',         '1.81.18', null);

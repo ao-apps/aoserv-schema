@@ -63,7 +63,7 @@ BEGIN
   END IF;
   -- If the wildcard IP is given, use the other function
   IF
-    (SELECT "netDevice" FROM net."IpAddress" WHERE id = _ip_address) IS NULL
+    (SELECT device FROM net."IpAddress" WHERE id = _ip_address) IS NULL
   THEN
     RETURN net.find_unused_port(_server, _from_port, _net_protocol);
   END IF;
@@ -98,7 +98,7 @@ BEGIN
           INNER JOIN net."IpAddress" ia ON nb."ipAddress" = ia.id
         WHERE
           nb.server = _server
-          AND ia."netDevice" IS NULL
+          AND ia.device IS NULL
           AND nb.port = _port
           AND nb.net_protocol = _net_protocol
       )

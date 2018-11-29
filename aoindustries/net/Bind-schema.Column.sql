@@ -1,9 +1,11 @@
-select "schema".add_column('net', 'net_binds', 'pkey',                  'pkey',       false,  true, false, 'a generated pkey', '1.0a100', null);
+select "schema".add_column('net', 'net_binds', 'pkey',                  'pkey',       false,  true, false, 'a generated pkey', '1.0a100', '1.81.17');
+select "schema".add_column('net', 'net_binds', 'id',                    'pkey',       false,  true, false, 'a generated pkey', '1.81.18', null);
 select "schema".add_column('net', 'net_binds', 'package',               'package',    false, false, false, 'the package that owns the opened port', '1.0a100', '1.80');
 select "schema".add_column('net', 'net_binds', 'package',               'accounting', false, false, false, 'the package that owns the opened port', '1.80.0', null);
 select "schema".add_column('net', 'net_binds', 'ao_server',             'fkey',       false, false, false, 'the pkey of the server that this port is bound on', '1.0a100', '1.32');
 select "schema".add_column('net', 'net_binds', 'server',                'fkey',       false, false, false, 'the pkey of the server that this port is bound on', '1.33', null);
-select "schema".add_column('net', 'net_binds', 'ip_address',            'fkey',       false, false, false, 'the pkey of the IP address that is bound to', '1.0a100', null);
+select "schema".add_column('net', 'net_binds', 'ip_address',            'fkey',       false, false, false, 'the pkey of the IP address that is bound to', '1.0a100', '1.81.17');
+select "schema".add_column('net', 'net_binds', 'ipAddress',             'fkey',       false, false, false, 'the id of the IP address that is bound to', '1.81.18', null);
 select "schema".add_column('net', 'net_binds', 'port',                  'int',        false, false, false, 'the port number that is bound', '1.0a100', '1.68');
 select "schema".add_column('net', 'net_binds', 'port',                  'fkey',       false, false, false, 'the port number that is bound', '1.69', '1.80');
 select "schema".add_column('net', 'net_binds', 'port',                  'net_port',   false, false, false, 'the port that is bound', '1.80.0', null);

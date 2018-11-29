@@ -928,6 +928,15 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'net.monitoring',
+    'IpAddressMonitoring',
+    'IP Address Monitoring',
+    false,
+    'The monitoring configuration for ip_addresses',
+    '1.81.18',
+    null
+);
+select "schema".add_table(
     'net.reputation',
     'ip_reputation_limiter_limits',
     'IP Reputation Limiter Limits',

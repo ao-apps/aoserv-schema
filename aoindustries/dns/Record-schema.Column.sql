@@ -9,5 +9,6 @@ select "schema".add_column('dns', 'dns_records', 'weight',       'int',       tr
 select "schema".add_column('dns', 'dns_records', 'port',         'int',       true, false, false, 'the TCP or UDP port on which the service is to be found', '1.72', null);
 select "schema".add_column('dns', 'dns_records', 'destination',  'string',   false, false, false, 'the destination, either IP addredd or hostname depending on the type of record', '1.0a100', null);
 select "schema".add_column('dns', 'dns_records', 'dhcp_address', 'int',       true, false, false, 'the pkey of the IP address whos changes are followed', '1.0a100', '1.68');
-select "schema".add_column('dns', 'dns_records', 'dhcp_address', 'fkey',      true, false, false, 'the pkey of the IP address whos changes are followed', '1.69', null);
+select "schema".add_column('dns', 'dns_records', 'dhcp_address', 'fkey',      true, false, false, 'the pkey of the IP address whos changes are followed', '1.69', '1.81.17');
+select "schema".add_column('dns', 'dns_records', 'dhcpAddress',  'fkey',      true, false, false, 'the id of the IP address whos changes are followed', '1.81.18', null);
 select "schema".add_column('dns', 'dns_records', 'ttl',          'int',       true, false, false, 'the time to live field', '1.0a127', null);

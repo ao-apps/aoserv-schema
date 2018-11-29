@@ -134,7 +134,6 @@ select "schema".add_schema(
     true,
     null -- Uses pg_catalog.pg_description
 );
-/*
 select "schema".add_schema(
     'net.monitoring',
     '1.81.18',
@@ -143,7 +142,6 @@ select "schema".add_schema(
     false,
     null -- Uses pg_catalog.pg_description
 );
- */
 select "schema".add_schema(
     'net.reputation',
     '1.65',

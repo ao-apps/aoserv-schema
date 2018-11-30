@@ -1,4 +1,5 @@
 -- TODO: Move to master schema?
+-- TODO: Rename to AoservProtocol
 create table "schema"."AOServProtocol" (
   version text
     primary key,

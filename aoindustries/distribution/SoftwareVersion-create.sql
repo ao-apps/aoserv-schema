@@ -14,6 +14,7 @@ create table distribution."SoftwareVersion" (
   updated timestamp with time zone
     default now()
     not null,
+  -- TODO: owner should be attached inside distribution.management, not filtered in this otherwise public table
   owner text
     default 'orion'
     not null,

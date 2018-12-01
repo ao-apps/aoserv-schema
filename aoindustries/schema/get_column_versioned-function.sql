@@ -12,20 +12,20 @@ as '
       sc.id
     from
                  "schema"."Column"            sc
-      inner join "schema"."AOServProtocol" since on sc."sinceVersion" = since.version
-      left  join "schema"."AOServProtocol"  last on sc."lastVersion"  =  last.version
+      inner join "schema"."AoservProtocol" since on sc."sinceVersion" = since.version
+      left  join "schema"."AoservProtocol"  last on sc."lastVersion"  =  last.version
     where
       sc."table" = "schema".get_table_versioned($1, $2, $4, $5)
       and sc."name" = $3
-      and (select created from "schema"."AOServProtocol" where version= $4 ) >= since.created
+      and (select created from "schema"."AoservProtocol" where version= $4 ) >= since.created
       and (
         case
-          when $5 is null then (select created from "schema"."AOServProtocol" order by created desc limit 1)
-          else (select created from "schema"."AOServProtocol" where version= $5 )
+          when $5 is null then (select created from "schema"."AoservProtocol" order by created desc limit 1)
+          else (select created from "schema"."AoservProtocol" where version= $5 )
         end
         <=
         case
-          when last.version is null then (select created from "schema"."AOServProtocol" order by created desc limit 1)
+          when last.version is null then (select created from "schema"."AoservProtocol" order by created desc limit 1)
           else last.created
         end
       )

@@ -1,33 +1,33 @@
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.0a100',
   '2003-07-08',
   'Last release before API version support.'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.0a101',
   '2003-07-15',
   'Multiple API version support added
 added table backup_reports'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.0a102',
   '2003-09-15',
   'Added mod_php support to Apache and private Apache instances.'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.0a103',
   '2003-10-04',
   'added column businesses.can_see_prices.
 added column httpd_servers.use_mod_perl.'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.0a104',
   '2003-10-14',
   'Simplified monitoring info on net_binds to just monitoring_enabled
 added column ao_servers.monitoring_passwords
 Improved protocol version support'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.0a105',
   '2003-10-21',
   'Added user control over net_binds.
@@ -37,17 +37,17 @@ added column failover_file_replications.max_bit_rate
 added table email_blacklists
 Converted distro_files.file_md5 to distro_files.file_md5_hi and distro_files.file_md5_lo.'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.0a106',
   '2003-11-08',
   'added column email_blacklists.spamhaus_lists.'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.0a107',
   '2003-11-10',
   'To support backing up Windows servers, make necessary columns of file_backups nullable.'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.0a108',
   '2003-12-26',
   'ao_servers.emailmon_password is now nullable.
@@ -63,19 +63,19 @@ added column distro_files.operating_system_version.
 distro_files.path is no longer unique.
 added column technology_versions.operating_system_version.'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.0a109',
   '2004-01-14',
   'removed support for REMOVE_UNUSED_BACKUP_DATAS command.  Compatibly and silently ignored for previous versions of clients.
 removed column file_backup_stats.delete_unused_backup_data1
 removed column file_backup_stats.delete_unused_backup_data2'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.0a110',
   '2004-02-10',
   'removed column postgres_versions.default_port'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.0a111',
   '2004-02-25',
   'added column mysql_db_users.create_tmp_table_priv
@@ -90,71 +90,71 @@ added column mysql_users.repl_client_priv
 added column mysql_server_users.max_connections
 added table net_tcp_redirects'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.0a112',
   '2004-03-19',
   'renamed column net_devices.delete_redhat_route to net_devices.delete_route
 added column net_devices.network
 added column net_devices.broadcast'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.0a113',
   '2004-03-22',
   'removed column private_ftp_servers.ip_address
 added column private_ftp_servers.net_bind
 added column private_ftp_servers.allow_anonymous'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.0a114',
   '2004-05-10',
   'changed interbase_databases.backup_retention to short
 added column interbase_databases.backup_level'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.0a115',
   '2004-07-01',
   'added column interbase_server_users.predisable_password'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.0a116',
   '2004-09-20',
   'added table email_attachment_types
 added table email_attachment_blocks'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.0a117',
   '2004-11-10',
   'added column backup_partitions.fill_order'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.0a118',
   '2004-11-28',
   'added column business_administrators.can_switch_users
 remove column master_users.can_switch_users'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.0a119',
   '2004-11-29',
   'added column ao_servers.daemon_connect_bind'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.0a120',
   '2005-02-20',
   'added table email_sa_integration_modes
 added column linux_server_accounts.junk_email_retention
 added column linux_server_accounts.sa_integration_mode'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.0a121',
   '2005-02-25',
   'added column postgres_versions.minor_version'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.0a122',
   '2005-03-18',
   'removed column email_blacklists'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.0a123',
   '2005-04-27',
   'removed table limits
@@ -182,19 +182,19 @@ removed column packages.additional_pop_rate
 removed column private_ftp_servers.price
 removed column resources.unit'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.0a124',
   '2005-05-19',
   'added column linux_server_accounts.sa_required_score'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.0a125',
   '2005-05-20',
   'added column tickets.assigned_to
 added column tickets.contact_emails
 added column tickets.contact_phone_numbers'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.0a126',
   '2005-05-24',
   'removed column tickets.package
@@ -202,29 +202,29 @@ added column tickets.accounting
 removed column tickets.administrator
 added column tickets.created_by'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.0a127',
   '2005-07-21',
   'added column dns_zones.ttl
 added column dns_records.ttl'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.0a128',
   '2005-12-01',
   'added column net_devices.mac_address
 changed transactions.apr_num to text type'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.0a129',
   '2005-12-04',
   'added column httpd_sites.awstats_skip_files'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.0a130',
   '2005-12-16',
   'added column httpd_servers.timeout'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.1',
   '2006-02-13',
   'removed table net_device_host_routes
@@ -232,19 +232,19 @@ removed table net_device_local_routes
 removed column postgres_server_users.usesysid
 removed column postgres_servers.last_postgres_usesysid'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.2',
   '2006-02-20',
   'added column net_devices.max_bit_rate
 added table time_zones
 added column ao_servers.time_zone'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.3',
   '2006-02-23',
   'added column operating_system_versions.sort_order'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.4',
   '2006-03-11',
   'added table mysql_servers
@@ -272,109 +272,109 @@ added column mysql_server_users.max_questions
 added column mysql_server_users.max_updates
 added column mysql_server_users.max_user_connections'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.5',
   '2006-04-02',
   'added table httpd_tomcat_data_sources
 added table httpd_tomcat_parameters'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.6',
   '2006-05-01',
   'changed return type from boolean to int for is_linux_server_account_procmail_manual'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.7',
   '2006-05-22',
   'added column ao_servers.jilter_bind'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.8',
   '2006-05-23',
   'added column ao_servers.restrict_outbound_email'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.9',
   '2006-05-29',
   'added column failover_file_replications.use_compression
 added column aoserv_protocols.last_used'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.10',
   '2006-06-06',
   'made tickets.admin_priority nullable and null by default'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.11',
   '2006-07-03',
   'added column ao_servers.daemon_connect_address'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.12',
   '2006-07-19',
   'added column ao_servers.failover_batch_size'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.13',
   '2006-07-20',
   'added column ao_servers.retention'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.14',
   '2006-07-26',
   'added column failover_file_replications.connect_address'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.15',
   '2006-09-20',
   'added column failover_file_replications.enabled'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.16',
   '2006-09-27',
   'added column servers.minimum_power
 added column servers.maximum_power'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.17',
   '2006-10-09',
   'added column failover_file_replications.to_path
 added column failover_file_replications.chunk_always'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.18',
   '2006-10-11',
   'added table httpd_site_authenticated_locations'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.19',
   '2006-11-27',
   'added column httpd_site_binds.redirect_to_primary_hostname'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.20',
   '2007-02-04',
   'added table whois_history'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.21',
   '2007-02-12',
   'added table business_administrator_permissions
 added table aoserv_permissions'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.22',
   '2007-03-20',
   'added column failover_file_replications.connect_from'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.23',
   '2007-05-01',
   'added table encryption_keys
 added table signup_request_options
 added table signup_requests'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.24',
   '2007-05-13',
   'added column packages.email_in_burst
@@ -384,7 +384,7 @@ added column packages.email_out_rate
 added column packages.email_relay_burst
 added column packages.email_relay_rate'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.25',
   '2007-05-15',
   'changed encryption_keys.recipient to encryption_keys.id
@@ -393,36 +393,36 @@ added column encryption_keys.signup_recipient
 changed encryption_keys.use_credit_cards to encryption_keys.credit_card_signer
 added column encryption_keys.credit_card_recipient'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.26',
   '2007-05-24',
   'added column server_farms.use_restricted_smtp_port'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.27',
   '2007-06-08',
   'added column postgres_versions.postgis_version
 added column postgres_databases.enable_postgis'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.28',
   '2007-06-12',
   'added table failover_mysql_replications
 added column mysql_servers.package'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.29',
   '2007-06-21',
   'updated credit_cards table to support new ao-credit-cards package
 added credit_card_providers table to support new ao-credit-cards package
 added credit_card_transactions table to support new ao-credit-cards package'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.30',
   '2008-03-18',
   'updated ip_address.ping_monitor_enabled'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.31',
   '2008-04-12',
   'removed table backup_data
@@ -648,23 +648,23 @@ removed column backup_reports.compressed_size
 removed column daemon_profile.server
 added column daemon_profile.ao_server'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.32',
   '2008-06-28',
   'added column servers.monitoring_enabled'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.33',
   '2008-08-15',
   'renamed column net_devices.ao_server to server, references servers instead of ao_servers
 renamed column net_binds.ao_server to server, references servers instead of ao_servers'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.34',
   '2008-08-17',
   'added column ip_addresses.external_ip_address'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.35',
   '2008-10-24',
   'added column ao_servers.monitoring_load_low
@@ -676,7 +676,7 @@ added column net_devices.monitoring_bit_rate_medium
 added column net_devices.monitoring_bit_rate_high
 added column net_devices.monitoring_bit_rate_critical'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.36',
   '2008-11-15',
   'added table disk_types
@@ -687,30 +687,30 @@ added table raid_types
 added table virtual_disks
 added table virtual_servers'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.37',
   '2008-11-16',
   'added column physical_servers.supports_hvm
 added column virtual_servers.requires_hvm'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.38',
   '2008-11-30',
   'removed column net_devices.netmask
 added column ip_addresses.netmask'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.39',
   '2008-12-01',
   'removed column private_ftp_servers.root
 removed column private_ftp_servers.linux_server_group'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.40',
   '2008-12-09',
   'added column linux_server_accounts.sa_discard_score'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.41',
   '2009-03-12',
   'renamed column virtual_servers.primary_minimum_processor_type to minimum_processor_type
@@ -732,7 +732,7 @@ removed column virtual_disks.secondary_minimum_disk_speed
 renamed column virtual_disks.primary_weight to weight
 removed column virtual_disks.secondary_weight'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.42',
   '2009-03-15',
   'removed column virtual_disks.minimum_raid_type
@@ -740,7 +740,7 @@ removed column virtual_disks.minimum_disk_type
 removed table disk_types
 removed table raid_types'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.43',
   '2009-03-18',
   'added column virtual_servers.primary_ram_target
@@ -753,7 +753,7 @@ added column virtual_disks.weight_target
 removed column virtual_disks.primary_physical_volumes_locked
 removed column virtual_disks.secondary_physical_volumes_locked'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.44',
   '2009-05-16',
   'removed table actions
@@ -809,41 +809,41 @@ removed change_ticket_technology AOSH command
 updated add_business_administrator command
 removed ticket-related AOSH commands'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.45',
   '2009-06-11',
   'removed column package_definitions.brand
 added column package_definitions.accounting'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.46',
   '2009-06-12',
   'added column tickets.brand
 added column brands.smtp_host
 added column brands.imap_host'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.47',
   '2009-06-13',
   'Cache invalidation signals only require response from client when a server is waiting for synchronous invalidation'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.48',
   '2009-06-24',
   'added from_address to add_ticket command'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.49',
   '2009-06-25',
   'added column ticket_actions.old_type
 added column ticket_actions.new_type'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.50',
   '2009-07-17',
   'made ticket_actions.administrator nullable for master-generated actions'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.51',
   '2009-07-19',
   'removed REQUEST_DAEMON_ACCESS
@@ -852,18 +852,18 @@ added REQUEST_VNC_CONSOLE_DAEMON_ACCESS
 added column business_servers.can_vnc_console
 added column virtual_servers.vnc_password'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.52',
   '2009-07-21',
   'added column brands.aoweb_struts_vnc_bind'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.53',
   '2009-07-22',
   'added column brands.aoweb_struts_keystore_type
 added column brands.aoweb_struts_keystore_password'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.54',
   '2009-07-29',
   'added column mysql_users.event_priv
@@ -871,12 +871,12 @@ added column mysql_users.trigger_priv
 added column mysql_db_users.event_priv
 added column mysql_db_users.trigger_priv'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.55',
   '2009-08-01',
   'added get_mysql_table_status command'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.56',
   '2009-08-06',
   'added column failover_mysql_replications.monitoring_seconds_behind_low
@@ -884,30 +884,30 @@ added column failover_mysql_replications.monitoring_seconds_behind_medium
 added column failover_mysql_replications.monitoring_seconds_behind_high
 added column failover_mysql_replications.monitoring_seconds_behind_critical'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.57',
   '2009-08-22',
   'added table email_smtp_smart_hosts
 added table email_smtp_smart_host_domains
 added column servers.smtp_smart_host'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.58',
   '2009-09-21',
   'added column net_binds.monitoring_parameters'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.59',
   '2009-10-08',
   'added column failover_mysql_replications.ao_server
 made failover_mysql_replications.replication nullable'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.60',
   '2009-10-09',
   'now checking the table status on MySQL slaves'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.61',
   '2009-12-05',
   'removed column package_categories.display
@@ -919,18 +919,18 @@ removed column transaction_types.display
 removed column transaction_types.description
 removed column transaction_types.unit'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.62',
   '2012-03-26',
   'added column file_backup_settings.required
 converted failover_file_replications.max_bit_rate to long'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.63',
   '2012-06-06',
   'added column physical_servers.ups_type'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.64',
   '2012-07-09',
   'added create_virtual_server command
@@ -942,7 +942,7 @@ added unpause_virtual_server command
 added get_virtual_server_status command
 added column business_servers.can_control_virtual_server'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.65',
   '2012-08-13',
   'added table ip_reputation_sets
@@ -950,7 +950,7 @@ added table ip_reputation_set_hosts
 added table ip_reputation_set_networks
 added column master_users.is_router'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.66',
   '2012-08-30',
   'renamed column ip_reputation_set_hosts.set_fkey to set
@@ -959,7 +959,7 @@ added table ip_reputation_limiters
 added table ip_reputation_limiter_limits
 added table ip_reputation_limiter_sets'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.67',
   '2012-10-18',
   'added gm and bm classes to ip_reputation_limiter_limits
@@ -967,12 +967,12 @@ added column ip_reputation_sets.last_reputation_added
 changed ip_reputation_set_hosts.host to ip_address type
 changed ip_reputation_set_networks.network to ip_address type'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.68',
   '2013-03-18',
   'added column httpd_servers.max_concurrency'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.69',
   '2013-03-21',
   'changed business_administrators.birthday to date type
@@ -1088,18 +1088,18 @@ removed zip from schema_types
 changed ticket_actions.old_accounting to accounting type
 changed ticket_actions.new_accounting to accounting type'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.70',
   '2013-05-31',
   'added column net_devices.monitoring_enabled
 added table distro_report_types'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.71',
   '2014-02-11',
   'added verify_virtual_disk command'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.72',
   '2014-02-20',
   'renamed column dns_records.mx_priority to priority
@@ -1113,30 +1113,30 @@ added SRV to dns_types
 added column virtual_disks.verify_day_of_week
 added column virtual_disks.verify_hour_of_day'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.73',
   '2014-04-01',
   'added get_primary_physical_server command
 added get_secondary_physical_server command'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.74',
   '2014-04-23',
   'added column failover_mysql_replications.max_alert_level
 added column mysql_databases.max_check_table_alert_level'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.75',
   '2014-06-16',
   'added column ip_addresses.check_blacklists_over_smtp
 added alternate syntax in AOSH for remove_dns_record command'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.76',
   '2015-05-21',
   'added get_failover_file_replication_activity command'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.77',
   '2015-10-16',
   'removed pseudo-table client_jvm_profile
@@ -1144,19 +1144,19 @@ removed pseudo-table daemon_profile
 removed pseudo-table master_server_profile
 removed pseudo-table master_history'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.78',
   '2016-01-07',
   'added column technology_versions.disable_time
 added column technology_versions.disable_reason
 added column httpd_sites.php_version'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.79',
   '2016-01-09',
   'added column httpd_sites.enable_cgi'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.80',
   '2016-11-29',
   'added column ao_servers.uid_min
@@ -1169,7 +1169,7 @@ added column distro_files.file_sha256_1
 added column distro_files.file_sha256_2
 added column distro_files.file_sha256_3'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.80.0',
   '2017-03-30',
   'removed table linux_ids
@@ -1228,7 +1228,7 @@ removed check_ip_address command
 removed check_linux_account_username command
 removed check_package_name command'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.80.1',
   '2017-04-14',
   'linux_accounts.name is now nullable
@@ -1263,12 +1263,12 @@ added set_httpd_tomcat_std_site_max_post_size command
 added set_httpd_tomcat_std_site_unpack_wars command
 added set_httpd_tomcat_std_site_auto_deploy command'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.80.2',
   '2017-07-20',
   'check_email_list_path command altered to include ao_server parameter'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.81.0',
   '2017-08-18',
   'added firewalld_zone_name to schema_types
@@ -1279,35 +1279,35 @@ removed set_net_bind_open_firewall command
 updated parameters to add_net_binds command for firewalld_zones
 added set_net_bind_firewalld_zones command'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.81.1',
   '2017-08-30',
   'added table httpd_site_bind_redirects'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.81.2',
   '2017-09-05',
   'added can_reference parameter to add_mysql_db_user command'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.81.3',
   '2017-09-09',
   'added column httpd_tomcat_contexts.server_xml_configured
 added server_xml_configured parameter to add_httpd_tomcat_context command
 added server_xml_configured parameter to set_httpd_tomcat_context_attributes command'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.81.4',
   '2017-10-02',
   'added column httpd_site_binds.ssl_cert_chain_file
 added column httpd_site_bind_redirects.no_escape, defaulting to false'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.81.5',
   '2017-10-14',
   'added column ao_servers.sftp_umask'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.81.6',
   '2017-10-27',
   'httpd_sites.enable_cgi now defaults to false
@@ -1335,7 +1335,7 @@ added remove_httpd_tomcat_site_jk_mount command
 removed column httpd_tomcat_sites.use_apache
 removed set_httpd_tomcat_site_use_apache command'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.81.7',
   '2017-10-30',
   'added column httpd_servers.mod_access_compat
@@ -1368,17 +1368,17 @@ added column httpd_servers.mod_socache_shmcb
 added column httpd_servers.mod_ssl
 added column httpd_servers.mod_status'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.81.8',
   '2018-04-28',
   'renamed column httpd_servers.number to "name" and changed type from int to string'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.81.9',
   '2018-05-06',
   'added column firewalld_zones.fail2ban'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.81.10',
   '2018-05-12',
   'added column httpd_servers.mod_wsgi
@@ -1405,7 +1405,7 @@ removed content_source parameter from add_httpd_jboss_site AOSH command
 removed tomcat_version and content_source parameters from add_httpd_tomcat_shared_site AOSH command
 removed content_source parameter from add_httpd_tomcat_std_site AOSH command'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.81.11',
   '2018-06-29',
   'added column httpd_servers.monitoring_concurrency_low
@@ -1414,41 +1414,41 @@ added column httpd_servers.monitoring_concurrency_high
 added column httpd_servers.monitoring_concurrency_critical
 added get_httpd_server_concurrency AOSH command'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.81.12',
   '2018-08-25',
   'added set_httpd_shared_tomcat_version AOSH command
 added set_httpd_tomcat_std_site_version AOSH command'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.81.13',
   '2018-10-04',
   'added column httpd_site_authenticated_locations.handler
 added add_httpd_site_authenticated_location AOSH command
 added set_httpd_site_authenticated_location_attributes AOSH command'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.81.14',
   '2018-10-24',
   'added column httpd_site_binds.name'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.81.15',
   '2018-10-26',
   'added table httpd_site_bind_headers'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.81.16',
   '2018-11-12',
   'added table ssl_certificate_other_uses'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.81.17',
   '2018-11-16',
   'added column ip_addresses.monitoring_enabled
 added set_ip_address_monitoring_enabled AOSH command'
 );
-insert into "schema"."AOServProtocol" values(
+insert into "schema"."AoservProtocol" values(
   '1.81.18',
   '2018-11-29',
   'Renamed all columns since_version to sinceVersion

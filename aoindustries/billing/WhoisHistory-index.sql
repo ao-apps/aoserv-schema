@@ -1,3 +1,3 @@
-create index "WhoisHistory_accounting_fkey" on billing."WhoisHistory" (
-  accounting
+create index "WhoisHistory_lastChecked_idx" on billing."WhoisHistory" (
+  accounting, "zone", "time"
 );

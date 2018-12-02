@@ -2,6 +2,7 @@ create sequence         backup."BackupReport_id_seq" cycle;
 grant all            on backup."BackupReport_id_seq" to aoadmin;
 grant select, update on backup."BackupReport_id_seq" to aoserv_app;
 
+-- TODO: This table seems unused, since we no longer use the old style backup system
 create table backup."BackupReport" (
   id integer
     default nextval('backup."BackupReport_id_seq"')

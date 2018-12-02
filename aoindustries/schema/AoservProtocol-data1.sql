@@ -1571,6 +1571,11 @@ added table IpAddressMonitoring:
   added column IpAddressMonitoring.verifyDnsPtr
   added column IpAddressMonitoring.verifyDnsA'
 );
+insert into "schema"."AoservProtocol" values(
+  '1.81.19',
+  '2018-12-01',
+  'ProgressListener and TableLoadListener now notified of row counts using a 64-bit integer to handle results with more than a billion rows'
+);
 -- TODO: added table schema.Schema
 -- TODO: added column schema.Table.schema
 -- TODO: Nullable descriptions instead of where we have ''?

@@ -18,3 +18,4 @@ create table billing."WhoisHistory" (
 );
 grant all                    on billing."WhoisHistory" to aoadmin;
 grant select, insert, delete on billing."WhoisHistory" to aoserv_app;
+-- TODO: accounting in a separate table: "WhoisHistoryAccounts" to reduce storage

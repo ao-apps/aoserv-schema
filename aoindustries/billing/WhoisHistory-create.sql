@@ -2,6 +2,8 @@ create sequence         billing."WhoisHistory_id_seq" cycle;
 grant all            on billing."WhoisHistory_id_seq" to aoadmin;
 grant select, update on billing."WhoisHistory_id_seq" to aoserv_app;
 
+-- TODO: Consider a WhoisHistoryClass, which stores the broad category of where used, such as
+--       "web", "certificate", "email", ...
 create table billing."WhoisHistory" (
   id integer
     default nextval('billing."WhoisHistory_id_seq"')
@@ -11,6 +13,7 @@ create table billing."WhoisHistory" (
     not null,
   accounting text
     not null,
+  -- TODO: Change "zone" to "registrableDomain" as type DomainName (without trailing ".")
   "zone" text
     not null,
   whois_output text

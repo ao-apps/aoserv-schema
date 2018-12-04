@@ -1576,16 +1576,18 @@ insert into "schema"."AoservProtocol" values(
   '2018-12-03',
   'ProgressListener and TableLoadListener now notified of row counts using a 64-bit integer to handle results with more than a billion rows
 
-added table billing.WhoisHistoryAccount
+Renamed table billing.whois_history to billing.WhoisHistory
+
+Added table billing.WhoisHistoryAccount
 
 billing.WhoisHistory:
-  renamed pkey to id
-  changed zone to domain_name type (without the trailing period)
-  renamed zone to registrableDomain
-  added column exitStatus
-  renamed whois_output to output
-  added column error
-  removed column accounting'
+  Renamed pkey to id
+  Changed zone to domain_name type (without the trailing period)
+  Renamed zone to registrableDomain
+  Added column exitStatus
+  Renamed whois_output to output
+  Added column error
+  Removed column accounting'
 );
 /* TODO:
 renamed dns.TopLevelDomain to dns.Suffix

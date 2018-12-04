@@ -2168,7 +2168,25 @@ select "schema".add_table(
     'whois_history',
     'Whois History',
     false,
-    'The output from whois lookups are logged weekly to keep track of when customers begin and end using the systems.',
+    'Logs the whois history for each registrable domain.',
     '1.20',
+    '1.81.18'
+);
+select "schema".add_table(
+    'billing',
+    'WhoisHistory',
+    'Whois History',
+    false,
+    'Logs the whois history for each registrable domain.',
+    '1.81.19',
+    null
+);
+select "schema".add_table(
+    'billing',
+    'WhoisHistoryAccount',
+    'Whois History Account',
+    false,
+    'Logs which accounts were associated with a registrable domain at the time of whois lookup.',
+    '1.81.19',
     null
 );

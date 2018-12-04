@@ -1573,9 +1573,26 @@ added table IpAddressMonitoring:
 );
 insert into "schema"."AoservProtocol" values(
   '1.81.19',
-  '2018-12-01',
-  'ProgressListener and TableLoadListener now notified of row counts using a 64-bit integer to handle results with more than a billion rows'
+  '2018-12-03',
+  'ProgressListener and TableLoadListener now notified of row counts using a 64-bit integer to handle results with more than a billion rows
+
+added table billing.WhoisHistoryAccount
+
+billing.WhoisHistory:
+  renamed pkey to id
+  changed zone to domain_name type (without the trailing period)
+  renamed zone to registrableDomain
+  added column exitStatus
+  renamed whois_output to output
+  added column error
+  removed column accounting'
 );
+/* TODO:
+renamed dns.TopLevelDomain to dns.Suffix
+  added column isRegistrable
+  added column isPublicSuffix
+  added column isManual
+ */
 -- TODO: added table schema.Schema
 -- TODO: added column schema.Table.schema
 -- TODO: Nullable descriptions instead of where we have ''?

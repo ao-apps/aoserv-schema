@@ -1273,3 +1273,7 @@ xorg-x11-Mesa-libGL	\N	\N	\N	\N	\N
 ypbind	\N	\N	\N	\N	\N
 yp-tools	\N	\N	\N	\N	\N
 \.
+
+BEGIN;
+INSERT INTO distribution."Software" ("name") VALUES ('maven');
+COMMIT;

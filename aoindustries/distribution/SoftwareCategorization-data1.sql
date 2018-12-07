@@ -1391,3 +1391,7 @@ xorg-x11-libs	X11
 xorg-x11-Mesa-libGL	X11
 iptraf	Linux
 \.
+
+BEGIN;
+INSERT INTO distribution."SoftwareCategorization" ("name", "class") VALUES ('maven', 'Java');
+COMMIT;

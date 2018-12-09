@@ -1384,13 +1384,6 @@ COPY distribution."SoftwareVersion" FROM stdin;
 3229	mod_jk	1.2.18	2006-09-25 21:37:00	orion	47
 3230	iptraf	2.7.0-11	2006-09-25 23:07:00	orion	47
 3231	screen	4.0.2-5	2006-09-25 23:08:00	orion	47
-1618	php	4.4.2	2006-02-25 13:58:33.297188-05	orion	14
-2418	php	5.1.4	2006-05-16 20:47:00-05	orion	14
-3242	php	4.4.4	2006-10-12 18:50:00-05	orion	45
-3243	php	5.1.6	2006-10-12 18:58:00-05	orion	45
-3373	php	7.0.0	2018-07-17 06:22:41.987077+00	orion	70
-3374	php	7.1.0	2018-07-17 11:34:17.801647+00	orion	70
-3375	php	7.2.0	2018-07-17 12:53:16.84715+00	orion	70
 14	postgresql	7.1.3	2006-06-22 10:16:00-05	orion	45
 15	postgresql	7.2.7	2006-06-22 10:17:00-05	orion	45
 16	postgresql	7.3.15	2006-06-22 10:18:00-05	orion	45
@@ -1431,21 +1424,31 @@ COPY distribution."SoftwareVersion" FROM stdin;
 \.
 
 BEGIN;
-INSERT INTO distribution."SoftwareVersion" (
-  id, "name", version, updated, owner, operating_system_version
-) VALUES (
-  3368, 'ant', '1.6.2', '2017-07-11 00:40:13.56732+00', 'orion', 67
-);
-INSERT INTO distribution."SoftwareVersion" (
-  id, "name", version, updated, owner, operating_system_version
-) VALUES (
-  3367, 'ant', '1.10.5', '2018-07-16 21:38:22.176268+00', 'orion', 70
-);
-INSERT INTO distribution."SoftwareVersion" (
-  id, "name", version, updated, owner, operating_system_version
-) VALUES (
-  3381, 'maven', '3.6.0', '2018-12-07 05:40:12.053229+00', 'orion', 70
-);
+-- Apache Ant
+INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
+  3368, 'ant', '1.6.2', '2017-07-11 00:40:13.56732+00', 'orion', 67);
+INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
+  3367, 'ant', '1.10.5', '2018-07-16 21:38:22.176268+00', 'orion', 70);
+-- Apache Maven
+INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
+  3381, 'maven', '3.6.0', '2018-12-07 05:40:12.053229+00', 'orion', 70);
+-- PHP
+INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
+  1618, 'php', '4.4.2', '2006-02-25 13:58:33.297188-05', 'orion', 14);
+INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
+  2418, 'php', '5.1.4', '2006-05-16 20:47:00-05', 'orion', 14);
+INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
+  3242, 'php', '4.4.4', '2006-10-12 18:50:00-05', 'orion', 45);
+INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
+  3243, 'php', '5.1.6', '2006-10-12 18:58:00-05', 'orion', 45);
+INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
+  3373, 'php', '7.0.0', '2018-07-17 06:22:41.987077+00', 'orion', 70);
+INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
+  3374, 'php', '7.1.0', '2018-07-17 11:34:17.801647+00', 'orion', 70);
+INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
+  3375, 'php', '7.2.0', '2018-07-17 12:53:16.84715+00', 'orion', 70);
+INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
+  3382, 'php', '7.3.0', '2018-12-09 05:40:46.777443+00', 'orion', 70);
 COMMIT;
 
-SELECT setval ('distribution."SoftwareVersion_id_seq"', 3382, false);
+SELECT setval ('distribution."SoftwareVersion_id_seq"', 3383, false);

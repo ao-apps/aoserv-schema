@@ -39,10 +39,16 @@ create table account."Profile" (
     not null,
   billing_email text
     not null,
+  "billingEmailFormat" account."Profile.EmailFormat"
+    NOT NULL
+    DEFAULT 'HTML',
   technical_contact text
     not null,
   technical_email text
     not null,
+  "technicalEmailFormat" account."Profile.EmailFormat"
+    NOT NULL
+    DEFAULT 'HTML',
   unique(accounting, priority)
 );
 grant all            on account."Profile" to aoadmin;

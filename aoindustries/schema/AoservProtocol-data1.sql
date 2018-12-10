@@ -1589,6 +1589,13 @@ billing.WhoisHistory:
   Added column error
   Removed column accounting'
 );
+insert into "schema"."AoservProtocol" values(
+  '1.81.20',
+  '2018-12-09',
+  'Added column account.Profile.billingEmailFormat
+Added column account.Profile.technicalEmailFormat
+Updated add_business_profile AOSH command'
+);
 /* TODO:
 renamed dns.TopLevelDomain to dns.Suffix
   added column isRegistrable

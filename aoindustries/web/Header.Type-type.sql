@@ -3,4 +3,4 @@ CREATE TYPE web."Header.Type" AS ENUM (
   'RequestHeader'
 );
 COMMENT ON TYPE web."Header.Type" IS
-'Matches enum com.aoindustries.aoserv.client.HttpdSiteBindHeader.Type';
+'Matches enum com.aoindustries.aoserv.client.web.Header.Type';

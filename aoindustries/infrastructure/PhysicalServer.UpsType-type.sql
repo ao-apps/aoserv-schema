@@ -13,4 +13,4 @@ COMMENT ON TYPE infrastructure."PhysicalServer.UpsType" IS
 │ apc        │ The UPS is an APC model and can be monitored for clean shutdown. │
 └────────────┴──────────────────────────────────────────────────────────────────┘
 
-Matches enum com.aoindustries.aoserv.client.PhysicalServer.UpsType';
+Matches enum com.aoindustries.aoserv.client.infrastructure.PhysicalServer.UpsType';

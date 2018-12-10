@@ -5,4 +5,4 @@ CREATE TYPE email."CyrusImapdServer.TimeUnit" AS ENUM (
   's'
 );
 COMMENT ON TYPE email."CyrusImapdServer.TimeUnit"
-IS 'Matches enum com.aoindustries.aoserv.client.CyrusImapdServer.TimeUnit';
+IS 'Matches enum com.aoindustries.aoserv.client.email.CyrusImapdServer.TimeUnit';

@@ -20,4 +20,4 @@ gd : Definite Good
 gn : Network Good
 uu : Unknown
 
-Matches enum com.aoindustries.aoserv.client.IpReputationLimiterLimit.LimiterClass';
+Matches enum com.aoindustries.aoserv.client.net.reputation.Class';

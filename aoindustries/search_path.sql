@@ -19,6 +19,7 @@ ALTER ROLE aoadmin SET search_path TO
   aosh,
   backup,
   billing,
+  "com.aoindustries.tlds",
   distribution,
   "distribution.management",
   dns,

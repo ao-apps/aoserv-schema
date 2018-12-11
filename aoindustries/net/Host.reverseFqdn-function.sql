@@ -1,3 +1,4 @@
+-- TODO: DomainName type
 CREATE OR REPLACE FUNCTION net."Host.reverseFqdn" (text)
 RETURNS text AS $$
   SELECT array_to_string(

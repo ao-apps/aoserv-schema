@@ -7,7 +7,7 @@ create table net."TcpRedirect" (
     not null,
   destination_host text
     not null,
-  destination_port net."Port"
+  destination_port "com.aoindustries.net"."Port"
     not null
 );
 grant all            on net."TcpRedirect" to aoadmin;

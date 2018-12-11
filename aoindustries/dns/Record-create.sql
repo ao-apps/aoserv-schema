@@ -11,7 +11,7 @@ create table dns."Record" (
   "type" text not null,
   priority integer,
   weight integer,
-  port net."Port",
+  port "com.aoindustries.net"."Port",
   destination text not null,
   "dhcpAddress" integer,
   ttl integer,

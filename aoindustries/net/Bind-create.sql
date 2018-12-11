@@ -13,10 +13,11 @@ create table net."Bind" (
     not null,
   "ipAddress" integer
     not null,
-  port net."Port"
+  port "com.aoindustries.net"."Port"
     not null,
-  net_protocol net."NetProtocol"
+  net_protocol "com.aoindustries.net"."Protocol"
     not null,
+    -- TODO: Should be TCP, UDP, SCTP only, matching Port class?
   app_protocol text
     not null,
   monitoring_enabled boolean
@@ -27,4 +28,4 @@ create table net."Bind" (
 );
 grant all                            on net."Bind" to aoadmin;
 grant select, insert, update, delete on net."Bind" to aoserv_app;
-grant select, insert                 on net."Bind" to management;
+grant select, insert, delete         on net."Bind" to management;

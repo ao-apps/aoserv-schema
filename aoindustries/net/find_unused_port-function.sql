@@ -1,11 +1,11 @@
 CREATE OR REPLACE FUNCTION net.find_unused_port (
   _server integer,
-  _from_port net."Port",
-  _net_protocol net."NetProtocol"
+  _from_port "com.aoindustries.net"."Port",
+  _net_protocol "com.aoindustries.net"."Protocol"
 )
-RETURNS net."Port" AS $$
+RETURNS "com.aoindustries.net"."Port" AS $$
 DECLARE
-  _port net."Port" := _from_port;
+  _port "com.aoindustries.net"."Port" := _from_port;
 BEGIN
   IF
     _server IS NULL
@@ -36,21 +36,21 @@ RETURNS NULL ON NULL INPUT;
 
 COMMENT ON FUNCTION net.find_unused_port (
   integer,
-  net."Port",
-  net."NetProtocol"
+  "com.aoindustries.net"."Port",
+  "com.aoindustries.net"."Protocol"
 ) IS 'Find an available port starting at the provided port number.
 The port will not be used any any IP address on the server';
 
 CREATE OR REPLACE FUNCTION net.find_unused_port (
   _server integer,
   _ip_address integer,
-  _from_port net."Port",
-  _net_protocol net."NetProtocol",
+  _from_port "com.aoindustries.net"."Port",
+  _net_protocol "com.aoindustries.net"."Protocol",
   _app_protocol text
 )
-RETURNS net."Port" AS $$
+RETURNS "com.aoindustries.net"."Port" AS $$
 DECLARE
-  _port net."Port" := _from_port;
+  _port "com.aoindustries.net"."Port" := _from_port;
 BEGIN
   IF
     _server IS NULL
@@ -117,8 +117,8 @@ RETURNS NULL ON NULL INPUT;
 COMMENT ON FUNCTION net.find_unused_port (
   integer,
   integer,
-  net."Port",
-  net."NetProtocol",
+  "com.aoindustries.net"."Port",
+  "com.aoindustries.net"."Protocol",
   text
 ) IS 'Find an available port on the given IP address starting at the provided port
 number.  The port will:

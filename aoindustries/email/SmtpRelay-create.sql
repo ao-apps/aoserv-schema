@@ -9,7 +9,7 @@ create table email."SmtpRelay" (
   package text
     not null,
   ao_server integer,
-  "host" text
+  "host" "com.aoindustries.net"."HostAddress"
     not null,
   "type" text
     not null,

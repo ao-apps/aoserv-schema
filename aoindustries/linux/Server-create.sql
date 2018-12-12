@@ -30,7 +30,7 @@ create table linux."Server" (
   time_zone text not null default 'Etc/UTC',
   jilter_bind integer,
   restrict_outbound_email boolean not null default true,
-  daemon_connect_address text,
+  daemon_connect_address "com.aoindustries.net"."HostAddress",
   failover_batch_size integer not null default 1000,
   monitoring_load_low real
     default 1

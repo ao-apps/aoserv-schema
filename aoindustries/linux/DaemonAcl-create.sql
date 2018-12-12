@@ -9,7 +9,7 @@ create table linux."DaemonAcl" (
     primary key,
   ao_server integer
     not null,
-  "host" text
+  "host" "com.aoindustries.net"."HostAddress"
     not null,
   unique(ao_server, "host")
 );

@@ -8,10 +8,10 @@ create table reseller."Brand" (
   check (nameserver4 is null or nameserver3 is not null), -- Must fill in order
   -- Email settings
   smtp_linux_server_account integer not null,
-  smtp_host text,
+  smtp_host "com.aoindustries.net"."HostAddress",
   smtp_password text not null,
   imap_linux_server_account integer not null,
-  imap_host text,
+  imap_host "com.aoindustries.net"."HostAddress",
   imap_password text not null,
   support_email_address integer not null,
   support_email_display text not null,

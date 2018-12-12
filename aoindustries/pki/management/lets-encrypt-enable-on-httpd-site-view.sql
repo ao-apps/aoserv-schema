@@ -11,7 +11,11 @@ select
   coalesce(is_443.hostname, is_80.hostname) as "PRIMARY_HOSTNAME",
   array_to_string(
     array(
-      select hostname from web."VirtualHostName" where
+      select
+        hostname::text -- Cast might not be required in future versions of PostgreSQL
+      from
+        web."VirtualHostName"
+      where
         httpd_site_bind = coalesce(is_443.id, is_80.id) and not is_primary
     ),
     ','

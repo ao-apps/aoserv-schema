@@ -1,10 +1,10 @@
 create table reseller."Brand" (
   accounting text primary key,
   -- Name server settings
-  nameserver1 text not null,
-  nameserver2 text not null,
-  nameserver3 text,
-  nameserver4 text,
+  nameserver1 "com.aoindustries.net"."DomainName" not null,
+  nameserver2 "com.aoindustries.net"."DomainName" not null,
+  nameserver3 "com.aoindustries.net"."DomainName",
+  nameserver4 "com.aoindustries.net"."DomainName",
   check (nameserver4 is null or nameserver3 is not null), -- Must fill in order
   -- Email settings
   smtp_linux_server_account integer not null,

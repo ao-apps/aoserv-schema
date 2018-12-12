@@ -8,7 +8,7 @@ create table web."VirtualHostName" (
     primary key,
   httpd_site_bind integer
     not null,
-  hostname text
+  hostname "com.aoindustries.net"."DomainName"
     not null,
   is_primary boolean
     not null,

@@ -1,10 +1,10 @@
 create table linux."Server" (
   server integer
     primary key,
-  hostname text not null unique
+  hostname "com.aoindustries.net"."DomainName"
+    not null unique
     check(
-      hostname=lower(hostname) -- Must be all lowercase
-      and hostname!='default'  -- Don't allow hostname of 'default' because they may conflict with Cyrus virtdomains defaultdomain.
+      hostname::text = lower(hostname::text) -- Must be all lowercase
       -- https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/migration_planning_guide/sect-red_hat_enterprise_linux-migration_planning_guide-networking
       -- "2.7.1. Recommended naming practices"
       and length(hostname) <= 64

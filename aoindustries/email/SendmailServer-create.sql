@@ -12,12 +12,12 @@ create table email."SendmailServer" (
     check ("name" is null or length("name") > 0),
   package integer
     not null,
-  hostname text
+  hostname "com.aoindustries.net"."DomainName"
     check(
       hostname is null
       or (
-        hostname=lower(hostname) -- Must be all lowercase
-        and hostname!='default'  -- Don't allow hostname of 'default' because they may conflict with Cyrus virtdomains defaultdomain.
+        hostname::text = lower(hostname::text) -- Must be all lowercase
+        -- Now done by DomainName type: and hostname != 'default'  -- Don't allow hostname of 'default' because they may conflict with Cyrus virtdomains defaultdomain.
       )
     ),
   server_certificate integer not null,

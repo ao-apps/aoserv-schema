@@ -1,12 +1,12 @@
 create table email."CyrusImapdServer" (
   ao_server integer primary key,
   sieve_net_bind integer unique,
-  servername text
+  servername "com.aoindustries.net"."DomainName"
     check(
       servername is null
       or (
-        servername=lower(servername) -- Must be all lowercase
-        and servername!='default'  -- Don't allow hostname of 'default' because they may conflict with Cyrus virtdomains defaultdomain.
+        servername::text = lower(servername::text) -- Must be all lowercase
+        -- Now done by DomainName type: and servername != 'default'  -- Don't allow hostname of 'default' because they may conflict with Cyrus virtdomains defaultdomain.
       )
     ),
   certificate integer not null,

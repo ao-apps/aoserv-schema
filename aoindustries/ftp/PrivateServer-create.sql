@@ -5,7 +5,7 @@ create table ftp."PrivateServer" (
     not null,
   logfile text
     not null,
-  hostname text
+  hostname "com.aoindustries.net"."DomainName"
     not null,
   email text
     not null,

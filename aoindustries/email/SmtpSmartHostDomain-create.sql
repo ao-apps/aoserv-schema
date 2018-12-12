@@ -7,8 +7,9 @@ create table email."SmtpSmartHostDomain" (
     default nextval('email."SmtpSmartHostDomain_id_seq"')
     primary key,
   smart_host integer not null,
-  "domain" text not null
-    check ("domain" = lower(trim("domain"))),
+  "domain" "com.aoindustries.net"."DomainName"
+    not null
+    check ("domain"::text = lower("domain"::text)),
   domain_out_burst integer,
   domain_out_rate real,
   check ((domain_out_burst is null)=(domain_out_rate is null))

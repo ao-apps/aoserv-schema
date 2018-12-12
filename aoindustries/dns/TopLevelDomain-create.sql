@@ -1,5 +1,5 @@
 create table dns."TopLevelDomain" (
-  "domain" text
+  "domain" "com.aoindustries.net"."DomainName"
     primary key,
   description text
     not null

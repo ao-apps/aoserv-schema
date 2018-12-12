@@ -9,7 +9,7 @@ create table billing."WhoisHistory" (
   id integer
     default nextval('billing."WhoisHistory_id_seq"')
     primary key,
-  "registrableDomain" text
+  "registrableDomain" "com.aoindustries.net"."DomainName"
     not null,
   "time" timestamp with time zone
     default now()

@@ -11,7 +11,7 @@ create table net."IpAddress" (
   device integer,
   "isAlias" boolean
     not null,
-  hostname text,
+  hostname "com.aoindustries.net"."DomainName",
   package integer
     not null,
   created timestamp with time zone

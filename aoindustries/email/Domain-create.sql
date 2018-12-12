@@ -6,9 +6,9 @@ create table email."Domain" (
   id integer
     default nextval('email."Domain_id_seq"')
     primary key,
-  "domain" text
+  "domain" "com.aoindustries.net"."DomainName"
     not null,
-  check ("domain"=lower(trim("domain"))),
+    check ("domain"::text = lower("domain"::text)),
   ao_server integer
     not null,
   package text

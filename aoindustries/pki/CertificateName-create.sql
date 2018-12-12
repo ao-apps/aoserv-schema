@@ -12,7 +12,7 @@ create table pki."CertificateName" (
     not null,
   is_wildcard boolean
     not null,
-  "domain" text
+  "domain" "com.aoindustries.net"."DomainName"
     not null
 );
 grant all    on pki."CertificateName" to aoadmin;

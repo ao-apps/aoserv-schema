@@ -12,8 +12,10 @@ create table web."VirtualHost" (
     not null,
   "name" text
     check ("name" is null or length("name") > 0),
+  -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
   access_log "com.aoindustries.net"."Path"
     not null,
+  -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
   error_log "com.aoindustries.net"."Path"
     not null,
   certificate integer,

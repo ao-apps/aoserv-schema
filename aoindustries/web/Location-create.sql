@@ -17,8 +17,10 @@ create table web."Location" (
   --       This could also be done as a separate table, which might reference location, site, ...
   auth_name text
     not null,
+  -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
   auth_group_file "com.aoindustries.net"."Path"
     not null,
+  -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
   auth_user_file "com.aoindustries.net"."Path"
     not null,
   require text

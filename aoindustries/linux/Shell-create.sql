@@ -1,4 +1,5 @@
 create table linux."Shell" (
+  -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
   "path" "com.aoindustries.net"."Path"
     primary key,
   is_login boolean

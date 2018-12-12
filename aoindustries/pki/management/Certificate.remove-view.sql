@@ -28,6 +28,7 @@ select
       sc2.ao_server=sc.ao_server and sc2.id!=sc.id and sc2.certbot_name is not null
     limit 1
   ) is not null then 'Yes' else 'No' end as "HAS_OTHER_CERTBOT",
+  -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
   case when sc.certbot_name is null then sc.key_file   else null::"com.aoindustries.net"."Path" end as "KEY_FILE",
   case when sc.certbot_name is null then sc.csr_file   else null::"com.aoindustries.net"."Path" end as "CSR_FILE",
   case when sc.certbot_name is null then sc.cert_file  else null::"com.aoindustries.net"."Path" end as "CERT_FILE",

@@ -3,6 +3,7 @@ create table ftp."PrivateServer" (
     primary key,
   root text
     not null,
+  -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
   logfile "com.aoindustries.net"."Path"
     not null,
   hostname "com.aoindustries.net"."DomainName"

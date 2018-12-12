@@ -10,21 +10,25 @@ create table pki."Certificate" (
     not null,
   package integer
     not null,
+  -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
   key_file "com.aoindustries.net"."Path" not null
     check (
       certbot_name is null
       or key_file = ('/etc/letsencrypt/live/' || certbot_name || '/privkey.pem')
     ),
+  -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
   csr_file "com.aoindustries.net"."Path"
     check (
       certbot_name is null
       or csr_file is null
     ),
+  -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
   cert_file "com.aoindustries.net"."Path" not null
     check (
       certbot_name is null
       or cert_file = ('/etc/letsencrypt/live/' || certbot_name || '/cert.pem')
     ),
+  -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
   chain_file "com.aoindustries.net"."Path"
     check (
       certbot_name is null

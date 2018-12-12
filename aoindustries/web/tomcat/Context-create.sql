@@ -14,6 +14,7 @@ create table "web.tomcat"."Context" (
     not null,
   cross_context boolean
     not null,
+  -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
   doc_base "com.aoindustries.net"."Path"
     not null,
   override boolean
@@ -29,6 +30,7 @@ create table "web.tomcat"."Context" (
   wrapper_class text,
   debug integer
     not null,
+  -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
   work_dir "com.aoindustries.net"."Path",
   server_xml_configured boolean
     not null,

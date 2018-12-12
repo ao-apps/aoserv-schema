@@ -12,6 +12,7 @@ create table linux."UserServer" (
     not null,
   uid linux."LinuxId"
     not null,
+  -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
   home "com.aoindustries.net"."Path"
     not null,
   autoresponder_from integer,

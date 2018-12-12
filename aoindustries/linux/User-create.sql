@@ -7,6 +7,7 @@ create table linux."User" (
   home_phone text,
   "type" text
     not null,
+  -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
   shell "com.aoindustries.net"."Path"
     not null,
   created timestamp with time zone

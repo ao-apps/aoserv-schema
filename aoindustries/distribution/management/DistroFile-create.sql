@@ -8,6 +8,7 @@ create table "distribution.management"."DistroFile" (
     primary key,
   operating_system_version integer
     not null,
+  -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
   "path" "com.aoindustries.net"."Path"
     not null,
   optional boolean

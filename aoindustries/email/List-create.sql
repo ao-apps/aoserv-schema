@@ -6,7 +6,7 @@ create table email."List" (
   id integer
     default nextval('email."List_id_seq"')
     primary key,
-  "path" text
+  "path" "com.aoindustries.net"."Path"
     not null,
   linux_server_account integer
     not null,

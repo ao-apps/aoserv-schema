@@ -10,22 +10,22 @@ create table pki."Certificate" (
     not null,
   package integer
     not null,
-  key_file text not null
+  key_file "com.aoindustries.net"."Path" not null
     check (
       certbot_name is null
       or key_file = ('/etc/letsencrypt/live/' || certbot_name || '/privkey.pem')
     ),
-  csr_file text
+  csr_file "com.aoindustries.net"."Path"
     check (
       certbot_name is null
       or csr_file is null
     ),
-  cert_file text not null
+  cert_file "com.aoindustries.net"."Path" not null
     check (
       certbot_name is null
       or cert_file = ('/etc/letsencrypt/live/' || certbot_name || '/cert.pem')
     ),
-  chain_file text
+  chain_file "com.aoindustries.net"."Path"
     check (
       certbot_name is null
       or chain_file = ('/etc/letsencrypt/live/' || certbot_name || '/chain.pem')

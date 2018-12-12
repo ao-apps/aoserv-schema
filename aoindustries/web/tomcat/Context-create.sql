@@ -14,7 +14,7 @@ create table "web.tomcat"."Context" (
     not null,
   cross_context boolean
     not null,
-  doc_base text
+  doc_base "com.aoindustries.net"."Path"
     not null,
   override boolean
     not null,
@@ -29,7 +29,7 @@ create table "web.tomcat"."Context" (
   wrapper_class text,
   debug integer
     not null,
-  work_dir text,
+  work_dir "com.aoindustries.net"."Path",
   server_xml_configured boolean
     not null,
   unique(tomcat_site, "path")

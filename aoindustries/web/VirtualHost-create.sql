@@ -12,9 +12,9 @@ create table web."VirtualHost" (
     not null,
   "name" text
     check ("name" is null or length("name") > 0),
-  access_log text
+  access_log "com.aoindustries.net"."Path"
     not null,
-  error_log text
+  error_log "com.aoindustries.net"."Path"
     not null,
   certificate integer,
   disable_log integer,

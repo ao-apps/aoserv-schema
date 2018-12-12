@@ -1,5 +1,5 @@
 create table linux."Shell" (
-  "path" text
+  "path" "com.aoindustries.net"."Path"
     primary key,
   is_login boolean
     not null,

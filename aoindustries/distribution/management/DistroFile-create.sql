@@ -8,7 +8,7 @@ create table "distribution.management"."DistroFile" (
     primary key,
   operating_system_version integer
     not null,
-  "path" text
+  "path" "com.aoindustries.net"."Path"
     not null,
   optional boolean
     not null,

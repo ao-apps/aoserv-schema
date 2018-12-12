@@ -1,7 +1,7 @@
 create table "web.tomcat"."Version" (
   version integer
     primary key,
-  install_dir text
+  install_dir "com.aoindustries.net"."Path"
     not null,
   requires_mod_jk boolean
     not null

@@ -12,7 +12,7 @@ create table linux."UserServer" (
     not null,
   uid linux."LinuxId"
     not null,
-  home text
+  home "com.aoindustries.net"."Path"
     not null,
   autoresponder_from integer,
   autoresponder_subject text,
@@ -44,4 +44,4 @@ create table linux."UserServer" (
 );
 grant all                            on linux."UserServer" to aoadmin;
 grant select, insert, update, delete on linux."UserServer" to aoserv_app;
-grant select                         on linux."UserServer" to management;
+grant select, delete                 on linux."UserServer" to management;

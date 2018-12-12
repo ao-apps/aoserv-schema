@@ -7,7 +7,7 @@ create table backup."BackupPartition" (
     default nextval('backup."BackupPartition_id_seq"')
     primary key,
   ao_server integer not null,
-  "path" text not null,
+  "path" "com.aoindustries.net"."Path" not null,
   enabled boolean not null,
   quota_enabled boolean not null,
   unique(ao_server, "path")

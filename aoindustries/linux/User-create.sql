@@ -7,7 +7,7 @@ create table linux."User" (
   home_phone text,
   "type" text
     not null,
-  shell text
+  shell "com.aoindustries.net"."Path"
     not null,
   created timestamp with time zone
     not null

@@ -8,7 +8,7 @@ create table signup."Request" (
     primary key,
   brand text not null,
   "time" timestamp with time zone not null default now(),
-  ip_address text not null,
+  ip_address "com.aoindustries.net"."InetAddress" not null,
   package_definition integer not null,
   business_name text not null,
   business_phone text not null,

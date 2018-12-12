@@ -21,7 +21,7 @@ create table signup_requests (
   "time" timestamp
     not null
     default now(),
-  ip_address inet
+  ip_address "com.aoindustries.net"."InetAddress"
     not null,
   classname text
     not null,

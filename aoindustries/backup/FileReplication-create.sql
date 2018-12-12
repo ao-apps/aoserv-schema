@@ -12,7 +12,7 @@ create table backup."FileReplication" (
   use_compression boolean not null,
   retention smallint not null,
   connect_address text,
-  connect_from inet,
+  connect_from "com.aoindustries.net"."InetAddress",
   enabled boolean not null default true,
   quota_gid linux."LinuxId",
   unique(server, backup_partition),

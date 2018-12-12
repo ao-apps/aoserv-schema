@@ -13,9 +13,9 @@ create table net."Device" (
   description text
     not null,
   delete_route text,
-  gateway inet,
-  network inet,
-  broadcast inet,
+  gateway "com.aoindustries.net"."InetAddress",
+  network "com.aoindustries.net"."InetAddress",
+  broadcast "com.aoindustries.net"."InetAddress",
   mac_address macaddr,
   max_bit_rate bigint,
   monitoring_bit_rate_low bigint,

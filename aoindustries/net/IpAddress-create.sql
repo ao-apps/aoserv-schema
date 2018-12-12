@@ -6,7 +6,7 @@ create table net."IpAddress" (
   id integer
     default nextval('net."IpAddress_id_seq"')
     primary key,
-  "inetAddress" inet
+  "inetAddress" "com.aoindustries.net"."InetAddress"
     not null,
   device integer,
   "isAlias" boolean
@@ -25,7 +25,7 @@ create table net."IpAddress" (
   "isDhcp" boolean
     not null
     default false,
-  "externalInetAddress" inet,
+  "externalInetAddress" "com.aoindustries.net"."InetAddress",
   netmask text
     not null,
   unique("inetAddress", device),

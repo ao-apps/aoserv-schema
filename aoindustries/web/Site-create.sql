@@ -40,7 +40,7 @@ create table web."Site" (
     not null,
   linux_group text -- TODO: This should go to linux.GroupServer.id on the same server
     not null,
-  server_admin text
+  server_admin "com.aoindustries.net"."Email"
     not null,
   disable_log integer,
   is_manual boolean not null default false,

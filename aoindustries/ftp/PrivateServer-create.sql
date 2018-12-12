@@ -8,7 +8,7 @@ create table ftp."PrivateServer" (
     not null,
   hostname "com.aoindustries.net"."DomainName"
     not null,
-  email text
+  email "com.aoindustries.net"."Email"
     not null,
   created timestamp with time zone
     default now()

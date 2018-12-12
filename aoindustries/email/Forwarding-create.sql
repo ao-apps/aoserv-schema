@@ -8,7 +8,7 @@ create table email."Forwarding" (
     primary key,
   email_address integer
     not null,
-  destination text
+  destination "com.aoindustries.net"."Email"
     not null,
   unique(email_address, destination)
 );

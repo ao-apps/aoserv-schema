@@ -25,7 +25,7 @@ create table signup."Request" (
   ba_cell_phone text,
   ba_home_phone text,
   ba_fax text,
-  ba_email text not null,
+  ba_email "com.aoindustries.net"."Email" not null,
   ba_address1 text,
   ba_address2 text,
   ba_city text,
@@ -34,7 +34,7 @@ create table signup."Request" (
   ba_zip text,
   ba_username text not null,
   billing_contact text not null,
-  billing_email text not null,
+  billing_email "com.aoindustries.net"."Email" not null,
   billing_use_monthly boolean not null,
   billing_pay_one_year boolean not null,
   -- The encrypted credit card details and password

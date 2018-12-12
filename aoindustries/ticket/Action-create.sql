@@ -30,7 +30,7 @@ create table ticket."Action" (
     old_value text,
     new_value text,
     -- remaining columns
-    from_address text -- The from email address, if submitted by email
+    from_address "com.aoindustries.net"."Email" -- The from email address, if submitted by email
       check(from_address is null or from_address=trim(from_address)),
     summary text,
     details text, -- Directly submitted or converted from email, cannot be changed

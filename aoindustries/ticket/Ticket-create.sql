@@ -7,7 +7,7 @@ create table ticket."Ticket" (
   created_by text, -- The business_administrator who created the ticket, if available
   category integer, -- An optional category
   ticket_type text not null,
-  from_address text, -- The from email address, if submitted by email
+  from_address "com.aoindustries.net"."Email", -- The from email address, if submitted by email
   summary text not null, -- From email subject
   details text, -- Directly submitted or converted from email, cannot be changed
   raw_email text, -- Only available when submitted via email

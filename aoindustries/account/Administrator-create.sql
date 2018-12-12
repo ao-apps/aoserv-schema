@@ -26,10 +26,8 @@ create table account."Administrator" (
   home_phone text,
   cell_phone text,
   fax text,
-  email text
-    not null
-    constraint email_chk
-      check (length(email)>0 and email=trim(email)),
+  email "com.aoindustries.net"."Email"
+    not null,
   address1 text,
   address2 text,
   city text,

@@ -13,7 +13,7 @@ create table billing."NoticeLog" (
     not null,
   billing_contact text
     not null,
-  billing_email text
+  billing_email "com.aoindustries.net"."Email"
     not null,
   balance numeric(9,2)
     not null,

@@ -14,7 +14,7 @@ create table payment."CreditCard" (
   first_name text not null,
   last_name text not null,
   company_name text,
-  email text,
+  email "com.aoindustries.net"."Email",
   phone text,
   fax text,
   customer_tax_id text,

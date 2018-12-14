@@ -1,6 +1,7 @@
-create sequence net."IpAddress_id_seq" cycle;
-grant all    on net."IpAddress_id_seq" to aoadmin;
-grant select on net."IpAddress_id_seq" to aoserv_app;
+create sequence         net."IpAddress_id_seq" cycle;
+grant all            on net."IpAddress_id_seq" to aoadmin;
+grant select         on net."IpAddress_id_seq" to aoserv_app;
+grant select, update on net."IpAddress_id_seq" to management; -- For 127.0.0.1 only
 
 create table net."IpAddress" (
   id integer
@@ -38,4 +39,4 @@ create table net."IpAddress" (
 grant all            on net."IpAddress" to aoadmin;
 grant select, update on net."IpAddress" to aoserv_app;
 grant select, update on net."IpAddress" to infrastructure;
-grant select         on net."IpAddress" to management;
+grant select, insert on net."IpAddress" to management; -- INSERT for 127.0.0.1 only - TODO: Trigger/view to enforce this?

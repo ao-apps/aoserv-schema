@@ -1,6 +1,7 @@
 create sequence         web."VirtualHost_id_seq" cycle;
 grant all            on web."VirtualHost_id_seq" to aoadmin;
 grant select, update on web."VirtualHost_id_seq" to aoserv_app;
+grant select, update on web."VirtualHost_id_seq" to management;
 
 create table web."VirtualHost" (
   id integer
@@ -37,3 +38,4 @@ create table web."VirtualHost" (
 );
 grant all                            on web."VirtualHost" to aoadmin;
 grant select, insert, update, delete on web."VirtualHost" to aoserv_app;
+grant select, insert, update         on web."VirtualHost" to management;

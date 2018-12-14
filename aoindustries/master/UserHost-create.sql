@@ -1,5 +1,6 @@
-create sequence master."UserHost_id_seq" cycle;
-grant all    on master."UserHost_id_seq" to aoadmin;
+create sequence         master."UserHost_id_seq" cycle;
+grant all            on master."UserHost_id_seq" to aoadmin;
+grant select, update on master."UserHost_id_seq" to management; -- For aoserv-daemon users only
 
 /*
 TODO: When a master.User has no net.Host listed, it is considered a
@@ -20,3 +21,4 @@ create table master."UserHost" (
 );
 grant all    on master."UserHost" to aoadmin;
 grant select on master."UserHost" to aoserv_app;
+grant insert on master."UserHost" to management; -- TODO: For aoserv-daemon users only - trigger/view to enforce?

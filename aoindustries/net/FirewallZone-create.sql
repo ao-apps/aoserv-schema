@@ -1,6 +1,6 @@
-create sequence net."FirewallZone_id_seq" cycle;
-grant all    on net."FirewallZone_id_seq" to aoadmin;
--- grant select on net."FirewallZone_id_seq" to aoserv_app;
+create sequence         net."FirewallZone_id_seq" cycle;
+grant all            on net."FirewallZone_id_seq" to aoadmin;
+grant select, update on net."FirewallZone_id_seq" to management;
 
 create table net."FirewallZone" (
   id integer
@@ -20,6 +20,6 @@ create table net."FirewallZone" (
     default "name" in ('dmz', 'external', 'public'),
   unique(server, "name")
 );
-grant all    on net."FirewallZone" to aoadmin;
-grant select on net."FirewallZone" to aoserv_app;
-grant select on net."FirewallZone" to management;
+grant all                    on net."FirewallZone" to aoadmin;
+grant select                 on net."FirewallZone" to aoserv_app;
+grant select, insert, delete on net."FirewallZone" to management;

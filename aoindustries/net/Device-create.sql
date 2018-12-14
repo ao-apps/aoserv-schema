@@ -1,6 +1,7 @@
 create sequence         net."Device_id_seq" cycle;
 grant all            on net."Device_id_seq" to aoadmin;
 grant select, update on net."Device_id_seq" to infrastructure;
+grant select, update on net."Device_id_seq" to management;
 
 create table net."Device" (
   id integer
@@ -30,3 +31,4 @@ create table net."Device" (
 grant all                    on net."Device" to aoadmin;
 grant select                 on net."Device" to aoserv_app;
 grant select, insert, update on net."Device" to infrastructure;
+grant select, insert         on net."Device" to management;

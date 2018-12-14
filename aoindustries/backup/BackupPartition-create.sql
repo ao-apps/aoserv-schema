@@ -15,3 +15,4 @@ create table backup."BackupPartition" (
 );
 grant all    on backup."BackupPartition" to aoadmin;
 grant select on backup."BackupPartition" to aoserv_app;
+grant select on backup."BackupPartition" to management;

@@ -1,6 +1,7 @@
-create sequence email."SystemAlias_id_seq" cycle;
-grant all    on email."SystemAlias_id_seq" to aoadmin;
-grant select on email."SystemAlias_id_seq" to aoserv_app;
+create sequence         email."SystemAlias_id_seq" cycle;
+grant all            on email."SystemAlias_id_seq" to aoadmin;
+grant select         on email."SystemAlias_id_seq" to aoserv_app;
+grant select, update on email."SystemAlias_id_seq" to management;
 
 create table email."SystemAlias" (
   id integer
@@ -16,3 +17,4 @@ create table email."SystemAlias" (
 );
 grant all    on email."SystemAlias" to aoadmin;
 grant select on email."SystemAlias" to aoserv_app;
+grant insert on email."SystemAlias" to management;

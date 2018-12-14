@@ -27,3 +27,4 @@ create table distribution."OperatingSystemVersion" (
 );
 grant all    on distribution."OperatingSystemVersion" to aoadmin;
 grant select on distribution."OperatingSystemVersion" to aoserv_app;
+grant select on distribution."OperatingSystemVersion" to management;

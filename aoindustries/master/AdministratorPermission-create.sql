@@ -1,6 +1,7 @@
 create sequence         master."AdministratorPermission_id_seq" cycle;   
 grant all            on master."AdministratorPermission_id_seq" to aoadmin;
 grant select, update on master."AdministratorPermission_id_seq" to aoserv_app;
+grant select, update on master."AdministratorPermission_id_seq" to management; -- For aoserv-daemon users only, add_ticket and edit_ticket
 
 create table master."AdministratorPermission" (
   id integer
@@ -14,3 +15,4 @@ create table master."AdministratorPermission" (
 );
 grant all                    on master."AdministratorPermission" to aoadmin;
 grant select, insert, delete on master."AdministratorPermission" to aoserv_app;
+grant insert                 on master."AdministratorPermission" to management; -- TODO: For aoserv-daemon users only, add_ticket and edit_ticket - trigger/view to enforce?

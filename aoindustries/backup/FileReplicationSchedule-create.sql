@@ -1,6 +1,7 @@
 create sequence         backup."FileReplicationSchedule_id_seq" cycle;
 grant all            on backup."FileReplicationSchedule_id_seq" to aoadmin;
 grant select, update on backup."FileReplicationSchedule_id_seq" to aoserv_app;
+grant select, update on backup."FileReplicationSchedule_id_seq" to management;
 
 create table backup."FileReplicationSchedule" (
   id integer
@@ -23,3 +24,4 @@ create table backup."FileReplicationSchedule" (
 );
 grant all                    on backup."FileReplicationSchedule" to aoadmin;
 grant select, insert, delete on backup."FileReplicationSchedule" to aoserv_app;
+grant insert                 on backup."FileReplicationSchedule" to management;

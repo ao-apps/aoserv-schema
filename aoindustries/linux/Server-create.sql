@@ -100,7 +100,7 @@ comment on column linux."Server"."uidMax" is 'The max value for automatic uid se
 comment on column linux."Server"."gidMin" is 'The min value for automatic uid selection in groupadd';
 comment on column linux."Server"."gidMax" is 'The max value for automatic uid selection in groupadd';
 
-grant all            on linux."Server" to aoadmin;
-grant select, update on linux."Server" to aoserv_app;
-grant select, update on linux."Server" to infrastructure;
-grant select         on linux."Server" to management;
+grant all                    on linux."Server" to aoadmin;
+grant select, update         on linux."Server" to aoserv_app;
+grant select, update         on linux."Server" to infrastructure;
+grant select, insert, update on linux."Server" to management;

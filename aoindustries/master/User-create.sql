@@ -30,3 +30,4 @@ create table master."User" (
 grant all    on master."User" to aoadmin;
 grant select on master."User" to aoserv_app;
 grant select on master."User" to accounting;
+grant insert on master."User" to management; -- TODO: For aoserv-daemon users only - trigger/view to enforce?

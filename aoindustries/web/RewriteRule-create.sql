@@ -1,6 +1,7 @@
-create sequence web."RewriteRule_id_seq" cycle;
-grant all    on web."RewriteRule_id_seq" to aoadmin;
-grant select on web."RewriteRule_id_seq" to aoserv_app;
+create sequence         web."RewriteRule_id_seq" cycle;
+grant all            on web."RewriteRule_id_seq" to aoadmin;
+grant select         on web."RewriteRule_id_seq" to aoserv_app;
+grant select, update on web."RewriteRule_id_seq" to management;
 
 create table web."RewriteRule" (
   id            integer
@@ -21,3 +22,4 @@ create table web."RewriteRule" (
 );
 grant all            on web."RewriteRule" to aoadmin;
 grant select, delete on web."RewriteRule" to aoserv_app;
+grant insert         on web."RewriteRule" to management;

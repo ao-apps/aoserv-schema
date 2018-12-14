@@ -64,3 +64,4 @@ create table web."Site" (
 );
 grant all                            on web."Site" to aoadmin;
 grant select, insert, update, delete on web."Site" to aoserv_app;
+grant select                         on web."Site" to management;

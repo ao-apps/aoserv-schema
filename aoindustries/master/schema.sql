@@ -5,3 +5,4 @@ comment on schema master is 'AOServ Master';
 grant all   on schema master to aoadmin;
 grant usage on schema master to aoserv_app;
 grant usage on schema master to accounting;
+grant usage on schema master to management;

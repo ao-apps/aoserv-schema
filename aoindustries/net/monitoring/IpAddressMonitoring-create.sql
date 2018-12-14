@@ -18,6 +18,7 @@ create table "net.monitoring"."IpAddressMonitoring" (
     default true
 );
 
-grant all            on "net.monitoring"."IpAddressMonitoring" to aoadmin;
-grant select, update on "net.monitoring"."IpAddressMonitoring" to aoserv_app;
-grant select, update on "net.monitoring"."IpAddressMonitoring" to monitoring;
+grant all                            on "net.monitoring"."IpAddressMonitoring" to aoadmin;
+grant select, update                 on "net.monitoring"."IpAddressMonitoring" to aoserv_app;
+grant select, insert, update, delete on "net.monitoring"."IpAddressMonitoring" to infrastructure;
+grant select, insert, update         on "net.monitoring"."IpAddressMonitoring" to management; -- INSERT for 127.0.0.1 only - TODO: Trigger/view to enforce this?

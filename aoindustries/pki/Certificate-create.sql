@@ -1,6 +1,7 @@
-create sequence pki."Certificate_id_seq" cycle;
-grant all    on pki."Certificate_id_seq" to aoadmin;
-grant select on pki."Certificate_id_seq" to aoserv_app;
+create sequence         pki."Certificate_id_seq" cycle;
+grant all            on pki."Certificate_id_seq" to aoadmin;
+grant select         on pki."Certificate_id_seq" to aoserv_app;
+grant select, update on pki."Certificate_id_seq" to management;
 
 create table pki."Certificate" (
   id integer
@@ -44,5 +45,6 @@ create table pki."Certificate" (
       )
     )
 );
-grant all    on pki."Certificate" to aoadmin;
-grant select on pki."Certificate" to aoserv_app;
+grant all                    on pki."Certificate" to aoadmin;
+grant select                 on pki."Certificate" to aoserv_app;
+grant select, insert, delete on pki."Certificate" to management;

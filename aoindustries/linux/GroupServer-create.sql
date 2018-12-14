@@ -1,6 +1,7 @@
 create sequence         linux."GroupServer_id_seq" cycle;
 grant all            on linux."GroupServer_id_seq" to aoadmin;
 grant select, update on linux."GroupServer_id_seq" to aoserv_app;
+grant select, update on linux."GroupServer_id_seq" to management; -- For "root" only
 
 create table linux."GroupServer" (
   id integer
@@ -20,4 +21,4 @@ create table linux."GroupServer" (
 );
 grant all                            on linux."GroupServer" to aoadmin;
 grant select, insert, update, delete on linux."GroupServer" to aoserv_app;
-grant select                         on linux."GroupServer" to management;
+grant select, insert, delete         on linux."GroupServer" to management; -- TODO: "INSERT" or "root" only - trigger/view to enforce?

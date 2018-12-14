@@ -45,3 +45,4 @@ where
 
 revoke all    on "pki.management"."lets-encrypt-enable-on-httpd-site" from aoadmin;
 grant  select on "pki.management"."lets-encrypt-enable-on-httpd-site" to   aoadmin;
+grant  select on "pki.management"."lets-encrypt-enable-on-httpd-site" to   management;

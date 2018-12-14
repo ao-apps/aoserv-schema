@@ -1,6 +1,7 @@
-create sequence master."UserAcl_id_seq" cycle;
-grant all    on master."UserAcl_id_seq" to aoadmin;
-grant select on master."UserAcl_id_seq" to aoserv_app;
+create sequence         master."UserAcl_id_seq" cycle;
+grant all            on master."UserAcl_id_seq" to aoadmin;
+grant select         on master."UserAcl_id_seq" to aoserv_app;
+grant select, update on master."UserAcl_id_seq" to management; -- For aoserv-daemon users only
 
 /*
 TODO: When a User has no hosts, it is allowed to connect from anywhere.
@@ -23,3 +24,4 @@ create table master."UserAcl" (
 );
 grant all    on master."UserAcl" to aoadmin;
 grant select on master."UserAcl" to aoserv_app;
+grant insert on master."UserAcl" to management; -- TODO: For aoserv-daemon users only - trigger/view to enforce?

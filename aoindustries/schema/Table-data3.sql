@@ -729,6 +729,15 @@ select "schema".add_table(
     false,
     'The <code>httpd_site_bind_redirects</code> adds redirects to httpd_site_binds.',
     '1.81.1',
+    '1.81.20'
+);
+select "schema".add_table(
+    'web',
+    'RewriteRule',
+    'Rewrite Rules',
+    false,
+    'The per-VirtualHost set of RewriteRule.',
+    '1.81.21',
     null
 );
 select "schema".add_table(

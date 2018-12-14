@@ -1596,6 +1596,16 @@ insert into "schema"."AoservProtocol" values(
 Added column account.Profile.technicalEmailFormat
 Updated add_business_profile AOSH command'
 );
+insert into "schema"."AoservProtocol" values(
+  '1.81.21',
+  '2018-12-14',
+  'Renamed table httpd_site_bind_redirect to RewriteRule
+Renamed column RewriteRule.pkey to id
+Renamed column RewriteRule.httpd_site_bind to virtualHost
+Renamed column RewriteRule.sort_order to sortOrder
+Added column RewriteRule.flags
+Removed column RewriteRule.no_escape'
+);
 /* TODO:
 renamed dns.TopLevelDomain to dns.Suffix
   added column isRegistrable

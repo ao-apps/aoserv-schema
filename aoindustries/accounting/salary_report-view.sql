@@ -20,3 +20,4 @@ group by
 
 revoke all    on accounting.salary_report from aoadmin;
 grant  select on accounting.salary_report to   aoadmin;
+grant  select on accounting.salary_report to   accounting;

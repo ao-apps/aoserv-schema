@@ -10,7 +10,7 @@ from
              "web.tomcat"."SharedTomcat" hst
   inner join linux."Server"              ao  on hst.ao_server            =  ao.server
   inner join linux."UserServer"          lsa on hst.linux_server_account = lsa.id
-  inner join account."Username"          un  on lsa.username             =  un.username
+  inner join account."User"              un  on lsa.username             =  un.username
   inner join billing."Package"           pk  on  un.package              =  pk."name"
   inner join account."Account"           bu  on  pk.accounting           =  bu.accounting
 where

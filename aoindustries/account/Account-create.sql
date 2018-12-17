@@ -1,4 +1,5 @@
 create table account."Account" (
+  -- TODO: Rename to "name"
   accounting text
     primary key,
   contract_version text,

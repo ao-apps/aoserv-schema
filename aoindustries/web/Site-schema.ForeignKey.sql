@@ -1,7 +1,8 @@
 select "schema".add_foreign_key('web', 'httpd_sites', 'ao_server',               'linux',        'ao_servers',          'server',   '1.0a100', null);
 select "schema".add_foreign_key('web', 'httpd_sites', 'package',                 'billing',      'packages',            'name',     '1.0a100', '1.80');
 select "schema".add_foreign_key('web', 'httpd_sites', 'package',                 'billing',      'packages',            'name',     '1.80.0',  null);
-select "schema".add_foreign_key('web', 'httpd_sites', 'linux_account',           'linux',        'linux_accounts',      'username', '1.0a100', null);
+select "schema".add_foreign_key('web', 'httpd_sites', 'linux_account',           'linux',        'linux_accounts',      'username', '1.0a100', '1.81.21');
+select "schema".add_foreign_key('web', 'httpd_sites', 'linux_account',           'linux',        'linux_accounts',      'username', '1.81.22', null);
 select "schema".add_foreign_key('web', 'httpd_sites', 'linux_group',             'linux',        'linux_groups',        'name',     '1.0a100', '1.80');
 select "schema".add_foreign_key('web', 'httpd_sites', 'linux_group',             'linux',        'linux_groups',        'name',     '1.80.0',  null);
 select "schema".add_foreign_key('web', 'httpd_sites', 'config_backup_level',     'backup',       'backup_levels',       'level',    '1.0a100', '1.30');

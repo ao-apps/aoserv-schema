@@ -1,4 +1,4 @@
-COPY account."Username" (username, package, disable_log) FROM stdin;
+COPY account."User" (username, package, disable_log) FROM stdin;
 adm	AOINDUSTRIES	\N
 aoadmin	AOINDUSTRIES	\N
 avahi	AOINDUSTRIES	\N

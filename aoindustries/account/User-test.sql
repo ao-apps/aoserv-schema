@@ -1,4 +1,4 @@
-COPY account."Username" FROM stdin;
+COPY account."User" FROM stdin;
 orion	AOINDUSTRIES	\N
 test	AOINDUSTRIES	\N
 edrugstore	AOINDUSTRIES	\N

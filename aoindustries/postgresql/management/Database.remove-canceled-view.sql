@@ -10,7 +10,7 @@ select
 from
              postgresql."Database"   pd
   inner join postgresql."UserServer" psu on  pd.datdba          = psu.id
-  inner join account."Username"      un  on psu.username        =  un.username
+  inner join account."User"          un  on psu.username        =  un.username
   inner join billing."Package"       pk  on  un.package         =  pk."name"
   inner join account."Account"       bu  on  pk.accounting      =  bu.accounting
   inner join postgresql."Server"     ps  on  pd.postgres_server =  ps.bind

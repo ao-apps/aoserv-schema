@@ -1,7 +1,7 @@
 alter table postgresql."User"
   add constraint username_fkey
   foreign key (username)
-  references account."Username" (username)
+  references account."User" (username)
   on delete restrict
   on update cascade
 ;

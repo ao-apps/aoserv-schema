@@ -35,7 +35,7 @@ union all (select accounting, aosh_command from "net.management"."IpAddress.pack
 union all (select accounting, aosh_command from "linux.management"."User.remove-canceled" order by accounting, username)
 -- linux.Group
 union all (select accounting, aosh_command from "linux.management"."Group.remove-canceled" order by accounting, "name")
--- account.Username
+-- account.User
 union all (select accounting, aosh_command from "account.management"."Username.remove-canceled" order by accounting, username)
 -- account.AccountHost
 union all (select accounting, aosh_command from "account.management"."AccountHost.remove-canceled" order by accounting, is_default)

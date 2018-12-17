@@ -4,3 +4,4 @@ comment on schema "pki.management" is 'AO professional management service';
 
 grant all   on schema "pki.management" to aoadmin;
 grant usage on schema "pki.management" to management;
+-- TODO: Rename to "crypto.management"

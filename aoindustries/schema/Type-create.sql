@@ -1,3 +1,4 @@
+-- TODO: Supported schema on types, with type name only being unique per schema
 create table "schema"."Type" (
   id integer
     primary key,

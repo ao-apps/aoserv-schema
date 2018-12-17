@@ -73,7 +73,7 @@ Naming:
 
 6) Foreign key columns lowerCamelCase name, based on the name of the table they reference.
    This connects well to AOSH dot-join syntax:
-       select package.name from account.Username
+       select package.name from account.User
 
    Here "based on" prefer short versions within a schema, while schema-prefixed
    outside the schema.  Example:

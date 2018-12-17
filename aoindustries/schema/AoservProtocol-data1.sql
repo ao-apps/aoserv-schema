@@ -1606,6 +1606,18 @@ Renamed column RewriteRule.sort_order to sortOrder
 Added column RewriteRule.flags
 Removed column RewriteRule.no_escape'
 );
+insert into "schema"."AoservProtocol" values(
+  '1.81.22',
+  '2018-12-17',
+  'Renamed account.Username to account.User
+Added linux_username to schema.Type
+Changed linux.User.username to linux_username type
+Changed web.Site.linux_account to linux_username type
+Changed linux.UserServer.username to linux_username type
+Changed linux.GroupUser.name to linux_username type
+Changed ftp.GuestUser.username to linux_username type
+Changed distribution.management.DistroFile.linux_account to linux_username type'
+);
 /* TODO:
 renamed dns.TopLevelDomain to dns.Suffix
   added column isRegistrable

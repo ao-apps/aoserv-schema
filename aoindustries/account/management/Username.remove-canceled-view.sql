@@ -6,9 +6,9 @@ select
   'remove_username ' || un.username as aosh_command,
   un.username
 from
-             account."Username"      un
-  inner join billing."Package"       pk on un.package    = pk."name"
-  inner join account."Account"       bu on pk.accounting = bu.accounting
+             account."User"    un
+  inner join billing."Package" pk on un.package    = pk."name"
+  inner join account."Account" bu on pk.accounting = bu.accounting
   -- business_administrators remain even after canceled
   left  join account."Administrator" ba on un.username   = ba.username
 where

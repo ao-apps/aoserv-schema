@@ -33,7 +33,7 @@ union all (select 'pki'::name as "schema", 'Certificate'::name as "table", count
 -- TODO: linux.User (orphaned)
 -- TODO: linux.GroupServer (orphaned or with no linux.GroupUser)
 -- TODO: linux.Group (orphaned or with no linux.GroupUser)
--- TODO: account.Username (orphaned)
+-- TODO: account.User (orphaned)
 -- TODO: account.AccountHost (access to a server but without any resources - useful?)
 ;
 

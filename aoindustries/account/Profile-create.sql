@@ -39,11 +39,13 @@ create table account."Profile" (
     not null,
   billing_email text
     not null,
+  -- TODO: Remove this column once the implementation in account."Profile.bilingEmail{}" is verified
   "billingEmailFormat" account."Profile.EmailFormat"
     NOT NULL
     DEFAULT 'HTML',
   technical_contact text
     not null,
+  -- TODO: Remove this column once the implementation in account."Profile.technicalEmail{}" is verified
   technical_email text
     not null,
   "technicalEmailFormat" account."Profile.EmailFormat"

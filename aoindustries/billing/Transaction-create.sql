@@ -38,7 +38,7 @@ create table billing."Transaction" (
     constraint payment_confirmed_chk
       check (payment_confirmed='W' or payment_confirmed='Y' or payment_confirmed='N')
 );
-grant all                    on billing."Transaction" to aoadmin;
-grant select, insert, update on billing."Transaction" to aoserv_app;
-grant select                 on billing."Transaction" to accounting;
-grant select, insert, update on billing."Transaction" to billing;
+grant all                            on billing."Transaction" to aoadmin;
+grant select, insert, update         on billing."Transaction" to aoserv_app;
+grant select                         on billing."Transaction" to accounting;
+grant select, insert, update, delete on billing."Transaction" to billing;

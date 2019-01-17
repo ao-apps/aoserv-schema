@@ -1,6 +1,7 @@
-create sequence accounting."BankTransaction_id_seq" cycle;
-grant all    on accounting."BankTransaction_id_seq" to aoadmin;
-grant select on accounting."BankTransaction_id_seq" to aoserv_app;
+create sequence         accounting."BankTransaction_id_seq" cycle;
+grant all            on accounting."BankTransaction_id_seq" to aoadmin;
+grant select         on accounting."BankTransaction_id_seq" to aoserv_app;
+grant select, update on accounting."BankTransaction_id_seq" to accounting;
 
 create table accounting."BankTransaction" (
   id integer
@@ -29,6 +30,6 @@ create table accounting."BankTransaction" (
 --    check ( case when ( select is_negative from accounting."BankTransactionType" t1 where t1."name"=type )=true then amount<=0 else amount>=0 end )
 );
 
-grant all                    on accounting."BankTransaction" to aoadmin;
-grant select                 on accounting."BankTransaction" to aoserv_app;
-grant select, update, insert on accounting."BankTransaction" to accounting;
+grant all                            on accounting."BankTransaction" to aoadmin;
+grant select                         on accounting."BankTransaction" to aoserv_app;
+grant select, update, insert, delete on accounting."BankTransaction" to accounting;

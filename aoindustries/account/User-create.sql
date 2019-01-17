@@ -17,4 +17,5 @@ create table account."User" (
 );
 grant all                            on account."User" to aoadmin;
 grant select, insert, update, delete on account."User" to aoserv_app;
+grant select                         on account."User" to accounting;
 grant insert                         on account."User" to management;

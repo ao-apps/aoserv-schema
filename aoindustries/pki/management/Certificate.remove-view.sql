@@ -41,3 +41,4 @@ from
 
 revoke all    on "pki.management"."Certificate.remove" from aoadmin;
 grant  select on "pki.management"."Certificate.remove" to   aoadmin;
+grant  select on "pki.management"."Certificate.remove" to   management;

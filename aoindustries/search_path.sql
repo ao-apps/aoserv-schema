@@ -19,6 +19,7 @@ ALTER ROLE aoadmin SET search_path TO
   aosh,
   backup,
   billing,
+  "com.aoindustries.creditcards",
   "com.aoindustries.net",
   "com.aoindustries.tlds",
   distribution,
@@ -66,6 +67,7 @@ ALTER ROLE accounting SET search_path TO
   account,
   accounting,
   billing,
+  "com.aoindustries.creditcards",
   master,
   payment;
 

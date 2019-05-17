@@ -1618,6 +1618,12 @@ Changed linux.GroupUser.name to linux_username type
 Changed ftp.GuestUser.username to linux_username type
 Changed distribution.management.DistroFile.linux_account to linux_username type'
 );
+insert into "schema"."AoservProtocol" values(
+  '1.82.0',
+  '2019-05-16',
+  'Added payment.Payment.authorizationProviderReplacementMaskedCardNumber column
+Added payment.Payment.authorizationReplacementMaskedCardNumber column'
+);
 /* TODO:
 renamed dns.TopLevelDomain to dns.Suffix
   added column isRegistrable

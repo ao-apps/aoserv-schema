@@ -1621,8 +1621,18 @@ Changed distribution.management.DistroFile.linux_account to linux_username type'
 insert into "schema"."AoservProtocol" values(
   '1.82.0',
   '2019-05-16',
-  'Added payment.Payment.authorizationProviderReplacementMaskedCardNumber column
-Added payment.Payment.authorizationReplacementMaskedCardNumber column'
+  'Added payment.CreditCard.expirationMonth column
+Added payment.CreditCard.expirationYear column
+Removed payment.CreditCard.encrypted_expiration column
+Removed payment.CreditCard.encryption_expiration_from column
+Removed payment.CreditCard.encryption_expiration_recipient column
+Added payment.Payment.creditCard.expirationMonth column
+Added payment.Payment.creditCard.expirationYear column
+Added payment.Payment.authorizationResult.providerReplacementMaskedCardNumber column
+Added payment.Payment.authorizationResult.replacementMaskedCardNumber column
+Added payment.Payment.authorizationResult.providerReplacementExpiration column
+Added payment.Payment.authorizationResult.replacementExpirationMonth column
+Added payment.Payment.authorizationResult.replacementExpirationYear column'
 );
 /* TODO:
 renamed dns.TopLevelDomain to dns.Suffix

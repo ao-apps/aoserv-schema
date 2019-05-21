@@ -5,5 +5,5 @@ select "schema".add_foreign_key('payment', 'credit_cards', 'country_code',      
 select "schema".add_foreign_key('payment', 'credit_cards', 'created_by',                       'account', 'business_administrators', 'username',    '1.0a100', null);
 select "schema".add_foreign_key('payment', 'credit_cards', 'encryption_card_number_from',      'pki',     'encryption_keys',         'pkey',        '1.31',    null);
 select "schema".add_foreign_key('payment', 'credit_cards', 'encryption_card_number_recipient', 'pki',     'encryption_keys',         'pkey',        '1.31',    null);
-select "schema".add_foreign_key('payment', 'credit_cards', 'encryption_expiration_from',       'pki',     'encryption_keys',         'pkey',        '1.31',    null);
-select "schema".add_foreign_key('payment', 'credit_cards', 'encryption_expiration_recipient',  'pki',     'encryption_keys',         'pkey',        '1.31',    null);
+select "schema".add_foreign_key('payment', 'credit_cards', 'encryption_expiration_from',       'pki',     'encryption_keys',         'pkey',        '1.31',    '1.81.22');
+select "schema".add_foreign_key('payment', 'credit_cards', 'encryption_expiration_recipient',  'pki',     'encryption_keys',         'pkey',        '1.31',    '1.81.22');

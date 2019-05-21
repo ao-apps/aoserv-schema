@@ -10,6 +10,8 @@ create table payment."CreditCard" (
   accounting text not null,
   group_name text,
   card_info text not null,
+  "expirationMonth" smallint,
+  "expirationYear" smallint,
   provider_unique_id text not null,
   first_name text not null,
   last_name text not null,
@@ -35,18 +37,49 @@ create table payment."CreditCard" (
   encrypted_card_number text,
   encryption_card_number_from integer,
   encryption_card_number_recipient integer,
-  encrypted_expiration text,
-  encryption_expiration_from integer,
-  encryption_expiration_recipient integer,
   check (
     (
         encrypted_card_number is null and encryption_card_number_from is null and encryption_card_number_recipient is null
-        and encrypted_expiration is null and encryption_expiration_from is null and encryption_expiration_recipient is null
     ) or (
         encrypted_card_number is not null and encryption_card_number_from is not null and encryption_card_number_recipient is not null
-        and encrypted_expiration is not null and encryption_expiration_from is not null and encryption_expiration_recipient is not null
     )
   )
 );
+/*
+insert into payment."CreditCard" select
+  id,
+  processor_id,
+  accounting,
+  group_name,
+  card_info,
+  null as "expirationMonth",
+  null as "expirationYear",
+  provider_unique_id,
+  first_name,
+  last_name,
+  company_name,
+  email,
+  phone,
+  fax,
+  customer_tax_id,
+  street_address1,
+  street_address2,
+  city,
+  "state",
+  postal_code,
+  country_code,
+  created,
+  created_by,
+  principal_name,
+  use_monthly,
+  active,
+  deactivated_on,
+  deactivate_reason,
+  description,
+  encrypted_card_number,
+  encryption_card_number_from,
+  encryption_card_number_recipient
+from payment."CreditCard_20190520";
+ */
 grant all                            on payment."CreditCard" to aoadmin;
 grant select, insert, update, delete on payment."CreditCard" to aoserv_app;

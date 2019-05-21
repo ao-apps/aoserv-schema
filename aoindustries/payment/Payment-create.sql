@@ -40,6 +40,8 @@ create table payment."Payment" (
   credit_card_group_name text,
   credit_card_provider_unique_id text,
   credit_card_masked_card_number text not null,
+  "creditCard.expirationMonth" smallint,
+  "creditCard.expirationYear" smallint,
   credit_card_first_name text not null,
   credit_card_last_name text not null,
   credit_card_company_name text,
@@ -65,8 +67,12 @@ create table payment."Payment" (
   authorization_error_code "com.aoindustries.creditcards"."TransactionResult.ErrorCode",
   authorization_provider_error_message text,
   authorization_provider_unique_id text,
-  "authorizationProviderReplacementMaskedCardNumber" text,
-  "authorizationReplacementMaskedCardNumber" text,
+  -- Names match PropertiesPersistenceMechanism for convenience, but no technical requirement for this
+  "authorizationResult.providerReplacementMaskedCardNumber" text,
+  "authorizationResult.replacementMaskedCardNumber" text,
+  "authorizationResult.providerReplacementExpiration" text,
+  "authorizationResult.replacementExpirationMonth" smallint,
+  "authorizationResult.replacementExpirationYear" smallint,
   authorization_provider_approval_result text,
   authorization_approval_result "com.aoindustries.creditcards"."AuthorizationResult.ApprovalResult",
   authorization_provider_decline_reason text,
@@ -139,6 +145,8 @@ insert into payment."Payment" select
   credit_card_group_name,
   credit_card_provider_unique_id,
   credit_card_masked_card_number,
+  null as "creditCard.expirationMonth",
+  null as "creditCard.expirationYear",
   credit_card_first_name,
   credit_card_last_name,
   credit_card_company_name,
@@ -161,8 +169,11 @@ insert into payment."Payment" select
   authorization_error_code,
   authorization_provider_error_message,
   authorization_provider_unique_id,
-  null as "authorizationProviderReplacementMaskedCardNumber",
-  null as "authorizationReplacementMaskedCardNumber",
+  "authorizationProviderReplacementMaskedCardNumber" as "authorizationResult.providerReplacementMaskedCardNumber",
+  "authorizationReplacementMaskedCardNumber" as "authorizationResult.replacementMaskedCardNumber",
+  null as "authorizationResult.providerReplacementExpiration",
+  null as "authorizationResult.replacementExpirationMonth",
+  null as "authorizationResult.replacementExpirationYear",
   authorization_provider_approval_result,
   authorization_approval_result,
   authorization_provider_decline_reason,
@@ -192,7 +203,7 @@ insert into payment."Payment" select
   void_provider_unique_id,
   status
 from
-  payment."Payment_20190517";
+  payment."Payment_20190520";
 */
 
 grant all                    on payment."Payment" to aoadmin;

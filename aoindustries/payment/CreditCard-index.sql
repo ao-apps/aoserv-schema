@@ -17,9 +17,3 @@ create index "CreditCard_encryption_card_number_from_fkey" on payment."CreditCar
 create index "CreditCard_encryption_card_number_recipient_fkey" on payment."CreditCard" (
   encryption_card_number_recipient
 );
-create index "CreditCard_encryption_expiration_from_fkey" on payment."CreditCard" (
-  encryption_expiration_from
-);
-create index "CreditCard_expiration_recipient_fkey" on payment."CreditCard" (
-  encryption_expiration_recipient
-);

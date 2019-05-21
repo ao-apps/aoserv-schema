@@ -4,6 +4,8 @@ select "schema".add_column('payment', 'credit_cards', 'accounting',             
 select "schema".add_column('payment', 'credit_cards', 'group_name',                       'string',      true, false, false, 'any application-specific grouping', '1.29', null);
 select "schema".add_column('payment', 'credit_cards', 'card_number',                      'string',     false, false, false, 'the encrypted card number', '1.0a100', '1.28');
 select "schema".add_column('payment', 'credit_cards', 'card_info',                        'string',     false, false, false, 'the masked card number', '1.0a100', null);
+select "schema".add_column('payment', 'credit_cards', 'expirationMonth',                  'short',       true, false, false, 'the card expiration month', '1.82.0', null);
+select "schema".add_column('payment', 'credit_cards', 'expirationYear',                   'short',       true, false, false, 'the card expiration year', '1.82.0', null);
 select "schema".add_column('payment', 'credit_cards', 'provider_unique_id',               'string',     false, false, false, 'the per-provider unique ID allowing use of this credit card for new transactions', '1.29', null);
 select "schema".add_column('payment', 'credit_cards', 'expiration_month',                 'string',     false, false, false, 'the encrypted expiration month', '1.0a100', '1.28');
 select "schema".add_column('payment', 'credit_cards', 'expiration_year',                  'string',     false, false, false, 'the encrypted expiration year', '1.0a100', '1.28');
@@ -41,6 +43,6 @@ select "schema".add_column('payment', 'credit_cards', 'description',            
 select "schema".add_column('payment', 'credit_cards', 'encrypted_card_number',            'string',      true, false, false, 'the card number stored encrypted', '1.31', null);
 select "schema".add_column('payment', 'credit_cards', 'encryption_card_number_from',      'fkey',        true, false, false, 'the from that was used for card number encryption', '1.31', null);
 select "schema".add_column('payment', 'credit_cards', 'encryption_card_number_recipient', 'fkey',        true, false, false, 'the recipient that was used for card number encryption', '1.31', null);
-select "schema".add_column('payment', 'credit_cards', 'encrypted_expiration',             'string',      true, false, false, 'the expiration stored encrypted', '1.31', null);
-select "schema".add_column('payment', 'credit_cards', 'encryption_expiration_from',       'fkey',        true, false, false, 'the from that was used for expiration encryption', '1.31', null);
-select "schema".add_column('payment', 'credit_cards', 'encryption_expiration_recipient',  'fkey',        true, false, false, 'the recipient that was used for expiration encryption', '1.31', null);
+select "schema".add_column('payment', 'credit_cards', 'encrypted_expiration',             'string',      true, false, false, 'the expiration stored encrypted', '1.31', '1.81.22');
+select "schema".add_column('payment', 'credit_cards', 'encryption_expiration_from',       'fkey',        true, false, false, 'the from that was used for expiration encryption', '1.31', '1.81.22');
+select "schema".add_column('payment', 'credit_cards', 'encryption_expiration_recipient',  'fkey',        true, false, false, 'the recipient that was used for expiration encryption', '1.31', '1.81.22');

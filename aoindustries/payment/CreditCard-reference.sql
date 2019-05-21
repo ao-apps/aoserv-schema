@@ -40,17 +40,3 @@ alter table payment."CreditCard"
   on delete restrict
   on update cascade
 ;
-alter table payment."CreditCard"
-  add constraint encryption_expiration_from_fkey
-  foreign key (encryption_expiration_from)
-  references pki."EncryptionKey" (id)
-  on delete restrict
-  on update cascade
-;
-alter table payment."CreditCard"
-  add constraint encryption_expiration_recipient_fkey
-  foreign key (encryption_expiration_recipient)
-  references pki."EncryptionKey" (id)
-  on delete restrict
-  on update cascade
-;

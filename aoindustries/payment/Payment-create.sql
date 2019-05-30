@@ -48,6 +48,7 @@ create table payment."Payment" (
   credit_card_email "com.aoindustries.net"."Email",
   credit_card_phone text,
   credit_card_fax text,
+  "creditCard.customerId" text,
   credit_card_customer_tax_id text,
   credit_card_street_address1 text not null,
   credit_card_street_address2 text,
@@ -110,7 +111,14 @@ create table payment."Payment" (
   unique(processor_id, void_provider_unique_id)
 );
 
-/* Conversion to 1.82.0:
+/* Conversion to 1.82.1:
+
+Note: Carefully review and adapt "null as" on conversions:
+
+create table payment."Payment_20190530" as select * from payment."Payment";
+
+-- Recreate table, indexes, foreign keys
+
 insert into payment."Payment" select
   id,
   processor_id,
@@ -145,14 +153,15 @@ insert into payment."Payment" select
   credit_card_group_name,
   credit_card_provider_unique_id,
   credit_card_masked_card_number,
-  null as "creditCard.expirationMonth",
-  null as "creditCard.expirationYear",
+  "creditCard.expirationMonth",
+  "creditCard.expirationYear",
   credit_card_first_name,
   credit_card_last_name,
   credit_card_company_name,
   credit_card_email,
   credit_card_phone,
   credit_card_fax,
+  null as "creditCard.customerId",
   credit_card_customer_tax_id,
   credit_card_street_address1,
   credit_card_street_address2,
@@ -169,11 +178,11 @@ insert into payment."Payment" select
   authorization_error_code,
   authorization_provider_error_message,
   authorization_provider_unique_id,
-  "authorizationProviderReplacementMaskedCardNumber" as "authorizationResult.providerReplacementMaskedCardNumber",
-  "authorizationReplacementMaskedCardNumber" as "authorizationResult.replacementMaskedCardNumber",
-  null as "authorizationResult.providerReplacementExpiration",
-  null as "authorizationResult.replacementExpirationMonth",
-  null as "authorizationResult.replacementExpirationYear",
+  "authorizationResult.providerReplacementMaskedCardNumber",
+  "authorizationResult.replacementMaskedCardNumber",
+  "authorizationResult.providerReplacementExpiration",
+  "authorizationResult.replacementExpirationMonth",
+  "authorizationResult.replacementExpirationYear",
   authorization_provider_approval_result,
   authorization_approval_result,
   authorization_provider_decline_reason,
@@ -203,7 +212,11 @@ insert into payment."Payment" select
   void_provider_unique_id,
   status
 from
-  payment."Payment_20190520";
+  payment."Payment_20190530";
+
+-- Recreate foreign keys to this table
+
+-- Perform grants
 */
 
 grant all                    on payment."Payment" to aoadmin;

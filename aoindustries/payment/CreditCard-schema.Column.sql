@@ -16,6 +16,7 @@ select "schema".add_column('payment', 'credit_cards', 'company_name',           
 select "schema".add_column('payment', 'credit_cards', 'email',                            'email',       true, false, false, 'the email address', '1.29', null);
 select "schema".add_column('payment', 'credit_cards', 'phone',                            'phone',       true, false, false, 'the daytime phone number', '1.29', null);
 select "schema".add_column('payment', 'credit_cards', 'fax',                              'phone',       true, false, false, 'the fax number', '1.29', null);
+select "schema".add_column('payment', 'credit_cards', 'customerId',                       'string',      true, false, false, 'the merchant-specific unique customer ID', '1.82.1', null);
 select "schema".add_column('payment', 'credit_cards', 'customer_tax_id',                  'string',      true, false, false, 'the social security number of employer identification number', '1.29', null);
 select "schema".add_column('payment', 'credit_cards', 'street_address',                   'string',     false, false, false, 'the encrypted card holders street address', '1.0a100', '1.28');
 select "schema".add_column('payment', 'credit_cards', 'street_address1',                  'string',     false, false, false, 'the first line of the street address', '1.29', null);

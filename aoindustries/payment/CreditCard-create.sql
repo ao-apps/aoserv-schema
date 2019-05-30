@@ -19,6 +19,7 @@ create table payment."CreditCard" (
   email "com.aoindustries.net"."Email",
   phone text,
   fax text,
+  "customerId" text,
   customer_tax_id text,
   street_address1 text not null,
   street_address2 text,
@@ -45,15 +46,23 @@ create table payment."CreditCard" (
     )
   )
 );
-/*
+
+/* Conversion to 1.82.1:
+
+Note: Carefully review and adapt "null as" on conversions:
+
+create table payment."CreditCard_20190530" as select * from payment."CreditCard";
+
+-- Recreate table, indexes, foreign keys
+
 insert into payment."CreditCard" select
   id,
   processor_id,
   accounting,
   group_name,
   card_info,
-  null as "expirationMonth",
-  null as "expirationYear",
+  "expirationMonth",
+  "expirationYear",
   provider_unique_id,
   first_name,
   last_name,
@@ -61,6 +70,7 @@ insert into payment."CreditCard" select
   email,
   phone,
   fax,
+  null as "customerId",
   customer_tax_id,
   street_address1,
   street_address2,
@@ -79,7 +89,7 @@ insert into payment."CreditCard" select
   encrypted_card_number,
   encryption_card_number_from,
   encryption_card_number_recipient
-from payment."CreditCard_20190520";
+from payment."CreditCard_20190530";
  */
 grant all                            on payment."CreditCard" to aoadmin;
 grant select, insert, update, delete on payment."CreditCard" to aoserv_app;

@@ -1634,6 +1634,12 @@ Added payment.Payment.authorizationResult.providerReplacementExpiration column
 Added payment.Payment.authorizationResult.replacementExpirationMonth column
 Added payment.Payment.authorizationResult.replacementExpirationYear column'
 );
+insert into "schema"."AoservProtocol" values(
+  '1.82.1',
+  '2019-05-29',
+  'Added payment.CreditCard.customerId column
+Added payment.Payment.creditCard.customerId column'
+);
 /* TODO:
 renamed dns.TopLevelDomain to dns.Suffix
   added column isRegistrable

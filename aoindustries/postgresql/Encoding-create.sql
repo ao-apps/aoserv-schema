@@ -14,3 +14,4 @@ create table postgresql."Encoding" (
 );
 grant all    on postgresql."Encoding" to aoadmin;
 grant select on postgresql."Encoding" to aoserv_app;
+grant select on postgresql."Encoding" to management;

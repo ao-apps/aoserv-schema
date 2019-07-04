@@ -1,6 +1,7 @@
 create sequence         postgresql."UserServer_id_seq" cycle;
 grant all            on postgresql."UserServer_id_seq" to aoadmin;
 grant select, update on postgresql."UserServer_id_seq" to aoserv_app;
+grant select, update on postgresql."UserServer_id_seq" to management;
 
 create table postgresql."UserServer" (
   id integer
@@ -16,4 +17,4 @@ create table postgresql."UserServer" (
 );
 grant all                            on postgresql."UserServer" to aoadmin;
 grant select, insert, update, delete on postgresql."UserServer" to aoserv_app;
-grant select, delete                 on postgresql."UserServer" to management;
+grant select, insert, delete         on postgresql."UserServer" to management;

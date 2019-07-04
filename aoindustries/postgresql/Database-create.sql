@@ -1,6 +1,7 @@
 create sequence         postgresql."Database_id_seq" cycle;
 grant all            on postgresql."Database_id_seq" to aoadmin;
 grant select, update on postgresql."Database_id_seq" to aoserv_app;
+grant select, update on postgresql."Database_id_seq" to management;
 
 create table postgresql."Database" (
   id integer
@@ -24,4 +25,4 @@ create table postgresql."Database" (
 );
 grant all                            on postgresql."Database" to aoadmin;
 grant select, insert, update, delete on postgresql."Database" to aoserv_app;
-grant select, delete                 on postgresql."Database" to management;
+grant select, insert, delete         on postgresql."Database" to management;

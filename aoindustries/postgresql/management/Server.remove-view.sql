@@ -5,7 +5,7 @@ as
 select
   (select count(*) from postgresql."Database" pd where
     pd.postgres_server = ps.bind and pd."name" not in (
-      'template0', 'template1', 'aoserv'
+      'template0', 'template1', 'aoserv', 'postgresmon'
   )) as num_databases,
   (select count(*) from postgresql."UserServer" psu where
     psu.postgres_server = ps.bind and psu.username not in (

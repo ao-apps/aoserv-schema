@@ -1640,6 +1640,11 @@ insert into "schema"."AoservProtocol" values(
   'Added payment.CreditCard.customerId column
 Added payment.Payment.creditCard.customerId column'
 );
+insert into "schema"."AoservProtocol" values(
+  '1.83.0',
+  '2019-07-12',
+  'Added billing.Currency table'
+);
 /* TODO:
 renamed dns.TopLevelDomain to dns.Suffix
   added column isRegistrable

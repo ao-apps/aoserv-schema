@@ -262,6 +262,15 @@ select "schema".add_table(
     null
 );
 select "schema".add_table(
+    'billing',
+    'Currency',
+    'Currencies',
+    true,
+    'The supported currencies.',
+    '1.83.0',
+    null
+);
+select "schema".add_table(
     'scm',
     'cvs_repositories',
     'CVS Repositories',

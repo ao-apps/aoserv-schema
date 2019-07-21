@@ -1407,6 +1407,15 @@ select "schema".add_table(
 );
 select "schema".add_table(
     'billing',
+    'NoticeLog.balance',
+    'Notice Log Balances',
+    false,
+    'The per-currency balances for a NoticeLog.',
+    '1.83.0',
+    null
+);
+select "schema".add_table(
+    'billing',
     'notice_types',
     'Notice Types',
     true,

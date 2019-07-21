@@ -7,7 +7,8 @@ select "schema".add_column('billing', 'transactions', 'username',               
 select "schema".add_column('billing', 'transactions', 'type',                    'string',     false, false, false, 'the type of transaction', '1.0a100', null);
 select "schema".add_column('billing', 'transactions', 'description',             'string',     false, false, false, 'description of the transaction', '1.0a100', null);
 select "schema".add_column('billing', 'transactions', 'quantity',                'decimal_3',  false, false, false, 'the number of times to charge the account', '1.0a100', null);
-select "schema".add_column('billing', 'transactions', 'rate',                    'decimal_2',  false, false, false, 'the amount per unit of quantity', '1.0a100', null);
+select "schema".add_column('billing', 'transactions', 'rate',                    'decimal_2',  false, false, false, 'the amount per unit of quantity', '1.0a100', '1.82.1');
+select "schema".add_column('billing', 'transactions', 'rate',                    'money',      false, false, false, 'the amount per unit of quantity', '1.83.0', null);
 select "schema".add_column('billing', 'transactions', 'payment_type',            'string',      true, false, false, E'the type of payment made\ncheck - check, check number will be in payment_info\nmoney_order - money order\nvisa - visa card, last four in payment_info\nmastercard - mastercard, last four in payment_info\namex - amex card, last four in payment_info\ndiscover - discover card, last four in payment_info', '1.0a100', null);
 select "schema".add_column('billing', 'transactions', 'payment_info',            'string',      true, false, false, 'the payment info, such as last four of credit card number of check number', '1.0a100', null);
 select "schema".add_column('billing', 'transactions', 'merchant_account',        'string',      true, false, false, 'the merchant account that the payment was processed through', '1.0a100', '1.28');

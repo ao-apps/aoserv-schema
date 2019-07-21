@@ -20,6 +20,13 @@ alter table billing."MonthlyCharge"
   on update cascade
 ;
 alter table billing."MonthlyCharge"
+  add constraint "rate.currency_fkey"
+  foreign key ("rate.currency")
+  references billing."Currency" ("currencyCode")
+  on delete restrict
+  on update cascade
+;
+alter table billing."MonthlyCharge"
   add constraint created_by_fkey
   foreign key (created_by)
   references account."Administrator" (username)

@@ -14,6 +14,15 @@ select aosh.add_command(
   'adds a new transaction to a business account',
   '<i>business</i> <i>source_business</i> <i>business_administrator</i> <i>type</i> <i>description</i> <i>quantity</i> <i>rate</i> {""|<i>payment_type</i>} {""|<i>payment_info</i>} {""|<i>processor</i>} {<b>Y</b>|<b>N</b>|<b>W</b>}',
   '1.29',
+  '1.82.1'
+);
+select aosh.add_command(
+  'add_transaction',
+  'billing',
+  'transactions',
+  'adds a new transaction to a business account',
+  '<i>business</i> <i>source_business</i> <i>business_administrator</i> <i>type</i> <i>description</i> <i>quantity</i> <i>currency</i> <i>rate</i> {""|<i>payment_type</i>} {""|<i>payment_info</i>} {""|<i>processor</i>} {<b>Y</b>|<b>N</b>|<b>W</b>}',
+  '1.83.0',
   null
 );
 select aosh.add_command(

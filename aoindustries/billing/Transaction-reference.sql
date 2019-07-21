@@ -27,6 +27,13 @@ alter table billing."Transaction"
   on update cascade
 ;
 alter table billing."Transaction"
+  add constraint "rate.currency_fkey"
+  foreign key ("rate.currency")
+  references billing."Currency" ("currencyCode")
+  on delete restrict
+  on update cascade
+;
+alter table billing."Transaction"
   add constraint payment_type_fkey
   foreign key (payment_type)
   references payment."PaymentType" ("name")

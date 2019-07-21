@@ -10,6 +10,9 @@ create index "Transaction_username_fkey" on billing."Transaction" (
 create index "Transaction_type_fkey" on billing."Transaction" (
   "type"
 );
+create index "Transaction_rate.currency_fkey" on billing."Transaction" (
+  "rate.currency"
+);
 create index "Transaction_payment_type_fkey" on billing."Transaction" (
   payment_type
 );

@@ -5,7 +5,7 @@ grant select, update on billing."NoticeLog_id_seq" to aoserv_app;
 create table billing."NoticeLog" (
   id integer
     default nextval('billing."NoticeLog_id_seq"')
-    primary key,  
+    primary key,
   create_time timestamp with time zone
     default now()
     not null,
@@ -15,11 +15,10 @@ create table billing."NoticeLog" (
     not null,
   billing_email "com.aoindustries.net"."Email"
     not null,
-  balance numeric(9,2)
-    not null,
   notice_type text
     not null,
   transid integer
 );
+
 grant all            on billing."NoticeLog" to aoadmin;
 grant select, insert on billing."NoticeLog" to aoserv_app;

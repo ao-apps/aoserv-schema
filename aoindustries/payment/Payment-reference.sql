@@ -13,6 +13,13 @@ alter table payment."Payment"
   on update cascade
 ;
 alter table payment."Payment"
+  add constraint currency_fkey
+  foreign key (currency)
+  references billing."Currency" ("currencyCode")
+  on delete restrict
+  on update cascade
+;
+alter table payment."Payment"
   add constraint shipping_country_code_fkey
   foreign key (shipping_country_code)
   references payment."CountryCode" (code)

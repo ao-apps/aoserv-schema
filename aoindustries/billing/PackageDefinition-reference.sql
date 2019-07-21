@@ -13,9 +13,23 @@ alter table billing."PackageDefinition"
   on update cascade
 ;
 alter table billing."PackageDefinition"
+  add constraint "setupFee.currency_fkey"
+  foreign key ("setupFee.currency")
+  references billing."Currency" ("currencyCode")
+  on delete restrict
+  on update cascade
+;
+alter table billing."PackageDefinition"
   add constraint setup_fee_transaction_type_fkey
   foreign key (setup_fee_transaction_type)
   references billing."TransactionType" ("name")
+  on delete restrict
+  on update cascade
+;
+alter table billing."PackageDefinition"
+  add constraint "monthlyRate.currency_fkey"
+  foreign key ("monthlyRate.currency")
+  references billing."Currency" ("currencyCode")
   on delete restrict
   on update cascade
 ;

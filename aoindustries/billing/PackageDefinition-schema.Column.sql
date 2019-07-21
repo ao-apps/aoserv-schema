@@ -7,9 +7,11 @@ select "schema".add_column('billing', 'package_definitions', 'name',            
 select "schema".add_column('billing', 'package_definitions', 'version',                       'string',     false, false, false, 'the unique version of this package', '1.0a123', null);
 select "schema".add_column('billing', 'package_definitions', 'display',                       'string',     false, false, false, 'a short description for display use', '1.0a123', null);
 select "schema".add_column('billing', 'package_definitions', 'description',                   'string',     false, false, false, 'a description of the package definition', '1.0a123', null);
-select "schema".add_column('billing', 'package_definitions', 'setup_fee',                     'decimal_2',   true, false, false, 'the setup fee for this package definition', '1.0a123', null);
+select "schema".add_column('billing', 'package_definitions', 'setup_fee',                     'decimal_2',   true, false, false, 'the setup fee for this package definition', '1.0a123', '1.82.1');
+select "schema".add_column('billing', 'package_definitions', 'setupFee',                      'money',       true, false, false, 'the setup fee for this package definition', '1.83.0', null);
 select "schema".add_column('billing', 'package_definitions', 'setup_fee_transaction_type',    'string',      true, false, false, '', '1.0a123', null);
-select "schema".add_column('billing', 'package_definitions', 'monthly_rate',                  'decimal_2',   true, false, false, 'the default monthly charge for this package', '1.0a123', null);
+select "schema".add_column('billing', 'package_definitions', 'monthly_rate',                  'decimal_2',   true, false, false, 'the default monthly charge for this package', '1.0a123', '1.82.1');
+select "schema".add_column('billing', 'package_definitions', 'monthlyRate',                   'money',       true, false, false, 'the default monthly charge for this package', '1.83.0', null);
 select "schema".add_column('billing', 'package_definitions', 'monthly_rate_transaction_type', 'string',      true, false, false, '', '1.0a123', null);
 select "schema".add_column('billing', 'package_definitions', 'active',                        'boolean',    false, false, false, 'allows new accounts for this package', '1.0a123', null);
 select "schema".add_column('billing', 'package_definitions', 'approved',                      'boolean',    false, false, false, 'once approved a definition may be used for packages, but may not be modified', '1.0a123', null);

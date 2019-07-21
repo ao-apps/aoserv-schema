@@ -12,12 +12,12 @@ create table payment."Payment" (
   test_mode boolean not null,
   duplicate_window integer not null,
   order_number text,
-  currency_code text not null,
-  amount numeric(9,2) not null,
-  tax_amount numeric(9,2),
+  currency char(3) not null,
+  amount numeric not null,
+  "taxAmount" numeric,
   tax_exempt boolean not null,
-  shipping_amount numeric(9,2),
-  duty_amount numeric(9,2),
+  "shippingAmount" numeric,
+  "dutyAmount" numeric,
   shipping_first_name text,
   shipping_last_name text,
   shipping_company_name text,
@@ -33,7 +33,7 @@ create table payment."Payment" (
   purchase_order_number text,
   description text,
   -- TODO: This table has a lot of columns that are null depending on status:
-  -- TOOD: Consider making a TransactionCreditCard table, especially if we handle other types of payments
+  -- TODO: Consider making a TransactionCreditCard table, especially if we handle other types of payments
   credit_card_created_by text not null,
   credit_card_principal_name text,
   credit_card_accounting text not null,
@@ -58,7 +58,7 @@ create table payment."Payment" (
   credit_card_country_code character(2) not null,
   credit_card_comments text,
   -- TODO: This table has a lot of columns that are null depending on status:
-  -- TOOD: Consider making an AuthorizationResult table,
+  -- TODO: Consider making an AuthorizationResult table,
   -- TODO: and we could add a new status where we log the transaction before contacting the processor
   authorization_time timestamp with time zone not null,
   authorization_username text not null,
@@ -86,7 +86,7 @@ create table payment."Payment" (
   authorization_avs_result "com.aoindustries.creditcards"."AuthorizationResult.AvsResult",
   authorization_approval_code text,
   -- TODO: This table has a lot of columns that are null depending on status:
-  -- TOOD: Consider making a CaptureResult table
+  -- TODO: Consider making a CaptureResult table
   capture_time timestamp with time zone,
   capture_username text,
   capture_principal_name text,
@@ -96,7 +96,7 @@ create table payment."Payment" (
   capture_provider_error_message text,
   capture_provider_unique_id text,
   -- TODO: This table has a lot of columns that are null depending on status:
-  -- TOOD: Consider making a VoidResult table
+  -- TODO: Consider making a VoidResult table
   void_time timestamp with time zone,
   void_username text,
   void_principal_name text,
@@ -111,11 +111,11 @@ create table payment."Payment" (
   unique(processor_id, void_provider_unique_id)
 );
 
-/* Conversion to 1.82.1:
+/* Conversion to 1.83.0:
 
 Note: Carefully review and adapt "null as" on conversions:
 
-create table payment."Payment_20190530" as select * from payment."Payment";
+create table payment."Payment_20190721" as select * from payment."Payment";
 
 -- Recreate table, indexes, foreign keys
 
@@ -161,7 +161,7 @@ insert into payment."Payment" select
   credit_card_email,
   credit_card_phone,
   credit_card_fax,
-  null as "creditCard.customerId",
+  "creditCard.customerId",
   credit_card_customer_tax_id,
   credit_card_street_address1,
   credit_card_street_address2,
@@ -212,7 +212,7 @@ insert into payment."Payment" select
   void_provider_unique_id,
   status
 from
-  payment."Payment_20190530";
+  payment."Payment_20190721";
 
 -- Recreate foreign keys to this table
 

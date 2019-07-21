@@ -6,29 +6,29 @@ create table billing."PackageDefinition" (
   id integer
     default nextval('billing."PackageDefinition_id_seq"')
     primary key,
-  accounting text
-    not null,
-  category text
-    not null,
-  "name" text
-    not null,
-  version text
-    not null,
-  display text
-    not null,
-  description text
-    not null,
-  setup_fee numeric(9,2),
+  accounting text not null,
+  category text not null,
+  "name" text not null,
+  version text not null,
+  display text not null,
+  description text not null,
+  "setupFee.currency" char(3),
+  "setupFee.value" numeric
+    check ("setupFee.value" is null or "setupFee.value" > 0),
+  check (
+    ("setupFee.currency" is null) = ("setupFee.value" is null)
+  ),
   setup_fee_transaction_type text,
-  monthly_rate numeric(9,2)
-    not null,
-  monthly_rate_transaction_type text
-    not null,
-  active boolean
-    not null
+  check (
+    ("setupFee.value" is null) = (setup_fee_transaction_type is null)
+  ),
+  "monthlyRate.currency" char(3) not null,
+  "monthlyRate.value" numeric not null
+    check ("monthlyRate.value" >= 0),
+  monthly_rate_transaction_type text not null,
+  active boolean not null
     default false,
-  approved boolean
-    not null
+  approved boolean not null
     default false
 );
 

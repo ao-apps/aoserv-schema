@@ -1,6 +1,9 @@
 create index "Payment_accounting_fkey" on payment."Payment" (
   accounting
 );
+create index "Payment_currency_fkey" on payment."Payment" (
+  currency
+);
 create index "Payment_shipping_country_code_fkey" on payment."Payment" (
   shipping_country_code
 );

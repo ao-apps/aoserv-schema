@@ -7,8 +7,14 @@ create unique index "PackageDefinition_uni" on billing."PackageDefinition" (
 create index "PackageDefinition_category_fkey" on billing."PackageDefinition" (
   category
 );
+create index "PackageDefinition_setupFee.currency_fkey" on billing."PackageDefinition" (
+  "setupFee.currency"
+);
 create index "PackageDefinition_setup_fee_transaction_type_fkey" on billing."PackageDefinition" (
   setup_fee_transaction_type
+);
+create index "PackageDefinition_monthlyRate.currency_fkey" on billing."PackageDefinition" (
+  "monthlyRate.currency"
 );
 create index "PackageDefinition_monthly_rate_transaction_type_fkey" on billing."PackageDefinition" (
   monthly_rate_transaction_type

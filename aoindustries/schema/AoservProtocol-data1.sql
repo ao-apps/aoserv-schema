@@ -1643,7 +1643,19 @@ Added payment.Payment.creditCard.customerId column'
 insert into "schema"."AoservProtocol" values(
   '1.83.0',
   '2019-07-12',
-  'Added billing.Currency table'
+  'Added billing.Currency table
+Changed billing.MonthlyCharge.rate to money type
+New table billing.NoticeLog.balance
+Removed column billing.NoticeLog.balance
+Renamed column billing.PackageDefinition.setup_fee to setupFee and changed to money type
+Renamed column billing.PackageDefinition.monthly_rate to monthlyRate and changed to money type
+Renamed column billing.PackageDefinitionLimit.additional_rate to additionalRate and changed to money type
+Changed billing.Transaction.rate to money type
+Removed column payment.Payment.currency_code
+Changed payment.Payment.amount to money type
+Renamed column payment.Payment.tax_amount to taxAmount and changed to money type
+Renamed column payment.Payment.shipping_amount to shippingAmount and changed to money type
+Renamed column payment.Payment.duty_amount to dutyAmount and changed to money type'
 );
 /* TODO:
 renamed dns.TopLevelDomain to dns.Suffix

@@ -1655,7 +1655,8 @@ Removed column payment.Payment.currency_code
 Changed payment.Payment.amount to money type
 Renamed column payment.Payment.tax_amount to taxAmount and changed to money type
 Renamed column payment.Payment.shipping_amount to shippingAmount and changed to money type
-Renamed column payment.Payment.duty_amount to dutyAmount and changed to money type'
+Renamed column payment.Payment.duty_amount to dutyAmount and changed to money type
+Renamed AOSH command "add_transaction" to "billing.Transaction.add", and it now accepts a time with a value of "now", "today", "YYYY-MM-DD" or "YYYY-MM-DD HH:MM[:SS[.mmm]]"'
 );
 /* TODO:
 renamed dns.TopLevelDomain to dns.Suffix

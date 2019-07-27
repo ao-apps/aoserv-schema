@@ -1658,7 +1658,7 @@ Renamed column payment.Payment.shipping_amount to shippingAmount and changed to 
 Renamed column payment.Payment.duty_amount to dutyAmount and changed to money type
 Renamed AOSH command "add_transaction" to "billing.Transaction.add", and it now accepts a time with a value of "now", "today", "YYYY-MM-DD" or "YYYY-MM-DD HH:MM[:SS[.mmm]]"
 Added types "Identifier" (128-bit) and "SmallIdentifier" (64-bit)
-Renamed "master.Process.process_id" to "id" and changed to "Identifier" type
+Renamed "master.Process.process_id" to "id" and changed to "SmallIdentifier" type
 Renamed "master.Process.connector_id" to "connectorId" and changed to "Identifier" type'
 );
 /* TODO:

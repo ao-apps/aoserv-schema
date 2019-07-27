@@ -49,3 +49,5 @@ insert into "schema"."Type" values(47, 'postgres_server_name',    '1.69', null);
 insert into "schema"."Type" values(48, 'postgres_username',       '1.69', null);
 insert into "schema"."Type" values(49, 'firewalld_zone_name',     '1.81.0', null);
 insert into "schema"."Type" values(50, 'linux_username',          '1.81.22', null);
+insert into "schema"."Type" values(51, 'Identifier',              '1.83.0', null);
+insert into "schema"."Type" values(52, 'SmallIdentifier',         '1.83.0', null);

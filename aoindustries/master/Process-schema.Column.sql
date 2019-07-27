@@ -1,5 +1,7 @@
-select "schema".add_column('master', 'master_processes', 'process_id',         'long',       false,  true, false, '', '1.0a100', null);
-select "schema".add_column('master', 'master_processes', 'connector_id',       'long',        true, false, false, '', '1.0a100', null);
+select "schema".add_column('master', 'master_processes', 'process_id',         'long',       false,  true, false, '', '1.0a100', '1.82.1');
+select "schema".add_column('master', 'master_processes', 'id',                 'Identifier', false,  true, false, '', '1.83.0',  null);
+select "schema".add_column('master', 'master_processes', 'connector_id',       'long',        true, false, false, '', '1.0a100', '1.82.1');
+select "schema".add_column('master', 'master_processes', 'connectorId' ,       'Identifier',  true, false, false, '', '1.83.0',  null);
 select "schema".add_column('master', 'master_processes', 'authenticated_user', 'username',    true, false, false, '', '1.0a100', null);
 select "schema".add_column('master', 'master_processes', 'effective_user',     'username',    true, false, false, '', '1.0a100', null);
 select "schema".add_column('master', 'master_processes', 'daemon_server',      'fkey',        true, false, false, '', '1.0a100', null);

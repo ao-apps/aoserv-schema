@@ -1662,6 +1662,11 @@ Renamed "master.Process.process_id" to "id" and changed to "SmallIdentifier" typ
 Renamed "master.Process.connector_id" to "connectorId" and changed to "Identifier" type
 Renamed AOSH command "check_ssl_certificate" to "pki.Certificate.check", and it now accepts a boolean flag to enable/disable cached results'
 );
+insert into "schema"."AoservProtocol" values(
+  '1.83.1',
+  '2019-07-29',
+  'Master returns new entropy needed as entropy is added.'
+);
 /* TODO:
 renamed dns.TopLevelDomain to dns.Suffix
   added column isRegistrable

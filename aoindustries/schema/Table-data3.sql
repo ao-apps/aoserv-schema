@@ -50,7 +50,8 @@ select "schema".add_table(
     'aoserv_protocols',
     'AOServ Protocols',
     true,
-    '<code>aoserv_protocols</code> keeps track of the different versions of the protocol and what is available in that protocol.',
+    '<code>aoserv_protocols</code> keeps track of the different versions of the protocol
+and what is available in that protocol.',
     '1.0a101',
     null
 );
@@ -158,7 +159,8 @@ select "schema".add_table(
     'blackhole_email_addresses',
     'Blackhole Email Addresses',
     false,
-    'The blackhole_email_addresses is a list of email addresses in which all email sent to them is immediately discarded via /dev/null.',
+    'The blackhole_email_addresses is a list of email addresses in which all email sent
+to them is immediately discarded via /dev/null.',
     '1.0a100',
     null
 );
@@ -176,7 +178,8 @@ select "schema".add_table(
     'business_administrators',
     'Business Administrators',
     false,
-    'The business_administrators table stores details about the people who are allowed to access the aoserv and aoweb utilities.',
+    'The business_administrators table stores details about the people who are allowed
+to access the aoserv and aoweb utilities.',
     '1.0a100',
     null
 );
@@ -194,7 +197,8 @@ select "schema".add_table(
     'business_profiles',
     'Business Profiles',
     false,
-    'The business_profiles stores all the old profile data for a business.  This is done so that old contacts may be used in case of an emergency.',
+    'The business_profiles stores all the old profile data for a business.
+This is done so that old contacts may be used in case of an emergency.',
     '1.0a100',
     null
 );
@@ -212,7 +216,9 @@ select "schema".add_table(
     'business_servers',
     'Business Servers',
     false,
-    'The business_servers table stores which servers may be accessed by which business.  A child business can only access a subset of the parent business'' servers.  Only one entry per business is flagged as default.',
+    'The business_servers table stores which servers may be accessed by which business.
+A child business can only access a subset of the parent business'' servers.
+Only one entry per business is flagged as default.',
     '1.0a100',
     null
 );
@@ -230,7 +236,8 @@ select "schema".add_table(
     'country_codes',
     'Country Codes',
     true,
-    'The country_codes table contains all of the valid country codes.  This data was obtained from http://digitalid.verisign.com/ccodes.html',
+    'The country_codes table contains all of the valid country codes.
+This data was obtained from http://digitalid.verisign.com/ccodes.html',
     '1.0a100',
     null
 );
@@ -284,7 +291,8 @@ select "schema".add_table(
     'cyrus_imapd_binds',
     'Cyrus IMAPD Binds',
     false,
-    'The <code>cyrus_imapd_binds</code> table represents all the ip_address port binding combinations.  The app_protocol of the bind should always be POP3, IMAP2, SIMAP, or SPOP3.',
+    'The <code>cyrus_imapd_binds</code> table represents all the ip_address port binding combinations.
+The app_protocol of the bind should always be POP3, IMAP2, SIMAP, or SPOP3.',
     '1.81.10',
     null
 );
@@ -545,7 +553,8 @@ select "schema".add_table(
     'expense_categories',
     'Expense Categories',
     false,
-    'The expense_categories table is a lookup for bank_transactions, and is used to organize expenditures for accounting purposes.',
+    'The expense_categories table is a lookup for bank_transactions, and is used to
+organize expenditures for accounting purposes.',
     '1.0a100',
     null
 );
@@ -581,7 +590,8 @@ select "schema".add_table(
     'failover_mysql_replications',
     'Failover MySQL Replications',
     false,
-    'The failover_mysql_replications indicates a failover replication is using MySQL replication for /var/lib/mysql/... instead of file-based replication.',
+    'The failover_mysql_replications indicates a failover replication is using MySQL replication
+for /var/lib/mysql/... instead of file-based replication.',
     '1.28',
     null
 );
@@ -617,7 +627,8 @@ select "schema".add_table(
     'file_backup_settings',
     'File Backup Settings',
     false,
-    'The <code>file_backup_settings</code> table overrides everything in the backup system except <code>file_backup_devices</code>.',
+    'The <code>file_backup_settings</code> table overrides everything in the backup
+system except <code>file_backup_devices</code>.',
     '1.0a100',
     null
 );
@@ -644,7 +655,9 @@ select "schema".add_table(
     'ftp_guest_users',
     'FTP Guest Users',
     false,
-    'Each <code>linux_account</code> may optionally be a guest FTP user.  A guest FTP user is restricted to FTP access in their home directory.  The passwd and group files are created such that any username or group in the same business resolve to the correct text names.',
+    'Each <code>linux_account</code> may optionally be a guest FTP user.  A guest FTP user is restricted
+to FTP access in their home directory.  The passwd and group files are created such that any username
+or group in the same business resolve to the correct text names.',
     '1.0a100',
     null
 );
@@ -653,7 +666,8 @@ select "schema".add_table(
     'httpd_binds',
     'Httpd Binds',
     false,
-    'The <code>httpd_binds</code> table represents all the ip_address port binding combinations.  The app_protocol of the bind should always be HTTP or HTTPS.',
+    'The <code>httpd_binds</code> table represents all the ip_address port binding combinations.
+The app_protocol of the bind should always be HTTP or HTTPS.',
     '1.0a100',
     null
 );
@@ -718,7 +732,8 @@ select "schema".add_table(
     'httpd_site_authenticated_locations',
     'Httpd Site Authenticated Locations',
     false,
-    'The <code>httpd_site_authenticated_locations</code> configured Apache basic authentication using Location directives.',
+    'The <code>httpd_site_authenticated_locations</code> configured Apache basic
+authentication using Location directives.',
     '1.18',
     null
 );
@@ -832,7 +847,8 @@ select "schema".add_table(
     'httpd_tomcat_sites',
     'Httpd Tomcat Sites',
     false,
-    'The <code>httpd_tomcat_sites</code> stores the details of all sites based on the Tomcat servlet engine.  This includes JBoss, single instance Tomcats, and a Tomcat that runs in a shared Java VM.',
+    'The <code>httpd_tomcat_sites</code> stores the details of all sites based on the Tomcat servlet engine.
+This includes JBoss, single instance Tomcats, and a Tomcat that runs in a shared Java VM.',
     '1.0a100',
     null
 );
@@ -850,7 +866,8 @@ select "schema".add_table(
     'httpd_tomcat_std_sites',
     'Httpd Tomcat Std Sites',
     false,
-    'The <code>httpd_tomcat_std_sites</code> table stores the details for each site that is self contained in its /www directory.',
+    'The <code>httpd_tomcat_std_sites</code> table stores the details for each site that
+is self contained in its /www directory.',
     '1.0a100',
     null
 );
@@ -1130,7 +1147,8 @@ select "schema".add_table(
     'majordomo_versions',
     'Majordomo Versions',
     true,
-    'The majordomo_versions table contains a list of all the supported versions of the Majordomo manages email list server.',
+    'The majordomo_versions table contains a list of all the supported versions of the
+Majordomo manages email list server.',
     '1.0a100',
     null
 );
@@ -1238,7 +1256,8 @@ select "schema".add_table(
     'mysql_db_users',
     'MySQL DB Users',
     false,
-    'The <code>mysql_db_users</code> table stores which <code>mysql_server_users</code> can access which <code>mysql_databases</code>.  The user permissions are also contained in each row.',
+    'The <code>mysql_db_users</code> table stores which <code>mysql_server_users</code> can access
+which <code>mysql_databases</code>.  The user permissions are also contained in each row.',
     '1.0a100',
     null
 );
@@ -1283,7 +1302,8 @@ select "schema".add_table(
     'mysql_users',
     'MySQL Users',
     false,
-    'The mysql_users table stores all of the user info that is common for every MySQL server a user has a MySQL user account on.  The server specifics are stored in the mysql_server_users table.',
+    'The mysql_users table stores all of the user info that is common for every MySQL server a user has
+a MySQL user account on.  The server specifics are stored in the mysql_server_users table.',
     '1.0a100',
     null
 );
@@ -1712,7 +1732,8 @@ select "schema".add_table(
     'sendmail_binds',
     'Sendmail Binds',
     false,
-    'The <code>sendmail_binds</code> table represents all the ip_address port binding combinations.  The app_protocol of the bind should always be SMTP, SMTPS, or submission.',
+    'The <code>sendmail_binds</code> table represents all the ip_address port binding combinations.
+The app_protocol of the bind should always be SMTP, SMTPS, or submission.',
     '1.81.10',
     null
 );
@@ -2000,7 +2021,8 @@ select "schema".add_table(
     'system_email_aliases',
     'System Email Aliases',
     false,
-    'The system_email_aliases is a list of all entries that are placed in /etc/aliases but are not part of the other tables.',
+    'The system_email_aliases is a list of all entries that are placed in /etc/aliases
+but are not part of the other tables.',
     '1.0a100',
     null
 );
@@ -2027,7 +2049,8 @@ select "schema".add_table(
     'technology_names',
     'Technology Names',
     true,
-    'The technology_names table contains all of the unique names of software packages that are installed in the servers.',
+    'The technology_names table contains all of the unique names of software packages
+that are installed in the servers.',
     '1.0a100',
     null
 );

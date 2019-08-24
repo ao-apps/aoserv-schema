@@ -57,4 +57,5 @@ mockbuild	AOINDUSTRIES	\N
 bird	AOINDUSTRIES	\N
 clamupdate	AOINDUSTRIES	\N
 clamscan	AOINDUSTRIES	\N
+redis	AOINDUSTRIES	\N
 \.

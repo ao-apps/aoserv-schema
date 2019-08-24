@@ -56,4 +56,5 @@ mockbuild	RPM Build Environment	\N	\N	\N	user	/bin/bash	2018-04-09 02:42:42.4013
 bird	BIRD Internet Routing Daemon	\N	\N	\N	system	/sbin/nologin	2012-05-31 09:00:59.350862+00	\N
 clamupdate	Clamav database update user	\N	\N	\N	system	/sbin/nologin	2018-07-11 04:07:22.467792+00	\N
 clamscan	Clamav scanner user	\N	\N	\N	system	/sbin/nologin	2018-07-11 04:07:53.611256+00	\N
+redis	Redis Database Server	\N	\N	\N	system	/sbin/nologin	2019-08-22 21:12:50.65977+00	\N
 \.

@@ -75,5 +75,6 @@ COPY linux."GroupUser" (id, "group", "user", "isPrimary") FROM stdin;
 76	virusgroup	clamupdate	f	\N
 77	clamscan	clamscan	t	\N
 78	virusgroup	clamscan	f	\N
+79	redis	redis	t	\N
 \.
 SELECT setval ('linux."GroupUser_id_seq"', 78, true);

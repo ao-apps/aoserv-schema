@@ -82,4 +82,5 @@ bird	AOINDUSTRIES	system
 clamupdate	AOINDUSTRIES	system
 virusgroup	AOINDUSTRIES	system
 clamscan	AOINDUSTRIES	system
+redis	AOINDUSTRIES	system
 \.

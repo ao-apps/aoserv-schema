@@ -58,3 +58,7 @@ insert into net."AppProtocol" values ('spamd', 783, 'SpamAssassin Daemon', false
 insert into net."AppProtocol" values ('memcached', 11211, 'Memcached', false, 'TCP');
 insert into net."AppProtocol" values ('csync2', 30865, 'Csync2 Daemon', false, 'TCP');
 insert into net."AppProtocol" values ('elasticsearch', 9200, 'Elasticsearch', false, 'TCP');
+-- See https://redis.io/topics/cluster-tutorial#redis-cluster-tcp-ports
+insert into net."AppProtocol" values ('redis', 6379, 'Redis', false, 'TCP');
+insert into net."AppProtocol" values ('redis-cluster', 16379, 'Redis Cluster', false, 'TCP');
+insert into net."AppProtocol" values ('redis-sentinel', 26379, 'Redis Sentinel', false, 'TCP');

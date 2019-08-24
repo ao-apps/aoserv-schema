@@ -12,7 +12,8 @@ create table net."FirewallZone" (
   server integer
     not null,
   "name" text
-    not null,
+    not null
+    check (length("name") between 1 and 17),
   short text,
   description text,
   fail2ban boolean

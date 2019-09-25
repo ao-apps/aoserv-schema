@@ -1435,6 +1435,8 @@ INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner,
 -- Java
 INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
   3383, 'jdk', '12.0.0', '2019-04-09 00:24:38.682429+00', 'orion', 70);
+INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
+  3384, 'jdk', '13.0.0', '2019-09-24 23:58:14.42649+00', 'orion', 70);
 -- PHP
 INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
   1618, 'php', '4.4.2', '2006-02-25 13:58:33.297188-05', 'orion', 14);
@@ -1454,4 +1456,4 @@ INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner,
   3382, 'php', '7.3.0', '2018-12-09 05:40:46.777443+00', 'orion', 70);
 COMMIT;
 
-SELECT setval ('distribution."SoftwareVersion_id_seq"', 3384, false);
+SELECT setval ('distribution."SoftwareVersion_id_seq"', 3385, false);

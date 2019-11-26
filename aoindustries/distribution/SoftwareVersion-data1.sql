@@ -1397,13 +1397,6 @@ COPY distribution."SoftwareVersion" FROM stdin;
 3298	postgresql	8.3.23	2013-11-22 17:14:46.96522-06	orion	67
 3342	postgresql	9.2.20	2017-02-24 09:03:40.109049-06	orion	67
 3346	postgresql	9.4.11	2017-02-24 11:48:37.250992-06	orion	67
-3351	postgresql	8.3.23	2017-03-30 20:22:57.8199-05	orion	70
-3352	postgresql	9.2.20	2017-03-30 20:22:57.8199-05	orion	70
-3353	postgresql	9.4.11	2017-03-30 20:23:10.757269-05	orion	70
-3369	postgresql	9.5.0	2018-07-14 22:26:03.10491+00	orion	70
-3370	postgresql	9.6.0	2018-07-15 05:34:17.323549+00	orion	70
-3371	postgresql	10.0	2018-07-15 07:56:07.192482+00	orion	70
-3380	postgresql	11.0	2018-11-07 07:21:03.741589+00	orion	70
 3236	MySQL	4.1.21	2006-10-12 17:40:00	orion	45
 10	MySQL	5.0.27	2006-11-08 03:42:56.584713	orion	47
 3239	MySQL	5.0.27	2006-11-08 03:42:56.584713	orion	45
@@ -1460,6 +1453,23 @@ INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner,
   3375, 'php', '7.2.0', '2018-07-17 12:53:16.84715+00', 'orion', 70);
 INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
   3382, 'php', '7.3.0', '2018-12-09 05:40:46.777443+00', 'orion', 70);
+-- PostgreSQL
+INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
+  3351, 'postgresql', '8.3.23', '2017-03-30 20:22:57.8199-05', 'orion', 70);
+INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
+  3352, 'postgresql', '9.2.20', '2017-03-30 20:22:57.8199-05', 'orion', 70);
+INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
+  3353, 'postgresql', '9.4.11', '2017-03-30 20:23:10.757269-05', 'orion', 70);
+INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
+  3369, 'postgresql', '9.5.0', '2018-07-14 22:26:03.10491+00', 'orion', 70);
+INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
+  3370, 'postgresql', '9.6.0', '2018-07-15 05:34:17.323549+00', 'orion', 70);
+INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
+  3371, 'postgresql', '10.0', '2018-07-15 07:56:07.192482+00', 'orion', 70);
+INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
+  3380, 'postgresql', '11.0', '2018-11-07 07:21:03.741589+00', 'orion', 70);
+INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
+  3388, 'postgresql', '12.0', '2019-11-26 21:29:35.682642+00', 'orion', 70);
 COMMIT;
 
-SELECT setval ('distribution."SoftwareVersion_id_seq"', 3388, false);
+SELECT setval ('distribution."SoftwareVersion_id_seq"', 3389, false);

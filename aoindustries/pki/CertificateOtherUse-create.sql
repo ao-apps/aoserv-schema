@@ -1,6 +1,7 @@
-create sequence pki."CertificateOtherUse_id_seq" cycle;
-grant all    on pki."CertificateOtherUse_id_seq" to aoadmin;
-grant select on pki."CertificateOtherUse_id_seq" to aoserv_app;
+create sequence         pki."CertificateOtherUse_id_seq" cycle;
+grant all            on pki."CertificateOtherUse_id_seq" to aoadmin;
+grant select         on pki."CertificateOtherUse_id_seq" to aoserv_app;
+grant select, update on pki."CertificateOtherUse_id_seq" to management;
 
 create table pki."CertificateOtherUse" (
   id integer
@@ -19,5 +20,6 @@ create table pki."CertificateOtherUse" (
   display         text not null,
   unique(ssl_certificate, sort_order)
 );
-grant all    on pki."CertificateOtherUse" to aoadmin;
-grant select on pki."CertificateOtherUse" to aoserv_app;
+grant all                    on pki."CertificateOtherUse" to aoadmin;
+grant select                 on pki."CertificateOtherUse" to aoserv_app;
+grant select, insert, delete on pki."CertificateOtherUse" to management;

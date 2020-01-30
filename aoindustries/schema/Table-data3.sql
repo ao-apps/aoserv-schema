@@ -1328,18 +1328,19 @@ data is also used to open firewall ports.  Each port may also be
 periodically monitored for process reliability.
 <p>
 Four types of IP addresses exist:
+</p>
 <ol>
   <li>wildcard - Processes bind to all available IP addresses on
                  the server.  Monitoring may be performed from
-                 anywhere, depending on firewall flags.
+                 anywhere, depending on firewall flags.</li>
   <li>public -   Processes bind to a public IP address.  Monitoring
                  may be performed from the localhost or public
-                 network, depending on firewall rules.
+                 network, depending on firewall rules.</li>
   <li>private -  Processes bind to a private IP address.  Monitoring
                  may be performed from the localhost or private
-                 network, depending on firewall rules.
+                 network, depending on firewall rules.</li>
   <li>loopback - Processes bind internally in the server.  Monitoring
-                 may only be performed from localhost.
+                 may only be performed from localhost.</li>
 </ol>',
     '1.0a100',
     null

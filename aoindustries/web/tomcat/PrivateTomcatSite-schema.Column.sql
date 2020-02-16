@@ -4,3 +4,4 @@ select "schema".add_column('web.tomcat', 'httpd_tomcat_std_sites', 'tomcat4_shut
 select "schema".add_column('web.tomcat', 'httpd_tomcat_std_sites', 'max_post_size',         'int',      true, false, false, 'the maximum POST size allowed', '1.80.1', null);
 select "schema".add_column('web.tomcat', 'httpd_tomcat_std_sites', 'unpack_wars',           'boolean', false, false, false, 'the unpackWARs setting for this Tomcat', '1.80.1', null);
 select "schema".add_column('web.tomcat', 'httpd_tomcat_std_sites', 'auto_deploy',           'boolean', false, false, false, 'the autoDeploy setting for this Tomcat', '1.80.1', null);
+select "schema".add_column('web.tomcat', 'httpd_tomcat_std_sites', 'tomcatAuthentication',  'boolean', false, false, false, 'the tomcatAuthentication setting for this Tomcat', '1.83.2', null);

@@ -62,6 +62,15 @@ select aosh.add_command(
   null
 );
 select aosh.add_command(
+  'web.tomcat.PrivateTomcatSite.tomcatAuthentication.set',
+  'web.tomcat',
+  'httpd_tomcat_std_sites',
+  'sets the tomcatAuthentication setting for a standard Tomcat installation',
+  '<i>site_name</i> <i>ao_server</i> <i>tomcatAuthentication</i>',
+  '1.83.2',
+  null
+);
+select aosh.add_command(
   'set_httpd_tomcat_std_site_version',
   'web.tomcat',
   'httpd_tomcat_std_sites',

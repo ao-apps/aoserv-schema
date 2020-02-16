@@ -1667,6 +1667,14 @@ insert into "schema"."AoservProtocol" values(
   '2019-07-29',
   'Master returns new entropy needed as entropy is added.'
 );
+insert into "schema"."AoservProtocol" values(
+  '1.83.2',
+  '2020-02-15',
+  'Added column web.tomcat.PrivateTomcatSite.tomcatAuthentication
+Added AOSH command web.tomcat.PrivateTomcatSite.tomcatAuthentication.set
+Added column web.tomcat.SharedTomcat.tomcatAuthentication
+Added AOSH command web.tomcat.SharedTomcat.tomcatAuthentication.set'
+);
 /* TODO:
 renamed dns.TopLevelDomain to dns.Suffix
   added column isRegistrable

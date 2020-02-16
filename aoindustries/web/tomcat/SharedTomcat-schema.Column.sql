@@ -20,3 +20,4 @@ select "schema".add_column('web.tomcat', 'httpd_shared_tomcats', 'is_manual',   
 select "schema".add_column('web.tomcat', 'httpd_shared_tomcats', 'max_post_size',           'int',      true, false, false, 'the maximum POST size allowed', '1.80.1', null);
 select "schema".add_column('web.tomcat', 'httpd_shared_tomcats', 'unpack_wars',             'boolean', false, false, false, 'the unpackWARs setting for this Tomcat', '1.80.1', null);
 select "schema".add_column('web.tomcat', 'httpd_shared_tomcats', 'auto_deploy',             'boolean', false, false, false, 'the autoDeploy setting for this Tomcat', '1.80.1', null);
+select "schema".add_column('web.tomcat', 'httpd_shared_tomcats', 'tomcatAuthentication',    'boolean', false, false, false, 'the tomcatAuthentication setting for this Tomcat', '1.83.2', null);

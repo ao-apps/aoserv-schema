@@ -33,11 +33,16 @@ create table "web.tomcat"."SharedTomcat" (
     unique,
   tomcat4_shutdown_key text,
   is_manual boolean
-    not null,
+    not null
+    default false,
   max_post_size integer
     check (max_post_size is null or max_post_size >= 0),
-  unpack_wars boolean not null,
-  auto_deploy boolean not null,
+  unpack_wars boolean not null
+    default true,
+  auto_deploy boolean not null
+    default true,
+  "tomcatAuthentication" boolean not null
+    default true,
   unique (ao_server, "name")
 );
 grant all                            on "web.tomcat"."SharedTomcat" to aoadmin;

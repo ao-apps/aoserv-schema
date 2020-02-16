@@ -134,6 +134,15 @@ select aosh.add_command(
   null
 );
 select aosh.add_command(
+  'web.tomcat.SharedTomcat.tomcatAuthentication.set',
+  'web.tomcat',
+  'httpd_shared_tomcats',
+  'sets the tomcatAuthentication setting for a Multi-Site Tomcat installation',
+  '<i>name</i> <i>ao_server</i> <i>tomcatAuthentication</i>',
+  '1.83.2',
+  null
+);
+select aosh.add_command(
   'set_httpd_shared_tomcat_version',
   'web.tomcat',
   'httpd_shared_tomcats',

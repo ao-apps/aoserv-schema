@@ -20,4 +20,4 @@ create table mysql."Database" (
 );
 grant all                            on mysql."Database" to aoadmin;
 grant select, insert, update, delete on mysql."Database" to aoserv_app;
-grant select, insert                 on mysql."Database" to management;
+grant select, insert, delete         on mysql."Database" to management;

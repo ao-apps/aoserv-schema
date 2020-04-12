@@ -31,7 +31,7 @@ select
   ia."inetAddress" as "IP_ADDRESS"
 from
              net."IpAddress"                       ia
-  inner join net."Device"                          nd   on ia."netDevice"              =   nd.id
+  inner join net."Device"                          nd   on ia.device                   =   nd.id
   inner join net."DeviceId"                        ndi  on nd."deviceId"               =  ndi."name"
   inner join net."Host"                            se   on nd.server                   =   se.id
   inner join billing."Package"                     sepk on se.package                  = sepk.id

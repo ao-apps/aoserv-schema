@@ -6,4 +6,5 @@ grant all   on schema account to aoadmin;
 grant usage on schema account to aoserv_app;
 grant usage on schema account to accounting;
 grant usage on schema account to billing;
+grant usage on schema account to infrastructure;
 grant usage on schema account to management;

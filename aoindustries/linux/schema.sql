@@ -6,4 +6,3 @@ grant all   on schema linux to aoadmin;
 grant usage on schema linux to aoserv_app;
 grant usage on schema linux to infrastructure;
 grant usage on schema linux to management;
-grant usage on schema linux to monitoring;

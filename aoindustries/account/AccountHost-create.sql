@@ -23,3 +23,4 @@ create table account."AccountHost" (
 grant all                            on account."AccountHost" to aoadmin;
 grant select, update, insert, delete on account."AccountHost" to aoserv_app;
 grant select, insert                 on account."AccountHost" to infrastructure;
+grant select, update                 on account."AccountHost" to management;

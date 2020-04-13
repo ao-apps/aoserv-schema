@@ -44,6 +44,7 @@ Types:
 4) TODO: Do use "uuid" types instead of our "Identifier" class using two longs?
 
 5) Spell-out "true" or "false" for booleans, and leave lowercase.
+   TODO: This is in conflict with the "ALL CAPS SQL KEYWORDS" above.
 
 6) Do use ENUM types where appropriate, but do not abuse them in an attempt to
    save space.

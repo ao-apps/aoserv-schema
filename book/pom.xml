@@ -34,7 +34,7 @@ along with aoserv-schema.  If not, see <http://www.gnu.org/licenses />.
 
 	<properties>
 		<!-- These values are copied from the project being documented -->
-		<documented.artifactId>aoserv-schema3</documented.artifactId>
+		<documented.artifactId>aoserv-schema</documented.artifactId>
 		<documented.name>AOServ Schema</documented.name>
 		<documented.shortTitle>Schema</documented.shortTitle>
 		<documented.description>Database schema for the AOServ Platform.</documented.description>

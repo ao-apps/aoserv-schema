@@ -1,3 +1,8 @@
+-- TODO: Move this "aoweb" package to the private "aoindustries.com" project
+-- TODO: While doing so, also remove the "aoindustries" sub-directory, since
+-- TODO: that is all AOServ Platform stuff only.
+-- TODO: This may require duplicating the generate scripts.
+
 /**********************************************************************
  *
  * The text_images table stores the attributes of GIF images of text

@@ -59,3 +59,14 @@ clamupdate	AOINDUSTRIES	\N
 clamscan	AOINDUSTRIES	\N
 redis	AOINDUSTRIES	\N
 \.
+
+-- AOServ Master
+INSERT INTO account."User" (username, package, disable_log) VALUES ('aoserv-master',  'AOINDUSTRIES', NULL);
+-- AOServ Schema
+INSERT INTO account."User" (username, package, disable_log) VALUES ('accounting',     'AOINDUSTRIES', NULL);
+INSERT INTO account."User" (username, package, disable_log) VALUES ('billing',        'AOINDUSTRIES', NULL);
+INSERT INTO account."User" (username, package, disable_log) VALUES ('distribution',   'AOINDUSTRIES', NULL);
+INSERT INTO account."User" (username, package, disable_log) VALUES ('infrastructure', 'AOINDUSTRIES', NULL);
+INSERT INTO account."User" (username, package, disable_log) VALUES ('management',     'AOINDUSTRIES', NULL);
+INSERT INTO account."User" (username, package, disable_log) VALUES ('monitoring',     'AOINDUSTRIES', NULL);
+INSERT INTO account."User" (username, package, disable_log) VALUES ('reseller',       'AOINDUSTRIES', NULL);

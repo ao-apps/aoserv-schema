@@ -84,3 +84,14 @@ virusgroup	AOINDUSTRIES	system
 clamscan	AOINDUSTRIES	system
 redis	AOINDUSTRIES	system
 \.
+
+-- AOServ Master
+INSERT INTO linux."Group" ("name", package, "type") VALUES ('aoserv-master',  'AOINDUSTRIES', 'system');
+-- AOServ Schema
+INSERT INTO linux."Group" ("name", package, "type") VALUES ('accounting',     'AOINDUSTRIES', 'user');
+INSERT INTO linux."Group" ("name", package, "type") VALUES ('billing',        'AOINDUSTRIES', 'user');
+INSERT INTO linux."Group" ("name", package, "type") VALUES ('distribution',   'AOINDUSTRIES', 'user');
+INSERT INTO linux."Group" ("name", package, "type") VALUES ('infrastructure', 'AOINDUSTRIES', 'user');
+INSERT INTO linux."Group" ("name", package, "type") VALUES ('management',     'AOINDUSTRIES', 'user');
+INSERT INTO linux."Group" ("name", package, "type") VALUES ('monitoring',     'AOINDUSTRIES', 'user');
+INSERT INTO linux."Group" ("name", package, "type") VALUES ('reseller',       'AOINDUSTRIES', 'user');

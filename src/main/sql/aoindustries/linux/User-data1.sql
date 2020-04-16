@@ -58,3 +58,14 @@ clamupdate	Clamav database update user	\N	\N	\N	system	/sbin/nologin	2018-07-11 
 clamscan	Clamav scanner user	\N	\N	\N	system	/sbin/nologin	2018-07-11 04:07:53.611256+00	\N
 redis	Redis Database Server	\N	\N	\N	system	/sbin/nologin	2019-08-22 21:12:50.65977+00	\N
 \.
+
+-- AOServ Master
+linux."User" (username, "name", "type", shell, created) VALUES ('aoserv-master',  'AOServ Master',   'system', '/sbin/nologin', '2020-04-14 18:47:06.273709+00');
+-- AOServ Schema
+linux."User" (username, "name", "type", shell, created) VALUES ('accounting',     'masterdb access', 'user',   '/bin/bash',     '2018-11-26 21:46:59.798036+00');
+linux."User" (username, "name", "type", shell, created) VALUES ('billing',        'masterdb access', 'user',   '/bin/bash',     '2018-11-26 22:08:02.058685+00');
+linux."User" (username, "name", "type", shell, created) VALUES ('distribution',   'masterdb access', 'user',   '/bin/bash',     '2018-11-26 21:46:50.190308+00');
+linux."User" (username, "name", "type", shell, created) VALUES ('infrastructure', 'masterdb access', 'user',   '/bin/bash',     '2018-11-27 07:08:00.994582+00');
+linux."User" (username, "name", "type", shell, created) VALUES ('management',     'masterdb access', 'user',   '/bin/bash',     '2018-11-26 21:47:08.617974+00');
+linux."User" (username, "name", "type", shell, created) VALUES ('monitoring',     'masterdb access', 'user',   '/bin/bash',     '2018-11-27 15:40:40.322250+00');
+linux."User" (username, "name", "type", shell, created) VALUES ('reseller',       'masterdb access', 'user',   '/bin/bash',     '2018-11-27 04:46:20.963659+00');

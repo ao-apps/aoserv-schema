@@ -1,4 +1,4 @@
-COPY linux."GroupUser" (id, "group", "user", "isPrimary") FROM stdin;
+COPY linux."GroupUser" (id, "group", "user", "isPrimary", "operatingSystemVersion") FROM stdin;
 1	root	root	t	\N
 2	avahi	avahi	t	\N
 3	bin	bin	t	\N
@@ -77,4 +77,15 @@ COPY linux."GroupUser" (id, "group", "user", "isPrimary") FROM stdin;
 78	virusgroup	clamscan	f	\N
 79	redis	redis	t	\N
 \.
-SELECT setval ('linux."GroupUser_id_seq"', 78, true);
+SELECT setval ('linux."GroupUser_id_seq"', 79, true);
+
+-- AOServ Master
+INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('aoserv-master',  'aoserv-master',  TRUE);
+-- AOServ Schema
+INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('accounting',     'accounting',     TRUE);
+INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('billing',        'billing',        TRUE);
+INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('distribution',   'distribution',   TRUE);
+INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('infrastructure', 'infrastructure', TRUE);
+INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('management',     'management',     TRUE);
+INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('monitoring',     'monitoring',     TRUE);
+INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('reseller',       'reseller',       TRUE);

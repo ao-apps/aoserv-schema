@@ -37,20 +37,5 @@ insert into billing."Package" values(
 	null,
 	null
 );
-insert into billing."Package" values(
-    4,
-	'NMW',
-	'NMW',
-	1,
-	'2006-03-21 13:11:00-06',
-	'orion',
-	null,
-	null,
-	null,
-	null,
-	null,
-	null,
-	null
-);
 SELECT setval ('billing."Package_id_seq"', 5, true);
 commit;

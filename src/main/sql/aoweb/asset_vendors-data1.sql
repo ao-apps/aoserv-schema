@@ -1,3 +1,19 @@
+/*
+ * aoindustries.com - https://aoindustries.com/
+ * Copyright (C) 2000-2006, 2020  AO Industries, Inc.
+ *     support@aoindustries.com
+ *     7262 Bull Pen Cir
+ *     Mobile, AL 36695
+ *
+ * This file is part of aoindustries.com.
+ *
+ * aoindustries.com is non-exclusive, non-transferable, non-redistributable.
+ *
+ * aoindustries.com is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ */
+
 COPY "asset_vendors" FROM stdin;
 hytech	Hy-Tech Computer Systems Mobile	http://e-hytech.com/	858 Butler Drive	Suite A	Mobile	AL	36693-5104	(251) 602-8100
 office_depot	Office Depot	http://www.officedepot.com/	3658 B Airport Blvd		Mobile	AL	36608	(251) 342-3887

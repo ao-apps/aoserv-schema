@@ -1,3 +1,19 @@
+/*
+ * aoindustries.com - https://aoindustries.com/
+ * Copyright (C) 2000-2006, 2018, 2020  AO Industries, Inc.
+ *     support@aoindustries.com
+ *     7262 Bull Pen Cir
+ *     Mobile, AL 36695
+ *
+ * This file is part of aoindustries.com.
+ *
+ * aoindustries.com is non-exclusive, non-transferable, non-redistributable.
+ *
+ * aoindustries.com is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ */
+
 COPY "info_categories" FROM stdin;
 1	article	java	1	Java Hosting Articles	Java Hosting	Java Hosting	Articles about our Java software, configuration, motives, and support	articles, info, information, java, hosting, virtual, machine, machines, jvm, jvms, servlet, engines, server, pages, JSP, tomcat, catalina, jetty, jdbc, ejb, APIs
 2	article	reliability	2	Reliability Measures	Reliability Measures	Reliability	Reliability measures taken to provide high website availability	reliability, measures, availability, accessability, stability

@@ -1,3 +1,26 @@
+/*
+ * aoserv-schema - Database schema for the AOServ Platform.
+ * Copyright (C) 2000-2006, 2007, 2009, 2010, 2013, 2018, 2019, 2020  AO Industries, Inc.
+ *     support@aoindustries.com
+ *     7262 Bull Pen Cir
+ *     Mobile, AL 36695
+ *
+ * This file is part of aoserv-schema.
+ *
+ * aoserv-schema is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * aoserv-schema is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with aoserv-schema.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 COPY billing."PackageDefinition" FROM stdin;
 18	AOINDUSTRIES	backup	1024	2005-04	1 TB Backup	1 Terabyte Backup Service	\N	\N	\N	USD	570.00	backup	t	t
 19	AOINDUSTRIES	backup	2048	2005-04	2 TB Backup	2 Terabyte Backup Service	\N	\N	\N	USD	860.00	backup	t	t

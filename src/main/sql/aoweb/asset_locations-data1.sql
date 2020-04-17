@@ -1,3 +1,19 @@
+/*
+ * aoindustries.com - https://aoindustries.com/
+ * Copyright (C) 2000-2006, 2008, 2020  AO Industries, Inc.
+ *     support@aoindustries.com
+ *     7262 Bull Pen Cir
+ *     Mobile, AL 36695
+ *
+ * This file is part of aoindustries.com.
+ *
+ * aoindustries.com is non-exclusive, non-transferable, non-redistributable.
+ *
+ * aoindustries.com is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ */
+
 COPY "asset_locations" FROM stdin;
 ao	2200 Dogwood Ct N		Mobile	AL	36693	Dan Armstrong	(251) 666-1664
 office	7262 Bull Pen Cir		Mobile	AL	36695	Dan Armstrong	(251) 607-9556

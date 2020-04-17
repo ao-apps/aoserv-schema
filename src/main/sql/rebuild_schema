@@ -27,58 +27,58 @@ shopt -s nullglob
 DIR="${BASH_SOURCE%/*}"
 echo "BEGIN;"
 # 5
-cat "${DIR}/aoindustries/schema/ForeignKey-data5-pre.sql"
+cat "${DIR}/aoserv-master/schema/ForeignKey-data5-pre.sql"
 	# 4
-	cat "${DIR}/aoindustries/schema/Column-data4-pre.sql"
-	cat "${DIR}/aoindustries/aosh/Command-data4-pre.sql"
+	cat "${DIR}/aoserv-master/schema/Column-data4-pre.sql"
+	cat "${DIR}/aoserv-master/aosh/Command-data4-pre.sql"
 		# 3
-		cat "${DIR}/aoindustries/schema/Table-data3-pre.sql"
+		cat "${DIR}/aoserv-master/schema/Table-data3-pre.sql"
 			# 2
-			cat "${DIR}/aoindustries/schema/Type-data2-pre.sql"
-			cat "${DIR}/aoindustries/schema/Schema-data2-pre.sql"
+			cat "${DIR}/aoserv-master/schema/Type-data2-pre.sql"
+			cat "${DIR}/aoserv-master/schema/Schema-data2-pre.sql"
 				# 1
-				cat "${DIR}/aoindustries/schema/AoservProtocol-data1-pre.sql"
-				cat "${DIR}/aoindustries/schema/AoservProtocol-data1.sql"
-				cat "${DIR}/aoindustries/schema/AoservProtocol-data1-post.sql"
+				cat "${DIR}/aoserv-master/schema/AoservProtocol-data1-pre.sql"
+				cat "${DIR}/aoserv-master/schema/AoservProtocol-data1.sql"
+				cat "${DIR}/aoserv-master/schema/AoservProtocol-data1-post.sql"
 			# 2
-			cat "${DIR}/aoindustries/schema/Schema-data2.sql"
-			cat "${DIR}/aoindustries/schema/Schema-data2-post.sql"
-			cat "${DIR}/aoindustries/schema/Type-data2.sql"
-			cat "${DIR}/aoindustries/schema/Type-data2-post.sql"
+			cat "${DIR}/aoserv-master/schema/Schema-data2.sql"
+			cat "${DIR}/aoserv-master/schema/Schema-data2-post.sql"
+			cat "${DIR}/aoserv-master/schema/Type-data2.sql"
+			cat "${DIR}/aoserv-master/schema/Type-data2-post.sql"
 		# 3
-		cat "${DIR}/aoindustries/schema/Table-data3.sql"
-		cat "${DIR}/aoindustries/schema/Table-data3-post.sql"
+		cat "${DIR}/aoserv-master/schema/Table-data3.sql"
+		cat "${DIR}/aoserv-master/schema/Table-data3-post.sql"
 	# 4
-	cat "${DIR}/aoindustries/aosh/Command-data4.sql"
+	cat "${DIR}/aoserv-master/aosh/Command-data4.sql"
 	for SQL in \
-      "${DIR}/aoindustries"/*/*-aosh.Command.sql \
-      "${DIR}/aoindustries"/*/*/*-aosh.Command.sql \
-      "${DIR}/aoindustries"/*/*/*/*-aosh.Command.sql
+      "${DIR}/aoserv-master"/*/*-aosh.Command.sql \
+      "${DIR}/aoserv-master"/*/*/*-aosh.Command.sql \
+      "${DIR}/aoserv-master"/*/*/*/*-aosh.Command.sql
 	do
 		echo "\echo $SQL"
 		cat "$SQL"
 	done
-	cat "${DIR}/aoindustries/aosh/Command-data4-post.sql"
+	cat "${DIR}/aoserv-master/aosh/Command-data4-post.sql"
 	for SQL in \
-      "${DIR}/aoindustries"/*/*-schema.Column.sql \
-      "${DIR}/aoindustries"/*/*/*-schema.Column.sql \
-      "${DIR}/aoindustries"/*/*/*/*-schema.Column.sql
+      "${DIR}/aoserv-master"/*/*-schema.Column.sql \
+      "${DIR}/aoserv-master"/*/*/*-schema.Column.sql \
+      "${DIR}/aoserv-master"/*/*/*/*-schema.Column.sql
 	do
 		echo "\echo $SQL"
 		cat "$SQL"
 	done
-	cat "${DIR}/aoindustries/schema/Column-data4-post.sql"
+	cat "${DIR}/aoserv-master/schema/Column-data4-post.sql"
 # 5
 for SQL in \
-  "${DIR}/aoindustries"/*/*-schema.ForeignKey.sql \
-  "${DIR}/aoindustries"/*/*/*-schema.ForeignKey.sql \
-  "${DIR}/aoindustries"/*/*/*/*-schema.ForeignKey.sql
+  "${DIR}/aoserv-master"/*/*-schema.ForeignKey.sql \
+  "${DIR}/aoserv-master"/*/*/*-schema.ForeignKey.sql \
+  "${DIR}/aoserv-master"/*/*/*/*-schema.ForeignKey.sql
 do
 	echo "\echo $SQL"
 	cat "$SQL"
 done
-cat "${DIR}/aoindustries/schema/ForeignKey-data5-post.sql"
+cat "${DIR}/aoserv-master/schema/ForeignKey-data5-post.sql"
 # Verify
-cat "${DIR}/aoindustries/schema/Schema-verify.sql"
-cat "${DIR}/aoindustries/schema/Table-verify.sql"
+cat "${DIR}/aoserv-master/schema/Schema-verify.sql"
+cat "${DIR}/aoserv-master/schema/Table-verify.sql"
 echo "COMMIT;"

@@ -84,7 +84,7 @@ insert into
     postgresql."Database"
 values(
     11,
-    'aoindustries',
+    'aoserv-master',
     1,
     17,
     (

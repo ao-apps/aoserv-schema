@@ -76,12 +76,28 @@ along with aoserv-schema.  If not, see <http://www.gnu.org/licenses />.
 							<outputDirectory>${project.build.directory}/sql</outputDirectory>
 						</configuration>
 					</execution>
+					<execution>
+						<id>tests-sql-resources</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<resources>
+								<resource>
+									<directory>src/test/sql</directory>
+								</resource>
+							</resources>
+							<outputDirectory>${project.build.directory}/tests-sql</outputDirectory>
+						</configuration>
+					</execution>
 				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId><artifactId>maven-jar-plugin</artifactId>
 				<executions>
 					<execution>
+						<id>sql-jar</id>
 						<phase>package</phase>
 						<goals>
 							<goal>jar</goal>
@@ -93,6 +109,21 @@ along with aoserv-schema.  If not, see <http://www.gnu.org/licenses />.
 							<classesDirectory>src/main/sql</classesDirectory>
 							-->
 							<classifier>sql</classifier>
+						</configuration>
+					</execution>
+					<execution>
+						<id>tests-sql-jar</id>
+						<phase>package</phase>
+						<goals>
+							<goal>test-jar</goal>
+						</goals>
+						<configuration>
+							<classesDirectory>${project.build.directory}/tests-sql</classesDirectory>
+							<!-- Could pull directly from source, without above tests-sql-resources,
+							     but this seems to match Maven style better:
+							<classesDirectory>src/main/tests-sql</classesDirectory>
+							-->
+							<classifier>tests-sql</classifier>
 						</configuration>
 					</execution>
 				</executions>

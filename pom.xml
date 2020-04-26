@@ -118,7 +118,7 @@ along with aoserv-schema.  If not, see <http://www.gnu.org/licenses />.
 							<goal>test-jar</goal>
 						</goals>
 						<configuration>
-							<classesDirectory>${project.build.directory}/tests-sql</classesDirectory>
+							<testClassesDirectory>${project.build.directory}/tests-sql</testClassesDirectory>
 							<!-- Could pull directly from source, without above tests-sql-resources,
 							     but this seems to match Maven style better:
 							<classesDirectory>src/main/tests-sql</classesDirectory>

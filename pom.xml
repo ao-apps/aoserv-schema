@@ -94,11 +94,7 @@ along with aoserv-schema.  If not, see <http://www.gnu.org/licenses />.
 				<groupId>org.apache.maven.plugins</groupId><artifactId>maven-resources-plugin</artifactId>
 				<executions>
 					<execution>
-						<id>sql-resources</id>
-						<phase>process-resources</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
+						<id>sql-resources</id><phase>process-resources</phase><goals><goal>copy-resources</goal></goals>
 						<configuration>
 							<resources>
 								<resource>
@@ -109,11 +105,7 @@ along with aoserv-schema.  If not, see <http://www.gnu.org/licenses />.
 						</configuration>
 					</execution>
 					<execution>
-						<id>tests-sql-resources</id>
-						<phase>process-resources</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
+						<id>tests-sql-resources</id><phase>process-resources</phase><goals><goal>copy-resources</goal></goals>
 						<configuration>
 							<resources>
 								<resource>
@@ -129,11 +121,7 @@ along with aoserv-schema.  If not, see <http://www.gnu.org/licenses />.
 				<groupId>org.apache.maven.plugins</groupId><artifactId>maven-jar-plugin</artifactId>
 				<executions>
 					<execution>
-						<id>sql-jar</id>
-						<phase>package</phase>
-						<goals>
-							<goal>jar</goal>
-						</goals>
+						<id>sql-jar</id><phase>package</phase><goals><goal>jar</goal></goals>
 						<configuration>
 							<classesDirectory>${project.build.directory}/sql</classesDirectory>
 							<!-- Could pull directly from source, without above sql-resources,
@@ -144,11 +132,7 @@ along with aoserv-schema.  If not, see <http://www.gnu.org/licenses />.
 						</configuration>
 					</execution>
 					<execution>
-						<id>tests-sql-jar</id>
-						<phase>package</phase>
-						<goals>
-							<goal>test-jar</goal>
-						</goals>
+						<id>tests-sql-jar</id><phase>package</phase><goals><goal>test-jar</goal></goals>
 						<configuration>
 							<testClassesDirectory>${project.build.directory}/tests-sql</testClassesDirectory>
 							<!-- Could pull directly from source, without above tests-sql-resources,

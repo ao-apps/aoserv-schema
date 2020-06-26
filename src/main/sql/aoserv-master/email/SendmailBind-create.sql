@@ -35,3 +35,4 @@ create table email."SendmailBind" (
 );
 grant all            on email."SendmailBind" to aoadmin;
 grant select, delete on email."SendmailBind" to aoserv_app;
+grant insert         on email."SendmailBind" to management;

@@ -51,4 +51,4 @@ create table net."Bind" (
 );
 grant all                            on net."Bind" to aoadmin;
 grant select, insert, update, delete on net."Bind" to aoserv_app;
-grant select, insert, delete         on net."Bind" to management;
+grant select, insert, update, delete on net."Bind" to management;

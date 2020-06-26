@@ -21,9 +21,10 @@
  * along with aoserv-schema.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-create sequence email."SendmailServer_id_seq" cycle;
-grant all    on email."SendmailServer_id_seq" to aoadmin;
-grant select on email."SendmailServer_id_seq" to aoserv_app;
+create sequence         email."SendmailServer_id_seq" cycle;
+grant all            on email."SendmailServer_id_seq" to aoadmin;
+grant select         on email."SendmailServer_id_seq" to aoserv_app;
+grant select, update on email."SendmailServer_id_seq" to management;
 
 create table email."SendmailServer" (
   id integer
@@ -121,5 +122,6 @@ create table email."SendmailServer" (
   "clientAddrInet"  integer,
   "clientAddrInet6" integer
 );
-grant all    on email."SendmailServer" to aoadmin;
-grant select on email."SendmailServer" to aoserv_app;
+grant all            on email."SendmailServer" to aoadmin;
+grant select         on email."SendmailServer" to aoserv_app;
+grant select, insert on email."SendmailServer" to management;

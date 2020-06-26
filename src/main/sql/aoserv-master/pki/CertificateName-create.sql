@@ -39,6 +39,6 @@ create table pki."CertificateName" (
   "domain" "com.aoindustries.net"."DomainName"
     not null
 );
-grant all    on pki."CertificateName" to aoadmin;
-grant select on pki."CertificateName" to aoserv_app;
-grant insert on pki."CertificateName" to management;
+grant all            on pki."CertificateName" to aoadmin;
+grant select         on pki."CertificateName" to aoserv_app;
+grant select, insert on pki."CertificateName" to management;

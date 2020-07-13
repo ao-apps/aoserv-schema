@@ -118,3 +118,5 @@ INSERT INTO linux."Group" ("name", package, "type") VALUES ('infrastructure', 'A
 INSERT INTO linux."Group" ("name", package, "type") VALUES ('management',     'AOINDUSTRIES', 'user');
 INSERT INTO linux."Group" ("name", package, "type") VALUES ('monitoring',     'AOINDUSTRIES', 'user');
 INSERT INTO linux."Group" ("name", package, "type") VALUES ('reseller',       'AOINDUSTRIES', 'user');
+-- Amazon EC2 cloud-init
+INSERT INTO linux."Group" ("name", package, "type") VALUES ('centos',         'AOINDUSTRIES', 'user');

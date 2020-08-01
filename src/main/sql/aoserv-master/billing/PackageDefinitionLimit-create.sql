@@ -62,3 +62,4 @@ create table billing."PackageDefinitionLimit" (
 
 grant all                            on billing."PackageDefinitionLimit" to aoadmin;
 grant select, insert, update, delete on billing."PackageDefinitionLimit" to aoserv_app;
+grant select                         on billing."PackageDefinitionLimit" to billing;

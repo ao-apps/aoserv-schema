@@ -37,7 +37,7 @@ along with aoserv-schema.  If not, see <http://www.gnu.org/licenses />.
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2020-04-13T01:51:55-05:00"
-		dateModified="2020-07-12T22:51:49-05:00"
+		dateModified="2020-07-31T22:59:22-05:00"
 	>
 		<!-- The current snapshot, unreleased version -->
 		<c:set var="version" value="@{com.aoindustries:aoserv-schema:pom.version}" />
@@ -52,7 +52,11 @@ along with aoserv-schema.  If not, see <http://www.gnu.org/licenses />.
 				groupId="@{project.groupId}"
 				artifactId="@{documented.artifactId}"
 				scmUrl="@{project.scm.url}"
-			/>
+			>
+				<ul>
+					<li>Additional permissions for "billing" role in support of updated procedures.</li>
+				</ul>
+			</changelog:release>
 		</c:if>
 
 		<changelog:release

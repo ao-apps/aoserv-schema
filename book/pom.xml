@@ -29,7 +29,7 @@ along with aoserv-schema.  If not, see <http://www.gnu.org/licenses />.
 		<relativePath>../../../ao-oss-parent/pom.xml</relativePath>
 	</parent>
 
-	<groupId>com.aoindustries</groupId><artifactId>aoserv-schema-book</artifactId><version>1.84.11</version>
+	<groupId>com.aoindustries</groupId><artifactId>aoserv-schema-book</artifactId><version>1.84.11-POST-SNAPSHOT</version>
 	<packaging>bundle</packaging>
 
 	<properties>
@@ -51,7 +51,7 @@ along with aoserv-schema.  If not, see <http://www.gnu.org/licenses />.
 		<connection>scm:git:git://github.com/aoindustries/aoserv-schema.git</connection>
 		<developerConnection>scm:git:git@github.com:aoindustries/aoserv-schema.git</developerConnection>
 		<url>https://github.com/aoindustries/aoserv-schema</url>
-		<tag>aoserv-schema-book-1.84.11</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<issueManagement>

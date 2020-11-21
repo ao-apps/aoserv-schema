@@ -37,7 +37,7 @@ along with aoserv-schema.  If not, see <http://www.gnu.org/licenses />.
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2020-04-13T01:51:55-05:00"
-		dateModified="2020-11-16T23:45:23-06:00"
+		dateModified="2020-11-20T23:37:21-06:00"
 	>
 		<!-- The current snapshot, unreleased version -->
 		<c:set var="version" value="@{com.aoindustries:aoserv-schema:pom.version}" />
@@ -61,6 +61,7 @@ along with aoserv-schema.  If not, see <http://www.gnu.org/licenses />.
 							<li>Java 16 is new beta</li>
 						</ol>
 					</li>
+					<li>Added support for <ao:a href="https://www.postgresql.org/docs/13/index.html">PostgreSQL 13</ao:a>.</li>
 				</ul>
 			</changelog:release>
 		</c:if>

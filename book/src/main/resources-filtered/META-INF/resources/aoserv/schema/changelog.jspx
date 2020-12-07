@@ -37,7 +37,7 @@ along with aoserv-schema.  If not, see <http://www.gnu.org/licenses />.
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2020-04-13T01:51:55-05:00"
-		dateModified="2020-11-29T08:12:29-06:00"
+		dateModified="2020-12-07T17:48:12-06:00"
 	>
 		<c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
 			<changelog:release
@@ -46,7 +46,11 @@ along with aoserv-schema.  If not, see <http://www.gnu.org/licenses />.
 				groupId="@{project.groupId}"
 				artifactId="@{documented.artifactId}"
 				scmUrl="@{project.scm.url}"
-			/>
+			>
+				<ul>
+					<li>Added support for <ao:a href="https://www.php.net/releases/8.0/">PHP 8.0</ao:a>.</li>
+				</ul>
+			</changelog:release>
 		</c:if>
 
 		<changelog:release

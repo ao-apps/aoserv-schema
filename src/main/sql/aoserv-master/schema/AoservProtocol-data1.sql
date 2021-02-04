@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2019, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2019, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -1697,6 +1697,12 @@ insert into "schema"."AoservProtocol" values(
 Added AOSH command web.tomcat.PrivateTomcatSite.tomcatAuthentication.set
 Added column web.tomcat.SharedTomcat.tomcatAuthentication
 Added AOSH command web.tomcat.SharedTomcat.tomcatAuthentication.set'
+);
+insert into "schema"."AoservProtocol" values(
+  '1.84.13',
+  '2021-02-03',
+  'Added type "HashedKey"
+Removed linux.Server.daemon_key, now stored in aoserv-daemon.properties'
 );
 /* TODO:
 renamed dns.TopLevelDomain to dns.Suffix

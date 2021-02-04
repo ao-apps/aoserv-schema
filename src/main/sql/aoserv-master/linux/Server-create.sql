@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2007, 2008, 2010, 2011, 2012, 2016, 2017, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2007, 2008, 2010, 2011, 2012, 2016, 2017, 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -34,8 +34,6 @@ create table linux."Server" (
       and hostname not like '%\_%'
     ),
   daemon_bind integer,
-  daemon_key text
-    not null,
   pool_size integer
     default 128
     not null,

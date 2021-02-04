@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2019, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2019, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -74,3 +74,4 @@ insert into "schema"."Type" values(49, 'firewalld_zone_name',     '1.81.0', null
 insert into "schema"."Type" values(50, 'linux_username',          '1.81.22', null);
 insert into "schema"."Type" values(51, 'Identifier',              '1.83.0', null);
 insert into "schema"."Type" values(52, 'SmallIdentifier',         '1.83.0', null);
+insert into "schema"."Type" values(53, 'HashedKey',               '1.84.13', null);

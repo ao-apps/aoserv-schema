@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -37,7 +37,7 @@ select "schema".add_column('linux', 'ao_servers', 'hostname',                 'h
 select "schema".add_column('linux', 'ao_servers', 'hostname',                 'domain_name',     false,  true, false, 'the unique hostname of the server', '1.69', null);
 select "schema".add_column('linux', 'ao_servers', 'daemon_bind',              'fkey',             true, false, false, 'the network bind info for the AOServ Daemon', '1.0a100', null);
 select "schema".add_column('linux', 'ao_servers', 'daemon_key',               'string',          false, false, false, E'the crypt''ed key used to connect to this server,\nthis info MUST be filtered because it grants\ncomplete control over the server.', '1.0a100', '1.68');
-select "schema".add_column('linux', 'ao_servers', 'daemon_key',               'hashed_password', false, false, false, E'the hashed key used to connect to this server,\nthis info MUST be filtered because it grants\ncomplete control over the server.', '1.69', null);
+select "schema".add_column('linux', 'ao_servers', 'daemon_key',               'hashed_password', false, false, false, E'the hashed key used to connect to this server,\nthis info MUST be filtered because it grants\ncomplete control over the server.', '1.69', '1.83.2');
 select "schema".add_column('linux', 'ao_servers', 'pool_size',                'int',             false, false, false, 'the recommended connection pool size for the AOServ Master', '1.0a100', null);
 select "schema".add_column('linux', 'ao_servers', 'distro_hour',              'int',             false, false, false, 'the hour the distribution will occur, in server time zone', '1.0a100', null);
 select "schema".add_column('linux', 'ao_servers', 'last_distro_time',         'time',             true, false, false, 'the time the last distro check was started', '1.0a100', null);

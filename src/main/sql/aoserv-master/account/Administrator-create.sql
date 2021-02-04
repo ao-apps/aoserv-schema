@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2009, 2010, 2012, 2013, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2009, 2010, 2012, 2013, 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -24,7 +24,7 @@
 create table account."Administrator" (
   username text
     primary key,
-  password text
+  password "com.aoindustries.security"."HashedPassword"
     default '*'
     not null,
   "name" text

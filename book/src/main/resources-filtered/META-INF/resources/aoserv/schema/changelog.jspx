@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 aoserv-schema - Database schema for the AOServ Platform.
-Copyright (C) 2020  AO Industries, Inc.
+Copyright (C) 2020, 2021  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -37,7 +37,7 @@ along with aoserv-schema.  If not, see <http://www.gnu.org/licenses />.
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2020-04-13T01:51:55-05:00"
-		dateModified="2020-12-07T17:48:12-06:00"
+		dateModified="2021-02-04T15:00:31-06:00"
 	>
 		<c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
 			<changelog:release
@@ -49,6 +49,13 @@ along with aoserv-schema.  If not, see <http://www.gnu.org/licenses />.
 			>
 				<ul>
 					<li>Added support for <ao:a href="https://www.php.net/releases/8.0/">PHP 8.0</ao:a>.</li>
+					<li>New <code>"schema"."AoservProtocol"</code>: <code>1.84.13</code></li>
+					<li>New <code>"schema"."Type"</code>: <code>HashedKey</code></li>
+					<li>Removed <code>linux.Server.daemon_key</code>, now stored in <code>aoserv-daemon.properties</code></li>
+					<li>
+						<code>account."Administrator".password</code> changed from <code>text</code> to the newer
+						<code>"com.aoindustries.security"."HashedPassword"</code> composite type.
+					</li>
 				</ul>
 			</changelog:release>
 		</c:if>

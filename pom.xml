@@ -184,6 +184,11 @@ along with aoserv-schema.  If not, see <http://www.gnu.org/licenses />.
 				<exclusions><exclusion><groupId>*</groupId><artifactId>*</artifactId></exclusion></exclusions>
 			</dependency>
 			<dependency>
+				<groupId>com.aoindustries</groupId><artifactId>ao-security</artifactId><version>2.1.0${POST-SNAPSHOT}</version><classifier>sql</classifier>
+				<type>jar</type>
+				<exclusions><exclusion><groupId>*</groupId><artifactId>*</artifactId></exclusion></exclusions>
+			</dependency>
+			<dependency>
 				<groupId>com.aoindustries</groupId><artifactId>ao-tlds</artifactId><version>1.2.0${POST-SNAPSHOT}</version><classifier>sql</classifier>
 				<type>jar</type>
 				<exclusions><exclusion><groupId>*</groupId><artifactId>*</artifactId></exclusion></exclusions>
@@ -199,6 +204,10 @@ along with aoserv-schema.  If not, see <http://www.gnu.org/licenses />.
 		</dependency>
 		<dependency>
 			<groupId>com.aoindustries</groupId><artifactId>ao-net-types</artifactId><classifier>sql</classifier>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>com.aoindustries</groupId><artifactId>ao-security</artifactId><classifier>sql</classifier>
 			<type>jar</type>
 		</dependency>
 		<dependency>

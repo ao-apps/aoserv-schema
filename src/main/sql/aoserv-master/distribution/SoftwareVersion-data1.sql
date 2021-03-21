@@ -1448,6 +1448,9 @@ INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner,
 -- Apache Maven
 INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
   3381, 'maven', '3.6.0', '2018-12-07 05:40:12.053229+00', 'orion', 70);
+-- Apache Tomcat
+INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
+  3395, 'jakarta-tomcat', '10.0.0', '2021-03-21 09:22:46.883379+00', 'orion', 70);
 -- Java
 INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
   3385, 'jdk', '1.7.0.0', '2019-11-16 20:37:45.739586+00', 'orion', 70);
@@ -1507,4 +1510,4 @@ INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner,
   3392, 'postgresql', '13.0', '2020-11-21 04:39:42.354206+00', 'orion', 70);
 COMMIT;
 
-SELECT setval ('distribution."SoftwareVersion_id_seq"', 3395, false);
+SELECT setval ('distribution."SoftwareVersion_id_seq"', 3396, false);

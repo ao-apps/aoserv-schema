@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -24,10 +24,5 @@
 begin;
 insert into distribution."OperatingSystem" values('centos', 'CentOS Linux', true);
 insert into distribution."OperatingSystem" values('debian', 'Debian Linux', true);
-insert into distribution."OperatingSystem" values('fedora', 'Fedora Linux', true);
-insert into distribution."OperatingSystem" values('gentoo', 'Gentoo Linux', true);
-insert into distribution."OperatingSystem" values('mandrake', 'Mandrake Linux', true);
-insert into distribution."OperatingSystem" values('mandriva', 'Mandriva Linux', true);
-insert into distribution."OperatingSystem" values('redhat', 'RedHat Linux', true);
 insert into distribution."OperatingSystem" values('windows', 'Windows', false);
 commit;

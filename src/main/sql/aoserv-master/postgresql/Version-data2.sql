@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2019, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2019, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,14 +22,6 @@
  */
 
 begin;
--- Mandriva 2006.0
-insert into postgresql."Version" values(14, '7.1');
-insert into postgresql."Version" values(15, '7.2');
-insert into postgresql."Version" values(16, '7.3');
-insert into postgresql."Version" values(17, '8.0');
-insert into postgresql."Version" values(18, '8.1');
--- RedHat ES 4
-insert into postgresql."Version" values(2586, '8.1');
 -- CentOS 5
 insert into postgresql."Version" values(3315, '7.1');
 insert into postgresql."Version" values(3316, '7.2');

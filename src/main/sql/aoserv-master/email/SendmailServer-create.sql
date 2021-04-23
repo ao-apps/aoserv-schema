@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -122,6 +122,6 @@ create table email."SendmailServer" (
   "clientAddrInet"  integer,
   "clientAddrInet6" integer
 );
-grant all            on email."SendmailServer" to aoadmin;
-grant select         on email."SendmailServer" to aoserv_app;
-grant select, insert on email."SendmailServer" to management;
+grant all                    on email."SendmailServer" to aoadmin;
+grant select                 on email."SendmailServer" to aoserv_app;
+grant select, insert, delete on email."SendmailServer" to management;

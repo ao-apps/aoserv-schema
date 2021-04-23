@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2008, 2010, 2012, 2017, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2008, 2010, 2012, 2017, 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -69,4 +69,4 @@ create table linux."UserServer" (
 );
 grant all                            on linux."UserServer" to aoadmin;
 grant select, insert, update, delete on linux."UserServer" to aoserv_app;
-grant select, insert, delete         on linux."UserServer" to management; -- TODO: "INSERT" or "root" only - trigger/view to enforce?
+grant select, insert, update, delete on linux."UserServer" to management; -- TODO: "INSERT" or "root" only - trigger/view to enforce?

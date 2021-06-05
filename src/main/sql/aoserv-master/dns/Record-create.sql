@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2007, 2010, 2011, 2013, 2014, 2017, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2007, 2010, 2011, 2013, 2014, 2017, 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -34,7 +34,7 @@ create table dns."Record" (
   "type" text not null,
   priority integer,
   weight integer,
-  port "com.aoindustries.net"."Port",
+  port "com.aoapps.net"."Port",
   destination text not null,
   "dhcpAddress" integer,
   ttl integer,

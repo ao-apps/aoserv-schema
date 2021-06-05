@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2019, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2019, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -42,9 +42,9 @@ ALTER ROLE aoadmin SET search_path TO
   aosh,
   backup,
   billing,
-  "com.aoindustries.creditcards",
-  "com.aoindustries.net",
-  "com.aoindustries.tlds",
+  "com.aoapps.payments",
+  "com.aoapps.net",
+  "com.aoapps.tlds",
   distribution,
   "distribution.management",
   dns,
@@ -90,7 +90,7 @@ ALTER ROLE accounting SET search_path TO
   account,
   accounting,
   billing,
-  "com.aoindustries.creditcards",
+  "com.aoapps.payments",
   master,
   payment;
 
@@ -119,8 +119,8 @@ ALTER ROLE management SET search_path TO
   "account.management",
   backup,
   billing,
-  "com.aoindustries.net",
-  "com.aoindustries.tlds",
+  "com.aoapps.net",
+  "com.aoapps.tlds",
   distribution,
   dns,
   email,

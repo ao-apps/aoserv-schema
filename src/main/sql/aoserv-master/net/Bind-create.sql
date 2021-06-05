@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2008, 2009, 2010, 2013, 2017, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2008, 2009, 2010, 2013, 2017, 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -36,9 +36,9 @@ create table net."Bind" (
     not null,
   "ipAddress" integer
     not null,
-  port "com.aoindustries.net"."Port"
+  port "com.aoapps.net"."Port"
     not null,
-  net_protocol "com.aoindustries.net"."Protocol"
+  net_protocol "com.aoapps.net"."Protocol"
     not null,
     -- TODO: Should be TCP, UDP, SCTP only, matching Port class?
   app_protocol text

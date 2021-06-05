@@ -24,7 +24,7 @@
 create table account."Administrator" (
   username text
     primary key,
-  password "com.aoindustries.security"."HashedPassword"
+  password "com.aoapps.security"."HashedPassword"
     default '*'
     not null,
   "name" text
@@ -49,7 +49,7 @@ create table account."Administrator" (
   home_phone text,
   cell_phone text,
   fax text,
-  email "com.aoindustries.net"."Email"
+  email "com.aoapps.net"."Email"
     not null,
   address1 text,
   address2 text,

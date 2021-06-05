@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -25,7 +25,7 @@ create table "web.tomcat"."Version" (
   version integer
     primary key,
   -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
-  install_dir "com.aoindustries.net"."Path"
+  install_dir "com.aoapps.net"."Path"
     not null,
   requires_mod_jk boolean
     not null

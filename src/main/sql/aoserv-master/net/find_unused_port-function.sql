@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -23,12 +23,12 @@
 
 CREATE OR REPLACE FUNCTION net.find_unused_port (
   _server integer,
-  _from_port "com.aoindustries.net"."Port",
-  _net_protocol "com.aoindustries.net"."Protocol"
+  _from_port "com.aoapps.net"."Port",
+  _net_protocol "com.aoapps.net"."Protocol"
 )
-RETURNS "com.aoindustries.net"."Port" AS $$
+RETURNS "com.aoapps.net"."Port" AS $$
 DECLARE
-  _port "com.aoindustries.net"."Port" := _from_port;
+  _port "com.aoapps.net"."Port" := _from_port;
 BEGIN
   IF
     _server IS NULL
@@ -59,21 +59,21 @@ RETURNS NULL ON NULL INPUT;
 
 COMMENT ON FUNCTION net.find_unused_port (
   integer,
-  "com.aoindustries.net"."Port",
-  "com.aoindustries.net"."Protocol"
+  "com.aoapps.net"."Port",
+  "com.aoapps.net"."Protocol"
 ) IS 'Find an available port starting at the provided port number.
 The port will not be used any any IP address on the server';
 
 CREATE OR REPLACE FUNCTION net.find_unused_port (
   _server integer,
   _ip_address integer,
-  _from_port "com.aoindustries.net"."Port",
-  _net_protocol "com.aoindustries.net"."Protocol",
+  _from_port "com.aoapps.net"."Port",
+  _net_protocol "com.aoapps.net"."Protocol",
   _app_protocol text
 )
-RETURNS "com.aoindustries.net"."Port" AS $$
+RETURNS "com.aoapps.net"."Port" AS $$
 DECLARE
-  _port "com.aoindustries.net"."Port" := _from_port;
+  _port "com.aoapps.net"."Port" := _from_port;
 BEGIN
   IF
     _server IS NULL
@@ -140,8 +140,8 @@ RETURNS NULL ON NULL INPUT;
 COMMENT ON FUNCTION net.find_unused_port (
   integer,
   integer,
-  "com.aoindustries.net"."Port",
-  "com.aoindustries.net"."Protocol",
+  "com.aoapps.net"."Port",
+  "com.aoapps.net"."Protocol",
   text
 ) IS 'Find an available port on the given IP address starting at the provided port
 number.  The port will:

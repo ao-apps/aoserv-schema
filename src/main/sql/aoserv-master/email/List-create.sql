@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -30,7 +30,7 @@ create table email."List" (
     default nextval('email."List_id_seq"')
     primary key,
   -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
-  "path" "com.aoindustries.net"."Path"
+  "path" "com.aoapps.net"."Path"
     not null,
   linux_server_account integer
     not null,

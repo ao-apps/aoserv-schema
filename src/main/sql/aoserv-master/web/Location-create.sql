@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -41,10 +41,10 @@ create table web."Location" (
   auth_name text
     not null,
   -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
-  auth_group_file "com.aoindustries.net"."Path"
+  auth_group_file "com.aoapps.net"."Path"
     not null,
   -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
-  auth_user_file "com.aoindustries.net"."Path"
+  auth_user_file "com.aoapps.net"."Path"
     not null,
   require text
     not null,

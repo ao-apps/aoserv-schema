@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -32,7 +32,7 @@ create table "distribution.management"."DistroFile" (
   operating_system_version integer
     not null,
   -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
-  "path" "com.aoindustries.net"."Path"
+  "path" "com.aoapps.net"."Path"
     not null,
   optional boolean
     not null,

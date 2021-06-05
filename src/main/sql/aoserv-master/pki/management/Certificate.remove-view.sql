@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2019, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2019, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -52,10 +52,10 @@ select
     limit 1
   ) is not null then 'Yes' else 'No' end as "HAS_OTHER_CERTBOT",
   -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
-  case when sc.certbot_name is null then sc.key_file   else null::"com.aoindustries.net"."Path" end as "KEY_FILE",
-  case when sc.certbot_name is null then sc.csr_file   else null::"com.aoindustries.net"."Path" end as "CSR_FILE",
-  case when sc.certbot_name is null then sc.cert_file  else null::"com.aoindustries.net"."Path" end as "CERT_FILE",
-  case when sc.certbot_name is null then sc.chain_file else null::"com.aoindustries.net"."Path" end as "CHAIN_FILE"
+  case when sc.certbot_name is null then sc.key_file   else null::"com.aoapps.net"."Path" end as "KEY_FILE",
+  case when sc.certbot_name is null then sc.csr_file   else null::"com.aoapps.net"."Path" end as "CSR_FILE",
+  case when sc.certbot_name is null then sc.cert_file  else null::"com.aoapps.net"."Path" end as "CERT_FILE",
+  case when sc.certbot_name is null then sc.chain_file else null::"com.aoapps.net"."Path" end as "CHAIN_FILE"
 from
              pki."Certificate"                     sc
   inner join linux."Server"                        ao  on sc.ao_server                = ao.server

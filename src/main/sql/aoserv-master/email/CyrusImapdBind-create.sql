@@ -26,7 +26,7 @@ create table email."CyrusImapdBind" (
     primary key,
   cyrus_imapd_server integer
     not null,
-  servername "com.aoindustries.net"."DomainName"
+  servername "com.aoapps.net"."DomainName"
     check(
       servername is null
       or (

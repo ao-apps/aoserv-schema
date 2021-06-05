@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2007, 2008, 2010, 2012, 2017, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2007, 2008, 2010, 2012, 2017, 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -36,7 +36,7 @@ create table backup."FileReplication" (
   use_compression boolean not null,
   retention smallint not null,
   connect_address text,
-  connect_from "com.aoindustries.net"."InetAddress",
+  connect_from "com.aoapps.net"."InetAddress",
   enabled boolean not null default true,
   quota_gid linux."LinuxId",
   unique(server, backup_partition),

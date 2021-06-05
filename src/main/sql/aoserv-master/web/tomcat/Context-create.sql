@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -38,7 +38,7 @@ create table "web.tomcat"."Context" (
   cross_context boolean
     not null,
   -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
-  doc_base "com.aoindustries.net"."Path"
+  doc_base "com.aoapps.net"."Path"
     not null,
   override boolean
     not null,
@@ -54,7 +54,7 @@ create table "web.tomcat"."Context" (
   debug integer
     not null,
   -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
-  work_dir "com.aoindustries.net"."Path",
+  work_dir "com.aoapps.net"."Path",
   server_xml_configured boolean
     not null,
   unique(tomcat_site, "path")

@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2008, 2010, 2013, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2008, 2010, 2013, 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -37,9 +37,9 @@ create table net."Device" (
   description text
     not null,
   delete_route text,
-  gateway "com.aoindustries.net"."InetAddress",
-  network "com.aoindustries.net"."InetAddress",
-  broadcast "com.aoindustries.net"."InetAddress",
+  gateway "com.aoapps.net"."InetAddress",
+  network "com.aoapps.net"."InetAddress",
+  broadcast "com.aoapps.net"."InetAddress",
   mac_address macaddr,
   max_bit_rate bigint,
   monitoring_bit_rate_low bigint,

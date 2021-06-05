@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -30,7 +30,7 @@ create table email."SmtpSmartHostDomain" (
     default nextval('email."SmtpSmartHostDomain_id_seq"')
     primary key,
   smart_host integer not null,
-  "domain" "com.aoindustries.net"."DomainName"
+  "domain" "com.aoapps.net"."DomainName"
     not null
     check ("domain"::text = lower("domain"::text)),
   domain_out_burst integer,

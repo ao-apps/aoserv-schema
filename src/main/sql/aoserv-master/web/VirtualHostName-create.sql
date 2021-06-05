@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -32,7 +32,7 @@ create table web."VirtualHostName" (
     primary key,
   httpd_site_bind integer
     not null,
-  hostname "com.aoindustries.net"."DomainName"
+  hostname "com.aoapps.net"."DomainName"
     not null,
   is_primary boolean
     not null,

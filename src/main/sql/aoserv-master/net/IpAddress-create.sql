@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -30,12 +30,12 @@ create table net."IpAddress" (
   id integer
     default nextval('net."IpAddress_id_seq"')
     primary key,
-  "inetAddress" "com.aoindustries.net"."InetAddress"
+  "inetAddress" "com.aoapps.net"."InetAddress"
     not null,
   device integer,
   "isAlias" boolean
     not null,
-  hostname "com.aoindustries.net"."DomainName",
+  hostname "com.aoapps.net"."DomainName",
   package integer
     not null,
   created timestamp with time zone
@@ -49,7 +49,7 @@ create table net."IpAddress" (
   "isDhcp" boolean
     not null
     default false,
-  "externalInetAddress" "com.aoindustries.net"."InetAddress",
+  "externalInetAddress" "com.aoapps.net"."InetAddress",
   netmask text
     not null,
   unique("inetAddress", device),

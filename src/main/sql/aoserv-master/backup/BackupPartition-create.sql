@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -31,7 +31,7 @@ create table backup."BackupPartition" (
     primary key,
   ao_server integer not null,
   -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
-  "path" "com.aoindustries.net"."Path" not null,
+  "path" "com.aoapps.net"."Path" not null,
   enabled boolean not null,
   quota_enabled boolean not null,
   unique(ao_server, "path")

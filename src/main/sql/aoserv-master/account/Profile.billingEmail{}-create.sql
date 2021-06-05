@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -27,7 +27,7 @@ create table account."Profile.billingEmail{}" (
   index smallint
     not null
     check (index >= 0),
-  "billingEmail" "com.aoindustries.net"."Email"
+  "billingEmail" "com.aoapps.net"."Email"
     not null,
   primary key (id, index),
   unique("billingEmail", id)
@@ -44,7 +44,7 @@ SELECT
   p1.id,
   "ordinality" - 1 AS index,
   trim("billingEmail") AS "billingEmail"
-  -- ,"com.aoindustries.net"."Email.validate"(trim("billingEmail")) AS validation
+  -- ,"com.aoapps.net"."Email.validate"(trim("billingEmail")) AS validation
 FROM
   "Profile" p1,
   UNNEST(

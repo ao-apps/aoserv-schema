@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -31,7 +31,7 @@ create table email."Forwarding" (
     primary key,
   email_address integer
     not null,
-  destination "com.aoindustries.net"."Email"
+  destination "com.aoapps.net"."Email"
     not null,
   unique(email_address, destination)
 );

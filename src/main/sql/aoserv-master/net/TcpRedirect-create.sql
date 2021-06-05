@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2010, 2013, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2010, 2013, 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -28,9 +28,9 @@ create table net."TcpRedirect" (
     not null,
   cps_overload_sleep_time integer
     not null,
-  destination_host "com.aoindustries.net"."HostAddress"
+  destination_host "com.aoapps.net"."HostAddress"
     not null,
-  destination_port "com.aoindustries.net"."Port"
+  destination_port "com.aoapps.net"."Port"
     not null
 );
 grant all            on net."TcpRedirect" to aoadmin;

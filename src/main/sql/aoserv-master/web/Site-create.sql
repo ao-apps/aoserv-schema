@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2008, 2009, 2010, 2013, 2016, 2017, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2008, 2009, 2010, 2013, 2016, 2017, 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -63,7 +63,7 @@ create table web."Site" (
     not null,
   linux_group text -- TODO: This should go to linux.GroupServer.id on the same server
     not null,
-  server_admin "com.aoindustries.net"."Email"
+  server_admin "com.aoapps.net"."Email"
     not null,
   disable_log integer,
   is_manual boolean not null default false,

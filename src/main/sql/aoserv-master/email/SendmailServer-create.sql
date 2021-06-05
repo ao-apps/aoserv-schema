@@ -36,7 +36,7 @@ create table email."SendmailServer" (
     check ("name" is null or length("name") > 0),
   package integer
     not null,
-  hostname "com.aoindustries.net"."DomainName"
+  hostname "com.aoapps.net"."DomainName"
     check(
       hostname is null
       or (

@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2019, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2019, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -36,7 +36,7 @@ create table billing."NoticeLog" (
     not null,
   billing_contact text
     not null,
-  billing_email "com.aoindustries.net"."Email"
+  billing_email "com.aoapps.net"."Email"
     not null,
   notice_type text
     not null,

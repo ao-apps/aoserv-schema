@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -32,7 +32,7 @@ create table email."SmtpRelay" (
   package text
     not null,
   ao_server integer,
-  "host" "com.aoindustries.net"."HostAddress"
+  "host" "com.aoapps.net"."HostAddress"
     not null,
   "type" text
     not null,

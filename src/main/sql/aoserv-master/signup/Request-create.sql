@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2007, 2008, 2009, 2012, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2007, 2008, 2009, 2012, 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -31,7 +31,7 @@ create table signup."Request" (
     primary key,
   brand text not null,
   "time" timestamp with time zone not null default now(),
-  ip_address "com.aoindustries.net"."InetAddress" not null,
+  ip_address "com.aoapps.net"."InetAddress" not null,
   package_definition integer not null,
   business_name text not null,
   business_phone text not null,
@@ -48,7 +48,7 @@ create table signup."Request" (
   ba_cell_phone text,
   ba_home_phone text,
   ba_fax text,
-  ba_email "com.aoindustries.net"."Email" not null,
+  ba_email "com.aoapps.net"."Email" not null,
   ba_address1 text,
   ba_address2 text,
   ba_city text,
@@ -57,7 +57,7 @@ create table signup."Request" (
   ba_zip text,
   ba_username text not null,
   billing_contact text not null,
-  billing_email "com.aoindustries.net"."Email" not null,
+  billing_email "com.aoapps.net"."Email" not null,
   billing_use_monthly boolean not null,
   billing_pay_one_year boolean not null,
   -- The encrypted credit card details and password

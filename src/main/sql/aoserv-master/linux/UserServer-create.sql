@@ -37,7 +37,7 @@ create table linux."UserServer" (
   uid linux."LinuxId"
     not null,
   -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
-  home "com.aoindustries.net"."Path"
+  home "com.aoapps.net"."Path"
     not null,
   autoresponder_from integer,
   autoresponder_subject text,

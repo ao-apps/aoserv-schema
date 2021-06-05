@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -35,25 +35,25 @@ create table pki."Certificate" (
   package integer
     not null,
   -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
-  key_file "com.aoindustries.net"."Path" not null
+  key_file "com.aoapps.net"."Path" not null
     check (
       certbot_name is null
       or key_file = ('/etc/letsencrypt/live/' || certbot_name || '/privkey.pem')
     ),
   -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
-  csr_file "com.aoindustries.net"."Path"
+  csr_file "com.aoapps.net"."Path"
     check (
       certbot_name is null
       or csr_file is null
     ),
   -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
-  cert_file "com.aoindustries.net"."Path" not null
+  cert_file "com.aoapps.net"."Path" not null
     check (
       certbot_name is null
       or cert_file = ('/etc/letsencrypt/live/' || certbot_name || '/cert.pem')
     ),
   -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
-  chain_file "com.aoindustries.net"."Path"
+  chain_file "com.aoapps.net"."Path"
     check (
       certbot_name is null
       or chain_file = ('/etc/letsencrypt/live/' || certbot_name || '/chain.pem')

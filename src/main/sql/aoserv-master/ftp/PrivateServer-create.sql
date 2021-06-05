@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2010, 2012, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2010, 2012, 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -27,11 +27,11 @@ create table ftp."PrivateServer" (
   root text
     not null,
   -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
-  logfile "com.aoindustries.net"."Path"
+  logfile "com.aoapps.net"."Path"
     not null,
-  hostname "com.aoindustries.net"."DomainName"
+  hostname "com.aoapps.net"."DomainName"
     not null,
-  email "com.aoindustries.net"."Email"
+  email "com.aoapps.net"."Email"
     not null,
   created timestamp with time zone
     default now()

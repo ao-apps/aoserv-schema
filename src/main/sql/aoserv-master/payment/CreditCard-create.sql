@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2007, 2008, 2010, 2012, 2018, 2019, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2007, 2008, 2010, 2012, 2018, 2019, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -39,7 +39,7 @@ create table payment."CreditCard" (
   first_name text not null,
   last_name text not null,
   company_name text,
-  email "com.aoindustries.net"."Email",
+  email "com.aoapps.net"."Email",
   phone text,
   fax text,
   "customerId" text,

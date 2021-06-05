@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2009, 2010, 2012, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2009, 2010, 2012, 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -53,7 +53,7 @@ create table ticket."Action" (
     old_value text,
     new_value text,
     -- remaining columns
-    from_address "com.aoindustries.net"."Email" -- The from email address, if submitted by email
+    from_address "com.aoapps.net"."Email" -- The from email address, if submitted by email
       check(from_address is null or from_address=trim(from_address)),
     summary text,
     details text, -- Directly submitted or converted from email, cannot be changed

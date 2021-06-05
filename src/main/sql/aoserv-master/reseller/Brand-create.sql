@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2009, 2010, 2013, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2009, 2010, 2013, 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -24,17 +24,17 @@
 create table reseller."Brand" (
   accounting text primary key,
   -- Name server settings
-  nameserver1 "com.aoindustries.net"."DomainName" not null,
-  nameserver2 "com.aoindustries.net"."DomainName" not null,
-  nameserver3 "com.aoindustries.net"."DomainName",
-  nameserver4 "com.aoindustries.net"."DomainName",
+  nameserver1 "com.aoapps.net"."DomainName" not null,
+  nameserver2 "com.aoapps.net"."DomainName" not null,
+  nameserver3 "com.aoapps.net"."DomainName",
+  nameserver4 "com.aoapps.net"."DomainName",
   check (nameserver4 is null or nameserver3 is not null), -- Must fill in order
   -- Email settings
   smtp_linux_server_account integer not null,
-  smtp_host "com.aoindustries.net"."HostAddress",
+  smtp_host "com.aoapps.net"."HostAddress",
   smtp_password text not null,
   imap_linux_server_account integer not null,
-  imap_host "com.aoindustries.net"."HostAddress",
+  imap_host "com.aoapps.net"."HostAddress",
   imap_password text not null,
   support_email_address integer not null,
   support_email_display text not null,

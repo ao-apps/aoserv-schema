@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2017, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2017, 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -37,10 +37,10 @@ create table web."VirtualHost" (
   "name" text
     check ("name" is null or length("name") > 0),
   -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
-  access_log "com.aoindustries.net"."Path"
+  access_log "com.aoapps.net"."Path"
     not null,
   -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
-  error_log "com.aoindustries.net"."Path"
+  error_log "com.aoapps.net"."Path"
     not null,
   certificate integer,
   disable_log integer,

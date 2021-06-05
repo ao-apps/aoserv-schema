@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2010, 2012, 2017, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2010, 2012, 2017, 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -31,7 +31,7 @@ create table linux."User" (
   "type" text
     not null,
   -- TODO: "com.aoindustries.aoserv.types"."UnixPath"
-  shell "com.aoindustries.net"."Path"
+  shell "com.aoapps.net"."Path"
     not null,
   created timestamp with time zone
     not null

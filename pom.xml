@@ -33,6 +33,7 @@ along with aoserv-schema.  If not, see <http://www.gnu.org/licenses />.
 	<packaging>pom</packaging>
 
 	<properties>
+		<module.name>com.aoindustries.aoserv.schema</module.name>
 		<description.html><![CDATA[Database schema for the <a target="${javadoc.target}" href="https://aoindustries.com/aoserv/">AOServ Platform</a>.]]></description.html>
 		<!-- TODO: Remove once moved to oss.aoapps.com -->
 		<google.analytics.trackingId>UA-86871646-1</google.analytics.trackingId>
@@ -166,6 +167,12 @@ along with aoserv-schema.  If not, see <http://www.gnu.org/licenses />.
 							<classesDirectory>src/main/sql</classesDirectory>
 							-->
 							<classifier>sql</classifier>
+							<archive>
+								<manifestEntries>
+									<!-- Java 1.8 -->
+									<Automatic-Module-Name>${module.name}</Automatic-Module-Name>
+								</manifestEntries>
+							</archive>
 						</configuration>
 					</execution>
 					<execution>

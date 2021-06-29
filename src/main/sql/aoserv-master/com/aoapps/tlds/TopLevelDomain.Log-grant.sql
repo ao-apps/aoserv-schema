@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -21,5 +21,5 @@
  * along with aoserv-schema.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-GRANT ALL            ON "com.aoindustries.tlds"."TopLevelDomain.Log" TO aoadmin;
-GRANT SELECT, INSERT ON "com.aoindustries.tlds"."TopLevelDomain.Log" TO aoserv_app;
+GRANT ALL            ON "com.aoapps.tlds"."TopLevelDomain.Log" TO aoadmin;
+GRANT SELECT, INSERT ON "com.aoapps.tlds"."TopLevelDomain.Log" TO aoserv_app;

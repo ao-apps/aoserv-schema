@@ -20,5 +20,5 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with aoserv-schema.  If not, see <http://www.gnu.org/licenses/>.
  */
-GRANT ALL    ON "com.aoindustries.security"."HashedKey.Algorithm" TO aoadmin;
-GRANT SELECT ON "com.aoindustries.security"."HashedKey.Algorithm" TO aoserv_app;
+GRANT ALL    ON "com.aoapps.security"."HashedKey.Algorithm" TO aoadmin;
+GRANT SELECT ON "com.aoapps.security"."HashedKey.Algorithm" TO aoserv_app;

@@ -21,5 +21,5 @@
  * along with aoserv-schema.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-GRANT ALL   ON SCHEMA "com.aoindustries.security" TO aoadmin;
-GRANT USAGE ON SCHEMA "com.aoindustries.security" TO aoserv_app;
+GRANT ALL   ON SCHEMA "com.aoapps.security" TO aoadmin;
+GRANT USAGE ON SCHEMA "com.aoapps.security" TO aoserv_app;

@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2019, 2020  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -21,6 +21,6 @@
  * along with aoserv-schema.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-GRANT ALL   ON SCHEMA "com.aoindustries.creditcards" TO aoadmin;
-GRANT USAGE ON SCHEMA "com.aoindustries.creditcards" TO aoserv_app;
-GRANT USAGE ON SCHEMA "com.aoindustries.creditcards" TO accounting;
+GRANT ALL   ON SCHEMA "com.aoapps.payments" TO aoadmin;
+GRANT USAGE ON SCHEMA "com.aoapps.payments" TO aoserv_app;
+GRANT USAGE ON SCHEMA "com.aoapps.payments" TO accounting;

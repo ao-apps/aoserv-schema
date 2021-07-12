@@ -5,6 +5,8 @@
 [![packaging: active](https://aoindustries.com/ao-badges/packaging-active.svg)](https://aoindustries.com/life-cycle#packaging-active)  
 [![license: LGPL v3](https://aoindustries.com/ao-badges/license-lgpl-3.0.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 
+[![Build](https://github.com/aoindustries/aoserv-schema/workflows/Build/badge.svg?branch=master)](https://github.com/aoindustries/aoserv-schema/actions?query=workflow%3ABuild)
+
 Database schema for the [AOServ Platform](https://aoindustries.com/aoserv/).
 
 ## Project Links

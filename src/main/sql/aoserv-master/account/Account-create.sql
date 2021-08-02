@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2009, 2010, 2012, 2018, 2019, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2009, 2010, 2012, 2018, 2019, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -49,3 +49,4 @@ grant all                    on account."Account" to aoadmin;
 grant select, insert, update on account."Account" to aoserv_app;
 grant select, update         on account."Account" to billing;
 grant select                 on account."Account" to infrastructure;
+grant select                 on account."Account" to management;

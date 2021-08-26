@@ -23,3 +23,4 @@
 
 GRANT ALL   ON SCHEMA "com.aoapps.security" TO aoadmin;
 GRANT USAGE ON SCHEMA "com.aoapps.security" TO aoserv_app;
+GRANT USAGE ON SCHEMA "com.aoapps.security" TO management;

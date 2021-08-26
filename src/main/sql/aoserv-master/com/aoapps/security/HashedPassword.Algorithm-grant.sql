@@ -22,3 +22,4 @@
  */
 GRANT ALL    ON "com.aoapps.security"."HashedPassword.Algorithm" TO aoadmin;
 GRANT SELECT ON "com.aoapps.security"."HashedPassword.Algorithm" TO aoserv_app;
+GRANT SELECT ON "com.aoapps.security"."HashedPassword.Algorithm" TO management;

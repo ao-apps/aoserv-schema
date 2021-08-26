@@ -37,6 +37,6 @@ create table email."CyrusImapdBind" (
   certificate integer,
   allow_plaintext_auth boolean
 );
-grant all            on email."CyrusImapdBind" to aoadmin;
-grant select, delete on email."CyrusImapdBind" to aoserv_app;
-grant select, delete on email."CyrusImapdBind" to management;
+grant all                    on email."CyrusImapdBind" to aoadmin;
+grant select, delete         on email."CyrusImapdBind" to aoserv_app;
+grant select, insert, delete on email."CyrusImapdBind" to management;

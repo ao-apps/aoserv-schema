@@ -84,6 +84,6 @@ create table email."CyrusImapdServer" (
       or expunge_duration is not null
     )
 );
-grant all            on email."CyrusImapdServer" to aoadmin;
-grant select         on email."CyrusImapdServer" to aoserv_app;
-grant select, delete on email."CyrusImapdServer" to management;
+grant all                    on email."CyrusImapdServer" to aoadmin;
+grant select                 on email."CyrusImapdServer" to aoserv_app;
+grant select, insert, delete on email."CyrusImapdServer" to management;

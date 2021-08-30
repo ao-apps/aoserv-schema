@@ -35,10 +35,28 @@ create table dns."Record" (
   priority integer,
   weight integer,
   port "com.aoapps.net"."Port",
+  flag smallint check (
+    case when "type" = 'CAA' then
+      flag between 0 and 255
+    else
+      flag is null
+    end
+  ),
+  tag text check (
+    case when "type" = 'CAA' then
+      tag in ('issue', 'issuewild', 'iodef', 'contactemail', 'contactphone')
+    else
+      tag is null
+    end
+  ),
+  -- TODO: Rename "destination" to "value"
+  -- TODO: Per-type validation, such as ';' or a "DomainName" for type='CAA' and tag in ('issue', 'issuewild')?
+  --       Validation would be same between Java objects and database
   destination text not null,
-  "dhcpAddress" integer,
-  ttl integer,
-  unique("zone", "domain", "type", destination)
+  "dhcpAddress" integer check (
+    "dhcpAddress" is null or "type" in ('A', 'AAAA')
+  ),
+  ttl integer
 );
 grant all                            on dns."Record" to aoadmin;
 grant select, insert, update, delete on dns."Record" to aoserv_app;

@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -20,6 +20,21 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with aoserv-schema.  If not, see <http://www.gnu.org/licenses/>.
  */
+
+create unique index "Record_uni" on dns."Record" (
+  "zone",
+  "domain",
+  "type",
+  destination
+) where tag is null;
+
+create unique index "Record_tag_uni" on dns."Record" (
+  "zone",
+  "domain",
+  "type",
+  "tag",
+  destination
+) where tag is not null;
 
 create index "Record_type_fkey" on dns."Record" (
   "type"

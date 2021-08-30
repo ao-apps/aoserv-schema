@@ -1704,6 +1704,16 @@ insert into "schema"."AoservProtocol" values(
   'Added type "HashedKey"
 Removed linux.Server.daemon_key, now stored in aoserv-daemon.properties'
 );
+insert into "schema"."AoservProtocol" values(
+  '1.86.0',
+  '2021-08-27',
+  'Added column dns.RecordType.has_flag
+Added column dns.RecordType.has_tag
+Added column dns.Record.flag
+Added column dns.Record.tag
+AOSH command add_dns_record updated with multiple shortcuts and support for flag and tag
+AOSH command remove_dns_record updated with tag'
+);
 /* TODO:
 renamed dns.TopLevelDomain to dns.Suffix
   added column isRegistrable

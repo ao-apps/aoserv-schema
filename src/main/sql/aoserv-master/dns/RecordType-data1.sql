@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,13 +22,14 @@
  */
 
 begin;
---                                   type     description      has_priority  has_weight  has_port  param_ip
-insert into dns."RecordType" values('A',     'IPv4 Address',   false,        false,      false,    true);
-insert into dns."RecordType" values('AAAA',  'IPv6 Address',   false,        false,      false,    true);
-insert into dns."RecordType" values('CNAME', 'Canonical Name', false,        false,      false,    false);
-insert into dns."RecordType" values('MX',    'Mail Exchanger', true,         false,      false,    false);
-insert into dns."RecordType" values('NS',    'Name Server',    false,        false,      false,    false);
-insert into dns."RecordType" values('PTR',   'Pointer',        false,        false,      false,    false);
-insert into dns."RecordType" values('SRV',   'Service',        true,         true,       true,     false);
-insert into dns."RecordType" values('TXT',   'Text Record',    false,        false,      false,    false);
+--                                   type     description                           has_priority  has_weight  has_port  has_flag  has_tag  param_ip
+insert into dns."RecordType" values('A',     'IPv4 Address',                        false,        false,      false,    false,    false,    true);
+insert into dns."RecordType" values('AAAA',  'IPv6 Address',                        false,        false,      false,    false,    false,    true);
+insert into dns."RecordType" values('CAA',   'Certificate Authority Authorization', false,        false,      false,     true,     true,   false);
+insert into dns."RecordType" values('CNAME', 'Canonical Name',                      false,        false,      false,    false,    false,   false);
+insert into dns."RecordType" values('MX',    'Mail Exchanger',                       true,        false,      false,    false,    false,   false);
+insert into dns."RecordType" values('NS',    'Name Server',                         false,        false,      false,    false,    false,   false);
+insert into dns."RecordType" values('PTR',   'Pointer',                             false,        false,      false,    false,    false,   false);
+insert into dns."RecordType" values('SRV',   'Service',                              true,         true,       true,    false,    false,   false);
+insert into dns."RecordType" values('TXT',   'Text Record',                         false,        false,      false,    false,    false,   false);
 commit;

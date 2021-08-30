@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2010, 2013, 2014, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2010, 2013, 2014, 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -28,6 +28,8 @@ create table dns."RecordType" (
   has_priority boolean not null,
   has_weight   boolean not null,
   has_port     boolean not null,
+  has_flag     boolean not null,
+  has_tag      boolean not null,
   param_ip     boolean not null
 );
 grant all    on dns."RecordType" to aoadmin;

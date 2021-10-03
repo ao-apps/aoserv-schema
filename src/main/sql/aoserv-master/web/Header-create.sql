@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -24,6 +24,7 @@
 create sequence web."Header_id_seq" cycle;
 grant all    on web."Header_id_seq" to aoadmin;
 grant select on web."Header_id_seq" to aoserv_app;
+grant select, update on web."Header_id_seq" to management;
 
 -- See https://httpd.apache.org/docs/2.4/mod/mod_headers.html
 create table web."Header" (
@@ -62,3 +63,4 @@ create table web."Header" (
 );
 grant all            on web."Header" to aoadmin;
 grant select, delete on web."Header" to aoserv_app; -- , insert, update
+grant insert         on web."Header" to management;

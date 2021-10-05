@@ -75,20 +75,20 @@ along with aoserv-schema.  If not, see <http://www.gnu.org/licenses />.
 	</developers>
 
 	<scm>
-		<connection>scm:git:git://github.com/aoindustries/aoserv-schema.git</connection>
-		<developerConnection>scm:git:git@github.com:aoindustries/aoserv-schema.git</developerConnection>
-		<url>https://github.com/aoindustries/aoserv-schema</url>
+		<connection>scm:git:git://github.com/ao-apps/aoserv-schema.git</connection>
+		<developerConnection>scm:git:git@github.com:ao-apps/aoserv-schema.git</developerConnection>
+		<url>https://github.com/ao-apps/aoserv-schema</url>
 		<tag>HEAD</tag>
 	</scm>
 
 	<issueManagement>
 		<system>GitHub Issues</system>
-		<url>https://github.com/aoindustries/aoserv-schema/issues</url>
+		<url>https://github.com/ao-apps/aoserv-schema/issues</url>
 	</issueManagement>
 
 	<ciManagement>
 		<system>GitHub Actions</system>
-		<url>https://github.com/aoindustries/aoserv-schema/actions</url>
+		<url>https://github.com/ao-apps/aoserv-schema/actions</url>
 	</ciManagement>
 
 	<repositories>

@@ -37,7 +37,7 @@ along with aoserv-schema.  If not, see <http://www.gnu.org/licenses />.
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2020-04-13T01:51:55-05:00"
-		dateModified="2021-10-03T05:49:28-05:00"
+		dateModified="2021-10-16T09:30:18-05:00"
 	>
 		<c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
 			<changelog:release
@@ -50,6 +50,13 @@ along with aoserv-schema.  If not, see <http://www.gnu.org/licenses />.
 			>
 				<ul>
 					<li>Additional permissions for "management" role in support of updated procedures.</li>
+					<li>Java updates:
+						<ol>
+							<li>Java 16 is now end-of-life</li>
+							<li>Java 17 is now current stable</li>
+							<li>Java 18 is new beta</li>
+						</ol>
+					</li>
 				</ul>
 			</changelog:release>
 		</c:if>

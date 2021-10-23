@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -70,7 +70,7 @@ RETURNS linux."LinuxId" AS $$
   SELECT linux.get_next_uid(
     (SELECT server FROM linux."Server" where hostname = _ao_server)
   );
-$$ LANGUAGE 'sql'
+$$ LANGUAGE sql
 VOLATILE
 RETURNS NULL ON NULL INPUT;
 

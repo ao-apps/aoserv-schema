@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2010, 2013, 2018, 2019, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2010, 2013, 2018, 2019, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,11 +26,20 @@ create table postgresql."User" (
     primary key
   check (
     username NOT IN (
+      -- Default roles, PostgreSQL 10+ - https://www.postgresql.org/docs/10/default-roles.html
       'pg_monitor',
       'pg_read_all_settings',
       'pg_read_all_stats',
       'pg_signal_backend',
-      'pg_stat_scan_tables'
+      'pg_stat_scan_tables',
+      -- Default roles, PostgreSQL 11+ - https://www.postgresql.org/docs/11/default-roles.html
+      'pg_execute_server_program',
+      'pg_read_server_files',
+      'pg_write_server_files',
+      -- Predefined roles, PostgreSQL 14+ - https://www.postgresql.org/docs/14/predefined-roles.html
+      'pg_read_all_data',
+      'pg_write_all_data',
+      'pg_database_owner'
     )
   ),
   createdb boolean

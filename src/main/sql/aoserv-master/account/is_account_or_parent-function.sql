@@ -31,22 +31,20 @@
  *
  *********************************************************************/
 create or replace function account.is_account_or_parent (text,text)
-  returns boolean
-  as '
-    select
-      $1 = $2
-      or (
-        case when
-          (select parent from account."Account" where accounting = $2 ) is null
-        then
-          false
-        else
-          account.is_account_or_parent( $1 , (select parent from account."Account" where accounting = $2 ))
-        end
-      )
-    ;
-  '
-  language 'sql'
-  stable
-  strict
-;
+returns boolean
+as $$
+  select
+    $1 = $2
+    or (
+      case when
+        (select parent from account."Account" where accounting = $2 ) is null
+      then
+        false
+      else
+        account.is_account_or_parent( $1 , (select parent from account."Account" where accounting = $2 ))
+      end
+    )
+  ;
+$$ LANGUAGE sql
+STABLE
+RETURNS NULL ON NULL INPUT;

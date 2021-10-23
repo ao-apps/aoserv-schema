@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,4 +26,6 @@ CREATE OR REPLACE FUNCTION billing.last_day(date)
 RETURNS date AS
 $$
   SELECT (date_trunc('MONTH', $1) + INTERVAL '1 MONTH - 1 day')::date;
-$$ LANGUAGE 'sql' IMMUTABLE STRICT;
+$$ LANGUAGE sql
+IMMUTABLE
+RETURNS NULL ON NULL INPUT;

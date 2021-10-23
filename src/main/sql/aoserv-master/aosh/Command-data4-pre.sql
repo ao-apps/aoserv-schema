@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -31,7 +31,7 @@ create or replace function aosh.add_command (
   "lastVersion"  text
 )
 returns name
-as '
+as $$
   insert into aosh."Command"(
     command,
     "sinceVersion",
@@ -51,8 +51,7 @@ as '
     $5
   );
   select $1 ;
-'
-language 'sql';
+$$ LANGUAGE sql;
 
 create or replace function aosh.add_command (
   command        name,
@@ -63,17 +62,16 @@ create or replace function aosh.add_command (
   "lastVersion"  text
 )
 returns name
-as '
+as $$
   select aosh.add_command (
     $1 ,
-    case when $2 is null then null else ''public'' end,
+    case when $2 is null then null else 'public' end,
     $2 ,
     $3 ,
     $4 ,
     $5 ,
     $6
   );
-'
-language 'sql';
+$$ LANGUAGE sql;
 
 delete from aosh."Command";

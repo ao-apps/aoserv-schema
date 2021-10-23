@@ -30,17 +30,15 @@
  *
  *********************************************************************/
 create or replace function "account.management"."Account.findBusinessNotCanceled" (text)
-  returns text
-  as '
-    select
-      case
-        when (select canceled is null from account."Account" where accounting = $1 ) then $1
-        when (select parent is null from account."Account" where accounting = $1 ) then null
-        else "account.management"."Account.findBusinessNotCanceled"( (select parent from account."Account" where accounting = $1 ))
-      end
-    ;
-  '
-  language 'sql'
-  stable
-  strict
-;
+returns text
+as $$
+  select
+    case
+      when (select canceled is null from account."Account" where accounting = $1 ) then $1
+      when (select parent is null from account."Account" where accounting = $1 ) then null
+      else "account.management"."Account.findBusinessNotCanceled"( (select parent from account."Account" where accounting = $1 ))
+    end
+  ;
+$$ LANGUAGE sql
+STABLE
+RETURNS NULL ON NULL INPUT;

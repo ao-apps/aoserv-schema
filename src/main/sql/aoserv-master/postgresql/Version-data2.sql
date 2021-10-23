@@ -40,4 +40,5 @@ insert into postgresql."Version" values(3371, '10');
 insert into postgresql."Version" values(3380, '11');
 insert into postgresql."Version" values(3388, '12');
 insert into postgresql."Version" values(3392, '13');
+insert into postgresql."Version" values(3397, '14');
 commit;

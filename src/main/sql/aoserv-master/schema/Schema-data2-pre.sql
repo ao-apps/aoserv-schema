@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -30,7 +30,7 @@ create or replace function "schema".add_schema (
   description    text
 )
 returns name
-as '
+as $$
   insert into "schema"."Schema"(
     id,
     "name",
@@ -49,7 +49,6 @@ as '
     $6
   );
   select $1;
-'
-language 'sql';
+$$ LANGUAGE sql;
 
 delete from "schema"."Schema";

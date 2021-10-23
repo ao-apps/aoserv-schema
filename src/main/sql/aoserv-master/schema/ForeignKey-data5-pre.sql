@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -32,7 +32,7 @@ create or replace function "schema".add_foreign_key (
   "lastVersion"   text
 )
 returns integer
-as '
+as $$
   insert into "schema"."ForeignKey"(
     id,
     "column",
@@ -46,7 +46,6 @@ as '
     $7,
     $8
   ) returning id;
-'
-language 'sql';
+$$ LANGUAGE sql;
 
 delete from "schema"."ForeignKey";

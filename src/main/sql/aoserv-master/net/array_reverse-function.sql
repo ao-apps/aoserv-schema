@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -28,4 +28,6 @@ SELECT ARRAY(
     FROM generate_subscripts($1,1) AS s(i)
     ORDER BY i DESC
 );
-$$ LANGUAGE 'sql' STRICT IMMUTABLE;
+$$ LANGUAGE sql
+IMMUTABLE
+RETURNS NULL ON NULL INPUT;

@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -28,7 +28,7 @@ create or replace function "schema".get_table_versioned (
   "lastVersion"  text
 )
 returns integer
-as '
+as $$
   select coalesce(
     (select
       st.id
@@ -53,12 +53,11 @@ as '
       )
     ),
     "schema".raise_exception(
-      ''Table not found: '' || coalesce($1, ''NULL'') || ''.'' || coalesce($2, ''NULL'') || '', '' || coalesce($3, ''NULL'') || ''-'' || coalesce($4, ''NULL'')
+      'Table not found: ' || coalesce($1, 'NULL') || '.' || coalesce($2, 'NULL') || ', ' || coalesce($3, 'NULL') || '-' || coalesce($4, 'NULL')
     )::integer
   );
-'
-language 'sql'
-stable;
+$$ LANGUAGE sql
+STABLE;
 
 -- Examples
 

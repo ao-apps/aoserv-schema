@@ -18,7 +18,7 @@
  * GNU Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public License
- * along with aoserv-schema.  If not, see <http://www.gnu.org/licenses/>.
+ * along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 COPY web."Site" (id, ao_server, "name", list_first, package, linux_account, linux_group, server_admin, content_src, disable_log, is_manual, awstats_skip_files) FROM stdin;

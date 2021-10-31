@@ -18,7 +18,7 @@
  * GNU Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public License
- * along with aoserv-schema.  If not, see <http://www.gnu.org/licenses/>.
+ * along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 select "schema".add_column('email', 'blackhole_email_addresses', 'email_address', 'fkey', false, true, false, 'the primary key of the email_address', '1.0a100', null);

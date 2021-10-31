@@ -18,7 +18,7 @@
  * GNU Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public License
- * along with aoserv-schema.  If not, see <http://www.gnu.org/licenses/>.
+ * along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 select "schema".add_column('linux', 'linux_ids', 'id',        'int',     false,  true, true, 'the id', '1.0a100', '1.68');

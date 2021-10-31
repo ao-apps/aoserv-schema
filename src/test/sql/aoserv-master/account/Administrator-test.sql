@@ -18,7 +18,7 @@
  * GNU Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public License
- * along with aoserv-schema.  If not, see <http://www.gnu.org/licenses/>.
+ * along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 COPY account."Administrator" (username, "password", "name", title, birthday, is_preferred, private, created, work_phone, home_phone, cell_phone, fax, email, address1, address2, city, state, country, zip, disable_log, can_switch_users) FROM stdin;

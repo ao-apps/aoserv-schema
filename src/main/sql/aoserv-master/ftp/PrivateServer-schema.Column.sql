@@ -18,7 +18,7 @@
  * GNU Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public License
- * along with aoserv-schema.  If not, see <http://www.gnu.org/licenses/>.
+ * along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 select "schema".add_column('ftp', 'private_ftp_servers', 'ip_address',           'fkey',        false,  true, false, 'the pkey of the net_bind that the FTP server is on', '1.0a100', '1.0a112');

@@ -18,7 +18,7 @@
  * GNU Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public License
- * along with aoserv-schema.  If not, see <http://www.gnu.org/licenses/>.
+ * along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 select "schema".add_foreign_key('web.tomcat', 'httpd_tomcat_data_sources', 'tomcat_context', 'web.tomcat', 'httpd_tomcat_contexts', 'pkey', '1.5', null);

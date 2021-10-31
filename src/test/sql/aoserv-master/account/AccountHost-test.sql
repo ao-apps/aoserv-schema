@@ -18,7 +18,7 @@
  * GNU Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public License
- * along with aoserv-schema.  If not, see <http://www.gnu.org/licenses/>.
+ * along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 COPY account."AccountHost" (id, accounting, server, is_default, can_control_apache, can_control_cron, can_control_mysql, can_control_postgresql, can_control_xfs, can_control_xvfb) FROM stdin;

@@ -18,7 +18,7 @@
  * GNU Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public License
- * along with aoserv-schema.  If not, see <http://www.gnu.org/licenses/>.
+ * along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 COPY account."Account" (accounting, contract_version, created, canceled, cancel_reason, parent, can_add_backup_server, can_add_businesses, can_see_prices, disable_log, do_not_disable_reason, auto_enable, bill_parent) FROM stdin;

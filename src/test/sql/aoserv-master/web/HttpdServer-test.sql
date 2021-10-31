@@ -18,7 +18,7 @@
  * GNU Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public License
- * along with aoserv-schema.  If not, see <http://www.gnu.org/licenses/>.
+ * along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 COPY web."HttpdServer" (id, ao_server, "name", can_add_sites, is_mod_jk, max_binds, linux_server_account, linux_server_group, mod_php_version, use_suexec, package, is_shared, use_mod_perl, timeout) FROM stdin;

@@ -18,7 +18,7 @@
  * GNU Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public License
- * along with aoserv-schema.  If not, see <http://www.gnu.org/licenses/>.
+ * along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 select "schema".add_foreign_key('web', 'httpd_site_bind_redirects', 'httpd_site_bind', 'web', 'httpd_site_binds', 'pkey', '1.81.1',  '1.81.20');

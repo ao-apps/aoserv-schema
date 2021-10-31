@@ -18,7 +18,7 @@
  * GNU Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public License
- * along with aoserv-schema.  If not, see <http://www.gnu.org/licenses/>.
+ * along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 COPY master."User" (username, is_active, can_access_accounting, can_access_bank_account, can_invalidate_tables, can_access_admin_web, is_dns_admin) FROM stdin;

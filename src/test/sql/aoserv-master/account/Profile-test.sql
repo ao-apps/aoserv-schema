@@ -18,7 +18,7 @@
  * GNU Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public License
- * along with aoserv-schema.  If not, see <http://www.gnu.org/licenses/>.
+ * along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 COPY account."Profile" (id, accounting, priority, "name", private, phone, fax, address1, address2, city, "state", country, zip, send_invoice, created, billing_contact, billing_email, technical_contact, technical_email) FROM stdin;

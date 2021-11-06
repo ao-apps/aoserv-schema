@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2008, 2010, 2013, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2008, 2010, 2013, 2018, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -35,3 +35,7 @@ COPY linux."Shell" FROM stdin;
 /usr/bin/ftppasswd	f	f
 /usr/bin/passwd	f	f
 \.
+
+BEGIN;
+INSERT INTO linux."Shell" VALUES ('/usr/bin/git-shell', true, false);
+COMMIT;

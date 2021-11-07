@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2008, 2009, 2010, 2013, 2017, 2018, 2019, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2008, 2009, 2010, 2013, 2017, 2018, 2019, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -117,3 +117,20 @@ INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('centos',  
 INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('adm',             'centos',        FALSE);
 INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('wheel',           'centos',        FALSE);
 INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('systemd-journal', 'centos',        FALSE);
+-- Jenkins
+INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('jenkins',         'jenkins',       TRUE);
+
+/*
+TODO: Remove the non-primary groups once JCA's Jenkins moved to newer version on separate virtual server:
+aoadmin@aoindustries=> select * from linux."GroupUser" where "group"='jenkins';
+┌───────┬─────────┬──────────┬───────────┬────────────────────────┐
+│  id   │  group  │   user   │ isPrimary │ operatingSystemVersion │
+├───────┼─────────┼──────────┼───────────┼────────────────────────┤
+│  9990 │ jenkins │ jenkins  │ t         │                 [NULL] │
+│  9998 │ jenkins │ XXXXXXXX │ f         │                 [NULL] │
+│  9994 │ jenkins │ XXXXXXXX │ f         │                 [NULL] │
+│ 10018 │ jenkins │ XXXXXXXX │ f         │                 [NULL] │
+│ 10367 │ jenkins │ XXXXXXXX │ f         │                 [NULL] │
+└───────┴─────────┴──────────┴───────────┴────────────────────────┘
+(5 rows)
+ */

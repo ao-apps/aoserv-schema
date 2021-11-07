@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2008, 2009, 2010, 2013, 2017, 2018, 2019, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2008, 2009, 2010, 2013, 2017, 2018, 2019, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -83,14 +83,16 @@ redis	Redis Database Server	\N	\N	\N	system	/sbin/nologin	2019-08-22 21:12:50.65
 \.
 
 -- AOServ Master
-INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('aoserv-master',  'AOServ Master',   'system', '/sbin/nologin', '2020-04-14 18:47:06.273709+00');
+INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('aoserv-master',  'AOServ Master',             'system', '/sbin/nologin', '2020-04-14 18:47:06.273709+00');
 -- AOServ Schema
-INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('accounting',     'masterdb access', 'user',   '/bin/bash',     '2018-11-26 21:46:59.798036+00');
-INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('billing',        'masterdb access', 'user',   '/bin/bash',     '2018-11-26 22:08:02.058685+00');
-INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('distribution',   'masterdb access', 'user',   '/bin/bash',     '2018-11-26 21:46:50.190308+00');
-INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('infrastructure', 'masterdb access', 'user',   '/bin/bash',     '2018-11-27 07:08:00.994582+00');
-INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('management',     'masterdb access', 'user',   '/bin/bash',     '2018-11-26 21:47:08.617974+00');
-INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('monitoring',     'masterdb access', 'user',   '/bin/bash',     '2018-11-27 15:40:40.322250+00');
-INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('reseller',       'masterdb access', 'user',   '/bin/bash',     '2018-11-27 04:46:20.963659+00');
+INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('accounting',     'masterdb access',           'user',   '/bin/bash',     '2018-11-26 21:46:59.798036+00');
+INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('billing',        'masterdb access',           'user',   '/bin/bash',     '2018-11-26 22:08:02.058685+00');
+INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('distribution',   'masterdb access',           'user',   '/bin/bash',     '2018-11-26 21:46:50.190308+00');
+INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('infrastructure', 'masterdb access',           'user',   '/bin/bash',     '2018-11-27 07:08:00.994582+00');
+INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('management',     'masterdb access',           'user',   '/bin/bash',     '2018-11-26 21:47:08.617974+00');
+INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('monitoring',     'masterdb access',           'user',   '/bin/bash',     '2018-11-27 15:40:40.322250+00');
+INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('reseller',       'masterdb access',           'user',   '/bin/bash',     '2018-11-27 04:46:20.963659+00');
 -- Amazon EC2 cloud-init
-INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('centos',         'Cloud User',      'user',   '/bin/bash',     '2020-07-13 00:17:11.115023+00');
+INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('centos',         'Cloud User',                'user',   '/bin/bash',     '2020-07-13 00:17:11.115023+00');
+-- Jenkins
+INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('jenkins',        'Jenkins Automation Server', 'system', '/bin/false',    '2014-06-05 19:50:06.502619+00');

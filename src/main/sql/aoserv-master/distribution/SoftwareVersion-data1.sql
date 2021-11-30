@@ -98,6 +98,8 @@ INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner,
   3389, 'php', '7.4.0', '2020-01-21 04:27:57.932083+00', 'orion', 70);
 INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
   3393, 'php', '8.0.0', '2020-12-07 21:07:57.757723+00', 'orion', 70);
+INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
+  3398, 'php', '8.1.0', '2021-11-30 01:32:43.554045+00', 'orion', 70);
 -- PostgreSQL
 INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
   3351, 'postgresql', '8.3.23', '2017-03-30 20:22:57.8199-05', 'orion', 70);
@@ -121,4 +123,4 @@ INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner,
   3397, 'postgresql', '14.0', '2021-10-23 21:11:03.175021+00', 'orion', 70);
 COMMIT;
 
-SELECT setval ('distribution."SoftwareVersion_id_seq"', 3398, false);
+SELECT setval ('distribution."SoftwareVersion_id_seq"', 3399, false);

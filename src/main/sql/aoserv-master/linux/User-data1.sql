@@ -95,4 +95,4 @@ INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('res
 -- Amazon EC2 cloud-init
 INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('centos',         'Cloud User',                'user',   '/bin/bash',     '2020-07-13 00:17:11.115023+00');
 -- Jenkins
-INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('jenkins',        'Jenkins Automation Server', 'system', '/bin/false',    '2014-06-05 19:50:06.502619+00');
+INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('jenkins',        'Jenkins Automation Server', 'system', '/bin/bash',     '2014-06-05 19:50:06.502619+00');

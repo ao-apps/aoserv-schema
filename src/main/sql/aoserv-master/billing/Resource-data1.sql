@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2007, 2008, 2009, 2013, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2007, 2008, 2009, 2013, 2018, 2020, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -51,6 +51,21 @@ user
 hardware_ram_ddr2_667_ecc
 hardware_ram_ddr2_667_nonecc
 hardware_ram_ddr2_800_ecc
+hardware_ram_ecc_000256
+hardware_ram_ecc_000512
+hardware_ram_ecc_001024
+hardware_ram_ecc_002048
+hardware_ram_ecc_004096
+hardware_ram_ecc_008192
+hardware_ram_ecc_016384
+hardware_ram_ecc_032768
+hardware_ram_ecc_049152
+hardware_ram_ecc_065536
+hardware_ram_ecc_081920
+hardware_ram_ecc_098304
+hardware_ram_ecc_131072
+hardware_ram_ecc_196608
+hardware_ram_ecc_262144
 hardware_power_redundant_500
 hardware_disk_controller_sata_16
 hardware_disk_sata_7200_500

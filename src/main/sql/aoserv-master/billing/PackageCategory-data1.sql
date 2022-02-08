@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -24,7 +24,6 @@
 begin;
 insert into billing."PackageCategory" values('aoserv');
 insert into billing."PackageCategory" values('application');
-insert into billing."PackageCategory" values('backup');
 insert into billing."PackageCategory" values('colocation');
 insert into billing."PackageCategory" values('dedicated');
 insert into billing."PackageCategory" values('managed');

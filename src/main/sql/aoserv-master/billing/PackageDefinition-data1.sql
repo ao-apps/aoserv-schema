@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2007, 2009, 2010, 2013, 2018, 2019, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2007, 2009, 2010, 2013, 2018, 2019, 2020, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,9 +22,6 @@
  */
 
 COPY billing."PackageDefinition" FROM stdin;
-18	AOINDUSTRIES	backup	1024	2005-04	1 TB Backup	1 Terabyte Backup Service	\N	\N	\N	USD	570.00	backup	t	t
-19	AOINDUSTRIES	backup	2048	2005-04	2 TB Backup	2 Terabyte Backup Service	\N	\N	\N	USD	860.00	backup	t	t
-20	AOINDUSTRIES	backup	4096	2005-04	4 TB Backup	4 Terabyte Backup Service	\N	\N	\N	USD	1300.00	backup	t	t
 21	AOINDUSTRIES	sysadmin	sysadmin	2005-04	System Administration	System Administration Service	USD	300.00	sysadmin	USD	200.00	sysadmin	t	t
 22	AOINDUSTRIES	colocation	2	2005-04	2U Colocation	2U Colocation	\N	\N	\N	USD	50.00	colocation	t	t
 23	AOINDUSTRIES	colocation	4	2005-04	4U Colocation	4U Colocation	\N	\N	\N	USD	100.00	colocation	t	t
@@ -41,16 +38,6 @@ COPY billing."PackageDefinition" FROM stdin;
 4	AOINDUSTRIES	virtual	production	2005-04	Production Package	Production Virtual Hosting	\N	\N	\N	USD	50.00	virtual	t	t
 6	AOINDUSTRIES	aoserv	daemon_license	2005-04	AOServ Daemon License	AOServ Daemon License	\N	\N	\N	USD	50.00	aoserv	t	t
 7	AOINDUSTRIES	aoserv	master_license	2005-04	AOServ Master License	AOServ Master License	\N	\N	\N	USD	500.00	aoserv	t	t
-8	AOINDUSTRIES	backup	1	2005-04	1 GB Backup	1 Gigabyte Backup Service	\N	\N	\N	USD	10.00	backup	t	t
-9	AOINDUSTRIES	backup	2	2005-04	2 GB Backup	2 Gigabyte Backup Service	\N	\N	\N	USD	15.00	backup	t	t
-10	AOINDUSTRIES	backup	4	2005-04	4 GB Backup	4 Gigabyte Backup Service	\N	\N	\N	USD	22.00	backup	t	t
-11	AOINDUSTRIES	backup	8	2005-04	8 GB Backup	8 Gigabyte Backup Service	\N	\N	\N	USD	34.00	backup	t	t
-12	AOINDUSTRIES	backup	16	2005-04	16 GB Backup	16 Gigabyte Backup Service	\N	\N	\N	USD	50.00	backup	t	t
-13	AOINDUSTRIES	backup	32	2005-04	32 GB Backup	32 Gigabyte Backup Service	\N	\N	\N	USD	75.00	backup	t	t
-14	AOINDUSTRIES	backup	64	2005-04	64 GB Backup	64 Gigabyte Backup Service	\N	\N	\N	USD	115.00	backup	t	t
-15	AOINDUSTRIES	backup	128	2005-04	128 GB Backup	128 Gigabyte Backup Service	\N	\N	\N	USD	170.00	backup	t	t
-16	AOINDUSTRIES	backup	256	2005-04	256 GB Backup	256 Gigabyte Backup Service	\N	\N	\N	USD	250.00	backup	t	t
-17	AOINDUSTRIES	backup	512	2005-04	512 GB Backup	512 Gigabyte Backup Service	\N	\N	\N	USD	380.00	backup	t	t
 96	AOINDUSTRIES	virtual	developer_free	2005-12	Developer Package	Developer Virtual Hosting	\N	\N	\N	USD	0.00	virtual	f	t
 82	AOINDUSTRIES	virtual	production_25	2005-05	Production Package	Production Virtual Hosting	\N	\N	\N	USD	25.00	virtual	f	t
 83	AOINDUSTRIES	virtual	developer_10	2005-05	Developer Package	Developer Virtual Hosting	\N	\N	\N	USD	10.00	virtual	f	t

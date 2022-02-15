@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2008, 2009, 2010, 2011, 2013, 2017, 2018, 2019, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2008, 2009, 2010, 2011, 2013, 2017, 2018, 2019, 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -122,3 +122,5 @@ INSERT INTO linux."Group" ("name", package, "type") VALUES ('reseller',       'A
 INSERT INTO linux."Group" ("name", package, "type") VALUES ('centos',         'AOINDUSTRIES', 'user');
 -- Jenkins
 INSERT INTO linux."Group" ("name", package, "type") VALUES ('jenkins',        'AOINDUSTRIES', 'system');
+-- SonarQube
+INSERT INTO linux."Group" ("name", package, "type") VALUES ('sonarqube',      'AOINDUSTRIES', 'user');

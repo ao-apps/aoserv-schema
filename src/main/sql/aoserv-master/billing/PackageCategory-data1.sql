@@ -24,7 +24,6 @@
 begin;
 insert into billing."PackageCategory" values('aoserv');
 insert into billing."PackageCategory" values('application');
-insert into billing."PackageCategory" values('colocation');
 insert into billing."PackageCategory" values('dedicated');
 insert into billing."PackageCategory" values('managed');
 insert into billing."PackageCategory" values('reseller');

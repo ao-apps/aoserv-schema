@@ -23,13 +23,6 @@
 
 COPY billing."PackageDefinition" FROM stdin;
 21	AOINDUSTRIES	sysadmin	sysadmin	2005-04	System Administration	System Administration Service	USD	300.00	sysadmin	USD	200.00	sysadmin	t	t
-22	AOINDUSTRIES	colocation	2	2005-04	2U Colocation	2U Colocation	\N	\N	\N	USD	50.00	colocation	t	t
-23	AOINDUSTRIES	colocation	4	2005-04	4U Colocation	4U Colocation	\N	\N	\N	USD	100.00	colocation	t	t
-24	AOINDUSTRIES	colocation	8	2005-04	8U Colocation	8U Colocation	\N	\N	\N	USD	190.00	colocation	t	t
-25	AOINDUSTRIES	colocation	12	2005-04	12U Colocation	12U Colocation	\N	\N	\N	USD	270.00	colocation	t	t
-26	AOINDUSTRIES	colocation	16	2005-04	16U Colocation	16U Colocation	\N	\N	\N	USD	340.00	colocation	t	t
-27	AOINDUSTRIES	colocation	half_rack	2005-04	1/2 Rack Colocation	1/2 Rack Colocation	\N	\N	\N	USD	400.00	colocation	t	t
-28	AOINDUSTRIES	colocation	full_rack	2005-04	Full Rack Colocation	Full Rack Colocation	\N	\N	\N	USD	800.00	colocation	t	t
 31	AOINDUSTRIES	managed	p4	2005-04	P4 Server	Managed P4 Server	\N	\N	\N	USD	300.00	managed	t	t
 32	AOINDUSTRIES	managed	xeon	2005-04	Xeon Server	Managed Xeon Server	\N	\N	\N	USD	400.00	managed	t	t
 44	AOINDUSTRIES	reseller	top_level	2005-05	Reseller Top Level Account (Free)	Reseller Top Level Account	\N	\N	\N	USD	0.00	reseller	t	t

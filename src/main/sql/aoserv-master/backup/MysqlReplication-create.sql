@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2007, 2009, 2013, 2014, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2007, 2009, 2013, 2014, 2018, 2020, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -47,3 +47,4 @@ create table backup."MysqlReplication" (
 );
 grant all    on backup."MysqlReplication" to aoadmin;
 grant select on backup."MysqlReplication" to aoserv_app;
+grant select on backup."MysqlReplication" to management;

@@ -37,7 +37,7 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2020-04-13T01:51:55-05:00"
-		dateModified="2022-02-18T23:28:41-06:00"
+		dateModified="2022-02-21T16:14:36-06:00"
 	>
 		<c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
 			<changelog:release
@@ -47,7 +47,11 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
 				artifactId="@{documented.artifactId}"
 				repository="@{nexusUrl}content/repositories/snapshots/"
 				scmUrl="@{project.scm.url}"
-			/>
+			>
+				<ul>
+					<li>Additional permissions for "management" role in support of updated procedures.</li>
+				</ul>
+			</changelog:release>
 		</c:if>
 
 		<changelog:release

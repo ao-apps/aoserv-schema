@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2009, 2012, 2018, 2019, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2009, 2012, 2018, 2019, 2020, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -46,6 +46,6 @@ create table billing."MonthlyCharge" (
     default 'true'
 );
 
-grant all                    on billing."MonthlyCharge" to aoadmin;
-grant select                 on billing."MonthlyCharge" to aoserv_app;
-grant select, insert, update on billing."MonthlyCharge" to billing;
+grant all                            on billing."MonthlyCharge" to aoadmin;
+grant select                         on billing."MonthlyCharge" to aoserv_app;
+grant select, insert, update, delete on billing."MonthlyCharge" to billing;

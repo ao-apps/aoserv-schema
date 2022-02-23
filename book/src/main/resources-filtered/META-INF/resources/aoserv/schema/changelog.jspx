@@ -37,7 +37,7 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2020-04-13T01:51:55-05:00"
-		dateModified="2022-02-21T16:14:36-06:00"
+		dateModified="2022-02-23T00:55:26-06:00"
 	>
 		<c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
 			<changelog:release
@@ -49,7 +49,8 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
 				scmUrl="@{project.scm.url}"
 			>
 				<ul>
-					<li>Additional permissions for "management" role in support of updated procedures.</li>
+					<li>Additional permissions for "billing" and "management" roles in support of updated procedures.</li>
+					<li>Added transaction type "support" for new <ao:a href="https://www.aoapps.com/">AOApps Premium Support</ao:a>.</li>
 				</ul>
 			</changelog:release>
 		</c:if>
@@ -67,7 +68,7 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
 				<li>Added support for <ao:a href="https://git-scm.com/docs/git-shell">git-shell</ao:a>.</li>
 				<li>Added support for <ao:a href="https://www.jenkins.io/">Jenkins</ao:a>.</li>
 				<li>Added support for PHP 8.1.</li>
-				<li>Added resource definitions in support of new <ao:a href="https://www.aoapps.com/">AO Apps</ao:a> branding.</li>
+				<li>Added resource definitions in support of new <ao:a href="https://www.aoapps.com/">AOApps</ao:a> branding.</li>
 				<li>Removed package category and related signup forms for backup and colocation.</li>
 				<li>Added support for <ao:a href="https://www.sonarqube.org/">SonarQube</ao:a>.</li>
 			</ul>

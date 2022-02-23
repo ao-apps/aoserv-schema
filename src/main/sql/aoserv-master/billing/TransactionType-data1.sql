@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2009, 2013, 2015, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2009, 2013, 2015, 2018, 2020, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -49,4 +49,5 @@ purchase	f
 referral	t
 refund	t
 reseller	f
+support	f
 \.

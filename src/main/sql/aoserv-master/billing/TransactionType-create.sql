@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -29,3 +29,4 @@ create table billing."TransactionType" (
 );
 grant all    on billing."TransactionType" to aoadmin;
 grant select on billing."TransactionType" to aoserv_app;
+grant select on billing."TransactionType" to billing;

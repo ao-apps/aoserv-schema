@@ -50,4 +50,5 @@ referral	t
 refund	t
 reseller	f
 support	f
+discount	t
 \.

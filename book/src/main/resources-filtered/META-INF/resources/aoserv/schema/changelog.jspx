@@ -37,7 +37,7 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2020-04-13T01:51:55-05:00"
-		dateModified="2022-02-23T04:35:27-06:00"
+		dateModified="2022-04-11T18:44:01-05:00"
 	>
 		<c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
 			<changelog:release
@@ -54,6 +54,7 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
 						Added transaction types "discount" and "support" for new
 						<ao:a href="https://www.aoapps.com/">AOApps Premium Support</ao:a>.
 					</li>
+					<li>Added support for Java 18.</li>
 				</ul>
 			</changelog:release>
 		</c:if>

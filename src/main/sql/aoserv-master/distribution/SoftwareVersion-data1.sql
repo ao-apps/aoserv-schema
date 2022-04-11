@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2008, 2009, 2011, 2013, 2017, 2018, 2019, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2008, 2009, 2011, 2013, 2017, 2018, 2019, 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -77,6 +77,8 @@ INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner,
   3394, 'jdk', '16.0.0', '2021-03-20 12:58:12.920187+00', 'orion', 70);
 INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
   3396, 'jdk', '17.0.0', '2021-10-16 17:59:40.187861+00', 'orion', 70);
+INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
+  3399, 'jdk', '18.0.0', '2022-04-11 23:40:16.349183+00', 'orion', 70);
 -- PHP
 INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
   1618, 'php', '4.4.2', '2006-02-25 13:58:33.297188-05', 'orion', 14);
@@ -123,4 +125,4 @@ INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner,
   3397, 'postgresql', '14.0', '2021-10-23 21:11:03.175021+00', 'orion', 70);
 COMMIT;
 
-SELECT setval ('distribution."SoftwareVersion_id_seq"', 3399, false);
+SELECT setval ('distribution."SoftwareVersion_id_seq"', 3400, false);

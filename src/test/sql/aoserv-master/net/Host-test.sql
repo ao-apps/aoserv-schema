@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2008, 2009, 2010, 2011, 2013, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2008, 2009, 2010, 2011, 2013, 2018, 2020, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -24,11 +24,11 @@
 begin;
 insert into net."Host" values(
     2,
-	'freedom',
-	'Nested Test Server',
-	67,
-	1,
-	'test.aoindustries.com',
+  'freedom',
+  'Nested Test Server',
+  67,
+  1,
+  'test.aoindustries.com',
     true
 );
 commit;

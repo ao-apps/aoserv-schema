@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2008, 2009, 2010, 2011, 2013, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2008, 2009, 2010, 2011, 2013, 2018, 2020, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -24,18 +24,18 @@
 insert into linux."Server" values(
     2,
     'test.aoindustries.com',
-	26,
-	'VI5w/QIiGMa6g',
-	16,
-	18,
-	null, -- last_distro_time
+  26,
+  'VI5w/QIiGMa6g',
+  16,
+  18,
+  null, -- last_distro_time
     null, -- failover_server
-	'eth0',
-	26,
-	'CST6CDT',
-	null, -- jilter_bind
+  'eth0',
+  26,
+  'CST6CDT',
+  null, -- jilter_bind
     false,
-	null, -- daemon_connect_address
+  null, -- daemon_connect_address
     1000,
     1.0,
     2.0,

@@ -22,235 +22,235 @@ You should have received a copy of the GNU Lesser General Public License
 along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+  <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>com.aoapps</groupId><artifactId>ao-oss-parent</artifactId><version>1.18.0-SNAPSHOT</version>
-		<relativePath>../../oss/parent/pom.xml</relativePath>
-	</parent>
+  <parent>
+    <groupId>com.aoapps</groupId><artifactId>ao-oss-parent</artifactId><version>1.18.0-SNAPSHOT</version>
+    <relativePath>../../oss/parent/pom.xml</relativePath>
+  </parent>
 
-	<groupId>com.aoindustries</groupId><artifactId>aoserv-schema</artifactId><version>1.90.0-SNAPSHOT</version>
-	<packaging>pom</packaging>
+  <groupId>com.aoindustries</groupId><artifactId>aoserv-schema</artifactId><version>1.90.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
 
-	<properties>
-		<module.name>com.aoindustries.aoserv.schema</module.name>
-		<description.html><![CDATA[Database schema for the <a target="${javadoc.target}" href="https://aoindustries.com/aoserv/">AOServ Platform</a>.]]></description.html>
-		<!-- TODO: Remove once moved to platform.aoapps.com -->
-		<google.analytics.trackingId>UA-86871646-1</google.analytics.trackingId>
-		<!-- com.aoindustries is on original Sonatype Nexus Repository Manager -->
-		<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-		<!-- SonarQube -->
-		<sonar.projectKey>com.aoapps.platform:aoapps-schema<!-- TODO: ${project.groupId}:${project.artifactId} --></sonar.projectKey>
-		<sonar.organization>ao-apps</sonar.organization>
-		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-	</properties>
+  <properties>
+    <module.name>com.aoindustries.aoserv.schema</module.name>
+    <description.html><![CDATA[Database schema for the <a target="${javadoc.target}" href="https://aoindustries.com/aoserv/">AOServ Platform</a>.]]></description.html>
+    <!-- TODO: Remove once moved to platform.aoapps.com -->
+    <google.analytics.trackingId>UA-86871646-1</google.analytics.trackingId>
+    <!-- com.aoindustries is on original Sonatype Nexus Repository Manager -->
+    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+    <!-- SonarQube -->
+    <sonar.projectKey>com.aoapps.platform:aoapps-schema<!-- TODO: ${project.groupId}:${project.artifactId} --></sonar.projectKey>
+    <sonar.organization>ao-apps</sonar.organization>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+  </properties>
 
-	<name>AOServ Schema</name>
-	<url>https://aoindustries.com/aoserv/schema/</url>
-	<description>Database schema for the AOServ Platform.</description>
-	<inceptionYear>2000</inceptionYear>
+  <name>AOServ Schema</name>
+  <url>https://aoindustries.com/aoserv/schema/</url>
+  <description>Database schema for the AOServ Platform.</description>
+  <inceptionYear>2000</inceptionYear>
 
-	<licenses>
-		<license>
-			<name>GNU General Lesser Public License (LGPL) version 3.0</name>
-			<url>https://www.gnu.org/licenses/lgpl-3.0.txt</url>
-			<distribution>repo</distribution>
-		</license>
-	</licenses>
+  <licenses>
+    <license>
+      <name>GNU General Lesser Public License (LGPL) version 3.0</name>
+      <url>https://www.gnu.org/licenses/lgpl-3.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
 
-	<organization>
-		<name>AO Industries, Inc.</name>
-		<url>https://aoindustries.com/</url>
-	</organization>
+  <organization>
+    <name>AO Industries, Inc.</name>
+    <url>https://aoindustries.com/</url>
+  </organization>
 
-	<developers>
-		<developer>
-			<name>AO Industries, Inc.</name>
-			<email>support@aoindustries.com</email>
-			<url>https://aoindustries.com/</url>
-			<organization>AO Industries, Inc.</organization>
-			<organizationUrl>https://aoindustries.com/</organizationUrl>
-		</developer>
-	</developers>
+  <developers>
+    <developer>
+      <name>AO Industries, Inc.</name>
+      <email>support@aoindustries.com</email>
+      <url>https://aoindustries.com/</url>
+      <organization>AO Industries, Inc.</organization>
+      <organizationUrl>https://aoindustries.com/</organizationUrl>
+    </developer>
+  </developers>
 
-	<scm>
-		<connection>scm:git:git://github.com/ao-apps/aoserv-schema.git</connection>
-		<developerConnection>scm:git:git@github.com:ao-apps/aoserv-schema.git</developerConnection>
-		<url>https://github.com/ao-apps/aoserv-schema</url>
-		<tag>HEAD</tag>
-	</scm>
+  <scm>
+    <connection>scm:git:git://github.com/ao-apps/aoserv-schema.git</connection>
+    <developerConnection>scm:git:git@github.com:ao-apps/aoserv-schema.git</developerConnection>
+    <url>https://github.com/ao-apps/aoserv-schema</url>
+    <tag>HEAD</tag>
+  </scm>
 
-	<issueManagement>
-		<system>GitHub Issues</system>
-		<url>https://github.com/ao-apps/aoserv-schema/issues</url>
-	</issueManagement>
+  <issueManagement>
+    <system>GitHub Issues</system>
+    <url>https://github.com/ao-apps/aoserv-schema/issues</url>
+  </issueManagement>
 
-	<ciManagement>
-		<system>Jenkins</system>
-		<url>https://jenkins.aoindustries.com/job/ao/job/aoserv/job/schema/</url>
-	</ciManagement>
-	<!-- Only one allowed in POM:
-	<ciManagement>
-		<system>GitHub Actions</system>
-		<url>https://github.com/ao-apps/aoserv-schema/actions</url>
-	</ciManagement>
-	-->
+  <ciManagement>
+    <system>Jenkins</system>
+    <url>https://jenkins.aoindustries.com/job/ao/job/aoserv/job/schema/</url>
+  </ciManagement>
+  <!-- Only one allowed in POM:
+  <ciManagement>
+    <system>GitHub Actions</system>
+    <url>https://github.com/ao-apps/aoserv-schema/actions</url>
+  </ciManagement>
+  -->
 
-	<repositories>
-		<!-- Repository required here, too, so can find parent -->
-		<repository>
-			<id>sonatype-nexus-snapshots-s01</id>
-			<name>Sonatype Nexus Snapshots S01</name>
-			<url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<checksumPolicy>fail</checksumPolicy>
-			</snapshots>
-		</repository>
-	</repositories>
+  <repositories>
+    <!-- Repository required here, too, so can find parent -->
+    <repository>
+      <id>sonatype-nexus-snapshots-s01</id>
+      <name>Sonatype Nexus Snapshots S01</name>
+      <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <checksumPolicy>fail</checksumPolicy>
+      </snapshots>
+    </repository>
+  </repositories>
 
-	<build>
-		<resources>
-			<!-- Default Resources -->
-			<resource>
-				<directory>src/main/resources</directory>
-			</resource>
-			<resource>
-				<directory>src/main/resources-filtered</directory>
-				<filtering>true</filtering>
-			</resource>
-			<!-- Additional Resources -->
-			<resource>
-				<directory>src/main/sql</directory>
-				<!-- Packaged as "sql" artifact below -->
-				<excludes><exclude>**</exclude></excludes>
-			</resource>
-		</resources>
-		<testResources>
-			<!-- Default Test Resources -->
-			<testResource>
-				<directory>src/test/resources</directory>
-			</testResource>
-			<testResource>
-				<directory>src/test/resources-filtered</directory>
-				<filtering>true</filtering>
-			</testResource>
-			<!-- Additional Test Resources -->
-			<testResource>
-				<directory>src/test/sql</directory>
-				<!-- Packaged as "tests-sql" artifact below -->
-				<excludes><exclude>**</exclude></excludes>
-			</testResource>
-		</testResources>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId><artifactId>maven-resources-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>sql-resources</id><phase>process-resources</phase><goals><goal>copy-resources</goal></goals>
-						<configuration>
-							<resources>
-								<resource>
-									<directory>src/main/sql</directory>
-								</resource>
-							</resources>
-							<outputDirectory>${project.build.directory}/sql</outputDirectory>
-						</configuration>
-					</execution>
-					<execution>
-						<id>tests-sql-resources</id><phase>process-resources</phase><goals><goal>copy-resources</goal></goals>
-						<configuration>
-							<resources>
-								<resource>
-									<directory>src/test/sql</directory>
-								</resource>
-							</resources>
-							<outputDirectory>${project.build.directory}/tests-sql</outputDirectory>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId><artifactId>maven-jar-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>sql-jar</id><phase>package</phase><goals><goal>jar</goal></goals>
-						<configuration>
-							<classesDirectory>${project.build.directory}/sql</classesDirectory>
-							<!-- Could pull directly from source, without above sql-resources,
-							     but this seems to match Maven style better:
-							<classesDirectory>src/main/sql</classesDirectory>
-							-->
-							<classifier>sql</classifier>
-							<archive>
-								<manifestEntries>
-									<!-- Java 1.8 -->
-									<Automatic-Module-Name>${module.name}</Automatic-Module-Name>
-								</manifestEntries>
-							</archive>
-						</configuration>
-					</execution>
-					<execution>
-						<id>tests-sql-jar</id><phase>package</phase><goals><goal>test-jar</goal></goals>
-						<configuration>
-							<testClassesDirectory>${project.build.directory}/tests-sql</testClassesDirectory>
-							<!-- Could pull directly from source, without above tests-sql-resources,
-							     but this seems to match Maven style better:
-							<classesDirectory>src/main/tests-sql</classesDirectory>
-							-->
-							<classifier>tests-sql</classifier>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
+  <build>
+    <resources>
+      <!-- Default Resources -->
+      <resource>
+        <directory>src/main/resources</directory>
+      </resource>
+      <resource>
+        <directory>src/main/resources-filtered</directory>
+        <filtering>true</filtering>
+      </resource>
+      <!-- Additional Resources -->
+      <resource>
+        <directory>src/main/sql</directory>
+        <!-- Packaged as "sql" artifact below -->
+        <excludes><exclude>**</exclude></excludes>
+      </resource>
+    </resources>
+    <testResources>
+      <!-- Default Test Resources -->
+      <testResource>
+        <directory>src/test/resources</directory>
+      </testResource>
+      <testResource>
+        <directory>src/test/resources-filtered</directory>
+        <filtering>true</filtering>
+      </testResource>
+      <!-- Additional Test Resources -->
+      <testResource>
+        <directory>src/test/sql</directory>
+        <!-- Packaged as "tests-sql" artifact below -->
+        <excludes><exclude>**</exclude></excludes>
+      </testResource>
+    </testResources>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId><artifactId>maven-resources-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>sql-resources</id><phase>process-resources</phase><goals><goal>copy-resources</goal></goals>
+            <configuration>
+              <resources>
+                <resource>
+                  <directory>src/main/sql</directory>
+                </resource>
+              </resources>
+              <outputDirectory>${project.build.directory}/sql</outputDirectory>
+            </configuration>
+          </execution>
+          <execution>
+            <id>tests-sql-resources</id><phase>process-resources</phase><goals><goal>copy-resources</goal></goals>
+            <configuration>
+              <resources>
+                <resource>
+                  <directory>src/test/sql</directory>
+                </resource>
+              </resources>
+              <outputDirectory>${project.build.directory}/tests-sql</outputDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId><artifactId>maven-jar-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>sql-jar</id><phase>package</phase><goals><goal>jar</goal></goals>
+            <configuration>
+              <classesDirectory>${project.build.directory}/sql</classesDirectory>
+              <!-- Could pull directly from source, without above sql-resources,
+                   but this seems to match Maven style better:
+              <classesDirectory>src/main/sql</classesDirectory>
+              -->
+              <classifier>sql</classifier>
+              <archive>
+                <manifestEntries>
+                  <!-- Java 1.8 -->
+                  <Automatic-Module-Name>${module.name}</Automatic-Module-Name>
+                </manifestEntries>
+              </archive>
+            </configuration>
+          </execution>
+          <execution>
+            <id>tests-sql-jar</id><phase>package</phase><goals><goal>test-jar</goal></goals>
+            <configuration>
+              <testClassesDirectory>${project.build.directory}/tests-sql</testClassesDirectory>
+              <!-- Could pull directly from source, without above tests-sql-resources,
+                   but this seems to match Maven style better:
+              <classesDirectory>src/main/tests-sql</classesDirectory>
+              -->
+              <classifier>tests-sql</classifier>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 
-	<dependencyManagement>
-		<dependencies>
-			<!-- Direct -->
-			<dependency>
-				<groupId>com.aoapps</groupId><artifactId>ao-net-types</artifactId><version>2.0.2${POST-SNAPSHOT}</version><classifier>sql</classifier>
-				<type>jar</type>
-				<exclusions><exclusion><groupId>*</groupId><artifactId>*</artifactId></exclusion></exclusions>
-			</dependency>
-			<dependency>
-				<groupId>com.aoapps</groupId><artifactId>ao-payments-api</artifactId><version>2.0.0${POST-SNAPSHOT}</version><classifier>sql</classifier>
-				<type>jar</type>
-				<exclusions><exclusion><groupId>*</groupId><artifactId>*</artifactId></exclusion></exclusions>
-			</dependency>
-			<dependency>
-				<groupId>com.aoapps</groupId><artifactId>ao-security</artifactId><version>3.1.0${POST-SNAPSHOT}</version><classifier>sql</classifier>
-				<type>jar</type>
-				<exclusions><exclusion><groupId>*</groupId><artifactId>*</artifactId></exclusion></exclusions>
-			</dependency>
-			<dependency>
-				<groupId>com.aoapps</groupId><artifactId>ao-tlds</artifactId><version>2.0.0${POST-SNAPSHOT}</version><classifier>sql</classifier>
-				<type>jar</type>
-				<exclusions><exclusion><groupId>*</groupId><artifactId>*</artifactId></exclusion></exclusions>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
+  <dependencyManagement>
+    <dependencies>
+      <!-- Direct -->
+      <dependency>
+        <groupId>com.aoapps</groupId><artifactId>ao-net-types</artifactId><version>2.0.2${POST-SNAPSHOT}</version><classifier>sql</classifier>
+        <type>jar</type>
+        <exclusions><exclusion><groupId>*</groupId><artifactId>*</artifactId></exclusion></exclusions>
+      </dependency>
+      <dependency>
+        <groupId>com.aoapps</groupId><artifactId>ao-payments-api</artifactId><version>2.0.0${POST-SNAPSHOT}</version><classifier>sql</classifier>
+        <type>jar</type>
+        <exclusions><exclusion><groupId>*</groupId><artifactId>*</artifactId></exclusion></exclusions>
+      </dependency>
+      <dependency>
+        <groupId>com.aoapps</groupId><artifactId>ao-security</artifactId><version>3.1.0${POST-SNAPSHOT}</version><classifier>sql</classifier>
+        <type>jar</type>
+        <exclusions><exclusion><groupId>*</groupId><artifactId>*</artifactId></exclusion></exclusions>
+      </dependency>
+      <dependency>
+        <groupId>com.aoapps</groupId><artifactId>ao-tlds</artifactId><version>2.0.0${POST-SNAPSHOT}</version><classifier>sql</classifier>
+        <type>jar</type>
+        <exclusions><exclusion><groupId>*</groupId><artifactId>*</artifactId></exclusion></exclusions>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
-	<dependencies>
-		<!-- Direct -->
-		<dependency>
-			<groupId>com.aoapps</groupId><artifactId>ao-net-types</artifactId><classifier>sql</classifier>
-			<type>jar</type>
-		</dependency>
-		<dependency>
-			<groupId>com.aoapps</groupId><artifactId>ao-payments-api</artifactId><classifier>sql</classifier>
-			<type>jar</type>
-		</dependency>
-		<dependency>
-			<groupId>com.aoapps</groupId><artifactId>ao-security</artifactId><classifier>sql</classifier>
-			<type>jar</type>
-		</dependency>
-		<dependency>
-			<groupId>com.aoapps</groupId><artifactId>ao-tlds</artifactId><classifier>sql</classifier>
-			<type>jar</type>
-		</dependency>
-	</dependencies>
+  <dependencies>
+    <!-- Direct -->
+    <dependency>
+      <groupId>com.aoapps</groupId><artifactId>ao-net-types</artifactId><classifier>sql</classifier>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>com.aoapps</groupId><artifactId>ao-payments-api</artifactId><classifier>sql</classifier>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>com.aoapps</groupId><artifactId>ao-security</artifactId><classifier>sql</classifier>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>com.aoapps</groupId><artifactId>ao-tlds</artifactId><classifier>sql</classifier>
+      <type>jar</type>
+    </dependency>
+  </dependencies>
 </project>

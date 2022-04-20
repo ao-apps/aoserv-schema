@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2012, 2014, 2016, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2012, 2014, 2016, 2018, 2020, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -45,7 +45,7 @@ create table distribution."SoftwareVersion" (
   disable_time timestamp with time zone,
   disable_reason text,
   check (
-	-- Either both null or both non-null
+  -- Either both null or both non-null
     (disable_time = null) = (disable_reason = null)
   ),
   unique("name", version, operating_system_version)

@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2008, 2009, 2012, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2008, 2009, 2012, 2018, 2020, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -24,18 +24,18 @@
 begin;
 insert into billing."Package" values(
     2,
-	'TEST',
-	'TEST',
-	1,
-	'2004-11-28 19:14:02.812879-06',
-	'orion',
-	null,
-	null,
-	null,
-	null,
-	null,
-	null,
-	null
+  'TEST',
+  'TEST',
+  1,
+  '2004-11-28 19:14:02.812879-06',
+  'orion',
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null
 );
 SELECT setval ('billing."Package_id_seq"', 5, true);
 commit;

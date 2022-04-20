@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2008, 2009, 2010, 2013, 2016, 2017, 2018, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2008, 2009, 2010, 2013, 2016, 2017, 2018, 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -48,7 +48,7 @@ create table web."Site" (
         'cgi-bin',
         'html',
         'mrtg',
-		-- Other filesystem patterns
+    -- Other filesystem patterns
         'lost+found',
         'aquota.group',
         'aquota.user'

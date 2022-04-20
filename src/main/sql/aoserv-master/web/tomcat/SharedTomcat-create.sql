@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2008, 2009, 2013, 2017, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2008, 2009, 2013, 2017, 2018, 2020, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -35,7 +35,7 @@ create table "web.tomcat"."SharedTomcat" (
       -- Note: This matches keepWwwgroupDirs in HttpdSharedTomcatManager.
       -- Note: This matches isValidSharedTomcatName in HttpdSharedTomcat.
       "name" not in (
-		-- Other filesystem patterns
+    -- Other filesystem patterns
         'lost+found',
         'aquota.group',
         'aquota.user'

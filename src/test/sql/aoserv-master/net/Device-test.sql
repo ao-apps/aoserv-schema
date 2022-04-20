@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2008, 2009, 2010, 2011, 2013, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2008, 2009, 2010, 2011, 2013, 2018, 2020, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -24,10 +24,10 @@
 begin;
 insert into net."Device" values(
     3,
-	2,
-	'lo',
-	'loopback device',
-	null, -- delete_route
+  2,
+  'lo',
+  'loopback device',
+  null, -- delete_route
     null, -- gateway
     null, -- network
     null, -- broadcast,
@@ -40,15 +40,15 @@ insert into net."Device" values(
 );
 insert into net."Device" values(
     4,
-	2,
-	'eth0',
-	'Nested Test Servers',
-	null,
-	'192.168.1.3',
-	'192.168.1.0',
-	'192.168.1.255',
-	'00:16:3E:66:FE:33',
-	1000000000,
+  2,
+  'eth0',
+  'Nested Test Servers',
+  null,
+  '192.168.1.3',
+  '192.168.1.0',
+  '192.168.1.255',
+  '00:16:3E:66:FE:33',
+  1000000000,
     2000000,
     3000000,
     4000000,

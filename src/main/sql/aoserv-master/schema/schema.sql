@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -24,6 +24,6 @@
 create schema if not exists "schema";
 
 comment on schema "schema" is 'Definitions of the AOServ data structions over time';
-	
+
 grant all   on schema "schema" to aoadmin;
 grant usage on schema "schema" to aoserv_app;

@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,18 +22,18 @@
  */
 
 insert into net."IpAddress" values (
-	1,
-	'0.0.0.0',
-	null,
-	false,
-	null,
-	(select id from billing."Package" where name='AOINDUSTRIES'),
-	'2001-08-23 18:51:03-05',
-	false,
-	false,
-	false,
-	null,
-	'0.0.0.0'
+  1,
+  '0.0.0.0',
+  null,
+  false,
+  null,
+  (select id from billing."Package" where name='AOINDUSTRIES'),
+  '2001-08-23 18:51:03-05',
+  false,
+  false,
+  false,
+  null,
+  '0.0.0.0'
 );
 
 SELECT setval ('net."IpAddress_id_seq"', 1353, true);

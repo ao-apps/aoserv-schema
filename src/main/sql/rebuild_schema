@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # aoserv-schema - Database schema for the AOServ Platform.
-# Copyright (C) 2000-2006, 2018, 2020  AO Industries, Inc.
+# Copyright (C) 2000-2006, 2018, 2020, 2022  AO Industries, Inc.
 #     support@aoindustries.com
 #     7262 Bull Pen Cir
 #     Mobile, AL 36695
@@ -28,54 +28,54 @@ DIR="${BASH_SOURCE%/*}"
 echo "BEGIN;"
 # 5
 cat "${DIR}/aoserv-master/schema/ForeignKey-data5-pre.sql"
-	# 4
-	cat "${DIR}/aoserv-master/schema/Column-data4-pre.sql"
-	cat "${DIR}/aoserv-master/aosh/Command-data4-pre.sql"
-		# 3
-		cat "${DIR}/aoserv-master/schema/Table-data3-pre.sql"
-			# 2
-			cat "${DIR}/aoserv-master/schema/Type-data2-pre.sql"
-			cat "${DIR}/aoserv-master/schema/Schema-data2-pre.sql"
-				# 1
-				cat "${DIR}/aoserv-master/schema/AoservProtocol-data1-pre.sql"
-				cat "${DIR}/aoserv-master/schema/AoservProtocol-data1.sql"
-				cat "${DIR}/aoserv-master/schema/AoservProtocol-data1-post.sql"
-			# 2
-			cat "${DIR}/aoserv-master/schema/Schema-data2.sql"
-			cat "${DIR}/aoserv-master/schema/Schema-data2-post.sql"
-			cat "${DIR}/aoserv-master/schema/Type-data2.sql"
-			cat "${DIR}/aoserv-master/schema/Type-data2-post.sql"
-		# 3
-		cat "${DIR}/aoserv-master/schema/Table-data3.sql"
-		cat "${DIR}/aoserv-master/schema/Table-data3-post.sql"
-	# 4
-	cat "${DIR}/aoserv-master/aosh/Command-data4.sql"
-	for SQL in \
+  # 4
+  cat "${DIR}/aoserv-master/schema/Column-data4-pre.sql"
+  cat "${DIR}/aoserv-master/aosh/Command-data4-pre.sql"
+    # 3
+    cat "${DIR}/aoserv-master/schema/Table-data3-pre.sql"
+      # 2
+      cat "${DIR}/aoserv-master/schema/Type-data2-pre.sql"
+      cat "${DIR}/aoserv-master/schema/Schema-data2-pre.sql"
+        # 1
+        cat "${DIR}/aoserv-master/schema/AoservProtocol-data1-pre.sql"
+        cat "${DIR}/aoserv-master/schema/AoservProtocol-data1.sql"
+        cat "${DIR}/aoserv-master/schema/AoservProtocol-data1-post.sql"
+      # 2
+      cat "${DIR}/aoserv-master/schema/Schema-data2.sql"
+      cat "${DIR}/aoserv-master/schema/Schema-data2-post.sql"
+      cat "${DIR}/aoserv-master/schema/Type-data2.sql"
+      cat "${DIR}/aoserv-master/schema/Type-data2-post.sql"
+    # 3
+    cat "${DIR}/aoserv-master/schema/Table-data3.sql"
+    cat "${DIR}/aoserv-master/schema/Table-data3-post.sql"
+  # 4
+  cat "${DIR}/aoserv-master/aosh/Command-data4.sql"
+  for SQL in \
       "${DIR}/aoserv-master"/*/*-aosh.Command.sql \
       "${DIR}/aoserv-master"/*/*/*-aosh.Command.sql \
       "${DIR}/aoserv-master"/*/*/*/*-aosh.Command.sql
-	do
-		echo "\echo $SQL"
-		cat "$SQL"
-	done
-	cat "${DIR}/aoserv-master/aosh/Command-data4-post.sql"
-	for SQL in \
+  do
+    echo "\echo $SQL"
+    cat "$SQL"
+  done
+  cat "${DIR}/aoserv-master/aosh/Command-data4-post.sql"
+  for SQL in \
       "${DIR}/aoserv-master"/*/*-schema.Column.sql \
       "${DIR}/aoserv-master"/*/*/*-schema.Column.sql \
       "${DIR}/aoserv-master"/*/*/*/*-schema.Column.sql
-	do
-		echo "\echo $SQL"
-		cat "$SQL"
-	done
-	cat "${DIR}/aoserv-master/schema/Column-data4-post.sql"
+  do
+    echo "\echo $SQL"
+    cat "$SQL"
+  done
+  cat "${DIR}/aoserv-master/schema/Column-data4-post.sql"
 # 5
 for SQL in \
   "${DIR}/aoserv-master"/*/*-schema.ForeignKey.sql \
   "${DIR}/aoserv-master"/*/*/*-schema.ForeignKey.sql \
   "${DIR}/aoserv-master"/*/*/*/*-schema.ForeignKey.sql
 do
-	echo "\echo $SQL"
-	cat "$SQL"
+  echo "\echo $SQL"
+  cat "$SQL"
 done
 cat "${DIR}/aoserv-master/schema/ForeignKey-data5-post.sql"
 # Verify

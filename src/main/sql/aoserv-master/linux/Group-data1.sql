@@ -122,5 +122,11 @@ INSERT INTO linux."Group" ("name", package, "type") VALUES ('reseller',       'A
 INSERT INTO linux."Group" ("name", package, "type") VALUES ('centos',         'AOINDUSTRIES', 'user');
 -- Jenkins
 INSERT INTO linux."Group" ("name", package, "type") VALUES ('jenkins',        'AOINDUSTRIES', 'system');
+-- OProfile
+INSERT INTO linux."Group" ("name", package, "type") VALUES ('oprofile',       'AOINDUSTRIES', 'system');
 -- SonarQube
 INSERT INTO linux."Group" ("name", package, "type") VALUES ('sonarqube',      'AOINDUSTRIES', 'user');
+-- SystemTap
+INSERT INTO linux."Group" ("name", package, "type") VALUES ('stapusr',        'AOINDUSTRIES', 'system');
+INSERT INTO linux."Group" ("name", package, "type") VALUES ('stapsys',        'AOINDUSTRIES', 'system');
+INSERT INTO linux."Group" ("name", package, "type") VALUES ('stapdev',        'AOINDUSTRIES', 'system');

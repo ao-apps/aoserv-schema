@@ -135,5 +135,7 @@ aoadmin@aoindustries=> select * from linux."GroupUser" where "group"='jenkins';
 (5 rows)
  */
 
+-- OProfile
+INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('oprofile',        'oprofile',      TRUE);
 -- SonarQube
 INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('sonarqube',       'sonarqube',     TRUE);

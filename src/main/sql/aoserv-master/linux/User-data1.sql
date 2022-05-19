@@ -96,5 +96,7 @@ INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('res
 INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('centos',         'Cloud User',                'user',   '/bin/bash',     '2020-07-13 00:17:11.115023+00');
 -- Jenkins
 INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('jenkins',        'Jenkins Automation Server', 'system', '/bin/bash',     '2014-06-05 19:50:06.502619+00');
+-- OProfile
+INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('oprofile',       'Special user account to be used by OProfile', 'system', '/sbin/nologin', '2022-05-19 22:41:58.112112+00');
 -- SonarQube
 INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('sonarqube',      'SonarQube',                 'user',   '/bin/bash',     '2022-02-14 18:30:42.703695+00');

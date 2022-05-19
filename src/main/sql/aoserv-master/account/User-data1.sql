@@ -97,5 +97,7 @@ INSERT INTO account."User" (username, package, disable_log) VALUES ('reseller', 
 INSERT INTO account."User" (username, package, disable_log) VALUES ('centos',         'AOINDUSTRIES', NULL);
 -- Jenkins
 INSERT INTO account."User" (username, package, disable_log) VALUES ('jenkins',        'AOINDUSTRIES', NULL);
+-- OProfile
+INSERT INTO account."User" (username, package, disable_log) VALUES ('oprofile',       'AOINDUSTRIES', NULL);
 -- SonarQube
 INSERT INTO account."User" (username, package, disable_log) VALUES ('sonarqube',      'AOINDUSTRIES', NULL);

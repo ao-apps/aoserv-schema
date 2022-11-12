@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2019, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2018, 2019, 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -587,4 +587,44 @@ insert into postgresql."Encoding" values(816, 'WIN1255', 3397);
 insert into postgresql."Encoding" values(817, 'WIN1256', 3397);
 insert into postgresql."Encoding" values(818, 'WIN1257', 3397);
 insert into postgresql."Encoding" values(819, 'WIN1258', 3397);
+commit;
+
+-- 15 CentOS 7 x86_64
+-- https://www.postgresql.org/docs/15/multibyte.html (Server = Yes only)
+begin;
+insert into postgresql."Encoding" values(820, 'EUC_CN', 3401);
+insert into postgresql."Encoding" values(821, 'EUC_JP', 3401);
+insert into postgresql."Encoding" values(822, 'EUC_JIS_2004', 3401);
+insert into postgresql."Encoding" values(823, 'EUC_KR', 3401);
+insert into postgresql."Encoding" values(824, 'EUC_TW', 3401);
+insert into postgresql."Encoding" values(825, 'ISO_8859_5', 3401);
+insert into postgresql."Encoding" values(826, 'ISO_8859_6', 3401);
+insert into postgresql."Encoding" values(827, 'ISO_8859_7', 3401);
+insert into postgresql."Encoding" values(828, 'ISO_8859_8', 3401);
+insert into postgresql."Encoding" values(829, 'KOI8R', 3401);
+insert into postgresql."Encoding" values(830, 'KOI8U', 3401);
+insert into postgresql."Encoding" values(831, 'LATIN1', 3401);
+insert into postgresql."Encoding" values(832, 'LATIN2', 3401);
+insert into postgresql."Encoding" values(833, 'LATIN3', 3401);
+insert into postgresql."Encoding" values(834, 'LATIN4', 3401);
+insert into postgresql."Encoding" values(835, 'LATIN5', 3401);
+insert into postgresql."Encoding" values(836, 'LATIN6', 3401);
+insert into postgresql."Encoding" values(837, 'LATIN7', 3401);
+insert into postgresql."Encoding" values(838, 'LATIN8', 3401);
+insert into postgresql."Encoding" values(839, 'LATIN9', 3401);
+insert into postgresql."Encoding" values(840, 'LATIN10', 3401);
+insert into postgresql."Encoding" values(841, 'MULE_INTERNAL', 3401);
+insert into postgresql."Encoding" values(842, 'SQL_ASCII', 3401);
+insert into postgresql."Encoding" values(843, 'UTF8', 3401);
+insert into postgresql."Encoding" values(844, 'WIN866', 3401);
+insert into postgresql."Encoding" values(845, 'WIN874', 3401);
+insert into postgresql."Encoding" values(846, 'WIN1250', 3401);
+insert into postgresql."Encoding" values(847, 'WIN1251', 3401);
+insert into postgresql."Encoding" values(848, 'WIN1252', 3401);
+insert into postgresql."Encoding" values(849, 'WIN1253', 3401);
+insert into postgresql."Encoding" values(850, 'WIN1254', 3401);
+insert into postgresql."Encoding" values(851, 'WIN1255', 3401);
+insert into postgresql."Encoding" values(852, 'WIN1256', 3401);
+insert into postgresql."Encoding" values(853, 'WIN1257', 3401);
+insert into postgresql."Encoding" values(854, 'WIN1258', 3401);
 commit;

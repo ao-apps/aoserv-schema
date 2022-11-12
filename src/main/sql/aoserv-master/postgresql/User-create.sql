@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2010, 2013, 2018, 2019, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2010, 2013, 2018, 2019, 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -39,7 +39,9 @@ create table postgresql."User" (
       -- Predefined roles, PostgreSQL 14+ - https://www.postgresql.org/docs/14/predefined-roles.html
       'pg_read_all_data',
       'pg_write_all_data',
-      'pg_database_owner'
+      'pg_database_owner',
+      -- Predefined roles, PostgreSQL 15+ - https://www.postgresql.org/docs/15/predefined-roles.html
+      'pg_checkpoint'
     )
   ),
   createdb boolean

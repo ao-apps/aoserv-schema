@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2019, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2018, 2019, 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -41,4 +41,5 @@ insert into postgresql."Version" values(3380, '11');
 insert into postgresql."Version" values(3388, '12');
 insert into postgresql."Version" values(3392, '13');
 insert into postgresql."Version" values(3397, '14');
+insert into postgresql."Version" values(3401, '15');
 commit;

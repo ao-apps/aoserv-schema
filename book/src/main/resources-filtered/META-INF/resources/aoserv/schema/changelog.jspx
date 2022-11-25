@@ -37,7 +37,7 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
     shortTitle="Changelog"
     tocLevels="1"
     datePublished="2020-04-13T01:51:55-05:00"
-    dateModified="2022-11-14T11:46:16-06:00"
+    dateModified="2022-11-25T12:45:43-06:00"
   >
     <c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
       <changelog:release
@@ -47,14 +47,23 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
         artifactId="@{documented.artifactId}"
         repository="@{nexusUrl}content/repositories/snapshots/"
         scmUrl="@{project.scm.url}"
-      >
-        <ul>
-          <li>Added support for Java 19.</li>
-          <li>Added support for <ao:a href="https://www.postgresql.org/docs/15/index.html">PostgreSQL 15</ao:a>.</li>
-          <li>Added support for Apache Tomcat 10.1.</li>
-        </ul>
-      </changelog:release>
+      />
     </c:if>
+
+    <changelog:release
+      projectName="@{documented.name}"
+      version="1.91.7"
+      datePublished="2022-11-25T12:45:43-06:00"
+      groupId="@{project.groupId}"
+      artifactId="@{documented.artifactId}"
+      scmUrl="@{project.scm.url}"
+    >
+      <ul>
+        <li>Added support for Java 19.</li>
+        <li>Added support for <ao:a href="https://www.postgresql.org/docs/15/index.html">PostgreSQL 15</ao:a>.</li>
+        <li>Added support for Apache Tomcat 10.1.</li>
+      </ul>
+    </changelog:release>
 
     <changelog:release
       projectName="@{documented.name}"

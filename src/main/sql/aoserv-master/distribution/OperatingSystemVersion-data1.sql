@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -31,6 +31,8 @@ insert into distribution."OperatingSystemVersion" (id, operating_system, version
 -- debian
 insert into distribution."OperatingSystemVersion" (id, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(1, 'debian', '3.0r1', 'Woody', 'i386', 'Debian 3.0r1 (i386)', false, (select count(*)+1 from distribution."OperatingSystemVersion"));
 insert into distribution."OperatingSystemVersion" (id, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(68, 'debian', '5', 'Lenny', 'x86_64', 'Debian 5 (x86_64)', false, (select count(*)+1 from distribution."OperatingSystemVersion"));
+-- rocky
+insert into distribution."OperatingSystemVersion" (id, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(71, 'rocky', '9', '9', 'x86_64', 'Rocky 9 (x86_64) (Xen Guest and Standalone)', true, (select count(*)+1 from distribution."OperatingSystemVersion"));
 -- windows
 insert into distribution."OperatingSystemVersion" (id, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(33, 'windows', '3.0', '3.0', 'i286', 'Windows 3.0 (i286)', false, (select count(*)+1 from distribution."OperatingSystemVersion"));
 insert into distribution."OperatingSystemVersion" (id, operating_system, version_number, version_name, architecture, display, is_aoserv_daemon_supported, sort_order) values(34, 'windows', '3.1', '3.1', 'i286', 'Windows 3.1 (i286)', false, (select count(*)+1 from distribution."OperatingSystemVersion"));

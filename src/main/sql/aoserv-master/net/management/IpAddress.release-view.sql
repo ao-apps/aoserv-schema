@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -46,7 +46,8 @@ select
     when ao.server is null then 'N/A'
     else
       case
-        when osv.operating_system='centos' then 'CentOS'
+        when osv.operating_system = 'centos' then 'CentOS'
+        when osv.operating_system = 'rocky' then 'Rocky'
         else osv.operating_system
       end || ' ' || osv.version_number
   end as "OS",

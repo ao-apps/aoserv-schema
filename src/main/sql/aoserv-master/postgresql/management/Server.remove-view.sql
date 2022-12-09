@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2019, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2019, 2020, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -35,8 +35,11 @@ select
       'postgres', 'postgresmon'
   )) as num_users,
   ao.hostname as "SERVER",
-  case when osv.operating_system = 'centos' then 'CentOS' else osv.operating_system end
-    || ' ' || osv.version_number as "OS",
+  case
+    when osv.operating_system = 'centos' then 'CentOS'
+    when osv.operating_system = 'rocky' then 'Rocky'
+    else osv.operating_system
+  end || ' ' || osv.version_number as "OS",
   ps."name" as "NAME",
   substring(tv.version from '^\d+\.\d+') as "VERSION",
   nb.port as "PORT",

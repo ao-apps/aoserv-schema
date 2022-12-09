@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2019, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2018, 2019, 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -33,8 +33,11 @@ select
                                                           or ss.client_certificate = sc.id) as num_sendmail_servers,
   coalesce((select sum("count") from pki."CertificateOtherUse" scou where scou.ssl_certificate  = sc.id), 0) as num_other_uses,
   ao.hostname as "SERVER",
-  case when osv.operating_system='centos' then 'CentOS' else osv.operating_system end
-    || ' ' || osv.version_number as "OS",
+  case
+    when osv.operating_system = 'centos' then 'CentOS'
+    when osv.operating_system = 'rocky' then 'Rocky'
+    else osv.operating_system
+  end || ' ' || osv.version_number as "OS",
   (
     select
       case when scn.is_wildcard then '*.' else '' end

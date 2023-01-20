@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2009, 2010, 2013, 2018, 2019, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2009, 2010, 2013, 2018, 2019, 2020, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -57,4 +57,4 @@ create table billing."PackageDefinition" (
 
 grant all                            on billing."PackageDefinition" to aoadmin;
 grant select, insert, update, delete on billing."PackageDefinition" to aoserv_app;
-grant select                         on billing."PackageDefinition" to billing;
+grant select, update                 on billing."PackageDefinition" to billing;

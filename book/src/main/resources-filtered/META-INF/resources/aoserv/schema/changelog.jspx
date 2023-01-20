@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 aoserv-schema - Database schema for the AOServ Platform.
-Copyright (C) 2020, 2021, 2022  AO Industries, Inc.
+Copyright (C) 2020, 2021, 2022, 2023  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -37,7 +37,7 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
     shortTitle="Changelog"
     tocLevels="1"
     datePublished="2020-04-13T01:51:55-05:00"
-    dateModified="2022-12-08T18:33:45-06:00"
+    dateModified="2023-01-20T01:51:00-06:00"
   >
     <c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
       <changelog:release
@@ -50,6 +50,7 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
       >
         <ul>
           <li>Added support for <ao:a href="https://rockylinux.org/news/rocky-linux-9-1-ga-release/">Rocky Linux 9</ao:a>.</li>
+          <li>Additional permissions for "billing" role in support of updated procedures.</li>
         </ul>
       </changelog:release>
     </c:if>

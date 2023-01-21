@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2012, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2012, 2018, 2020, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -21,19 +21,20 @@
  * along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-COPY net."DeviceId" FROM stdin;
-lo	t
-bmc	f
-bond0	f
-bond1	f
-bond2	f
-eth0	f
-eth1	f
-eth2	f
-eth3	f
-eth4	f
-eth5	f
-eth6	f
-eth7	f
-eth8	f
-\.
+BEGIN;
+INSERT INTO net."DeviceId" ("name", "is_loopback") VALUES ('lo', true);
+INSERT INTO net."DeviceId" ("name", "is_loopback") VALUES ('bmc', false);
+INSERT INTO net."DeviceId" ("name", "is_loopback") VALUES ('bond0', false);
+INSERT INTO net."DeviceId" ("name", "is_loopback") VALUES ('bond1', false);
+INSERT INTO net."DeviceId" ("name", "is_loopback") VALUES ('bond2', false);
+INSERT INTO net."DeviceId" ("name", "is_loopback") VALUES ('enX0', false);
+INSERT INTO net."DeviceId" ("name", "is_loopback") VALUES ('eth0', false);
+INSERT INTO net."DeviceId" ("name", "is_loopback") VALUES ('eth1', false);
+INSERT INTO net."DeviceId" ("name", "is_loopback") VALUES ('eth2', false);
+INSERT INTO net."DeviceId" ("name", "is_loopback") VALUES ('eth3', false);
+INSERT INTO net."DeviceId" ("name", "is_loopback") VALUES ('eth4', false);
+INSERT INTO net."DeviceId" ("name", "is_loopback") VALUES ('eth5', false);
+INSERT INTO net."DeviceId" ("name", "is_loopback") VALUES ('eth6', false);
+INSERT INTO net."DeviceId" ("name", "is_loopback") VALUES ('eth7', false);
+INSERT INTO net."DeviceId" ("name", "is_loopback") VALUES ('eth8', false);
+COMMIT;

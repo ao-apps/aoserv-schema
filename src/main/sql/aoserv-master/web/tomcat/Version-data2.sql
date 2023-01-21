@@ -40,4 +40,9 @@ insert into "web.tomcat"."Version" values(3376, '/opt/apache-tomcat-8.5', true);
 insert into "web.tomcat"."Version" values(3377, '/opt/apache-tomcat-9.0', true);
 insert into "web.tomcat"."Version" values(3395, '/opt/apache-tomcat-10.0', true);
 insert into "web.tomcat"."Version" values(3402, '/opt/apache-tomcat-10.1', true);
+-- Rocky 9
+insert into "web.tomcat"."Version" values(3417, '/opt/apache-tomcat-8.5', true);
+insert into "web.tomcat"."Version" values(3418, '/opt/apache-tomcat-9.0', true);
+insert into "web.tomcat"."Version" values(3419, '/opt/apache-tomcat-10.0', true);
+insert into "web.tomcat"."Version" values(3420, '/opt/apache-tomcat-10.1', true);
 commit;

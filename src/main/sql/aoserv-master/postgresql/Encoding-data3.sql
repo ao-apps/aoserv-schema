@@ -469,6 +469,46 @@ insert into postgresql."Encoding" values(713, 'WIN1257', 3380);
 insert into postgresql."Encoding" values(714, 'WIN1258', 3380);
 commit;
 
+-- 11 Rocky 9 x86_64
+-- https://www.postgresql.org/docs/11/static/multibyte.html (Server = Yes only)
+begin;
+insert into postgresql."Encoding" values(855, 'EUC_CN', 3407);
+insert into postgresql."Encoding" values(856, 'EUC_JP', 3407);
+insert into postgresql."Encoding" values(857, 'EUC_JIS_2004', 3407);
+insert into postgresql."Encoding" values(858, 'EUC_KR', 3407);
+insert into postgresql."Encoding" values(859, 'EUC_TW', 3407);
+insert into postgresql."Encoding" values(860, 'ISO_8859_5', 3407);
+insert into postgresql."Encoding" values(861, 'ISO_8859_6', 3407);
+insert into postgresql."Encoding" values(862, 'ISO_8859_7', 3407);
+insert into postgresql."Encoding" values(863, 'ISO_8859_8', 3407);
+insert into postgresql."Encoding" values(864, 'KOI8R', 3407);
+insert into postgresql."Encoding" values(865, 'KOI8U', 3407);
+insert into postgresql."Encoding" values(866, 'LATIN1', 3407);
+insert into postgresql."Encoding" values(867, 'LATIN2', 3407);
+insert into postgresql."Encoding" values(868, 'LATIN3', 3407);
+insert into postgresql."Encoding" values(869, 'LATIN4', 3407);
+insert into postgresql."Encoding" values(870, 'LATIN5', 3407);
+insert into postgresql."Encoding" values(871, 'LATIN6', 3407);
+insert into postgresql."Encoding" values(872, 'LATIN7', 3407);
+insert into postgresql."Encoding" values(873, 'LATIN8', 3407);
+insert into postgresql."Encoding" values(874, 'LATIN9', 3407);
+insert into postgresql."Encoding" values(875, 'LATIN10', 3407);
+insert into postgresql."Encoding" values(876, 'MULE_INTERNAL', 3407);
+insert into postgresql."Encoding" values(877, 'SQL_ASCII', 3407);
+insert into postgresql."Encoding" values(878, 'UTF8', 3407);
+insert into postgresql."Encoding" values(879, 'WIN866', 3407);
+insert into postgresql."Encoding" values(880, 'WIN874', 3407);
+insert into postgresql."Encoding" values(881, 'WIN1250', 3407);
+insert into postgresql."Encoding" values(882, 'WIN1251', 3407);
+insert into postgresql."Encoding" values(883, 'WIN1252', 3407);
+insert into postgresql."Encoding" values(884, 'WIN1253', 3407);
+insert into postgresql."Encoding" values(885, 'WIN1254', 3407);
+insert into postgresql."Encoding" values(886, 'WIN1255', 3407);
+insert into postgresql."Encoding" values(887, 'WIN1256', 3407);
+insert into postgresql."Encoding" values(888, 'WIN1257', 3407);
+insert into postgresql."Encoding" values(889, 'WIN1258', 3407);
+commit;
+
 -- 12 CentOS 7 x86_64
 -- https://www.postgresql.org/docs/12/multibyte.html (Server = Yes only)
 begin;
@@ -507,6 +547,46 @@ insert into postgresql."Encoding" values(746, 'WIN1255', 3388);
 insert into postgresql."Encoding" values(747, 'WIN1256', 3388);
 insert into postgresql."Encoding" values(748, 'WIN1257', 3388);
 insert into postgresql."Encoding" values(749, 'WIN1258', 3388);
+commit;
+
+-- 12 Rocky 9 x86_64
+-- https://www.postgresql.org/docs/12/multibyte.html (Server = Yes only)
+begin;
+insert into postgresql."Encoding" values(890, 'EUC_CN', 3408);
+insert into postgresql."Encoding" values(891, 'EUC_JP', 3408);
+insert into postgresql."Encoding" values(892, 'EUC_JIS_2004', 3408);
+insert into postgresql."Encoding" values(893, 'EUC_KR', 3408);
+insert into postgresql."Encoding" values(894, 'EUC_TW', 3408);
+insert into postgresql."Encoding" values(895, 'ISO_8859_5', 3408);
+insert into postgresql."Encoding" values(896, 'ISO_8859_6', 3408);
+insert into postgresql."Encoding" values(897, 'ISO_8859_7', 3408);
+insert into postgresql."Encoding" values(898, 'ISO_8859_8', 3408);
+insert into postgresql."Encoding" values(899, 'KOI8R', 3408);
+insert into postgresql."Encoding" values(900, 'KOI8U', 3408);
+insert into postgresql."Encoding" values(901, 'LATIN1', 3408);
+insert into postgresql."Encoding" values(902, 'LATIN2', 3408);
+insert into postgresql."Encoding" values(903, 'LATIN3', 3408);
+insert into postgresql."Encoding" values(904, 'LATIN4', 3408);
+insert into postgresql."Encoding" values(905, 'LATIN5', 3408);
+insert into postgresql."Encoding" values(906, 'LATIN6', 3408);
+insert into postgresql."Encoding" values(907, 'LATIN7', 3408);
+insert into postgresql."Encoding" values(908, 'LATIN8', 3408);
+insert into postgresql."Encoding" values(909, 'LATIN9', 3408);
+insert into postgresql."Encoding" values(910, 'LATIN10', 3408);
+insert into postgresql."Encoding" values(911, 'MULE_INTERNAL', 3408);
+insert into postgresql."Encoding" values(912, 'SQL_ASCII', 3408);
+insert into postgresql."Encoding" values(913, 'UTF8', 3408);
+insert into postgresql."Encoding" values(914, 'WIN866', 3408);
+insert into postgresql."Encoding" values(915, 'WIN874', 3408);
+insert into postgresql."Encoding" values(916, 'WIN1250', 3408);
+insert into postgresql."Encoding" values(917, 'WIN1251', 3408);
+insert into postgresql."Encoding" values(918, 'WIN1252', 3408);
+insert into postgresql."Encoding" values(919, 'WIN1253', 3408);
+insert into postgresql."Encoding" values(920, 'WIN1254', 3408);
+insert into postgresql."Encoding" values(921, 'WIN1255', 3408);
+insert into postgresql."Encoding" values(922, 'WIN1256', 3408);
+insert into postgresql."Encoding" values(923, 'WIN1257', 3408);
+insert into postgresql."Encoding" values(924, 'WIN1258', 3408);
 commit;
 
 -- 13 CentOS 7 x86_64
@@ -549,6 +629,46 @@ insert into postgresql."Encoding" values(783, 'WIN1257', 3392);
 insert into postgresql."Encoding" values(784, 'WIN1258', 3392);
 commit;
 
+-- 13 Rocky 9 x86_64
+-- https://www.postgresql.org/docs/13/multibyte.html (Server = Yes only)
+begin;
+insert into postgresql."Encoding" values(925, 'EUC_CN', 3409);
+insert into postgresql."Encoding" values(926, 'EUC_JP', 3409);
+insert into postgresql."Encoding" values(927, 'EUC_JIS_2004', 3409);
+insert into postgresql."Encoding" values(928, 'EUC_KR', 3409);
+insert into postgresql."Encoding" values(929, 'EUC_TW', 3409);
+insert into postgresql."Encoding" values(930, 'ISO_8859_5', 3409);
+insert into postgresql."Encoding" values(931, 'ISO_8859_6', 3409);
+insert into postgresql."Encoding" values(932, 'ISO_8859_7', 3409);
+insert into postgresql."Encoding" values(933, 'ISO_8859_8', 3409);
+insert into postgresql."Encoding" values(934, 'KOI8R', 3409);
+insert into postgresql."Encoding" values(935, 'KOI8U', 3409);
+insert into postgresql."Encoding" values(936, 'LATIN1', 3409);
+insert into postgresql."Encoding" values(937, 'LATIN2', 3409);
+insert into postgresql."Encoding" values(938, 'LATIN3', 3409);
+insert into postgresql."Encoding" values(939, 'LATIN4', 3409);
+insert into postgresql."Encoding" values(940, 'LATIN5', 3409);
+insert into postgresql."Encoding" values(941, 'LATIN6', 3409);
+insert into postgresql."Encoding" values(942, 'LATIN7', 3409);
+insert into postgresql."Encoding" values(943, 'LATIN8', 3409);
+insert into postgresql."Encoding" values(944, 'LATIN9', 3409);
+insert into postgresql."Encoding" values(945, 'LATIN10', 3409);
+insert into postgresql."Encoding" values(946, 'MULE_INTERNAL', 3409);
+insert into postgresql."Encoding" values(947, 'SQL_ASCII', 3409);
+insert into postgresql."Encoding" values(948, 'UTF8', 3409);
+insert into postgresql."Encoding" values(949, 'WIN866', 3409);
+insert into postgresql."Encoding" values(950, 'WIN874', 3409);
+insert into postgresql."Encoding" values(951, 'WIN1250', 3409);
+insert into postgresql."Encoding" values(952, 'WIN1251', 3409);
+insert into postgresql."Encoding" values(953, 'WIN1252', 3409);
+insert into postgresql."Encoding" values(954, 'WIN1253', 3409);
+insert into postgresql."Encoding" values(955, 'WIN1254', 3409);
+insert into postgresql."Encoding" values(956, 'WIN1255', 3409);
+insert into postgresql."Encoding" values(957, 'WIN1256', 3409);
+insert into postgresql."Encoding" values(958, 'WIN1257', 3409);
+insert into postgresql."Encoding" values(959, 'WIN1258', 3409);
+commit;
+
 -- 14 CentOS 7 x86_64
 -- https://www.postgresql.org/docs/14/multibyte.html (Server = Yes only)
 begin;
@@ -589,6 +709,46 @@ insert into postgresql."Encoding" values(818, 'WIN1257', 3397);
 insert into postgresql."Encoding" values(819, 'WIN1258', 3397);
 commit;
 
+-- 14 Rocky 9 x86_64
+-- https://www.postgresql.org/docs/14/multibyte.html (Server = Yes only)
+begin;
+insert into postgresql."Encoding" values(960, 'EUC_CN', 3410);
+insert into postgresql."Encoding" values(961, 'EUC_JP', 3410);
+insert into postgresql."Encoding" values(962, 'EUC_JIS_2004', 3410);
+insert into postgresql."Encoding" values(963, 'EUC_KR', 3410);
+insert into postgresql."Encoding" values(964, 'EUC_TW', 3410);
+insert into postgresql."Encoding" values(965, 'ISO_8859_5', 3410);
+insert into postgresql."Encoding" values(966, 'ISO_8859_6', 3410);
+insert into postgresql."Encoding" values(967, 'ISO_8859_7', 3410);
+insert into postgresql."Encoding" values(968, 'ISO_8859_8', 3410);
+insert into postgresql."Encoding" values(969, 'KOI8R', 3410);
+insert into postgresql."Encoding" values(970, 'KOI8U', 3410);
+insert into postgresql."Encoding" values(971, 'LATIN1', 3410);
+insert into postgresql."Encoding" values(972, 'LATIN2', 3410);
+insert into postgresql."Encoding" values(973, 'LATIN3', 3410);
+insert into postgresql."Encoding" values(974, 'LATIN4', 3410);
+insert into postgresql."Encoding" values(975, 'LATIN5', 3410);
+insert into postgresql."Encoding" values(976, 'LATIN6', 3410);
+insert into postgresql."Encoding" values(977, 'LATIN7', 3410);
+insert into postgresql."Encoding" values(978, 'LATIN8', 3410);
+insert into postgresql."Encoding" values(979, 'LATIN9', 3410);
+insert into postgresql."Encoding" values(980, 'LATIN10', 3410);
+insert into postgresql."Encoding" values(981, 'MULE_INTERNAL', 3410);
+insert into postgresql."Encoding" values(982, 'SQL_ASCII', 3410);
+insert into postgresql."Encoding" values(983, 'UTF8', 3410);
+insert into postgresql."Encoding" values(984, 'WIN866', 3410);
+insert into postgresql."Encoding" values(985, 'WIN874', 3410);
+insert into postgresql."Encoding" values(986, 'WIN1250', 3410);
+insert into postgresql."Encoding" values(987, 'WIN1251', 3410);
+insert into postgresql."Encoding" values(988, 'WIN1252', 3410);
+insert into postgresql."Encoding" values(989, 'WIN1253', 3410);
+insert into postgresql."Encoding" values(990, 'WIN1254', 3410);
+insert into postgresql."Encoding" values(991, 'WIN1255', 3410);
+insert into postgresql."Encoding" values(992, 'WIN1256', 3410);
+insert into postgresql."Encoding" values(993, 'WIN1257', 3410);
+insert into postgresql."Encoding" values(994, 'WIN1258', 3410);
+commit;
+
 -- 15 CentOS 7 x86_64
 -- https://www.postgresql.org/docs/15/multibyte.html (Server = Yes only)
 begin;
@@ -627,4 +787,44 @@ insert into postgresql."Encoding" values(851, 'WIN1255', 3401);
 insert into postgresql."Encoding" values(852, 'WIN1256', 3401);
 insert into postgresql."Encoding" values(853, 'WIN1257', 3401);
 insert into postgresql."Encoding" values(854, 'WIN1258', 3401);
+commit;
+
+-- 15 Rocky 9 x86_64
+-- https://www.postgresql.org/docs/15/multibyte.html (Server = Yes only)
+begin;
+insert into postgresql."Encoding" values(995, 'EUC_CN', 3411);
+insert into postgresql."Encoding" values(996, 'EUC_JP', 3411);
+insert into postgresql."Encoding" values(997, 'EUC_JIS_2004', 3411);
+insert into postgresql."Encoding" values(998, 'EUC_KR', 3411);
+insert into postgresql."Encoding" values(999, 'EUC_TW', 3411);
+insert into postgresql."Encoding" values(1000, 'ISO_8859_5', 3411);
+insert into postgresql."Encoding" values(1001, 'ISO_8859_6', 3411);
+insert into postgresql."Encoding" values(1002, 'ISO_8859_7', 3411);
+insert into postgresql."Encoding" values(1003, 'ISO_8859_8', 3411);
+insert into postgresql."Encoding" values(1004, 'KOI8R', 3411);
+insert into postgresql."Encoding" values(1005, 'KOI8U', 3411);
+insert into postgresql."Encoding" values(1006, 'LATIN1', 3411);
+insert into postgresql."Encoding" values(1007, 'LATIN2', 3411);
+insert into postgresql."Encoding" values(1008, 'LATIN3', 3411);
+insert into postgresql."Encoding" values(1009, 'LATIN4', 3411);
+insert into postgresql."Encoding" values(1010, 'LATIN5', 3411);
+insert into postgresql."Encoding" values(1011, 'LATIN6', 3411);
+insert into postgresql."Encoding" values(1012, 'LATIN7', 3411);
+insert into postgresql."Encoding" values(1013, 'LATIN8', 3411);
+insert into postgresql."Encoding" values(1014, 'LATIN9', 3411);
+insert into postgresql."Encoding" values(1015, 'LATIN10', 3411);
+insert into postgresql."Encoding" values(1016, 'MULE_INTERNAL', 3411);
+insert into postgresql."Encoding" values(1017, 'SQL_ASCII', 3411);
+insert into postgresql."Encoding" values(1018, 'UTF8', 3411);
+insert into postgresql."Encoding" values(1019, 'WIN866', 3411);
+insert into postgresql."Encoding" values(1020, 'WIN874', 3411);
+insert into postgresql."Encoding" values(1021, 'WIN1250', 3411);
+insert into postgresql."Encoding" values(1022, 'WIN1251', 3411);
+insert into postgresql."Encoding" values(1023, 'WIN1252', 3411);
+insert into postgresql."Encoding" values(1024, 'WIN1253', 3411);
+insert into postgresql."Encoding" values(1025, 'WIN1254', 3411);
+insert into postgresql."Encoding" values(1026, 'WIN1255', 3411);
+insert into postgresql."Encoding" values(1027, 'WIN1256', 3411);
+insert into postgresql."Encoding" values(1028, 'WIN1257', 3411);
+insert into postgresql."Encoding" values(1029, 'WIN1258', 3411);
 commit;

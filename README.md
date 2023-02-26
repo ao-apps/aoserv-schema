@@ -18,7 +18,7 @@ Database schema for the [AOServ Platform](https://aoindustries.com/aoserv/).
 ## Project Links
 * [Project Home](https://aoindustries.com/aoserv/schema/)
 * [Changelog](https://aoindustries.com/aoserv/schema/changelog)
-* [Maven Central Repository](https://search.maven.org/artifact/com.aoindustries/aoserv-schema)
+* [Maven Central Repository](https://central.sonatype.com/search?namespace=com.aoindustries&q=a%3Aaoserv-schema)
 * [GitHub](https://github.com/ao-apps/aoserv-schema)
 
 ## Contact Us

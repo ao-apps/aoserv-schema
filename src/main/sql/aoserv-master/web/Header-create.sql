@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -63,4 +63,4 @@ create table web."Header" (
 );
 grant all            on web."Header" to aoadmin;
 grant select, delete on web."Header" to aoserv_app; -- , insert, update
-grant insert         on web."Header" to management;
+grant select, insert on web."Header" to management;

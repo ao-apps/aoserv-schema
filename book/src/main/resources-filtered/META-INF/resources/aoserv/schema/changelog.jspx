@@ -37,7 +37,7 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
     shortTitle="Changelog"
     tocLevels="1"
     datePublished="2020-04-13T01:51:55-05:00"
-    dateModified="2023-07-10T22:47:36Z"
+    dateModified="2023-07-10T23:06:10Z"
   >
     <c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
       <changelog:release
@@ -51,7 +51,7 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
         <ul>
           <li>Added support for <ao:a href="https://rockylinux.org/news/rocky-linux-9-1-ga-release/">Rocky Linux 9</ao:a>.</li>
           <li>Additional permissions for "billing" and "management" roles in support of updated procedures.</li>
-          <li>Added support for <ao:a href="https://www.oracle.com/java/technologies/javase/20u-relnotes.html">Java 20</ao:a>.</li>
+          <li>Added support for <ao:a href="https://www.oracle.com/java/technologies/javase/20-relnote-issues.html">Java 20</ao:a>.</li>
         </ul>
       </changelog:release>
     </c:if>
@@ -65,7 +65,7 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
       scmUrl="@{project.scm.url}"
     >
       <ul>
-        <li>Added support for <ao:a href="https://www.oracle.com/java/technologies/javase/19u-relnotes.html">Java 19</ao:a>.</li>
+        <li>Added support for <ao:a href="https://www.oracle.com/java/technologies/javase/19-relnote-issues.html">Java 19</ao:a>.</li>
         <li>Added support for <ao:a href="https://www.postgresql.org/docs/15/index.html">PostgreSQL 15</ao:a>.</li>
         <li>Added support for Apache Tomcat 10.1.</li>
       </ul>
@@ -105,7 +105,7 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
           Added transaction types "discount" and "support" for new
           <ao:a href="https://www.aoapps.com/">AOApps Premium Support</ao:a>.
         </li>
-        <li>Added support for <ao:a href="https://www.oracle.com/java/technologies/javase/18u-relnotes.html">Java 18</ao:a>.</li>
+        <li>Added support for <ao:a href="https://www.oracle.com/java/technologies/javase/18-relnote-issues.html">Java 18</ao:a>.</li>
       </ul>
     </changelog:release>
 

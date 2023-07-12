@@ -37,7 +37,7 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
     shortTitle="Changelog"
     tocLevels="1"
     datePublished="2020-04-13T01:51:55-05:00"
-    dateModified="2023-07-10T23:06:10Z"
+    dateModified="2023-07-12T21:07:31Z"
   >
     <c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
       <changelog:release
@@ -52,6 +52,7 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
           <li>Added support for <ao:a href="https://rockylinux.org/news/rocky-linux-9-1-ga-release/">Rocky Linux 9</ao:a>.</li>
           <li>Additional permissions for "billing" and "management" roles in support of updated procedures.</li>
           <li>Added support for <ao:a href="https://www.oracle.com/java/technologies/javase/20-relnote-issues.html">Java 20</ao:a>.</li>
+          <li>Added support for <ao:a href="https://www.php.net/releases/8.2/index.php">PHP 8.2</ao:a>.</li>
         </ul>
       </changelog:release>
     </c:if>
@@ -121,7 +122,7 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
         <li>Added support for <ao:a href="https://www.postgresql.org/docs/14/index.html">PostgreSQL 14</ao:a>.</li>
         <li>Added support for <ao:a href="https://git-scm.com/docs/git-shell">git-shell</ao:a>.</li>
         <li>Added support for <ao:a href="https://www.jenkins.io/">Jenkins</ao:a>.</li>
-        <li>Added support for PHP 8.1.</li>
+        <li>Added support for <ao:a href="https://www.php.net/releases/8.1/index.php">PHP 8.1</ao:a>.</li>
         <li>Added resource definitions in support of new <ao:a href="https://www.aoapps.com/">AOApps</ao:a> branding.</li>
         <li>Removed package category and related signup forms for backup and colocation.</li>
         <li>Added support for <ao:a href="https://www.sonarqube.org/">SonarQube</ao:a>.</li>
@@ -231,7 +232,7 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
       scmUrl="@{project.scm.url}"
     >
       <ul>
-        <li>Added support for <ao:a href="https://www.php.net/releases/8.0/">PHP 8.0</ao:a>.</li>
+        <li>Added support for <ao:a href="https://www.php.net/releases/8.0/index.php">PHP 8.0</ao:a>.</li>
         <li>New <code>"schema"."AoservProtocol"</code>: <code>1.84.13</code></li>
         <li>New <code>"schema"."Type"</code>: <code>HashedKey</code></li>
         <li>Removed <code>linux.Server.daemon_key</code>, now stored in <code>aoserv-daemon.properties</code></li>

@@ -29,11 +29,11 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
     <relativePath>../../../oss/parent/pom.xml</relativePath>
   </parent>
 
-  <groupId>com.aoindustries</groupId><artifactId>aoserv-schema-book</artifactId><version>1.91.8-SNAPSHOT</version>
+  <groupId>com.aoindustries</groupId><artifactId>aoserv-schema-book</artifactId><version>1.91.8</version>
   <packaging>bundle</packaging>
 
   <properties>
-    <project.build.outputTimestamp>2023-02-08T21:06:04Z</project.build.outputTimestamp>
+    <project.build.outputTimestamp>2023-08-15T21:42:17Z</project.build.outputTimestamp>
     <module.name>com.aoindustries.aoserv.schema.book</module.name>
     <!-- These values are copied from the project being documented -->
     <documented.artifactId>aoserv-schema</documented.artifactId>
@@ -81,7 +81,7 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
     <connection>scm:git:git://github.com/ao-apps/aoserv-schema.git</connection>
     <developerConnection>scm:git:git@github.com:ao-apps/aoserv-schema.git</developerConnection>
     <url>https://github.com/ao-apps/aoserv-schema</url>
-    <tag>HEAD</tag>
+    <tag>aoserv-schema-book-1.91.8</tag>
   </scm>
 
   <issueManagement>

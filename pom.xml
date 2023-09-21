@@ -36,7 +36,7 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
     <!-- Must be set to ${git.commit.time} for snapshots or ISO 8601 timestamp for releases. -->
     <project.build.outputTimestamp>${git.commit.time}</project.build.outputTimestamp>
     <module.name>com.aoindustries.aoserv.schema</module.name>
-        
+
     <description.html><![CDATA[Database schema for the <a target="${javadoc.target}" href="https://aoindustries.com/aoserv/">AOServ Platform</a>.]]></description.html>
     <!-- TODO: Remove once moved to platform.aoapps.com -->
     <google.analytics.trackingId>UA-86871646-1</google.analytics.trackingId>

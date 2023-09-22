@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2009, 2010, 2013, 2016, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2009, 2010, 2013, 2016, 2018, 2020, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -65,7 +65,7 @@ insert into reseller."Brand" values(
   'https://localhost:11257/aoweb/', -- aoweb_struts_https_url_base
   'LkZ4Gi54ofbw9ghm320JHKcrYlGf4SzIzMa7geNmcbM=', -- aoweb_struts_google_verify_content
   false, -- aoweb_struts_noindex
-  'UA-86871646-1', -- aoweb_struts_google_analytics_new_tracking_code
+  'G-9HHKNG7EMF', -- aoweb_struts_google_analytics_new_tracking_code
   'support@aoindustries.com', -- aoweb_struts_signup_admin_address
   4, -- aoweb_struts_vnc_bind
   'PKCS12', -- aoweb_struts_keystore_type

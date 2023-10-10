@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -40,7 +40,9 @@ select "schema".add_column('web.tomcat', 'httpd_shared_tomcats', 'tomcat4_worker
 select "schema".add_column('web.tomcat', 'httpd_shared_tomcats', 'tomcat4_shutdown_port',   'fkey',     true,  true, false, 'the port that will shut down this JVM', '1.0a100', null);
 select "schema".add_column('web.tomcat', 'httpd_shared_tomcats', 'tomcat4_shutdown_key',    'string',   true, false, false, 'the key used to shut down the JVM', '1.0a100', null);
 select "schema".add_column('web.tomcat', 'httpd_shared_tomcats', 'is_manual',               'boolean', false, false, false, 'the configuration files are manually maintained', '1.0a100', null);
-select "schema".add_column('web.tomcat', 'httpd_shared_tomcats', 'max_post_size',           'int',      true, false, false, 'the maximum POST size allowed', '1.80.1', null);
+select "schema".add_column('web.tomcat', 'httpd_shared_tomcats', 'maxParameterCount',       'int',      true, false, false, 'the maxParameterCount setting for this Tomcat', '1.92.0', null);
+select "schema".add_column('web.tomcat', 'httpd_shared_tomcats', 'max_post_size',           'int',      true, false, false, 'the maxPostSize setting for this Tomcat', '1.80.1', null);
 select "schema".add_column('web.tomcat', 'httpd_shared_tomcats', 'unpack_wars',             'boolean', false, false, false, 'the unpackWARs setting for this Tomcat', '1.80.1', null);
 select "schema".add_column('web.tomcat', 'httpd_shared_tomcats', 'auto_deploy',             'boolean', false, false, false, 'the autoDeploy setting for this Tomcat', '1.80.1', null);
+select "schema".add_column('web.tomcat', 'httpd_shared_tomcats', 'undeployOldVersions',     'boolean', false, false, false, 'the undeployOldVersions setting for this Tomcat', '1.92.0', null);
 select "schema".add_column('web.tomcat', 'httpd_shared_tomcats', 'tomcatAuthentication',    'boolean', false, false, false, 'the tomcatAuthentication setting for this Tomcat', '1.83.2', null);

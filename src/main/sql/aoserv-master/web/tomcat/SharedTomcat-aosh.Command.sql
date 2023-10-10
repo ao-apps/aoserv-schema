@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -130,10 +130,19 @@ select aosh.add_command(
   '1.30'
 );
 select aosh.add_command(
+  'web.tomcat.SharedTomcat.maxParameterCount.set',
+  'web.tomcat',
+  'httpd_shared_tomcats',
+  'sets the maxParameterCount setting for a Multi-Site Tomcat installation',
+  '<i>name</i> <i>ao_server</i> {""|<i>maxParameterCount</i>}',
+  '1.92.0',
+  null
+);
+select aosh.add_command(
   'set_httpd_shared_tomcat_max_post_size',
   'web.tomcat',
   'httpd_shared_tomcats',
-  'sets the maximum POST size for a Multi-Site Tomcat installation',
+  'sets the maxPostSize setting for a Multi-Site Tomcat installation',
   '<i>name</i> <i>ao_server</i> {""|<i>max_post_size</i>}',
   '1.80.1',
   null
@@ -154,6 +163,15 @@ select aosh.add_command(
   'sets the autoDeploy setting for a Multi-Site Tomcat installation',
   '<i>name</i> <i>ao_server</i> <i>auto_deploy</i>',
   '1.80.1',
+  null
+);
+select aosh.add_command(
+  'web.tomcat.SharedTomcat.undeployOldVersions.set',
+  'web.tomcat',
+  'httpd_shared_tomcats',
+  'sets the undeployOldVersions setting for a Multi-Site Tomcat installation',
+  '<i>name</i> <i>ao_server</i> <i>undeployOldVersions</i>',
+  '1.92.0',
   null
 );
 select aosh.add_command(

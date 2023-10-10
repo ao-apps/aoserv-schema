@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2008, 2009, 2013, 2017, 2018, 2020, 2022  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2008, 2009, 2013, 2017, 2018, 2020, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -58,12 +58,16 @@ create table "web.tomcat"."SharedTomcat" (
   is_manual boolean
     not null
     default false,
+  "maxParameterCount" integer
+    check ("maxParameterCount" is null or "maxParameterCount" >= 0),
   max_post_size integer
     check (max_post_size is null or max_post_size >= 0),
   unpack_wars boolean not null
     default true,
   auto_deploy boolean not null
     default true,
+  "undeployOldVersions" boolean not null
+    default false,
   "tomcatAuthentication" boolean not null
     default true,
   unique (ao_server, "name")

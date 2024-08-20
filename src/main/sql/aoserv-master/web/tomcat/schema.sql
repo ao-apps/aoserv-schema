@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -27,3 +27,4 @@ comment on schema "web.tomcat" is 'Tomcat configuration';
 
 grant all   on schema "web.tomcat" to aoadmin;
 grant usage on schema "web.tomcat" to aoserv_app;
+grant usage on schema "web.tomcat" to management;

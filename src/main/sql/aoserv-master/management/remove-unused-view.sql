@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -33,6 +33,9 @@ as
 -- web.HttpdServer
           (select 'web'::name as "schema", 'HttpdServer'::name as "table", count(*) as unused from "web.management"."HttpdServer.remove"
            where num_site_binds=0)
+-- web.tomcat.SharedTomcat
+union all (select 'web.tomcat'::name as "schema", 'SharedTomcat'::name as "table", count(*) as unused from "web.tomcat.management"."SharedTomcat.remove"
+           where num_sites=0)
 -- TODO: mysql.Database (without any mysql.DatabaseUser)
 -- TODO: mysql.UserServer (without any mysql.DatabaseUser)
 -- TODO: mysql.User (orphaned)

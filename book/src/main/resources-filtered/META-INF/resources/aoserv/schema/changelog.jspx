@@ -37,7 +37,7 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
     shortTitle="Changelog"
     tocLevels="1"
     datePublished="2020-04-13T01:51:55-05:00"
-    dateModified="2024-08-20T03:05:41Z"
+    dateModified="2024-08-27T05:51:25Z"
   >
     <c:set var="latestRelease" value="1.91.8" />
     <c:if test="${
@@ -63,6 +63,10 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
           </li>
           <li>Added support for <ao:a rel="nofollow" href="https://www.oracle.com/java/technologies/javase/21-relnote-issues.html">Java 21</ao:a>.</li>
           <li>Additional permissions for "management" roles in support of updated procedures.</li>
+          <li>
+            New management view <code>"web.tomcat.management"."SharedTomcat.remove"</code> used in support of routinely
+            archiving and removing unused Multi-site Tomcat instances.
+          </li>
         </ul>
       </changelog:release>
     </c:if>

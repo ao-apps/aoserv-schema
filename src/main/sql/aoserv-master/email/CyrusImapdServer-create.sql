@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2019, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2018, 2019, 2020, 2021, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -84,6 +84,6 @@ create table email."CyrusImapdServer" (
       or expunge_duration is not null
     )
 );
-grant all                    on email."CyrusImapdServer" to aoadmin;
-grant select                 on email."CyrusImapdServer" to aoserv_app;
-grant select, insert, delete on email."CyrusImapdServer" to management;
+grant all                            on email."CyrusImapdServer" to aoadmin;
+grant select                         on email."CyrusImapdServer" to aoserv_app;
+grant select, insert, update, delete on email."CyrusImapdServer" to management;

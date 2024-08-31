@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -39,6 +39,7 @@ create table pki."CertificateName" (
   "domain" "com.aoapps.net"."DomainName"
     not null
 );
-grant all            on pki."CertificateName" to aoadmin;
-grant select         on pki."CertificateName" to aoserv_app;
-grant select, insert on pki."CertificateName" to management;
+grant all                            on pki."CertificateName" to aoadmin;
+grant select                         on pki."CertificateName" to aoserv_app;
+grant select, insert                 on pki."CertificateName" to management;
+grant select, insert, update, delete on pki."CertificateName" to management;

@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2008, 2009, 2010, 2013, 2017, 2018, 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2008, 2009, 2010, 2013, 2017, 2018, 2019, 2020, 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -83,6 +83,9 @@ clamscan	AOINDUSTRIES	\N
 redis	AOINDUSTRIES	\N
 \.
 
+BEGIN;
+
+INSERT INTO account."User" (username, package, disable_log) VALUES ('tss',            'AOINDUSTRIES', NULL);
 -- AOServ Master
 INSERT INTO account."User" (username, package, disable_log) VALUES ('aoserv-master',  'AOINDUSTRIES', NULL);
 -- AOServ Schema
@@ -101,3 +104,13 @@ INSERT INTO account."User" (username, package, disable_log) VALUES ('jenkins',  
 INSERT INTO account."User" (username, package, disable_log) VALUES ('oprofile',       'AOINDUSTRIES', NULL);
 -- SonarQube
 INSERT INTO account."User" (username, package, disable_log) VALUES ('sonarqube',      'AOINDUSTRIES', NULL);
+-- Rocky 9
+INSERT INTO account."User" (username, package, disable_log) VALUES ('flatpak',          'AOINDUSTRIES', NULL);
+INSERT INTO account."User" (username, package, disable_log) VALUES ('geoclue',          'AOINDUSTRIES', NULL);
+INSERT INTO account."User" (username, package, disable_log) VALUES ('pipewire',         'AOINDUSTRIES', NULL);
+INSERT INTO account."User" (username, package, disable_log) VALUES ('rtkit',            'AOINDUSTRIES', NULL);
+INSERT INTO account."User" (username, package, disable_log) VALUES ('sssd',             'AOINDUSTRIES', NULL);
+INSERT INTO account."User" (username, package, disable_log) VALUES ('systemd-coredump', 'AOINDUSTRIES', NULL);
+INSERT INTO account."User" (username, package, disable_log) VALUES ('systemd-oom',      'AOINDUSTRIES', NULL);
+
+COMMIT;

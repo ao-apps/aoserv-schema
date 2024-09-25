@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2008, 2010, 2013, 2018, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2008, 2010, 2013, 2018, 2020, 2021, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -21,21 +21,19 @@
  * along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-COPY linux."Shell" FROM stdin;
-/bin/bash	t	f
-/bin/false	f	t
-/bin/ksh	t	f
-/bin/sh	t	f
-/bin/sync	f	t
-/bin/tcsh	t	f
-/sbin/halt	f	t
-/sbin/nologin	f	t
-/sbin/shutdown	f	t
-/usr/bin/ftponly	f	f
-/usr/bin/ftppasswd	f	f
-/usr/bin/passwd	f	f
-\.
-
 BEGIN;
-INSERT INTO linux."Shell" VALUES ('/usr/bin/git-shell', true, false);
+INSERT INTO linux."Shell" VALUES ('/bin/bash',           true, false);
+INSERT INTO linux."Shell" VALUES ('/bin/false',         false, false);
+INSERT INTO linux."Shell" VALUES ('/bin/ksh',            true, false);
+INSERT INTO linux."Shell" VALUES ('/bin/sh',             true, false);
+INSERT INTO linux."Shell" VALUES ('/bin/sync',          false,  true);
+INSERT INTO linux."Shell" VALUES ('/bin/tcsh',           true, false);
+INSERT INTO linux."Shell" VALUES ('/sbin/halt',         false,  true);
+INSERT INTO linux."Shell" VALUES ('/sbin/nologin',      false, false);
+INSERT INTO linux."Shell" VALUES ('/sbin/shutdown',     false,  true);
+INSERT INTO linux."Shell" VALUES ('/usr/bin/ftponly',   false, false);
+INSERT INTO linux."Shell" VALUES ('/usr/bin/ftppasswd', false, false);
+INSERT INTO linux."Shell" VALUES ('/usr/bin/git-shell',  true, false);
+INSERT INTO linux."Shell" VALUES ('/usr/bin/passwd',    false, false);
+INSERT INTO linux."Shell" VALUES ('/usr/sbin/nologin',  false,  true);
 COMMIT;

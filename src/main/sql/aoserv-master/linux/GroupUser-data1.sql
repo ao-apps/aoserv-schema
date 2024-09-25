@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2008, 2009, 2010, 2013, 2017, 2018, 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2008, 2009, 2010, 2013, 2017, 2018, 2019, 2020, 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -102,6 +102,8 @@ COPY linux."GroupUser" (id, "group", "user", "isPrimary", "operatingSystemVersio
 \.
 SELECT setval ('linux."GroupUser_id_seq"', 79, true);
 
+BEGIN;
+
 -- AOServ Master
 INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('aoserv-master',  'aoserv-master',  TRUE);
 -- AOServ Schema
@@ -139,3 +141,16 @@ aoadmin@aoindustries=> select * from linux."GroupUser" where "group"='jenkins';
 INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('oprofile',        'oprofile',      TRUE);
 -- SonarQube
 INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('sonarqube',       'sonarqube',     TRUE);
+-- Rocky 9
+INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('flatpak',          'flatpak',          TRUE);
+INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('geoclue',          'geoclue',          TRUE);
+-- kvm: none
+INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('pipewire',         'pipewire',         TRUE);
+-- render: none
+INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('rtkit',            'rtkit',            TRUE);
+-- sgx: none
+INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('sssd',             'sssd',             TRUE);
+INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('systemd-coredump', 'systemd-coredump', TRUE);
+INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('systemd-oom',      'systemd-oom',      TRUE);
+
+COMMIT;

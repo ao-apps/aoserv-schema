@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2008, 2009, 2010, 2013, 2017, 2018, 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2008, 2009, 2010, 2013, 2017, 2018, 2019, 2020, 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -30,7 +30,7 @@ lp	lp	\N	\N	\N	system	/sbin/nologin	2001-09-03 13:50:02-05	\N
 operator	operator	\N	\N	\N	system	/sbin/nologin	2001-09-03 13:51:56-05	\N
 games	games	\N	\N	\N	application	/sbin/nologin	2001-09-03 13:52:08-05	\N
 ftp	FTP User	\N	\N	\N	application	/sbin/nologin	2001-09-03 13:52:34-05	\N
-nobody	Nobody	\N	\N	\N	system	/sbin/nologin	2001-09-03 13:52:48-05	\N
+nobody	Kernel Overflow User	\N	\N	\N	system	/sbin/nologin	2001-09-03 13:52:48-05	\N
 mail	mail	\N	\N	\N	system	/sbin/nologin	2001-09-03 13:51:18-05	\N
 vcsa	virtual console memory owner	\N	\N	\N	system	/sbin/nologin	2002-12-10 01:49:26.483663-06	\N
 emailmon	Email Monitoring Account	\N	\N	\N	application	/bin/false	2004-06-27 17:29:02.960684-05	\N
@@ -82,6 +82,9 @@ clamscan	Clamav scanner user	\N	\N	\N	system	/sbin/nologin	2018-07-11 04:07:53.6
 redis	Redis Database Server	\N	\N	\N	system	/sbin/nologin	2019-08-22 21:12:50.65977+00	\N
 \.
 
+BEGIN;
+
+INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('tss',            'Account used for TPM access', 'system', '/sbin/nologin', '2017-02-15 00:31:36.836216+00');
 -- AOServ Master
 INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('aoserv-master',  'AOServ Master',             'system', '/sbin/nologin', '2020-04-14 18:47:06.273709+00');
 -- AOServ Schema
@@ -100,3 +103,13 @@ INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('jen
 INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('oprofile',       'Special user account to be used by OProfile', 'system', '/sbin/nologin', '2022-05-19 22:41:58.112112+00');
 -- SonarQube
 INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('sonarqube',      'SonarQube',                 'user',   '/bin/bash',     '2022-02-14 18:30:42.703695+00');
+-- Rocky 9
+INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('flatpak',          'User for flatpak system helper', 'system', '/sbin/nologin',     '2024-09-25 01:39:45.93339+00');
+INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('geoclue',          'User for geoclue',               'system', '/sbin/nologin',     '2024-09-25 01:39:45.93339+00');
+INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('pipewire',         'PipeWire System Daemon',         'system', '/sbin/nologin',     '2024-09-25 01:39:45.93339+00');
+INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('rtkit',            'RealtimeKit',                    'system', '/sbin/nologin',     '2024-09-25 01:39:45.93339+00');
+INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('sssd',             'User for sssd',                  'system', '/sbin/nologin',     '2024-09-25 01:39:45.93339+00');
+INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('systemd-coredump', 'systemd Core Dumper',            'system', '/sbin/nologin',     '2024-09-25 01:39:45.93339+00');
+INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('systemd-oom',      'systemd Userspace OOM Killer',   'system', '/usr/sbin/nologin', '2024-09-25 01:39:45.93339+00');
+
+COMMIT;

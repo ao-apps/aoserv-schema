@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2008, 2009, 2010, 2011, 2013, 2017, 2018, 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2008, 2009, 2010, 2011, 2013, 2017, 2018, 2019, 2020, 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -108,6 +108,7 @@ clamscan	AOINDUSTRIES	system
 redis	AOINDUSTRIES	system
 \.
 
+BEGIN;
 -- AOServ Master
 INSERT INTO linux."Group" ("name", package, "type") VALUES ('aoserv-master',  'AOINDUSTRIES', 'system');
 -- AOServ Schema
@@ -130,3 +131,15 @@ INSERT INTO linux."Group" ("name", package, "type") VALUES ('sonarqube',      'A
 INSERT INTO linux."Group" ("name", package, "type") VALUES ('stapusr',        'AOINDUSTRIES', 'system');
 INSERT INTO linux."Group" ("name", package, "type") VALUES ('stapsys',        'AOINDUSTRIES', 'system');
 INSERT INTO linux."Group" ("name", package, "type") VALUES ('stapdev',        'AOINDUSTRIES', 'system');
+-- Rocky 9
+INSERT INTO linux."Group" ("name", package, "type") VALUES ('flatpak',        'AOINDUSTRIES', 'system');
+INSERT INTO linux."Group" ("name", package, "type") VALUES ('geoclue',        'AOINDUSTRIES', 'system');
+INSERT INTO linux."Group" ("name", package, "type") VALUES ('kvm',            'AOINDUSTRIES', 'system');
+INSERT INTO linux."Group" ("name", package, "type") VALUES ('pipewire',       'AOINDUSTRIES', 'system');
+INSERT INTO linux."Group" ("name", package, "type") VALUES ('render',         'AOINDUSTRIES', 'system');
+INSERT INTO linux."Group" ("name", package, "type") VALUES ('rtkit',          'AOINDUSTRIES', 'system');
+INSERT INTO linux."Group" ("name", package, "type") VALUES ('sgx',            'AOINDUSTRIES', 'system');
+INSERT INTO linux."Group" ("name", package, "type") VALUES ('sssd',           'AOINDUSTRIES', 'system');
+INSERT INTO linux."Group" ("name", package, "type") VALUES ('systemd-coredump', 'AOINDUSTRIES', 'system');
+INSERT INTO linux."Group" ("name", package, "type") VALUES ('systemd-oom',    'AOINDUSTRIES', 'system');
+COMMIT;

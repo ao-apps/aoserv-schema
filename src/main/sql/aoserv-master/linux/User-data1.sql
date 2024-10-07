@@ -72,7 +72,7 @@ nginx	nginx user	\N	\N	\N	application	/sbin/nologin	2013-04-19 13:13:53.314883-0
 memcached	memcached user	\N	\N	\N	application	/sbin/nologin	2013-05-01 16:16:53.126302-05	\N
 systemd-bus-proxy	systemd Bus Proxy	\N	\N	\N	system	/sbin/nologin	2017-04-06 17:45:33.326501+00	\N
 tcpdump	\N	\N	\N	\N	system	/sbin/nologin	2017-04-06 17:59:21.153614+00	\N
-chrony	\N	\N	\N	\N	system	/sbin/nologin	2017-04-06 18:14:57.342109+00	\N
+chrony	chrony system user	\N	\N	\N	system	/sbin/nologin	2017-04-06 18:14:57.342109+00	\N
 aoserv-jilter	AOServ Jilter	\N	\N	\N	system	/sbin/nologin	2017-05-08 18:18:27.495141+00	\N
 aoserv-xen-migration	AOServ Xen Migration	\N	\N	\N	system	/bin/bash	2018-03-26 05:22:56.964296+00	\N
 mockbuild	RPM Build Environment	\N	\N	\N	user	/bin/bash	2018-04-09 02:42:42.401376+00	\N

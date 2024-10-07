@@ -37,7 +37,7 @@ emailmon	Email Monitoring Account	\N	\N	\N	application	/bin/false	2004-06-27 17:
 ftpmon	FTP Monitoring Account	\N	\N	\N	application	/usr/bin/ftponly	2004-06-27 17:30:26.011751-05	\N
 news	news	\N	\N	\N	application	/sbin/nologin	2004-12-16 21:55:24.729454-06	\N
 uucp	uucp	\N	\N	\N	application	/sbin/nologin	2004-12-16 22:02:04.466034-06	\N
-sshd	system user for openssh	\N	\N	\N	application	/sbin/nologin	2004-12-16 22:05:22.249823-06	\N
+sshd	system user for openssh	\N	\N	\N	application	/usr/sbin/nologin	2004-12-16 22:05:22.249823-06	\N
 smmsp	system user for sendmail	\N	\N	\N	application	/sbin/nologin	2004-12-16 22:06:40.369597-06	\N
 root	root	\N	\N	\N	system	/bin/bash	2001-09-03 13:48:37-05	\N
 sync	sync	\N	\N	\N	system	/bin/sync	2001-09-03 13:50:22-05	\N
@@ -84,7 +84,7 @@ redis	Redis Database Server	\N	\N	\N	system	/sbin/nologin	2019-08-22 21:12:50.65
 
 BEGIN;
 
-INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('tss',            'Account used for TPM access', 'system', '/sbin/nologin', '2017-02-15 00:31:36.836216+00');
+INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('tss',            'Account used for TPM access', 'system', '/usr/sbin/nologin', '2017-02-15 00:31:36.836216+00');
 -- AOServ Master
 INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('aoserv-master',  'AOServ Master',             'system', '/sbin/nologin', '2020-04-14 18:47:06.273709+00');
 -- AOServ Schema
@@ -106,7 +106,7 @@ INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('son
 -- Rocky 9
 INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('flatpak',          'User for flatpak system helper', 'system', '/sbin/nologin',     '2024-09-25 01:39:45.93339+00');
 INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('geoclue',          'User for geoclue',               'system', '/sbin/nologin',     '2024-09-25 01:39:45.93339+00');
-INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('pipewire',         'PipeWire System Daemon',         'system', '/sbin/nologin',     '2024-09-25 01:39:45.93339+00');
+INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('pipewire',         'PipeWire System Daemon',         'system', '/usr/sbin/nologin', '2024-09-25 01:39:45.93339+00');
 INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('rtkit',            'RealtimeKit',                    'system', '/sbin/nologin',     '2024-09-25 01:39:45.93339+00');
 INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('sssd',             'User for sssd',                  'system', '/sbin/nologin',     '2024-09-25 01:39:45.93339+00');
 INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('systemd-coredump', 'systemd Core Dumper',            'system', '/sbin/nologin',     '2024-09-25 01:39:45.93339+00');

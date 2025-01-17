@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2008, 2009, 2010, 2013, 2017, 2018, 2019, 2020, 2021, 2022, 2024  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2008, 2009, 2010, 2013, 2017, 2018, 2019, 2020, 2021, 2022, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -119,6 +119,9 @@ INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('centos',  
 INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('adm',             'centos',        FALSE);
 INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('wheel',           'centos',        FALSE);
 INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('systemd-journal', 'centos',        FALSE);
+INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('rocky',           'rocky',         TRUE);
+INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('adm',             'rocky',         FALSE);
+INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('systemd-journal', 'rocky',         FALSE);
 -- Jenkins
 INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('jenkins',         'jenkins',       TRUE);
 

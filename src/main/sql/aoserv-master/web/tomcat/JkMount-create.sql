@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -36,3 +36,4 @@ create table "web.tomcat"."JkMount" (
 );
 grant all                    on "web.tomcat"."JkMount" to aoadmin;
 grant select, insert, delete on "web.tomcat"."JkMount" to aoserv_app;
+grant select, update         on "web.tomcat"."JkMount" to management;

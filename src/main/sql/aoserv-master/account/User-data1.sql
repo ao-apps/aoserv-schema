@@ -97,7 +97,6 @@ INSERT INTO account."User" (username, package, disable_log) VALUES ('management'
 INSERT INTO account."User" (username, package, disable_log) VALUES ('monitoring',     'AOINDUSTRIES', NULL);
 INSERT INTO account."User" (username, package, disable_log) VALUES ('reseller',       'AOINDUSTRIES', NULL);
 -- Amazon EC2 cloud-init
-INSERT INTO account."User" (username, package, disable_log) VALUES ('centos',         'AOINDUSTRIES', NULL);
 INSERT INTO account."User" (username, package, disable_log) VALUES ('rocky',          'AOINDUSTRIES', NULL);
 -- Jenkins
 INSERT INTO account."User" (username, package, disable_log) VALUES ('jenkins',        'AOINDUSTRIES', NULL);

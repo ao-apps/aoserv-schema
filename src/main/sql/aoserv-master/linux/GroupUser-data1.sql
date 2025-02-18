@@ -115,10 +115,6 @@ INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('management
 INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('monitoring',     'monitoring',     TRUE);
 INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('reseller',       'reseller',       TRUE);
 -- Amazon EC2 cloud-init
-INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('centos',          'centos',        TRUE);
-INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('adm',             'centos',        FALSE);
-INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('wheel',           'centos',        FALSE);
-INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('systemd-journal', 'centos',        FALSE);
 INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('rocky',           'rocky',         TRUE);
 INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('adm',             'rocky',         FALSE);
 INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('systemd-journal', 'rocky',         FALSE);

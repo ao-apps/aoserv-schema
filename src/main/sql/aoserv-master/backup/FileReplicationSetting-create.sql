@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -24,6 +24,7 @@
 create sequence         backup."FileReplicationSetting_id_seq" cycle;
 grant all            on backup."FileReplicationSetting_id_seq" to aoadmin;
 grant select, update on backup."FileReplicationSetting_id_seq" to aoserv_app;
+grant select, update on backup."FileReplicationSetting_id_seq" to management;
 
 create table backup."FileReplicationSetting" (
   id smallint
@@ -44,3 +45,4 @@ create table backup."FileReplicationSetting" (
 );
 grant all                            on backup."FileReplicationSetting" to aoadmin;
 grant select, insert, update, delete on backup."FileReplicationSetting" to aoserv_app;
+grant insert                         on backup."FileReplicationSetting" to management;

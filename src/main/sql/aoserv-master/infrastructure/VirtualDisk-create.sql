@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2008, 2009, 2014, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2008, 2009, 2014, 2018, 2020, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -53,6 +53,6 @@ create table infrastructure."VirtualDisk" (
     default 1, -- 1:00 AM
   unique(virtual_server, device)
 );
-grant all                    on infrastructure."VirtualDisk" to aoadmin;
-grant select                 on infrastructure."VirtualDisk" to aoserv_app;
-grant select, insert, update on infrastructure."VirtualDisk" to infrastructure;
+grant all                            on infrastructure."VirtualDisk" to aoadmin;
+grant select                         on infrastructure."VirtualDisk" to aoserv_app;
+grant select, insert, update, delete on infrastructure."VirtualDisk" to infrastructure;

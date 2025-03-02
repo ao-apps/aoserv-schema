@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -53,10 +53,12 @@ select "schema".add_column('web', 'httpd_servers', 'mod_authz_groupfile',       
 select "schema".add_column('web', 'httpd_servers', 'mod_authz_host',                  'boolean',   true, false, false, 'manually enables or disables the mod_authz_host Apache module for this server instance',      '1.81.7',  null);
 select "schema".add_column('web', 'httpd_servers', 'mod_authz_user',                  'boolean',   true, false, false, 'manually enables or disables the mod_authz_user Apache module for this server instance',      '1.81.7',  null);
 select "schema".add_column('web', 'httpd_servers', 'mod_autoindex',                   'boolean',   true, false, false, 'manually enables or disables the mod_autoindex Apache module for this server instance',       '1.81.7',  null);
+select "schema".add_column('web', 'httpd_servers', 'mod_brotli',                      'boolean',   true, false, false, 'manually enables or disables the mod_brotli Apache module for this server instance',          '1.92.1',  null);
 select "schema".add_column('web', 'httpd_servers', 'mod_deflate',                     'boolean',   true, false, false, 'manually enables or disables the mod_deflate Apache module for this server instance',         '1.81.7',  null);
 select "schema".add_column('web', 'httpd_servers', 'mod_dir',                         'boolean',   true, false, false, 'manually enables or disables the mod_dir Apache module for this server instance',             '1.81.7',  null);
 select "schema".add_column('web', 'httpd_servers', 'mod_filter',                      'boolean',   true, false, false, 'manually enables or disables the mod_filter Apache module for this server instance',          '1.81.7',  null);
 select "schema".add_column('web', 'httpd_servers', 'mod_headers',                     'boolean',   true, false, false, 'manually enables or disables the mod_headers Apache module for this server instance',         '1.81.7',  null);
+select "schema".add_column('web', 'httpd_servers', 'mod_http2',                       'boolean',   true, false, false, 'manually enables or disables the mod_http2 Apache module for this server instance',           '1.92.1',  null);
 select "schema".add_column('web', 'httpd_servers', 'mod_include',                     'boolean',   true, false, false, 'manually enables or disables the mod_include Apache module for this server instance',         '1.81.7',  null);
 select "schema".add_column('web', 'httpd_servers', 'mod_jk',                          'boolean',   true, false, false, 'manually enables or disables the mod_jk Apache module for this server instance',              '1.81.7',  null);
 select "schema".add_column('web', 'httpd_servers', 'mod_log_config',                  'boolean',   true, false, false, 'manually enables or disables the mod_log_config Apache module for this server instance',      '1.81.7',  null);
@@ -65,6 +67,7 @@ select "schema".add_column('web', 'httpd_servers', 'mod_mime_magic',            
 select "schema".add_column('web', 'httpd_servers', 'mod_negotiation',                 'boolean',   true, false, false, 'manually enables or disables the mod_negotiation Apache module for this server instance',     '1.81.7',  null);
 select "schema".add_column('web', 'httpd_servers', 'mod_proxy',                       'boolean',   true, false, false, 'manually enables or disables the mod_proxy Apache module for this server instance',           '1.81.7',  null);
 select "schema".add_column('web', 'httpd_servers', 'mod_proxy_http',                  'boolean',   true, false, false, 'manually enables or disables the mod_proxy_http Apache module for this server instance',      '1.81.7',  null);
+select "schema".add_column('web', 'httpd_servers', 'mod_proxy_http2',                 'boolean',   true, false, false, 'manually enables or disables the mod_proxy_http2 Apache module for this server instance',     '1.92.1',  null);
 select "schema".add_column('web', 'httpd_servers', 'mod_reqtimeout',                  'boolean',   true, false, false, 'manually enables or disables the mod_reqtimeout Apache module for this server instance',      '1.81.7',  null);
 select "schema".add_column('web', 'httpd_servers', 'mod_rewrite',                     'boolean',   true, false, false, 'manually enables or disables the mod_rewrite Apache module for this server instance',         '1.81.7',  null);
 select "schema".add_column('web', 'httpd_servers', 'mod_setenvif',                    'boolean',   true, false, false, 'manually enables or disables the mod_setenvif Apache module for this server instance',        '1.81.7',  null);

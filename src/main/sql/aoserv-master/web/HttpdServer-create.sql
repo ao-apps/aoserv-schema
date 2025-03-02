@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2008, 2009, 2010, 2013, 2017, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2008, 2009, 2010, 2013, 2017, 2018, 2020, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -32,7 +32,11 @@ create table web."HttpdServer" (
   ao_server integer
     not null,
   "name" text
-    check ("name" is null or length("name") > 0),
+    check (
+      ("name" is null or length("name") > 0)
+      -- Avoid possible configuration file name conflict in Rocky 9
+      and "name" != 'httpd'
+    ),
   can_add_sites boolean
     not null,
   linux_server_account integer

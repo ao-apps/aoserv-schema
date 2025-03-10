@@ -126,6 +126,6 @@ create table web."HttpdServer" (
   mod_status boolean,
   mod_wsgi boolean
 );
-grant all                    on web."HttpdServer" to aoadmin;
-grant select, delete         on web."HttpdServer" to aoserv_app;
-grant select, insert, delete on web."HttpdServer" to management;
+grant all                            on web."HttpdServer" to aoadmin;
+grant select, delete                 on web."HttpdServer" to aoserv_app;
+grant select, insert, update, delete on web."HttpdServer" to management;

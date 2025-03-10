@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2008, 2009, 2013, 2017, 2018, 2020, 2022, 2023, 2024  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2008, 2009, 2013, 2017, 2018, 2020, 2022, 2023, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -74,4 +74,4 @@ create table "web.tomcat"."SharedTomcat" (
 );
 grant all                            on "web.tomcat"."SharedTomcat" to aoadmin;
 grant select, insert, update, delete on "web.tomcat"."SharedTomcat" to aoserv_app;
-grant select                         on "web.tomcat"."SharedTomcat" to management;
+grant select, update                 on "web.tomcat"."SharedTomcat" to management;

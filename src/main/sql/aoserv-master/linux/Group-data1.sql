@@ -142,4 +142,6 @@ INSERT INTO linux."Group" ("name", package, "type") VALUES ('sgx',            'A
 INSERT INTO linux."Group" ("name", package, "type") VALUES ('sssd',           'AOINDUSTRIES', 'system');
 INSERT INTO linux."Group" ("name", package, "type") VALUES ('systemd-coredump', 'AOINDUSTRIES', 'system');
 INSERT INTO linux."Group" ("name", package, "type") VALUES ('systemd-oom',    'AOINDUSTRIES', 'system');
+-- Rocky 9.7
+INSERT INTO linux."Group" ("name", package, "type") VALUES ('printadmin',     'AOINDUSTRIES', 'system');
 COMMIT;

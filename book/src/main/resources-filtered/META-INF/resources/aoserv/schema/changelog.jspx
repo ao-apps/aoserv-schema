@@ -37,7 +37,7 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
     shortTitle="Changelog"
     tocLevels="1"
     datePublished="2020-04-13T01:51:55-05:00"
-    dateModified="2025-12-04T02:21:34Z"
+    dateModified="2025-12-12T06:20:35Z"
   >
     <c:set var="latestRelease" value="1.91.8" />
     <c:if test="${
@@ -68,7 +68,7 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
           </li>
           <li>Additional support for <ao:a href="https://rockylinux.org/news/rocky-linux-9-4-ga-release">Rocky Linux 9</ao:a>.</li>
           <li>
-            Removed Linux group and user "centos" to since no longer supporting any CentOS deployments in
+            Removed Linux group and user "centos" since no longer supporting any CentOS deployments in
             <ao:a href="https://aws.amazon.com/ec2/">Amazon EC2</ao:a> (and other cloud environments) via
             the <ao:a href="https://cloud-init.io/">cloud-init</ao:a> package.
           </li>

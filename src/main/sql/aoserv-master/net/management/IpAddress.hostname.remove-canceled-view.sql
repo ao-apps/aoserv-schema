@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -27,7 +27,7 @@ as
 select
   bu.accounting,
   'set_ip_address_hostname '
-  || ia."inetAddress"
+  || host(ia."inetAddress")
   || ' ' || coalesce(ao.hostname, se.id::text)
   || ' ' || nd."deviceId"
   || ' ' || case

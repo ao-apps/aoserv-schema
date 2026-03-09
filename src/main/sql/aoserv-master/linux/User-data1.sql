@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2008, 2009, 2010, 2013, 2017, 2018, 2019, 2020, 2021, 2022, 2024, 2025  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2008, 2009, 2010, 2013, 2017, 2018, 2019, 2020, 2021, 2022, 2024, 2025, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -101,6 +101,8 @@ INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('roc
 INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('jenkins',        'Jenkins Automation Server', 'system', '/bin/bash',     '2014-06-05 19:50:06.502619+00');
 -- OProfile
 INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('oprofile',       'Special user account to be used by OProfile', 'system', '/sbin/nologin', '2022-05-19 22:41:58.112112+00');
+-- OpenDKIM
+INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('opendkim',       'OpenDKIM Milter',           'system', '/sbin/nologin', '2026-03-09 01:37:57.819956+00');
 -- SonarQube
 INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('sonarqube',      'SonarQube',                 'user',   '/bin/bash',     '2022-02-14 18:30:42.703695+00');
 -- Rocky 9

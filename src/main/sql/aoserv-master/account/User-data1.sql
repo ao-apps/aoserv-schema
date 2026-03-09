@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2008, 2009, 2010, 2013, 2017, 2018, 2019, 2020, 2021, 2022, 2024, 2025  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2008, 2009, 2010, 2013, 2017, 2018, 2019, 2020, 2021, 2022, 2024, 2025, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -102,6 +102,8 @@ INSERT INTO account."User" (username, package, disable_log) VALUES ('rocky',    
 INSERT INTO account."User" (username, package, disable_log) VALUES ('jenkins',        'AOINDUSTRIES', NULL);
 -- OProfile
 INSERT INTO account."User" (username, package, disable_log) VALUES ('oprofile',       'AOINDUSTRIES', NULL);
+-- OpenDKIM
+INSERT INTO account."User" (username, package, disable_log) VALUES ('opendkim',       'AOINDUSTRIES', NULL);
 -- SonarQube
 INSERT INTO account."User" (username, package, disable_log) VALUES ('sonarqube',      'AOINDUSTRIES', NULL);
 -- Rocky 9

@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2008, 2009, 2010, 2011, 2013, 2017, 2018, 2019, 2020, 2021, 2022, 2024, 2025  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2008, 2009, 2010, 2011, 2013, 2017, 2018, 2019, 2020, 2021, 2022, 2024, 2025, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -125,6 +125,8 @@ INSERT INTO linux."Group" ("name", package, "type") VALUES ('rocky',          'A
 INSERT INTO linux."Group" ("name", package, "type") VALUES ('jenkins',        'AOINDUSTRIES', 'system');
 -- OProfile
 INSERT INTO linux."Group" ("name", package, "type") VALUES ('oprofile',       'AOINDUSTRIES', 'system');
+-- OpenDKIM
+INSERT INTO linux."Group" ("name", package, "type") VALUES ('opendkim',       'AOINDUSTRIES', 'system');
 -- SonarQube
 INSERT INTO linux."Group" ("name", package, "type") VALUES ('sonarqube',      'AOINDUSTRIES', 'user');
 -- SystemTap

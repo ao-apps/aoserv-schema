@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2010, 2013, 2018, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2010, 2013, 2018, 2020, 2021, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -31,8 +31,10 @@ create table net."AppProtocol" (
   is_user_service boolean
     not null,
   net_protocol "com.aoapps.net"."Protocol"
-    not null
+    not null,
     -- TODO: Should be TCP, UDP, SCTP only, matching Port class?
+  "isUniquePerHost" boolean
+    not null
 );
 grant all    on net."AppProtocol" to aoadmin;
 grant select on net."AppProtocol" to aoserv_app;

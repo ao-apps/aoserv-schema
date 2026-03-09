@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -28,3 +28,4 @@ select "schema".add_column('net', 'protocols', 'port',            'net_port', fa
 select "schema".add_column('net', 'protocols', 'name',            'string',   false, false, true, 'the name of the service', '1.0a100', null);
 select "schema".add_column('net', 'protocols', 'is_user_service', 'boolean',  false, false, true, 'indicates that a user may add and remove this service', '1.0a105', null);
 select "schema".add_column('net', 'protocols', 'net_protocol',    'string',   false, false, true, 'the default network protocol for this protocol', '1.0a105', '1.80');
+select "schema".add_column('net', 'protocols', 'isUniquePerHost', 'boolean',  false, false, true, 'indicates that the app_protocol is used at most one per host', '1.92.2', null);

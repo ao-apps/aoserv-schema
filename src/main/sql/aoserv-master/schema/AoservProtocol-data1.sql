@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2019, 2020, 2021, 2023, 2025  AO Industries, Inc.
+ * Copyright (C) 2018, 2019, 2020, 2021, 2023, 2025, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -1732,6 +1732,11 @@ insert into "schema"."AoservProtocol" values(
   'Added column web.HttpdServer.mod_brotli
 Added column web.HttpdServer.mod_http2
 Added column web.HttpdServer.mod_proxy_http2'
+);
+insert into "schema"."AoservProtocol" values(
+  '1.92.2',
+  '2026-03-09',
+  'Added column net.AppProtocol.isUniquePerHost'
 );
 /* TODO:
 renamed dns.TopLevelDomain to dns.Suffix

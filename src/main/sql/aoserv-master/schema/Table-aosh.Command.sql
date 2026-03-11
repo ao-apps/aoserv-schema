@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -43,8 +43,8 @@ select aosh.add_command(
   'select',
   'schema',
   'schema_tables',
-  'selects rows and columns from a table',
-  '{<b>*</b>|<i>column[::type][.join][, column[::type][.join]]</i>|<b>count(*)</b>} <b>from</b> <i>table_name</i> [order by <i>column[::type][.join][, column[::type][.join]]]</i>',
+  'selects rows and columns from a table.  Please note, if using "column.with.dot" within AOSH, will need to escape for the shell: \"column.with.dot\".',
+  '{<b>*</b>|<i>{column|"column.with.dot"}[::type][.join][, {column|"column.with.dot"}[::type][.join]]</i>|<b>count(*)</b>} <b>from</b> <i>table_name</i> [order by <i>{column|"column.with.dot"}[::type][.join][, {column|"column.with.dot"}[::type][.join]]]</i>',
   '1.0a100',
   null
 );

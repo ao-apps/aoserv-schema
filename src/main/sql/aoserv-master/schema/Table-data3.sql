@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2007, 2008, 2009, 2010, 2012, 2013, 2015, 2016, 2017, 2018, 2019, 2020  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2007, 2008, 2009, 2010, 2012, 2013, 2015, 2016, 2017, 2018, 2019, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -452,6 +452,15 @@ select "schema".add_table(
     true,
     '<code>email_attachment_types</code> stores all of the possible attachment extensions that may be blocked.',
     '1.0a116',
+    null
+);
+select "schema".add_table(
+    'email',
+    'DkimKey',
+    'DKIM Keys',
+    false,
+    'Represents one DKIM key with a unique selector for <code>email_domains</code>.',
+    '1.92.2-SNAPSHOT',
     null
 );
 select "schema".add_table(

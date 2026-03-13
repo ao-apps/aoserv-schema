@@ -1734,9 +1734,10 @@ Added column web.HttpdServer.mod_http2
 Added column web.HttpdServer.mod_proxy_http2'
 );
 insert into "schema"."AoservProtocol" values(
-  '1.92.2',
-  '2026-03-09',
-  'Added column net.AppProtocol.isUniquePerHost'
+  '1.92.2-SNAPSHOT',
+  '2026-03-10',
+  'Added column net.AppProtocol.isUniquePerHost
+New table email.DkimKey'
 );
 /* TODO:
 renamed dns.TopLevelDomain to dns.Suffix

@@ -21,7 +21,7 @@
  * along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
  */
 
--- When there is at least one DkimKey for a server, must have opendkim bind.
+-- When there is at least one actively signing DkimKey for a server, must have opendkim bind.
 -- opendkim bind may existing without any DkimKey, however, which would be running in verification-only mode.
 CREATE OR REPLACE FUNCTION email."DkimKey_server_has_opendkim_bind"() RETURNS trigger AS $$
   DECLARE
@@ -34,7 +34,7 @@ CREATE OR REPLACE FUNCTION email."DkimKey_server_has_opendkim_bind"() RETURNS tr
     INNER JOIN email."Domain" ed ON dk."domain" = ed.id
     LEFT JOIN net."Bind" nb ON ed.ao_server = nb.server
                                AND nb.app_protocol = 'opendkim'
-    WHERE nb.server IS NULL;
+    WHERE dk.status='signing' AND nb.server IS NULL;
 
     IF missing_keys IS NOT NULL THEN
         RAISE EXCEPTION 'DkimKeys missing opendkim bind: %', missing_keys;

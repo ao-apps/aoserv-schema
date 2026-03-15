@@ -1739,6 +1739,11 @@ insert into "schema"."AoservProtocol" values(
   'Added column net.AppProtocol.isUniquePerHost
 New table email.DkimKey'
 );
+insert into "schema"."AoservProtocol" values(
+  '1.92.2.1-SNAPSHOT',
+  '2026-03-15',
+  'Added column net.Domain.dkimDisableReason'
+);
 /* TODO:
 renamed dns.TopLevelDomain to dns.Suffix
   added column isRegistrable

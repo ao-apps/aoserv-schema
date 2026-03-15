@@ -23,6 +23,7 @@
 
 -- When there is at least one actively signing DkimKey for a server, must have opendkim bind.
 -- opendkim bind may existing without any DkimKey, however, which would be running in verification-only mode.
+-- Note: This matches aoserv-client:Bind.java:getCannotRemoveReasons()
 CREATE OR REPLACE FUNCTION email."DkimKey_server_has_opendkim_bind"() RETURNS trigger AS $$
   DECLARE
     missing_keys TEXT;
@@ -34,7 +35,7 @@ CREATE OR REPLACE FUNCTION email."DkimKey_server_has_opendkim_bind"() RETURNS tr
     INNER JOIN email."Domain" ed ON dk."domain" = ed.id
     LEFT JOIN net."Bind" nb ON ed.ao_server = nb.server
                                AND nb.app_protocol = 'opendkim'
-    WHERE dk.status='signing' AND nb.server IS NULL;
+    WHERE dk.status='signing' AND ed."dkimDisableReason" IS NULL AND nb.server IS NULL;
 
     IF missing_keys IS NOT NULL THEN
         RAISE EXCEPTION 'DkimKeys missing opendkim bind: %', missing_keys;
@@ -50,4 +51,5 @@ AFTER INSERT OR UPDATE OR DELETE ON email."DkimKey"
 DEFERRABLE INITIALLY DEFERRED
 FOR EACH ROW EXECUTE PROCEDURE email."DkimKey_server_has_opendkim_bind"();
 
+-- Note: An additional trigger is also created in email/Domain-trigger.sql
 -- Note: An additional trigger is also created in net/Bind-trigger.sql

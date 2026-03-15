@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020, 2021, 2026  AO Industries, Inc.
+ * Copyright (C) 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -21,25 +21,9 @@
  * along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-create sequence         email."Domain_id_seq" cycle;
-grant all            on email."Domain_id_seq" to aoadmin;
-grant select, update on email."Domain_id_seq" to aoserv_app;
-
-create table email."Domain" (
-  id integer
-    default nextval('email."Domain_id_seq"')
-    primary key,
-  "domain" "com.aoapps.net"."DomainName"
-    not null,
-    check ("domain"::text = lower("domain"::text)),
-  ao_server integer
-    not null,
-  package text
-    not null,
-  "dkimDisableReason" text
-    NOT NULL,
-  unique(ao_server, "domain")
-);
-grant all                            on email."Domain" to aoadmin;
-grant select, insert, update, delete on email."Domain" to aoserv_app;
-GRANT SELECT                         ON email."Domain" TO management;
+-- DROP TRIGGER "DkimKey_server_has_opendkim_bind" ON email."Domain";
+-- PostgreSQL 14: CREATE OR REPLACE TRIGGER
+CREATE CONSTRAINT TRIGGER "DkimKey_server_has_opendkim_bind"
+AFTER UPDATE ON email."Domain"
+DEFERRABLE INITIALLY DEFERRED
+FOR EACH ROW EXECUTE PROCEDURE email."DkimKey_server_has_opendkim_bind"();

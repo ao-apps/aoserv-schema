@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -24,7 +24,8 @@
 select "schema".add_column('web', 'httpd_site_bind_headers', 'pkey',            'pkey',    false,  true, false, 'a generated primary key',                     '1.81.15', null);
 select "schema".add_column('web', 'httpd_site_bind_headers', 'httpd_site_bind', 'fkey',    false, false, false, 'the site bind that is being referenced',      '1.81.15', null);
 select "schema".add_column('web', 'httpd_site_bind_headers', 'sort_order',      'short',   false, false, false, 'the per-bind unique sort ordering',           '1.81.15', null);
-select "schema".add_column('web', 'httpd_site_bind_headers', 'type',            'string',  false, false, false, 'the type of header, either "Header" or "RequestHeader"', '1.81.15', null);
+select "schema".add_column('web', 'httpd_site_bind_headers', 'type',            'string',  false, false, false, 'the type of header, either "Header" or "RequestHeader"', '1.81.15', '1.92.2.1-SNAPSHOT');
+select "schema".add_column('web', 'httpd_site_bind_headers', 'type',            'enum',    false, false, false, 'the type of header, either "Header" or "RequestHeader"', '1.92.2.2-SNAPSHOT', null);
 select "schema".add_column('web', 'httpd_site_bind_headers', 'always',          'boolean', false, false, false, 'the condition is either "onsuccess" (default, can be omitted) or "always"', '1.81.15', null);
 select "schema".add_column('web', 'httpd_site_bind_headers', 'action',          'string',  false, false, false, 'the action to be performed',                  '1.81.15', null);
 select "schema".add_column('web', 'httpd_site_bind_headers', 'header',          'string',  false, false, false, 'the header name, without any final colon',    '1.81.15', null);

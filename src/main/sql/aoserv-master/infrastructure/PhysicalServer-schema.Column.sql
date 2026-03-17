@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -30,4 +30,5 @@ select "schema".add_column('infrastructure', 'physical_servers', 'processor_spee
 select "schema".add_column('infrastructure', 'physical_servers', 'processor_cores', 'int',      true, false, false, 'the total number of processor cores, hyperthreads are counted as different cores', '1.36', null);
 select "schema".add_column('infrastructure', 'physical_servers', 'max_power',       'float',    true, false, false, 'the number of amps this server consumes under peak load', '1.36', null);
 select "schema".add_column('infrastructure', 'physical_servers', 'supports_hvm',    'boolean',  true, false, false, 'indicates supports full hardware virtualization', '1.37', null);
-select "schema".add_column('infrastructure', 'physical_servers', 'ups_type',        'string',  false, false, false, 'the type of UPS powering the server', '1.63', null);
+select "schema".add_column('infrastructure', 'physical_servers', 'ups_type',        'string',  false, false, false, 'the type of UPS powering the server', '1.63', '1.92.2.1-SNAPSHOT');
+select "schema".add_column('infrastructure', 'physical_servers', 'ups_type',        'enum',    false, false, false, 'the type of UPS powering the server', '1.92.2.2-SNAPSHOT', null);

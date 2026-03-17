@@ -1744,6 +1744,11 @@ insert into "schema"."AoservProtocol" values(
   '2026-03-15',
   'Added column net.Domain.dkimDisableReason'
 );
+insert into "schema"."AoservProtocol" values(
+  '1.92.2.2-SNAPSHOT',
+  '2026-03-16',
+  'Added type "enum"'
+);
 /* TODO:
 renamed dns.TopLevelDomain to dns.Suffix
   added column isRegistrable

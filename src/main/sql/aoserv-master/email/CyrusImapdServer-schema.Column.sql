@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -27,8 +27,11 @@ select "schema".add_column('email', 'cyrus_imapd_servers', 'servername',        
 select "schema".add_column('email', 'cyrus_imapd_servers', 'certificate',           'fkey',        false, false, false, 'the certificate used for this server',                               '1.81.10', null);
 select "schema".add_column('email', 'cyrus_imapd_servers', 'allow_plaintext_auth',  'boolean',     false, false, false, 'allows plaintext authentication (PLAIN/LOGIN) on non-TLS links',     '1.81.10', null);
 select "schema".add_column('email', 'cyrus_imapd_servers', 'delete_duration',       'float',        true, false, false, 'the duration after which delayed delete folders are removed',        '1.81.10', null);
-select "schema".add_column('email', 'cyrus_imapd_servers', 'delete_duration_unit',  'string',       true, false, false, 'the time unit for delete_duration, one of "d", "h", "m", "s"',       '1.81.10', null);
+select "schema".add_column('email', 'cyrus_imapd_servers', 'delete_duration_unit',  'string',       true, false, false, 'the time unit for delete_duration, one of "d", "h", "m", "s"',       '1.81.10', '1.92.2.1-SNAPSHOT');
+select "schema".add_column('email', 'cyrus_imapd_servers', 'delete_duration_unit',  'enum',         true, false, false, 'the time unit for delete_duration, one of "d", "h", "m", "s"',       '1.92.2.2-SNAPSHOT', null);
 select "schema".add_column('email', 'cyrus_imapd_servers', 'expire_duration',       'float',       false, false, false, 'prune the duplicate database of entries older than expire-duration', '1.81.10', null);
-select "schema".add_column('email', 'cyrus_imapd_servers', 'expire_duration_unit',  'string',       true, false, false, 'the time unit for expire_duration, one of "d", "h", "m", "s"',       '1.81.10', null);
+select "schema".add_column('email', 'cyrus_imapd_servers', 'expire_duration_unit',  'string',       true, false, false, 'the time unit for expire_duration, one of "d", "h", "m", "s"',       '1.81.10', '1.92.2.1-SNAPSHOT');
+select "schema".add_column('email', 'cyrus_imapd_servers', 'expire_duration_unit',  'enum',         true, false, false, 'the time unit for expire_duration, one of "d", "h", "m", "s"',       '1.92.2.2-SNAPSHOT', null);
 select "schema".add_column('email', 'cyrus_imapd_servers', 'expunge_duration',      'float',        true, false, false, 'the duration after which delayed expunge messages are removed',      '1.81.10', null);
-select "schema".add_column('email', 'cyrus_imapd_servers', 'expunge_duration_unit', 'string',       true, false, false, 'the time unit for expunge_duration, one of "d", "h", "m", "s"',      '1.81.10', null);
+select "schema".add_column('email', 'cyrus_imapd_servers', 'expunge_duration_unit', 'string',       true, false, false, 'the time unit for expunge_duration, one of "d", "h", "m", "s"',      '1.81.10', '1.92.2.1-SNAPSHOT');
+select "schema".add_column('email', 'cyrus_imapd_servers', 'expunge_duration_unit', 'enum',         true, false, false, 'the time unit for expunge_duration, one of "d", "h", "m", "s"',      '1.92.2.2-SNAPSHOT', null);

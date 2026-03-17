@@ -26,7 +26,9 @@ select "schema".add_column('email', 'DkimKey', 'domain',        'fkey',         
 select "schema".add_column('email', 'DkimKey', 'selector',      'domain_label', false, false, false, 'The per-domain unique name.',                             '1.92.2-SNAPSHOT', null);
 select "schema".add_column('email', 'DkimKey', 'created',       'time',         false, false, false, 'The time this key was added.',                            '1.92.2-SNAPSHOT', null);
 select "schema".add_column('email', 'DkimKey', 'status',        'string',       false, false, false, E'The current status, one of "new", "signing", "old", "removal".\n'
-                                                                                                   || 'Only one may be "signing" per domain.',                  '1.92.2-SNAPSHOT', null);
+                                                                                                   || 'Only one may be "signing" per domain.',                  '1.92.2-SNAPSHOT', '1.92.2.1-SNAPSHOT');
+select "schema".add_column('email', 'DkimKey', 'status',        'enum',         false, false, false, E'The current status, one of "new", "signing", "old", "removal".\n'
+                                                                                                   || 'Only one may be "signing" per domain.',                  '1.92.2.2-SNAPSHOT', null);
 select "schema".add_column('email', 'DkimKey', 'statusTime',    'time',         false, false, false, 'The time at last status change.',                         '1.92.2-SNAPSHOT', null);
 select "schema".add_column('email', 'DkimKey', 'dnsRecord',     'fkey',         false,  true, false, E'The DNS record associated with this key.\n'
                                                                                                    || 'May be <code>null</code> when DNS hosted elsewhere.',    '1.92.2-SNAPSHOT', null);

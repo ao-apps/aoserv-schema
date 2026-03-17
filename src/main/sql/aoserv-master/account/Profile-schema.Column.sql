@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -42,7 +42,9 @@ select "schema".add_column('account', 'business_profiles', 'send_invoice',      
 select "schema".add_column('account', 'business_profiles', 'created',              'time',       false, false, false, 'the time this entry was created', '1.0a100', null);
 select "schema".add_column('account', 'business_profiles', 'billing_contact',      'string',     false, false, false, 'the name to contact for billing information', '1.0a100', null);
 select "schema".add_column('account', 'business_profiles', 'billing_email',        'string',     false, false, false, 'the email address to notify for billing', '1.0a100', null);
-select "schema".add_column('account', 'business_profiles', 'billingEmailFormat',   'string',     false, false, false, 'the format for billing notification emails', '1.81.20', null);
+select "schema".add_column('account', 'business_profiles', 'billingEmailFormat',   'string',     false, false, false, 'the format for billing notification emails', '1.81.20', '1.92.2.1-SNAPSHOT');
+select "schema".add_column('account', 'business_profiles', 'billingEmailFormat',   'enum',       false, false, false, 'the format for billing notification emails', '1.92.2.2-SNAPSHOT', null);
 select "schema".add_column('account', 'business_profiles', 'technical_contact',    'string',     false, false, false, 'the name to contact for technical information', '1.0a100', null);
 select "schema".add_column('account', 'business_profiles', 'technical_email',      'string',     false, false, false, 'the email address to notify for technical', '1.0a100', null);
-select "schema".add_column('account', 'business_profiles', 'technicalEmailFormat', 'string',     false, false, false, 'the format for technical notification emails', '1.81.20', null);
+select "schema".add_column('account', 'business_profiles', 'technicalEmailFormat', 'string',     false, false, false, 'the format for technical notification emails', '1.81.20', '1.92.2.1-SNAPSHOT');
+select "schema".add_column('account', 'business_profiles', 'technicalEmailFormat', 'enum',       false, false, false, 'the format for technical notification emails', '1.92.2.2-SNAPSHOT', null);

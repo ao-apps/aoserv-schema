@@ -37,7 +37,7 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
     shortTitle="Changelog"
     tocLevels="1"
     datePublished="2020-04-13T01:51:55-05:00"
-    dateModified="2026-03-15T07:12:13Z"
+    dateModified="2026-03-17T03:04:24Z"
   >
     <c:set var="latestRelease" value="1.91.8" />
     <c:if test="${
@@ -79,6 +79,7 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
             Using <code>host()</code> function to convert PostgreSQL <code>inet</code> types to <code>text</code>.
             Procedures were generating textual form with "/32" appended, which is incompatible with AOSH expectations.
           </li>
+          <li>New <code>"schema"."Type"</code>: <code>enum</code></li>
           <li>Now supporting <ao:a href="http://www.opendkim.org/">OpenDKIM</ao:a>:
             <ol>
               <li>

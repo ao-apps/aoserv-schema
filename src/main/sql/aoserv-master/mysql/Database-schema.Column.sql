@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -30,4 +30,5 @@ select "schema".add_column('mysql', 'mysql_databases', 'package',               
 select "schema".add_column('mysql', 'mysql_databases', 'package',                     'accounting',          false, false, false, 'the package that this database is part of', '1.80.0', null);
 select "schema".add_column('mysql', 'mysql_databases', 'backup_level',                'short',               false, false, false, 'the number of backup copies to keep', '1.0a100', '1.30');
 select "schema".add_column('mysql', 'mysql_databases', 'backup_retention',            'short',               false, false, false, 'the number of days backups will be kept', '1.0a100', '1.30');
-select "schema".add_column('mysql', 'mysql_databases', 'max_check_table_alert_level', 'string',              false, false, false, 'the maximum alert level created for the check table monitoring of this database', '1.74', null);
+select "schema".add_column('mysql', 'mysql_databases', 'max_check_table_alert_level', 'string',              false, false, false, 'the maximum alert level created for the check table monitoring of this database', '1.74', '1.92.2.1-SNAPSHOT');
+select "schema".add_column('mysql', 'mysql_databases', 'max_check_table_alert_level', 'enum',                false, false, false, 'the maximum alert level created for the check table monitoring of this database', '1.92.2.2-SNAPSHOT', null);

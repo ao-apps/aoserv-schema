@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -30,4 +30,5 @@ select "schema".add_column('backup', 'failover_mysql_replications', 'monitoring_
 select "schema".add_column('backup', 'failover_mysql_replications', 'monitoring_seconds_behind_medium',   'int',     true, false, false, 'the seconds behind where will trigger medium alert level', '1.56', null);
 select "schema".add_column('backup', 'failover_mysql_replications', 'monitoring_seconds_behind_high',     'int',     true, false, false, 'the seconds behind where will trigger high alert level', '1.56', null);
 select "schema".add_column('backup', 'failover_mysql_replications', 'monitoring_seconds_behind_critical', 'int',     true, false, false, 'the seconds behind where will trigger critical alert level', '1.56', null);
-select "schema".add_column('backup', 'failover_mysql_replications', 'max_alert_level',                    'string', false, false, false, 'the maximum alert level for all monitoring of this slave', '1.74', null);
+select "schema".add_column('backup', 'failover_mysql_replications', 'max_alert_level',                    'string', false, false, false, 'the maximum alert level for all monitoring of this slave', '1.74', '1.92.2.1-SNAPSHOT');
+select "schema".add_column('backup', 'failover_mysql_replications', 'max_alert_level',                    'enum',   false, false, false, 'the maximum alert level for all monitoring of this slave', '1.92.2.2-SNAPSHOT', null);

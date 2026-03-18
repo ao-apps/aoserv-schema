@@ -1749,6 +1749,13 @@ insert into "schema"."AoservProtocol" values(
   '2026-03-16',
   'Added type "enum"'
 );
+insert into "schema"."AoservProtocol" values(
+  '1.92.2.3-SNAPSHOT',
+  '2026-03-17',
+  'Using "enum" for references to aoserv_protocols where
+rows are limited to those supported by client version.
+Keeping as "string" where client may receive newer values.'
+);
 /* TODO:
 renamed dns.TopLevelDomain to dns.Suffix
   added column isRegistrable

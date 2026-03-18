@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -24,6 +24,8 @@
 select "schema".add_foreign_key('aosh', 'aosh_commands', 'table_name',    'schema', 'schema_tables',    'name',    '1.0a100', '1.81.17');
 select "schema".add_foreign_key('aosh', 'aosh_commands', 'table',         'schema', 'schema_tables',    'name',    '1.81.18', null);
 select "schema".add_foreign_key('aosh', 'aosh_commands', 'since_version', 'schema', 'aoserv_protocols', 'version', '1.0a101', '1.81.17');
-select "schema".add_foreign_key('aosh', 'aosh_commands', 'sinceVersion',  'schema', 'aoserv_protocols', 'version', '1.81.18', null);
+select "schema".add_foreign_key('aosh', 'aosh_commands', 'sinceVersion',  'schema', 'aoserv_protocols', 'version', '1.81.18', '1.92.2.2-SNAPSHOT');
+select "schema".add_foreign_key('aosh', 'aosh_commands', 'sinceVersion',  'schema', 'aoserv_protocols', 'version', '1.92.2.3-SNAPSHOT', null);
 select "schema".add_foreign_key('aosh', 'aosh_commands', 'last_version',  'schema', 'aoserv_protocols', 'version', '1.0a102', '1.81.17');
-select "schema".add_foreign_key('aosh', 'aosh_commands', 'lastVersion',   'schema', 'aoserv_protocols', 'version', '1.81.18', null);
+select "schema".add_foreign_key('aosh', 'aosh_commands', 'lastVersion',   'schema', 'aoserv_protocols', 'version', '1.81.18', '1.92.2.2-SNAPSHOT');
+select "schema".add_foreign_key('aosh', 'aosh_commands', 'lastVersion',   'schema', 'aoserv_protocols', 'version', '1.92.2.3-SNAPSHOT', null);

@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -27,6 +27,8 @@ select "schema".add_foreign_key('schema', 'schema_foreign_keys', 'foreign_column
 select "schema".add_foreign_key('schema', 'schema_foreign_keys', 'foreignColumn',  'schema', 'schema_columns',      'id',      '1.81.18', null);
 select "schema".add_foreign_key('schema', 'schema_foreign_keys', 'tied_bridge',    'schema', 'schema_foreign_keys', 'pkey',    '1.0a100', '1.30');
 select "schema".add_foreign_key('schema', 'schema_foreign_keys', 'since_version',  'schema', 'aoserv_protocols',    'version', '1.0a101', '1.81.17');
-select "schema".add_foreign_key('schema', 'schema_foreign_keys', 'sinceVersion',   'schema', 'aoserv_protocols',    'version', '1.81.18', null);
+select "schema".add_foreign_key('schema', 'schema_foreign_keys', 'sinceVersion',   'schema', 'aoserv_protocols',    'version', '1.81.18', '1.92.2.2-SNAPSHOT');
+select "schema".add_foreign_key('schema', 'schema_foreign_keys', 'sinceVersion',   'schema', 'aoserv_protocols',    'version', '1.92.2.3-SNAPSHOT', null);
 select "schema".add_foreign_key('schema', 'schema_foreign_keys', 'last_version',   'schema', 'aoserv_protocols',    'version', '1.0a104', '1.81.17');
-select "schema".add_foreign_key('schema', 'schema_foreign_keys', 'lastVersion',    'schema', 'aoserv_protocols',    'version', '1.81.18', null);
+select "schema".add_foreign_key('schema', 'schema_foreign_keys', 'lastVersion',    'schema', 'aoserv_protocols',    'version', '1.81.18', '1.92.2.2-SNAPSHOT');
+select "schema".add_foreign_key('schema', 'schema_foreign_keys', 'lastVersion',    'schema', 'aoserv_protocols',    'version', '1.92.2.3-SNAPSHOT', null);

@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -30,6 +30,8 @@ select "schema".add_column('schema', 'schema_foreign_keys', 'foreignColumn',  'f
 select "schema".add_column('schema', 'schema_foreign_keys', 'is_bridge',      'boolean', false, false, true, 'the foreign key should be used as a dataverse bridge', '1.0a100', '1.30');
 select "schema".add_column('schema', 'schema_foreign_keys', 'tied_bridge',    'fkey',     true, false, true, 'the bridge that should be automatically followed', '1.0a100', '1.30');
 select "schema".add_column('schema', 'schema_foreign_keys', 'since_version',  'string',  false, false, true, 'the first aoserv_protocol version to have this reference', '1.0a101', '1.81.17');
-select "schema".add_column('schema', 'schema_foreign_keys', 'sinceVersion',   'string',  false, false, true, 'the first aoserv_protocol version to have this reference', '1.81.18', null);
+select "schema".add_column('schema', 'schema_foreign_keys', 'sinceVersion',   'string',  false, false, true, 'the first aoserv_protocol version to have this reference', '1.81.18', '1.92.2.2-SNAPSHOT');
+select "schema".add_column('schema', 'schema_foreign_keys', 'sinceVersion',   'enum',    false, false, true, 'the first aoserv_protocol version to have this reference', '1.92.2.3-SNAPSHOT', null);
 select "schema".add_column('schema', 'schema_foreign_keys', 'last_version',   'string',   true, false, true, 'the last aoserv_protocol version to have this references, or null if not yet removed', '1.0a104', '1.81.17');
-select "schema".add_column('schema', 'schema_foreign_keys', 'lastVersion',    'string',   true, false, true, 'the last aoserv_protocol version to have this references, or null if not yet removed', '1.81.18', null);
+select "schema".add_column('schema', 'schema_foreign_keys', 'lastVersion',    'string',   true, false, true, 'the last aoserv_protocol version to have this references, or null if not yet removed', '1.81.18', '1.92.2.2-SNAPSHOT');
+select "schema".add_column('schema', 'schema_foreign_keys', 'lastVersion',    'enum',     true, false, true, 'the last aoserv_protocol version to have this references, or null if not yet removed', '1.92.2.3-SNAPSHOT', null);

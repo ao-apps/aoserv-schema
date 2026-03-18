@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -27,8 +27,10 @@ select "schema".add_column('schema', 'schema_columns', 'table_name',    'string'
 select "schema".add_column('schema', 'schema_columns', 'table',         'string',  false, false, true, 'the name of the table the column is in', '1.81.18', null);
 select "schema".add_column('schema', 'schema_columns', 'column_name',   'string',  false, false, true, 'the name of the column', '1.0a100', '1.81.17');
 select "schema".add_column('schema', 'schema_columns', 'name',          'string',  false, false, true, 'the name of the column', '1.81.18', null);
-select "schema".add_column('schema', 'schema_columns', 'sinceVersion',  'string',  false, false, true, 'the first aoserv_protocol version this column was in', '1.81.18', null);
-select "schema".add_column('schema', 'schema_columns', 'lastVersion',   'string',   true, false, true, 'the last version containing this field', '1.81.18', null);
+select "schema".add_column('schema', 'schema_columns', 'sinceVersion',  'string',  false, false, true, 'the first aoserv_protocol version this column was in', '1.81.18', '1.92.2.2-SNAPSHOT');
+select "schema".add_column('schema', 'schema_columns', 'sinceVersion',  'enum',    false, false, true, 'the first aoserv_protocol version this column was in', '1.92.2.3-SNAPSHOT', null);
+select "schema".add_column('schema', 'schema_columns', 'lastVersion',   'string',   true, false, true, 'the last version containing this field', '1.81.18', '1.92.2.2-SNAPSHOT');
+select "schema".add_column('schema', 'schema_columns', 'lastVersion',   'enum',     true, false, true, 'the last version containing this field', '1.92.2.3-SNAPSHOT', null);
 select "schema".add_column('schema', 'schema_columns', 'index',         'int',     false, false, true, 'the index of the column', '1.0a100', '1.81.17');
 select "schema".add_column('schema', 'schema_columns', 'index',         'short',   false, false, true, 'the index of the column', '1.81.18', null);
 select "schema".add_column('schema', 'schema_columns', 'type',          'string',  false, false, true, 'the type of data in the column', '1.0a100', null);

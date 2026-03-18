@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -21,7 +21,8 @@
  * along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-select "schema".add_column('infrastructure', 'virtual_servers', 'server',                            'fkey',    false,  true, false, 'the server that is virtualized', '1.36', null);
+select "schema".add_column('infrastructure', 'virtual_servers', 'server',                            'fkey',    false,  true, false, 'the server that is virtualized', '1.36', '1.92.2.3-SNAPSHOT');
+select "schema".add_column('infrastructure', 'virtual_servers', 'server',                            'pkey',    false,  true, false, 'the server that is virtualized', '1.92.2.4-SNAPSHOT', null);
 select "schema".add_column('infrastructure', 'virtual_servers', 'primary_ram',                       'int',     false, false, false, 'the amount of RAM required in primary mode in megabytes', '1.36', null);
 select "schema".add_column('infrastructure', 'virtual_servers', 'primary_ram_target',                'int',     false, false, false, 'the amount of RAM required in primary mode in megabytes', '1.43', null);
 select "schema".add_column('infrastructure', 'virtual_servers', 'secondary_ram',                     'int',      true, false, false, 'the amount of RAM required in primary mode in megabytes or 0 if secondary not required', '1.36', null);

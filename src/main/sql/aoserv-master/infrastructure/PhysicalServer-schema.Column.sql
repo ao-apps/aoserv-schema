@@ -21,7 +21,8 @@
  * along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-select "schema".add_column('infrastructure', 'physical_servers', 'server',          'fkey',    false,  true, false, 'a reference to servers', '1.36', null);
+select "schema".add_column('infrastructure', 'physical_servers', 'server',          'fkey',    false,  true, false, 'a reference to servers', '1.36', '1.92.2.3-SNAPSHOT');
+select "schema".add_column('infrastructure', 'physical_servers', 'server',          'pkey',    false,  true, false, 'a reference to servers', '1.92.2.4-SNAPSHOT', null);
 select "schema".add_column('infrastructure', 'physical_servers', 'rack',            'fkey',     true, false, false, 'the rack that houses this server', '1.36', null);
 select "schema".add_column('infrastructure', 'physical_servers', 'rack_units',      'short',    true, false, false, 'the number of rack units', '1.36', null);
 select "schema".add_column('infrastructure', 'physical_servers', 'ram',             'int',      true, false, false, 'the total number of megabytes of RAM in this server', '1.36', null);

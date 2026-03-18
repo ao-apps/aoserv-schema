@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -23,5 +23,6 @@
 
 select "schema".add_foreign_key('master', 'master_processes', 'authenticated_user', 'account', 'business_administrators', 'username', '1.0a100', null);
 select "schema".add_foreign_key('master', 'master_processes', 'effective_user',     'account', 'business_administrators', 'username', '1.0a100', null);
-select "schema".add_foreign_key('master', 'master_processes', 'daemon_server',      'linux',   'ao_servers',              'server',   '1.0a100', null);
+select "schema".add_foreign_key('master', 'master_processes', 'daemon_server',      'linux',   'ao_servers',              'server',   '1.0a100', '1.92.2.3-SNAPSHOT');
+select "schema".add_foreign_key('master', 'master_processes', 'daemon_server',      'linux',   'ao_servers',              'server',   '1.92.2.4-SNAPSHOT', null);
 select "schema".add_foreign_key('master', 'master_processes', 'aoserv_protocol',    'schema',  'aoserv_protocols',        'version',  '1.0a101', null);

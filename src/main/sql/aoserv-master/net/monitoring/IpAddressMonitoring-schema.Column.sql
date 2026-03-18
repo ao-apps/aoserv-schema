@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -21,7 +21,8 @@
  * along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-select "schema".add_column('net.monitoring', 'IpAddressMonitoring', 'id',                      'fkey',       false,  true, false, 'id of ip_addresses',                                                '1.81.18', null);
+select "schema".add_column('net.monitoring', 'IpAddressMonitoring', 'id',                      'fkey',       false,  true, false, 'id of ip_addresses',                                                '1.81.18', '1.92.2.3-SNAPSHOT');
+select "schema".add_column('net.monitoring', 'IpAddressMonitoring', 'id',                      'pkey',       false,  true, false, 'id of ip_addresses',                                                '1.92.2.4-SNAPSHOT', null);
 select "schema".add_column('net.monitoring', 'IpAddressMonitoring', 'enabled',                 'boolean',    false, false, false, 'indicates that this IP address should be monitored',                '1.81.18', null);
 select "schema".add_column('net.monitoring', 'IpAddressMonitoring', 'pingMonitorEnabled',      'boolean',    false, false, false, 'if ping (ICMP ECHO) is available for monitoring, defaults to true', '1.81.18', null);
 select "schema".add_column('net.monitoring', 'IpAddressMonitoring', 'checkBlacklistsOverSmtp', 'boolean',    false, false, false, 'allows determining some types of blacklists over SMTP protocol',    '1.81.18', null);

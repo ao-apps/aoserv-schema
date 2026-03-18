@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -37,8 +37,22 @@ create table "schema"."Column" (
     not null,
   "isNullable" boolean
     not null,
+    /* Cannot add due to monthly_charges having pkey nullable since it adds rows client-side:
+    CHECK (
+      -- For type = "pkey", must be "isNullable" = false.
+      -- Note: The type ID "20" for "pkey" is obtained from Type-data2.sql
+      "type" != 20 OR "isNullable" = false
+    ),
+     */
   "isUnique" boolean
-    not null,
+    not null
+    CHECK (
+      -- For type = "pkey", must be "isUnique" = true.
+      -- Note: The type ID "20" for "pkey" is obtained from Type-data2.sql
+      "type" != 20 OR "isUnique" = true
+      -- Also allow old schema that was incorrect
+      OR "lastVersion" IS NOT NULL
+    ),
   "isPublic" boolean
     not null,
   description text,

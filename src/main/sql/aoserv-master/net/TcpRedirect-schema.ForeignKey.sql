@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -23,6 +23,7 @@
 
 select "schema".add_foreign_key('net', 'net_tcp_redirects', 'net_bind',         'net', 'net_binds', 'pkey', '1.0a111', '1.68');
 select "schema".add_foreign_key('net', 'net_tcp_redirects', 'net_bind',         'net', 'net_binds', 'pkey', '1.69',    '1.81.17');
-select "schema".add_foreign_key('net', 'net_tcp_redirects', 'net_bind',         'net', 'net_binds', 'id',   '1.81.18', null);
+select "schema".add_foreign_key('net', 'net_tcp_redirects', 'net_bind',         'net', 'net_binds', 'id',   '1.81.18', '1.92.2.3-SNAPSHOT');
+select "schema".add_foreign_key('net', 'net_tcp_redirects', 'net_bind',         'net', 'net_binds', 'id',   '1.92.2.4-SNAPSHOT', null);
 select "schema".add_foreign_key('net', 'net_tcp_redirects', 'destination_port', 'net', 'net_ports', 'port', '1.0a111', '1.68');
 select "schema".add_foreign_key('net', 'net_tcp_redirects', 'destination_port', 'net', 'net_ports', 'port', '1.69',    '1.80');

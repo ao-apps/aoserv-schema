@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,4 +22,5 @@
  */
 
 select "schema".add_foreign_key('web.jboss', 'httpd_jboss_versions', 'version',        'distribution', 'technology_versions',   'pkey',    '1.0a100', null);
-select "schema".add_foreign_key('web.jboss', 'httpd_jboss_versions', 'tomcat_version', 'web.tomcat',   'httpd_tomcat_versions', 'version', '1.0a100', null);
+select "schema".add_foreign_key('web.jboss', 'httpd_jboss_versions', 'tomcat_version', 'web.tomcat',   'httpd_tomcat_versions', 'version', '1.0a100', '1.92.2.3-SNAPSHOT');
+select "schema".add_foreign_key('web.jboss', 'httpd_jboss_versions', 'tomcat_version', 'web.tomcat',   'httpd_tomcat_versions', 'version', '1.92.2.4-SNAPSHOT', null);

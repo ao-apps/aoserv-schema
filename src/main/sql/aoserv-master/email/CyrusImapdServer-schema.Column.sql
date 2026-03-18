@@ -21,7 +21,8 @@
  * along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-select "schema".add_column('email', 'cyrus_imapd_servers', 'ao_server',             'fkey',        false,  true, false, 'the pkey of the server that runs this Cyrus IMAPD instance',         '1.81.10', null);
+select "schema".add_column('email', 'cyrus_imapd_servers', 'ao_server',             'fkey',        false,  true, false, 'the pkey of the server that runs this Cyrus IMAPD instance',         '1.81.10', '1.92.2.3-SNAPSHOT');
+select "schema".add_column('email', 'cyrus_imapd_servers', 'ao_server',             'pkey',        false,  true, false, 'the pkey of the server that runs this Cyrus IMAPD instance',         '1.92.2.4-SNAPSHOT', null);
 select "schema".add_column('email', 'cyrus_imapd_servers', 'sieve_net_bind',        'fkey',         true,  true, false, 'the port the server binds to for sieve, if enabled',                 '1.81.10', null);
 select "schema".add_column('email', 'cyrus_imapd_servers', 'servername',            'domain_name',  true, false, false, 'the servername for this server',                                     '1.81.10', null);
 select "schema".add_column('email', 'cyrus_imapd_servers', 'certificate',           'fkey',        false, false, false, 'the certificate used for this server',                               '1.81.10', null);

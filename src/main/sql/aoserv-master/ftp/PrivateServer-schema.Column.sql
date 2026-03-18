@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -21,9 +21,10 @@
  * along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-select "schema".add_column('ftp', 'private_ftp_servers', 'ip_address',           'fkey',        false,  true, false, 'the pkey of the net_bind that the FTP server is on', '1.0a100', '1.0a112');
-select "schema".add_column('ftp', 'private_ftp_servers', 'net_bind',             'fkey',        false,  true, false, 'the root directory', '1.0a113', null);
-select "schema".add_column('ftp', 'private_ftp_servers', 'root',                 'path',        false, false, false, 'the file transfers are logged to', '1.0a100', '1.38');
+select "schema".add_column('ftp', 'private_ftp_servers', 'ip_address',           'fkey',        false,  true, false, 'the pkey of the ip_address that the FTP server is on', '1.0a100', '1.0a112');
+select "schema".add_column('ftp', 'private_ftp_servers', 'net_bind',             'fkey',        false,  true, false, 'the pkey of the net_bind that the FTP server is on', '1.0a113', '1.92.2.3-SNAPSHOT');
+select "schema".add_column('ftp', 'private_ftp_servers', 'net_bind',             'pkey',        false,  true, false, 'the pkey of the net_bind that the FTP server is on', '1.92.2.4-SNAPSHOT', null);
+select "schema".add_column('ftp', 'private_ftp_servers', 'root',                 'path',        false, false, false, 'the root directory', '1.0a100', '1.38');
 select "schema".add_column('ftp', 'private_ftp_servers', 'logfile',              'path',        false, false, false, 'the file transfers are logged to', '1.0a100', null);
 select "schema".add_column('ftp', 'private_ftp_servers', 'hostname',             'hostname',    false, false, false, 'the hostname the server reports', '1.0a100', '1.68');
 select "schema".add_column('ftp', 'private_ftp_servers', 'hostname',             'domain_name', false, false, false, 'the hostname the server reports', '1.69', null);

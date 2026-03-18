@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -21,6 +21,7 @@
  * along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-select "schema".add_column('web.tomcat', 'httpd_tomcat_versions', 'version',         'fkey',    false,  true, true, 'a reference to the tomcat details in the <code>technology_versions</code> table', '1.0a100', null);
+select "schema".add_column('web.tomcat', 'httpd_tomcat_versions', 'version',         'fkey',    false,  true, true, 'a reference to the tomcat details in the <code>technology_versions</code> table', '1.0a100', '1.92.2.3-SNAPSHOT');
+select "schema".add_column('web.tomcat', 'httpd_tomcat_versions', 'version',         'pkey',    false,  true, true, 'a reference to the tomcat details in the <code>technology_versions</code> table', '1.92.2.4-SNAPSHOT', null);
 select "schema".add_column('web.tomcat', 'httpd_tomcat_versions', 'install_dir',     'path',    false, false, true, 'the directory the basic install files are located in', '1.0a100', null);
 select "schema".add_column('web.tomcat', 'httpd_tomcat_versions', 'requires_mod_jk', 'boolean', false, false, true, 'indicates that this version of Tomcat requires the use of mod_jk', '1.0a100', null);

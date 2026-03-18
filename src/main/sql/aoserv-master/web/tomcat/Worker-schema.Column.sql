@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,7 +22,8 @@
  */
 
 select "schema".add_column('web.tomcat', 'httpd_workers', 'pkey',        'pkey',   false,  true, false, 'a generated, unique id', '1.0a100', '1.81.17');
-select "schema".add_column('web.tomcat', 'httpd_workers', 'bind'    ,    'fkey',   false,  true, false, 'the network binding reservation and details', '1.81.18', null);
+select "schema".add_column('web.tomcat', 'httpd_workers', 'bind',        'fkey',   false,  true, false, 'the network binding reservation and details', '1.81.18', '1.92.2.3-SNAPSHOT');
+select "schema".add_column('web.tomcat', 'httpd_workers', 'bind',        'pkey',   false,  true, false, 'the network binding reservation and details', '1.92.2.4-SNAPSHOT', null);
 select "schema".add_column('web.tomcat', 'httpd_workers', 'code',        'string', false, false, false, 'the jk_code for the worker', '1.0a100', '1.81.17');
 select "schema".add_column('web.tomcat', 'httpd_workers', 'name',        'string', false, false, false, 'the jk_code for the worker', '1.81.18', null);
 select "schema".add_column('web.tomcat', 'httpd_workers', 'net_bind',    'fkey',   false,  true, false, 'the network binding reservation and details', '1.0a100', '1.81.17');

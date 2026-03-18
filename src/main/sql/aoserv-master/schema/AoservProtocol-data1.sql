@@ -1756,6 +1756,12 @@ insert into "schema"."AoservProtocol" values(
 rows are limited to those supported by client version.
 Keeping as "string" where client may receive newer values.'
 );
+insert into "schema"."AoservProtocol" values(
+  '1.92.2.4-SNAPSHOT',
+  '2026-03-18',
+  'Converted types from "fkey" to "pkey" when they are non-nullable, unique, and logically represent the primary key.
+This removes the need to support client-side joins from pkey to fkey types.'
+);
 /* TODO:
 renamed dns.TopLevelDomain to dns.Suffix
   added column isRegistrable

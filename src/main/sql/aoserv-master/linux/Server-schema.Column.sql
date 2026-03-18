@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -21,7 +21,8 @@
  * along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-select "schema".add_column('linux', 'ao_servers', 'server',                   'fkey',            false,  true, false, 'a reference to servers', '1.0a100', null);
+select "schema".add_column('linux', 'ao_servers', 'server',                   'fkey',            false,  true, false, 'a reference to servers', '1.0a100', '1.92.2.3-SNAPSHOT');
+select "schema".add_column('linux', 'ao_servers', 'server',                   'pkey',            false,  true, false, 'a reference to servers', '1.92.2.4-SNAPSHOT', null);
 select "schema".add_column('linux', 'ao_servers', 'num_cpu',                  'int',             false, false, false, 'the number of CPUs in the machine', '1.0a100', '1.30');
 select "schema".add_column('linux', 'ao_servers', 'cpu_speed',                'int',             false, false, false, 'the speed of each CPU in MHz', '1.0a100', '1.30');
 select "schema".add_column('linux', 'ao_servers', 'ram',                      'int',             false, false, false, 'the amount of RAM in megabytes', '1.0a100', '1.30');

@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -21,8 +21,10 @@
  * along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-select "schema".add_foreign_key('backup', 'failover_mysql_replications', 'ao_server',    'linux',  'ao_servers',                 'server', '1.59',    null);
+select "schema".add_foreign_key('backup', 'failover_mysql_replications', 'ao_server',    'linux',  'ao_servers',                 'server', '1.59',    '1.92.2.3-SNAPSHOT');
+select "schema".add_foreign_key('backup', 'failover_mysql_replications', 'ao_server',    'linux',  'ao_servers',                 'server', '1.92.2.4-SNAPSHOT', null);
 select "schema".add_foreign_key('backup', 'failover_mysql_replications', 'replication',  'backup', 'failover_file_replications', 'pkey',   '1.28',    '1.58');
 select "schema".add_foreign_key('backup', 'failover_mysql_replications', 'replication',  'backup', 'failover_file_replications', 'pkey',   '1.59',    null);
 select "schema".add_foreign_key('backup', 'failover_mysql_replications', 'mysql_server', 'mysql',  'mysql_servers',              'pkey',   '1.28',    '1.81.17');
-select "schema".add_foreign_key('backup', 'failover_mysql_replications', 'mysql_server', 'mysql',  'mysql_servers',              'bind',   '1.81.18', null);
+select "schema".add_foreign_key('backup', 'failover_mysql_replications', 'mysql_server', 'mysql',  'mysql_servers',              'bind',   '1.81.18', '1.92.2.3-SNAPSHOT');
+select "schema".add_foreign_key('backup', 'failover_mysql_replications', 'mysql_server', 'mysql',  'mysql_servers',              'bind',   '1.92.2.4-SNAPSHOT', null);

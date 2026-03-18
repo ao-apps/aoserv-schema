@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -23,7 +23,8 @@
 
 select "schema".add_foreign_key('linux', 'linux_server_accounts', 'username',               'linux',   'linux_accounts',             'username', '1.0a100', '1.81.21');
 select "schema".add_foreign_key('linux', 'linux_server_accounts', 'username',               'linux',   'linux_accounts',             'username', '1.81.22', null);
-select "schema".add_foreign_key('linux', 'linux_server_accounts', 'ao_server',              'linux',   'ao_servers',                 'server',   '1.0a100', null);
+select "schema".add_foreign_key('linux', 'linux_server_accounts', 'ao_server',              'linux',   'ao_servers',                 'server',   '1.0a100', '1.92.2.3-SNAPSHOT');
+select "schema".add_foreign_key('linux', 'linux_server_accounts', 'ao_server',              'linux',   'ao_servers',                 'server',   '1.92.2.4-SNAPSHOT', null);
 select "schema".add_foreign_key('linux', 'linux_server_accounts', 'uid',                    'linux',   'linux_ids',                  'id',       '1.0a100', '1.68');
 select "schema".add_foreign_key('linux', 'linux_server_accounts', 'uid',                    'linux',   'linux_ids',                  'id',       '1.69',    '1.80');
 select "schema".add_foreign_key('linux', 'linux_server_accounts', 'cron_backup_level',      'backup',  'backup_levels',              'level',    '1.0a100', '1.30');

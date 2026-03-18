@@ -42,6 +42,7 @@ insert into "schema"."Type" values(16, 'long',                    '1.0a100', nul
 insert into "schema"."Type" values(17, 'octal_int',               '1.0a100', '1.68');
 insert into "schema"."Type" values(18, 'octal_long',              '1.0a100', null);
 insert into "schema"."Type" values(19, 'package',                 '1.0a100', '1.80');
+-- Note: The type ID "20" for "pkey" is also hard-coded in CHECK constraints in Column-create.sql
 insert into "schema"."Type" values(20, 'pkey',                    '1.0a100', null);
 insert into "schema"."Type" values(21, 'path',                    '1.0a100', null);
 insert into "schema"."Type" values(22, 'phone',                   '1.0a100', null);

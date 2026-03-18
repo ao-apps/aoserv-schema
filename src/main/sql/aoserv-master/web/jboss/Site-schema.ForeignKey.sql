@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -21,7 +21,8 @@
  * along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-select "schema".add_foreign_key('web.jboss', 'httpd_jboss_sites', 'tomcat_site',     'web.tomcat', 'httpd_tomcat_sites',   'httpd_site', '1.0a100', null);
+select "schema".add_foreign_key('web.jboss', 'httpd_jboss_sites', 'tomcat_site',     'web.tomcat', 'httpd_tomcat_sites',   'httpd_site', '1.0a100', '1.92.2.3-SNAPSHOT');
+select "schema".add_foreign_key('web.jboss', 'httpd_jboss_sites', 'tomcat_site',     'web.tomcat', 'httpd_tomcat_sites',   'httpd_site', '1.92.2.4-SNAPSHOT', null);
 select "schema".add_foreign_key('web.jboss', 'httpd_jboss_sites', 'version',         'web.jboss',  'httpd_jboss_versions', 'version',    '1.0a100', null);
 select "schema".add_foreign_key('web.jboss', 'httpd_jboss_sites', 'jnp_bind',        'net',        'net_binds',            'pkey',       '1.0a100', '1.81.17');
 select "schema".add_foreign_key('web.jboss', 'httpd_jboss_sites', 'jnp_bind',        'net',        'net_binds',            'id',         '1.81.18', null);

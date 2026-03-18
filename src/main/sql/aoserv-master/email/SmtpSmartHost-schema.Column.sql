@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -21,7 +21,8 @@
  * along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-select "schema".add_column('email', 'email_smtp_smart_hosts', 'net_bind',                 'fkey',  false,  true, false, 'a reference to the port that is being used as a Smart Host', '1.57', null);
+select "schema".add_column('email', 'email_smtp_smart_hosts', 'net_bind',                 'fkey',  false,  true, false, 'a reference to the port that is being used as a Smart Host', '1.57', '1.92.2.3-SNAPSHOT');
+select "schema".add_column('email', 'email_smtp_smart_hosts', 'net_bind',                 'pkey',  false,  true, false, 'a reference to the port that is being used as a Smart Host', '1.92.2.4-SNAPSHOT', null);
 select "schema".add_column('email', 'email_smtp_smart_hosts', 'total_out_burst',          'int',    true, false, false, 'the aggregate email burst limit for all emails sent through this host, null means unlimited', '1.57', null);
 select "schema".add_column('email', 'email_smtp_smart_hosts', 'total_out_rate',           'float',  true, false, false, 'the sustained email rate for all emails sent through this host, null means unlimited', '1.57', null);
 select "schema".add_column('email', 'email_smtp_smart_hosts', 'default_domain_out_burst', 'int',    true, false, false, 'the default per-domain email burst limit when no domain-specific value is provided in email_smtp_smart_host_domains, null means unlimited', '1.57', null);

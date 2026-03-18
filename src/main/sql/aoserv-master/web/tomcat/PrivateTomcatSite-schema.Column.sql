@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020, 2023  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2023, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -21,7 +21,8 @@
  * along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-select "schema".add_column('web.tomcat', 'httpd_tomcat_std_sites', 'tomcat_site',           'fkey',    false,  true, false, 'the site that this Tomcat is running in', '1.0a100', null);
+select "schema".add_column('web.tomcat', 'httpd_tomcat_std_sites', 'tomcat_site',           'fkey',    false,  true, false, 'the site that this Tomcat is running in', '1.0a100', '1.92.2.3-SNAPSHOT');
+select "schema".add_column('web.tomcat', 'httpd_tomcat_std_sites', 'tomcat_site',           'pkey',    false,  true, false, 'the site that this Tomcat is running in', '1.92.2.4-SNAPSHOT', null);
 select "schema".add_column('web.tomcat', 'httpd_tomcat_std_sites', 'tomcat4_shutdown_port', 'fkey',     true,  true, false, 'the port that will shut down this JVM', '1.0a100', null);
 select "schema".add_column('web.tomcat', 'httpd_tomcat_std_sites', 'tomcat4_shutdown_key',  'string',   true, false, false, 'the key used to shut down the JVM', '1.0a100', null);
 select "schema".add_column('web.tomcat', 'httpd_tomcat_std_sites', 'maxParameterCount',     'int',      true, false, false, 'the maxParameterCount setting for this Tomcat', '1.92.0', null);

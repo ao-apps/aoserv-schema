@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -21,7 +21,8 @@
  * along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-select "schema".add_foreign_key('infrastructure', 'virtual_disks', 'virtual_server',              'infrastructure', 'virtual_servers', 'server', '1.36', null);
+select "schema".add_foreign_key('infrastructure', 'virtual_disks', 'virtual_server',              'infrastructure', 'virtual_servers', 'server', '1.36', '1.92.2.3-SNAPSHOT');
+select "schema".add_foreign_key('infrastructure', 'virtual_disks', 'virtual_server',              'infrastructure', 'virtual_servers', 'server', '1.92.2.4-SNAPSHOT', null);
 select "schema".add_foreign_key('infrastructure', 'virtual_disks', 'minimum_raid_type',           'infrastructure', 'raid_types',      'type',   '1.41', '1.41');
 select "schema".add_foreign_key('infrastructure', 'virtual_disks', 'primary_minimum_raid_type',   'infrastructure', 'raid_types',      'type',   '1.36', '1.40');
 select "schema".add_foreign_key('infrastructure', 'virtual_disks', 'secondary_minimum_raid_type', 'infrastructure', 'raid_types',      'type',   '1.36', '1.40');

@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -21,9 +21,11 @@
  * along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-select "schema".add_foreign_key('web.tomcat', 'httpd_workers', 'bind',        'net',        'net_binds',          'id',         '1.81.18', null);
+select "schema".add_foreign_key('web.tomcat', 'httpd_workers', 'bind',        'net',        'net_binds',          'id',         '1.81.18', '1.92.2.3-SNAPSHOT');
+select "schema".add_foreign_key('web.tomcat', 'httpd_workers', 'bind',        'net',        'net_binds',          'id',         '1.92.2.4-SNAPSHOT', null);
 select "schema".add_foreign_key('web.tomcat', 'httpd_workers', 'code',        'web.tomcat', 'httpd_jk_codes',     'code',       '1.0a100', '1.81.17');
 select "schema".add_foreign_key('web.tomcat', 'httpd_workers', 'name',        'web.tomcat', 'httpd_jk_codes',     'code',       '1.81.18', null);
 select "schema".add_foreign_key('web.tomcat', 'httpd_workers', 'net_bind',    'net',        'net_binds',          'pkey',       '1.0a100', '1.81.17');
 select "schema".add_foreign_key('web.tomcat', 'httpd_workers', 'tomcat_site', 'web.tomcat', 'httpd_tomcat_sites', 'httpd_site', '1.0a100', '1.81.17');
-select "schema".add_foreign_key('web.tomcat', 'httpd_workers', 'tomcatSite',  'web.tomcat', 'httpd_tomcat_sites', 'httpd_site', '1.81.18', null);
+select "schema".add_foreign_key('web.tomcat', 'httpd_workers', 'tomcatSite',  'web.tomcat', 'httpd_tomcat_sites', 'httpd_site', '1.81.18', '1.92.2.3-SNAPSHOT');
+select "schema".add_foreign_key('web.tomcat', 'httpd_workers', 'tomcatSite',  'web.tomcat', 'httpd_tomcat_sites', 'httpd_site', '1.92.2.4-SNAPSHOT', null);

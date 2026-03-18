@@ -30,7 +30,7 @@ select "schema".add_column('email', 'DkimKey', 'status',        'string',       
 select "schema".add_column('email', 'DkimKey', 'status',        'enum',         false, false, false, E'The current status, one of "new", "signing", "old", "removal".\n'
                                                                                                    || 'Only one may be "signing" per domain.',                  '1.92.2.2-SNAPSHOT', null);
 select "schema".add_column('email', 'DkimKey', 'statusTime',    'time',         false, false, false, 'The time at last status change.',                         '1.92.2-SNAPSHOT', null);
-select "schema".add_column('email', 'DkimKey', 'dnsRecord',     'fkey',         false,  true, false, E'The DNS record associated with this key.\n'
+select "schema".add_column('email', 'DkimKey', 'dnsRecord',     'fkey',          true,  true, false, E'The DNS record associated with this key.\n'
                                                                                                    || 'May be <code>null</code> when DNS hosted elsewhere.',    '1.92.2-SNAPSHOT', null);
 select "schema".add_column('email', 'DkimKey', 'dnsConfirmed',  'time',          true, false, false, E'The time DNS TXT presence and correctness was confirmed.\n'
                                                                                                    || 'Required for statuses "signing" and "old".',             '1.92.2-SNAPSHOT', null);

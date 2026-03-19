@@ -43,8 +43,27 @@ select aosh.add_command(
   'select',
   'schema',
   'schema_tables',
-  'selects rows and columns from a table.  Please note, if using "column.with.dot" within AOSH, will need to escape for the shell: \"column.with.dot\".',
-  '{<b>*</b>|<i>{column|"column.with.dot"}[::type][.join][, {column|"column.with.dot"}[::type][.join]]</i>|<b>count(*)</b>} <b>from</b> <i>table_name</i> [order by <i>{column|"column.with.dot"}[::type][.join][, {column|"column.with.dot"}[::type][.join]]]</i>',
+  'selects rows and columns from a table.',
+  '{<b>*</b>|<i>expression</i>}[, ...] <b>FROM</b> <i>table_name</i> [<b>ORDER BY</b> <i>expression</i> [{<b>ASC</b>|<b>DESC</b>}] [, ...]]
+
+where <i>expression</i> can be one of:
+  <b>count(*)</b>               Counts the number of rows (aggregate function).
+  <i>column</i>                 The column value.
+  <i>column</i>.<i>join</i>          Follows foreign key relationship, selects the joined column from
+                           the foreign table.  Any number of joins may be performed.
+  <i>column</i>::<i>type</i>         Casts the column value to the given type.
+                           Only a single cast is supported.
+  <i>column</i>.<i>join</i>::<i>type</i>  One or more joins may be followed by a single cast.
+
+Column names with dots may be double-quoted to avoid being interpreted as a join:
+  For example:
+    SELECT "creditCard.expirationMonth" FROM credit_card_transactions
+  Within AOSH, will need to escape for the shell:
+    SELECT \"creditCard.expirationMonth\" FROM credit_card_transactions
+
+Aggregate functions:
+  May not combine aggregate functions with non-aggregate functions.
+  May not use <b>ORDER BY</b> with aggregate functions.',
   '1.0a100',
   null
 );

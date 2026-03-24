@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -21,6 +21,7 @@
  * along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+-- TODO: Detect overlap in commands by name and protocol ranges
 create or replace function aosh.add_command (
   command        name,
   "schema"       name,

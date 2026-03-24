@@ -1760,7 +1760,8 @@ insert into "schema"."AoservProtocol" values(
   '1.92.2.4-SNAPSHOT',
   '2026-03-18',
   'Converted types from "fkey" to "pkey" when they are non-nullable, unique, and logically represent the primary key.
-This removes the need to support client-side joins from pkey to fkey types.'
+This removes the need to support client-side joins from pkey to fkey types.
+No longer need to escape double-quotes within select command within AOSH.'
 );
 /* TODO:
 renamed dns.TopLevelDomain to dns.Suffix

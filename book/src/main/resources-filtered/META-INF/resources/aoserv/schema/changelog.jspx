@@ -37,7 +37,7 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
     shortTitle="Changelog"
     tocLevels="1"
     datePublished="2020-04-13T01:51:55-05:00"
-    dateModified="2026-03-17T03:04:24Z"
+    dateModified="2026-04-18T17:56:20Z"
   >
     <c:set var="latestRelease" value="1.91.8" />
     <c:if test="${
@@ -91,6 +91,7 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
               <li>Added column <code>email.Domain.dkimDisableReason</code></li>
             </ol>
           </li>
+          <li>Added support for <ao:a href="https://www.postgresql.org/docs/16/index.html">PostgreSQL 16</ao:a>.</li>
         </ul>
       </changelog:release>
     </c:if>

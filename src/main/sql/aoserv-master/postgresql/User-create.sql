@@ -45,6 +45,8 @@ create table postgresql."User" (
       -- Predefined roles, PostgreSQL 16+ - https://www.postgresql.org/docs/16/predefined-roles.html
       'pg_use_reserved_connections',
       'pg_create_subscription',
+      -- Predefined roles, PostgreSQL 17+ - https://www.postgresql.org/docs/17/predefined-roles.html
+      'pg_maintain'
     )
   ),
   createdb boolean

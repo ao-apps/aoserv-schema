@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2007, 2008, 2010, 2011, 2012, 2016, 2017, 2018, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2007, 2008, 2010, 2011, 2012, 2016, 2017, 2018, 2020, 2021, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -39,6 +39,7 @@ create table linux."Server" (
     not null,
   distro_hour integer
     not null
+    -- TODO: PostgreSQL 17: random(min, max)
     default (random()*6)::integer -- Choose between 0 and 5 randomly
     constraint distro_hour_chk
       check (distro_hour>=0 and distro_hour<=23),

@@ -47,6 +47,8 @@ create table postgresql."User" (
       'pg_create_subscription',
       -- Predefined roles, PostgreSQL 17+ - https://www.postgresql.org/docs/17/predefined-roles.html
       'pg_maintain'
+      -- Predefined roles, PostgreSQL 18+ - https://www.postgresql.org/docs/18/predefined-roles.html
+      ,'pg_signal_autovacuum_worker'
     )
   ),
   createdb boolean

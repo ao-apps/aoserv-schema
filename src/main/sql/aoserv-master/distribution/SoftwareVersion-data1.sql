@@ -142,6 +142,10 @@ INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner,
   3372, 'MySQL', '8.0.0', '2018-07-15 19:32:37.066566+00', 'orion', 70);
 INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
   3413, 'MySQL', '8.0.0', '2022-12-27 02:55:29.274217+00', 'orion', 71);
+INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
+  3437, 'MySQL', '8.4.0', '2026-05-18 21:51:21.788906+00', 'orion', 70);
+INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
+  3438, 'MySQL', '8.4.0', '2026-05-18 21:51:21.788906+00', 'orion', 71);
 
 -- PHP
 INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
@@ -225,4 +229,4 @@ INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner,
 
 COMMIT;
 
-SELECT setval ('distribution."SoftwareVersion_id_seq"', 3437, false);
+SELECT setval ('distribution."SoftwareVersion_id_seq"', 3439, false);

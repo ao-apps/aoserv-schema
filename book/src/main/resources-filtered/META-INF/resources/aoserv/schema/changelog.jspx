@@ -37,7 +37,7 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
     shortTitle="Changelog"
     tocLevels="1"
     datePublished="2020-04-13T01:51:55-05:00"
-    dateModified="2026-05-19T20:09:57Z"
+    dateModified="2026-05-20T13:13:54Z"
   >
     <c:set var="latestRelease" value="1.91.8" />
     <c:if test="${
@@ -98,6 +98,7 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
           <li>Added support for <ao:a href="https://dev.mysql.com/doc/relnotes/mysql/9.7/en/">MySQL 9.7</ao:a>.</li>
           <li>Added support for <ao:a href="https://www.php.net/releases/8.3/index.php">PHP 8.3</ao:a>.</li>
           <li>Added support for <ao:a href="https://www.php.net/releases/8.4/index.php">PHP 8.4</ao:a>.</li>
+          <li>Added support for <ao:a href="https://www.php.net/releases/8.5/index.php">PHP 8.5</ao:a>.</li>
         </ul>
       </changelog:release>
     </c:if>

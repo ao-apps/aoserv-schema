@@ -116,6 +116,10 @@ INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner,
   3443, 'jdk', '25.0.0', '2026-06-03 11:08:51+00', 'orion', 70);
 INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
   3444, 'jdk', '25.0.0', '2026-06-03 11:08:51+00', 'orion', 71);
+INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
+  3445, 'jdk', '26.0.0', '2026-06-04 13:30:53.940834+00', 'orion', 70);
+INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
+  3446, 'jdk', '26.0.0', '2026-06-04 13:30:53.940834+00', 'orion', 71);
 
 -- MySQL
 INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
@@ -241,4 +245,4 @@ INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner,
 
 COMMIT;
 
-SELECT setval ('distribution."SoftwareVersion_id_seq"', 3445, false);
+SELECT setval ('distribution."SoftwareVersion_id_seq"', 3447, false);

@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -24,7 +24,7 @@
 create table "net.management"."IpAddressJustifyingProtocol" (
   "appProtocol" text
     primary key,
-  justied boolean
+  justified boolean
     not null,
   comment text
 );

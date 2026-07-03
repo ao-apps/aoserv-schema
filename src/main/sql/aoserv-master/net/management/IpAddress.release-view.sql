@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020, 2022  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2022, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -35,7 +35,7 @@ select
   where
     nb."ipAddress" = ia.id
     and coalesce(
-      ijp.justied,
+      ijp.justified,
       true -- Default to justified when not specified
     )
   ) as num_justifying_binds,

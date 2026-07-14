@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020, 2022  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2022, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -32,7 +32,7 @@ select
   )) as num_databases,
   (select count(*) from mysql."UserServer" msu where
     msu.mysql_server=ms.bind and msu.username not in (
-      'root', 'mysql.session', 'mysql.sys', 'mysqlmon'
+      'root', 'mysql.session', 'mysql.sys', 'mysql.infoschema', 'mysqlmon'
   )) as num_users,
   ao.hostname as "SERVER",
   case

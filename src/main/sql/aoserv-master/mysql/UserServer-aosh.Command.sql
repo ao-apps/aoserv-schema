@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -124,8 +124,8 @@ select aosh.add_command(
   'set_mysql_server_user_password',
   'mysql',
   'mysql_server_users',
-  'sets the password for a MySQL user on one server',
-  '<i>username</i> <i>mysql_server</i> <i>ao_server</i> <i>password</i>',
+  'sets the password for a MySQL user on one server; use "" to disable password authentication',
+  '<i>username</i> <i>mysql_server</i> <i>ao_server</i> {""|<i>password</i>}',
   '1.4',
   null
 );

@@ -37,7 +37,7 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
     shortTitle="Changelog"
     tocLevels="1"
     datePublished="2020-04-13T01:51:55-05:00"
-    dateModified="2026-07-16T08:18:36Z"
+    dateModified="2026-07-16T08:48:51Z"
   >
     <c:set var="latestRelease" value="1.91.8" />
     <c:if test="${
@@ -102,6 +102,7 @@ along with aoserv-schema.  If not, see <https://www.gnu.org/licenses/>.
           <li>Added support for <ao:a rel="nofollow" href="https://www.oracle.com/java/technologies/javase/25-relnote-issues.html">Java 25</ao:a>.</li>
           <li>Added support for <ao:a rel="nofollow" href="https://www.oracle.com/java/technologies/javase/26-relnote-issues.html">Java 26</ao:a>.</li>
           <li>Removed support for MySQL 4.0.</li>
+          <li>Removed support for <ao:a rel="nofollow" href="https://docs.oracle.com/cd/E19078-01/mysql/mysql-refman-5.1/">MySQL 5.1</ao:a>.</li>
         </ul>
       </changelog:release>
     </c:if>

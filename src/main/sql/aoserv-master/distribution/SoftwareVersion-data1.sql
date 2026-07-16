@@ -131,10 +131,6 @@ INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner,
 INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
   3429, 'MySQL', '5.0.96', '2025-03-09 08:11:41.256347+00', 'orion', 71);
 INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
-  3323, 'MySQL', '5.1.73', '2013-12-04 21:55:23.219823+00', 'orion', 67);
-INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
-  3355, 'MySQL', '5.1.73', '2017-04-03 04:06:17.099881+00', 'orion', 70);
-INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
   3341, 'MySQL', '5.6.35', '2016-12-22 17:39:58.395523+00', 'orion', 67);
 INSERT INTO distribution."SoftwareVersion" (id, "name", version, updated, owner, operating_system_version) VALUES (
   3356, 'MySQL', '5.6.35', '2017-04-03 04:06:23.495491+00', 'orion', 70);

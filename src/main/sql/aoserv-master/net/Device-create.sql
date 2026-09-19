@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2000-2006, 2008, 2010, 2013, 2018, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2000-2006, 2008, 2010, 2013, 2018, 2020, 2021, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -54,4 +54,4 @@ create table net."Device" (
 grant all                    on net."Device" to aoadmin;
 grant select                 on net."Device" to aoserv_app;
 grant select, insert, update on net."Device" to infrastructure;
-grant select, insert         on net."Device" to management;
+grant select, insert, update on net."Device" to management;

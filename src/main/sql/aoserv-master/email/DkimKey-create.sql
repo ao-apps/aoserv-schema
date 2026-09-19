@@ -57,5 +57,5 @@ CREATE TABLE email."DkimKey" (
   unique ("domain", selector)
 );
 GRANT ALL                    ON email."DkimKey" TO aoadmin;
-GRANT SELECT                 ON email."DkimKey" TO aoserv_app;
+GRANT SELECT, DELETE         ON email."DkimKey" TO aoserv_app;
 GRANT SELECT, INSERT, UPDATE ON email."DkimKey" TO management;

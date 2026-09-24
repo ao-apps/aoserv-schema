@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2019, 2020, 2022  AO Industries, Inc.
+ * Copyright (C) 2018, 2019, 2020, 2022, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -36,7 +36,9 @@ select
   )) as num_users,
   ao.hostname as "SERVER",
   case
+    -- TODO: These should join on distribution."OperatingSystem" to get the "display", then have procedure match the "display" value
     when osv.operating_system = 'centos' then 'CentOS'
+    when osv.operating_system = 'debian' then 'Debian'
     when osv.operating_system = 'rocky' then 'Rocky'
     else osv.operating_system
   end || ' ' || osv.version_number as "OS",

@@ -46,7 +46,9 @@ select
     when ao.server is null then 'N/A'
     else
       case
+       -- TODO: These should join on distribution."OperatingSystem" to get the "display", then have procedure match the "display" value
         when osv.operating_system = 'centos' then 'CentOS'
+        when osv.operating_system = 'debian' then 'Debian'
         when osv.operating_system = 'rocky' then 'Rocky'
         else osv.operating_system
       end || ' ' || osv.version_number

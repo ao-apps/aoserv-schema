@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -28,4 +28,5 @@ comment on schema distribution is 'Linux distributions managed by the AOServ Pla
 grant all   on schema distribution to aoadmin;
 grant usage on schema distribution to aoserv_app;
 grant usage on schema distribution to distribution;
+grant usage on schema distribution to infrastructure;
 grant usage on schema distribution to management;

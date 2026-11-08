@@ -40,6 +40,11 @@ binding.setVariable('upstreamProjects', [
   '../oss/tlds', // <groupId>com.aoapps</groupId><artifactId>ao-tlds</artifactId><classifier>sql</classifier>
 ])
 
+// All projects that use this schema declare and update versions for all transitive dependencies.
+// While the latest *-SNAPSHOT of this schema will have up-to-date dependencies,
+// this project will not be re-released solely for updated dependency versions.
+binding.setVariable('scmAdditionalAuditBranches', [])
+
 /******************************************************************************************
  *                                                                                        *
  * Everything below this line is identical for all projects, except the copied matrix     *

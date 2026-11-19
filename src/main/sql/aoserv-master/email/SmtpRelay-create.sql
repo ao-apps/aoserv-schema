@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2021, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -48,3 +48,4 @@ create table email."SmtpRelay" (
 );
 grant all                            on email."SmtpRelay" to aoadmin;
 grant select, insert, update, delete on email."SmtpRelay" to aoserv_app;
+grant select                         on email."SmtpRelay" to management;

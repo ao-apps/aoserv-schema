@@ -42,4 +42,4 @@ create table email."Domain" (
 );
 grant all                            on email."Domain" to aoadmin;
 grant select, insert, update, delete on email."Domain" to aoserv_app;
-GRANT SELECT                         ON email."Domain" TO management;
+GRANT SELECT,         UPDATE         ON email."Domain" TO management;

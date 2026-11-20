@@ -62,7 +62,7 @@ avahi	Avahi daemon	\N	\N	\N	system	/sbin/nologin	2008-01-04 14:08:55.930677	\N
 avahi-autoipd	Avahi IPv4LL Stack	\N	\N	\N	system	/sbin/nologin	2017-04-06 17:43:45.743445+00	\N
 cyrus	Cyrus IMAP Server	\N	\N	\N	application	/bin/bash	2006-11-30 16:32:59.466179	\N
 gopher	gopher	\N	\N	\N	application	/sbin/nologin	2006-06-19 03:54:35.67468	\N
-dbus	System message bus	\N	\N	\N	application	/sbin/nologin	2006-06-19 03:56:39.344773	\N
+dbus	System Message Bus	\N	\N	\N	application	/sbin/nologin	2006-06-19 03:56:39.344773	\N
 haldaemon	HAL daemon	\N	\N	\N	application	/sbin/nologin	2006-06-19 03:59:38.195281	\N
 pcap	pcap	\N	\N	\N	system	/sbin/nologin	2006-06-19 04:10:35.710186	\N
 distcache	Distcache	\N	\N	\N	system	/sbin/nologin	2008-01-04 14:15:52.337433	\N
@@ -106,7 +106,7 @@ INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('ope
 -- SonarQube
 INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('sonarqube',      'SonarQube',                 'user',   '/bin/bash',     '2022-02-14 18:30:42.703695+00');
 -- Rocky 9
-INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('flatpak',          'User for flatpak system helper', 'system', '/sbin/nologin',     '2024-09-25 01:39:45.93339+00');
+INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('flatpak',          'Flatpak system helper',          'system', '/sbin/nologin',     '2024-09-25 01:39:45.93339+00');
 INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('geoclue',          'User for geoclue',               'system', '/sbin/nologin',     '2024-09-25 01:39:45.93339+00');
 INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('pipewire',         'PipeWire System Daemon',         'system', '/usr/sbin/nologin', '2024-09-25 01:39:45.93339+00');
 INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('rtkit',            'RealtimeKit',                    'system', '/sbin/nologin',     '2024-09-25 01:39:45.93339+00');

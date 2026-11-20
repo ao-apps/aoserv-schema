@@ -62,7 +62,7 @@ avahi	Avahi daemon	\N	\N	\N	system	/sbin/nologin	2008-01-04 14:08:55.930677	\N
 avahi-autoipd	Avahi IPv4LL Stack	\N	\N	\N	system	/sbin/nologin	2017-04-06 17:43:45.743445+00	\N
 cyrus	Cyrus IMAP Server	\N	\N	\N	application	/bin/bash	2006-11-30 16:32:59.466179	\N
 gopher	gopher	\N	\N	\N	application	/sbin/nologin	2006-06-19 03:54:35.67468	\N
-dbus	System Message Bus	\N	\N	\N	application	/sbin/nologin	2006-06-19 03:56:39.344773	\N
+dbus	System Message Bus	\N	\N	\N	application	/usr/sbin/nologin	2006-06-19 03:56:39.344773	\N
 haldaemon	HAL daemon	\N	\N	\N	application	/sbin/nologin	2006-06-19 03:59:38.195281	\N
 pcap	pcap	\N	\N	\N	system	/sbin/nologin	2006-06-19 04:10:35.710186	\N
 distcache	Distcache	\N	\N	\N	system	/sbin/nologin	2008-01-04 14:15:52.337433	\N

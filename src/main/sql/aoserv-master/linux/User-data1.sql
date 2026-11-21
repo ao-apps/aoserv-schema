@@ -113,5 +113,7 @@ INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('rtk
 INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('sssd',             'User for sssd',                  'system', '/sbin/nologin',     '2024-09-25 01:39:45.93339+00');
 INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('systemd-coredump', 'systemd Core Dumper',            'system', '/sbin/nologin',     '2024-09-25 01:39:45.93339+00');
 INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('systemd-oom',      'systemd Userspace OOM Killer',   'system', '/usr/sbin/nologin', '2024-09-25 01:39:45.93339+00');
+-- Valkey
+INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('valkey',           'Valkey Database Server',         'system', '/sbin/nologin',     '2026-11-21 04:10:13.781733+00');
 
 COMMIT;

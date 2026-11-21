@@ -153,5 +153,7 @@ INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('rtkit',   
 INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('sssd',             'sssd',             TRUE);
 INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('systemd-coredump', 'systemd-coredump', TRUE);
 INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('systemd-oom',      'systemd-oom',      TRUE);
+-- Valkey
+INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('valkey',           'valkey',           TRUE);
 
 COMMIT;

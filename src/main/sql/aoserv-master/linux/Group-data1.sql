@@ -146,4 +146,6 @@ INSERT INTO linux."Group" ("name", package, "type") VALUES ('systemd-coredump', 
 INSERT INTO linux."Group" ("name", package, "type") VALUES ('systemd-oom',    'AOINDUSTRIES', 'system');
 -- Rocky 9.7
 INSERT INTO linux."Group" ("name", package, "type") VALUES ('printadmin',     'AOINDUSTRIES', 'system');
+-- Valkey
+INSERT INTO linux."Group" ("name", package, "type") VALUES ('valkey',         'AOINDUSTRIES', 'system');
 COMMIT;

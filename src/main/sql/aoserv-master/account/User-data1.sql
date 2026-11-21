@@ -114,5 +114,7 @@ INSERT INTO account."User" (username, package, disable_log) VALUES ('rtkit',    
 INSERT INTO account."User" (username, package, disable_log) VALUES ('sssd',             'AOINDUSTRIES', NULL);
 INSERT INTO account."User" (username, package, disable_log) VALUES ('systemd-coredump', 'AOINDUSTRIES', NULL);
 INSERT INTO account."User" (username, package, disable_log) VALUES ('systemd-oom',      'AOINDUSTRIES', NULL);
+-- Valkey
+INSERT INTO account."User" (username, package, disable_log) VALUES ('valkey',           'AOINDUSTRIES', NULL);
 
 COMMIT;

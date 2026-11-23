@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -28,3 +28,4 @@ comment on schema infrastructure is 'Infrastructure configuration';
 grant all   on schema infrastructure to aoadmin;
 grant usage on schema infrastructure to aoserv_app;
 grant usage on schema infrastructure to infrastructure;
+grant usage on schema infrastructure to management;

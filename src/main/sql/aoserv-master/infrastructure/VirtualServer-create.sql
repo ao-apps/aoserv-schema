@@ -1,6 +1,6 @@
 /*
  * aoserv-schema - Database schema for the AOServ Platform.
- * Copyright (C) 2008, 2009, 2011, 2013, 2018, 2020  AO Industries, Inc.
+ * Copyright (C) 2008, 2009, 2011, 2013, 2018, 2020, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -67,3 +67,5 @@ create table infrastructure."VirtualServer" (
 grant all                    on infrastructure."VirtualServer" to aoadmin;
 grant select                 on infrastructure."VirtualServer" to aoserv_app;
 grant select, insert, update on infrastructure."VirtualServer" to infrastructure;
+GRANT SELECT (server)        ON infrastructure."VirtualServer" TO management;
+GRANT UPDATE (vnc_password)  ON infrastructure."VirtualServer" TO management;

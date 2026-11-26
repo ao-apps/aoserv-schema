@@ -107,7 +107,6 @@ INSERT INTO account."User" (username, package, disable_log) VALUES ('opendkim', 
 -- SonarQube
 INSERT INTO account."User" (username, package, disable_log) VALUES ('sonarqube',      'AOINDUSTRIES', NULL);
 -- Rocky 9
-INSERT INTO account."User" (username, package, disable_log) VALUES ('flatpak',          'AOINDUSTRIES', NULL);
 INSERT INTO account."User" (username, package, disable_log) VALUES ('geoclue',          'AOINDUSTRIES', NULL);
 INSERT INTO account."User" (username, package, disable_log) VALUES ('pipewire',         'AOINDUSTRIES', NULL);
 INSERT INTO account."User" (username, package, disable_log) VALUES ('rtkit',            'AOINDUSTRIES', NULL);

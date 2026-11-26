@@ -106,7 +106,6 @@ INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('ope
 -- SonarQube
 INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('sonarqube',      'SonarQube',                 'user',   '/bin/bash',     '2022-02-14 18:30:42.703695+00');
 -- Rocky 9
-INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('flatpak',          'Flatpak system helper',          'system', '/usr/sbin/nologin',     '2024-09-25 01:39:45.93339+00');
 INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('geoclue',          'User for geoclue',               'system', '/sbin/nologin',     '2024-09-25 01:39:45.93339+00');
 INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('pipewire',         'PipeWire System Daemon',         'system', '/usr/sbin/nologin', '2024-09-25 01:39:45.93339+00');
 INSERT INTO linux."User" (username, "name", "type", shell, created) VALUES ('rtkit',            'RealtimeKit',                    'system', '/sbin/nologin',     '2024-09-25 01:39:45.93339+00');

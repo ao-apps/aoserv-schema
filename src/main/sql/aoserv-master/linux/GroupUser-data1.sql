@@ -143,9 +143,7 @@ INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('opendkim',
 -- SonarQube
 INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('sonarqube',       'sonarqube',     TRUE);
 -- kvm: none
-INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('pipewire',         'pipewire',         TRUE);
 -- render: none
-INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('rtkit',            'rtkit',            TRUE);
 -- sgx: none
 INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('sssd',             'sssd',             TRUE);
 INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('systemd-coredump', 'systemd-coredump', TRUE);

@@ -142,8 +142,6 @@ INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('oprofile',
 INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('opendkim',        'opendkim',      TRUE);
 -- SonarQube
 INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('sonarqube',       'sonarqube',     TRUE);
--- Rocky 9
-INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('geoclue',          'geoclue',          TRUE);
 -- kvm: none
 INSERT INTO linux."GroupUser" ("group", "user", "isPrimary") VALUES ('pipewire',         'pipewire',         TRUE);
 -- render: none

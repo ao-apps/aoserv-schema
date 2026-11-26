@@ -134,7 +134,6 @@ INSERT INTO linux."Group" ("name", package, "type") VALUES ('stapusr',        'A
 INSERT INTO linux."Group" ("name", package, "type") VALUES ('stapsys',        'AOINDUSTRIES', 'system');
 INSERT INTO linux."Group" ("name", package, "type") VALUES ('stapdev',        'AOINDUSTRIES', 'system');
 -- Rocky 9
-INSERT INTO linux."Group" ("name", package, "type") VALUES ('geoclue',        'AOINDUSTRIES', 'system');
 INSERT INTO linux."Group" ("name", package, "type") VALUES ('kvm',            'AOINDUSTRIES', 'system');
 INSERT INTO linux."Group" ("name", package, "type") VALUES ('pipewire',       'AOINDUSTRIES', 'system');
 INSERT INTO linux."Group" ("name", package, "type") VALUES ('render',         'AOINDUSTRIES', 'system');

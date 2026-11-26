@@ -23,9 +23,11 @@
 
 create table net."DeviceId" (
   "name" text
-    primary key,
+    primary key
+    check (octet_length("name") <= 15),
   is_loopback boolean
     not null
+    default false
 );
 grant all    on net."DeviceId" to aoadmin;
 grant select on net."DeviceId" to aoserv_app;
